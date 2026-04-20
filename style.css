@@ -1,3 +1,11 @@
+.schedule-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm, 1.2rem);
+    margin-bottom: var(--space-md, 1.2rem);
+}
+
+/*--- original file content follows ---*/
 :root {
   color-scheme: dark;
   --bg: #070707;
