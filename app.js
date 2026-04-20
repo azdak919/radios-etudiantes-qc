@@ -1,15 +1,25 @@
 import { fetchJsonWithFallbacks, cleanText } from "./data-utils.js";
-import { initSchedulePanel } from "./schedule.js";
+import { getCachedScheduleSnapshot, initSchedulePanel } from "./schedule.js";
 import { initNewsFeed } from "./news.js";
 
 const STREAM_URL = "https://ecoutez.chyz.ca/proxy/chyz943/stream";
 const STREAM_STATUS_URL = "http://ecoutez.chyz.ca:8000/status-json.xsl";
 const PLAYER_STORAGE_KEY = "chyz-plus-player";
 const LAST_META_KEY = "chyz-plus-last-meta";
+const SCHEDULE_EVENT_NAME = "chyz:schedule-update";
+const GENERIC_TRACK_TITLES = new Set([
+  "",
+  "no name",
+  "chyz 94.3 fm",
+  "chyz 94.3 fm en direct",
+  "stream",
+  "en direct",
+]);
 
 const defaultTrack = {
   title: "CHYZ 94.3 FM en direct",
   subtitle: "Compagnon non officiel de la radio etudiante de l'Universite Laval.",
+  source: "default",
 };
 
 const audio = document.querySelector("#radio-audio");
@@ -33,25 +43,29 @@ const toast = document.querySelector("#toast");
 let deferredInstallPrompt = null;
 let toastTimer = null;
 let metaIntervalId = null;
+let currentTrack = defaultTrack;
+let latestScheduleSnapshot = null;
 
 boot();
 
 function boot() {
   restorePlayerState();
+  latestScheduleSnapshot = getCachedScheduleSnapshot();
   audio.src = STREAM_URL;
   audio.volume = clampVolume(audio.volume);
   audio.preload = "none";
 
   bindPlayerEvents();
+  bindScheduleEvents();
   bindInstallFlow();
   registerServiceWorker();
-  updateTrack(defaultTrack);
+  updateTrack(currentTrack ?? defaultTrack, { persist: false });
   updatePlayerUI();
   setVolumeLabel();
   setStreamLabel();
-  applyMediaSession(defaultTrack);
 
   initSchedulePanel();
+  applyScheduleTrackIfNeeded();
   initNewsFeed();
 }
 
@@ -209,31 +223,38 @@ function restorePlayerState() {
 }
 
 async function fetchNowPlaying() {
+  const scheduleTrack = buildScheduleFallbackTrack(latestScheduleSnapshot);
+
   try {
     const data = await fetchJsonWithFallbacks(STREAM_STATUS_URL);
     const source = Array.isArray(data?.icestats?.source)
       ? data.icestats.source[0]
       : data?.icestats?.source;
+    const liveTitle = pickLiveTitle(source);
 
-    const candidateTitle =
-      source?.title ||
-      source?.server_name ||
-      source?.server_description ||
-      defaultTrack.title;
+    if (liveTitle) {
+      const subtitle = buildLiveSubtitle(source, scheduleTrack);
 
-    const subtitleParts = [source?.server_description, source?.genre]
-      .filter(Boolean)
-      .slice(0, 2);
+      updateTrack({
+        title: liveTitle,
+        subtitle: subtitle || defaultTrack.subtitle,
+        source: "live",
+      });
+      return;
+    }
 
-    updateTrack({
-      title: cleanText(candidateTitle),
-      subtitle:
-        subtitleParts.length > 0
-          ? cleanText(subtitleParts.join(" • "))
-          : defaultTrack.subtitle,
-    });
-  } catch (error) {
+    if (scheduleTrack) {
+      updateTrack(scheduleTrack, { persist: false });
+      return;
+    }
+
     updateTrack(defaultTrack, { persist: false });
+  } catch (error) {
+    if (scheduleTrack) {
+      updateTrack(scheduleTrack, { persist: false });
+    } else {
+      updateTrack(defaultTrack, { persist: false });
+    }
     console.warn("Now playing metadata unavailable.", error);
   }
 }
@@ -242,8 +263,10 @@ function updateTrack(track, options = { persist: true }) {
   const safeTrack = {
     title: cleanText(track?.title) || defaultTrack.title,
     subtitle: cleanText(track?.subtitle) || defaultTrack.subtitle,
+    source: track?.source || defaultTrack.source,
   };
 
+  currentTrack = safeTrack;
   nowPlayingTitle.textContent = safeTrack.title;
   nowPlayingSubtitle.textContent = safeTrack.subtitle;
   applyMediaSession(safeTrack);
@@ -362,6 +385,74 @@ function showToast(message) {
 function isIosStandaloneCapable() {
   const ios = /iphone|ipad|ipod/i.test(window.navigator.userAgent);
   return ios && !window.matchMedia("(display-mode: standalone)").matches;
+}
+
+function bindScheduleEvents() {
+  window.addEventListener(SCHEDULE_EVENT_NAME, (event) => {
+    latestScheduleSnapshot = event.detail ?? null;
+    applyScheduleTrackIfNeeded();
+  });
+}
+
+function applyScheduleTrackIfNeeded() {
+  const scheduleTrack = buildScheduleFallbackTrack(latestScheduleSnapshot);
+
+  if (!scheduleTrack) {
+    return;
+  }
+
+  if (currentTrack.source !== "live") {
+    updateTrack(scheduleTrack, { persist: false });
+  }
+}
+
+function buildScheduleFallbackTrack(snapshot) {
+  const currentShow = snapshot?.current;
+
+  if (!currentShow?.title) {
+    return null;
+  }
+
+  return {
+    title: currentShow.title,
+    subtitle: [currentShow.timeLabel, currentShow.description].filter(Boolean).join(" • "),
+    source: "schedule",
+  };
+}
+
+function pickLiveTitle(source) {
+  const candidates = [source?.title, source?.server_name, source?.server_description]
+    .map(cleanText)
+    .filter(Boolean);
+
+  return candidates.find((candidate) => !isGenericTrackTitle(candidate)) || "";
+}
+
+function buildLiveSubtitle(source, scheduleTrack) {
+  const subtitleParts = [source?.server_description, source?.genre]
+    .map(cleanText)
+    .filter(Boolean)
+    .filter((value) => !isGenericTrackTitle(value));
+
+  if (subtitleParts.length > 0) {
+    return subtitleParts.slice(0, 2).join(" • ");
+  }
+
+  return scheduleTrack?.subtitle || "";
+}
+
+function isGenericTrackTitle(value) {
+  const normalized = cleanText(value).toLowerCase();
+
+  if (!normalized) {
+    return true;
+  }
+
+  if (GENERIC_TRACK_TITLES.has(normalized)) {
+    return true;
+  }
+
+  return normalized.includes("shoutcast") || normalized === "misc";
 }
 
 function clampVolume(value) {

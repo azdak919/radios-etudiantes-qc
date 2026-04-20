@@ -12,6 +12,7 @@ import {
 const SCHEDULE_URL = "https://chyz.ca/horaire/";
 const SCHEDULE_CACHE_KEY = "chyz-plus-schedule-cache";
 const REFRESH_INTERVAL_MS = 5 * 60 * 1000;
+const SCHEDULE_EVENT_NAME = "chyz:schedule-update";
 const CARD_KICKERS = [
   "Emission precedente",
   "En cours",
@@ -21,6 +22,10 @@ const CARD_KICKERS = [
 
 let refreshTimerId = null;
 let lastFetchedAt = 0;
+
+export function getCachedScheduleSnapshot() {
+  return readCache();
+}
 
 export function initSchedulePanel() {
   const cards = getCards();
@@ -226,6 +231,8 @@ function renderSnapshot(snapshot, options = { cached: false }) {
       new Date(snapshot.fetchedAt)
     )}`;
   }
+
+  publishScheduleUpdate(snapshot);
 }
 
 function renderLoadingState() {
@@ -265,6 +272,8 @@ function renderErrorState() {
   if (status) {
     status.textContent = "Horaire hors ligne";
   }
+
+  publishScheduleUpdate(null);
 }
 
 function readCache() {
@@ -306,4 +315,12 @@ function serializeSlot(slot) {
 
 function capitalize(value) {
   return value ? `${value.charAt(0).toUpperCase()}${value.slice(1)}` : "";
+}
+
+function publishScheduleUpdate(snapshot) {
+  window.dispatchEvent(
+    new CustomEvent(SCHEDULE_EVENT_NAME, {
+      detail: snapshot,
+    })
+  );
 }
