@@ -44,7 +44,28 @@ body {
   transform: scale(0.985);
 }
 
-/* Initial logo badges */
+/* Station logos */
+.station-logo {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  object-fit: contain;
+  background: #111;
+  padding: 4px;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.station-logo-modal {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  object-fit: contain;
+  background: #111;
+  padding: 6px;
+  border: 1px solid rgba(255,255,255,0.15);
+}
+
+/* Fallback initial logo badges */
 .logo-badge {
   display: flex;
   align-items: center;
@@ -53,9 +74,10 @@ body {
   font-weight: 700;
   letter-spacing: -0.04em;
   color: white;
-  border-radius: 9999px;
+  border-radius: 12px;
   box-shadow: inset 0 1px 0 rgba(255,255,255,0.25);
   user-select: none;
+  background: linear-gradient(135deg, #27272a, #3f3f46);
 }
 
 .logo-badge.chyz { background: linear-gradient(135deg, #ad0f18, #ff5a4f); }
@@ -67,7 +89,6 @@ body {
 .logo-badge.choq { background: linear-gradient(135deg, #312e81, #6366f1); }
 .logo-badge.cjep { background: linear-gradient(135deg, #334155, #64748b); }
 .logo-badge.crem { background: linear-gradient(135deg, #1e3a8a, #3b82f6); }
-.logo-badge.default { background: linear-gradient(135deg, #27272a, #3f3f46); }
 
 /* Filter buttons */
 .filter-btn {

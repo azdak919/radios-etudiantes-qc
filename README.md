@@ -20,7 +20,7 @@
   - Par région (Montréal, Québec, Estrie, Saguenay, etc.)
   - Favoris (♥)
 - **Cartes claires et informatives** : nom, fréquence, institution, ville + indicateur "LIVE" quand un flux direct est disponible
-- **Lecteur audio intégré** dans le modal pour les stations qui fournissent un flux HTTPS public (ex: CHYZ 94.3)
+- **Lecteur audio intégré** dans le modal pour les stations qui fournissent un flux HTTPS public (ex: CHYZ, CKUT)
 - **Modal riche** avec description, liens sociaux, site officiel et informations pratiques
 - Bouton **« Radio aléatoire »**
 - Favoris persistants (localStorage)
@@ -73,7 +73,7 @@ radios-etudiantes-qc/
 └── README.md
 ```
 
-Les anciens fichiers CHYZ+ (`schedule.js`, `news.js`, `data-utils.js`) sont conservés pour l’historique mais ne sont plus utilisés.
+Les anciens fichiers spécifiques à CHYZ+ ont été supprimés du projet actif.
 
 ---
 

@@ -237,9 +237,10 @@ function createRadioCard(radio) {
 
   el.innerHTML = `
     <div class="flex items-start gap-3">
-      <div class="logo-badge ${radio.id} h-12 w-12 shrink-0 text-base ring-1 ring-white/15" aria-hidden="true">
-        ${initials}
-      </div>
+      ${radio.logo 
+        ? `<img src="${radio.logo}" alt="${radio.name}" class="station-logo ring-1 ring-white/15" loading="lazy">` 
+        : `<div class="logo-badge ${radio.id} h-12 w-12 shrink-0 text-base ring-1 ring-white/15" aria-hidden="true">${initials}</div>`
+      }
       <div class="min-w-0 flex-1">
         <div class="flex items-start justify-between gap-2">
           <div class="min-w-0">
@@ -324,7 +325,10 @@ function openModal(radio) {
       <!-- Header -->
       <div class="flex items-start justify-between">
         <div class="flex items-center gap-4">
-          <div class="logo-badge ${radio.id} h-16 w-16 text-2xl ring-1 ring-white/20">${getInitials(radio.name)}</div>
+          ${radio.logo 
+            ? `<img src="${radio.logo}" alt="${radio.name}" class="station-logo-modal ring-1 ring-white/15">` 
+            : `<div class="logo-badge ${radio.id} h-16 w-16 text-2xl ring-1 ring-white/20">${getInitials(radio.name)}</div>`
+          }
           <div>
             <div class="font-display text-3xl font-semibold tracking-[-1.5px]">${radio.fullName}</div>
             <div class="text-white/65 mt-0.5">${radio.institution} — ${radio.city}</div>
