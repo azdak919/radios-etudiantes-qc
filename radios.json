@@ -19,7 +19,7 @@
       "local"
     ],
     "_streamStatus": "working",
-    "_streamChecked": "2026-06-25T09:32:26.379Z"
+    "_streamChecked": "2026-06-26T09:37:07.873Z"
   },
   {
     "id": "cism",
@@ -41,7 +41,7 @@
       "découvertes"
     ],
     "_streamStatus": "working",
-    "_streamChecked": "2026-06-25T09:32:46.407Z"
+    "_streamChecked": "2026-06-26T09:37:27.720Z"
   },
   {
     "id": "ckut",
@@ -63,7 +63,7 @@
       "indie"
     ],
     "_streamStatus": "working",
-    "_streamChecked": "2026-06-25T09:32:49.187Z"
+    "_streamChecked": "2026-06-26T09:37:29.859Z"
   },
   {
     "id": "cjlo",
@@ -85,7 +85,7 @@
       "indie"
     ],
     "_streamStatus": "none",
-    "_streamChecked": "2026-06-25T09:32:53.075Z"
+    "_streamChecked": "2026-06-26T09:37:34.833Z"
   },
   {
     "id": "cfou",
@@ -106,7 +106,7 @@
       "francophone"
     ],
     "_streamStatus": "none",
-    "_streamChecked": "2026-06-25T09:36:01.351Z"
+    "_streamChecked": "2026-06-26T09:40:36.903Z"
   },
   {
     "id": "cfak",
@@ -128,7 +128,7 @@
       "campus"
     ],
     "_streamStatus": "none",
-    "_streamChecked": "2026-06-25T09:40:52.118Z"
+    "_streamChecked": "2026-06-26T09:43:39.046Z"
   },
   {
     "id": "choq",
@@ -151,7 +151,7 @@
       "balados"
     ],
     "_streamStatus": "none",
-    "_streamChecked": "2026-06-25T09:40:56.186Z"
+    "_streamChecked": "2026-06-26T09:43:41.924Z"
   },
   {
     "id": "cjep",
@@ -174,7 +174,7 @@
       "balados"
     ],
     "_streamStatus": "none",
-    "_streamChecked": "2026-06-25T09:45:57.642Z"
+    "_streamChecked": "2026-06-26T09:48:26.151Z"
   },
   {
     "id": "crem",
@@ -196,6 +196,6 @@
       "étudiant"
     ],
     "_streamStatus": "none",
-    "_streamChecked": "2026-06-25T09:49:02.864Z"
+    "_streamChecked": "2026-06-26T09:51:29.265Z"
   }
 ]
