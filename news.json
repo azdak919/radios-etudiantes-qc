@@ -1,7 +1,84 @@
 {
-  "updated": "2026-06-26T23:48:43.483Z",
-  "count": 48,
+  "updated": "2026-06-26T23:59:31.635Z",
+  "count": 60,
   "items": [
+    {
+      "source": "Le Collectif",
+      "institution": "Université de Sherbrooke",
+      "type": "universite",
+      "lang": "fr",
+      "title": "Résumé du G7 à Évian",
+      "link": "https://lecollectif.ca/a-la-une/resume-du-g7-a-evian/",
+      "date": "2026-06-26T20:18:05.000Z",
+      "excerpt": "Par Médéric Dens Les personnes dirigeantes du G7 étaient réunies à Évian-les-Bains, en France, du 15 au 17 juin 2026. Tous les pays s’efforcent […] L’article Résumé du G7 à Évian est apparu en premier sur Le Collectif . ",
+      "image": "https://lecollectif.ca/wp-content/uploads/2026/06/SOCIETE_Resume-du-G7-a-Evian_Getty-Images.jpg"
+    },
+    {
+      "source": "Le Collectif",
+      "institution": "Université de Sherbrooke",
+      "type": "universite",
+      "lang": "fr",
+      "title": "Virage à droite en Colombie",
+      "link": "https://lecollectif.ca/a-la-une/virage-a-droite-en-colombie/",
+      "date": "2026-06-26T20:14:31.000Z",
+      "excerpt": "Par Médéric Dens Après quatre années passées sous l’égide de Gustavo Petro, la Colombie change de cap et élit à sa tête Abelardo […] L’article Virage à droite en Colombie est apparu en premier sur Le Collectif . ]]>",
+      "image": "https://lecollectif.ca/wp-content/uploads/2026/06/SOCIETE_Virage-a-droite-en-Colombie_Getty-Images.jpg"
+    },
+    {
+      "source": "Le Collectif",
+      "institution": "Université de Sherbrooke",
+      "type": "universite",
+      "lang": "fr",
+      "title": "Démission de Keir Starmer au Royaume-Uni",
+      "link": "https://lecollectif.ca/a-la-une/demission-de-keir-starmer-au-royaume-uni/",
+      "date": "2026-06-26T20:10:58.000Z",
+      "excerpt": "Par Médéric Dens Croulant sous les pressions provenant de l’opposition et de son propre parti, le premier ministre britannique, Keir Starmer, démissionne […] L’article Démission de Keir Starmer au Royaume-Uni est apparu ",
+      "image": "https://lecollectif.ca/wp-content/uploads/2026/06/SOCIETE_Demission-de-Keir-Starmer-au-Royaume-Uni_Getty-Images.jpg"
+    },
+    {
+      "source": "Le Collectif",
+      "institution": "Université de Sherbrooke",
+      "type": "universite",
+      "lang": "fr",
+      "title": "Le PIF s’internationalise pour sa 49e édition",
+      "link": "https://lecollectif.ca/a-la-une/le-pif-sinternationalise-pour-sa-49e-edition/",
+      "date": "2026-06-26T20:04:03.000Z",
+      "excerpt": "Par Camille Guindon Le plus grand tournoi de balle donnée en Amérique du Nord accueille cette année une vague de […] L’article Le PIF s’internationalise pour sa 49e édition est apparu en premier sur Le Collectif . ]]>",
+      "image": "https://lecollectif.ca/wp-content/uploads/2026/06/SPORT_CLASSIQUEPIF_SourceTourismeCantons-de-lEst-1024x587.jpeg"
+    },
+    {
+      "source": "Le Collectif",
+      "institution": "Université de Sherbrooke",
+      "type": "universite",
+      "lang": "fr",
+      "title": "Le mental, ça s’entraîne aussi",
+      "link": "https://lecollectif.ca/a-la-une/le-mental-ca-sentraine-aussi/",
+      "date": "2026-06-26T19:57:19.000Z",
+      "excerpt": "Par Camille Guindon À l’Université de Sherbrooke, une chaire de recherche unique au Québec redéfinit ce que signifie être un […] L’article Le mental, ça s’entraîne aussi est apparu en premier sur Le Collectif . ]]>",
+      "image": "https://lecollectif.ca/wp-content/uploads/2026/06/SPORTS_Lementalcasentraine_SourceUniversiteDeSherbrooke-1024x584.jpeg"
+    },
+    {
+      "source": "Le Collectif",
+      "institution": "Université de Sherbrooke",
+      "type": "universite",
+      "lang": "fr",
+      "title": "Interdiction des boissons énergisantes pour les moins de 16 ans",
+      "link": "https://lecollectif.ca/a-la-une/interdiction-des-boissons-energisantes-pour-les-moins-de-16-ans/",
+      "date": "2026-06-26T19:52:48.000Z",
+      "excerpt": "Par Salma Labiede En janvier 2024, Zachary Miron, 15 ans, perd la vie après avoir consommé une boisson énergisante lors […] L’article Interdiction des boissons énergisantes pour les moins de 16 ans est apparu en premier ",
+      "image": "https://lecollectif.ca/wp-content/uploads/2026/06/SOCIETE_BoissonsEnergisantes_SourceAssociationPourLaSantePubliqueDuQuebec.jpg"
+    },
+    {
+      "source": "Le Collectif",
+      "institution": "Université de Sherbrooke",
+      "type": "universite",
+      "lang": "fr",
+      "title": "Les animaux et les déménagements",
+      "link": "https://lecollectif.ca/a-la-une/les-animaux-et-les-demenagements/",
+      "date": "2026-06-26T18:25:06.000Z",
+      "excerpt": "Par Salma Labiede Chaque année, à l’approche du 1er juillet, date traditionnellement associée aux déménagements au Québec, des milliers de personnes […] L’article Les animaux et les déménagements est apparu en premier su",
+      "image": "https://lecollectif.ca/wp-content/uploads/2026/06/SOCIETE_Les-animaux-de-compagnie-Demenagements_SourceSPAD.png"
+    },
     {
       "source": "The Link",
       "institution": "Concordia University",
@@ -34,6 +111,17 @@
       "date": "2026-05-22T16:24:00.000Z",
       "excerpt": "The union also approved motions for the pedestrianization of Mackay St. and salary bonuses for CSU executives Graphic Naya Hachwa ]]>",
       "image": "https://thelinknewspaper.ca/images/made/images/articles/_resized/00.graphics.CSU.Naya_Hachwa_690_517_90.jpeg"
+    },
+    {
+      "source": "L'Exemplaire",
+      "institution": "Université Laval",
+      "type": "universite",
+      "lang": "fr",
+      "title": "Sans fin(s): au cœur des troubles du comportement alimentaire",
+      "link": "https://www.exemplaire.com.ulaval.ca/a-la-une/sans-fins-au-coeur-des-troubles-du-comportement-alimentaire/?utm_source=rss&utm_medium=rss&utm_campaign=sans-fins-au-coeur-des-troubles-du-comportement-alimentaire",
+      "date": "2026-05-15T16:31:24.000Z",
+      "excerpt": "Salut, moi c’est Elora. Je suis étudiante en journalisme, passionnée de voyages, de cinéma et de récits humains. Mais aujourd’hui, si je me présente, c’est surtout pour te parler d’une relation toxique qui a occupé toute",
+      "image": "https://s.w.org/images/core/emoji/17.0.2/72x72/1f557.png"
     },
     {
       "source": "Quartier Libre",
@@ -102,6 +190,72 @@
       "image": ""
     },
     {
+      "source": "L'Exemplaire",
+      "institution": "Université Laval",
+      "type": "universite",
+      "lang": "fr",
+      "title": "L’alcool est-il vraiment le nouveau tabac ?",
+      "link": "https://www.exemplaire.com.ulaval.ca/a-la-une/lalcool-est-il-vraiment-le-nouveau-tabac/?utm_source=rss&utm_medium=rss&utm_campaign=lalcool-est-il-vraiment-le-nouveau-tabac",
+      "date": "2026-05-12T18:48:27.000Z",
+      "excerpt": "Selon une enquête récente par l’Institut de la statistique du Québec (ISQ), la consommation d’alcool chez les jeunes est en baisse depuis quelques années. Il s’agit d’un mouvement qui s’observe aussi, mais de manière moi",
+      "image": "https://public.flourish.studio/visualisation/28560872/thumbnail"
+    },
+    {
+      "source": "L'Exemplaire",
+      "institution": "Université Laval",
+      "type": "universite",
+      "lang": "fr",
+      "title": "Derrière les étiquettes électroniques, la tarification dynamique ?",
+      "link": "https://www.exemplaire.com.ulaval.ca/a-la-une/derriere-les-etiquettes-electroniques-la-tarification-dynamique/?utm_source=rss&utm_medium=rss&utm_campaign=derriere-les-etiquettes-electroniques-la-tarification-dynamique",
+      "date": "2026-05-12T18:48:27.000Z",
+      "excerpt": "Tout doucement, on les voit apparaître sur le bord des tablettes des épiceries. Des écrans miniatures qui indiquent le prix des produits alimentaires, comme chez Super C, par exemple — notre photo en une. Techniquement, ",
+      "image": "https://i0.wp.com/www.exemplaire.com.ulaval.ca/wp-content/uploads/2026/04/Karounga-Diawara-photo-e1777437266748-200x200.png?resize=200%2C200&ssl=1"
+    },
+    {
+      "source": "L'Exemplaire",
+      "institution": "Université Laval",
+      "type": "universite",
+      "lang": "fr",
+      "title": "Rachat des armes à feu : le Québec est-il l’exception canadienne ?",
+      "link": "https://www.exemplaire.com.ulaval.ca/a-la-une/rachat-des-armes-a-feu-le-quebec-est-il-lexception-canadienne/?utm_source=rss&utm_medium=rss&utm_campaign=rachat-des-armes-a-feu-le-quebec-est-il-lexception-canadienne",
+      "date": "2026-05-12T18:48:27.000Z",
+      "excerpt": "Afin de lutter contre la violence armée, le gouvernement du Canada a interdit en mai 2020 plus de 2 500 marques d’armes d’assaut. Pour les citoyens ou les entreprises possédant les modèles concernés, le fédéral a mis sur",
+      "image": "https://i0.wp.com/www.exemplaire.com.ulaval.ca/wp-content/uploads/2026/05/Francis-Langlois.png?resize=184%2C179&ssl=1"
+    },
+    {
+      "source": "L'Exemplaire",
+      "institution": "Université Laval",
+      "type": "universite",
+      "lang": "fr",
+      "title": "Les jeunes et les médias d’actualité : une confiance de plus en plus érodée",
+      "link": "https://www.exemplaire.com.ulaval.ca/a-la-une/les-jeunes-et-les-medias-dactualite-une-confiance-de-plus-en-plus-erodee/?utm_source=rss&utm_medium=rss&utm_campaign=les-jeunes-et-les-medias-dactualite-une-confiance-de-plus-en-plus-erodee",
+      "date": "2026-05-12T18:48:27.000Z",
+      "excerpt": "L’un des principaux reproches du public envers les médias traditionnels est la difficulté de faire la différence entre les genres journalistiques, par exemple, ce qui distingue un contenu informatif de l’opinion. Des pro",
+      "image": "https://i0.wp.com/www.exemplaire.com.ulaval.ca/wp-content/uploads/2026/05/colette-brin.jpg.webp?resize=141%2C106&ssl=1"
+    },
+    {
+      "source": "L'Exemplaire",
+      "institution": "Université Laval",
+      "type": "universite",
+      "lang": "fr",
+      "title": "Achat de seconde main : une mode dans la mode ?",
+      "link": "https://www.exemplaire.com.ulaval.ca/a-la-une/achat-de-seconde-main-une-mode-dans-la-mode/?utm_source=rss&utm_medium=rss&utm_campaign=achat-de-seconde-main-une-mode-dans-la-mode",
+      "date": "2026-05-12T18:48:26.000Z",
+      "excerpt": "Une boutique de plus ! En mars dernier, Renaissance, une chaîne de friperies québécoise, ouvre une succursale de 18 000 pieds au centre commercial Laurier Québec. Signe, sans doute, d’une évolution dans les habitudes de ",
+      "image": "https://i0.wp.com/www.exemplaire.com.ulaval.ca/wp-content/uploads/2026/04/Rebecca-Colere-Instagram.jpg?resize=200%2C200&ssl=1"
+    },
+    {
+      "source": "L'Exemplaire",
+      "institution": "Université Laval",
+      "type": "universite",
+      "lang": "fr",
+      "title": "Le NPD : soigne-t-il sa gauche ou se radicalise-t-il ?",
+      "link": "https://www.exemplaire.com.ulaval.ca/a-la-une/le-npd-soigne-t-il-sa-gauche-ou-se-radicalise-t-il/?utm_source=rss&utm_medium=rss&utm_campaign=le-npd-soigne-t-il-sa-gauche-ou-se-radicalise-t-il",
+      "date": "2026-05-12T18:48:26.000Z",
+      "excerpt": "Les militants du NPD auraient pu choisir de poursuivre une approche plus pragmatique avec Heather McPherson, la seule députée élue du NPD qui s’est lancée dans la course à la chefferie. Principale rivale d’Avi Lewis, ell",
+      "image": "https://i0.wp.com/www.exemplaire.com.ulaval.ca/wp-content/uploads/2026/05/Portrait_nouveau-1-e1778347557171-251x300.jpg?resize=151%2C181&ssl=1"
+    },
+    {
       "source": "Quartier Libre",
       "institution": "Université de Montréal",
       "type": "universite",
@@ -109,17 +263,6 @@
       "title": "Montréal Mystère : le polar à l’honneur dans un festival bilingue",
       "link": "https://quartierlibre.ca/montreal-mystere-festival-bilingue/",
       "date": "2026-05-12T18:39:17.000Z",
-      "excerpt": "",
-      "image": ""
-    },
-    {
-      "source": "Quartier Libre",
-      "institution": "Université de Montréal",
-      "type": "universite",
-      "lang": "fr",
-      "title": "Coupe du monde 2026 : l’empreinte de l’expansion",
-      "link": "https://quartierlibre.ca/coupe-du-monde-2026/",
-      "date": "2026-05-11T19:00:00.000Z",
       "excerpt": "",
       "image": ""
     },
@@ -245,17 +388,6 @@
       "image": ""
     },
     {
-      "source": "Montréal Campus",
-      "institution": "UQAM",
-      "type": "universite",
-      "lang": "fr",
-      "title": ".t2 {font-size: 2rem;@media (max-width: 1000px){font-size: 1.25rem;}color: rgb(100 116 139);}CobayeJe suis devenu végétalien du jour au lendemain",
-      "link": "https://montrealcampus.ca/2026/04/30/cobaye-alimentation-vegetalisme/",
-      "date": "2026-04-30T17:28:25.000Z",
-      "excerpt": "Avec le dérèglement climatique, certain(e)s sont tenté(e)s de modifier leurs habitudes alimentaires pour donner un répit à la planète. Est-il possible de réaliser un basculement de régime alimentaire vers le végétalisme ",
-      "image": ""
-    },
-    {
       "source": "The Link",
       "institution": "Concordia University",
       "type": "universite",
@@ -311,15 +443,15 @@
       "image": "https://zonecampus.ca/wp-content/uploads/2026/04/IMG_3405.jpeg"
     },
     {
-      "source": "Zone Campus",
-      "institution": "Université du Québec à Trois-Rivières",
-      "type": "universite",
+      "source": "Exil",
+      "institution": "Cégep du Vieux Montréal",
+      "type": "cegep",
       "lang": "fr",
-      "title": "L’économie du pays : Ce qui attend le Québec si Washington revoit sa copie dans la négociation de l’ACEUM",
-      "link": "https://zonecampus.ca/leconomie-du-pays-ce-qui-attend-le-quebec-si-washington-revoit-sa-copie-dans-la-negociation-de-laceum/",
-      "date": "2026-04-24T12:41:21.000Z",
-      "excerpt": "Alors que le ministre des Finances, Eric Girard, promet un retour à l’équilibre budgétaire d’ici 2029‑2030, une menace silencieuse, mais dévastatrice plane au‑dessus de l’économie québécoise, à savoir la renégociation de",
-      "image": "https://zonecampus.ca/wp-content/uploads/2026/04/Dany_portrait_vignette_ZC-copie-1068x641-3-2-1024x615.jpg"
+      "title": "Opinion – L’hypocrisie qui rampe à l’Assemblée nationale",
+      "link": "https://exilecvm.wordpress.com/2026/04/18/opinion-lhypocrisie-qui-rampe-a-lassemblee-nationale/",
+      "date": "2026-04-18T22:22:07.000Z",
+      "excerpt": "Continuer à lire ... \"Opinion – L’hypocrisie qui rampe à l’Assemblée nationale\" ]]>",
+      "image": "https://0.gravatar.com/avatar/3037b2f906855bce6d6893a184ae17343a2cbb1ac06100199a4a9180fb2c13db?s=96&#38;d=identicon&#38;r=G"
     },
     {
       "source": "The Link",
@@ -342,17 +474,6 @@
       "date": "2026-04-14T03:00:00.000Z",
       "excerpt": "The Chinatown studio brings together artists of all levels in a space designed for connection Located in Chinatown, Dragon Jam serves as a rehearsal space and venue for intimate performances. Courtesy Dragon Jam ]]>",
       "image": "https://thelinknewspaper.ca/images/made/images/articles/_resized/IMG_0291-2_690_863_90.jpg"
-    },
-    {
-      "source": "The Link",
-      "institution": "Concordia University",
-      "type": "universite",
-      "lang": "en",
-      "title": "Jaywalking encouraged",
-      "link": "https://thelinknewspaper.ca/article/16323",
-      "date": "2026-04-14T03:00:00.000Z",
-      "excerpt": "The two-venue festival invites people to move between spaces LaVendertown is set to perform at Sala Rossa during the music festival Jaywalk. Courtesy Sayplus. ]]>",
-      "image": "https://thelinknewspaper.ca/images/made/images/articles/_resized/Full_band_B-W_(1)_690_460_90.jpeg"
     },
     {
       "source": "The McGill Daily",
@@ -443,17 +564,6 @@
       "image": ""
     },
     {
-      "source": "Le Délit",
-      "institution": "Université McGill",
-      "type": "universite",
-      "lang": "fr",
-      "title": "Une génération jetable",
-      "link": "https://www.delitfrancais.com/2026/03/25/une-generation-jetable/",
-      "date": "2026-03-25T11:00:00.000Z",
-      "excerpt": "Quel sera le prix d'une ère où chaque aspect de notre vie est jetable? L’article Une génération jetable est apparu en premier sur Le Délit . ]]>",
-      "image": ""
-    },
-    {
       "source": "The McGill Daily",
       "institution": "McGill University",
       "type": "universite",
@@ -520,15 +630,37 @@
       "image": ""
     },
     {
-      "source": "The McGill Daily",
-      "institution": "McGill University",
-      "type": "universite",
-      "lang": "en",
-      "title": "The Gentrification of Online Fandom Spaces",
-      "link": "https://www.mcgilldaily.com/2026/03/the-gentrification-of-online-fandom-spaces/",
-      "date": "2026-03-23T12:00:00.000Z",
-      "excerpt": "How publishing corporations are ruining fanfiction The post The Gentrification of Online Fandom Spaces appeared first on The McGill Daily . ]]>",
-      "image": ""
+      "source": "Exil",
+      "institution": "Cégep du Vieux Montréal",
+      "type": "cegep",
+      "lang": "fr",
+      "title": "GardaWorld au CVM (Éditorial)",
+      "link": "https://exilecvm.wordpress.com/2026/03/13/manifestation-contre-gardaworld/",
+      "date": "2026-03-13T19:42:16.000Z",
+      "excerpt": "Continuer à lire ... \"GardaWorld au CVM (Éditorial)\" ]]>",
+      "image": "https://exilecvm.wordpress.com/wp-content/uploads/2026/03/img_3527.jpg?w=1024"
+    },
+    {
+      "source": "Exil",
+      "institution": "Cégep du Vieux Montréal",
+      "type": "cegep",
+      "lang": "fr",
+      "title": "Le pays avant tout – esquisse",
+      "link": "https://exilecvm.wordpress.com/2026/02/28/le-pays-avant-tout-esquisse/",
+      "date": "2026-02-28T23:42:43.000Z",
+      "excerpt": "Continuer à lire ... \"Le pays avant tout – esquisse\" ]]>",
+      "image": "https://2.gravatar.com/avatar/2f04e9514d9399911a636db11256ec3de75455af330dc9f8fa5ad780876b2606?s=96&#38;d=identicon&#38;r=G"
+    },
+    {
+      "source": "Exil",
+      "institution": "Cégep du Vieux Montréal",
+      "type": "cegep",
+      "lang": "fr",
+      "title": "Oui au budget, oui au programme FIL et non à la grève",
+      "link": "https://exilecvm.wordpress.com/2026/02/07/oui-au-budget-oui-au-programme-fil-et-non-a-la-greve/",
+      "date": "2026-02-07T22:21:15.000Z",
+      "excerpt": "Continuer à lire ... \"Oui au budget, oui au programme FIL et non à la grève\" ]]>",
+      "image": "https://2.gravatar.com/avatar/53be2f281e601c0164bb84f24ceb6e28130feb1f3b2901828c8a2d678e10a5d6?s=96&#38;d=identicon&#38;r=G"
     }
   ]
 }

@@ -19,8 +19,8 @@ const https = require('https');
 
 const NEWS_PATH = path.join(__dirname, '..', 'news.json');
 const TIMEOUT = 15000;
-const MAX_PER_SOURCE = 8;   // keep the freshest few from each paper
-const MAX_TOTAL = 48;       // overall cap
+const MAX_PER_SOURCE = 7;   // keep the freshest few from each paper
+const MAX_TOTAL = 60;       // overall cap
 
 // === Curated student-media RSS feeds (validated) =============================
 const SOURCES = [
@@ -65,6 +65,27 @@ const SOURCES = [
     type: 'universite',
     lang: 'fr',
     url: 'https://www.zonecampus.ca/feed/',
+  },
+  {
+    name: "L'Exemplaire",
+    institution: 'Université Laval',
+    type: 'universite',
+    lang: 'fr',
+    url: 'https://exemplaire.com.ulaval.ca/feed/',
+  },
+  {
+    name: 'Le Collectif',
+    institution: 'Université de Sherbrooke',
+    type: 'universite',
+    lang: 'fr',
+    url: 'https://lecollectif.ca/feed/',
+  },
+  {
+    name: 'Exil',
+    institution: 'Cégep du Vieux Montréal',
+    type: 'cegep',
+    lang: 'fr',
+    url: 'https://exilecvm.ca/feed/',
   },
 ];
 
