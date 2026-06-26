@@ -5,9 +5,11 @@ on:
     # Run every day at 6am UTC
     - cron: '0 6 * * *'
   workflow_dispatch:   # Allow manual trigger
-  push:
-    paths:
-      - 'radios.json'
+
+# Never run two stream-update jobs against the same ref at once.
+concurrency:
+  group: update-streams-${{ github.ref }}
+  cancel-in-progress: false
 
 jobs:
   discover:
@@ -45,6 +47,14 @@ jobs:
           git config user.email "actions@users.noreply.github.com"
           git add radios.json
           git commit -m "bot: update discovered streams (auto)"
-          git push
+          # Rebase onto any work pushed since checkout so the bot never
+          # clobbers manual commits and never fails on a fast-forward race.
+          for i in 1 2 3; do
+            git pull --rebase --autostash origin "${GITHUB_REF_NAME}" && git push && exit 0
+            echo "push attempt $i failed, retrying…"
+            sleep $((i * 3))
+          done
+          echo "::error::could not push bot update after retries"
+          exit 1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
