@@ -17,8 +17,11 @@ const PROXY_BASE = '';
 
 function getPlayableStream(radio) {
   if (!radio?.stream) return null;
-  if (!PROXY_BASE) return radio.stream;
-  return `${PROXY_BASE}/?url=${encodeURIComponent(radio.stream)}`;
+  const url = radio.stream;
+  // HTTP stream on an HTTPS page → blocked by browser (mixed content); treat as no stream
+  if (url.startsWith('http:') && location.protocol === 'https:' && !PROXY_BASE) return null;
+  if (!PROXY_BASE) return url;
+  return `${PROXY_BASE}/?url=${encodeURIComponent(url)}`;
 }
 
 const GRID = document.getElementById("radios-grid");
@@ -231,7 +234,7 @@ function createRadioCard(radio) {
   const el = document.createElement("div");
   el.className = "radio-card glass flex flex-col gap-3 rounded-3xl p-4 cursor-pointer border border-white/10";
 
-  const hasStream = !!radio.stream;
+  const hasStream = !!getPlayableStream(radio);
   const initials = getInitials(radio.name);
   const isFav = getFavorites().includes(radio.id);
 
@@ -313,7 +316,7 @@ function getInitials(name) {
 
 function openModal(radio) {
   currentRadio = radio;
-  const hasStream = !!radio.stream;
+  const hasStream = !!getPlayableStream(radio);
 
   const socials = [];
   if (radio.instagram) socials.push(`<a href="${radio.instagram}" target="_blank" class="modal-btn flex-1 text-center text-sm border border-white/10 rounded-2xl py-3 hover:bg-white/5">Instagram</a>`);
@@ -346,7 +349,7 @@ function openModal(radio) {
       <p class="mt-5 text-[15px] leading-relaxed text-white/80">${radio.description || "Radio étudiante du Québec."}</p>
 
       <!-- Player area -->
-      <div class="mt-6 rounded-3xl border border-white/10 bg-black/40 p-4">
+      <div class="mt-6 rounded-3xl border border-white/20 bg-black/70 p-4">
         <div class="mb-3 flex items-center justify-between px-1">
           <div>
             <div class="text-xs uppercase tracking-[1.5px] text-white/45">Écoute en direct</div>
@@ -391,7 +394,7 @@ function openModal(radio) {
                     class="modal-btn w-full border border-accent/50 bg-accent/10 hover:bg-accent/20 py-3.5 font-semibold text-accentSoft">
               Ouvrir le lecteur officiel →
             </button>
-            <p class="text-[10px] text-white/50 mt-2">Aucun flux direct public fiable trouvé pour le moment.</p>
+            <p class="text-[10px] text-white/50 mt-2">Le flux de cette radio n'est pas disponible directement ici. Écoute via le site officiel.</p>
           </div>`
         }
       </div>
@@ -497,11 +500,14 @@ function setupModalPlayer(radio) {
     volValue.textContent = Math.round(v * 100) + "%";
   };
 
-  // Keep UI in sync
-  const sync = () => updateUI();
-  audio.addEventListener("play", sync);
-  audio.addEventListener("pause", sync);
-  audio.addEventListener("ended", sync);
+  // Keep UI in sync — remove previous modal listeners before adding new ones
+  audio._modalAbort?.abort();
+  const ac = new AbortController();
+  audio._modalAbort = ac;
+  const { signal } = ac;
+  audio.addEventListener("play", updateUI, { signal });
+  audio.addEventListener("pause", updateUI, { signal });
+  audio.addEventListener("ended", updateUI, { signal });
 
   // Initial state
   updateUI();
@@ -545,7 +551,8 @@ function setupAudio() {
 
   audio = new Audio();
   audio.preload = "none";
-  audio.crossOrigin = "anonymous";
+  // crossOrigin only needed when streams are served through our CORS proxy
+  if (PROXY_BASE) audio.crossOrigin = "anonymous";
 
   audio.addEventListener("error", () => {
     showToast("Flux indisponible pour le moment.");
