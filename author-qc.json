@@ -1,8 +1,8 @@
 {
-  "updated": "2026-06-27T12:13:45.189Z",
-  "total": 211,
-  "withAuthor": 211,
-  "mismatches": 38,
+  "updated": "2026-06-27T15:17:27.134Z",
+  "total": 171,
+  "withAuthor": 171,
+  "mismatches": 28,
   "ok": true,
   "samples": [
     {
@@ -46,38 +46,6 @@
       "reason": "page-byline"
     },
     {
-      "title": "Présences invisibles : écrire la ville sans permission",
-      "link": "https://quartierlibre.ca/presences-invisibles-ecrire-la-ville/",
-      "source": "Quartier Libre",
-      "fieldAuthor": "La rédaction",
-      "canonicalAuthor": "Emilie Rizkallah",
-      "reason": "page-byline"
-    },
-    {
-      "title": "CALAMINE : RAPPER AUTREMENT QUE LE « BOYS CLUB »",
-      "link": "https://quartierlibre.ca/calamine-rapper-autrement/",
-      "source": "Quartier Libre",
-      "fieldAuthor": "La rédaction",
-      "canonicalAuthor": "Samuel Roy",
-      "reason": "page-byline"
-    },
-    {
-      "title": "Forum RÉA : une alliance pour l’éducation en milieu défavorisé",
-      "link": "https://quartierlibre.ca/forum-rea-education-en-milieu-defavorise/",
-      "source": "Quartier Libre",
-      "fieldAuthor": "La rédaction",
-      "canonicalAuthor": "Ulysse Taillard-Hodez",
-      "reason": "page-byline"
-    },
-    {
-      "title": "Un projet de loi rendrait obligatoire le statut d’étudiant·e proche aidant·e",
-      "link": "https://quartierlibre.ca/projet-loi-etudiant-proche-aidante/",
-      "source": "Quartier Libre",
-      "fieldAuthor": "La rédaction",
-      "canonicalAuthor": "Mohammed Aziz Mestiri",
-      "reason": "page-byline"
-    },
-    {
       "title": "A final note from the Editor-in-Chief of Volume 45, for the record",
       "link": "https://www.thetribune.ca/opinion/op-off-the-board/a-final-note-from-the-editor-in-chief-of-volume-45-for-the-record-14052026/?utm_source=rss&utm_medium=rss&utm_campaign=a-final-note-from-the-editor-in-chief-of-volume-45-for-the-record-14052026",
       "source": "The Tribune",
@@ -91,54 +59,6 @@
       "source": "The Tribune",
       "fieldAuthor": "The editorial team",
       "canonicalAuthor": "Ellen Lurie",
-      "reason": "page-byline"
-    },
-    {
-      "title": "Recettes musicales québécoises pour l’été",
-      "link": "https://quartierlibre.ca/ete-recettes-musicales-quebecoises/",
-      "source": "Quartier Libre",
-      "fieldAuthor": "La rédaction",
-      "canonicalAuthor": "Bérénice Lemarié",
-      "reason": "page-byline"
-    },
-    {
-      "title": "FAÉCUM : la démocratie universitaire critiquée",
-      "link": "https://quartierlibre.ca/faecum-la-democratie-universitaire-critiquee/",
-      "source": "Quartier Libre",
-      "fieldAuthor": "La rédaction",
-      "canonicalAuthor": "Ulysse Taillard-Hodez",
-      "reason": "page-byline"
-    },
-    {
-      "title": "Montréal Mystère : le polar à l’honneur dans un festival bilingue",
-      "link": "https://quartierlibre.ca/montreal-mystere-festival-bilingue/",
-      "source": "Quartier Libre",
-      "fieldAuthor": "La rédaction",
-      "canonicalAuthor": "Carla Roche",
-      "reason": "page-byline"
-    },
-    {
-      "title": "Coupe du monde 2026 : l’empreinte de l’expansion",
-      "link": "https://quartierlibre.ca/coupe-du-monde-2026/",
-      "source": "Quartier Libre",
-      "fieldAuthor": "La rédaction",
-      "canonicalAuthor": "Gabriel Lapointe",
-      "reason": "page-byline"
-    },
-    {
-      "title": "Soutien technique à l’UdeM : entre attentes et frustrations",
-      "link": "https://quartierlibre.ca/soutien-technique-a-ludem/",
-      "source": "Quartier Libre",
-      "fieldAuthor": "La rédaction",
-      "canonicalAuthor": "Solène Gerber",
-      "reason": "page-byline"
-    },
-    {
-      "title": "Festival Jamais Lu : « Quand le monde devient dur à lire, on doit se raconter des histoires »",
-      "link": "https://quartierlibre.ca/festival-jamais-lu-2026/",
-      "source": "Quartier Libre",
-      "fieldAuthor": "La rédaction",
-      "canonicalAuthor": "Bérénice Lemarié",
       "reason": "page-byline"
     },
     {
@@ -164,7 +84,87 @@
       "fieldAuthor": "The editorial team",
       "canonicalAuthor": "Will Kennedy",
       "reason": "page-byline"
+    },
+    {
+      "title": "How can I show you I’m doing better if there’s nothing good for me to do?",
+      "link": "https://www.thetribune.ca/features/how-can-i-show-you-im-doing-better-if-theres-nothing-good-for-me-to-do/?utm_source=rss&utm_medium=rss&utm_campaign=how-can-i-show-you-im-doing-better-if-theres-nothing-good-for-me-to-do",
+      "source": "The Tribune",
+      "fieldAuthor": "The editorial team",
+      "canonicalAuthor": "Ellen Lurie",
+      "reason": "page-byline"
+    },
+    {
+      "title": "Your health, your problem",
+      "link": "https://www.thetribune.ca/features/your-health-your-problem/?utm_source=rss&utm_medium=rss&utm_campaign=your-health-your-problem",
+      "source": "The Tribune",
+      "fieldAuthor": "The editorial team",
+      "canonicalAuthor": "Leanne Cherry",
+      "reason": "page-byline"
+    },
+    {
+      "title": "Oh, the places I’ll go (but not stay)!",
+      "link": "https://www.thetribune.ca/opinion/oh-the-places-ill-go-but-not-stay-07042026/?utm_source=rss&utm_medium=rss&utm_campaign=oh-the-places-ill-go-but-not-stay-07042026",
+      "source": "The Tribune",
+      "fieldAuthor": "The editorial team",
+      "canonicalAuthor": "Rupneet Shahriar",
+      "reason": "page-byline"
+    },
+    {
+      "title": "Open Letter: How can I show you I’m doing better if there’s nothing good for me to do?",
+      "link": "https://www.thetribune.ca/opinion/letters-to-the-editor/open-letter-how-can-i-show-you-im-doing-better-if-theres-nothing-good-for-me-to-do-07042026/?utm_source=rss&utm_medium=rss&utm_campaign=open-letter-how-can-i-show-you-im-doing-better-if-theres-nothing-good-for-me-to-do-07042026",
+      "source": "The Tribune",
+      "fieldAuthor": "The editorial team",
+      "canonicalAuthor": "Student at the Cowansville penitentiary",
+      "reason": "page-byline"
+    },
+    {
+      "title": "Black Sisterhood at McGill targeted with online racist harassment",
+      "link": "https://www.thetribune.ca/news/mcgill-news/black-sisterhood-at-mcgill-targeted-with-online-racist-harassment-07042026/?utm_source=rss&utm_medium=rss&utm_campaign=black-sisterhood-at-mcgill-targeted-with-online-racist-harassment-07042026",
+      "source": "The Tribune",
+      "fieldAuthor": "The editorial team",
+      "canonicalAuthor": "Moyọ Alabi and Ellen Lurie",
+      "reason": "page-byline"
+    },
+    {
+      "title": "Referendum to boycott Israeli institutions passes with the highest voting turnout in recent LSA history",
+      "link": "https://www.thetribune.ca/news/referendum-to-boycott-israeli-institutions-passes-with-the-highest-voting-turnout-in-recent-lsa-history-07042026/?utm_source=rss&utm_medium=rss&utm_campaign=referendum-to-boycott-israeli-institutions-passes-with-the-highest-voting-turnout-in-recent-lsa-history-07042026",
+      "source": "The Tribune",
+      "fieldAuthor": "The editorial team",
+      "canonicalAuthor": "Amelia H. Clark",
+      "reason": "page-byline"
+    },
+    {
+      "title": "The forgotten history of the Montreal coffeehouse",
+      "link": "https://www.thetribune.ca/a-e/culture/the-forgotten-history-of-the-montreal-coffeehouse-07042026/?utm_source=rss&utm_medium=rss&utm_campaign=the-forgotten-history-of-the-montreal-coffeehouse-07042026",
+      "source": "The Tribune",
+      "fieldAuthor": "The editorial team",
+      "canonicalAuthor": "Kendyl Daley",
+      "reason": "page-byline"
+    },
+    {
+      "title": "A reflection on McGill’s science programs from graduating SciTech staff writers",
+      "link": "https://www.thetribune.ca/sci-tech/a-reflection-on-mcgills-science-programs-from-graduating-scitech-staff-writers-07042026/?utm_source=rss&utm_medium=rss&utm_campaign=a-reflection-on-mcgills-science-programs-from-graduating-scitech-staff-writers-07042026",
+      "source": "The Tribune",
+      "fieldAuthor": "The editorial team",
+      "canonicalAuthor": "The editorial team",
+      "reason": "rss-feed-default-rejected"
+    },
+    {
+      "title": "McGill investigating antisemitic vandalism in Faculty of Medicine",
+      "link": "https://www.thetribune.ca/news/mcgill-investigating-antisemitic-vandalism-in-faculty-of-medicine-07042026/?utm_source=rss&utm_medium=rss&utm_campaign=mcgill-investigating-antisemitic-vandalism-in-faculty-of-medicine-07042026",
+      "source": "The Tribune",
+      "fieldAuthor": "The editorial team",
+      "canonicalAuthor": "Yusur Al-Sharqi",
+      "reason": "page-byline"
+    },
+    {
+      "title": "Senior spotlight: Sophie Courville, Ayoub Sabri, and Erik Linseisen",
+      "link": "https://www.thetribune.ca/sports/senior-spotlight-sophie-courville-ayoub-sabri-and-erik-linseisen-07042026/?utm_source=rss&utm_medium=rss&utm_campaign=senior-spotlight-sophie-courville-ayoub-sabri-and-erik-linseisen-07042026",
+      "source": "The Tribune",
+      "fieldAuthor": "The editorial team",
+      "canonicalAuthor": "Clara Smyrski and Ivanna Zhang",
+      "reason": "page-byline"
     }
   ],
-  "fixed": 38
+  "fixed": 28
 }

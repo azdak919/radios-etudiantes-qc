@@ -1,36 +1,7 @@
 {
-  "updated": "2026-06-27T12:22:01.518Z",
-  "count": 20,
+  "updated": "2026-06-27T15:21:45.340Z",
+  "count": 16,
   "items": [
-    {
-      "name": "Quartier Libre",
-      "institution": "Université de Montréal",
-      "type": "universite",
-      "kind": "journal",
-      "networks": [
-        {
-          "type": "instagram",
-          "url": "https://www.instagram.com/quartierlibre.ca/",
-          "handle": "@quartierlibre.ca",
-          "stats": "",
-          "label": "Instagram"
-        },
-        {
-          "type": "facebook",
-          "url": "https://www.facebook.com/QuartierLibre.ca",
-          "handle": "QuartierLibre.ca",
-          "stats": "6 569 mentions J'aime",
-          "label": "Facebook"
-        },
-        {
-          "type": "x",
-          "url": "https://twitter.com/quartierlibre",
-          "handle": "@quartierlibre",
-          "stats": "",
-          "label": "X"
-        }
-      ]
-    },
     {
       "name": "Montréal Campus",
       "institution": "UQAM",
@@ -84,7 +55,7 @@
           "type": "facebook",
           "url": "https://facebook.com/ledelitfrancais",
           "handle": "ledelitfrancais",
-          "stats": "4 695 mentions J'aime",
+          "stats": "",
           "label": "Facebook"
         },
         {
@@ -113,7 +84,7 @@
           "type": "facebook",
           "url": "https://www.facebook.com/themcgilldaily",
           "handle": "themcgilldaily",
-          "stats": "7 226 mentions J'aime",
+          "stats": "",
           "label": "Facebook"
         },
         {
@@ -142,7 +113,7 @@
           "type": "facebook",
           "url": "https://facebook.com/thelinknewspaper",
           "handle": "thelinknewspaper",
-          "stats": "4 753 mentions J'aime",
+          "stats": "",
           "label": "Facebook"
         },
         {
@@ -162,28 +133,6 @@
       ]
     },
     {
-      "name": "Zone Campus",
-      "institution": "Université du Québec à Trois-Rivières",
-      "type": "universite",
-      "kind": "journal",
-      "networks": [
-        {
-          "type": "instagram",
-          "url": "https://www.instagram.com/zonecampus/",
-          "handle": "@zonecampus",
-          "stats": "",
-          "label": "Instagram"
-        },
-        {
-          "type": "facebook",
-          "url": "https://www.facebook.com/zonecampus",
-          "handle": "zonecampus",
-          "stats": "2 044 mentions J'aime",
-          "label": "Facebook"
-        }
-      ]
-    },
-    {
       "name": "L'Exemplaire",
       "institution": "Université Laval",
       "type": "universite",
@@ -193,7 +142,7 @@
           "type": "facebook",
           "url": "https://www.facebook.com/lexemplaire",
           "handle": "lexemplaire",
-          "stats": "852 mentions J'aime",
+          "stats": "",
           "label": "Facebook"
         },
         {
@@ -202,28 +151,6 @@
           "handle": "@lexemplaire",
           "stats": "Le média-école des étudiant.e.s en journalisme de l'Université Laval, Québec.",
           "label": "X"
-        }
-      ]
-    },
-    {
-      "name": "Le Collectif",
-      "institution": "Université de Sherbrooke",
-      "type": "universite",
-      "kind": "journal",
-      "networks": [
-        {
-          "type": "instagram",
-          "url": "https://www.instagram.com/jlecollectif/",
-          "handle": "@jlecollectif",
-          "stats": "",
-          "label": "Instagram"
-        },
-        {
-          "type": "facebook",
-          "url": "https://www.facebook.com/journallecollectif",
-          "handle": "journallecollectif",
-          "stats": "",
-          "label": "Facebook"
         }
       ]
     },
@@ -246,28 +173,6 @@
           "handle": "WordPresscom",
           "stats": "",
           "label": "Facebook"
-        }
-      ]
-    },
-    {
-      "name": "La Pige",
-      "institution": "Cégep de Jonquière (ATM – journalisme)",
-      "type": "cegep",
-      "kind": "journal",
-      "networks": [
-        {
-          "type": "facebook",
-          "url": "https://www.facebook.com/2008",
-          "handle": "2008",
-          "stats": "",
-          "label": "Facebook"
-        },
-        {
-          "type": "youtube",
-          "url": "https://www.youtube.com/@atmlapige",
-          "handle": "@atmlapige",
-          "stats": "",
-          "label": "YouTube"
         }
       ]
     },

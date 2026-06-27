@@ -1,88 +1,58 @@
 {
-  "updated": "2026-06-27T12:19:13.855Z",
-  "total": 211,
-  "withPhoto": 191,
-  "withStock": 19,
-  "fullyCovered": 210,
-  "leadReadyPhotos": 119,
-  "pageScraped": 35,
-  "photosRecovered": 23,
-  "imagesCleared": 15,
-  "stockSearches": 22,
-  "stockFound": 19,
+  "updated": "2026-06-27T15:20:32.245Z",
+  "total": 171,
+  "withPhoto": 156,
+  "withStock": 14,
+  "fullyCovered": 170,
+  "leadReadyPhotos": 109,
+  "pageScraped": 23,
+  "photosRecovered": 18,
+  "imagesCleared": 10,
+  "stockSearches": 15,
+  "stockFound": 14,
   "mainPageLeadReady": true,
   "gaps": [
     {
-      "title": "Un projet de loi rendrait obligatoire le statut d’étudiant·e proche aidant·e",
-      "link": "https://quartierlibre.ca/projet-loi-etudiant-proche-aidante/",
+      "title": "L’hypocrisie qui rampe à l’Assemblée nationale",
+      "link": "https://exilecvm.wordpress.com/2026/04/18/opinion-lhypocrisie-qui-rampe-a-lassemblee-nationale/",
       "reason": "stock-too-small",
-      "image": "https://live.staticflickr.com/2188/2080243782_c6ed785da4_b.jpg"
-    },
-    {
-      "title": "Coupe du monde 2026 : l’empreinte de l’expansion",
-      "link": "https://quartierlibre.ca/coupe-du-monde-2026/",
-      "reason": "stock-too-small",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Pays_organisateurs_de_la_Coupe_du_monde_de_football.png"
-    },
-    {
-      "title": "Soutien technique à l’UdeM : entre attentes et frustrations",
-      "link": "https://quartierlibre.ca/soutien-technique-a-ludem/",
-      "reason": "stock-too-small",
-      "image": "https://live.staticflickr.com/2188/2080243782_c6ed785da4_b.jpg"
-    },
-    {
-      "title": "Sports d’endurance : quand est-ce le temps de s’arrêter ?",
-      "link": "https://www.exemplaire.com.ulaval.ca/a-la-une/sports-dendurance-quand-est-ce-le-temps-de-arreter/?utm_source=rss&utm_medium=rss&utm_campaign=sports-dendurance-quand-est-ce-le-temps-de-arreter",
-      "reason": "stock-too-small",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Lyon_3e_-_Berges_du_Rh%C3%B4ne_ferm%C3%A9es_d%27acc%C3%A8s_pendant_la_pand%C3%A9mie_Covid-19_%283%29.jpg"
-    },
-    {
-      "title": "McGill community members express concerns about McGill Athletics’ former partnership with InterRent REIT",
-      "link": "https://www.thetribune.ca/news/mcgill-community-members-express-concerns-about-mcgill-athletics-former-partnership-with-interrent-reit-26042026/?utm_source=rss&utm_medium=rss&utm_campaign=mcgill-community-members-express-concerns-about-mcgill-athletics-former-partnership-with-interrent-reit-26042026",
-      "reason": "stock-too-small",
-      "image": "https://live.staticflickr.com/3663/3377476500_a60aee762a_b.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/4/47/Assembl%C3%A9e_nationale_du_Qu%C3%A9bec%2C_l%27H%C3%B4tel_du_Parlement%2C_fa%C3%A7ade_avec_ancien_entr%C3%A9_principal.jpg"
     },
     {
       "title": "Sad endings do not ruin a great story: Haliburton, Vanmoen, and Carlyle",
       "link": "https://www.thetribune.ca/sports/sad-endings-do-not-ruin-a-great-story-haliburton-vanmoen-and-carlyle-18042026/?utm_source=rss&utm_medium=rss&utm_campaign=sad-endings-do-not-ruin-a-great-story-haliburton-vanmoen-and-carlyle-18042026",
       "reason": "stock-too-small",
-      "image": "https://live.staticflickr.com/4227/34367887930_5123b4f230_b.jpg"
-    },
-    {
-      "title": "How can I show you I’m doing better if there’s nothing good for me to do?",
-      "link": "https://www.thetribune.ca/features/how-can-i-show-you-im-doing-better-if-theres-nothing-good-for-me-to-do/?utm_source=rss&utm_medium=rss&utm_campaign=how-can-i-show-you-im-doing-better-if-theres-nothing-good-for-me-to-do",
-      "reason": "no-stock-match",
-      "image": "https://www.thetribune.ca/wp-content/uploads/2026/04/Design-sans-titre.png"
-    },
-    {
-      "title": "Your health, your problem",
-      "link": "https://www.thetribune.ca/features/your-health-your-problem/?utm_source=rss&utm_medium=rss&utm_campaign=your-health-your-problem",
-      "reason": "no-stock-match",
-      "image": "https://www.thetribune.ca/wp-content/uploads/2026/04/bottle.png"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/4/4a/Journal_of_Controversial_Ideas_Volume_01_Issue_01_%28April_2021%29_10_Ultimate_Meaning_-_We_Don%E2%80%99t_Have_It%2C_We_Can%E2%80%99t_Get_It%2C_and_We_Should_Be_Very%2C_Very_Sad.pdf"
     },
     {
       "title": "Open Letter: How can I show you I’m doing better if there’s nothing good for me to do?",
       "link": "https://www.thetribune.ca/opinion/letters-to-the-editor/open-letter-how-can-i-show-you-im-doing-better-if-theres-nothing-good-for-me-to-do-07042026/?utm_source=rss&utm_medium=rss&utm_campaign=open-letter-how-can-i-show-you-im-doing-better-if-theres-nothing-good-for-me-to-do-07042026",
       "reason": "stock-too-small",
-      "image": "https://live.staticflickr.com/32/37864655_f331e2b291_b.jpg"
-    },
-    {
-      "title": "From the rink to the links",
-      "link": "https://thebucampus.ca/2026/04/06/from-the-rink-to-the-links/",
-      "reason": "stock-too-small",
-      "image": "https://live.staticflickr.com/5169/5227511747_4f038c93a1_b.jpg"
-    },
-    {
-      "title": "Gaiters wrap up hard-fought season with eyes on next year",
-      "link": "https://thebucampus.ca/2026/03/23/gaiters-wrap-up-hard-fought-season-with-eyes-on-next-year/",
-      "reason": "stock-too-small",
-      "image": "https://live.staticflickr.com/65535/52482871333_8e9c76354e_b.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/c/c7/2026-01-10_Dresdner_Eisl%C3%B6wen_gegen_Eisb%C3%A4ren_Berlin_%28DEL_Winter_Game_2026%2C_Deutsche_Eishockey-Liga_2025-26%29_by_Sandro_Halank%E2%80%93037.jpg"
     },
     {
       "title": "The 2026 WSB Recognition Gala heads to the Gait",
       "link": "https://thebucampus.ca/2026/03/23/the-2026-wsb-recognition-gala-heads-to-the-gait/",
       "reason": "no-stock-match",
       "image": null
+    },
+    {
+      "title": "CampusCarService cuts maintenance costs for students while building hands-on experience",
+      "link": "https://thebucampus.ca/2026/03/23/campuscarservice-cuts-maintenance-costs-for-students-while-building-hands-on-experience/",
+      "reason": "stock-too-small",
+      "image": "https://live.staticflickr.com/4710/39057462334_34d0fdb580_b.jpg"
+    },
+    {
+      "title": "Le pays avant tout – esquisse",
+      "link": "https://exilecvm.wordpress.com/2026/02/28/le-pays-avant-tout-esquisse/",
+      "reason": "stock-too-small",
+      "image": "https://live.staticflickr.com/65535/46960528705_5d91999525_b.jpg"
+    },
+    {
+      "title": "Oui au budget, oui au programme FIL et non à la grève",
+      "link": "https://exilecvm.wordpress.com/2026/02/07/oui-au-budget-oui-au-programme-fil-et-non-a-la-greve/",
+      "reason": "stock-too-small",
+      "image": "https://live.staticflickr.com/65535/49697937611_3cb1379f22_b.jpg"
     }
   ]
 }

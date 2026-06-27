@@ -1,31 +1,17 @@
 {
-  "updated": "2026-06-27T12:20:26.933Z",
-  "total": 211,
-  "withImage": 191,
-  "withCredit": 191,
-  "cited": 61,
+  "updated": "2026-06-27T15:20:52.905Z",
+  "total": 171,
+  "withImage": 156,
+  "withCredit": 156,
+  "cited": 46,
   "pending": 3,
   "missingHero": 0,
   "ok": false,
-  "checked": 88,
-  "updatedCount": 85,
-  "citedNew": 21,
-  "fallbackNew": 67,
+  "checked": 27,
+  "updatedCount": 24,
+  "citedNew": 8,
+  "fallbackNew": 19,
   "samples": [
-    {
-      "title": "Ask the Trib: How do I survive summer in my hometown?",
-      "source": "The Tribune",
-      "credit": "Photo credit: The Tribune",
-      "cited": false,
-      "method": null
-    },
-    {
-      "title": "Kanga I, II, III’ brings Projections: SANKOFA’s afrofuturist vision to Trottier",
-      "source": "The Tribune",
-      "credit": "Photo credit: The Tribune",
-      "cited": false,
-      "method": null
-    },
     {
       "title": "AI’s use in legal decisions poses major risks to the Canadian judicial system’s integrity and neutrality",
       "source": "The Tribune",
@@ -34,37 +20,9 @@
       "method": null
     },
     {
-      "title": "Road to the 2026 FIFA World Cup",
-      "source": "The Link",
-      "credit": "Photo credit: The Link",
-      "cited": false,
-      "method": null
-    },
-    {
-      "title": "Les grands oubliés du handicap : les proches aidants",
-      "source": "La Pige",
-      "credit": "Photo : Mathilde Bellon",
-      "cited": true,
-      "method": "wp-caption"
-    },
-    {
       "title": "Know Your Artist: Theodore A. Harris",
       "source": "The Tribune",
       "credit": "Photo credit: The Tribune",
-      "cited": false,
-      "method": null
-    },
-    {
-      "title": "Artemis II takes over Place-des-Arts",
-      "source": "The Link",
-      "credit": "Photo credit: The Link",
-      "cited": false,
-      "method": null
-    },
-    {
-      "title": "CSU rejects motion for Israel and Jewish solidarity fund ad hoc committee",
-      "source": "The Link",
-      "credit": "Photo credit: The Link",
       "cited": false,
       "method": null
     },
@@ -76,23 +34,65 @@
       "method": null
     },
     {
-      "title": "Un hommage aux cyclistes décédés sur les routes",
-      "source": "La Pige",
-      "credit": "Crédit photo : La Pige",
+      "title": "A final note from the Editor-in-Chief of Volume 45, for the record",
+      "source": "The Tribune",
+      "credit": "Photo credit: The Tribune",
       "cited": false,
       "method": null
     },
     {
-      "title": "Une page se tourne au Salon L’image de Jonquière",
-      "source": "La Pige",
-      "credit": "Photo : Julianne Pilon",
-      "cited": true,
-      "method": "body-line"
+      "title": "SPHR remembers Gaza Solidarity Encampment ahead of Nakba Anniversary Protest",
+      "source": "The Tribune",
+      "credit": "Photo credit: The Tribune",
+      "cited": false,
+      "method": null
     },
     {
-      "title": "Un investissement pour les jeunes « bienvenu » au Centre Mamik",
-      "source": "La Pige",
-      "credit": "Crédit photo : La Pige",
+      "title": "Derrière les étiquettes électroniques, la tarification dynamique ?",
+      "source": "L'Exemplaire",
+      "credit": "Photo : Thomas Harton",
+      "cited": true,
+      "method": "json-ld"
+    },
+    {
+      "title": "Rachat des armes à feu : le Québec est-il l’exception canadienne ?",
+      "source": "L'Exemplaire",
+      "credit": "Crédit photo : L'Exemplaire",
+      "cited": false,
+      "method": null
+    },
+    {
+      "title": "Les jeunes et les médias d’actualité : une confiance de plus en plus érodée",
+      "source": "L'Exemplaire",
+      "credit": "Crédit photo : L'Exemplaire",
+      "cited": false,
+      "method": null
+    },
+    {
+      "title": "Achat de seconde main : une mode dans la mode ?",
+      "source": "L'Exemplaire",
+      "credit": "Crédit photo : L'Exemplaire",
+      "cited": false,
+      "method": null
+    },
+    {
+      "title": "Le NPD : soigne-t-il sa gauche ou se radicalise-t-il ?",
+      "source": "L'Exemplaire",
+      "credit": "Photo : Horst Ehricht / Bibliothèque et Archives Canada",
+      "cited": true,
+      "method": "figcaption"
+    },
+    {
+      "title": "Le NPD : soigne-t-il sa gauche ou se radicalise -t-il ?",
+      "source": "L'Exemplaire",
+      "credit": "Photo : Horst Ehricht / Bibliothèque et Archives Canada",
+      "cited": true,
+      "method": "figcaption"
+    },
+    {
+      "title": "Skibidi Tentafruit ou quand l’ IA accentue les stéréotypes",
+      "source": "L'Exemplaire",
+      "credit": "Crédit photo : L'Exemplaire",
       "cited": false,
       "method": null
     }

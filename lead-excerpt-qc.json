@@ -1,59 +1,14 @@
 {
-  "updated": "2026-06-27T12:14:21.945Z",
-  "total": 211,
-  "pool": 76,
-  "incomplete": 45,
-  "withLeadExcerpt": 56,
-  "candidates": 35,
-  "enriched": 14,
-  "failed": 10,
+  "updated": "2026-06-27T15:17:56.360Z",
+  "total": 171,
+  "pool": 61,
+  "incomplete": 28,
+  "withLeadExcerpt": 57,
+  "candidates": 28,
+  "enriched": 17,
+  "failed": 1,
   "ok": true,
   "samples": [
-    {
-      "title": "Résumé du G7 à Évian",
-      "link": "https://lecollectif.ca/a-la-une/resume-du-g7-a-evian/",
-      "ok": true,
-      "score": 100,
-      "chars": 447,
-      "sample": "Les personnes dirigeantes du G7 étaient réunies à Évian-les-Bains, en France, du 15 au 17 juin 2026.",
-      "changed": false
-    },
-    {
-      "title": "Le PIF s’internationalise pour sa 49e édition",
-      "link": "https://lecollectif.ca/a-la-une/le-pif-sinternationalise-pour-sa-49e-edition/",
-      "ok": true,
-      "score": 100,
-      "chars": 591,
-      "sample": "Le plus grand tournoi de balle donnée en Amérique du Nord accueille cette année une vague de joueurs",
-      "changed": false
-    },
-    {
-      "title": "Sans fin(s) : au cœur des troubles du comportement alimentaire",
-      "link": "https://www.exemplaire.com.ulaval.ca/a-la-une/sans-fins-au-coeur-des-troubles-du-comportement-alimentaire/",
-      "ok": true,
-      "score": 100,
-      "chars": 226,
-      "sample": "À travers un balado intime et sans jugement, ces deux journalistes brisent le silence sur l’anorexie",
-      "changed": true
-    },
-    {
-      "title": "L’ alcool est-il vraiment le nouveau tabac ?",
-      "link": "https://www.exemplaire.com.ulaval.ca/a-la-une/lalcool-est-il-vraiment-le-nouveau-tabac/",
-      "ok": true,
-      "score": 100,
-      "chars": 417,
-      "sample": "Il fut un temps où le tabac était partout, jusque dans les hôpitaux et les écoles. Aujourd’hui, son ",
-      "changed": true
-    },
-    {
-      "title": "Derrière les étiquettes électroniques , la tarification dynamique ?",
-      "link": "https://www.exemplaire.com.ulaval.ca/a-la-une/derriere-les-etiquettes-electroniques-la-tarification-dynamique/",
-      "ok": true,
-      "score": 100,
-      "chars": 390,
-      "sample": "Connue pour ses effets parfois délirants sur les prix des billets électroniques — évènements culture",
-      "changed": true
-    },
     {
       "title": "Rachat des armes à feu : le Québec est-il l’ exception canadienne ?",
       "link": "https://www.exemplaire.com.ulaval.ca/a-la-une/rachat-des-armes-a-feu-le-quebec-est-il-lexception-canadienne/",
@@ -61,25 +16,70 @@
       "score": 100,
       "chars": 455,
       "sample": "Le programme fédéral de rachat des armes à feu suit son cours au Canada. Alors que les propriétaires",
-      "changed": true
+      "changed": false
     },
     {
-      "title": "Les jeunes et les médias d’actualité : une confiance de plus en plus érodée",
-      "link": "https://www.exemplaire.com.ulaval.ca/a-la-une/les-jeunes-et-les-medias-dactualite-une-confiance-de-plus-en-plus-erodee/",
+      "title": "Au revoir !",
+      "link": "https://www.delitfrancais.com/2026/03/25/au-revoir/",
       "ok": true,
       "score": 100,
-      "chars": 370,
-      "sample": "La confiance des 18 à 34 ans envers les médias traditionnels est en recul constant depuis une dizain",
-      "changed": true
+      "chars": 606,
+      "sample": "Cette semaine marque la dernière édition du semestre – déjà. Ça passe vite, huit éditions ! Cette an",
+      "changed": false
     },
     {
-      "title": "Achat de seconde main : une mode dans la mode ?",
-      "link": "https://www.exemplaire.com.ulaval.ca/a-la-une/achat-de-seconde-main-une-mode-dans-la-mode/",
+      "title": "La cassette commence à être usée",
+      "link": "https://www.delitfrancais.com/2026/03/25/la-cassette-commence-a-etre-usee/",
       "ok": true,
       "score": 100,
-      "chars": 341,
-      "sample": "Les articles de seconde main ont le vent en poupe sur les réseaux sociaux. Les boutiques d'occasion ",
-      "changed": true
+      "chars": 577,
+      "sample": "Dans son entrevue, M. Lander, un habitué de la télévision de langue anglaise (et économiste à ses he",
+      "changed": false
+    },
+    {
+      "title": "Ce que nous devons aux femmes",
+      "link": "https://www.delitfrancais.com/2026/03/18/ce-que-nous-devons-aux-femmes/",
+      "ok": true,
+      "score": 100,
+      "chars": 613,
+      "sample": "On n’est jamais véritablement à l’abri, même avec des politiciens bien intentionnés. Simon Jolin-Bar",
+      "changed": false
+    },
+    {
+      "title": "Les femmes MAGA au service du patriarcat",
+      "link": "https://www.delitfrancais.com/2026/03/18/les-femmes-maga-au-service-du-patriarcat/",
+      "ok": true,
+      "score": 96,
+      "chars": 572,
+      "sample": "L a montée en puissance de l’idéologie du mouvement politique Make America Great Again (MAGA) n’est ",
+      "changed": false
+    },
+    {
+      "title": "Le programme de bourses Montréal Campus reconduit",
+      "link": "https://montrealcampus.ca/2025/02/05/le-programme-de-bourse-montreal-campus-reconduit/",
+      "ok": true,
+      "score": 100,
+      "chars": 899,
+      "sample": "En avril, six bourses seront remises pour féliciter le contenu des journalistes du Montréal Campus .",
+      "changed": false
+    },
+    {
+      "title": "Ask the Trib: How do I survive summer in my hometown?",
+      "link": "https://www.thetribune.ca/student-life/ask-the-trib-how-do-i-survive-summer-in-my-hometown-26062026/?utm_source=rss&utm_medium=rss&utm_campaign=ask-the-trib-how-do-i-survive-summer-in-my-hometown-26062026",
+      "ok": true,
+      "score": 96,
+      "chars": 474,
+      "sample": "Since returning to my hometown from McGill a little over a month ago, I’ve been so extremely bored. ",
+      "changed": false
+    },
+    {
+      "title": "AI’s use in legal decisions poses major risks to the Canadian judicial system’s integrity and neutrality",
+      "link": "https://www.thetribune.ca/opinion/ais-use-in-legal-decisions-poses-major-risks-to-the-canadian-judicial-systems-integrity-and-neutrality-11062026/?utm_source=rss&utm_medium=rss&utm_campaign=ais-use-in-legal-decisions-poses-major-risks-to-the-canadian-judicial-systems-integrity-and-neutrality-11062026",
+      "ok": true,
+      "score": 100,
+      "chars": 426,
+      "sample": "On April 22, the Superior Court of Quebec annulled the August 2025 arbitration Association des Resso",
+      "changed": false
     }
   ]
 }
