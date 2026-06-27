@@ -318,23 +318,16 @@ a { color: inherit; }
   overflow: hidden;
   text-overflow: ellipsis;
 }
-@media (max-width: 1099.98px) {
-  .tuner-now-sub-rotate.is-rotating > .tuner-now-sub {
-    opacity: 0;
-    transition: opacity 0.55s ease;
-    pointer-events: none;
-  }
-  .tuner-now-sub-rotate.is-rotating > .tuner-now-sub.is-active {
-    opacity: 1;
-  }
-  .tuner-now-sub-rotate:not(.is-rotating) > .tuner-now-sub--air {
-    display: none;
-  }
+.tuner-now-sub-rotate.is-rotating > .tuner-now-sub {
+  opacity: 0;
+  transition: opacity 0.55s ease;
+  pointer-events: none;
 }
-@media (min-width: 1100px) {
-  .tuner-now-sub--air {
-    display: none;
-  }
+.tuner-now-sub-rotate.is-rotating > .tuner-now-sub.is-active {
+  opacity: 1;
+}
+.tuner-now-sub-rotate:not(.is-rotating) > .tuner-now-sub--air {
+  display: none;
 }
 .tuner-now-sub-text {
   display: inline-block;
@@ -538,69 +531,6 @@ a { color: inherit; }
   .tuner-vol-slot { transition: none; }
 }
 
-.tuner-nowair {
-  display: none;
-  flex-shrink: 1;
-  align-items: flex-start;
-  gap: 10px;
-  min-width: 0;
-  max-width: 340px;
-  padding-left: 14px;
-  border-left: 1px solid rgba(255, 255, 255, 0.12);
-}
-
-.tuner-nowair-label {
-  flex-shrink: 0;
-  margin-top: 2px;
-  font-size: 9px;
-  font-weight: 800;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.38);
-  white-space: nowrap;
-}
-
-.tuner-nowair-body {
-  min-width: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-
-.tuner-nowair-title {
-  margin: 0;
-  font-family: var(--serif);
-  font-size: 13px;
-  font-weight: 600;
-  line-height: 1.2;
-  color: var(--radio-bright);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.tuner.is-playing .tuner-nowair-title {
-  color: #ff9a90;
-}
-
-.tuner-nowair-sub {
-  margin: 0;
-  font-size: 10px;
-  font-weight: 500;
-  line-height: 1.25;
-  color: rgba(255, 255, 255, 0.48);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-/* État « rien de syntonisé » : invitation discrète à choisir un poste. */
-.tuner-nowair.is-empty .tuner-nowair-title {
-  font-style: italic;
-  font-weight: 500;
-  color: rgba(255, 255, 255, 0.55);
-}
-
 @media (min-width: 1100px) {
   .tuner-inner {
     max-width: 1180px;
@@ -613,19 +543,9 @@ a { color: inherit; }
   }
 
   .tuner-dial {
-    flex: 0 0 280px;
-    width: 280px;
-  }
-
-  .tuner-nowair {
-    display: flex;
-    /* Largeur calée sur la colonne « En bref » (grid-column 2 : minmax(300px, 370px))
-       pour que le bandeau « À l'antenne » reste à la même position quand on change
-       de poste, au lieu de glisser selon la longueur du titre. */
-    flex: 0 0 370px;
-    width: 370px;
-    max-width: 370px;
-    margin-left: auto;
+    flex: 1 1 360px;
+    width: auto;
+    max-width: 480px;
   }
 
   .masthead-inner {

@@ -225,14 +225,10 @@ const TUNER_PLAY     = document.getElementById('tuner-play');
 const TUNER_NAME     = document.getElementById('tuner-now-name');
 const TUNER_SUB      = document.getElementById('tuner-now-sub');
 const TUNER_SUB_AIR  = document.getElementById('tuner-now-sub-air');
-const TUNER_SUB_ROTATE_MQ = window.matchMedia?.('(max-width: 1099.98px)');
 const TUNER_VOLUME   = document.getElementById('tuner-volume');
 const TUNER_VOL      = document.getElementById('tuner-vol');
 const TUNER_VOL_TOGGLE = document.getElementById('tuner-vol-toggle');
 const VOL_COMPACT    = window.matchMedia('(max-width: 679.98px)');
-const TUNER_NOWAIR = document.getElementById('tuner-nowair');
-const TUNER_NOWAIR_TITLE = document.getElementById('tuner-nowair-title');
-const TUNER_NOWAIR_SUB = document.getElementById('tuner-nowair-sub');
 const ICO_PLAY       = TUNER_PLAY.querySelector('.ico-play');
 const ICO_PAUSE      = TUNER_PLAY.querySelector('.ico-pause');
 const ICO_EXTERNAL   = TUNER_PLAY.querySelector('.ico-external');
@@ -548,7 +544,7 @@ function nowAirLines(radio) {
   return { title: `Vous écoutez ${radio.name}`, sub: slogan };
 }
 
-/** Une seule ligne « À l'antenne » pour la rotation mobile du sous-titre. */
+/** Une seule ligne « À l'antenne » pour la rotation du sous-titre. */
 function formatNowAirSubLine(title, sub, empty) {
   if (empty) return 'Les radios étudiantes jouent en direct, 24/7';
   if (sub) return `${title} · ${sub}`;
@@ -556,7 +552,7 @@ function formatNowAirSubLine(title, sub, empty) {
 }
 
 function isTunerSubRotateMode() {
-  return !!(TUNER_SUB_ROTATE_MQ?.matches && !PREFERS_REDUCED_MOTION?.matches);
+  return !PREFERS_REDUCED_MOTION?.matches;
 }
 
 function stopTunerSubRotate() {
@@ -583,8 +579,8 @@ function setTunerSubRotateActive(showAir) {
 }
 
 /**
- * Sur mobile/tablette, alterne doucement fréquence · institution et « À l'antenne »
- * dans la ligne du bas du syntoniseur (le module latéral reste masqué).
+ * Alterne doucement fréquence · institution et « À l'antenne » dans la ligne du bas
+ * du syntoniseur (mobile et ordinateur).
  */
 function syncTunerSubRotate(title, sub, empty) {
   if (!TUNER_SUB || !TUNER_SUB_AIR) return;
@@ -598,8 +594,7 @@ function syncTunerSubRotate(title, sub, empty) {
     TUNER_SUB.setAttribute('aria-hidden', 'false');
     TUNER_SUB_AIR.setAttribute('aria-hidden', 'true');
 
-    const mobileReduced = TUNER_SUB_ROTATE_MQ?.matches && PREFERS_REDUCED_MOTION?.matches;
-    if (mobileReduced && currentStation) {
+    if (currentStation) {
       applyMarquee(TUNER_SUB, tunerSubAirText);
     } else if (tunerSubMeta) {
       applyMarquee(TUNER_SUB, tunerSubMeta);
@@ -631,18 +626,14 @@ function onTunerSubRotateLayoutChange() {
 }
 
 function initTunerSubRotateListeners() {
-  TUNER_SUB_ROTATE_MQ?.addEventListener?.('change', onTunerSubRotateLayoutChange);
   PREFERS_REDUCED_MOTION?.addEventListener?.('change', onTunerSubRotateLayoutChange);
 }
 
 function renderTunerNowAir() {
-  if (!TUNER_NOWAIR) return;
   let title;
   let sub;
   const empty = !currentStation;
   if (empty) {
-    // Rien de syntonisé : on garde le bandeau visible sur ordinateur (masqué
-    // sur mobile par le CSS), sur deux lignes — invitation à syntoniser.
     title = 'Syntoniser un poste';
     sub = 'Les radios étudiantes jouent en direct, 24/7';
   } else {
@@ -655,15 +646,6 @@ function renderTunerNowAir() {
     return;
   }
   lastNowAir = { title, sub, empty };
-
-  TUNER_NOWAIR.classList.remove('hidden');
-  TUNER_NOWAIR.classList.toggle('is-empty', empty);
-  applyMarquee(TUNER_NOWAIR_TITLE, title);
-  if (TUNER_NOWAIR_SUB) {
-    TUNER_NOWAIR_SUB.classList.toggle('hidden', !sub);
-    if (sub) applyMarquee(TUNER_NOWAIR_SUB, sub);
-    else TUNER_NOWAIR_SUB.replaceChildren();
-  }
   syncTunerSubRotate(title, sub, empty);
 }
 
