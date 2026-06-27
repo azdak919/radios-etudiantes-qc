@@ -225,7 +225,9 @@ const TUNER_PLAY     = document.getElementById('tuner-play');
 const TUNER_NAME     = document.getElementById('tuner-now-name');
 const TUNER_SUB      = document.getElementById('tuner-now-sub');
 const TUNER_VOLUME   = document.getElementById('tuner-volume');
-const TUNER_STATIONS = document.getElementById('tuner-stations');
+const TUNER_NOWAIR = document.getElementById('tuner-nowair');
+const TUNER_NOWAIR_TITLE = document.getElementById('tuner-nowair-title');
+const TUNER_NOWAIR_SUB = document.getElementById('tuner-nowair-sub');
 const ICO_PLAY       = TUNER_PLAY.querySelector('.ico-play');
 const ICO_PAUSE      = TUNER_PLAY.querySelector('.ico-pause');
 const ICO_EXTERNAL   = TUNER_PLAY.querySelector('.ico-external');
@@ -260,6 +262,8 @@ let audio = null;
 let suppressAudioError = false;
 let listenWindow = null;
 let listenWindowId = null;
+let radioNowPlaying = { stations: {}, updatedAt: null };
+let nowPlayingPollTimer = null;
 let sourceColors = {};     // source name → accent colour
 let brandColors = { institutions: {}, fallback_palette: ['#003DA5', '#6C2163', '#047857'] };
 
@@ -293,14 +297,16 @@ async function init() {
     newsSourcesByName = {};
   }
 
-  const [radiosData] = await Promise.allSettled([
+  const [radiosData, nowPlayingData] = await Promise.allSettled([
     fetch('./radios.json').then((r) => r.json()),
+    fetch('./radio-nowplaying.json').then((r) => r.json()),
     loadNews(),
   ]);
 
   radios = radiosData.status === 'fulfilled' ? sortRadios(radiosData.value) : [];
+  radioNowPlaying = nowPlayingData.status === 'fulfilled' ? nowPlayingData.value : { stations: {} };
   buildTunerOptions();
-  buildTunerStations();
+  renderTunerNowAir();
   restoreVolume();
   registerServiceWorker();
 }
@@ -368,155 +374,71 @@ function tunerShouldAutoplayNative(next) {
   return !!(currentStation && isExternalListen(currentStation));
 }
 
-const TUNER_CAROUSEL_VISIBLE = 4;
-let carouselViewportBound = false;
-
 function radioPopularityRank(radio = {}) {
   return typeof radio.popularity === 'number' ? radio.popularity : 50;
 }
 
-function radioAccentColor(radio) {
-  if (!radio) return null;
-  const fromBrand = institutionBrandColor(radio.institution);
-  if (fromBrand) return fromBrand;
-  const palette = brandColors.fallback_palette || ['#003DA5', '#6C2163', '#047857'];
-  const idx = radios.findIndex((r) => r.id === radio.id);
-  return palette[Math.max(0, idx) % palette.length];
+function radioSlogan(radio = {}) {
+  return String(radio.slogan || '').trim()
+    || String(radio.description || '').split('.')[0]?.trim()
+    || '';
 }
 
-function playableRadios() {
-  return sortPlayableRadios(radios.filter((r) => getPlayableStream(r)));
+function nowPlayingEntry(radio) {
+  return radio?.id ? radioNowPlaying.stations?.[radio.id] : null;
 }
 
-function sortPlayableRadios(list = []) {
-  return [...list].sort((a, b) => {
-    const diff = radioPopularityRank(a) - radioPopularityRank(b);
-    return diff !== 0 ? diff : a.name.localeCompare(b.name, 'fr');
-  });
+function nowAirShowTitle(radio) {
+  const title = String(nowPlayingEntry(radio)?.showTitle || '').trim();
+  return title.length >= 3 ? title : '';
 }
 
-function tunerStationBtnHtml(r) {
-  return `
-    <button type="button" class="tuner-station-btn" data-id="${escapeHtml(r.id)}"
-      style="--c: ${escapeHtml(radioAccentColor(r))}"
-      title="${escapeHtml(r.fullName || r.name)} · ${escapeHtml(r.institution)}">
-      <span class="tuner-station-call">${escapeHtml(r.name.replace(/\s+FM.*/i, '').trim())}</span>
-      <span class="tuner-station-inst">${escapeHtml(shortInstitution(r.institution, r.type))}</span>
-    </button>`;
+function nowAirLines(radio) {
+  const show = nowAirShowTitle(radio);
+  const slogan = radioSlogan(radio);
+  if (show) {
+    return {
+      title: show,
+      sub: slogan || `Vous écoutez ${radio.name}`,
+    };
+  }
+  return {
+    title: `Vous écoutez ${radio.name}`,
+    sub: slogan,
+  };
 }
 
-function mountTunerStationButtons() {
-  if (!TUNER_STATIONS) return;
-  TUNER_STATIONS.querySelectorAll('.tuner-station-btn').forEach((btn) => {
-    btn.addEventListener('click', () => {
-      TUNER_SELECT.value = btn.dataset.id;
-      selectStation(btn.dataset.id, { autoplay: true });
-    });
-  });
-  updateTunerStationsUI();
-}
-
-function renderTunerStationsCarousel(playable = []) {
-  if (!TUNER_STATIONS) return;
-  TUNER_STATIONS.innerHTML = `
-    <span class="tuner-stations-label">Sur RADAR</span>
-    <div class="tuner-stations-viewport">
-      <div class="tuner-stations-track" role="group" aria-label="Écoute directe">
-        ${playable.map((r) => tunerStationBtnHtml(r)).join('')}
-      </div>
-    </div>
-  `;
-  mountTunerStationButtons();
-  bindCarouselViewport();
-  requestAnimationFrame(() => {
-    sizeCarouselViewport();
-    if (currentStation?.id && getPlayableStream(currentStation)) {
-      revealCarouselStation(currentStation.id, { smooth: false });
-    }
-  });
-}
-
-function sizeCarouselViewport() {
-  const viewport = TUNER_STATIONS?.querySelector('.tuner-stations-viewport');
-  const buttons = [...(TUNER_STATIONS?.querySelectorAll('.tuner-station-btn') || [])];
-  if (!viewport || !buttons.length) return;
-
-  if (buttons.length <= TUNER_CAROUSEL_VISIBLE) {
-    viewport.style.maxWidth = '';
-    viewport.classList.remove('is-scrollable');
+function renderTunerNowAir() {
+  if (!TUNER_NOWAIR) return;
+  if (!currentStation) {
+    TUNER_NOWAIR.classList.add('hidden');
     return;
   }
-
-  const styles = getComputedStyle(viewport);
-  const gap = parseFloat(styles.columnGap || styles.gap || '6') || 6;
-  let width = 0;
-  const visible = Math.min(TUNER_CAROUSEL_VISIBLE, buttons.length);
-  for (let i = 0; i < visible; i += 1) {
-    width += buttons[i].offsetWidth;
-    if (i > 0) width += gap;
+  const { title, sub } = nowAirLines(currentStation);
+  TUNER_NOWAIR.classList.remove('hidden');
+  if (TUNER_NOWAIR_TITLE) TUNER_NOWAIR_TITLE.textContent = title;
+  if (TUNER_NOWAIR_SUB) {
+    TUNER_NOWAIR_SUB.textContent = sub;
+    TUNER_NOWAIR_SUB.classList.toggle('hidden', !sub);
   }
-  viewport.style.maxWidth = `${Math.ceil(width)}px`;
-  viewport.classList.add('is-scrollable');
 }
 
-function revealCarouselStation(id, { smooth = true } = {}) {
-  if (!id || !TUNER_STATIONS) return;
-  const viewport = TUNER_STATIONS.querySelector('.tuner-stations-viewport');
-  const btn = viewport?.querySelector(`.tuner-station-btn[data-id="${id}"]`);
-  if (!viewport || !btn) return;
-
-  const btnLeft = btn.offsetLeft;
-  const btnRight = btnLeft + btn.offsetWidth;
-  const viewLeft = viewport.scrollLeft;
-  const viewRight = viewLeft + viewport.clientWidth;
-  if (btnLeft >= viewLeft - 1 && btnRight <= viewRight + 1) return;
-
-  const target = btnLeft < viewLeft
-    ? btnLeft
-    : btnRight - viewport.clientWidth;
-  const motion = smooth && !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  viewport.scrollTo({
-    left: Math.max(0, target),
-    behavior: motion ? 'smooth' : 'instant',
-  });
-}
-
-function bindCarouselViewport() {
-  if (carouselViewportBound) return;
-  carouselViewportBound = true;
-  let resizeTimer;
-  window.addEventListener('resize', () => {
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(() => {
-      sizeCarouselViewport();
-      if (currentStation?.id && getPlayableStream(currentStation)) {
-        revealCarouselStation(currentStation.id, { smooth: false });
-      }
-    }, 120);
-  });
-}
-
-function buildTunerStations() {
-  if (!TUNER_STATIONS) return;
-  const playable = playableRadios();
-  if (!playable.length) {
-    TUNER_STATIONS.innerHTML = '';
-    return;
+async function refreshNowPlayingCache() {
+  try {
+    radioNowPlaying = await fetch('./radio-nowplaying.json').then((r) => r.json());
+    renderTunerNowAir();
+  } catch {
+    /* ignore */
   }
-
-  renderTunerStationsCarousel(playable);
 }
 
-function updateTunerStationsUI() {
-  if (!TUNER_STATIONS) return;
-  TUNER_STATIONS.querySelectorAll('.tuner-station-btn').forEach(btn => {
-    const active = currentStation?.id === btn.dataset.id;
-    btn.classList.toggle('is-active', active);
-    btn.classList.toggle('is-playing', active && isPlaying());
-    btn.setAttribute('aria-pressed', active ? 'true' : 'false');
-  });
-  if (currentStation?.id && getPlayableStream(currentStation)) {
-    requestAnimationFrame(() => revealCarouselStation(currentStation.id));
+function syncNowPlayingPoll() {
+  if (nowPlayingPollTimer) {
+    clearInterval(nowPlayingPollTimer);
+    nowPlayingPollTimer = null;
+  }
+  if (currentStation && getPlayableStream(currentStation) && isPlaying()) {
+    nowPlayingPollTimer = setInterval(refreshNowPlayingCache, 180000);
   }
 }
 
@@ -679,7 +601,8 @@ function updatePlayUI() {
   TUNER_PLAY.classList.toggle('is-external', external && !playing);
   TUNER.classList.toggle('is-playing', playing);
   TUNER.classList.toggle('is-external', external && !playing);
-  updateTunerStationsUI();
+  renderTunerNowAir();
+  syncNowPlayingPoll();
 }
 
 // ─── Audio engine ──────────────────────────────────────────────────────────────

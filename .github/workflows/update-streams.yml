@@ -31,10 +31,13 @@ jobs:
         env:
           CI: true
 
+      - name: Fetch now-playing metadata
+        run: node scripts/fetch-radio-nowplaying.js --update
+
       - name: Check for changes
         id: check
         run: |
-          if git diff --quiet radios.json radios-candidates.json; then
+          if git diff --quiet radios.json radios-candidates.json radio-nowplaying.json; then
             echo "changed=false" >> $GITHUB_OUTPUT
           else
             echo "changed=true" >> $GITHUB_OUTPUT
@@ -45,7 +48,7 @@ jobs:
         run: |
           git config user.name "RÉQ Stream Bot"
           git config user.email "actions@users.noreply.github.com"
-          git add radios.json radios-candidates.json
+          git add radios.json radios-candidates.json radio-nowplaying.json
           git commit -m "bot: update discovered streams (auto)"
           # Rebase onto any work pushed since checkout so the bot never
           # clobbers manual commits and never fails on a fast-forward race.

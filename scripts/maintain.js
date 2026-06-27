@@ -226,6 +226,7 @@ async function main() {
     ['Media scanner (gaps)', `node scripts/scan-media.js ${flag}`.trim()],
     ['News source maintainer', `node scripts/discover-news-sources.js ${flag}`.trim()],
     ['Stream tracker + radio promotion', `node scripts/discover-streams.js ${flag}`.trim()],
+    ['Radio now-playing metadata', `node scripts/fetch-radio-nowplaying.js ${flag}`.trim()],
     ['News sources verify', 'node scripts/verify-news-sources.js'],
     ['News aggregator', `node scripts/fetch-news.js ${flag}`.trim()],
     ['Author QC', `node scripts/verify-authors.js ${flag}`.trim()],

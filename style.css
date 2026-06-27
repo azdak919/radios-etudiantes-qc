@@ -367,16 +367,20 @@ a { color: inherit; }
 .tuner-vol .ico-vol { width: 16px; height: 16px; }
 .tuner-volume { width: 72px; accent-color: var(--radio-bright); cursor: pointer; }
 
-.tuner-stations {
+.tuner-nowair {
   display: none;
-  flex-shrink: 0;
-  align-items: center;
+  flex-shrink: 1;
+  align-items: flex-start;
   gap: 10px;
+  min-width: 0;
+  max-width: 340px;
   padding-left: 14px;
   border-left: 1px solid rgba(255, 255, 255, 0.12);
 }
 
-.tuner-stations-label {
+.tuner-nowair-label {
+  flex-shrink: 0;
+  margin-top: 2px;
   font-size: 9px;
   font-weight: 800;
   letter-spacing: 0.14em;
@@ -385,89 +389,38 @@ a { color: inherit; }
   white-space: nowrap;
 }
 
-.tuner-stations-viewport {
-  overflow-x: auto;
-  overflow-y: hidden;
-  scroll-behavior: smooth;
-  scrollbar-width: none;
-  -webkit-overflow-scrolling: touch;
-}
-
-.tuner-stations-viewport::-webkit-scrollbar {
-  display: none;
-}
-
-.tuner-stations-viewport.is-scrollable {
-  mask-image: linear-gradient(
-    to right,
-    transparent,
-    #000 10px,
-    #000 calc(100% - 10px),
-    transparent
-  );
-}
-
-.tuner-stations-track {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  min-width: min-content;
-}
-
-.tuner-station-btn {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 1px;
-  flex: 0 0 auto;
-  padding: 5px 10px 4px;
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.05);
-  color: #fff;
-  cursor: pointer;
-  transition: background 140ms ease, border-color 140ms ease, transform 120ms ease;
+.tuner-nowair-body {
   min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
 }
 
-.tuner-station-btn:hover {
-  background: rgba(255, 255, 255, 0.12);
-  border-color: rgba(255, 255, 255, 0.3);
-}
-
-.tuner-station-btn:active { transform: scale(0.96); }
-
-.tuner-station-btn.is-active {
-  border-color: color-mix(in srgb, var(--c, var(--radio-bright)) 52%, rgba(255, 255, 255, 0.16));
-  background: color-mix(in srgb, var(--c, var(--radio-bright)) 16%, rgba(255, 255, 255, 0.05));
-  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--c, var(--radio-bright)) 12%, transparent);
-}
-
-.tuner-station-btn.is-playing {
-  border-color: color-mix(in srgb, var(--c, var(--live)) 62%, rgba(255, 255, 255, 0.16));
-  background: color-mix(in srgb, var(--c, var(--live)) 24%, rgba(255, 255, 255, 0.05));
-  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--c, var(--live)) 16%, transparent);
-}
-
-.tuner-station-call {
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 0.03em;
-  line-height: 1.1;
-  color: var(--radio-bright);
-}
-
-.tuner-station-btn.is-active .tuner-station-call,
-.tuner-station-btn.is-playing .tuner-station-call {
-  color: var(--c, var(--radio-bright));
-}
-
-.tuner-station-inst {
-  font-size: 9px;
+.tuner-nowair-title {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 13px;
   font-weight: 600;
-  letter-spacing: 0.04em;
+  line-height: 1.2;
+  color: var(--radio-bright);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tuner.is-playing .tuner-nowair-title {
+  color: #ff9a90;
+}
+
+.tuner-nowair-sub {
+  margin: 0;
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 1.25;
   color: rgba(255, 255, 255, 0.48);
-  line-height: 1.1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 @media (min-width: 1100px) {
@@ -486,7 +439,7 @@ a { color: inherit; }
     width: 280px;
   }
 
-  .tuner-stations {
+  .tuner-nowair {
     display: flex;
     margin-left: auto;
   }

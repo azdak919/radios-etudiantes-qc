@@ -34,7 +34,7 @@ jobs:
         id: check
         run: |
           CHANGED=false
-          for f in institutions.json news-sources.json news.json radios.json radios-candidates.json bot-status.json feed.xml feed-fr.xml feed-en.xml; do
+          for f in institutions.json news-sources.json news.json radios.json radios-candidates.json radio-nowplaying.json bot-status.json feed.xml feed-fr.xml feed-en.xml; do
             if ! git diff --quiet "$f" 2>/dev/null; then
               CHANGED=true
               echo "changed: $f"
@@ -47,7 +47,7 @@ jobs:
         run: |
           git config user.name "RADAR Maintenance Bot"
           git config user.email "actions@users.noreply.github.com"
-          git add institutions.json news-sources.json news.json radios.json radios-candidates.json bot-status.json feed.xml feed-fr.xml feed-en.xml
+          git add institutions.json news-sources.json news.json radios.json radios-candidates.json radio-nowplaying.json bot-status.json feed.xml feed-fr.xml feed-en.xml
           git commit -m "bot: weekly maintenance run (auto)"
           for i in 1 2 3; do
             git pull --rebase --autostash origin "${GITHUB_REF_NAME}" && git push && exit 0
