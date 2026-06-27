@@ -169,17 +169,82 @@ function metaContent(html, key) {
   return '';
 }
 
+function stripBoilerplateRegions(html = '') {
+  return String(html)
+    .replace(/<div[^>]*\bwp-block-query\b[\s\S]*?<\/div>\s*(?=<div|<\/main|<\/body|$)/gi, '')
+    .replace(/<ul[^>]*\bwp-block-post-template\b[\s\S]*?<\/ul>/gi, '')
+    .replace(/<aside[\s\S]*?<\/aside>/gi, '')
+    .replace(/<footer[\s\S]*?<\/footer>/gi, '');
+}
+
 function articleBodyHtml(html = '') {
-  const regions = [
-    html.match(/<article[^>]*>([\s\S]*?)<\/article>/i),
-    html.match(/class=["'][^"']*entry-content[^"']*["'][^>]*>([\s\S]*?)<\/div>/i),
-    html.match(/class=["'][^"']*post-content[^"']*["'][^>]*>([\s\S]*?)<\/div>/i),
-    html.match(/class=["'][^"']*article-content[^"']*["'][^>]*>([\s\S]*?)<\/div>/i),
+  const patterns = [
+    /class=["'][^"']*wp-block-post-content[^"']*["'][^>]*>([\s\S]*?)(?=<div[^>]*(?:id=["']jp-post-flair|\bwp-block-query\b)|<\/div>\s*<\/div>\s*<div[^>]*wp-block-column)/i,
+    /<article[^>]*>([\s\S]*?)<\/article>/i,
+    /class=["'][^"']*entry-content[^"']*["'][^>]*>([\s\S]*?)<\/div>/i,
+    /class=["'][^"']*post-content[^"']*["'][^>]*>([\s\S]*?)<\/div>/i,
+    /class=["'][^"']*article-content[^"']*["'][^>]*>([\s\S]*?)<\/div>/i,
   ];
-  for (const m of regions) {
-    if (m && m[1] && m[1].length > 120) return m[1];
+  for (const re of patterns) {
+    const m = html.match(re);
+    if (m && m[1] && m[1].length > 80) return stripBoilerplateRegions(m[1]);
   }
-  return html;
+  return '';
+}
+
+/** Zone éditoriale de l’article courant — hors carrousels « Recent Posts » / wp-block-query. */
+function articleImageRegions(html = '') {
+  const chunks = [];
+  const content = articleBodyHtml(html);
+  if (content) chunks.push(content);
+
+  const main = html.match(/<main[\s\S]*?<\/main>/i);
+  if (main) {
+    const beforeQuery = main[0].split(/\bwp-block-query\b/i)[0] || main[0];
+    const featured = beforeQuery.match(
+      /class=["'][^"']*wp-block-post-featured-image[^"']*["'][\s\S]*?<\/figure>/i,
+    );
+    if (featured) chunks.push(featured[0]);
+  }
+
+  return chunks.join('\n');
+}
+
+function normalizeImagePath(raw = '') {
+  try {
+    const u = new URL(decodeEntities(raw));
+    const file = decodeURIComponent(u.pathname).split('/').pop() || '';
+    return file.replace(/-\d+x\d+(?=\.[a-z]+$)/i, '').toLowerCase();
+  } catch {
+    return '';
+  }
+}
+
+function imageUrlsMatch(a = '', b = '') {
+  const pa = normalizeImagePath(a);
+  const pb = normalizeImagePath(b);
+  if (!pa || !pb) return false;
+  return pa === pb || pa.includes(pb) || pb.includes(pa);
+}
+
+function collectContentImages(content = '') {
+  const urls = [];
+  for (const m of content.matchAll(/<img[^>]+src=["']([^"']+)["'][^>]*>/gi)) {
+    const tag = m[0];
+    const src = decodeEntities(m[1]);
+    const w = parseInt((tag.match(/width=["'](\d+)["']/i) || [])[1], 10) || 0;
+    if (!isCandidateImageUrl(src) || isWeakImageUrl(src)) continue;
+    if (w > 0 && w < 400) continue;
+    urls.push({ url: src, tag, w });
+  }
+  return urls;
+}
+
+function articleImageIsValidOnPage(html = '', imageUrl = '') {
+  if (!html || !imageUrl) return false;
+  const contentImages = collectContentImages(articleImageRegions(html));
+  if (!contentImages.length) return false;
+  return contentImages.some((img) => imageUrlsMatch(img.url, imageUrl));
 }
 
 function isCandidateImageUrl(raw = '') {
@@ -239,65 +304,34 @@ function meetsFeatureDisplaySize(width = 0, height = 0) {
 }
 
 function imageFromArticleHtml(html = '') {
+  const contentImages = collectContentImages(articleImageRegions(html));
+  if (!contentImages.length) return { url: '', w: 0, h: 0 };
+
   const candidates = [];
 
   const ogImage = metaContent(html, 'og:image');
   const ogW = parseInt(metaContent(html, 'og:image:width'), 10) || 0;
   const ogH = parseInt(metaContent(html, 'og:image:height'), 10) || 0;
-  if (ogImage && isCandidateImageUrl(ogImage)) {
+  if (ogImage && contentImages.some((img) => imageUrlsMatch(img.url, ogImage))) {
     candidates.push({ url: ogImage, score: 100 + Math.min(ogW, 2400) / 10, w: ogW, h: ogH });
   }
 
   for (const key of ['twitter:image', 'twitter:image:src']) {
     const tw = metaContent(html, key);
-    if (tw && isCandidateImageUrl(tw)) candidates.push({ url: tw, score: 90, w: 0, h: 0 });
-  }
-
-  const wpPost = html.match(
-    /<img[^>]+class=["'][^"']*wp-post-image[^"']*["'][^>]*>/i,
-  );
-  if (wpPost) {
-    const tag = wpPost[0];
-    const srcM = tag.match(/src=["']([^"']+)["']/i);
-    const w = parseInt((tag.match(/width=["'](\d+)["']/i) || [])[1], 10) || 0;
-    const h = parseInt((tag.match(/height=["'](\d+)["']/i) || [])[1], 10) || 0;
-    if (srcM && isCandidateImageUrl(srcM[1]) && !isWeakImageUrl(srcM[1])) {
-      candidates.push({ url: srcM[1], score: 85 + w / 10, w, h });
-    }
-    const srcsetM = tag.match(/srcset=["']([^"']+)["']/i);
-    if (srcsetM) {
-      for (const part of srcsetM[1].split(',')) {
-        const [u, size] = part.trim().split(/\s+/);
-        const w = parseInt((size || '').replace('w', ''), 10) || 0;
-        if (u && isCandidateImageUrl(u) && !isWeakImageUrl(u)) {
-          candidates.push({ url: u, score: 82 + w / 8, w, h: 0 });
-        }
-      }
+    if (tw && contentImages.some((img) => imageUrlsMatch(img.url, tw))) {
+      candidates.push({ url: tw, score: 90, w: 0, h: 0 });
     }
   }
 
-  const neve = html.match(/class=["'][^"']*attachment-neve-blog[^"']*["'][^>]*src=["']([^"']+)["']/i);
-  if (neve && isCandidateImageUrl(neve[1])) {
-    candidates.push({ url: neve[1], score: 88, w: 0, h: 0 });
-  }
-
-  const jsonLdBlocks = html.match(/<script[^>]+type=["']application\/ld\+json["'][^>]*>[\s\S]*?<\/script>/gi) || [];
-  for (const block of jsonLdBlocks) {
-    const m = block.match(/"image"\s*:\s*"([^"]+)"/)
-      || block.match(/"image"\s*:\s*\[\s*"([^"]+)"/)
-      || block.match(/"url"\s*:\s*"(https?:[^"]+\.(?:jpe?g|png|webp)[^"]*)"/i);
-    if (m && isCandidateImageUrl(m[1])) candidates.push({ url: m[1], score: 75, w: 0, h: 0 });
-  }
-
-  const body = articleBodyHtml(html);
-  for (const m of body.matchAll(/<img[^>]+src=["']([^"']+)["'][^>]*>/gi)) {
-    const tag = m[0];
-    const src = decodeEntities(m[1]);
-    const w = parseInt((tag.match(/width=["'](\d+)["']/i) || [])[1], 10) || 0;
-    if (!isCandidateImageUrl(src) || isWeakImageUrl(src)) continue;
-    if (w > 0 && w < 400) continue;
-    candidates.push({ url: src, score: 60 + w / 10, w, h: 0 });
-    break;
+  for (const img of contentImages) {
+    const isFeatured = /\bwp-post-image\b/i.test(img.tag)
+      || /\bwp-block-post-featured-image\b/i.test(img.tag);
+    candidates.push({
+      url: img.url,
+      score: (isFeatured ? 85 : 60) + img.w / 10,
+      w: img.w,
+      h: 0,
+    });
   }
 
   if (!candidates.length) return { url: '', w: 0, h: 0 };
@@ -337,9 +371,12 @@ async function resolveLeadReadyPhoto(item) {
     return null;
   };
 
-  if (item.image) {
-    const hit = await tryUrl(item.image);
-    if (hit) return hit;
+  if (item.image && item.link) {
+    const html = await fetchText(item.link);
+    if (html && articleImageIsValidOnPage(html, item.image)) {
+      const hit = await tryUrl(item.image);
+      if (hit) return hit;
+    }
   }
 
   const scraped = await scrapeArticleImage(item);
@@ -381,6 +418,9 @@ module.exports = {
   parseImageSize,
   metaContent,
   articleBodyHtml,
+  articleImageRegions,
+  articleImageIsValidOnPage,
+  imageUrlsMatch,
   isCandidateImageUrl,
   isWeakImageUrl,
   meetsLeadDisplaySize,

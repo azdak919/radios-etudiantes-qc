@@ -16,6 +16,8 @@ const {
   resolveLeadReadyPhoto,
   meetsLeadDisplaySize,
   probeRemoteImageSize,
+  fetchText,
+  articleImageIsValidOnPage,
   sleep,
 } = require('./article-image-lib');
 const { findStockPhoto, cleanCreatorName } = require('./stock-photo-lib');
@@ -35,6 +37,27 @@ function readJson(p, fallback) {
 
 function clearLegacyFallback(item) {
   delete item.fallbackImage;
+}
+
+function imagePathKey(url = '') {
+  try {
+    const file = decodeURIComponent(new URL(url).pathname).split('/').pop() || '';
+    return file.replace(/-\d+x\d+(?=\.[a-z]+$)/i, '').toLowerCase();
+  } catch {
+    return '';
+  }
+}
+
+/** Évite de re-fetcher toutes les pages : Campus + images dont le nom ne colle pas au slug. */
+function shouldValidateImageOnPage(item = {}) {
+  if (!item.image || !item.link) return false;
+  if (item.source === 'The Campus') return true;
+  const slug = String(item.link).split('/').filter(Boolean).pop() || '';
+  const img = imagePathKey(item.image);
+  if (!slug || !img || slug.length < 10) return false;
+  const tokens = slug.split('-').filter((t) => t.length > 4);
+  if (tokens.length < 2) return false;
+  return !tokens.some((t) => img.includes(t));
 }
 
 async function probeLeadReady(url) {
@@ -90,7 +113,20 @@ async function main() {
   let photosRecovered = 0;
   let stockFound = 0;
   let stockSearches = 0;
+  let imagesCleared = 0;
   const gaps = [];
+
+  for (const item of items) {
+    if (!shouldValidateImageOnPage(item)) continue;
+    const html = await fetchText(item.link);
+    if (!html || articleImageIsValidOnPage(html, item.image)) continue;
+    if (doUpdate) {
+      item.image = '';
+      item.leadImageReady = false;
+    }
+    imagesCleared += 1;
+    await sleep(120);
+  }
 
   const scrapeQueue = items
     .filter((item) => item.link && (!item.image || !isCandidateImageUrl(item.image) || isWeakImageUrl(item.image)))
@@ -164,6 +200,7 @@ async function main() {
     leadReadyPhotos: leadReadyCount,
     pageScraped,
     photosRecovered,
+    imagesCleared,
     stockSearches,
     stockFound,
     mainPageLeadReady: leadReadyCount >= Math.min(HERO_MIN_POOL, items.length),
@@ -177,6 +214,7 @@ async function main() {
   console.log(`Photos banque     : ${qc.withStock}`);
   console.log(`Photos vedette OK : ${qc.leadReadyPhotos}`);
   console.log(`Pages scrapées    : ${qc.pageScraped}`);
+  if (qc.imagesCleared) console.log(`Photos invalides  : ${qc.imagesCleared} retirée(s)`);
   console.log(`Banques consultées: ${qc.stockSearches}`);
   console.log(`Photos libres     : ${qc.stockFound}`);
   console.log(`Couverture totale : ${qc.fullyCovered}/${qc.total}`);

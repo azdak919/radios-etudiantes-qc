@@ -1,14 +1,15 @@
 {
-  "updated": "2026-06-27T10:49:49.052Z",
+  "updated": "2026-06-27T11:07:58.949Z",
   "total": 211,
-  "withPhoto": 210,
-  "withStock": 34,
-  "fullyCovered": 210,
-  "leadReadyPhotos": 138,
-  "pageScraped": 37,
-  "photosRecovered": 27,
+  "withPhoto": 175,
+  "withStock": 30,
+  "fullyCovered": 188,
+  "leadReadyPhotos": 133,
+  "pageScraped": 36,
+  "photosRecovered": 30,
+  "imagesCleared": 30,
   "stockSearches": 28,
-  "stockFound": 24,
+  "stockFound": 23,
   "mainPageLeadReady": true,
   "gaps": [
     {
@@ -42,46 +43,46 @@
       "image": "https://lapige.atmjonquiere.com/wp-content/uploads/sites/3/2026/06/Bruno-Cormier-retraite-benevole.png"
     },
     {
-      "title": "Artemis II takes over Place-des-Arts",
-      "link": "https://thelinknewspaper.ca/article/16330",
-      "reason": "stock-too-small",
-      "image": "https://thelinknewspaper.ca/images/made/images/articles/_resized/12.news.artemis.sam.online.daniel.1U5A7650_690_460_90.jpg"
-    },
-    {
-      "title": "CSU rejects motion for Israel and Jewish solidarity fund ad hoc committee",
-      "link": "https://thelinknewspaper.ca/article/16329",
-      "reason": "stock-too-small",
-      "image": "https://thelinknewspaper.ca/images/made/images/articles/_resized/00.graphics.CSU.Naya_Hachwa_690_517_90.jpeg"
+      "title": "Les grands oubliés du handicap : les proches aidants",
+      "link": "https://lapige.atmjonquiere.com/2026/05/29/les-grands-oublies-du-handicap-les-proches-aidants/?utm_source=rss&utm_medium=rss&utm_campaign=les-grands-oublies-du-handicap-les-proches-aidants",
+      "reason": "no-stock-match",
+      "image": null
     },
     {
       "title": "Un hommage aux cyclistes décédés sur les routes",
       "link": "https://lapige.atmjonquiere.com/2026/05/21/les-cyclistes-sont-honores-au-lac-saint-jean/?utm_source=rss&utm_medium=rss&utm_campaign=les-cyclistes-sont-honores-au-lac-saint-jean",
       "reason": "no-stock-match",
-      "image": "https://lapige.atmjonquiere.com/wp-content/uploads/sites/3/2026/05/shared-image-1-750x375.jpg"
+      "image": null
     },
     {
       "title": "Un investissement pour les jeunes « bienvenu » au Centre Mamik",
       "link": "https://lapige.atmjonquiere.com/2026/05/21/un-investissement-pour-les-jeunes-bienvenu-au-centre-mamik/?utm_source=rss&utm_medium=rss&utm_campaign=un-investissement-pour-les-jeunes-bienvenu-au-centre-mamik",
       "reason": "stock-too-small",
-      "image": "https://lapige.atmjonquiere.com/wp-content/uploads/sites/3/2026/05/image-mamik-750x375.jpg"
+      "image": "https://live.staticflickr.com/2851/11351422016_cbd54b1155_b.jpg"
     },
     {
       "title": "L’ERD sauvée de la dissolution par quatre membres",
       "link": "https://lapige.atmjonquiere.com/2026/05/21/lerd-sauvee-de-la-dissolution-par-quatre-membres/?utm_source=rss&utm_medium=rss&utm_campaign=lerd-sauvee-de-la-dissolution-par-quatre-membres",
       "reason": "stock-too-small",
-      "image": "https://lapige.atmjonquiere.com/wp-content/uploads/sites/3/2020/10/Andre-e1779394167998-216x300.png"
-    },
-    {
-      "title": "Jeunes auteurs, à vos crayons : le « pouvoir des mots » pour rejoindre les étudiants",
-      "link": "https://lapige.atmjonquiere.com/2026/05/21/jeunes-auteurs-a-vos-crayons-le-pouvoir-des-mots-pour-rejoindre-les-etudiants/?utm_source=rss&utm_medium=rss&utm_campaign=jeunes-auteurs-a-vos-crayons-le-pouvoir-des-mots-pour-rejoindre-les-etudiants",
-      "reason": "stock-too-small",
-      "image": "https://lapige.atmjonquiere.com/wp-content/uploads/sites/3/2026/05/Credit-photo-Raphaelle-Guillois-200x300.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/e/ee/%C3%89quipe_du_renouveau_d%C3%A9mocratique_de_Saguenay_logo.svg"
     },
     {
       "title": "Un pont entre l’art et le travail de rue",
       "link": "https://lapige.atmjonquiere.com/2026/05/20/un-pont-entre-lart-et-le-travail-de-rue/?utm_source=rss&utm_medium=rss&utm_campaign=un-pont-entre-lart-et-le-travail-de-rue",
       "reason": "stock-too-small",
-      "image": "https://lapige.atmjonquiere.com/wp-content/uploads/sites/3/2026/05/Image-16-750x375.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/3/3f/Expositions_internationales_de_Buenos_Aires_1910_rapport_du_commissaire_g%C3%A9n%C3%A9ral_du_gouvernement_de_la_r%C3%A9publique_agriculture%2C_hygi%C3%A8ne_%28IA_expositionsinter00baud%29.pdf"
+    },
+    {
+      "title": "El Niño s’approche du Québec",
+      "link": "https://lapige.atmjonquiere.com/2026/05/20/el-nino-sapproche-du-quebec/?utm_source=rss&utm_medium=rss&utm_campaign=el-nino-sapproche-du-quebec",
+      "reason": "stock-too-small",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/2/24/Traitement_hydroth%C3%A9rapique%2C_climatique%2C_et_thermal_du_lymphatisme_et_de_la_scrofule_%28IA_BIUSante_71545%29.pdf"
+    },
+    {
+      "title": "Assistance technique en pharmacie : de premières portes ouvertes à Alma",
+      "link": "https://lapige.atmjonquiere.com/2026/05/20/assistance-technique-en-pharmacie-de-premieres-portes-ouvertes-a-alma/?utm_source=rss&utm_medium=rss&utm_campaign=assistance-technique-en-pharmacie-de-premieres-portes-ouvertes-a-alma",
+      "reason": "stock-too-small",
+      "image": "https://live.staticflickr.com/7126/7631365364_28c29c107a_b.jpg"
     }
   ]
 }

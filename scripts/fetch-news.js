@@ -27,6 +27,13 @@ const {
   extractBylineFromText,
 } = require('./author-lib');
 const { mergePriorEnrichment } = require('./article-photo-credit-lib');
+const {
+  articleBodyHtml,
+  imageFromArticleHtml,
+  isCandidateImageUrl,
+  isWeakImageUrl,
+  needsImageEnrichment,
+} = require('./article-image-lib');
 const { isHtmlListSource, parseHtmlListPage } = require('./html-list-fetcher');
 const { isFirebaseSource, fetchFirebaseFeed } = require('./firebase-list-fetcher');
 
@@ -438,104 +445,6 @@ function metaContent(html, key) {
   return '';
 }
 
-function articleBodyHtml(html = '') {
-  const regions = [
-    html.match(/<article[^>]*>([\s\S]*?)<\/article>/i),
-    html.match(/class=["'][^"']*entry-content[^"']*["'][^>]*>([\s\S]*?)<\/div>/i),
-    html.match(/class=["'][^"']*post-content[^"']*["'][^>]*>([\s\S]*?)<\/div>/i),
-    html.match(/class=["'][^"']*article-content[^"']*["'][^>]*>([\s\S]*?)<\/div>/i),
-  ];
-  for (const m of regions) {
-    if (m && m[1] && m[1].length > 120) return m[1];
-  }
-  return html;
-}
-
-function isCandidateImageUrl(raw = '') {
-  const src = String(raw).trim();
-  if (!src) return false;
-  try {
-    const url = new URL(src);
-    if (!['http:', 'https:'].includes(url.protocol)) return false;
-    const path = decodeURIComponent(url.pathname).toLowerCase();
-    if (/(logo|avatar|icon|placeholder|default|blank|spacer|profile|author|favicon|gravatar|emoji|smiley|(?:^|\/)article-2\.|campus-logo|campusgraphic)/.test(path)) {
-      return false;
-    }
-    if (/(?:^|\/)(?:1x1|pixel)\b/.test(path)) return false;
-    if (/article-tile|size-article-tile|thumbnail|thumb_|-150x\d+\./.test(path)) return false;
-    return true;
-  } catch {
-    return false;
-  }
-}
-
-function isWeakImageUrl(raw = '') {
-  const path = String(raw).toLowerCase();
-  if (/-\d{2,3}x\d{2,3}\./.test(path) && !/-\d{3,4}x\d{3,4}\./.test(path)) return true;
-  return /article-tile|size-article-tile/.test(path);
-}
-
-function needsImageEnrichment(item) {
-  if (!item.link) return false;
-  if (!item.image || !isCandidateImageUrl(item.image)) return true;
-  return isWeakImageUrl(item.image);
-}
-
-function imageFromArticleHtml(html = '') {
-  const candidates = [];
-
-  const ogImage = metaContent(html, 'og:image');
-  const ogW = parseInt(metaContent(html, 'og:image:width'), 10) || 0;
-  if (ogImage && isCandidateImageUrl(ogImage)) {
-    candidates.push({ url: ogImage, score: 100 + Math.min(ogW, 2400) / 10 });
-  }
-
-  for (const key of ['twitter:image', 'twitter:image:src']) {
-    const tw = metaContent(html, key);
-    if (tw && isCandidateImageUrl(tw)) candidates.push({ url: tw, score: 90 });
-  }
-
-  const wpPost = html.match(
-    /<img[^>]+class=["'][^"']*wp-post-image[^"']*["'][^>]*>/i,
-  );
-  if (wpPost) {
-    const tag = wpPost[0];
-    const srcM = tag.match(/src=["']([^"']+)["']/i);
-    const w = parseInt((tag.match(/width=["'](\d+)["']/i) || [])[1], 10) || 0;
-    if (srcM && isCandidateImageUrl(srcM[1]) && !isWeakImageUrl(srcM[1])) {
-      candidates.push({ url: srcM[1], score: 85 + w / 10 });
-    }
-  }
-
-  const neve = html.match(/class=["'][^"']*attachment-neve-blog[^"']*["'][^>]*src=["']([^"']+)["']/i);
-  if (neve && isCandidateImageUrl(neve[1])) {
-    candidates.push({ url: neve[1], score: 88 });
-  }
-
-  const jsonLdBlocks = html.match(/<script[^>]+type=["']application\/ld\+json["'][^>]*>[\s\S]*?<\/script>/gi) || [];
-  for (const block of jsonLdBlocks) {
-    const m = block.match(/"image"\s*:\s*"([^"]+)"/)
-      || block.match(/"image"\s*:\s*\[\s*"([^"]+)"/)
-      || block.match(/"url"\s*:\s*"(https?:[^"]+\.(?:jpe?g|png|webp)[^"]*)"/i);
-    if (m && isCandidateImageUrl(m[1])) candidates.push({ url: m[1], score: 75 });
-  }
-
-  const body = articleBodyHtml(html);
-  for (const m of body.matchAll(/<img[^>]+src=["']([^"']+)["'][^>]*>/gi)) {
-    const tag = m[0];
-    const src = decodeEntities(m[1]);
-    const w = parseInt((tag.match(/width=["'](\d+)["']/i) || [])[1], 10) || 0;
-    if (!isCandidateImageUrl(src) || isWeakImageUrl(src)) continue;
-    if (w > 0 && w < 400) continue;
-    candidates.push({ url: src, score: 60 + w / 10 });
-    break;
-  }
-
-  if (!candidates.length) return '';
-  candidates.sort((a, b) => b.score - a.score);
-  return candidates[0].url;
-}
-
 function needsEnrichment(item, feedDefaults = new Map()) {
   const thinExcerpt = !item.excerpt || isJunkExcerpt(item.excerpt);
   const missingAuthor = !item.author || isGenericAuthor(item.author);
@@ -551,9 +460,12 @@ async function enrichItem(item) {
   const body = articleBodyHtml(html);
 
   if (needsImageEnrichment(next)) {
-    const img = imageFromArticleHtml(html);
-    if (img) next.image = img;
+    const found = imageFromArticleHtml(html);
+    if (found?.url) next.image = found.url;
     else if (next.image && !isCandidateImageUrl(next.image)) next.image = '';
+  } else if (next.image) {
+    const found = imageFromArticleHtml(html);
+    if (!found?.url && next.image) next.image = '';
   }
 
   const pageAuthor = authorFromArticleHtml(html, item.lang === 'en' ? 'en' : 'fr');
