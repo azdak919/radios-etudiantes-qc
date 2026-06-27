@@ -1082,17 +1082,14 @@ function toggleVolumeMute() {
   setVolumeMuted(!volumeMuted);
 }
 
-/** Position visuelle du curseur : 0 % à gauche, 100 % à droite (boost > 100 % reste à droite). */
-function gainToSliderRatio(gain) {
-  return Math.min(Math.max(gain, 0), 1);
-}
-
 function updateVolumeSliderVisual() {
   const track = TUNER_VOLUME?.closest('.tuner-vol-track');
   if (!track) return;
   const gain = volumeMuted ? 0 : currentGain;
-  const ratio = gainToSliderRatio(gain);
+  const ratio = Math.min(Math.max(gain / MAX_GAIN, 0), 1);
   track.style.setProperty('--vol-ratio', String(ratio));
+  track.style.setProperty('--vol-base', `${Math.min(ratio / 0.5, 1) * 100}%`);
+  track.style.setProperty('--vol-boost', `${Math.max((ratio - 0.5) / 0.5, 0) * 100}%`);
   track.classList.toggle('is-boost', gain > 1.001);
 }
 
