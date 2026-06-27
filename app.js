@@ -1759,8 +1759,6 @@ function formatStampCompact(d, lang = 'fr') {
   const months = MONTH_SHORT[l] || MONTH_SHORT.fr;
   const day = d.getDate();
   const month = months[d.getMonth()] || '';
-  const sameYear = d.getFullYear() === now.getFullYear();
-  if (sameYear) return `${day} ${month}`.trim();
   return `${day} ${month} ${d.getFullYear()}`.trim();
 }
 
