@@ -551,10 +551,25 @@ function isQuebecUniversity(name = '', type = '') {
     || name === 'UQAM';
 }
 
+function stripInstitutionTypePrefix(name = '') {
+  return String(name)
+    .replace(/\s*\([^)]*\)\s*$/, '')
+    .replace(/^Cégep (de |du |d'|des )?/i, '')
+    .replace(/^Collège (de |du |d'|des )?/i, '')
+    .trim();
+}
+
+function isCegepInstitution(name = '', type = '') {
+  return type === 'cegep' || /^cégep|^collège/i.test(name);
+}
+
 function articleInstitutionLabel(name = '', type = '') {
   if (!name) return '';
   if (isQuebecUniversity(name, type)) {
     return resolveInstitutionAcronym(name) || name;
+  }
+  if (isCegepInstitution(name, type)) {
+    return stripInstitutionTypePrefix(name) || name;
   }
   return name.replace(/\s*\([^)]*\)\s*$/, '').trim() || name;
 }
@@ -564,20 +579,24 @@ function shortInstitution(name = '', type = '') {
   if (acronym) return acronym;
 
   const CEGEP_SHORT = {
-    'Cégep du Vieux Montréal': 'Cégep Vieux-Montréal',
-    'Cégep de Jonquière (ATM – journalisme)': 'Cégep Jonquière',
-    'Cégep de Jonquière': 'Cégep Jonquière',
+    'Cégep du Vieux Montréal': 'Vieux-Montréal',
+    'Cégep de Jonquière (ATM – journalisme)': 'Jonquière',
+    'Cégep de Jonquière': 'Jonquière',
   };
   if (CEGEP_SHORT[name]) return CEGEP_SHORT[name];
+
+  if (isCegepInstitution(name, type)) {
+    const stripped = stripInstitutionTypePrefix(name);
+    if (stripped) return stripped.length > 24 ? `${stripped.slice(0, 22)}…` : stripped;
+  }
 
   const paren = name.match(/\(([^)]+)\)/);
   if (paren) {
     const inner = paren[1].split(/[–-]/)[0].trim();
     if (inner.length <= 14) return inner;
   }
-  if (/^cégep/i.test(name)) return name.replace(/\s*\(.*$/, '').replace(/^Cégep (de |du )?/i, 'Cégep ');
   if (isQuebecUniversity(name, type)) return name;
-  return type === 'cegep' ? 'Cégep' : name.length > 24 ? name.slice(0, 22) + '…' : name;
+  return name.length > 24 ? `${name.slice(0, 22)}…` : name;
 }
 
 function sourceInfo(src) {
