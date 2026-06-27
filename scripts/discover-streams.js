@@ -25,6 +25,7 @@ const https = require('https');
 const http = require('http');
 
 const RADIOS_PATH = path.join(__dirname, '..', 'radios.json');
+const CANDIDATES_PATH = path.join(__dirname, '..', 'radios-candidates.json');
 const TIMEOUT = 9000;
 
 // === KNOWN GOOD STREAMS (the bot trusts and re-validates these first) ===
@@ -272,23 +273,56 @@ async function discoverForRadio(radio) {
   };
 }
 
+function slugFromCandidate(c) {
+  const base = (c.id || c.name || 'radio').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+  return base.slice(0, 40);
+}
+
+function promoteCandidate(cand, discovery) {
+  const id = slugFromCandidate(cand);
+  return {
+    id,
+    name: cand.name,
+    fullName: cand.name,
+    institution: cand.institution,
+    city: cand.region || '',
+    region: cand.region || '',
+    type: cand.type || 'universite',
+    frequency: 'Web',
+    website: cand.website,
+    logo: '',
+    stream: discovery.stream,
+    description: `Radio étudiante découverte automatiquement (${cand.institution}).`,
+    instagram: '',
+    facebook: '',
+    tags: ['auto-discovered'],
+    _streamStatus: discovery.status,
+    _streamChecked: discovery.checked,
+    _discoveredFrom: cand.discoveredFrom || cand.website,
+  };
+}
+
 async function main() {
   const args = process.argv.slice(2);
   const doUpdate = args.includes('--update');
   const specific = args.find((a) => a.startsWith('--radio='))?.split('=')[1];
 
   const radios = JSON.parse(fs.readFileSync(RADIOS_PATH, 'utf8'));
+  let candidateRegistry = { candidates: [] };
+  try {
+    candidateRegistry = JSON.parse(fs.readFileSync(CANDIDATES_PATH, 'utf8'));
+  } catch {}
 
   console.log('RÉQ Stream Tracker Bot');
   console.log('======================\n');
 
-  const updatedRadios = [];
+  const updatedRadios = [...radios];
+  const existingIds = new Set(updatedRadios.map((r) => r.id));
+  const stillCandidates = [];
+  let promoted = 0;
 
   for (const radio of radios) {
-    if (specific && radio.id !== specific) {
-      updatedRadios.push(radio);
-      continue;
-    }
+    if (specific && radio.id !== specific) continue;
 
     console.log(`→ ${radio.fullName || radio.name} (${radio.id})`);
 
@@ -308,12 +342,52 @@ async function main() {
       console.log(`   ✗ No reliable direct stream found\n`);
     }
 
-    updatedRadios.push(newEntry);
+    updatedRadios[updatedRadios.findIndex((r) => r.id === radio.id)] = newEntry;
   }
+
+  // Probe radio candidates → auto-promote when a direct stream validates
+  const candidates = candidateRegistry.candidates || [];
+  if (candidates.length) {
+    console.log('▸ Radio candidates\n');
+  }
+
+  for (const cand of candidates) {
+    const pseudo = {
+      id: slugFromCandidate(cand),
+      name: cand.name,
+      fullName: cand.name,
+      website: cand.website,
+    };
+    console.log(`  ? ${cand.name} (${cand.institution})`);
+    const discovery = await discoverForRadio(pseudo);
+
+    if (discovery.stream) {
+      const entry = promoteCandidate(cand, discovery);
+      if (!existingIds.has(entry.id)) {
+        updatedRadios.push(entry);
+        existingIds.add(entry.id);
+        promoted++;
+        console.log(`    ⬆ PROMOTED → ${discovery.stream}\n`);
+      } else {
+        console.log(`    · id "${entry.id}" already listed\n`);
+      }
+    } else {
+      cand._failCount = (cand._failCount || 0) + 1;
+      cand._lastChecked = new Date().toISOString();
+      stillCandidates.push(cand);
+      console.log(`    ✗ no stream (${cand._failCount} tries)\n`);
+    }
+  }
+
+  candidateRegistry.candidates = stillCandidates;
+  candidateRegistry._lastRun = new Date().toISOString();
+
+  if (promoted) console.log(`Promoted ${promoted} radio candidate(s) to radios.json.`);
 
   if (doUpdate) {
     fs.writeFileSync(RADIOS_PATH, JSON.stringify(updatedRadios, null, 2) + '\n');
-    console.log('✅ radios.json updated with latest stream discoveries.');
+    fs.writeFileSync(CANDIDATES_PATH, JSON.stringify(candidateRegistry, null, 2) + '\n');
+    console.log('✅ radios.json + radios-candidates.json updated.');
   } else {
     console.log('Dry-run complete. Use --update to persist changes.');
   }
