@@ -63,8 +63,6 @@ const ICO_PAUSE      = TUNER_PLAY.querySelector('.ico-pause');
 const ICO_EXTERNAL   = TUNER_PLAY.querySelector('.ico-external');
 
 const NEWS_LIST      = document.getElementById('news-list');
-const SOCIAL_RAIL    = document.getElementById('social-rail');
-const WIRE_LAYOUT    = document.querySelector('.wire-layout');
 const NEWS_FILTERS   = document.getElementById('news-filters');
 const NEWS_COUNT     = document.getElementById('news-count');
 const NEWS_UPDATED   = document.getElementById('news-updated');
@@ -83,7 +81,6 @@ let suppressAudioError = false;
 let listenWindow = null;
 let listenWindowId = null;
 let sourceColors = {};     // source name → accent colour
-let socialFeed = { items: [] };
 let brandColors = { institutions: {}, fallback_palette: ['#003DA5', '#6C2163', '#047857'] };
 
 const GENERIC_AUTHORS = /^(admin|administrator|administrateur|editor|éditeur|editeur|rédaction|redaction|staff|wordpress|webmaster|collectif|tribune|link|daily|exemplaire|quartier libre|zone campus|la pige|le délit|le delit|the link|the tribune|the mcgill daily)$/i;
@@ -97,11 +94,10 @@ async function init() {
   setupAudio();
   bindTuner();
 
-  const [radiosData, newsLoaded, brandLoaded, socialLoaded] = await Promise.allSettled([
+  const [radiosData, newsLoaded, brandLoaded] = await Promise.allSettled([
     fetch('./radios.json').then(r => r.json()),
     loadNews(),
     fetch('./brand-colors.json').then(r => r.json()),
-    loadSocialFeed(),
   ]);
 
   if (brandLoaded.status === 'fulfilled' && brandLoaded.value?.institutions) {
@@ -520,7 +516,6 @@ function renderNewsFilters() {
       NEWS_FILTERS.querySelectorAll('.filter-btn').forEach(b =>
         b.classList.toggle('active', b === btn));
       renderNews();
-      renderSocialRail();
     };
   });
 }
@@ -533,95 +528,24 @@ function renderNews() {
   NEWS_EMPTY.classList.toggle('hidden', items.length > 0);
   NEWS_COUNT.textContent = `${items.length} article${items.length !== 1 ? 's' : ''}`;
   NEWS_LIST.innerHTML = '';
-  WIRE_LAYOUT?.querySelector('.news-tail')?.remove();
 
   const tail = [];
   items.forEach((item, i) => {
     const role = getArticleRole(i);
     const article = createArticle(item, role);
-    if (role === 'lead' || role === 'feature') NEWS_LIST.appendChild(article);
-    else tail.push(article);
+    if (role === 'standard') tail.push(article);
+    else NEWS_LIST.appendChild(article);
   });
 
-  if (tail.length && WIRE_LAYOUT) {
+  if (tail.length) {
     const section = document.createElement('div');
     section.className = 'news-tail';
     section.innerHTML = '<h3 class="news-tail-title">Suite du fil</h3>';
     tail.forEach(article => section.appendChild(article));
-    WIRE_LAYOUT.appendChild(section);
+    NEWS_LIST.appendChild(section);
   }
 
   updateNewsLayout();
-  renderSocialRail();
-}
-
-async function loadSocialFeed() {
-  if (!SOCIAL_RAIL) return;
-  SOCIAL_RAIL.innerHTML = '<p class="social-rail-loading">Chargement…</p>';
-  try {
-    const res = await fetch('./social-feed.json', { cache: 'no-cache' });
-    socialFeed = await res.json();
-  } catch (e) {
-    console.error('Failed to load social-feed.json', e);
-    socialFeed = { items: [] };
-  }
-  renderSocialRail();
-}
-
-function renderSocialRail() {
-  if (!SOCIAL_RAIL) return;
-  const items = (socialFeed.items || []).filter((item) => item.networks?.length);
-  if (!items.length) {
-    SOCIAL_RAIL.innerHTML = '';
-    SOCIAL_RAIL.classList.add('hidden');
-    return;
-  }
-
-  const show = newsSourceFilter === 'all'
-    ? items
-    : items.filter((i) => i.name === newsSourceFilter);
-
-  if (!show.length) {
-    SOCIAL_RAIL.innerHTML = '<p class="social-rail-empty">Aucun réseau social répertorié pour cette source.</p>';
-    SOCIAL_RAIL.classList.remove('hidden');
-    return;
-  }
-
-  SOCIAL_RAIL.classList.remove('hidden');
-  SOCIAL_RAIL.innerHTML = `
-    <h3 class="social-rail-title">Sur les réseaux</h3>
-    <div class="social-feed">
-      ${show.map(renderSocialCard).join('')}
-    </div>
-  `;
-}
-
-function renderSocialCard(item) {
-  const color = sourceColors[item.name] || brandColors.fallback_palette?.[0] || 'var(--accent)';
-  const primary = item.networks.find((n) => n.stats) || item.networks[0];
-  const inst = shortInstitution(item.institution, item.type);
-  const kind = item.kind === 'radio' ? 'Radio' : 'Journal';
-
-  return `
-    <div class="social-card" style="--c:${escapeHtml(color)}">
-      <div class="social-card-head">
-        <span class="social-card-dot" aria-hidden="true"></span>
-        <div class="social-card-meta">
-          <span class="social-card-name">${escapeHtml(item.name)}</span>
-          <span class="social-card-inst">${escapeHtml(inst)} · ${kind}</span>
-        </div>
-      </div>
-      ${primary?.stats ? `<p class="social-card-stats">${escapeHtml(primary.stats)}</p>` : ''}
-      <div class="social-card-links">
-        ${item.networks.map((net) => `
-          <a class="social-chip social-chip--${net.type}" href="${escapeHtml(net.url)}" target="_blank" rel="noopener noreferrer">
-            <span class="social-chip-label">${escapeHtml(net.label)}</span>
-            ${net.handle ? `<span class="social-chip-handle">${escapeHtml(net.handle)}</span>` : ''}
-          </a>
-        `).join('')}
-      </div>
-    </div>
-  `;
 }
 
 function updateNewsLayout() {
