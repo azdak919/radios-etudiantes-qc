@@ -491,7 +491,7 @@ a { color: inherit; }
   margin-bottom: 10px;
 }
 .article--lead .article-meta .article-time {
-  margin-left: auto;
+  justify-self: end;
 }
 
 /* Source filter chips */
@@ -689,12 +689,20 @@ a { color: inherit; }
 }
 
 .article-meta {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 8px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: start;
+  column-gap: 10px;
+  row-gap: 2px;
   font-size: 12px;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
+}
+.article-meta__lead {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
 }
 .article-source {
   display: inline-flex;
@@ -715,10 +723,12 @@ a { color: inherit; }
 .article-time {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   color: var(--muted);
-  margin-left: auto;
-  white-space: nowrap;
+  justify-self: end;
+  text-align: right;
+  font-size: 11px;
+  line-height: 1.3;
   font-variant-numeric: tabular-nums;
 }
 .article-time::before {
@@ -829,9 +839,20 @@ a { color: inherit; }
 .article--compact {
   padding: 14px 0;
 }
+.article--compact .article-meta {
+  margin-bottom: 4px;
+}
 .article--compact .article-title {
   font-size: 1.28rem;
   line-height: 1.18;
+  margin-top: 0;
+  hyphens: manual;
+  -webkit-hyphens: manual;
+  word-break: normal;
+}
+.article--compact .article-byline {
+  font-size: 0.78rem;
+  margin: 2px 0 4px;
 }
 .article--compact .article-brief {
   font-size: 0.88rem;
@@ -1176,13 +1197,23 @@ a { color: inherit; }
 
   .news-tail .article--standard .article-meta,
   .article--compact .article-meta {
-    margin-bottom: 6px;
+    margin-bottom: 4px;
   }
 
   .news-tail .article--standard .article-title,
   .article--compact .article-title {
     font-size: 1.22rem;
     line-height: 1.2;
+    margin-top: 0;
+    hyphens: manual;
+    -webkit-hyphens: manual;
+    word-break: normal;
+  }
+
+  .news-tail .article--standard .article-byline,
+  .article--compact .article-byline {
+    font-size: 0.78rem;
+    margin: 2px 0 4px;
   }
 
   .news-tail .article--standard .article-brief,
@@ -1234,6 +1265,18 @@ a { color: inherit; }
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
     overflow: hidden;
+    margin-top: 0;
+  }
+
+  .brief-rail .article--compact .article-meta {
+    grid-template-columns: minmax(0, 1fr) auto;
+    row-gap: 1px;
+    margin-bottom: 3px;
+  }
+
+  .brief-rail .article--compact .article-time {
+    font-size: 10px;
+    max-width: 42%;
   }
 
   .brief-rail .article--compact .article-brief {

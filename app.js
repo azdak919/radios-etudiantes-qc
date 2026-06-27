@@ -1096,7 +1096,9 @@ function createArticle(item, role = 'standard') {
   a.style.setProperty('--c', color);
 
   const d = item.date ? new Date(item.date) : null;
-  const time = d ? formatStamp(d) : '';
+  const time = d
+    ? (role === 'compact' || role === 'standard' ? formatStampCompact(d) : formatStamp(d))
+    : '';
   const fresh = d ? (Date.now() - d) < 120 * 60000 : false;
   const { author: rawAuthor, body } = splitByline(item);
   const displayAuthor = resolveDisplayAuthor(item, rawAuthor);
@@ -1134,11 +1136,15 @@ function createArticle(item, role = 'standard') {
   const timeHtml = time
     ? `<time class="article-time${fresh ? ' is-fresh' : ''}" datetime="${escapeHtml(item.date)}">${time}</time>`
     : '';
-  const metaHtml = `<div class="article-meta">
-      <span class="article-source">${escapeHtml(item.source || '')}</span>
-      ${item.institution ? `<span class="article-inst">${escapeHtml(articleInstitutionLabel(item.institution, item.type))}</span>` : ''}
-      ${timeHtml}
-    </div>`;
+  const metaLead = (item.source || item.institution)
+    ? `<span class="article-meta__lead">
+        ${item.source ? `<span class="article-source">${escapeHtml(item.source)}</span>` : ''}
+        ${item.institution ? `<span class="article-inst">${escapeHtml(articleInstitutionLabel(item.institution, item.type))}</span>` : ''}
+      </span>`
+    : '';
+  const metaHtml = (metaLead || timeHtml)
+    ? `<div class="article-meta">${metaLead}${timeHtml}</div>`
+    : '';
   const briefHtml = item.link || brief
     ? `<p class="article-brief${briefTruncated ? ' is-truncated' : ''}"><span class="article-brief-text">${escapeHtml(brief || '')}</span>${briefTruncated ? `<span class="article-more" style="color: ${color}">${readMore}</span>` : ''}</p>`
     : '';
@@ -1716,6 +1722,31 @@ function formatStamp(d) {
   return `${dateStr}, ${time}`;
 }
 
+/** Date courte pour cartes compactes (En bref, Suite du fil). */
+function formatStampCompact(d) {
+  if (isNaN(d)) return '';
+  const now = new Date();
+  const diffMin = Math.round((now - d) / 60000);
+
+  if (diffMin < 1) return "à l'instant";
+  if (diffMin < 60) return `il y a ${diffMin} min`;
+
+  const sameDay = d.toDateString() === now.toDateString();
+  const yest = new Date(now); yest.setDate(now.getDate() - 1);
+  const isYesterday = d.toDateString() === yest.toDateString();
+  const clock = formatTime(d);
+
+  if (sameDay) return clock ? `aujourd'hui, ${clock}` : "aujourd'hui";
+  if (isYesterday) return clock ? `hier, ${clock}` : 'hier';
+
+  const sameYear = d.getFullYear() === now.getFullYear();
+  return d.toLocaleDateString('fr-CA', {
+    day: 'numeric',
+    month: 'short',
+    ...(sameYear ? {} : { year: 'numeric' }),
+  });
+}
+
 // ─── Title / brief cleanup ───────────────────────────────────────────────────────
 const MC_CATEGORY_PREFIX = /^(?:Photoreportage|Marché aux puces|Cobaye|Incursion|Reportage|Opinion|Entrevue|Critique|Chronique)/;
 
@@ -1758,7 +1789,9 @@ function cleanTitle(title = '') {
   t = t.replace(/\s+/g, ' ').trim();
   const prefix = t.match(MC_CATEGORY_PREFIX);
   if (prefix) t = t.slice(prefix[0].length).trim();
-  return stripLeadingNonLetters(t);
+  t = stripLeadingNonLetters(t);
+  // Titres doubles sans ponctuation (ex. « Magazines à potins En papier… »)
+  return t.replace(/([\p{Ll}àâäéèêëïîôùûüç'’])\s+(?=[\p{Lu}ÀÂÄÉÈÊËÏÎÔÙÛÜ])/gu, '$1 — ');
 }
 
 function stripLeadingByline(text = '', author = '') {
