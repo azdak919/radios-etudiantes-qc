@@ -587,17 +587,11 @@ function renderNews() {
     NEWS_LIST.appendChild(hero);
   }
   if (compacts.length) {
-    const briefTitle = document.createElement('h3');
-    briefTitle.className = 'brief-rail-title';
-    briefTitle.textContent = 'En bref';
-    NEWS_LIST.appendChild(briefTitle);
-    compacts.forEach((article) => NEWS_LIST.appendChild(article));
-  }
-
-  if (compacts.length) {
-    NEWS_LIST.style.setProperty('--brief-rows', String(compacts.length));
-  } else {
-    NEWS_LIST.style.removeProperty('--brief-rows');
+    const briefRail = document.createElement('div');
+    briefRail.className = 'brief-rail';
+    briefRail.innerHTML = '<h3 class="brief-rail-title">En bref</h3>';
+    compacts.forEach((article) => briefRail.appendChild(article));
+    NEWS_LIST.appendChild(briefRail);
   }
 
   if (tail.length) {
