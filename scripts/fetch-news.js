@@ -102,6 +102,32 @@ function stripHtml(html = '') {
     .trim();
 }
 
+const MC_CATEGORY_PREFIX = /^(?:Photoreportage|Marché aux puces|Cobaye|Incursion|Reportage|Opinion|Entrevue|Critique|Chronique)/;
+
+function stripEmbeddedCss(title = '') {
+  let t = String(title).trim();
+  if (!/^\.[\w-]+\s*\{/.test(t) && !/@media/i.test(t)) return t;
+  const start = t.indexOf('{');
+  if (start === -1) return t;
+  let depth = 0;
+  for (let i = start; i < t.length; i += 1) {
+    if (t[i] === '{') depth += 1;
+    else if (t[i] === '}') {
+      depth -= 1;
+      if (depth === 0) return t.slice(i + 1).trim();
+    }
+  }
+  return t;
+}
+
+function sanitizeTitle(title = '') {
+  let t = stripHtml(stripEmbeddedCss(title));
+  t = t.replace(/\s+/g, ' ').trim();
+  const prefix = t.match(MC_CATEGORY_PREFIX);
+  if (prefix) t = t.slice(prefix[0].length).trim();
+  return t;
+}
+
 function tag(block, name) {
   const escaped = name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
   const m = block.match(new RegExp(`<${escaped}[^>]*>([\\s\\S]*?)</${escaped}>`, 'i'));
@@ -206,7 +232,7 @@ function parseFeed(xml) {
   const items = [];
   const blocks = xml.match(/<item[\s\S]*?<\/item>/gi) || xml.match(/<entry[\s\S]*?<\/entry>/gi) || [];
   for (const block of blocks) {
-    const title = stripHtml(tag(block, 'title'));
+    const title = sanitizeTitle(tag(block, 'title'));
     let link = stripHtml(tag(block, 'link'));
     if (!link) {
       const m = block.match(/<link[^>]*href=["']([^"']+)["']/i);
@@ -301,6 +327,11 @@ async function enrichItem(item) {
     if (fromBody.author) candidates.unshift(fromBody.author);
 
     if (candidates.length) next.author = candidates[0];
+  }
+
+  const pageTitle = sanitizeTitle(metaContent(html, 'og:title') || metaContent(html, 'twitter:title'));
+  if (pageTitle && (next.title.length < 12 || /\.[a-z][\w-]*\s*\{/.test(next.title))) {
+    next.title = pageTitle;
   }
 
   if (!next.excerpt || isJunkExcerpt(next.excerpt)) {

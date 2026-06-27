@@ -159,7 +159,15 @@ a { color: inherit; }
   padding: 10px var(--pad);
   display: flex;
   align-items: center;
+  gap: 12px;
+}
+
+.tuner-controls {
+  display: flex;
+  align-items: center;
   gap: 9px;
+  flex: 1;
+  min-width: 0;
 }
 
 .tuner-label { flex-shrink: 0; }
@@ -315,6 +323,106 @@ a { color: inherit; }
 @media (min-width: 680px) { .tuner-vol { display: flex; } }
 .tuner-vol .ico-vol { width: 16px; height: 16px; }
 .tuner-volume { width: 72px; accent-color: var(--radio-bright); cursor: pointer; }
+
+.tuner-stations {
+  display: none;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 10px;
+  padding-left: 14px;
+  border-left: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.tuner-stations-label {
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.38);
+  white-space: nowrap;
+}
+
+.tuner-stations-list {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.tuner-station-btn {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1px;
+  padding: 5px 10px 4px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  cursor: pointer;
+  transition: background 140ms ease, border-color 140ms ease, transform 120ms ease;
+  min-width: 0;
+}
+
+.tuner-station-btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.tuner-station-btn:active { transform: scale(0.96); }
+
+.tuner-station-btn.is-active {
+  border-color: var(--radio-bright);
+  background: rgba(93, 155, 224, 0.14);
+}
+
+.tuner-station-btn.is-playing {
+  border-color: var(--live);
+  background: rgba(200, 16, 46, 0.18);
+}
+
+.tuner-station-call {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  line-height: 1.1;
+  color: var(--radio-bright);
+}
+
+.tuner-station-btn.is-playing .tuner-station-call { color: #ff9a90; }
+
+.tuner-station-inst {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: rgba(255, 255, 255, 0.48);
+  line-height: 1.1;
+}
+
+@media (min-width: 1100px) {
+  .tuner-inner {
+    max-width: 1180px;
+    padding-top: 11px;
+    padding-bottom: 11px;
+  }
+
+  .tuner-controls {
+    flex: 0 1 auto;
+  }
+
+  .tuner-dial {
+    flex: 0 1 260px;
+    max-width: 300px;
+  }
+
+  .tuner-stations {
+    display: flex;
+    margin-left: auto;
+  }
+
+  .masthead-inner {
+    max-width: 1180px;
+  }
+}
 
 /* ─────────────── WIRE ─────────────── */
 .wire {
@@ -520,6 +628,9 @@ a { color: inherit; }
   margin: 0 0 7px;
   color: var(--ink);
   transition: color 140ms ease;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  hyphens: auto;
 }
 .article-byline {
   font-size: 0.84rem;
@@ -640,12 +751,6 @@ a { color: inherit; }
   .article::before { left: -10px; }
 }
 
-@media (min-width: 720px) {
-  .article--lead.has-image .article-title {
-    max-width: 18ch;
-  }
-}
-
 @media (min-width: 820px) and (max-width: 1099px) {
   .news-list {
     display: grid;
@@ -702,11 +807,12 @@ a { color: inherit; }
   }
 
   .article--lead {
-    grid-row: span 7;
+    grid-row: 1 / -1;
     padding-top: 24px;
     padding-right: 34px;
     border-right: 1px solid var(--rule);
     border-bottom: 0;
+    align-self: start;
   }
 
   .article--lead::before {
@@ -719,22 +825,22 @@ a { color: inherit; }
   }
 
   .article--lead .article-title {
-    font-size: clamp(3rem, 4.6vw, 4.65rem);
-    line-height: 0.98;
-    max-width: 11.5ch;
+    font-size: clamp(2.4rem, 3.4vw, 3.6rem);
+    line-height: 1.06;
+    max-width: 22ch;
   }
 
   .article--lead.article--text .article-title {
-    max-width: 13.5ch;
+    max-width: 26ch;
   }
 
   .article--lead .article-brief {
-    max-width: 58ch;
+    max-width: 42ch;
     -webkit-line-clamp: 4;
   }
 
   .article--feature {
-    padding: 24px 0 26px;
+    padding: 20px 0 21px;
   }
 
   .article--feature.has-image .article-media {
@@ -742,13 +848,28 @@ a { color: inherit; }
     aspect-ratio: 16 / 10;
   }
 
+  .article--feature {
+    grid-column: 2;
+    min-width: 0;
+  }
+
   .article--feature .article-title {
-    font-size: 1.62rem;
-    line-height: 1.12;
+    font-size: 1.42rem;
+    line-height: 1.2;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 
   .article--feature .article-brief {
-    -webkit-line-clamp: 3;
+    font-size: 0.92rem;
+    line-height: 1.45;
+    -webkit-line-clamp: 2;
+  }
+
+  .article--feature .article-byline {
+    margin-bottom: 5px;
   }
 
   .article--compact {

@@ -57,6 +57,7 @@ const TUNER_PLAY     = document.getElementById('tuner-play');
 const TUNER_NAME     = document.getElementById('tuner-now-name');
 const TUNER_SUB      = document.getElementById('tuner-now-sub');
 const TUNER_VOLUME   = document.getElementById('tuner-volume');
+const TUNER_STATIONS = document.getElementById('tuner-stations');
 const ICO_PLAY       = TUNER_PLAY.querySelector('.ico-play');
 const ICO_PAUSE      = TUNER_PLAY.querySelector('.ico-pause');
 const ICO_EXTERNAL   = TUNER_PLAY.querySelector('.ico-external');
@@ -105,6 +106,7 @@ async function init() {
 
   radios = radiosData.status === 'fulfilled' ? sortRadios(radiosData.value) : [];
   buildTunerOptions();
+  buildTunerStations();
   restoreVolume();
   registerServiceWorker();
 }
@@ -154,6 +156,46 @@ function sortRadios(list) {
     const t = (order[a.type] ?? 9) - (order[b.type] ?? 9);
     if (t !== 0) return t;
     return a.name.localeCompare(b.name, 'fr');
+  });
+}
+
+function buildTunerStations() {
+  if (!TUNER_STATIONS) return;
+  const playable = radios.filter(r => getPlayableStream(r));
+  if (!playable.length) {
+    TUNER_STATIONS.innerHTML = '';
+    return;
+  }
+
+  TUNER_STATIONS.innerHTML = `
+    <span class="tuner-stations-label">Sur RADAR</span>
+    <div class="tuner-stations-list" role="group" aria-label="Écoute directe">
+      ${playable.map(r => `
+        <button type="button" class="tuner-station-btn" data-id="${escapeHtml(r.id)}"
+          title="${escapeHtml(r.fullName || r.name)} · ${escapeHtml(r.institution)}">
+          <span class="tuner-station-call">${escapeHtml(r.name.replace(/\s+FM.*/i, '').trim())}</span>
+          <span class="tuner-station-inst">${escapeHtml(shortInstitution(r.institution, r.type))}</span>
+        </button>
+      `).join('')}
+    </div>
+  `;
+
+  TUNER_STATIONS.querySelectorAll('.tuner-station-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      TUNER_SELECT.value = btn.dataset.id;
+      selectStation(btn.dataset.id, { autoplay: true });
+    });
+  });
+  updateTunerStationsUI();
+}
+
+function updateTunerStationsUI() {
+  if (!TUNER_STATIONS) return;
+  TUNER_STATIONS.querySelectorAll('.tuner-station-btn').forEach(btn => {
+    const active = currentStation?.id === btn.dataset.id;
+    btn.classList.toggle('is-active', active);
+    btn.classList.toggle('is-playing', active && isPlaying());
+    btn.setAttribute('aria-pressed', active ? 'true' : 'false');
   });
 }
 
@@ -312,6 +354,7 @@ function updatePlayUI() {
   TUNER_PLAY.classList.toggle('is-external', external && !playing);
   TUNER.classList.toggle('is-playing', playing);
   TUNER.classList.toggle('is-external', external && !playing);
+  updateTunerStationsUI();
 }
 
 // ─── Audio engine ──────────────────────────────────────────────────────────────
@@ -520,7 +563,7 @@ function createArticle(item, role = 'standard') {
       ${time ? `<time class="article-time${fresh ? ' is-fresh' : ''}" datetime="${escapeHtml(item.date)}">${time}</time>` : ''}
     </div>
     ${canUseImage ? '<figure class="article-media" aria-hidden="true"></figure>' : ''}
-    <h3 class="article-title">${escapeHtml(item.title)}</h3>
+    <h3 class="article-title">${escapeHtml(cleanTitle(item.title))}</h3>
     ${author ? `<p class="article-byline">${byLabel} <strong>${escapeHtml(author)}</strong></p>` : ''}
     ${brief ? `<p class="article-brief">${escapeHtml(brief)}</p>` : ''}
   `;
@@ -559,6 +602,13 @@ function attachArticleImage(article, item, role) {
   };
 
   img.src = src;
+
+  window.setTimeout(() => {
+    if (!article.classList.contains('has-image') && media.isConnected) {
+      media.remove();
+      article.classList.add('article--text');
+    }
+  }, 2500);
 }
 
 function getCandidateImage(src = '') {
@@ -640,7 +690,33 @@ function formatStamp(d) {
   return `${dateStr}, ${time}`;
 }
 
-// ─── Brief / excerpt cleanup ─────────────────────────────────────────────────────
+// ─── Title / brief cleanup ───────────────────────────────────────────────────────
+const MC_CATEGORY_PREFIX = /^(?:Photoreportage|Marché aux puces|Cobaye|Incursion|Reportage|Opinion|Entrevue|Critique|Chronique)/;
+
+function stripEmbeddedCss(title = '') {
+  let t = String(title).trim();
+  if (!/^\.[\w-]+\s*\{/.test(t) && !/@media/i.test(t)) return t;
+  const start = t.indexOf('{');
+  if (start === -1) return t;
+  let depth = 0;
+  for (let i = start; i < t.length; i += 1) {
+    if (t[i] === '{') depth += 1;
+    else if (t[i] === '}') {
+      depth -= 1;
+      if (depth === 0) return t.slice(i + 1).trim();
+    }
+  }
+  return t;
+}
+
+function cleanTitle(title = '') {
+  let t = stripEmbeddedCss(title);
+  t = t.replace(/\s+/g, ' ').trim();
+  const prefix = t.match(MC_CATEGORY_PREFIX);
+  if (prefix) t = t.slice(prefix[0].length).trim();
+  return t;
+}
+
 function cleanBrief(raw = '') {
   let s = String(raw);
   s = s.replace(/<[^>]*>/g, ' ');                       // strip HTML tags
