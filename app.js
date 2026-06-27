@@ -593,10 +593,12 @@ function updateNewsLayout() {
   NEWS_LIST.dataset.hero = lead.classList.contains('has-image') ? 'image' : 'text';
 }
 
+const BRIEF_SIDEBAR_MAX = 6;
+
 function getArticleRole(index) {
   if (index === 0) return 'lead';
   if (index <= 2) return 'feature';
-  if (index <= 14) return 'compact';
+  if (index <= 2 + BRIEF_SIDEBAR_MAX) return 'compact';
   return 'standard';
 }
 
@@ -807,7 +809,7 @@ function cleanTitle(title = '') {
   return t;
 }
 
-const BRIEF_LIMITS = { lead: 300, feature: 210, compact: 120, standard: 170 };
+const BRIEF_LIMITS = { lead: 300, feature: 210, compact: 90, standard: 170 };
 
 function sanitizeBriefBody(raw = '') {
   let s = String(raw);

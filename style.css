@@ -1031,7 +1031,7 @@ a { color: inherit; }
   /* Colonne droite : fil court multi-sources */
   .article--compact {
     grid-column: 2;
-    padding: 11px 0 11px 28px;
+    padding: 9px 0 9px 28px;
     border-bottom: 1px solid var(--rule);
     border-left: 1px solid var(--rule);
   }
@@ -1088,15 +1088,27 @@ a { color: inherit; }
 
   .article--compact .article-title {
     font-family: var(--sans);
-    font-size: 0.94rem;
+    font-size: 0.92rem;
     font-weight: 700;
-    line-height: 1.3;
+    line-height: 1.28;
     letter-spacing: 0;
     margin-bottom: 0;
   }
 
   .article--compact .article-brief {
-    display: none;
+    font-size: 0.76rem;
+    line-height: 1.38;
+    color: var(--ink-soft);
+    margin-top: 4px;
+    margin-bottom: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .article--compact .article-more {
+    font-size: 0.72rem;
   }
 
   .site-foot {
