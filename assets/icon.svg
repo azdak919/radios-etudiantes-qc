@@ -1,36 +1,17 @@
-<svg width="1024" height="1024" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024" fill="none">
   <defs>
     <radialGradient id="bg" cx="50%" cy="36%" r="84%">
       <stop offset="0%" stop-color="#8a2a7d"/>
       <stop offset="55%" stop-color="#6c2163"/>
       <stop offset="100%" stop-color="#481546"/>
     </radialGradient>
-
-    <g id="fdl-half" fill="#ffffff">
-      <!-- top petal (right half) -->
-      <path d="M512 300 C 552 358, 552 432, 524 486 L 512 486 Z"/>
-      <!-- base (right half) -->
-      <path d="M512 514 C 544 558, 556 606, 512 668 L 512 514 Z"/>
-      <!-- side petal (upright lobe, rises and curls toward the top) -->
-      <path d="M516 487 C 548 470, 590 442, 606 388 C 614 364, 606 344, 588 346 C 590 380, 566 430, 534 466 C 528 473, 522 481, 516 487 Z"/>
-    </g>
   </defs>
-
-  <!-- Tile : mélange du bleu officiel du Québec et du rouge officiel du Canada (#6C2163) -->
   <rect width="1024" height="1024" rx="232" fill="url(#bg)"/>
-
-  <!-- Faint radar rings (brand nod) -->
-  <g stroke="#ffffff" fill="none" stroke-opacity="0.13">
-    <circle cx="512" cy="512" r="316" stroke-width="6"/>
-    <circle cx="512" cy="512" r="232" stroke-width="6"/>
-  </g>
-  <g stroke="#ffffff" stroke-opacity="0.09" stroke-width="6">
-    <line x1="196" y1="512" x2="828" y2="512"/>
-    <line x1="512" y1="196" x2="512" y2="828"/>
-  </g>
-
-  <!-- Fleur de lys -->
-  <use href="#fdl-half"/>
-  <use href="#fdl-half" transform="translate(1024,0) scale(-1,1)"/>
-  <rect x="446" y="486" width="132" height="28" rx="14" fill="#ffffff"/>
+  <text
+    x="512"
+    y="600"
+    font-size="560"
+    text-anchor="middle"
+    font-family="Apple Color Emoji, Segoe UI Emoji, Noto Color Emoji, sans-serif"
+  >📰</text>
 </svg>

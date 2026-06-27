@@ -404,6 +404,10 @@ function updateMediaSession(radio) {
     title: radio.fullName || radio.name,
     artist: radio.institution,
     album: 'RADAR — Les médias étudiants du Québec',
+    artwork: [
+      { src: './assets/icon-192.png', sizes: '192x192', type: 'image/png' },
+      { src: './assets/icon-512.png', sizes: '512x512', type: 'image/png' },
+    ],
   });
 }
 

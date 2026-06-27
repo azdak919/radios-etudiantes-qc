@@ -1,18 +1,14 @@
-<svg width="512" height="148" viewBox="0 0 512 148" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="148" viewBox="0 0 512 148" fill="none">
   <rect width="512" height="148" rx="32" fill="#0A0A0B"/>
   <rect x="12" y="12" width="488" height="124" rx="24" fill="url(#panel)" stroke="white" stroke-opacity="0.08"/>
-  <g transform="translate(26 18)">
-    <rect width="112" height="112" rx="28" fill="#070707"/>
-    <circle cx="56" cy="56" r="34" stroke="#FF5A4F" stroke-width="8"/>
-    <rect x="30" y="46" width="8" height="20" rx="4" fill="white"/>
-    <rect x="44" y="36" width="8" height="40" rx="4" fill="white"/>
-    <rect x="58" y="28" width="8" height="56" rx="4" fill="#FF5A4F"/>
-    <rect x="72" y="36" width="8" height="40" rx="4" fill="white"/>
-    <rect x="86" y="46" width="8" height="20" rx="4" fill="white"/>
-    <circle cx="92" cy="22" r="14" fill="#AD0F18"/>
-    <path d="M92 15V29" stroke="white" stroke-width="4" stroke-linecap="round"/>
-    <path d="M85 22H99" stroke="white" stroke-width="4" stroke-linecap="round"/>
-  </g>
+  <rect x="26" y="18" width="112" height="112" rx="28" fill="#6C2163"/>
+  <text
+    x="82"
+    y="92"
+    font-size="72"
+    text-anchor="middle"
+    font-family="Apple Color Emoji, Segoe UI Emoji, Noto Color Emoji, sans-serif"
+  >📰</text>
   <path d="M185.18 102L165.18 45.2H183.76L194.32 80.16L204.8 45.2H220.96L201.04 102H185.18Z" fill="white"/>
   <path d="M226.295 102V45.2H243.895L257.735 73.04V45.2H273.495V102H257.015L242.055 71.6V102H226.295Z" fill="white"/>
   <path d="M281.364 102V87.84L306.644 59.12H281.924V45.2H327.444V58.72L302.084 88.08H328.244V102H281.364Z" fill="white"/>
