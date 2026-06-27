@@ -42,7 +42,16 @@ function sleep(ms) {
 
 async function fetchPageAuthors(items, feedDefaults, sourceMap = new Map()) {
   const pageAuthors = new Map();
-  const toFetch = items.filter((item) => needsPageAuthorVerification(item, feedDefaults));
+  const toFetch = items
+    .filter((item) => {
+      const hints = getBotHints(sourceMap.get(item.source), 'authors');
+      return needsPageAuthorVerification(item, feedDefaults, hints);
+    })
+    .sort((a, b) => {
+      const ah = getBotHints(sourceMap.get(a.source), 'authors').forcePageAuthor ? 0 : 1;
+      const bh = getBotHints(sourceMap.get(b.source), 'authors').forcePageAuthor ? 0 : 1;
+      return ah - bh;
+    });
 
   if (!toFetch.length) return pageAuthors;
 

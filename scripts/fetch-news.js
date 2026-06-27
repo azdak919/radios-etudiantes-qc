@@ -60,6 +60,7 @@ const MAX_PER_SOURCE = 20;  // archive par journal (certains flux RSS en ont 18+
 const MAX_WP_FEATURED = 8;  // vedettes WordPress (catégorie slider, etc.)
 const WP_FEATURED_SLUGS = ['slider', 'a-la-une', 'featured'];
 const MAX_ENRICH = 45;      // cap article-page fetches per run
+const MAX_AUTHOR_PAGES = 80; // vérification auteurs page (séparé de l'enrichissement)
 
 const GENERIC_AUTHORS = /^(admin|administrator|administrateur|editor|éditeur|editeur|rédaction|redaction|staff|wordpress|webmaster|collectif|le collectif|tribune|link|daily|exemplaire|quartier libre|zone campus|la pige|le délit|le delit|the link|the concordian|the tribune|the mcgill daily|the campus)$/i;
 
@@ -461,10 +462,11 @@ function metaContent(html, key) {
   return '';
 }
 
-function needsEnrichment(item, feedDefaults = new Map()) {
+function needsEnrichment(item, feedDefaults = new Map(), sourceByName = new Map()) {
   const thinExcerpt = !item.excerpt || isJunkExcerpt(item.excerpt);
+  const authorHints = getBotHints(sourceByName.get(item.source), 'authors');
   const missingAuthor = !item.author || isGenericAuthor(item.author);
-  const needsAuthorPage = needsPageAuthorVerification(item, feedDefaults);
+  const needsAuthorPage = needsPageAuthorVerification(item, feedDefaults, authorHints);
   return thinExcerpt || missingAuthor || needsImageEnrichment(item) || needsAuthorPage;
 }
 
@@ -527,7 +529,9 @@ async function enrichItem(item, sourceByName = new Map()) {
 async function enrichItems(items, feedDefaults = new Map(), sourceByName = new Map()) {
   const queue = [
     ...items.filter(needsImageEnrichment),
-    ...items.filter((item) => needsEnrichment(item, feedDefaults) && !needsImageEnrichment(item)),
+    ...items.filter(
+      (item) => needsEnrichment(item, feedDefaults, sourceByName) && !needsImageEnrichment(item),
+    ),
   ];
   const seen = new Set();
   let enriched = 0;
@@ -558,16 +562,26 @@ async function enrichItems(items, feedDefaults = new Map(), sourceByName = new M
   return items;
 }
 
+function authorPagePriority(item = {}, sourceByName = new Map()) {
+  const hints = getBotHints(sourceByName.get(item.source), 'authors');
+  return hints.forcePageAuthor ? 0 : 1;
+}
+
 async function fetchPageAuthors(items, feedDefaults, existing = new Map(), sourceByName = new Map()) {
   const pageAuthors = new Map(existing);
-  const toFetch = items.filter(
-    (item) => needsPageAuthorVerification(item, feedDefaults)
-      && !pageAuthors.has(normalizeArticleUrl(item.link)),
-  );
+  const toFetch = items
+    .filter(
+      (item) => {
+        const hints = getBotHints(sourceByName.get(item.source), 'authors');
+        return needsPageAuthorVerification(item, feedDefaults, hints)
+          && !pageAuthors.has(normalizeArticleUrl(item.link));
+      },
+    )
+    .sort((a, b) => authorPagePriority(a, sourceByName) - authorPagePriority(b, sourceByName));
 
   let fetched = 0;
   for (const item of toFetch) {
-    if (fetched >= MAX_ENRICH) break;
+    if (fetched >= MAX_AUTHOR_PAGES) break;
     const key = normalizeArticleUrl(item.link);
     if (!key || pageAuthors.has(key)) continue;
 
@@ -723,6 +737,7 @@ async function main() {
       referenceDate,
     });
 
+    const authorHints = getBotHints(src, 'authors');
     for (const it of items) {
       all.push({
         source: src.name,
@@ -731,6 +746,7 @@ async function main() {
         type: src.type,
         lang: src.lang,
         ...it,
+        author: authorHints.ignoreRssAuthor ? '' : it.author,
       });
     }
   }

@@ -227,6 +227,17 @@
       "type": "universite",
       "lang": "en",
       "url": "https://www.thetribune.ca/feed/",
+      "botHints": {
+        "authors": {
+          "forcePageAuthor": true,
+          "ignoreRssAuthor": true,
+          "selectors": [
+            "tribune_author",
+            "entry-author"
+          ]
+        }
+      },
+      "_note": "Flux RSS : dc:creator « Admin » — auteur réel dans entry-author / ?tribune_author= sur la page.",
       "_status": "ok",
       "_lastItemDate": "2026-06-26T15:24:28.000Z",
       "_lastChecked": "2026-06-27T16:04:47.289Z",

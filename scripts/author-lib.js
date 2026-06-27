@@ -58,9 +58,21 @@ const CONTRIBUTOR_HTML_RE = new RegExp(
   'iu',
 );
 
+function looksLikeMultiAuthorList(name = '') {
+  const a = String(name).replace(/\s+/g, ' ').trim();
+  if (!/,/.test(a) && !/\s+and\s+/i.test(a) && !/\s+et\s+/i.test(a)) return false;
+  const chunks = a.split(/\s*,\s*|\s+and\s+|\s+et\s+/i).map((c) => c.trim()).filter(Boolean);
+  if (chunks.length < 2 || chunks.length > 4) return false;
+  return chunks.every((chunk) => {
+    const words = chunk.split(/\s+/).filter(Boolean);
+    return words.length >= 1 && words.length <= 4
+      && words.every((w) => /^[\p{Lu}][\p{L}'’.\-]+$/u.test(w));
+  });
+}
+
 function isJunkAuthorName(name = '') {
   const a = String(name).replace(/\s+/g, ' ').trim();
-  if (!a || a.length < 2 || a.length > 80) return true;
+  if (!a || a.length < 2 || a.length > 120) return true;
   if (/^[,;:.]/.test(a) || /[,;]{2,}/.test(a)) return true;
   if (/\bfunction\s*\(/.test(a) || /[{}\[\]]/.test(a)) return true;
   if (/https?:\/\//i.test(a) || /\.(?:php|js|css)\b/i.test(a)) return true;
@@ -70,7 +82,7 @@ function isJunkAuthorName(name = '') {
   if (/\d+\s*,\s*\d+\s*,\s*[\d.]+\s*/.test(a)) return true;
   if (/\b(?:rgba?|box-shadow|max-width|font-family|\.td-|\.wp-|\.molongui|Open Sans)\b/i.test(a)) return true;
   if (/[`'"]\s*,\s*[`'"]/.test(a)) return true;
-  if (a.split(/\s+/).length > 6) return true;
+  if (a.split(/\s+/).length > 6 && !looksLikeMultiAuthorList(a)) return true;
   return false;
 }
 
@@ -162,6 +174,77 @@ function authorsFromSchemaPerson(html = '') {
     if (n) names.push(n);
   }
   return [...new Set(names)];
+}
+
+function splitMultiAuthorLabel(text = '') {
+  const raw = decodeBasicEntities(stripHtml(text)).replace(/\s+/g, ' ').trim();
+  if (!raw) return [];
+  if (!/[,&]|\bet\b|\band\b/i.test(raw)) return [raw];
+  return raw
+    .split(/\s*,\s*|\s+et\s+|\s+and\s+/i)
+    .map((part) => part.replace(/^and\s+/i, '').trim())
+    .filter(Boolean);
+}
+
+function tribuneAuthorRegion(html = '') {
+  const side = html.match(
+    /class=["'][^"']*\bpost_author_side\b[^"']*["'][\s\S]*?<\/(?:div|section)>/i,
+  );
+  if (side) return side[0];
+  const meta = html.match(
+    /class=["'][^"']*\bentry-author\b[^"']*["'][^>]*>[\s\S]*?<\/time>/i,
+  );
+  return meta ? meta[0] : html.slice(0, 100000);
+}
+
+/** The Tribune — lien ?tribune_author=Nom+Prénom dans la byline entry-author. */
+function authorsFromTribuneAuthor(html = '') {
+  const region = tribuneAuthorRegion(html);
+  const names = [];
+  const tribuneMatch = region.match(/tribune_author=([^"'&]+)/i);
+  if (tribuneMatch) {
+    const decoded = decodeURIComponent(tribuneMatch[1].replace(/\+/g, ' '));
+    for (const part of splitMultiAuthorLabel(decoded)) {
+      const n = expandAuthorName(part);
+      if (n) names.push(n);
+    }
+  }
+  const entryAuthor = region.match(
+    /class=["'][^"']*\bentry-author\b[^"']*["'][^>]*>[\s\S]*?<a[^>]*>([\s\S]*?)<\/a>/i,
+  );
+  if (entryAuthor) {
+    const label = stripHtml(entryAuthor[1]);
+    if (label && !/^author$/i.test(label)) {
+      for (const part of splitMultiAuthorLabel(label)) {
+        const n = expandAuthorName(part);
+        if (n) names.push(n);
+      }
+    }
+  }
+  return [...new Set(names)];
+}
+
+/** Sélecteurs documentés dans botHints.authors.selectors. */
+function authorsFromHintSelectors(html = '', hints = {}) {
+  const selectors = Array.isArray(hints.selectors) ? hints.selectors : [];
+  if (!selectors.length) return [];
+
+  const names = [];
+  for (const sel of selectors) {
+    const key = String(sel).trim().toLowerCase();
+    if (key === 'tribune_author' || key === 'entry-author') {
+      names.push(...authorsFromTribuneAuthor(html));
+    } else if (key === 'post-author') {
+      names.push(...authorsFromPostAuthor(html));
+    } else if (key === 'td-post-author-name') {
+      names.push(...authorsFromTdPostAuthor(html));
+    } else if (key === 'rel-author') {
+      names.push(...authorsFromRelLinks(html));
+    } else if (key === 'schema.org/person' || key === 'schema-person') {
+      names.push(...authorsFromSchemaPerson(html));
+    }
+  }
+  return [...new Set(names.map((n) => normalizeAuthor(n)).filter(Boolean))];
 }
 
 function normAuthorKey(name = '') {
@@ -268,6 +351,16 @@ function authorFromArticleHtml(html = '', lang = 'fr', hints = {}) {
   const candidates = [];
   const l = lang === 'en' ? 'en' : 'fr';
 
+  const hintAuthors = authorsFromHintSelectors(html, hints);
+  if (hintAuthors.length) {
+    candidates.push({ author: joinAuthorNames(hintAuthors, l), trust: 106 });
+  }
+
+  const tribuneAuthors = authorsFromTribuneAuthor(html);
+  if (tribuneAuthors.length) {
+    candidates.push({ author: joinAuthorNames(tribuneAuthors, l), trust: 104 });
+  }
+
   const contributor = html.match(CONTRIBUTOR_HTML_RE);
   if (contributor) {
     candidates.push({ author: contributor[1].replace(/\s+/g, ' ').trim(), trust: 96 });
@@ -329,10 +422,22 @@ function authorFromArticleHtml(html = '', lang = 'fr', hints = {}) {
   }
 
   const tribune = html.match(/tribune_author=([^"'&]+)/i);
-  if (tribune) candidates.push({ author: decodeURIComponent(tribune[1].replace(/\+/g, ' ')), trust: 90 });
+  if (tribune) {
+    candidates.push({
+      author: decodeURIComponent(tribune[1].replace(/\+/g, ' ')),
+      trust: 90,
+    });
+  }
 
-  const entryAuthor = html.match(/class=["'][^"']*entry-author[^"']*["'][^>]*>[\s\S]*?<a[^>]*>([\s\S]*?)<\/a>/i);
-  if (entryAuthor) candidates.push({ author: stripHtml(entryAuthor[1]), trust: 75 });
+  const entryAuthor = html.match(
+    /class=["'][^"']*entry-author[^"']*["'][^>]*>[\s\S]*?<a[^>]*>([\s\S]*?)<\/a>/i,
+  );
+  if (entryAuthor) {
+    const name = stripHtml(entryAuthor[1]);
+    if (name && !/^author$/i.test(name)) {
+      candidates.push({ author: name, trust: 75 });
+    }
+  }
 
   const authorTitle = html.match(/class=["'][^"']*author-title[^"']*["'][^>]*>[\s\S]*?<a[^>]*>([\s\S]*?)<\/a>/i);
   if (authorTitle) candidates.push({ author: stripHtml(authorTitle[1]), trust: 75 });
@@ -343,8 +448,9 @@ function authorFromArticleHtml(html = '', lang = 'fr', hints = {}) {
   }
 
   for (const { author } of candidates.sort((a, b) => b.trust - a.trust)) {
-    const name = author.includes(',')
-      ? joinAuthorNames(author.split(/,\s*/), l)
+    const parts = splitMultiAuthorLabel(author);
+    const name = parts.length > 1
+      ? joinAuthorNames(parts.map((p) => expandAuthorName(p)).filter(Boolean), l)
       : expandAuthorName(author, l);
     if (name && !isEditorialPlaceholder(name, l)) return name;
   }
@@ -365,8 +471,9 @@ function detectFeedDefaultAuthors(items = []) {
     if (list.length < FEED_DEFAULT_MIN_COUNT) continue;
     const counts = new Map();
     for (const item of list) {
+      const lang = item.lang === 'en' ? 'en' : 'fr';
       const a = normalizeAuthor(item.author);
-      if (!a) continue;
+      if (!a || isEditorialPlaceholder(a, lang)) continue;
       const key = normAuthorKey(a);
       counts.set(key, { name: a, count: (counts.get(key)?.count || 0) + 1 });
     }
@@ -413,8 +520,9 @@ function extractFirstPersonAuthor(text = '') {
   return m ? normalizeAuthor(m[1]) : '';
 }
 
-function needsPageAuthorVerification(item, feedDefaults = new Map()) {
+function needsPageAuthorVerification(item, feedDefaults = new Map(), hints = {}) {
   if (!item.link) return false;
+  if (hints.forcePageAuthor) return true;
   const lang = item.lang === 'en' ? 'en' : 'fr';
   const ex = String(item.excerpt || '').trim();
   if (excerptOpensWithByline(ex) && extractBylineFromText(ex).author) return false;
@@ -436,8 +544,10 @@ function resolveAuthorCandidate(item, allItems, feedDefaults, pageAuthor) {
   const excerptAuthor = excerptOpensWithByline(ex) && fromExcerpt.author
     ? fromExcerpt.author
     : '';
+  const lang = item.lang === 'en' ? 'en' : 'fr';
   const page = normalizeAuthor(pageAuthor);
   let rss = normalizeAuthor(trimMangledAuthor(item.author));
+  if (isEditorialPlaceholder(rss, lang)) rss = '';
   const rssIsDefault = rss && isFeedDefaultAuthor(item, feedDefaults);
 
   if (rssIsDefault) rss = '';
@@ -581,6 +691,8 @@ module.exports = {
   extractFirstPersonAuthor,
   excerptOpensWithByline,
   authorFromArticleHtml,
+  authorsFromTribuneAuthor,
+  authorsFromHintSelectors,
   detectFeedDefaultAuthors,
   isFeedDefaultAuthor,
   needsPageAuthorVerification,

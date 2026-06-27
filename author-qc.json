@@ -1,170 +1,170 @@
 {
-  "updated": "2026-06-27T15:17:27.134Z",
-  "total": 171,
-  "withAuthor": 171,
-  "mismatches": 28,
+  "updated": "2026-06-27T16:25:42.155Z",
+  "total": 205,
+  "withAuthor": 205,
+  "mismatches": 32,
   "ok": true,
   "samples": [
     {
-      "title": "Ask the Trib: How do I survive summer in my hometown?",
-      "link": "https://www.thetribune.ca/student-life/ask-the-trib-how-do-i-survive-summer-in-my-hometown-26062026/?utm_source=rss&utm_medium=rss&utm_campaign=ask-the-trib-how-do-i-survive-summer-in-my-hometown-26062026",
-      "source": "The Tribune",
+      "title": "Last day to apply to be part of The Concordian's masthead!",
+      "link": "https://theconcordian.substack.com/p/last-day-to-apply-to-be-part-of-the",
+      "source": "The Concordian",
       "fieldAuthor": "The editorial team",
-      "canonicalAuthor": "Brooke Barak",
-      "reason": "page-byline"
+      "canonicalAuthor": "The editorial team",
+      "reason": "no-author-source"
     },
     {
-      "title": "Kanga I, II, III’ brings Projections: SANKOFA’s afrofuturist vision to Trottier",
-      "link": "https://www.thetribune.ca/a-e/kanga-i-ii-iii-brings-projections-sankofas-afrofuturist-vision-to-trottier-23062026/?utm_source=rss&utm_medium=rss&utm_campaign=kanga-i-ii-iii-brings-projections-sankofas-afrofuturist-vision-to-trottier-23062026",
-      "source": "The Tribune",
+      "title": "The Concordian is hiring!",
+      "link": "https://theconcordian.substack.com/p/the-concordian-is-hiring",
+      "source": "The Concordian",
       "fieldAuthor": "The editorial team",
-      "canonicalAuthor": "Ellen Lurie",
-      "reason": "page-byline"
+      "canonicalAuthor": "The editorial team",
+      "reason": "no-author-source"
     },
     {
-      "title": "AI’s use in legal decisions poses major risks to the Canadian judicial system’s integrity and neutrality",
-      "link": "https://www.thetribune.ca/opinion/ais-use-in-legal-decisions-poses-major-risks-to-the-canadian-judicial-systems-integrity-and-neutrality-11062026/?utm_source=rss&utm_medium=rss&utm_campaign=ais-use-in-legal-decisions-poses-major-risks-to-the-canadian-judicial-systems-integrity-and-neutrality-11062026",
-      "source": "The Tribune",
+      "title": "Apply to The Concordian Awards!",
+      "link": "https://theconcordian.substack.com/p/apply-to-the-concordian-awards",
+      "source": "The Concordian",
       "fieldAuthor": "The editorial team",
-      "canonicalAuthor": "Nello Giuliani",
-      "reason": "page-byline"
+      "canonicalAuthor": "The editorial team",
+      "reason": "no-author-source"
     },
     {
-      "title": "Know Your Artist: Theodore A. Harris",
-      "link": "https://www.thetribune.ca/a-e/know-your-artist-theodore-a-harris-27052026/?utm_source=rss&utm_medium=rss&utm_campaign=know-your-artist-theodore-a-harris-27052026",
-      "source": "The Tribune",
+      "title": "The Honey Bank: ASFA, Austerity, and Student Mobilization",
+      "link": "https://theconcordian.substack.com/p/the-honey-bank-asfa-austerity-and",
+      "source": "The Concordian",
       "fieldAuthor": "The editorial team",
-      "canonicalAuthor": "Ellen Lurie",
-      "reason": "page-byline"
+      "canonicalAuthor": "The editorial team",
+      "reason": "no-author-source"
     },
     {
-      "title": "Montreal protestors commemorate the 78th anniversary of the Nakba",
-      "link": "https://www.thetribune.ca/news/montreal-protestors-commemorate-the-78th-anniversary-of-the-nakba-21052026/?utm_source=rss&utm_medium=rss&utm_campaign=montreal-protestors-commemorate-the-78th-anniversary-of-the-nakba-21052026",
-      "source": "The Tribune",
+      "title": "This Week's Top Stories",
+      "link": "https://theconcordian.substack.com/p/this-weeks-top-stories-d67",
+      "source": "The Concordian",
       "fieldAuthor": "The editorial team",
-      "canonicalAuthor": "Ellen Lurie",
-      "reason": "page-byline"
+      "canonicalAuthor": "The editorial team",
+      "reason": "no-author-source"
     },
     {
-      "title": "A final note from the Editor-in-Chief of Volume 45, for the record",
-      "link": "https://www.thetribune.ca/opinion/op-off-the-board/a-final-note-from-the-editor-in-chief-of-volume-45-for-the-record-14052026/?utm_source=rss&utm_medium=rss&utm_campaign=a-final-note-from-the-editor-in-chief-of-volume-45-for-the-record-14052026",
-      "source": "The Tribune",
+      "title": "Financing My Future: Life Without Financial Worries",
+      "link": "https://theconcordian.substack.com/p/financing-my-future-life-without",
+      "source": "The Concordian",
       "fieldAuthor": "The editorial team",
-      "canonicalAuthor": "Yusur Al-Sharqi",
-      "reason": "page-byline"
-    },
-    {
-      "title": "SPHR remembers Gaza Solidarity Encampment ahead of Nakba Anniversary Protest",
-      "link": "https://www.thetribune.ca/news/sphr-remembers-gaza-solidarity-encampment-ahead-of-nakba-anniversary-protest-13052026/?utm_source=rss&utm_medium=rss&utm_campaign=sphr-remembers-gaza-solidarity-encampment-ahead-of-nakba-anniversary-protest-13052026",
-      "source": "The Tribune",
-      "fieldAuthor": "The editorial team",
-      "canonicalAuthor": "Ellen Lurie",
-      "reason": "page-byline"
-    },
-    {
-      "title": "McGill community members express concerns about McGill Athletics’ former partnership with InterRent REIT",
-      "link": "https://www.thetribune.ca/news/mcgill-community-members-express-concerns-about-mcgill-athletics-former-partnership-with-interrent-reit-26042026/?utm_source=rss&utm_medium=rss&utm_campaign=mcgill-community-members-express-concerns-about-mcgill-athletics-former-partnership-with-interrent-reit-26042026",
-      "source": "The Tribune",
-      "fieldAuthor": "The editorial team",
-      "canonicalAuthor": "Rebecca Hamilton",
-      "reason": "page-byline"
-    },
-    {
-      "title": "Journalism After Gaza’ panel discusses media bias and the future of reporting in Palestine",
-      "link": "https://www.thetribune.ca/student-life/journalism-after-gaza-panel-discusses-media-bias-and-the-future-of-reporting-in-palestine-27042026/?utm_source=rss&utm_medium=rss&utm_campaign=journalism-after-gaza-panel-discusses-media-bias-and-the-future-of-reporting-in-palestine-27042026",
-      "source": "The Tribune",
-      "fieldAuthor": "The editorial team",
-      "canonicalAuthor": "Ellen Lurie",
-      "reason": "page-byline"
-    },
-    {
-      "title": "Sad endings do not ruin a great story: Haliburton, Vanmoen, and Carlyle",
-      "link": "https://www.thetribune.ca/sports/sad-endings-do-not-ruin-a-great-story-haliburton-vanmoen-and-carlyle-18042026/?utm_source=rss&utm_medium=rss&utm_campaign=sad-endings-do-not-ruin-a-great-story-haliburton-vanmoen-and-carlyle-18042026",
-      "source": "The Tribune",
-      "fieldAuthor": "The editorial team",
-      "canonicalAuthor": "Will Kennedy",
-      "reason": "page-byline"
-    },
-    {
-      "title": "How can I show you I’m doing better if there’s nothing good for me to do?",
-      "link": "https://www.thetribune.ca/features/how-can-i-show-you-im-doing-better-if-theres-nothing-good-for-me-to-do/?utm_source=rss&utm_medium=rss&utm_campaign=how-can-i-show-you-im-doing-better-if-theres-nothing-good-for-me-to-do",
-      "source": "The Tribune",
-      "fieldAuthor": "The editorial team",
-      "canonicalAuthor": "Ellen Lurie",
-      "reason": "page-byline"
-    },
-    {
-      "title": "Your health, your problem",
-      "link": "https://www.thetribune.ca/features/your-health-your-problem/?utm_source=rss&utm_medium=rss&utm_campaign=your-health-your-problem",
-      "source": "The Tribune",
-      "fieldAuthor": "The editorial team",
-      "canonicalAuthor": "Leanne Cherry",
-      "reason": "page-byline"
-    },
-    {
-      "title": "Oh, the places I’ll go (but not stay)!",
-      "link": "https://www.thetribune.ca/opinion/oh-the-places-ill-go-but-not-stay-07042026/?utm_source=rss&utm_medium=rss&utm_campaign=oh-the-places-ill-go-but-not-stay-07042026",
-      "source": "The Tribune",
-      "fieldAuthor": "The editorial team",
-      "canonicalAuthor": "Rupneet Shahriar",
-      "reason": "page-byline"
-    },
-    {
-      "title": "Open Letter: How can I show you I’m doing better if there’s nothing good for me to do?",
-      "link": "https://www.thetribune.ca/opinion/letters-to-the-editor/open-letter-how-can-i-show-you-im-doing-better-if-theres-nothing-good-for-me-to-do-07042026/?utm_source=rss&utm_medium=rss&utm_campaign=open-letter-how-can-i-show-you-im-doing-better-if-theres-nothing-good-for-me-to-do-07042026",
-      "source": "The Tribune",
-      "fieldAuthor": "The editorial team",
-      "canonicalAuthor": "Student at the Cowansville penitentiary",
-      "reason": "page-byline"
-    },
-    {
-      "title": "Black Sisterhood at McGill targeted with online racist harassment",
-      "link": "https://www.thetribune.ca/news/mcgill-news/black-sisterhood-at-mcgill-targeted-with-online-racist-harassment-07042026/?utm_source=rss&utm_medium=rss&utm_campaign=black-sisterhood-at-mcgill-targeted-with-online-racist-harassment-07042026",
-      "source": "The Tribune",
-      "fieldAuthor": "The editorial team",
-      "canonicalAuthor": "Moyọ Alabi and Ellen Lurie",
-      "reason": "page-byline"
-    },
-    {
-      "title": "Referendum to boycott Israeli institutions passes with the highest voting turnout in recent LSA history",
-      "link": "https://www.thetribune.ca/news/referendum-to-boycott-israeli-institutions-passes-with-the-highest-voting-turnout-in-recent-lsa-history-07042026/?utm_source=rss&utm_medium=rss&utm_campaign=referendum-to-boycott-israeli-institutions-passes-with-the-highest-voting-turnout-in-recent-lsa-history-07042026",
-      "source": "The Tribune",
-      "fieldAuthor": "The editorial team",
-      "canonicalAuthor": "Amelia H. Clark",
-      "reason": "page-byline"
-    },
-    {
-      "title": "The forgotten history of the Montreal coffeehouse",
-      "link": "https://www.thetribune.ca/a-e/culture/the-forgotten-history-of-the-montreal-coffeehouse-07042026/?utm_source=rss&utm_medium=rss&utm_campaign=the-forgotten-history-of-the-montreal-coffeehouse-07042026",
-      "source": "The Tribune",
-      "fieldAuthor": "The editorial team",
-      "canonicalAuthor": "Kendyl Daley",
-      "reason": "page-byline"
+      "canonicalAuthor": "The editorial team",
+      "reason": "no-author-source"
     },
     {
       "title": "A reflection on McGill’s science programs from graduating SciTech staff writers",
       "link": "https://www.thetribune.ca/sci-tech/a-reflection-on-mcgills-science-programs-from-graduating-scitech-staff-writers-07042026/?utm_source=rss&utm_medium=rss&utm_campaign=a-reflection-on-mcgills-science-programs-from-graduating-scitech-staff-writers-07042026",
       "source": "The Tribune",
-      "fieldAuthor": "The editorial team",
-      "canonicalAuthor": "The editorial team",
-      "reason": "rss-feed-default-rejected"
-    },
-    {
-      "title": "McGill investigating antisemitic vandalism in Faculty of Medicine",
-      "link": "https://www.thetribune.ca/news/mcgill-investigating-antisemitic-vandalism-in-faculty-of-medicine-07042026/?utm_source=rss&utm_medium=rss&utm_campaign=mcgill-investigating-antisemitic-vandalism-in-faculty-of-medicine-07042026",
-      "source": "The Tribune",
-      "fieldAuthor": "The editorial team",
-      "canonicalAuthor": "Yusur Al-Sharqi",
-      "reason": "page-byline"
+      "fieldAuthor": "Antoine Larocque and José Moro Gutiérrez and Michelle Yankovsky",
+      "canonicalAuthor": "Antoine Larocque, José Moro Gutiérrez and Michelle Yankovsky",
+      "reason": "page-byline-overrides-rss"
     },
     {
       "title": "Senior spotlight: Sophie Courville, Ayoub Sabri, and Erik Linseisen",
       "link": "https://www.thetribune.ca/sports/senior-spotlight-sophie-courville-ayoub-sabri-and-erik-linseisen-07042026/?utm_source=rss&utm_medium=rss&utm_campaign=senior-spotlight-sophie-courville-ayoub-sabri-and-erik-linseisen-07042026",
       "source": "The Tribune",
-      "fieldAuthor": "The editorial team",
+      "fieldAuthor": "Clara Smyrski, Ivanna Zhang and Vanmoen and Carlyle",
       "canonicalAuthor": "Clara Smyrski and Ivanna Zhang",
-      "reason": "page-byline"
+      "reason": "page-byline-overrides-rss"
+    },
+    {
+      "title": "Find 5 Gaiters in this photo!",
+      "link": "https://thebucampus.ca/2026/04/06/find-5-gaiters-in-this-photo/",
+      "source": "The Campus",
+      "fieldAuthor": "The editorial team",
+      "canonicalAuthor": "The editorial team",
+      "reason": "no-author-source"
+    },
+    {
+      "title": "Jo Aubert: The testimony of a graduating athlete",
+      "link": "https://thebucampus.ca/2026/04/06/jo-aubert-the-testimony-of-a-graduating-athlete/",
+      "source": "The Campus",
+      "fieldAuthor": "The editorial team",
+      "canonicalAuthor": "The editorial team",
+      "reason": "no-author-source"
+    },
+    {
+      "title": "Grad Formal 2026",
+      "link": "https://thebucampus.ca/2026/04/06/grad-formal-2026/",
+      "source": "The Campus",
+      "fieldAuthor": "The editorial team",
+      "canonicalAuthor": "The editorial team",
+      "reason": "no-author-source"
+    },
+    {
+      "title": "Mars enters Aries",
+      "link": "https://thebucampus.ca/2026/04/06/mars-enters-aries/",
+      "source": "The Campus",
+      "fieldAuthor": "The editorial team",
+      "canonicalAuthor": "The editorial team",
+      "reason": "no-author-source"
+    },
+    {
+      "title": "Read It Up | The Castle of Otranto by Horace Walpole",
+      "link": "https://theconcordian.substack.com/p/read-it-up-the-castle-of-otranto",
+      "source": "The Concordian",
+      "fieldAuthor": "The editorial team",
+      "canonicalAuthor": "The editorial team",
+      "reason": "no-author-source"
+    },
+    {
+      "title": "This Week's Top Stories",
+      "link": "https://theconcordian.substack.com/p/this-weeks-top-stories-99d",
+      "source": "The Concordian",
+      "fieldAuthor": "The editorial team",
+      "canonicalAuthor": "The editorial team",
+      "reason": "no-author-source"
+    },
+    {
+      "title": "The Pitch List",
+      "link": "https://theconcordian.substack.com/p/the-pitch-list-747",
+      "source": "The Concordian",
+      "fieldAuthor": "The editorial team",
+      "canonicalAuthor": "The editorial team",
+      "reason": "no-author-source"
+    },
+    {
+      "title": "This Week's Top Stories",
+      "link": "https://theconcordian.substack.com/p/this-weeks-top-stories-fcb",
+      "source": "The Concordian",
+      "fieldAuthor": "The editorial team",
+      "canonicalAuthor": "The editorial team",
+      "reason": "no-author-source"
+    },
+    {
+      "title": "Financing My Future: In Full Financial Honesty",
+      "link": "https://theconcordian.substack.com/p/financing-my-future-in-full-financial",
+      "source": "The Concordian",
+      "fieldAuthor": "The editorial team",
+      "canonicalAuthor": "The editorial team",
+      "reason": "no-author-source"
+    },
+    {
+      "title": "Spotlighting Powerful McGill Alumnae",
+      "link": "https://www.mcgilldaily.com/2026/03/spotlighting-powerful-mcgill-alumnae/",
+      "source": "The McGill Daily",
+      "fieldAuthor": "The editorial team",
+      "canonicalAuthor": "The editorial team",
+      "reason": "no-author-source"
+    },
+    {
+      "title": "BU Club Hockey national tournament recap",
+      "link": "https://thebucampus.ca/2026/03/23/bu-club-hockey-national-tournament-recap/",
+      "source": "The Campus",
+      "fieldAuthor": "The editorial team",
+      "canonicalAuthor": "The editorial team",
+      "reason": "no-author-source"
+    },
+    {
+      "title": "Is Bishop’s culture changing?",
+      "link": "https://thebucampus.ca/2026/03/23/is-bishops-culture-changing/",
+      "source": "The Campus",
+      "fieldAuthor": "The editorial team",
+      "canonicalAuthor": "The editorial team",
+      "reason": "no-author-source"
     }
   ],
-  "fixed": 28
+  "fixed": 32
 }
