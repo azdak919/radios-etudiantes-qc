@@ -302,6 +302,13 @@ a { color: inherit; }
   overflow: hidden;
   text-overflow: ellipsis;
 }
+.tuner-now-sub-rotate {
+  display: grid;
+  min-width: 0;
+}
+.tuner-now-sub-rotate > .tuner-now-sub {
+  grid-area: 1 / 1;
+}
 .tuner-now-sub {
   display: block;
   min-width: 0;
@@ -310,6 +317,24 @@ a { color: inherit; }
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+@media (max-width: 1099.98px) {
+  .tuner-now-sub-rotate.is-rotating > .tuner-now-sub {
+    opacity: 0;
+    transition: opacity 0.55s ease;
+    pointer-events: none;
+  }
+  .tuner-now-sub-rotate.is-rotating > .tuner-now-sub.is-active {
+    opacity: 1;
+  }
+  .tuner-now-sub-rotate:not(.is-rotating) > .tuner-now-sub--air {
+    display: none;
+  }
+}
+@media (min-width: 1100px) {
+  .tuner-now-sub--air {
+    display: none;
+  }
 }
 .tuner-now-sub-text {
   display: inline-block;
@@ -327,6 +352,7 @@ a { color: inherit; }
 @media (prefers-reduced-motion: reduce) {
   .is-marquee { text-overflow: ellipsis; }
   .is-marquee > .tuner-now-sub-text { animation: none; }
+  .tuner-now-sub-rotate.is-rotating > .tuner-now-sub { transition: none; }
 }
 
 .tuner-play {

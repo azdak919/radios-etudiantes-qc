@@ -224,6 +224,8 @@ const TUNER_NEXT     = document.getElementById('tuner-next');
 const TUNER_PLAY     = document.getElementById('tuner-play');
 const TUNER_NAME     = document.getElementById('tuner-now-name');
 const TUNER_SUB      = document.getElementById('tuner-now-sub');
+const TUNER_SUB_AIR  = document.getElementById('tuner-now-sub-air');
+const TUNER_SUB_ROTATE_MQ = window.matchMedia?.('(max-width: 1099.98px)');
 const TUNER_VOLUME   = document.getElementById('tuner-volume');
 const TUNER_VOL      = document.getElementById('tuner-vol');
 const TUNER_VOL_TOGGLE = document.getElementById('tuner-vol-toggle');
@@ -292,6 +294,11 @@ let radioSchedules = { stations: {}, timezone: 'America/Toronto' };
 let nowPlayingPollTimer = null;
 let nowAirTick = null;
 let lastNowAir = { title: null, sub: null, empty: null };
+let tunerSubMeta = '';
+let tunerSubAirText = '';
+let tunerSubRotateTimer = null;
+let tunerSubRotateShowAir = false;
+const TUNER_SUB_ROTATE_MS = 12000;
 const PREFERS_REDUCED_MOTION = window.matchMedia?.('(prefers-reduced-motion: reduce)');
 let sourceColors = {};     // source name → accent colour
 let brandColors = { institutions: {}, fallback_palette: ['#003DA5', '#6C2163', '#047857'] };
@@ -346,6 +353,8 @@ async function init() {
     ? schedulesData.value
     : { stations: {}, timezone: 'America/Toronto' };
   buildTunerOptions();
+  tunerSubMeta = TUNER_SUB?.textContent?.trim() || 'Radios étudiantes en direct';
+  initTunerSubRotateListeners();
   renderTunerNowAir();
   startNowAirTick();
   restoreVolume();
@@ -539,6 +548,93 @@ function nowAirLines(radio) {
   return { title: `Vous écoutez ${radio.name}`, sub: slogan };
 }
 
+/** Une seule ligne « À l'antenne » pour la rotation mobile du sous-titre. */
+function formatNowAirSubLine(title, sub, empty) {
+  if (empty) return 'Les radios étudiantes jouent en direct, 24/7';
+  if (sub) return `${title} · ${sub}`;
+  return title;
+}
+
+function isTunerSubRotateMode() {
+  return !!(TUNER_SUB_ROTATE_MQ?.matches && !PREFERS_REDUCED_MOTION?.matches);
+}
+
+function stopTunerSubRotate() {
+  if (tunerSubRotateTimer) {
+    clearInterval(tunerSubRotateTimer);
+    tunerSubRotateTimer = null;
+  }
+  TUNER_SUB?.parentElement?.classList.remove('is-rotating');
+}
+
+function setTunerSubRotateActive(showAir) {
+  if (!TUNER_SUB || !TUNER_SUB_AIR) return;
+  TUNER_SUB.classList.toggle('is-active', !showAir);
+  TUNER_SUB_AIR.classList.toggle('is-active', showAir);
+  TUNER_SUB.setAttribute('aria-hidden', String(showAir));
+  TUNER_SUB_AIR.setAttribute('aria-hidden', String(!showAir));
+  if (showAir) {
+    TUNER_SUB.classList.remove('is-marquee');
+    applyMarquee(TUNER_SUB_AIR, tunerSubAirText);
+  } else {
+    TUNER_SUB_AIR.classList.remove('is-marquee');
+    applyMarquee(TUNER_SUB, tunerSubMeta);
+  }
+}
+
+/**
+ * Sur mobile/tablette, alterne doucement fréquence · institution et « À l'antenne »
+ * dans la ligne du bas du syntoniseur (le module latéral reste masqué).
+ */
+function syncTunerSubRotate(title, sub, empty) {
+  if (!TUNER_SUB || !TUNER_SUB_AIR) return;
+  tunerSubAirText = formatNowAirSubLine(title, sub, empty);
+  const wrapper = TUNER_SUB.parentElement;
+
+  if (!isTunerSubRotateMode()) {
+    stopTunerSubRotate();
+    TUNER_SUB.classList.add('is-active');
+    TUNER_SUB_AIR.classList.remove('is-active');
+    TUNER_SUB.setAttribute('aria-hidden', 'false');
+    TUNER_SUB_AIR.setAttribute('aria-hidden', 'true');
+
+    const mobileReduced = TUNER_SUB_ROTATE_MQ?.matches && PREFERS_REDUCED_MOTION?.matches;
+    if (mobileReduced && currentStation) {
+      applyMarquee(TUNER_SUB, tunerSubAirText);
+    } else if (tunerSubMeta) {
+      applyMarquee(TUNER_SUB, tunerSubMeta);
+    }
+    return;
+  }
+
+  wrapper?.classList.add('is-rotating');
+  applyMarquee(TUNER_SUB, tunerSubMeta);
+  applyMarquee(TUNER_SUB_AIR, tunerSubAirText);
+
+  if (!tunerSubRotateTimer) {
+    tunerSubRotateShowAir = false;
+    setTunerSubRotateActive(false);
+    tunerSubRotateTimer = setInterval(() => {
+      tunerSubRotateShowAir = !tunerSubRotateShowAir;
+      setTunerSubRotateActive(tunerSubRotateShowAir);
+    }, TUNER_SUB_ROTATE_MS);
+  } else if (tunerSubRotateShowAir) {
+    applyMarquee(TUNER_SUB_AIR, tunerSubAirText);
+  } else {
+    applyMarquee(TUNER_SUB, tunerSubMeta);
+  }
+}
+
+function onTunerSubRotateLayoutChange() {
+  if (!lastNowAir.title && lastNowAir.empty == null) return;
+  syncTunerSubRotate(lastNowAir.title, lastNowAir.sub, lastNowAir.empty);
+}
+
+function initTunerSubRotateListeners() {
+  TUNER_SUB_ROTATE_MQ?.addEventListener?.('change', onTunerSubRotateLayoutChange);
+  PREFERS_REDUCED_MOTION?.addEventListener?.('change', onTunerSubRotateLayoutChange);
+}
+
 function renderTunerNowAir() {
   if (!TUNER_NOWAIR) return;
   let title;
@@ -568,6 +664,7 @@ function renderTunerNowAir() {
     if (sub) applyMarquee(TUNER_NOWAIR_SUB, sub);
     else TUNER_NOWAIR_SUB.replaceChildren();
   }
+  syncTunerSubRotate(title, sub, empty);
 }
 
 /**
@@ -733,6 +830,7 @@ function applyMarquee(el, text) {
 
 /** Sous-titre du syntoniseur (fréquence · institution au complet). */
 function setTunerSubText(text) {
+  tunerSubMeta = text;
   applyMarquee(TUNER_SUB, text);
 }
 
