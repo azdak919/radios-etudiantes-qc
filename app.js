@@ -1081,6 +1081,18 @@ function toggleVolumeMute() {
   setVolumeMuted(!volumeMuted);
 }
 
+function updateVolumeSliderVisual() {
+  const track = TUNER_VOLUME?.closest('.tuner-vol-track');
+  if (!track) return;
+  const gain = volumeMuted ? 0 : currentGain;
+  const ratio = Math.min(Math.max(gain / MAX_GAIN, 0), 1);
+  const basePct = Math.min(ratio / 0.5, 1) * 50;
+  const boostPct = Math.max((ratio - 0.5) / 0.5, 0) * 50;
+  track.style.setProperty('--vol-base', `${basePct}%`);
+  track.style.setProperty('--vol-boost', `${boostPct}%`);
+  track.classList.toggle('is-boost', gain > 1.001);
+}
+
 function updateVolumeUI() {
   const icoVol = TUNER_VOL_TOGGLE?.querySelector('.ico-vol');
   const icoMute = TUNER_VOL_TOGGLE?.querySelector('.ico-vol-mute');
@@ -1101,6 +1113,7 @@ function updateVolumeUI() {
     const pct = volumeMuted ? 0 : Math.round(currentGain * 100);
     TUNER_VOLUME.setAttribute('aria-valuetext', volumeMuted ? 'Muet' : `${pct} %`);
   }
+  updateVolumeSliderVisual();
 }
 
 /** Applique la valeur du curseur : gain Web Audio si amplifiable, sinon volume natif. */

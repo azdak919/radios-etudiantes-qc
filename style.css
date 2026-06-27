@@ -433,59 +433,131 @@ a { color: inherit; }
 .tuner-vol-track {
   position: relative;
   --vol-thumb: 14px;
-  width: 96px;
-  height: 18px;
-  display: flex;
-  align-items: center;
+  --vol-base: 40%;
+  --vol-boost: 0%;
+  width: 112px;
+  height: 22px;
+  flex-shrink: 0;
 }
-.tuner-vol-marks {
+.tuner-vol-rail {
   position: absolute;
-  inset: 0;
+  left: calc(var(--vol-thumb) / 2);
+  right: calc(var(--vol-thumb) / 2);
+  top: 50%;
+  height: 4px;
+  transform: translateY(-50%);
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.16);
   pointer-events: none;
-  z-index: 0;
+  overflow: visible;
+}
+.tuner-vol-rail::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  border-radius: 0 2px 2px 0;
+  background: rgba(255, 125, 110, 0.14);
+}
+.tuner-vol-fill {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  border-radius: 2px;
+  pointer-events: none;
+}
+.tuner-vol-fill--base {
+  left: 0;
+  width: var(--vol-base);
+  background: var(--radio-bright);
+  z-index: 1;
+}
+.tuner-vol-fill--boost {
+  left: 50%;
+  width: var(--vol-boost);
+  background: #ff7d6e;
+  z-index: 2;
 }
 .tuner-vol-mark {
   position: absolute;
   top: 50%;
+  z-index: 3;
   width: 2px;
   border-radius: 1px;
   transform: translate(-50%, -50%);
-  background: rgba(255, 255, 255, 0.38);
+  pointer-events: none;
 }
 .tuner-vol-mark--100 {
-  /* 0 → 2 : la valeur 1 (100 %) est au centre du curseur. */
   left: 50%;
-  height: 9px;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.25);
 }
 .tuner-vol-mark--max {
   left: 100%;
-  height: 11px;
-  background: rgba(255, 125, 110, 0.72);
+  height: 12px;
+  width: 2px;
+  background: #ff9a90;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2);
 }
 .tuner-volume {
-  position: relative;
-  z-index: 1;
+  position: absolute;
+  inset: 0;
+  z-index: 4;
   width: 100%;
+  height: 100%;
   margin: 0;
-  accent-color: var(--radio-bright);
   cursor: pointer;
   background: transparent;
+  -webkit-appearance: none;
+  appearance: none;
 }
-/* Curseur natif : centrage mathématique de la valeur 1 sur [0, 2]. */
+.tuner-volume:focus { outline: none; }
+.tuner-volume:focus-visible {
+  outline: 2px solid var(--radio-bright);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
 .tuner-volume::-webkit-slider-runnable-track {
+  -webkit-appearance: none;
   height: 4px;
-  border-radius: 2px;
+  background: transparent;
+  border: none;
+}
+.tuner-volume::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: var(--vol-thumb);
+  height: var(--vol-thumb);
+  margin-top: -5px;
+  border-radius: 50%;
+  border: 2px solid rgba(12, 14, 18, 0.2);
+  background: #fff;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.45);
+  cursor: pointer;
+}
+.tuner-vol-track.is-boost .tuner-volume::-webkit-slider-thumb {
+  border-color: rgba(255, 125, 110, 0.55);
 }
 .tuner-volume::-moz-range-track {
   height: 4px;
-  border-radius: 2px;
+  background: transparent;
+  border: none;
 }
-.tuner-volume::-webkit-slider-thumb {
-  margin-top: -5px;
+.tuner-volume::-moz-range-thumb {
+  width: var(--vol-thumb);
+  height: var(--vol-thumb);
+  border-radius: 50%;
+  border: 2px solid rgba(12, 14, 18, 0.2);
+  background: #fff;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.45);
+  cursor: pointer;
 }
-/* Au-delà de la mi-course, le curseur amplifie le son : on signale la zone. */
-.tuner.is-boosted .tuner-volume { accent-color: #ff7d6e; }
-.tuner-vol.is-muted .tuner-volume { opacity: 0.45; }
+.tuner-vol-track.is-boost .tuner-volume::-moz-range-thumb {
+  border-color: rgba(255, 125, 110, 0.55);
+}
+.tuner-vol.is-muted .tuner-vol-track { opacity: 0.45; }
 
 /* Bureau : curseur en ligne + bouton circulaire (mute au clic). */
 @media (min-width: 680px) {
@@ -610,7 +682,7 @@ a { color: inherit; }
     transform: none;
     pointer-events: auto;
   }
-  .tuner-vol-slot .tuner-vol-track { width: 132px; }
+  .tuner-vol-slot .tuner-vol-track { width: 148px; }
   .tuner-vol.is-open .tuner-vol-btn { color: rgba(255,255,255,0.95); }
 }
 @media (prefers-reduced-motion: reduce) {
