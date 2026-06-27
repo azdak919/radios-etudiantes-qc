@@ -972,20 +972,15 @@ function collectSourcePool(items, referenceDate = new Date()) {
   return { items: pool, contingencyBand: 0 };
 }
 
-function pickSourceLead(pool) {
-  if (!pool.length) return null;
-  const withImage = pool.find((item) => !!getCandidateImage(item.image));
-  return withImage || pool[0];
-}
-
 /**
  * Vue média : gabarit magazine, sélection chronologique.
- * Si la une a une image : 1 vedette seulement, le reste remplit En bref et la suite.
+ * À la une = article le plus récent ; s'il a une image, 1 vedette seulement,
+ * sinon 1 à la une + 3 vedettes, puis En bref et la suite.
  */
 function partitionSourceFeed(items, referenceDate = new Date()) {
   const sorted = sortByDateDesc(items);
   const { items: pool, contingencyBand } = collectSourcePool(sorted, referenceDate);
-  const lead = pickSourceLead(pool);
+  const lead = pool[0] || null;
   const leadKey = lead ? articleKey(lead) : null;
   const leadHasImage = !!(lead && getCandidateImage(lead.image));
   const heroMax = leadHasImage ? SOURCE_HERO_WITH_IMAGE_MAX : HERO_SPOTLIGHT_MAX;
