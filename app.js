@@ -566,16 +566,16 @@ function renderNews() {
   const compacts = [];
   const tail = [];
 
-  const { briefItems, mainItems } = partitionNewsFeed(items);
+  const { heroItems, briefItems, tailItems } = partitionNewsFeed(items);
+
+  heroItems.forEach((item, i) => {
+    const role = i === 0 ? 'lead' : 'feature';
+    hero.appendChild(createArticle(item, role));
+  });
 
   briefItems.forEach((item) => compacts.push(createArticle(item, 'compact')));
 
-  mainItems.forEach((item, i) => {
-    const role = i === 0 ? 'lead' : i <= 2 ? 'feature' : 'standard';
-    const article = createArticle(item, role);
-    if (role === 'standard') tail.push(article);
-    else hero.appendChild(article);
-  });
+  tailItems.forEach((item) => tail.push(createArticle(item, 'standard')));
 
   if (hero.childElementCount) {
     if (compacts.length) {
@@ -647,10 +647,14 @@ function pickBriefSidebar(items) {
 }
 
 function partitionNewsFeed(items) {
-  const briefItems = pickBriefSidebar(items);
+  const heroItems = items.slice(0, 3);
+  const heroKeys = new Set(heroItems.map(articleKey));
+  const briefItems = pickBriefSidebar(items.filter((i) => !heroKeys.has(articleKey(i))));
   const briefKeys = new Set(briefItems.map(articleKey));
-  const mainItems = items.filter((i) => !briefKeys.has(articleKey(i)));
-  return { briefItems, mainItems };
+  const tailItems = items.filter(
+    (i) => !heroKeys.has(articleKey(i)) && !briefKeys.has(articleKey(i)),
+  );
+  return { heroItems, briefItems, tailItems };
 }
 
 function createArticle(item, role = 'standard') {
