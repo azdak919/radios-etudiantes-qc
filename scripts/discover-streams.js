@@ -8,10 +8,11 @@
  *
  * Features:
  * - Hardcoded known-good streams (maintained by humans + bot)
- * - Probes common Icecast / Airtime / AzuraCast paths
- * - Fetches the official website and extracts .m3u / .pls / stream links
- * - Tries status-json.xsl to discover mounts
- * - Validates that the URL is a real audio stream (icy headers + audio content)
+ * - Probes common Icecast / Airtime / AzuraCast / Radio.co / RadioMast paths
+ * - Scrape site + pages lecteur (/player.html, listenUrl) pour flux cachés
+ * - Upgrade HTTP → HTTPS (ex. shoutca.st → *.radioca.st/stream, CJLO)
+ * - Préfère les flux HTTPS avec CORS pour lecture native dans le PWA
+ * - Retire listenUrl/listenHint quand un flux direct est validé
  *
  * Usage:
  *   node scripts/discover-streams.js
@@ -58,8 +59,26 @@ const STATION_HINTS = {
     'http://rosetta.shoutca.st:8883/stream',
     'http://www.cjlo.com/player.html',
   ],
-  choq: ['https://choq.ca/stream'],
+  choq: [
+    'https://streams.radiomast.io/a372c74f-6c78-48b9-9933-81a8fc50b54a',
+    'https://choq.ca/stream',
+  ],
 };
+
+const PLAYER_PAGE_PATHS = [
+  '/player.html',
+  '/player',
+  '/ecouter',
+  '/listen',
+  '/live',
+  '/radio',
+];
+
+const HOSTING_PLATFORM_SUFFIXES = [
+  (id) => `https://${id}.radioca.st/stream`,
+  (id) => `https://${id}.out.airtime.pro/${id}_a`,
+  (slug) => `https://streams.radiomast.io/${slug}`,
+];
 
 // Common paths the bot will try on the main domain
 const COMMON_PATHS = [
@@ -104,8 +123,25 @@ async function fetchText(url, accept = '*/*') {
   });
 }
 
-async function validateStream(url) {
+function hasCors(headers = {}) {
+  const origin = headers['access-control-allow-origin'];
+  return origin === '*' || origin === '*, *';
+}
+
+function isAudioResponse(res) {
+  const contentType = (res.headers['content-type'] || '').toLowerCase();
+  const icyMetaint = res.headers['icy-metaint'];
+  return (
+    contentType.includes('audio')
+    || contentType.includes('mpeg')
+    || contentType.includes('mp3')
+    || !!icyMetaint
+  );
+}
+
+async function validateStream(url, redirects = 0) {
   if (!url) return { valid: false, reason: 'no url' };
+  if (redirects > 4) return { valid: false, reason: 'too many redirects' };
 
   return new Promise((resolve) => {
     const lib = url.startsWith('https') ? https : http;
@@ -119,38 +155,41 @@ async function validateStream(url) {
         timeout: TIMEOUT,
       },
       (res) => {
+        if (res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
+          res.resume();
+          const next = new URL(res.headers.location, url).toString();
+          resolve(validateStream(next, redirects + 1));
+          return;
+        }
+
         const contentType = (res.headers['content-type'] || '').toLowerCase();
         const icyMetaint = res.headers['icy-metaint'];
         const icyName = res.headers['icy-name'];
 
-        const looksLikeAudio =
-          contentType.includes('audio') ||
-          contentType.includes('mpeg') ||
-          contentType.includes('mp3') ||
-          !!icyMetaint;
-
-        // Be strict: we want real streaming audio, not HTML player pages
-        if (looksLikeAudio && res.statusCode < 400) {
-          // Read a little data to confirm it's really streaming
+        if (isAudioResponse(res) && res.statusCode < 400) {
           let bytesRead = 0;
           res.on('data', (chunk) => {
             bytesRead += chunk.length;
             if (bytesRead > 8192) res.destroy();
           });
-
-          resolve({
+          const done = () => resolve({
             valid: true,
+            url,
             contentType,
             icyName: icyName || null,
             icyMetaint: icyMetaint ? parseInt(icyMetaint, 10) : null,
             status: res.statusCode,
+            cors: hasCors(res.headers),
+            https: url.startsWith('https:'),
           });
+          res.on('close', done);
+          res.on('end', done);
           return;
         }
 
         res.resume();
         resolve({ valid: false, reason: `status ${res.statusCode} ${contentType}` });
-      }
+      },
     );
 
     req.on('error', (e) => resolve({ valid: false, reason: e.message }));
@@ -161,29 +200,165 @@ async function validateStream(url) {
   });
 }
 
+function normalizeStationLabel(text = '') {
+  return String(text)
+    .normalize('NFD')
+    .replace(/\p{M}/gu, '')
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, ' ')
+    .trim();
+}
+
+const KNOWN_STATION_SLUGS = ['chyz', 'cism', 'ckut', 'cjlo', 'cfou', 'cfak', 'choq', 'cjep', 'crem'];
+
+/** Évite d'assigner le flux d'un autre poste (ex. CFAK sur la page CHOQ). */
+function streamMatchesStation(radio = {}, meta = {}) {
+  const icy = normalizeStationLabel(meta.icyName || '');
+  if (!icy) return true;
+
+  const slug = slugFromRadio(radio);
+  if (slug && icy.includes(slug)) return true;
+
+  const nameCore = normalizeStationLabel(radio.name || radio.fullName || '')
+    .split(/\s+/)
+    .find((t) => t.length >= 4 && !/^\d/.test(t));
+  if (nameCore && icy.includes(nameCore)) return true;
+
+  for (const other of KNOWN_STATION_SLUGS) {
+    if (other !== slug && icy.includes(other)) return false;
+  }
+  return true;
+}
+
+function rankStreamResult(result = {}, radio = {}) {
+  let score = 0;
+  if (result.https) score += 100;
+  if (result.cors) score += 45;
+  if (result.icyName) score += 8;
+  if (streamMatchesStation(radio, result)) score += 60;
+  else score -= 200;
+  return score;
+}
+
+function slugFromRadio(radio = {}) {
+  if (radio.id) return String(radio.id).toLowerCase().replace(/[^a-z0-9]/g, '');
+  try {
+    return new URL(radio.website).hostname.replace(/^www\./, '').split('.')[0];
+  } catch {
+    return '';
+  }
+}
+
+function expandStreamVariants(url = '') {
+  const out = new Set([url]);
+  try {
+    const u = new URL(url);
+    if (u.protocol === 'http:') {
+      const httpsUrl = new URL(url);
+      httpsUrl.protocol = 'https:';
+      out.add(httpsUrl.toString());
+    }
+    if (u.hostname.includes('shoutca.st') && u.pathname.includes('stream')) {
+      const sub = u.hostname.split('.')[0];
+      if (sub && sub !== 'www') {
+        out.add(`https://${sub}.radioca.st/stream`);
+      }
+    }
+  } catch {
+    /* ignore */
+  }
+  return [...out];
+}
+
+function inferHostingUrls(radio = {}) {
+  const slug = slugFromRadio(radio);
+  if (!slug) return [];
+  return HOSTING_PLATFORM_SUFFIXES.map((fn) => fn(slug)).filter(Boolean);
+}
+
+function isLikelyStreamUrl(url = '') {
+  const u = String(url).toLowerCase();
+  if (!u.startsWith('http')) return false;
+  if (/\.(html?|php|asp|aspx)(\?|$)/.test(u)) return false;
+  if (/radio\.garden|facebook\.com|instagram\.com|twitter\.com|youtube\.com/.test(u)) return false;
+  return /stream|listen|icecast|airtime|radioca|shoutca|radiomast|xittel|\.m3u|\.pls|\/;/i.test(u)
+    || /\.(mp3|aac|ogg)(\?|$)/i.test(u);
+}
+
+async function parsePlaylist(url) {
+  const text = await fetchText(url);
+  if (!text) return [];
+  const urls = [];
+  for (const line of text.split(/\r?\n/)) {
+    const trimmed = line.trim();
+    if (!trimmed || trimmed.startsWith('#')) continue;
+    if (trimmed.startsWith('http') && isLikelyStreamUrl(trimmed)) urls.push(trimmed);
+    const fileMatch = trimmed.match(/^File\d+=(.+)$/i);
+    if (fileMatch?.[1]?.startsWith('http')) urls.push(fileMatch[1].trim());
+  }
+  return urls;
+}
+
 function extractStreamUrlsFromHtml(html, baseUrl) {
   const urls = new Set();
   const patterns = [
-    /https?:\/\/[^"'\s<>()]+\.(?:m3u|pls|mp3|aac|ogg)(?:\?[^"'\s<>()]*)?/gi,
-    /https?:\/\/[^"'\s<>()]+\/(stream|live|radio|mount)[^"'\s<>()]*/gi,
+    /https?:\/\/[^"'\s<>()]+\.(?:m3u8?|pls|mp3|aac|ogg)(?:\?[^"'\s<>()]*)?/gi,
+    /https?:\/\/[^"'\s<>()]+\.radioca\.st\/stream/gi,
+    /https?:\/\/streams\.radiomast\.io\/[a-f0-9-]+/gi,
+    /https?:\/\/[^"'\s<>()]+\.out\.airtime\.pro\/[^"'\s<>()]+/gi,
+    /https?:\/\/streamer\.xittel\.net:\d+\/[^"'\s<>()]+/gi,
+    /https?:\/\/[^"'\s<>()]+\/(?:stream|live|radio|mount|proxy\/[^"'\s<>()]+)[^"'\s<>()]*/gi,
     /"stream"\s*:\s*"([^"]+)"/gi,
-    /src\s*=\s*["']([^"']*(?:stream|listen|icecast)[^"']*)["']/gi,
+    /src\s*=\s*["']([^"']*(?:stream|listen|icecast|shoutca|radioca|radiomast)[^"']*)["']/gi,
+    /href\s*=\s*["']([^"']*(?:\.radioca\.st\/stream|streams\.radiomast\.io)[^"']*)["']/gi,
   ];
 
   for (const re of patterns) {
     let match;
     while ((match = re.exec(html)) !== null) {
       let u = match[1] || match[0];
-      if (u && u.startsWith('http')) {
+      if (u && u.startsWith('http') && isLikelyStreamUrl(u)) {
         try {
-          // make absolute
-          const abs = new URL(u, baseUrl).toString();
-          urls.add(abs);
-        } catch {}
+          urls.add(new URL(u, baseUrl).toString());
+        } catch {
+          /* ignore */
+        }
       }
     }
   }
   return [...urls];
+}
+
+async function scrapePageForStreams(pageUrl, baseUrl = pageUrl) {
+  const found = new Set();
+  const html = await fetchText(pageUrl);
+  if (!html) return [];
+
+  for (const u of extractStreamUrlsFromHtml(html, baseUrl)) found.add(u);
+
+  for (const streamUrl of [...found]) {
+    if (/\.m3u8?$/i.test(streamUrl) || /\.pls$/i.test(streamUrl)) {
+      for (const inner of await parsePlaylist(streamUrl)) found.add(inner);
+    }
+  }
+
+  return [...found];
+}
+
+async function gatherPlayerPages(radio = {}) {
+  const pages = new Set();
+  if (radio.listenUrl) pages.add(radio.listenUrl);
+  if (radio.website) {
+    try {
+      const base = new URL(radio.website);
+      for (const path of PLAYER_PAGE_PATHS) {
+        pages.add(new URL(path, base).toString());
+      }
+    } catch {
+      /* ignore */
+    }
+  }
+  return [...pages];
 }
 
 async function probeIcecastStatus(baseDomain) {
@@ -216,33 +391,28 @@ async function probeIcecastStatus(baseDomain) {
 async function discoverForRadio(radio) {
   const results = [];
 
-  // 1. Known good streams first
-  if (KNOWN_STREAMS[radio.id]) {
-    results.push(KNOWN_STREAMS[radio.id]);
-  }
-  if (STATION_HINTS[radio.id]) {
-    results.push(...STATION_HINTS[radio.id]);
-  }
+  if (KNOWN_STREAMS[radio.id]) results.push(KNOWN_STREAMS[radio.id]);
+  if (STATION_HINTS[radio.id]) results.push(...STATION_HINTS[radio.id]);
+  results.push(...inferHostingUrls(radio));
 
-  // 2. Probe status-json.xsl on the official domain
   if (radio.website) {
     try {
       const domain = new URL(radio.website).hostname.replace(/^www\./, '');
       const fromStatus = await probeIcecastStatus(domain);
       if (fromStatus) results.push(fromStatus);
-    } catch {}
-  }
-
-  // 3. Scrape the official website for stream links
-  if (radio.website) {
-    const html = await fetchText(radio.website);
-    if (html) {
-      const found = extractStreamUrlsFromHtml(html, radio.website);
-      results.push(...found);
+    } catch {
+      /* ignore */
     }
   }
 
-  // 4. Common path guessing
+  if (radio.website) {
+    results.push(...await scrapePageForStreams(radio.website, radio.website));
+  }
+
+  for (const pageUrl of await gatherPlayerPages(radio)) {
+    results.push(...await scrapePageForStreams(pageUrl, radio.website || pageUrl));
+  }
+
   if (radio.website) {
     try {
       const domain = new URL(radio.website).hostname.replace(/^www\./, '');
@@ -251,30 +421,54 @@ async function discoverForRadio(radio) {
         results.push(`https://${domain}:8000${p}`);
         results.push(`http://${domain}:8000${p}`);
       }
-    } catch {}
-  }
-
-  // Deduplicate
-  const unique = [...new Set(results.filter(Boolean))];
-
-  // Validate in order
-  for (const candidate of unique) {
-    const test = await validateStream(candidate);
-    if (test.valid) {
-      return {
-        stream: candidate,
-        status: 'working',
-        meta: test,
-        checked: new Date().toISOString(),
-      };
+    } catch {
+      /* ignore */
     }
   }
 
+  const expanded = results.flatMap((u) => expandStreamVariants(u));
+  const unique = [...new Set(expanded.filter((u) => u && isLikelyStreamUrl(u)))];
+
+  const valid = [];
+  for (const candidate of unique) {
+    const test = await validateStream(candidate);
+    if (test.valid && streamMatchesStation(radio, test)) valid.push(test);
+  }
+
+  if (!valid.length) {
+    return {
+      stream: null,
+      status: 'none',
+      checked: new Date().toISOString(),
+    };
+  }
+
+  valid.sort((a, b) => rankStreamResult(b, radio) - rankStreamResult(a, radio));
+  const best = valid[0];
   return {
-    stream: null,
-    status: 'none',
+    stream: best.url,
+    status: 'working',
+    meta: best,
+    alternates: valid.slice(1, 4).map((v) => v.url),
     checked: new Date().toISOString(),
   };
+}
+
+function applyStreamToRadio(radio, discovery) {
+  const entry = { ...radio };
+  if (discovery.stream) {
+    entry.stream = discovery.stream;
+    entry._streamStatus = discovery.status;
+    entry._streamChecked = discovery.checked;
+    if (discovery.meta?.icyName) entry._streamIcyName = discovery.meta.icyName;
+    delete entry.listenUrl;
+    delete entry.listenHint;
+    return entry;
+  }
+  entry.stream = radio.stream || null;
+  entry._streamStatus = radio.stream ? 'working' : 'none';
+  entry._streamChecked = discovery.checked;
+  return entry;
 }
 
 function slugFromCandidate(c) {
@@ -331,19 +525,24 @@ async function main() {
     console.log(`→ ${radio.fullName || radio.name} (${radio.id})`);
 
     const discovery = await discoverForRadio(radio);
-
-    const newEntry = { ...radio };
+    const newEntry = applyStreamToRadio(radio, discovery);
 
     if (discovery.stream) {
-      newEntry.stream = discovery.stream;
-      newEntry._streamStatus = discovery.status;
-      newEntry._streamChecked = discovery.checked;
-      console.log(`   ✓ ${discovery.stream}\n`);
+      const tags = [
+        discovery.meta?.https ? 'HTTPS' : 'HTTP',
+        discovery.meta?.cors ? 'CORS' : null,
+        discovery.meta?.icyName ? `ICY:${discovery.meta.icyName}` : null,
+      ].filter(Boolean).join(', ');
+      console.log(`   ✓ ${discovery.stream}${tags ? ` (${tags})` : ''}`);
+      if (radio.listenUrl && !newEntry.listenUrl) {
+        console.log('   ↻ listenUrl retiré — lecture native');
+      }
+      if (discovery.alternates?.length) {
+        console.log(`   · ${discovery.alternates.length} alternative(s) HTTPS trouvée(s)`);
+      }
+      console.log('');
     } else {
-      newEntry.stream = radio.stream || null;
-      newEntry._streamStatus = 'none';
-      newEntry._streamChecked = discovery.checked;
-      console.log(`   ✗ No reliable direct stream found\n`);
+      console.log('   ✗ No reliable direct stream found\n');
     }
 
     updatedRadios[updatedRadios.findIndex((r) => r.id === radio.id)] = newEntry;

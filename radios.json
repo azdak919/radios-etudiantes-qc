@@ -124,7 +124,7 @@
     "type": "universite",
     "frequency": "88,3 FM",
     "website": "https://www.cfak.ca/",
-    "stream": null,
+    "stream": "https://audio-edge-qse4n.yyz.g.radiomast.io/a372c74f-6c78-48b9-9933-81a8fc50b54a",
     "logo": "assets/logos/cfak-logo.jpg",
     "description": "La radio officielle de l'Université de Sherbrooke depuis 2003. Musique et vie étudiante en Estrie.",
     "instagram": "https://www.instagram.com/cfak883/",
@@ -133,8 +133,9 @@
       "musique",
       "campus"
     ],
-    "_streamStatus": "none",
-    "_streamChecked": "2026-06-27T08:49:29.783Z"
+    "_streamStatus": "working",
+    "_streamChecked": "2026-06-27T17:44:51.007Z",
+    "_streamIcyName": "CFAK - ÇA PART ICI"
   },
   {
     "id": "choq",
