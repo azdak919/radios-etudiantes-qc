@@ -620,6 +620,7 @@ function updateNewsLayout() {
   NEWS_LIST.dataset.hero = lead.classList.contains('has-image') ? 'image' : 'text';
 }
 
+const HERO_SPOTLIGHT_MAX = 4; /* 1 à la une + 3 vedettes */
 const BRIEF_SIDEBAR_MAX = 4;
 
 function articleKey(item) {
@@ -634,22 +635,35 @@ function sortByDateDesc(items) {
   return [...items].sort((a, b) => new Date(b.date || 0) - new Date(a.date || 0));
 }
 
+function latestArticlePerInstitution(items) {
+  const byInst = new Map();
+  for (const item of items) {
+    const inst = institutionKey(item);
+    const cur = byInst.get(inst);
+    if (!cur || new Date(item.date || 0) > new Date(cur.date || 0)) {
+      byInst.set(inst, item);
+    }
+  }
+  return byInst;
+}
+
+/** Vedette : max 1 article le plus récent par institution, institutions les plus actives d'abord. */
+function pickHeroSpotlight(items) {
+  const picks = [...latestArticlePerInstitution(items).values()]
+    .sort((a, b) => new Date(b.date || 0) - new Date(a.date || 0))
+    .slice(0, HERO_SPOTLIGHT_MAX);
+  return sortByDateDesc(picks);
+}
+
 /**
- * En bref : après la une, le plus récent par institution encore disponible.
+ * En bref : le plus récent par institution encore disponible (hors vedette).
  * Institutions déjà en vedette sont ignorées pour favoriser le mix.
  */
 function pickBriefSidebar(pool, heroItems = []) {
   if (!pool.length) return [];
 
   const heroInsts = new Set(heroItems.map(institutionKey));
-  const latestByInst = new Map();
-  for (const item of pool) {
-    const inst = institutionKey(item);
-    const cur = latestByInst.get(inst);
-    if (!cur || new Date(item.date || 0) > new Date(cur.date || 0)) {
-      latestByInst.set(inst, item);
-    }
-  }
+  const latestByInst = latestArticlePerInstitution(pool);
 
   const candidates = [...latestByInst.entries()]
     .filter(([inst]) => !heroInsts.has(inst))
@@ -667,7 +681,7 @@ function pickBriefSidebar(pool, heroItems = []) {
 
 function partitionNewsFeed(items) {
   const sorted = sortByDateDesc(items);
-  const heroItems = sorted.slice(0, Math.min(4, sorted.length)); /* 1 une + 3 vedettes */
+  const heroItems = pickHeroSpotlight(sorted);
   const heroKeys = new Set(heroItems.map(articleKey));
   const pool = sorted.filter((i) => !heroKeys.has(articleKey(i)));
   const briefItems = pickBriefSidebar(pool, heroItems);
