@@ -23,6 +23,8 @@ const {
   isEditorialPlaceholder,
   needsPageAuthorVerification,
   normalizeArticleUrl,
+  normalizeAuthor,
+  extractBylineFromText,
 } = require('./author-lib');
 const { mergePriorEnrichment } = require('./article-photo-credit-lib');
 const { isHtmlListSource, parseHtmlListPage } = require('./html-list-fetcher');
@@ -179,31 +181,6 @@ function isGenericAuthor(name = '', lang = 'fr') {
   if (GENERIC_AUTHORS.test(n)) return true;
   if (/@/.test(n)) return true;
   return false;
-}
-
-function normalizeAuthor(name = '') {
-  let a = stripHtml(name);
-  const paren = a.match(/\(([^)]+)\)/);
-  if (paren) a = paren[1];
-  a = a.replace(/^(?:Par|By)\s+/i, '').replace(/\s+/g, ' ').trim();
-  return isGenericAuthor(a) ? '' : a.slice(0, 80);
-}
-
-function extractBylineFromText(text = '') {
-  const plain = stripHtml(text);
-  if (!/^(?:Par|By)\s+/i.test(plain)) return { author: '', body: plain };
-
-  for (let maxExtra = 0; maxExtra <= 2; maxExtra += 1) {
-    const re = new RegExp(`^(?:Par|By)\\s+([\\p{Lu}][\\p{L}'’.\\-]+(?:\\s+[\\p{Lu}][\\p{L}'’.\\-]+){0,${maxExtra}})`, 'u');
-    const m = plain.match(re);
-    if (!m) continue;
-    const author = normalizeAuthor(m[1]);
-    const body = plain.slice(m[0].length).trim();
-    if (!body) continue;
-    if (/^[\p{Lu}0-9«"']/u.test(body)) return { author, body };
-  }
-
-  return { author: '', body: plain };
 }
 
 function isJunkExcerpt(text = '') {

@@ -1,146 +1,10 @@
 {
-  "updated": "2026-06-27T10:24:38.452Z",
+  "updated": "2026-06-27T10:32:12.216Z",
   "total": 211,
   "withAuthor": 211,
-  "mismatches": 68,
+  "mismatches": 31,
   "ok": true,
   "samples": [
-    {
-      "title": "Ask the Trib: How do I survive summer in my hometown?",
-      "link": "https://www.thetribune.ca/student-life/ask-the-trib-how-do-i-survive-summer-in-my-hometown-26062026/?utm_source=rss&utm_medium=rss&utm_campaign=ask-the-trib-how-do-i-survive-summer-in-my-hometown-26062026",
-      "source": "The Tribune",
-      "fieldAuthor": "The editorial team",
-      "canonicalAuthor": "Brooke Barak",
-      "reason": "page-byline"
-    },
-    {
-      "title": "Kanga I, II, III’ brings Projections: SANKOFA’s afrofuturist vision to Trottier",
-      "link": "https://www.thetribune.ca/a-e/kanga-i-ii-iii-brings-projections-sankofas-afrofuturist-vision-to-trottier-23062026/?utm_source=rss&utm_medium=rss&utm_campaign=kanga-i-ii-iii-brings-projections-sankofas-afrofuturist-vision-to-trottier-23062026",
-      "source": "The Tribune",
-      "fieldAuthor": "The editorial team",
-      "canonicalAuthor": "Ellen Lurie",
-      "reason": "page-byline"
-    },
-    {
-      "title": "AI’s use in legal decisions poses major risks to the Canadian judicial system’s integrity and neutrality",
-      "link": "https://www.thetribune.ca/opinion/ais-use-in-legal-decisions-poses-major-risks-to-the-canadian-judicial-systems-integrity-and-neutrality-11062026/?utm_source=rss&utm_medium=rss&utm_campaign=ais-use-in-legal-decisions-poses-major-risks-to-the-canadian-judicial-systems-integrity-and-neutrality-11062026",
-      "source": "The Tribune",
-      "fieldAuthor": "The editorial team",
-      "canonicalAuthor": "Nello Giuliani",
-      "reason": "page-byline"
-    },
-    {
-      "title": "Know Your Artist: Theodore A. Harris",
-      "link": "https://www.thetribune.ca/a-e/know-your-artist-theodore-a-harris-27052026/?utm_source=rss&utm_medium=rss&utm_campaign=know-your-artist-theodore-a-harris-27052026",
-      "source": "The Tribune",
-      "fieldAuthor": "The editorial team",
-      "canonicalAuthor": "Ellen Lurie",
-      "reason": "page-byline"
-    },
-    {
-      "title": "Montreal protestors commemorate the 78th anniversary of the Nakba",
-      "link": "https://www.thetribune.ca/news/montreal-protestors-commemorate-the-78th-anniversary-of-the-nakba-21052026/?utm_source=rss&utm_medium=rss&utm_campaign=montreal-protestors-commemorate-the-78th-anniversary-of-the-nakba-21052026",
-      "source": "The Tribune",
-      "fieldAuthor": "The editorial team",
-      "canonicalAuthor": "Ellen Lurie",
-      "reason": "page-byline"
-    },
-    {
-      "title": "Présences invisibles : écrire la ville sans permission",
-      "link": "https://quartierlibre.ca/presences-invisibles-ecrire-la-ville/",
-      "source": "Quartier Libre",
-      "fieldAuthor": "La rédaction",
-      "canonicalAuthor": "Emilie Rizkallah",
-      "reason": "page-byline"
-    },
-    {
-      "title": "CALAMINE : RAPPER AUTREMENT QUE LE « BOYS CLUB »",
-      "link": "https://quartierlibre.ca/calamine-rapper-autrement/",
-      "source": "Quartier Libre",
-      "fieldAuthor": "La rédaction",
-      "canonicalAuthor": "Samuel Roy",
-      "reason": "page-byline"
-    },
-    {
-      "title": "Forum RÉA : une alliance pour l’éducation en milieu défavorisé",
-      "link": "https://quartierlibre.ca/forum-rea-education-en-milieu-defavorise/",
-      "source": "Quartier Libre",
-      "fieldAuthor": "La rédaction",
-      "canonicalAuthor": "Ulysse Taillard-Hodez",
-      "reason": "page-byline"
-    },
-    {
-      "title": "Un projet de loi rendrait obligatoire le statut d’étudiant·e proche aidant·e",
-      "link": "https://quartierlibre.ca/projet-loi-etudiant-proche-aidante/",
-      "source": "Quartier Libre",
-      "fieldAuthor": "La rédaction",
-      "canonicalAuthor": "Mohammed Aziz Mestiri",
-      "reason": "page-byline"
-    },
-    {
-      "title": "A final note from the Editor-in-Chief of Volume 45, for the record",
-      "link": "https://www.thetribune.ca/opinion/op-off-the-board/a-final-note-from-the-editor-in-chief-of-volume-45-for-the-record-14052026/?utm_source=rss&utm_medium=rss&utm_campaign=a-final-note-from-the-editor-in-chief-of-volume-45-for-the-record-14052026",
-      "source": "The Tribune",
-      "fieldAuthor": "The editorial team",
-      "canonicalAuthor": "Yusur Al-Sharqi",
-      "reason": "page-byline"
-    },
-    {
-      "title": "SPHR remembers Gaza Solidarity Encampment ahead of Nakba Anniversary Protest",
-      "link": "https://www.thetribune.ca/news/sphr-remembers-gaza-solidarity-encampment-ahead-of-nakba-anniversary-protest-13052026/?utm_source=rss&utm_medium=rss&utm_campaign=sphr-remembers-gaza-solidarity-encampment-ahead-of-nakba-anniversary-protest-13052026",
-      "source": "The Tribune",
-      "fieldAuthor": "The editorial team",
-      "canonicalAuthor": "Ellen Lurie",
-      "reason": "page-byline"
-    },
-    {
-      "title": "Recettes musicales québécoises pour l’été",
-      "link": "https://quartierlibre.ca/ete-recettes-musicales-quebecoises/",
-      "source": "Quartier Libre",
-      "fieldAuthor": "La rédaction",
-      "canonicalAuthor": "Bérénice Lemarié",
-      "reason": "page-byline"
-    },
-    {
-      "title": "FAÉCUM : la démocratie universitaire critiquée",
-      "link": "https://quartierlibre.ca/faecum-la-democratie-universitaire-critiquee/",
-      "source": "Quartier Libre",
-      "fieldAuthor": "La rédaction",
-      "canonicalAuthor": "Ulysse Taillard-Hodez",
-      "reason": "page-byline"
-    },
-    {
-      "title": "Montréal Mystère : le polar à l’honneur dans un festival bilingue",
-      "link": "https://quartierlibre.ca/montreal-mystere-festival-bilingue/",
-      "source": "Quartier Libre",
-      "fieldAuthor": "La rédaction",
-      "canonicalAuthor": "Carla Roche",
-      "reason": "page-byline"
-    },
-    {
-      "title": "Coupe du monde 2026 : l’empreinte de l’expansion",
-      "link": "https://quartierlibre.ca/coupe-du-monde-2026/",
-      "source": "Quartier Libre",
-      "fieldAuthor": "La rédaction",
-      "canonicalAuthor": "Gabriel Lapointe",
-      "reason": "page-byline"
-    },
-    {
-      "title": "Soutien technique à l’UdeM : entre attentes et frustrations",
-      "link": "https://quartierlibre.ca/soutien-technique-a-ludem/",
-      "source": "Quartier Libre",
-      "fieldAuthor": "La rédaction",
-      "canonicalAuthor": "Solène Gerber",
-      "reason": "page-byline"
-    },
-    {
-      "title": "Festival Jamais Lu : « Quand le monde devient dur à lire, on doit se raconter des histoires »",
-      "link": "https://quartierlibre.ca/festival-jamais-lu-2026/",
-      "source": "Quartier Libre",
-      "fieldAuthor": "La rédaction",
-      "canonicalAuthor": "Bérénice Lemarié",
-      "reason": "page-byline"
-    },
     {
       "title": "Last day to apply to be part of The Concordian's masthead!",
       "link": "https://theconcordian.substack.com/p/last-day-to-apply-to-be-part-of-the",
@@ -150,21 +14,157 @@
       "reason": "rss-feed-default-rejected"
     },
     {
-      "title": "McGill community members express concerns about McGill Athletics’ former partnership with InterRent REIT",
-      "link": "https://www.thetribune.ca/news/mcgill-community-members-express-concerns-about-mcgill-athletics-former-partnership-with-interrent-reit-26042026/?utm_source=rss&utm_medium=rss&utm_campaign=mcgill-community-members-express-concerns-about-mcgill-athletics-former-partnership-with-interrent-reit-26042026",
-      "source": "The Tribune",
+      "title": "The Concordian is hiring!",
+      "link": "https://theconcordian.substack.com/p/the-concordian-is-hiring",
+      "source": "The Concordian",
       "fieldAuthor": "The editorial team",
-      "canonicalAuthor": "Rebecca Hamilton",
+      "canonicalAuthor": "The editorial team",
+      "reason": "rss-feed-default-rejected"
+    },
+    {
+      "title": "Apply to The Concordian Awards!",
+      "link": "https://theconcordian.substack.com/p/apply-to-the-concordian-awards",
+      "source": "The Concordian",
+      "fieldAuthor": "The editorial team",
+      "canonicalAuthor": "The editorial team",
+      "reason": "rss-feed-default-rejected"
+    },
+    {
+      "title": "The Honey Bank: ASFA, Austerity, and Student Mobilization",
+      "link": "https://theconcordian.substack.com/p/the-honey-bank-asfa-austerity-and",
+      "source": "The Concordian",
+      "fieldAuthor": "The editorial team",
+      "canonicalAuthor": "The editorial team",
+      "reason": "rss-feed-default-rejected"
+    },
+    {
+      "title": "This Week's Top Stories",
+      "link": "https://theconcordian.substack.com/p/this-weeks-top-stories-d67",
+      "source": "The Concordian",
+      "fieldAuthor": "The editorial team",
+      "canonicalAuthor": "The editorial team",
+      "reason": "rss-feed-default-rejected"
+    },
+    {
+      "title": "Financing My Future: Life Without Financial Worries",
+      "link": "https://theconcordian.substack.com/p/financing-my-future-life-without",
+      "source": "The Concordian",
+      "fieldAuthor": "The editorial team",
+      "canonicalAuthor": "The editorial team",
+      "reason": "rss-feed-default-rejected"
+    },
+    {
+      "title": "A reflection on McGill’s science programs from graduating SciTech staff writers",
+      "link": "https://www.thetribune.ca/sci-tech/a-reflection-on-mcgills-science-programs-from-graduating-scitech-staff-writers-07042026/?utm_source=rss&utm_medium=rss&utm_campaign=a-reflection-on-mcgills-science-programs-from-graduating-scitech-staff-writers-07042026",
+      "source": "The Tribune",
+      "fieldAuthor": null,
+      "canonicalAuthor": "The editorial team",
+      "reason": "no-author-source"
+    },
+    {
+      "title": "Find 5 Gaiters in this photo!",
+      "link": "https://thebucampus.ca/2026/04/06/find-5-gaiters-in-this-photo/",
+      "source": "The Campus",
+      "fieldAuthor": null,
+      "canonicalAuthor": "The editorial team",
+      "reason": "no-author-source"
+    },
+    {
+      "title": "From the rink to the links",
+      "link": "https://thebucampus.ca/2026/04/06/from-the-rink-to-the-links/",
+      "source": "The Campus",
+      "fieldAuthor": null,
+      "canonicalAuthor": "Henri Dessureaux",
       "reason": "page-byline"
     },
     {
-      "title": "Journalism After Gaza’ panel discusses media bias and the future of reporting in Palestine",
-      "link": "https://www.thetribune.ca/student-life/journalism-after-gaza-panel-discusses-media-bias-and-the-future-of-reporting-in-palestine-27042026/?utm_source=rss&utm_medium=rss&utm_campaign=journalism-after-gaza-panel-discusses-media-bias-and-the-future-of-reporting-in-palestine-27042026",
-      "source": "The Tribune",
-      "fieldAuthor": "The editorial team",
-      "canonicalAuthor": "Ellen Lurie",
+      "title": "Jo Aubert: The testimony of a graduating athlete",
+      "link": "https://thebucampus.ca/2026/04/06/jo-aubert-the-testimony-of-a-graduating-athlete/",
+      "source": "The Campus",
+      "fieldAuthor": null,
+      "canonicalAuthor": "The editorial team",
+      "reason": "no-author-source"
+    },
+    {
+      "title": "Ringette: a club deep-dive and insight into next season",
+      "link": "https://thebucampus.ca/2026/04/06/ringette-a-club-deep-dive-and-insight-into-next-season/",
+      "source": "The Campus",
+      "fieldAuthor": null,
+      "canonicalAuthor": "Shelly-Ann Canares",
       "reason": "page-byline"
+    },
+    {
+      "title": "Cheers, tears and a Gaiter reveal?",
+      "link": "https://thebucampus.ca/2026/04/06/cheers-tears-and-a-gaiter-reveal/",
+      "source": "The Campus",
+      "fieldAuthor": null,
+      "canonicalAuthor": "Leighton Geraghty",
+      "reason": "page-byline"
+    },
+    {
+      "title": "A season to remember: BU Men’s Club Hockey honour a season built on commitment",
+      "link": "https://thebucampus.ca/2026/04/06/a-season-to-remember-bu-mens-club-hockey-honour-a-season-built-on-commitment/",
+      "source": "The Campus",
+      "fieldAuthor": null,
+      "canonicalAuthor": "Owen Grand",
+      "reason": "page-byline"
+    },
+    {
+      "title": "The best thing you can do at Bishop’s is get involved",
+      "link": "https://thebucampus.ca/2026/04/06/the-best-thing-you-can-do-at-bishops-is-get-involved/",
+      "source": "The Campus",
+      "fieldAuthor": null,
+      "canonicalAuthor": "Olivia Woods",
+      "reason": "page-byline"
+    },
+    {
+      "title": "Step outside… and change your life",
+      "link": "https://thebucampus.ca/2026/04/06/step-outside-and-change-your-life/",
+      "source": "The Campus",
+      "fieldAuthor": null,
+      "canonicalAuthor": "Piper Howell",
+      "reason": "page-byline"
+    },
+    {
+      "title": "Robin Williams lied (kind of)",
+      "link": "https://thebucampus.ca/2026/04/06/robin-williams-lied-kind-of/",
+      "source": "The Campus",
+      "fieldAuthor": null,
+      "canonicalAuthor": "Francis Paquin",
+      "reason": "page-byline"
+    },
+    {
+      "title": "No one tells you when it’s over",
+      "link": "https://thebucampus.ca/2026/04/06/no-one-tells-you-when-its-over/",
+      "source": "The Campus",
+      "fieldAuthor": null,
+      "canonicalAuthor": "Jonny Roach",
+      "reason": "page-byline"
+    },
+    {
+      "title": "Read It Up | The Castle of Otranto by Horace Walpole",
+      "link": "https://theconcordian.substack.com/p/read-it-up-the-castle-of-otranto",
+      "source": "The Concordian",
+      "fieldAuthor": "The editorial team",
+      "canonicalAuthor": "The editorial team",
+      "reason": "rss-feed-default-rejected"
+    },
+    {
+      "title": "This Week's Top Stories",
+      "link": "https://theconcordian.substack.com/p/this-weeks-top-stories-99d",
+      "source": "The Concordian",
+      "fieldAuthor": "The editorial team",
+      "canonicalAuthor": "The editorial team",
+      "reason": "rss-feed-default-rejected"
+    },
+    {
+      "title": "The Pitch List",
+      "link": "https://theconcordian.substack.com/p/the-pitch-list-747",
+      "source": "The Concordian",
+      "fieldAuthor": "The editorial team",
+      "canonicalAuthor": "The editorial team",
+      "reason": "rss-feed-default-rejected"
     }
   ],
-  "fixed": 68
+  "fixed": 31
 }

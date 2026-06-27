@@ -35,6 +35,28 @@ function canonicalizeEditorialAuthor(name = '') {
   return '';
 }
 
+const CONTRIBUTOR_DASH = '(?:[–—\\-]|&#8211;|&ndash;)';
+const CONTRIBUTOR_BYLINE_RE = new RegExp(
+  `^([\\p{Lu}][\\p{L}'’.\\-]+(?:\\s+[\\p{Lu}][\\p{L}'’.\\-]+){0,3})\\s*${CONTRIBUTOR_DASH}\\s*(?:Contributor|Staff Writer)\\b`,
+  'iu',
+);
+const CONTRIBUTOR_HTML_RE = new RegExp(
+  `<strong>\\s*([\\p{Lu}][\\p{L}'’.\\-]+(?:\\s+[\\p{Lu}][\\p{L}'’.\\-]+){0,3})\\s*${CONTRIBUTOR_DASH}\\s*(?:Contributor|Staff Writer)\\s*<\\/strong>`,
+  'iu',
+);
+
+function isJunkAuthorName(name = '') {
+  const a = String(name).replace(/\s+/g, ' ').trim();
+  if (!a || a.length < 2 || a.length > 80) return true;
+  if (/^[,;:.]/.test(a) || /[,;]{2,}/.test(a)) return true;
+  if (/\bfunction\s*\(/.test(a) || /[{}\[\]]/.test(a)) return true;
+  if (/https?:\/\//i.test(a) || /\.(?:php|js|css)\b/i.test(a)) return true;
+  if (/\b(?:wp-content|wp-admin|wp-block|prefetch|selector_matches|splide)\b/i.test(a)) return true;
+  if (/\b(?:Recent Posts|Skip to content|Written by|Read more|Lire la suite)\b/i.test(a)) return true;
+  if (a.split(/\s+/).length > 6) return true;
+  return false;
+}
+
 function normalizeAuthor(name = '') {
   let a = stripHtml(name);
   const paren = a.match(/\(([^)]+)\)/);
@@ -42,7 +64,7 @@ function normalizeAuthor(name = '') {
   a = a.replace(/^(?:Par|By)\s+/i, '').replace(/\s+/g, ' ').trim();
   const editorial = canonicalizeEditorialAuthor(a);
   if (editorial) return editorial;
-  if (!a || a.length < 2 || GENERIC_AUTHORS.test(a) || /@/.test(a)) return '';
+  if (!a || a.length < 2 || GENERIC_AUTHORS.test(a) || /@/.test(a) || isJunkAuthorName(a)) return '';
   return a.slice(0, 120);
 }
 
@@ -69,9 +91,26 @@ function authorsFromRelLinks(html = '') {
 }
 
 function authorsFromAuthorNameBlock(html = '') {
-  const block = html.match(/class=["'][^"']*author-name[^"']*["'][^>]*>([\s\S]*?)<\/span>/i);
+  const names = [];
+  for (const m of html.matchAll(
+    /class=["'][^"']*wp-block-post-author-name__link[^"']*["'][^>]*>([^<]+)<\/a>/gi,
+  )) {
+    const n = normalizeAuthor(m[1]);
+    if (n) names.push(n);
+  }
+  if (names.length) return [...new Set(names)];
+
+  const block = html.match(
+    /class=["'][^"']*author-name[^"']*["'][^>]*>([\s\S]{0,400}?)<\/(?:div|span|a|p)>/i,
+  );
   if (!block) return [];
-  return authorsFromRelLinks(block[1]);
+  names.push(...authorsFromRelLinks(block[1]));
+  const link = block[1].match(/<a[^>]*>([^<]+)<\/a>/i);
+  if (link) {
+    const n = normalizeAuthor(link[1]);
+    if (n) names.push(n);
+  }
+  return [...new Set(names)];
 }
 
 function normAuthorKey(name = '') {
@@ -116,6 +155,14 @@ function extractBylineFromText(text = '') {
       body: plain.replace(EDITORIAL_BYLINE_EN_RE, '').trim(),
     };
   }
+
+  const contributor = plain.match(CONTRIBUTOR_BYLINE_RE);
+  if (contributor) {
+    const author = normalizeAuthor(contributor[1]);
+    const body = plain.slice(contributor[0].length).trim();
+    if (author && body.length >= 8) return { author, body };
+  }
+
   if (!/^(?:Par|By)\s+/i.test(plain)) return { author: '', body: plain };
 
   const tokens = plain.replace(/^\s*(?:Par|By)\s+/i, '').split(/\s+/);
@@ -170,6 +217,21 @@ function authorFromArticleHtml(html = '', lang = 'fr') {
   const candidates = [];
   const l = lang === 'en' ? 'en' : 'fr';
 
+  const contributor = html.match(CONTRIBUTOR_HTML_RE);
+  if (contributor) {
+    candidates.push({ author: contributor[1].replace(/\s+/g, ' ').trim(), trust: 96 });
+  }
+
+  for (const key of ['og:description', 'description', 'twitter:description']) {
+    const desc = metaContent(html, key);
+    if (!desc) continue;
+    const fromDesc = extractBylineFromText(desc);
+    if (fromDesc.author) {
+      candidates.push({ author: fromDesc.author, trust: 94 });
+      break;
+    }
+  }
+
   const bylineAuthors = authorsFromAuthorNameBlock(html);
   if (bylineAuthors.length) {
     candidates.push({ author: joinAuthorNames(bylineAuthors, l), trust: 100 });
@@ -184,14 +246,14 @@ function authorFromArticleHtml(html = '', lang = 'fr') {
 
   const metaAuthor = metaContent(html, 'author');
   if (metaAuthor && metaAuthor.includes(',')) {
-    candidates.push({
-      author: joinAuthorNames(metaAuthor.split(/,\s*/), l),
-      trust: 92,
-    });
+    const parts = metaAuthor.split(/,\s*/).map((part) => normalizeAuthor(part)).filter(Boolean);
+    if (parts.length) {
+      candidates.push({ author: joinAuthorNames(parts, l), trust: 92 });
+    }
   }
 
   const parSpan = html.match(
-    /(?:^|[\s>])(?:Par|By)\s*<[^>]+>([\s\S]*?)<\/[^>]+>\s*<\/span>/i,
+    /(?:^|(?<=>))\s*(?:Par|By)\s+(?!<\/)[^<]*<[^>]+>([\s\S]*?)<\/[^>]+>\s*<\/span>/i,
   );
   if (parSpan) candidates.push({ author: stripHtml(parSpan[1]), trust: 85 });
 
