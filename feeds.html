@@ -73,18 +73,12 @@
         <div class="feeds-card__body">
           <section class="feeds-panel feeds-panel--sources" aria-labelledby="feeds-sources-title">
             <h2 id="feeds-sources-title" class="feeds-panel__title">Campus couverts</h2>
-            <ul class="feeds-grid">
-              <li class="feeds-grid__row" style="--c: #0057AC"><span class="feeds-grid__campus">UdeM</span><span class="feeds-grid__paper">Quartier Libre</span></li>
-              <li class="feeds-grid__row" style="--c: #0079BE"><span class="feeds-grid__campus">UQAM</span><span class="feeds-grid__paper">Montréal Campus</span></li>
-              <li class="feeds-grid__row" style="--c: #ED1B2F"><span class="feeds-grid__campus">McGill</span><span class="feeds-grid__paper">Le Délit · The McGill Daily</span></li>
-              <li class="feeds-grid__row" style="--c: #912338"><span class="feeds-grid__campus">Concordia</span><span class="feeds-grid__paper">The Link</span></li>
-              <li class="feeds-grid__row" style="--c: #E30513"><span class="feeds-grid__campus">Laval</span><span class="feeds-grid__paper">L'Exemplaire</span></li>
-              <li class="feeds-grid__row" style="--c: #00A759"><span class="feeds-grid__campus">Sherbrooke</span><span class="feeds-grid__paper">Le Collectif</span></li>
-              <li class="feeds-grid__row" style="--c: #00CB88"><span class="feeds-grid__campus">UQTR</span><span class="feeds-grid__paper">Zone Campus</span></li>
-              <li class="feeds-grid__row" style="--c: #C41E3A"><span class="feeds-grid__campus">Polytechnique</span><span class="feeds-grid__paper">Le Polyscope</span></li>
-              <li class="feeds-grid__row" style="--c: #582C83"><span class="feeds-grid__campus">Bishop's</span><span class="feeds-grid__paper">The Campus</span></li>
-            </ul>
-            <p class="feeds-grid__note">+ publications collégiales et autres médias du réseau.</p>
+            <ul id="feeds-grid-uni" class="feeds-grid" aria-busy="true"></ul>
+            <div id="feeds-cegep-wrap" class="feeds-cegep-wrap" hidden>
+              <h3 class="feeds-panel__subtitle">Cégeps</h3>
+              <ul id="feeds-grid-cegep" class="feeds-grid"></ul>
+            </div>
+            <p id="feeds-grid-note" class="feeds-grid__note" hidden></p>
           </section>
 
           <section class="feeds-panel feeds-panel--info" aria-labelledby="feeds-info-title">

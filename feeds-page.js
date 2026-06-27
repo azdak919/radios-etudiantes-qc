@@ -2,6 +2,32 @@ const TODAY_DATE = document.getElementById('today-date');
 const THEME_TOGGLE = document.getElementById('theme-toggle');
 const TOAST_EL = document.getElementById('toast');
 const FEEDS_UPDATED = document.getElementById('feeds-updated');
+const FEEDS_GRID_UNI = document.getElementById('feeds-grid-uni');
+const FEEDS_GRID_CEGEP = document.getElementById('feeds-grid-cegep');
+const FEEDS_CEGEP_WRAP = document.getElementById('feeds-cegep-wrap');
+const FEEDS_GRID_NOTE = document.getElementById('feeds-grid-note');
+
+const FEEDS_INSTITUTION_ACRONYMS = {
+  'Université de Montréal': 'UdeM',
+  UQAM: 'UQAM',
+  'Université du Québec à Montréal': 'UQAM',
+  'Université McGill': 'McGill',
+  'McGill University': 'McGill',
+  'Concordia University': 'Concordia',
+  'Université Laval': 'ULaval',
+  'Université de Sherbrooke': 'UdeS',
+  'Université du Québec à Trois-Rivières': 'UQTR',
+  'Polytechnique Montréal': 'Poly',
+  "Bishop's University": "Bishop's",
+  'Cégep du Vieux Montréal': 'CVM',
+  'Cégep de Jonquière (ATM – journalisme)': 'Jonquière',
+  'Cégep de Jonquière': 'Jonquière',
+};
+
+const FEEDS_INSTITUTION_ORDER = [
+  'UdeM', 'UQAM', 'McGill', 'Concordia', 'ULaval', 'UdeS', 'UQTR', 'Poly', "Bishop's",
+  'CVM', 'Jonquière',
+];
 
 function siteBase() {
   const path = window.location.pathname.replace(/\/[^/]*$/, '');
@@ -120,6 +146,118 @@ function initFeedCards() {
   });
 }
 
+function institutionAcronym(name = '') {
+  if (!name) return '';
+  if (FEEDS_INSTITUTION_ACRONYMS[name]) return FEEDS_INSTITUTION_ACRONYMS[name];
+  const stripped = name.replace(/\s*\([^)]*\)\s*$/, '').trim();
+  if (FEEDS_INSTITUTION_ACRONYMS[stripped]) return FEEDS_INSTITUTION_ACRONYMS[stripped];
+  if (/^cégep\b/i.test(stripped)) return stripped.replace(/^Cégep\s+(de\s+|du\s+)?/i, '').split(/\s/)[0];
+  return stripped.length > 18 ? `${stripped.slice(0, 16)}…` : stripped;
+}
+
+function institutionGroupKey(name = '') {
+  return institutionAcronym(name) || name;
+}
+
+function institutionBrandColor(name = '', brandColors = {}) {
+  const map = brandColors.institutions || {};
+  return map[name]?.color
+    || map[name?.replace(/\s*\([^)]*\)\s*$/, '').trim()]?.color
+    || brandColors.fallback_palette?.[0]
+    || '#003DA5';
+}
+
+function groupSourcesByInstitution(sources = []) {
+  const groups = new Map();
+  sources.forEach((src) => {
+    const inst = String(src.institution || '').trim();
+    if (!inst) return;
+    const key = institutionGroupKey(inst);
+    if (!groups.has(key)) {
+      groups.set(key, {
+        key,
+        institution: inst,
+        acronym: institutionAcronym(inst),
+        type: src.type || 'universite',
+        papers: [],
+        minPopularity: 50,
+      });
+    }
+    const g = groups.get(key);
+    g.papers.push(src.name);
+    g.minPopularity = Math.min(g.minPopularity, src.popularity ?? 50);
+    if (src.type === 'cegep') g.type = 'cegep';
+  });
+  groups.forEach((g) => {
+    g.papers.sort((a, b) => a.localeCompare(b, 'fr'));
+  });
+  return [...groups.values()];
+}
+
+function sortInstitutionGroups(groups = []) {
+  return [...groups].sort((a, b) => {
+    const typeDiff = (a.type === 'cegep' ? 1 : 0) - (b.type === 'cegep' ? 1 : 0);
+    if (typeDiff !== 0) return typeDiff;
+    const ai = FEEDS_INSTITUTION_ORDER.indexOf(a.key);
+    const bi = FEEDS_INSTITUTION_ORDER.indexOf(b.key);
+    const ar = ai >= 0 ? ai : 100 + a.minPopularity;
+    const br = bi >= 0 ? bi : 100 + b.minPopularity;
+    if (ar !== br) return ar - br;
+    return a.acronym.localeCompare(b.acronym, 'fr');
+  });
+}
+
+function renderFeedsGridRow(group, brandColors) {
+  const li = document.createElement('li');
+  li.className = 'feeds-grid__row';
+  li.style.setProperty('--c', institutionBrandColor(group.institution, brandColors));
+
+  const campus = document.createElement('span');
+  campus.className = 'feeds-grid__campus';
+  campus.textContent = group.acronym;
+
+  const paper = document.createElement('span');
+  paper.className = 'feeds-grid__paper';
+  paper.textContent = group.papers.join(' · ');
+
+  li.append(campus, paper);
+  return li;
+}
+
+async function renderFeedsCampuses() {
+  if (!FEEDS_GRID_UNI) return;
+  try {
+    const [registry, brandColors] = await Promise.all([
+      fetch('./news-sources.json', { cache: 'no-cache' }).then((r) => r.json()),
+      fetch('./brand-colors.json', { cache: 'no-cache' }).then((r) => r.json()),
+    ]);
+    const active = (registry?.active || []).filter((s) => s.name && s.institution);
+    const groups = sortInstitutionGroups(groupSourcesByInstitution(active));
+    const uni = groups.filter((g) => g.type !== 'cegep');
+    const cegep = groups.filter((g) => g.type === 'cegep');
+
+    FEEDS_GRID_UNI.replaceChildren(...uni.map((g) => renderFeedsGridRow(g, brandColors)));
+    FEEDS_GRID_UNI.removeAttribute('aria-busy');
+
+    if (FEEDS_GRID_CEGEP && cegep.length) {
+      FEEDS_GRID_CEGEP.replaceChildren(...cegep.map((g) => renderFeedsGridRow(g, brandColors)));
+      FEEDS_CEGEP_WRAP?.removeAttribute('hidden');
+    }
+
+    const candidates = registry?.candidates?.length || 0;
+    if (FEEDS_GRID_NOTE && candidates > 0) {
+      FEEDS_GRID_NOTE.textContent = `+ ${candidates} publication${candidates > 1 ? 's' : ''} en cours d'intégration au fil.`;
+      FEEDS_GRID_NOTE.hidden = false;
+    }
+  } catch {
+    FEEDS_GRID_UNI.removeAttribute('aria-busy');
+    if (FEEDS_GRID_NOTE) {
+      FEEDS_GRID_NOTE.textContent = 'Impossible de charger la liste des sources.';
+      FEEDS_GRID_NOTE.hidden = false;
+    }
+  }
+}
+
 async function renderFeedsUpdated() {
   if (!FEEDS_UPDATED) return;
   try {
@@ -141,4 +279,5 @@ async function renderFeedsUpdated() {
 initTheme();
 renderTodayDate();
 initFeedCards();
+renderFeedsCampuses();
 renderFeedsUpdated();
