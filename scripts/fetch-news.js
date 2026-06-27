@@ -21,8 +21,7 @@ const NEWS_PATH = path.join(__dirname, '..', 'news.json');
 const SOURCES_PATH = path.join(__dirname, '..', 'news-sources.json');
 const TIMEOUT = 15000;
 const ENRICH_TIMEOUT = 12000;
-const MAX_PER_SOURCE = 7;   // keep the freshest few from each paper
-const MAX_TOTAL = 60;       // overall cap
+const MAX_PER_SOURCE = 12;  // archive par journal (vue source)
 const MAX_ENRICH = 20;      // cap article-page fetches per run
 
 const GENERIC_AUTHORS = /^(admin|administrator|administrateur|editor|éditeur|editeur|rédaction|redaction|staff|wordpress|webmaster|collectif|le collectif|tribune|link|daily|exemplaire|quartier libre|zone campus|la pige|le délit|le delit|the link|the tribune|the mcgill daily)$/i;
@@ -440,8 +439,8 @@ async function main() {
 
   const news = {
     updated: new Date().toISOString(),
-    count: Math.min(all.length, MAX_TOTAL),
-    items: all.slice(0, MAX_TOTAL),
+    count: all.length,
+    items: all,
   };
 
   const withAuthor = news.items.filter((i) => i.author && !isGenericAuthor(i.author)).length;

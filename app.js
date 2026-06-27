@@ -956,41 +956,12 @@ function partitionNewsFeed(items, referenceDate = new Date()) {
 }
 
 /**
- * Pool chronologique d'un seul média : session en cours puis contingence
- * session par session (même logique que le fil global).
+ * Pool d'un seul média : tout l'archive disponible dans news.json
+ * (la fraîcheur par session reste réservée au fil global).
  */
 function collectSourcePool(items, referenceDate = new Date()) {
-  const seen = new Set();
-  const pool = [];
-  let contingencyBand = 0;
-
-  const absorb = (bandItems, band) => {
-    let added = false;
-    for (const item of bandItems) {
-      const key = articleKey(item);
-      if (seen.has(key)) continue;
-      seen.add(key);
-      pool.push(item);
-      added = true;
-    }
-    if (added) contingencyBand = Math.max(contingencyBand, band);
-  };
-
-  for (let band = 0; band <= CONTINGENCY_MAX_SESSIONS_BACK; band++) {
-    absorb(sessionBandPool(items, referenceDate, band), band);
-    if (pool.length >= HERO_SPOTLIGHT_MAX + BRIEF_SIDEBAR_MAX) break;
-  }
-
-  if (pool.length < HERO_SPOTLIGHT_MAX + BRIEF_SIDEBAR_MAX) {
-    const before = pool.length;
-    absorb(
-      sortByDateDesc(items).filter((item) => isPublishedOnOrBefore(item, referenceDate)),
-      CONTINGENCY_ULTIMATE_BAND,
-    );
-    if (pool.length > before) contingencyBand = CONTINGENCY_ULTIMATE_BAND;
-  }
-
-  return { items: sortByDateDesc(pool), contingencyBand };
+  const pool = sortByDateDesc(items).filter((item) => isPublishedOnOrBefore(item, referenceDate));
+  return { items: pool, contingencyBand: 0 };
 }
 
 function pickSourceLead(pool) {
