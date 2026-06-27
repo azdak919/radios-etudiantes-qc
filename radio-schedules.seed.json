@@ -1,5 +1,5 @@
 {
-  "_comment": "Source ÉDITABLE des horaires radio. Le bot scripts/fetch-radio-schedules.js fusionne ces grilles manuelles avec les sources dynamiques (Airtime, …) puis écrit radio-schedules.json (le fichier lu par le site). Pour ajouter une émission, ajoute une plage dans 'grid' du poste concerné.",
+  "_comment": "Source ÉDITABLE des horaires radio. CI aux 2 semaines : discover-schedule-sources.js --update puis fetch-radio-schedules.js --update (workflow update-radio-schedules.yml). Adaptateurs : chyz, cism, cjlo, cfak, airtime (CKUT). CHOQ : _nowPlayingOnly (api/live via fetch-radio-nowplaying.js aux 30 min).",
   "_format": {
     "day": "0 = dimanche, 1 = lundi, 2 = mardi, 3 = mercredi, 4 = jeudi, 5 = vendredi, 6 = samedi",
     "start_end": "Heures locales 24 h America/Toronto, format \"HH:MM\". Une plage dont la fin est <= au début traverse minuit (ex. 23:00 → 01:00).",
@@ -62,6 +62,12 @@
           "url": "https://www.cfak.ca/programmation/"
         }
       ],
+      "grid": []
+    },
+    "choq": {
+      "_note": "À l'antenne via https://www.choq.ca/api/live (titre + animateur). Grille /horaire non parsée — bot fetch-radio-nowplaying.js aux 30 min.",
+      "_nowPlayingOnly": true,
+      "sources": [],
       "grid": []
     }
   }

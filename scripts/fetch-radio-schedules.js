@@ -62,7 +62,9 @@ async function main() {
     }
 
     if (!finalGrid.length) {
-      console.log(`  · ${radio.id}: aucune plage (sources vides)`);
+      if (!cfg._nowPlayingOnly) {
+        console.log(`  · ${radio.id}: aucune plage (sources vides)`);
+      }
       continue;
     }
 
@@ -84,6 +86,25 @@ async function main() {
   console.log(
     `\n${Object.keys(stations).length} postes avec horaire, ${totalSlots} plages au total.`,
   );
+
+  const playable = radios.filter((r) => r.stream);
+  const uncovered = [];
+  console.log('\n── Couverture postes natifs ──');
+  for (const radio of playable) {
+    const cfg = seed.stations?.[radio.id];
+    if (!cfg) {
+      uncovered.push(radio.id);
+      console.log(`  ? ${radio.id}: absent du seed — non mis à jour par ce bot`);
+    } else if (cfg._nowPlayingOnly) {
+      console.log(`  ○ ${radio.id}: now-playing seulement (fetch-radio-nowplaying.js)`);
+    } else if (!stations[radio.id] && !(cfg.grid || []).length && !(cfg.sources || []).length) {
+      uncovered.push(radio.id);
+      console.log(`  ! ${radio.id}: seed sans source ni grille manuelle`);
+    }
+  }
+  if (uncovered.length) {
+    console.warn(`\n⚠ ${uncovered.length} poste(s) natif(s) sans horaire : ${uncovered.join(', ')}`);
+  }
 
   if (doUpdate) {
     fs.writeFileSync(OUT_PATH, `${JSON.stringify(out, null, 2)}\n`);

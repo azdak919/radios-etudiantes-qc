@@ -1,6 +1,9 @@
 #!/usr/bin/env node
 /**
- * Bot horaire / à l'antenne — lit les métadonnées ICY des flux natifs.
+ * Bot « à l'antenne » — titre en ondes pour chaque poste natif (radios.json).
+ * Sources : ICY du flux, ou API Craft (/api/live) pour CHOQ.
+ * Tourne aux 30 min (workflow update-radio-nowplaying.yml).
+ * Les grilles hebdomadaires sont dans fetch-radio-schedules.js (aux 2 semaines).
  *
  *   node scripts/fetch-radio-nowplaying.js
  *   node scripts/fetch-radio-nowplaying.js --update

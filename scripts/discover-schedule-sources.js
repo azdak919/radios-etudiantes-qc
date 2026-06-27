@@ -175,8 +175,12 @@ async function main() {
     }
     // On ne signale « grille manuelle requise » que pour les postes déjà suivis
     // dans le seed (éviter le bruit des postes sans flux ni horaire).
-    if (configured.has(radio.id) && !workingSources.length && !(seedCfg.grid || []).length) {
+    if (configured.has(radio.id) && !seedCfg._nowPlayingOnly
+      && !workingSources.length && !(seedCfg.grid || []).length) {
       report.attention.push(`${radio.id}: aucune source automatique — grille manuelle requise.`);
+    }
+    if (seedCfg._nowPlayingOnly) {
+      report.stable.push(`${radio.id} (now-playing)`);
     }
 
     // Persiste seulement les postes déjà suivis ou qui ont une source validée
