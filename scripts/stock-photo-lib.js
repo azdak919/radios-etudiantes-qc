@@ -23,6 +23,27 @@ const FALSE_FRIENDS = new Set([
   'feature', 'features', 'news', 'article', 'journal', 'campus', 'etudiant', 'étudiant',
 ]);
 
+const QUEBEC_REGION_RE = /montréal|montreal|québec|quebec|laval|gatineau|sherbrooke|saguenay|rimouski|trois.?rivières|trois.?rivieres|abitibi|outaouais/i;
+const QUEBEC_INSTITUTION_RE = /uqam|uqtr|udem|ulaval|mcgill|concordia|hec montréal|hec montreal|cégep|cegep|sherbrooke|bishop|polytechnique|vieux montréal|vieux montreal/i;
+const QUEBEC_POLITICS_RE = /québécois|quebecois|élection provinciale|election provinciale|monde politique québécois|monde politique quebecois|\bcaq\b|parti québécois|parti quebecois|\bpq\b|\bqs\b|\bplq\b|\bpspp\b|françois legault|francois legault|hôtel du parlement|hotel du parlement|assemblée nationale du québec|assemblee nationale du quebec|député provincial|depute provincial|\bmna\b|\bmnas\b/i;
+const FEDERAL_CANADA_RE = /chambre des communes|parlement du canada|ottawa|trudeau|député fédéral|depute federal|\bmp\b|house of commons|parliament hill/i;
+const FRANCE_SUBJECT_RE = /g7|évian|evian|sommet|elysée|elysee|macron|paris 202|france 202|coupe du monde|jeux olympiques paris/i;
+
+/** Pays/régions à pénaliser quand l'article parle de l'Assemblée nationale du Québec. */
+const FOREIGN_ASSEMBLY_MARKERS = [
+  'burkina', 'faso', 'afrique', 'africa', 'senegal', 'sénégal', 'mali', 'niger', 'benin', 'bénin',
+  'togo', 'cameroun', 'cameroon', 'rwanda', 'madagascar', 'gabon', 'congo', 'ouganda', 'uganda',
+  'nigeria', 'ghana', 'kenya', 'tanzania', 'zambia', 'zimbabwe', 'mozambique', 'angola', 'tunisia',
+  'tunisie', 'algeria', 'algérie', 'morocco', 'maroc', 'egypt', 'égypte', 'ivory coast',
+  'cote d ivoire', 'côte d ivoire', 'haiti', 'haïti', 'guinea', 'guinée', 'liberia', 'libéria',
+];
+
+const QC_ASSEMBLY_MARKERS = [
+  'quebec', 'québec', 'quebec city', 'ville de quebec', 'ville de québec',
+  'hotel du parlement', 'hôtel du parlement', 'national assembly quebec',
+  'assemblee nationale du quebec', 'assemblée nationale du québec',
+];
+
 function stripHtml(text = '') {
   return String(text).replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
 }
@@ -52,6 +73,111 @@ function extractProperNouns(text = '') {
     .filter((w) => w.length > 1 && !STOP_WORDS.has(w) && !FALSE_FRIENDS.has(w)))];
 }
 
+function detectEditorialContext(item = {}) {
+  const content = extractArticleContent(item);
+  const title = item.title || '';
+  const full = `${title} ${content} ${item.institution || ''} ${item.region || ''} ${item.source || ''}`;
+  const norm = normalizeText(full);
+
+  const quebecRegion = QUEBEC_REGION_RE.test(item.region || '') || QUEBEC_REGION_RE.test(norm);
+  const quebecInstitution = QUEBEC_INSTITUTION_RE.test(item.institution || '') || QUEBEC_INSTITUTION_RE.test(norm);
+  const quebecPolitics = QUEBEC_POLITICS_RE.test(norm);
+  const federalCanada = FEDERAL_CANADA_RE.test(norm);
+  const franceAsSubject = FRANCE_SUBJECT_RE.test(norm);
+
+  const quebec = quebecRegion
+    || quebecInstitution
+    || quebecPolitics
+    || (item.lang === 'fr' && !!item.institution);
+
+  const assemblyTopic = /assemblée nationale|assemblee nationale|national assembly/i.test(full);
+  const provincialParliament = assemblyTopic && quebec && !federalCanada;
+
+  return {
+    quebec,
+    quebecPolitics: quebecPolitics || (quebec && assemblyTopic),
+    federalCanada,
+    franceAsSubject,
+    provincialParliament,
+    assemblyTopic,
+    montreal: /montréal|montreal/i.test(norm) || /montréal|montreal/i.test(item.region || ''),
+    norm,
+    titleNorm: normalizeText(title),
+  };
+}
+
+function extractContextualQueries(item, context = detectEditorialContext(item)) {
+  const queries = [];
+  const title = item.title || '';
+  const content = extractArticleContent(item);
+  const combined = `${title} ${content}`;
+
+  if (context.provincialParliament || (context.assemblyTopic && context.quebec)) {
+    queries.push('Assemblée nationale du Québec');
+    queries.push('Hôtel du Parlement Québec');
+    queries.push('Quebec Parliament Building Quebec City');
+  }
+
+  if (/national assembly/i.test(combined) && context.quebec && !context.federalCanada) {
+    queries.push('Quebec National Assembly Quebec City');
+  }
+
+  if (/\bparlement\b/i.test(combined) && context.quebec && !context.federalCanada) {
+    queries.push('Assemblée nationale du Québec');
+  }
+
+  if (/cour suprême|cour supreme|supreme court/i.test(combined) && context.quebec && !context.federalCanada) {
+    queries.push('Cour suprême du Canada Ottawa');
+  }
+
+  if (/chambre des communes|house of commons/i.test(combined) && context.federalCanada) {
+    queries.push('Parliament Hill Ottawa Canada');
+  }
+
+  if (/élection provinciale|election provinciale/i.test(combined) && context.quebec) {
+    queries.push('élection Québec politique');
+  }
+
+  if (item.institution && context.quebec && /campus|université|universite|cégep|cegep|étudiant|etudiant/i.test(combined)) {
+    const inst = String(item.institution).replace(/\b(university|université|universite)\b/gi, '').trim();
+    if (inst.length > 4) queries.push(`${inst} Québec`);
+  }
+
+  return [...new Set(queries.filter((q) => q && q.length > 2))];
+}
+
+function applyContextScoring(hit, context = {}) {
+  if (!context || !hit) return 0;
+  const hay = normalizeText(`${hit.title || ''} ${hit.tags || ''} ${hit.url || ''}`);
+  let delta = 0;
+
+  if (context.provincialParliament || (context.assemblyTopic && context.quebec)) {
+    for (const marker of QC_ASSEMBLY_MARKERS) {
+      if (hay.includes(normalizeText(marker))) delta += 90;
+    }
+    for (const marker of FOREIGN_ASSEMBLY_MARKERS) {
+      if (hay.includes(normalizeText(marker))) delta -= 150;
+    }
+    if (!context.franceAsSubject && /\bfrance\b/.test(hay) && /assemblee|assemblée|national assembly|parliament/i.test(hay)) {
+      delta -= 60;
+    }
+  }
+
+  if (context.quebec && context.federalCanada && context.provincialParliament) {
+    if (/ottawa|house of commons|chambre des communes|parliament hill/i.test(hay)) delta -= 45;
+  } else if (context.federalCanada && !context.provincialParliament) {
+    if (/ottawa|parliament hill|house of commons|chambre des communes/i.test(hay)) delta += 45;
+    if (/hotel du parlement|hôtel du parlement|national assembly quebec/i.test(hay)) delta -= 35;
+  }
+
+  if (context.quebec && /cour suprême|cour supreme|supreme court/i.test(context.norm)) {
+    if (/washington|united states|u\.s\. supreme|usa supreme/i.test(hay)) delta -= 80;
+    if (/supreme court of canada|cour suprême du canada|ottawa/i.test(hay)) delta += 55;
+  }
+
+  return delta;
+}
+
 /** Corps éditorial sans byline ni HTML — base pour les requêtes visuelles. */
 function extractArticleContent(item) {
   let body = stripHtml(item.excerpt || '');
@@ -76,7 +202,7 @@ function buildMatchTokens(item) {
   return { important, title: titleTokens, content: contentTokens, proper, contentText: content };
 }
 
-function extractSearchQueries(item) {
+function extractSearchQueries(item, context = detectEditorialContext(item)) {
   const content = extractArticleContent(item);
   const contentProper = extractProperNouns(content);
   const titleProper = extractProperNouns(item.title || '');
@@ -84,7 +210,11 @@ function extractSearchQueries(item) {
   const contentTokens = tokenize(content).slice(0, 12);
   const match = buildMatchTokens(item);
 
-  const queries = [];
+  const queries = [...extractContextualQueries(item, context)];
+
+  if (context.provincialParliament) {
+    queries.push('Assemblée nationale Québec politique');
+  }
 
   if (contentProper.length >= 2) queries.push(contentProper.slice(0, 5).join(' '));
   if (contentTokens.length >= 3) queries.push(contentTokens.slice(0, 6).join(' '));
@@ -179,7 +309,7 @@ function formatAttribution(hit) {
   return `Photo : ${creator} / ${license} · ${via}`;
 }
 
-function scoreCandidate(hit, matchTokens) {
+function scoreCandidate(hit, matchTokens, context = null) {
   let score = 0;
   const w = hit.width || 0;
   const h = hit.height || 0;
@@ -223,10 +353,12 @@ function scoreCandidate(hit, matchTokens) {
   if (hit.provider === 'wikimedia') score += 8;
   if (hit.license === 'cc0' || hit.license === 'pdm') score += 4;
 
-  return score;
+  score += applyContextScoring(hit, context);
+
+  return score > 0 ? score : -1;
 }
 
-async function searchOpenverse(query, matchTokens) {
+async function searchOpenverse(query, matchTokens, context = null) {
   const q = encodeURIComponent(query);
   const url = `https://api.openverse.org/v1/images/?q=${q}&page_size=12&license=cc0,by,by-sa,pdm&format=json`;
   const data = await fetchJson(url);
@@ -246,12 +378,12 @@ async function searchOpenverse(query, matchTokens) {
       foreignLandingUrl: r.foreign_landing_url || r.url,
       score: 0,
     }))
-    .map((r) => ({ ...r, score: scoreCandidate(r, matchTokens) }))
+    .map((r) => ({ ...r, score: scoreCandidate(r, matchTokens, context) }))
     .filter((r) => r.score > 0)
     .sort((a, b) => b.score - a.score);
 }
 
-async function searchWikimedia(query, matchTokens) {
+async function searchWikimedia(query, matchTokens, context = null) {
   const q = encodeURIComponent(query);
   const url = `https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=${q}&gsrnamespace=6&gsrlimit=10&prop=imageinfo&iiprop=url|size|extmetadata&iiurlwidth=1280&format=json`;
   const data = await fetchJson(url);
@@ -280,7 +412,7 @@ async function searchWikimedia(query, matchTokens) {
       foreignLandingUrl: info.descriptionurl || info.url,
       score: 0,
     };
-    hit.score = scoreCandidate(hit, matchTokens);
+    hit.score = scoreCandidate(hit, matchTokens, context);
     if (hit.score > 0) out.push(hit);
   }
   return out.sort((a, b) => b.score - a.score);
@@ -298,7 +430,8 @@ async function validateCandidate(hit) {
 }
 
 async function findStockPhoto(item) {
-  const queries = extractSearchQueries(item);
+  const context = detectEditorialContext(item);
+  const queries = extractSearchQueries(item, context);
   if (!queries.length) return null;
 
   const matchTokens = buildMatchTokens(item);
@@ -306,8 +439,8 @@ async function findStockPhoto(item) {
 
   for (const query of queries) {
     const batches = await Promise.all([
-      searchOpenverse(query, matchTokens),
-      searchWikimedia(query, matchTokens),
+      searchOpenverse(query, matchTokens, context),
+      searchWikimedia(query, matchTokens, context),
     ]);
     const candidates = batches.flat().sort((a, b) => b.score - a.score);
 
@@ -335,6 +468,9 @@ async function findStockPhoto(item) {
 module.exports = {
   extractArticleContent,
   buildMatchTokens,
+  detectEditorialContext,
+  extractContextualQueries,
+  applyContextScoring,
   extractSearchQueries,
   formatAttribution,
   cleanCreatorName,
