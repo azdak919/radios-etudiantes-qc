@@ -361,7 +361,12 @@ async function fetchWpFeaturedPosts(feedUrl, src) {
   return posts.map(wpPostToItem).filter(Boolean);
 }
 
-function mergeSourceItems(rssItems, featuredItems) {
+function sourceMaxItems(src = {}) {
+  const n = Number(src.maxItems);
+  return Number.isFinite(n) && n > 0 ? Math.min(n, 50) : MAX_PER_SOURCE;
+}
+
+function mergeSourceItems(rssItems, featuredItems, maxItems = MAX_PER_SOURCE) {
   const seen = new Set();
   const merged = [];
   const add = (item) => {
@@ -372,7 +377,52 @@ function mergeSourceItems(rssItems, featuredItems) {
   };
   for (const item of featuredItems) add(item);
   for (const item of rssItems) add(item);
-  return merged.slice(0, MAX_PER_SOURCE);
+  return merged.slice(0, maxItems);
+}
+
+/** RSS principal, ou fusion de plusieurs flux (ex. catégories WordPress disjointes). */
+async function fetchRssItems(src = {}) {
+  const feedUrls = [src.url, src.urlFallback, ...(src.feedAlternates || [])].filter(Boolean);
+  const uniqueUrls = [...new Set(feedUrls)];
+  const maxItems = sourceMaxItems(src);
+
+  if (!src.mergeFeedAlternates || uniqueUrls.length <= 1) {
+    let xml = '';
+    let feedUsed = '';
+    for (const feedUrl of uniqueUrls) {
+      xml = await fetchText(feedUrl);
+      if (xml && isFeedXml(xml)) {
+        feedUsed = feedUrl;
+        break;
+      }
+      xml = '';
+    }
+    if (!xml) return { items: [], feedUsed: '', maxItems };
+    return { items: parseFeed(xml).slice(0, maxItems), feedUsed, maxItems };
+  }
+
+  const merged = [];
+  const seen = new Set();
+  let feedsOk = 0;
+  for (const feedUrl of uniqueUrls) {
+    const xml = await fetchText(feedUrl);
+    if (!xml || !isFeedXml(xml)) continue;
+    feedsOk += 1;
+    for (const item of parseFeed(xml)) {
+      if (!item.link || seen.has(item.link)) continue;
+      seen.add(item.link);
+      merged.push(item);
+    }
+  }
+
+  merged.sort((a, b) => {
+    const da = a.date ? Date.parse(a.date) : 0;
+    const db = b.date ? Date.parse(b.date) : 0;
+    return db - da;
+  });
+
+  const feedUsed = feedsOk > 1 ? `${feedsOk} feeds` : (uniqueUrls[0] || '');
+  return { items: merged.slice(0, maxItems), feedUsed, maxItems };
 }
 
 // === Article-page enrichment (missing author / thin excerpt) ===================
@@ -659,27 +709,19 @@ async function main() {
       const altNote = listUsed && listUsed !== src.url ? ` [repli: ${listUsed}]` : '';
       console.log(`✓ ${items.length} articles (html-list)${altNote}`);
     } else {
-      const feedUrls = [src.url, src.urlFallback, ...(src.feedAlternates || [])].filter(Boolean);
-      let xml = '';
-      let feedUsed = '';
-      for (const feedUrl of [...new Set(feedUrls)]) {
-        xml = await fetchText(feedUrl);
-        if (xml && isFeedXml(xml)) {
-          feedUsed = feedUrl;
-          break;
-        }
-        xml = '';
-      }
-      if (!xml) {
+      const { items: rssItems, feedUsed, maxItems } = await fetchRssItems(src);
+      if (!rssItems.length) {
         console.log('✗ no response');
         continue;
       }
-      const altNote = feedUsed && feedUsed !== src.url ? ` [repli: ${feedUsed}]` : '';
-      const rssItems = parseFeed(xml).slice(0, MAX_PER_SOURCE);
+      let altNote = '';
+      if (feedUsed && feedUsed !== src.url) {
+        altNote = src.mergeFeedAlternates ? ` [${feedUsed}]` : ` [repli: ${feedUsed}]`;
+      }
       items = rssItems;
       const featuredItems = await fetchWpFeaturedPosts(src.url, src);
       if (featuredItems.length) {
-        items = mergeSourceItems(rssItems, featuredItems);
+        items = mergeSourceItems(rssItems, featuredItems, maxItems);
       }
       const featNote = featuredItems.length ? ` (+${featuredItems.length} vedettes WP)` : '';
       console.log(`✓ ${items.length} articles${featNote}${altNote}`);

@@ -199,12 +199,20 @@
       "type": "universite",
       "lang": "en",
       "url": "https://thebucampus.ca/feed/",
+      "mergeFeedAlternates": true,
+      "feedAlternates": [
+        "https://thebucampus.ca/category/news/feed/",
+        "https://thebucampus.ca/category/sports/feed/",
+        "https://thebucampus.ca/category/opinions/feed/",
+        "https://thebucampus.ca/category/arts-culture/feed/"
+      ],
+      "maxItems": 30,
       "popularity": 13,
       "_status": "ok",
       "_failCount": 0,
       "_lastChecked": "2026-06-27T10:21:58.383Z",
       "site": "https://thebucampus.ca/",
-      "_note": "Independent student newspaper of Bishop's University (Lennoxville)"
+      "_note": "WordPress — le flux principal ne couvre qu'une catégorie; fusion news/sports/opinions/arts-culture"
     }
   ],
   "candidates": [
