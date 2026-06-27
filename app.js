@@ -1138,6 +1138,12 @@ function createArticle(item, role = 'standard', { hideSourceMeta = false } = {})
     : '';
   const titleHtml = `<h3 class="article-title">${escapeHtml(cleanTitle(item.title))}</h3>`;
   const mediaHtml = canUseImage ? '<figure class="article-media"></figure>' : '';
+  const sourceMetaHtml = hideSourceMeta
+    ? ''
+    : `<div class="article-meta article-meta--lead-source">
+        <span class="article-source">${escapeHtml(item.source)}</span>
+        ${item.institution ? `<span class="article-inst">${escapeHtml(articleInstitutionLabel(item.institution, item.type))}</span>` : ''}
+      </div>`;
 
   if (role === 'lead') {
     const leadMeta = hideSourceMeta
@@ -1145,6 +1151,7 @@ function createArticle(item, role = 'standard', { hideSourceMeta = false } = {})
       : (timeHtml ? `<div class="article-meta article-meta--time-only article-meta--lead">${timeHtml}</div>` : '');
     a.innerHTML = `
       <span class="article-eyebrow">À la une</span>
+      ${sourceMetaHtml}
       ${mediaHtml}
       ${titleHtml}
       ${bylineHtml}

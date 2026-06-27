@@ -499,6 +499,13 @@ a { color: inherit; }
 .article-meta--lead .article-time {
   margin-left: 0;
 }
+.article-meta--lead-source {
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+.article--lead .article-eyebrow + .article-meta--lead-source {
+  margin-top: -4px;
+}
 
 /* Source filter chips */
 .filters {
