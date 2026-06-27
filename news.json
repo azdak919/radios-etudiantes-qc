@@ -1,6 +1,121 @@
 {
-  "updated": "2026-06-27T15:52:08.396Z",
+  "updated": "2026-06-27T15:59:33.056Z",
   "count": 231,
+  "freshnessSessions": 3,
+  "sources": {
+    "Quartier Libre": {
+      "fetchOk": true,
+      "stale": false,
+      "articleCount": 10,
+      "freshArticleCount": 10,
+      "lastArticle": "2026-05-15T16:00:00.000Z",
+      "lastFetchOk": "2026-06-27T15:58:04.585Z"
+    },
+    "Montréal Campus": {
+      "fetchOk": true,
+      "stale": false,
+      "articleCount": 18,
+      "freshArticleCount": 10,
+      "lastArticle": "2026-05-09T03:14:30.000Z",
+      "lastFetchOk": "2026-06-27T15:58:08.603Z"
+    },
+    "Le Délit": {
+      "fetchOk": true,
+      "stale": false,
+      "articleCount": 20,
+      "freshArticleCount": 20,
+      "lastArticle": "2026-03-25T11:00:00.000Z",
+      "lastFetchOk": "2026-06-27T15:58:12.764Z"
+    },
+    "The McGill Daily": {
+      "fetchOk": true,
+      "stale": false,
+      "articleCount": 15,
+      "freshArticleCount": 15,
+      "lastArticle": "2026-04-11T23:32:01.000Z",
+      "lastFetchOk": "2026-06-27T15:58:14.720Z"
+    },
+    "The Link": {
+      "fetchOk": true,
+      "stale": false,
+      "articleCount": 20,
+      "freshArticleCount": 20,
+      "lastArticle": "2026-06-10T17:09:00.000Z",
+      "lastFetchOk": "2026-06-27T15:58:18.406Z"
+    },
+    "The Concordian": {
+      "fetchOk": true,
+      "stale": false,
+      "articleCount": 20,
+      "freshArticleCount": 20,
+      "lastArticle": "2026-05-02T20:21:24.000Z",
+      "lastFetchOk": "2026-06-27T15:58:19.892Z"
+    },
+    "Zone Campus": {
+      "fetchOk": true,
+      "stale": false,
+      "articleCount": 10,
+      "freshArticleCount": 10,
+      "lastArticle": "2026-05-08T13:20:26.000Z",
+      "lastFetchOk": "2026-06-27T15:58:21.502Z"
+    },
+    "L'Exemplaire": {
+      "fetchOk": true,
+      "stale": false,
+      "articleCount": 18,
+      "freshArticleCount": 18,
+      "lastArticle": "2026-05-15T16:31:24.000Z",
+      "lastFetchOk": "2026-06-27T15:58:25.643Z"
+    },
+    "Le Collectif": {
+      "fetchOk": true,
+      "stale": false,
+      "articleCount": 10,
+      "freshArticleCount": 10,
+      "lastArticle": "2026-06-27T00:18:05.000Z",
+      "lastFetchOk": "2026-06-27T15:58:31.425Z"
+    },
+    "Exil": {
+      "fetchOk": true,
+      "stale": false,
+      "articleCount": 10,
+      "freshArticleCount": 7,
+      "lastArticle": "2026-04-18T22:22:07.000Z",
+      "lastFetchOk": "2026-06-27T15:58:33.547Z"
+    },
+    "La Pige": {
+      "fetchOk": true,
+      "stale": false,
+      "articleCount": 10,
+      "freshArticleCount": 10,
+      "lastArticle": "2026-06-22T14:36:10.000Z",
+      "lastFetchOk": "2026-06-27T15:58:35.199Z"
+    },
+    "Le Polyscope": {
+      "fetchOk": true,
+      "stale": false,
+      "articleCount": 20,
+      "freshArticleCount": 13,
+      "lastArticle": "2026-02-25T14:38:32.764Z",
+      "lastFetchOk": "2026-06-27T15:58:36.472Z"
+    },
+    "The Tribune": {
+      "fetchOk": true,
+      "stale": false,
+      "articleCount": 20,
+      "freshArticleCount": 20,
+      "lastArticle": "2026-06-26T15:24:28.000Z",
+      "lastFetchOk": "2026-06-27T15:58:38.348Z"
+    },
+    "The Campus": {
+      "fetchOk": true,
+      "stale": false,
+      "articleCount": 30,
+      "freshArticleCount": 30,
+      "lastArticle": "2026-04-06T16:03:16.000Z",
+      "lastFetchOk": "2026-06-27T15:58:39.810Z"
+    }
+  },
   "items": [
     {
       "source": "Le Collectif",
@@ -413,12 +528,6 @@
       "excerpt": "Salut, moi c’est Elora. Je suis étudiante en journalisme, passionnée de voyages, de cinéma et de récits humains. Mais aujourd’hui, si je me présente, c’est surtout pour te parler d’une relation toxique qui a occupé toute mon adolescence. Au début, ça ressemblait presque à un",
       "image": "https://www.exemplaire.com.ulaval.ca/wp-content/uploads/2026/05/Illustration-recadree-16.9-scaled-e1778861785132.png",
       "featured": true,
-      "sourceImageCredit": "Crédit photo : L'Exemplaire",
-      "sourceImageCreditUrl": "https://www.exemplaire.com.ulaval.ca/a-la-une/sans-fins-au-coeur-des-troubles-du-comportement-alimentaire/",
-      "sourceImageCreditFrom": "media",
-      "sourceImageCreditCited": false,
-      "sourceImageCreditImageKey": "illustration-recadree-16.9-scaled-e1778861785132.png",
-      "leadImageReady": true,
       "leadExcerpt": "À travers un balado intime et sans jugement, ces deux journalistes brisent le silence sur l’anorexie mentale et ouvrent la discussion sur les troubles du comportement alimentaire. Au fil de témoignages sensibles et éclairants."
     },
     {
@@ -556,12 +665,6 @@
       "excerpt": "Selon une enquête récente par l’Institut de la statistique du Québec (ISQ), la consommation d’alcool chez les jeunes est en baisse depuis quelques années. Il s’agit d’un mouvement qui s’observe aussi, mais de manière moins prononcée, dans d’autres groupes d’âge. Cette",
       "image": "https://www.exemplaire.com.ulaval.ca/wp-content/uploads/2026/04/generated-image-2-e1777575466728.png",
       "featured": true,
-      "sourceImageCredit": "Crédit photo : L'Exemplaire",
-      "sourceImageCreditUrl": "https://www.exemplaire.com.ulaval.ca/a-la-une/lalcool-est-il-vraiment-le-nouveau-tabac/",
-      "sourceImageCreditFrom": "media",
-      "sourceImageCreditCited": false,
-      "sourceImageCreditImageKey": "generated-image-2-e1777575466728.png",
-      "leadImageReady": true,
       "leadExcerpt": "Il fut un temps où le tabac était partout, jusque dans les hôpitaux et les écoles. Aujourd’hui, son image a complètement changé. L’alcool, lui aussi, semble perdre du terrain chez les jeunes de 15 à 24 ans. Sa consommation baisse. Ne pas boire devient de plus en plus normal. Mais ce changement soulève une autre question : n’y a-t-il pas autre chose qui remplace l’alcool aujourd’hui dans la vie sociale des jeunes ?"
     },
     {
@@ -577,13 +680,6 @@
       "excerpt": "Tout doucement, on les voit apparaître sur le bord des tablettes des épiceries. Des écrans miniatures qui indiquent le prix des produits alimentaires, comme chez Super C, par exemple — notre photo en une. Techniquement, ces nouvelles étiquettes peuvent faire varier les prix",
       "image": "https://www.exemplaire.com.ulaval.ca/wp-content/uploads/2026/04/Photo-couverture-Super-C-scaled.jpg",
       "featured": true,
-      "sourceImageCredit": "Photo : Thomas Harton",
-      "sourceImageCreator": "Thomas Harton",
-      "sourceImageCreditUrl": "https://www.exemplaire.com.ulaval.ca/a-la-une/derriere-les-etiquettes-electroniques-la-tarification-dynamique/",
-      "sourceImageCreditFrom": "article",
-      "sourceImageCreditCited": true,
-      "sourceImageCreditImageKey": "photo-couverture-super-c-scaled.jpg",
-      "leadImageReady": true,
       "leadExcerpt": "Connue pour ses effets parfois délirants sur les prix des billets électroniques — évènements culturels, sportifs, transports, vente en ligne — la tarification dynamique s'attaque petit à petit aux produits alimentaires. Au Canada, ces nouvelles pratiques commerciales sont sources de nombreuses inquiétudes. Car si elles redéfinissent la concurrence, elles touchent surtout le consommateur."
     },
     {
@@ -599,12 +695,6 @@
       "excerpt": "Afin de lutter contre la violence armée, le gouvernement du Canada a interdit en mai 2020 plus de 2 500 marques d’armes d’assaut. Pour les citoyens ou les entreprises possédant les modèles concernés, le fédéral a mis sur pied le Programme d’indemnisation pour les armes à feu de",
       "image": "https://www.exemplaire.com.ulaval.ca/wp-content/uploads/2026/05/ChatGPT-Image-7-mai-2026-11-h-02-min-08-s.png",
       "featured": true,
-      "sourceImageCredit": "Crédit photo : L'Exemplaire",
-      "sourceImageCreditUrl": "https://www.exemplaire.com.ulaval.ca/a-la-une/rachat-des-armes-a-feu-le-quebec-est-il-lexception-canadienne/",
-      "sourceImageCreditFrom": "media",
-      "sourceImageCreditCited": false,
-      "sourceImageCreditImageKey": "chatgpt-image-7-mai-2026-11-h-02-min-08-s.png",
-      "leadImageReady": true,
       "leadExcerpt": "Le programme fédéral de rachat des armes à feu suit son cours au Canada. Alors que les propriétaires ont jusqu’au 30 octobre pour se départir ou neutraliser les modèles concernés, le Québec est la seule province à participer au programme. Rappelant les différences culturelles et politiques qui peuvent exister au sein de la nation avec le reste du pays, cette mesure vient également rouvrir de nombreux débats entourant les armes à feu partout au Canada."
     },
     {
@@ -620,12 +710,6 @@
       "excerpt": "L’un des principaux reproches du public envers les médias traditionnels est la difficulté de faire la différence entre les genres journalistiques, par exemple, ce qui distingue un contenu informatif de l’opinion. Des propos qu’on retrouve chez les jeunes que nous avons",
       "image": "https://www.exemplaire.com.ulaval.ca/wp-content/uploads/2026/05/Image-de-une.jpg",
       "featured": true,
-      "sourceImageCredit": "Crédit photo : L'Exemplaire",
-      "sourceImageCreditUrl": "https://www.exemplaire.com.ulaval.ca/a-la-une/les-jeunes-et-les-medias-dactualite-une-confiance-de-plus-en-plus-erodee/",
-      "sourceImageCreditFrom": "media",
-      "sourceImageCreditCited": false,
-      "sourceImageCreditImageKey": "image-de-une.jpg",
-      "leadImageReady": true,
       "leadExcerpt": "La confiance des 18 à 34 ans envers les médias traditionnels est en recul constant depuis une dizaine d’années, d'après l'édition 2025 du Digital News Report (DNR). Cette évolution s'expliquerait notamment par l'évolution des formats numériques et l’influence de certains genres journalistiques. Dans ce brouhaha, les médias ajoutent-ils de la confusion à la confusion ?"
     },
     {
@@ -697,13 +781,6 @@
       "excerpt": "Une boutique de plus ! En mars dernier, Renaissance, une chaîne de friperies québécoise, ouvre une succursale de 18 000 pieds au centre commercial Laurier Québec. Signe, sans doute, d’une évolution dans les habitudes de consommation dans le commerce de détail. L’engouement pour",
       "image": "https://www.exemplaire.com.ulaval.ca/wp-content/uploads/2026/04/Marcelle-Friperie-nomade.jpg",
       "featured": true,
-      "sourceImageCredit": "Photo : Marcelle - Friperie Nomade",
-      "sourceImageCreator": "Marcelle - Friperie Nomade",
-      "sourceImageCreditUrl": "https://www.exemplaire.com.ulaval.ca/a-la-une/achat-de-seconde-main-une-mode-dans-la-mode/",
-      "sourceImageCreditFrom": "article",
-      "sourceImageCreditCited": true,
-      "sourceImageCreditImageKey": "marcelle-friperie-nomade.jpg",
-      "leadImageReady": true,
       "leadExcerpt": "Les articles de seconde main ont le vent en poupe sur les réseaux sociaux. Les boutiques d'occasion bourgeonnent de plus en plus dans les secteurs commerçants. Certains adeptes de ces achats pensent même lutter contre la fast fashion . Mais cet intérêt pour les articles usagés reflète-t-il vraiment de meilleures habitudes de consommation ?"
     },
     {
@@ -2192,6 +2269,27 @@
       "region": "Montréal",
       "type": "universite",
       "lang": "fr",
+      "title": "La performance de l’homosexualité : un privilège ?",
+      "link": "https://www.delitfrancais.com/2026/03/25/la-performance-de-lhomosexualite-un-privilege/",
+      "author": "La rédaction",
+      "date": "2026-03-25T11:00:00.000Z",
+      "excerpt": "Blague innocente, signe d’ouverture ou nouveau costume ?",
+      "image": "https://www.delitfrancais.com/wp-content/uploads/2026/03/coinqueer-1.jpeg",
+      "featured": true,
+      "sourceImageCredit": "Crédit photo : Le Délit",
+      "sourceImageCreditUrl": "https://www.delitfrancais.com/2026/03/25/la-performance-de-lhomosexualite-un-privilege/",
+      "sourceImageCreditFrom": "media",
+      "sourceImageCreditCited": false,
+      "sourceImageCreditImageKey": "coinqueer-1.jpeg",
+      "leadImageReady": false,
+      "leadExcerpt": "Deux hommes hétéros imitent une voix, se prennent par la taille, font semblant d’être en couple pour une photo, puis éclatent de rire. L’un ajoute « no homo » et tout rentre dans l’ordre. Pendant ce temps, un homme gai tient la main de son partenaire. Il surveille autour de lui, sonde le quartier, évalue le risque. Pour les uns, l’homosexualité est un prétexte pour rire. Pour les autres, c’est juste une vie."
+    },
+    {
+      "source": "Le Délit",
+      "institution": "Université McGill",
+      "region": "Montréal",
+      "type": "universite",
+      "lang": "fr",
       "title": "L’épidémie de la nonchalance",
       "link": "https://www.delitfrancais.com/2026/03/25/lepidemie-de-la-nonchalance/",
       "author": "La rédaction",
@@ -2278,27 +2376,6 @@
       "image": "https://www.delitfrancais.com/wp-content/uploads/2026/03/concordiareponseV2-scaled.jpeg",
       "featured": true,
       "leadExcerpt": "Dans son entrevue, M. Lander, un habitué de la télévision de langue anglaise (et économiste à ses heures), recopie plus ou moins habilement le modus operandi d’une infinité de « dépendantistes » avant lui. L’épouvantail de la peur d’un effondrement économique d’un Québec souverain qu’il dresse sera toujours le plus imposant dans l’imaginaire collectif des électeurs. Il inspire un niveau d’incertitude tellement étouffant que nous nous en remettons à de supposés experts pour nous prédire le futur de notre nation, sans penser à remettre leurs sordides mensonges en question."
-    },
-    {
-      "source": "Le Délit",
-      "institution": "Université McGill",
-      "region": "Montréal",
-      "type": "universite",
-      "lang": "fr",
-      "title": "La performance de l’homosexualité : un privilège ?",
-      "link": "https://www.delitfrancais.com/2026/03/25/la-performance-de-lhomosexualite-un-privilege/",
-      "author": "La rédaction",
-      "date": "2026-03-25T11:00:00.000Z",
-      "excerpt": "Blague innocente, signe d’ouverture ou nouveau costume ?",
-      "image": "https://www.delitfrancais.com/wp-content/uploads/2026/03/coinqueer-1.jpeg",
-      "featured": true,
-      "sourceImageCredit": "Crédit photo : Le Délit",
-      "sourceImageCreditUrl": "https://www.delitfrancais.com/2026/03/25/la-performance-de-lhomosexualite-un-privilege/",
-      "sourceImageCreditFrom": "media",
-      "sourceImageCreditCited": false,
-      "sourceImageCreditImageKey": "coinqueer-1.jpeg",
-      "leadImageReady": false,
-      "leadExcerpt": "Deux hommes hétéros imitent une voix, se prennent par la taille, font semblant d’être en couple pour une photo, puis éclatent de rire. L’un ajoute « no homo » et tout rentre dans l’ordre. Pendant ce temps, un homme gai tient la main de son partenaire. Il surveille autour de lui, sonde le quartier, évalue le risque. Pour les uns, l’homosexualité est un prétexte pour rire. Pour les autres, c’est juste une vie."
     },
     {
       "source": "Le Délit",

@@ -29,16 +29,21 @@ const {
   countHtmlListItems,
 } = require('./html-list-fetcher');
 const { isFirebaseSource, classifyFirebaseSource } = require('./firebase-list-fetcher');
+const {
+  groupItemsBySource,
+  sourceHasFreshContent,
+  freshnessWindowStart,
+  latestItemDate: latestCachedItemDate,
+  classifyFeedFreshness,
+} = require('./source-retention-lib');
 
 const SOURCES_PATH = path.join(__dirname, '..', 'news-sources.json');
 const INSTITUTIONS_PATH = path.join(__dirname, '..', 'institutions.json');
+const NEWS_PATH = path.join(__dirname, '..', 'news.json');
 const TIMEOUT = 15000;
 
 const DAY = 86400000;
-const OK_DAYS = 270;       // published within ~9 months → healthy
-const STALE_DAYS = 540;    // 9–18 months → stale (still aggregated)
-const DEAD_DAYS = 730;     // > 2 years with no post → dead
-const MAX_FAILS = 4;       // consecutive fetch failures before marking dead
+const MAX_FAILS = 4;       // consecutive fetch failures before marking dead (if no fresh cache)
 const PROMOTE_DAYS = 365;  // a candidate must have posted within a year
 
 // Feed paths tried on a candidate site (most common first).
@@ -105,23 +110,32 @@ function countItems(xml) {
   return (xml.match(/<item[\s>]/gi) || xml.match(/<entry[\s>]/gi) || []).length;
 }
 
-// Returns { status, lastItemDate } for a fetched feed body.
+// Returns { status, lastItemDate } for a fetched feed body (3-session window).
 function classify(xml) {
   if (!isFeed(xml) || countItems(xml) === 0) return { status: 'dead', lastItemDate: null };
   const last = latestItemDate(xml);
-  if (last == null) return { status: 'stale', lastItemDate: null };
-  const ageDays = (Date.now() - last) / DAY;
-  let status = 'ok';
-  if (ageDays > DEAD_DAYS) status = 'dead';
-  else if (ageDays > STALE_DAYS) status = 'stale';
-  else if (ageDays > OK_DAYS) status = 'stale';
-  return { status, lastItemDate: new Date(last).toISOString() };
+  return classifyFeedFreshness(last);
+}
+
+function loadCachedBySource() {
+  try {
+    const data = JSON.parse(fs.readFileSync(NEWS_PATH, 'utf8'));
+    return groupItemsBySource(data.items || []);
+  } catch {
+    return new Map();
+  }
+}
+
+function hasFreshCachedArticles(src, cachedBySource, referenceDate = new Date()) {
+  const cached = cachedBySource.get(src.name) || [];
+  return sourceHasFreshContent(cached, referenceDate);
 }
 
 // === Maintenance =============================================================
-async function checkActive(src) {
+async function checkActive(src, cachedBySource) {
   const before = src._status;
   src._lastChecked = new Date().toISOString();
+  const referenceDate = new Date();
 
   if (isFirebaseSource(src)) {
     const { status, lastItemDate, count } = await classifyFirebaseSource(src);
@@ -140,9 +154,26 @@ async function checkActive(src) {
 
   if (!ok) {
     src._failCount = (src._failCount || 0) + 1;
-    if (src._failCount >= MAX_FAILS) src._status = 'dead';
-    else if (src._status !== 'dead') src._status = src._status || 'ok';
-    return { name: src.name, result: ok ? 'ok' : `unreachable (${src._failCount}/${MAX_FAILS})`, before, after: src._status };
+    const freshCache = hasFreshCachedArticles(src, cachedBySource, referenceDate);
+    const lastFreshMs = Math.max(
+      Date.parse(src._lastItemDate || '') || 0,
+      Date.parse(latestCachedItemDate(cachedBySource.get(src.name) || []) || '') || 0,
+    );
+    const insideWindow = lastFreshMs >= freshnessWindowStart(referenceDate).getTime();
+    if (freshCache || insideWindow) {
+      src._status = 'stale';
+    } else if (src._failCount >= MAX_FAILS) {
+      src._status = 'dead';
+    } else if (src._status !== 'dead') {
+      src._status = src._status || 'ok';
+    }
+    const note = freshCache ? ', cache frais conservé' : '';
+    return {
+      name: src.name,
+      result: `unreachable (${src._failCount}/${MAX_FAILS})${note}`,
+      before,
+      after: src._status,
+    };
   }
 
   src._failCount = 0;
@@ -246,10 +277,12 @@ async function main() {
 
   console.log('RÉQ News Source Bot\n===================\n');
 
+  const cachedBySource = loadCachedBySource();
+
   // 1. Health-check active feeds
   console.log('▸ Active feeds');
   for (const src of registry.active) {
-    const r = await checkActive(src);
+    const r = await checkActive(src, cachedBySource);
     const flag = r.after === 'dead' ? '✗' : r.after === 'stale' ? '~' : '✓';
     console.log(`  ${flag} ${r.name.padEnd(20)} ${r.result}${r.before && r.before !== r.after ? `  [${r.before}→${r.after}]` : ''}`);
   }

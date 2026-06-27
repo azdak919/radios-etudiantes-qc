@@ -1,5 +1,5 @@
 {
-  "_comment": "Registre des sources. Champs éditables : name, institution, region, type, lang, url, site, popularity, fetchMode (rss|html-list|firebase), firebase {}, urlFallback, wpFeaturedCategories, instagram/facebook/x (SPA sans liens HTML), _note. Champs bots : _status, _lastItemDate, _lastChecked, _failCount. Médias étudiants uniquement — pas de portails institutionnels. Plusieurs journaux par établissement sont supportés (ex. The Link + The Concordian). Voir docs/adding-news-source.md.",
+  "_comment": "Registre des sources. Champs éditables : name, institution, region, type, lang, url, site, popularity, fetchMode (rss|html-list|firebase), firebase {}, urlFallback, wpFeaturedCategories, botHints {}, instagram/facebook/x (SPA sans liens HTML), _note. Champs bots : _status, _lastItemDate, _lastChecked, _failCount, _lastFetchOk. botHints : instructions par bot (authors, images, excerpts, credits, fetch). Voir docs/adding-news-source.md.",
   "active": [
     {
       "name": "Quartier Libre",
@@ -8,11 +8,12 @@
       "type": "universite",
       "lang": "fr",
       "url": "https://quartierlibre.ca/feed/",
-      "_lastChecked": "2026-06-27T00:14:36.713Z",
+      "_lastChecked": "2026-06-27T15:58:04.582Z",
       "_failCount": 0,
       "_status": "ok",
       "_lastItemDate": "2026-05-15T16:00:00.000Z",
-      "popularity": 1
+      "popularity": 1,
+      "_lastFetchOk": "2026-06-27T15:58:04.582Z"
     },
     {
       "name": "Montréal Campus",
@@ -21,11 +22,12 @@
       "type": "universite",
       "lang": "fr",
       "url": "https://montrealcampus.ca/feed/",
-      "_lastChecked": "2026-06-27T00:14:38.139Z",
+      "_lastChecked": "2026-06-27T15:58:08.603Z",
       "_failCount": 0,
       "_status": "ok",
       "_lastItemDate": "2026-05-09T03:14:30.000Z",
-      "popularity": 3
+      "popularity": 3,
+      "_lastFetchOk": "2026-06-27T15:58:08.603Z"
     },
     {
       "name": "Le Délit",
@@ -37,11 +39,12 @@
       "wpFeaturedCategories": [
         "slider"
       ],
-      "_lastChecked": "2026-06-27T00:14:39.045Z",
+      "_lastChecked": "2026-06-27T15:58:12.764Z",
       "_failCount": 0,
       "_status": "ok",
       "_lastItemDate": "2026-03-25T11:00:00.000Z",
-      "popularity": 2
+      "popularity": 2,
+      "_lastFetchOk": "2026-06-27T15:58:12.764Z"
     },
     {
       "name": "The McGill Daily",
@@ -50,11 +53,12 @@
       "type": "universite",
       "lang": "en",
       "url": "https://www.mcgilldaily.com/feed/",
-      "_lastChecked": "2026-06-27T00:14:39.829Z",
+      "_lastChecked": "2026-06-27T15:58:14.720Z",
       "_failCount": 0,
       "_status": "ok",
       "_lastItemDate": "2026-04-11T23:32:01.000Z",
-      "popularity": 4
+      "popularity": 4,
+      "_lastFetchOk": "2026-06-27T15:58:14.720Z"
     },
     {
       "name": "The Link",
@@ -63,12 +67,13 @@
       "type": "universite",
       "lang": "en",
       "url": "https://thelinknewspaper.ca/feed/",
-      "_lastChecked": "2026-06-27T00:14:40.622Z",
+      "_lastChecked": "2026-06-27T15:58:18.406Z",
       "_failCount": 0,
       "_status": "ok",
       "_lastItemDate": "2026-06-10T17:09:00.000Z",
       "popularity": 7,
-      "_note": "Journal indépendant de Concordia (fusion Georgian + Loyola News, 1980)."
+      "_note": "Journal indépendant de Concordia (fusion Georgian + Loyola News, 1980).",
+      "_lastFetchOk": "2026-06-27T15:58:18.406Z"
     },
     {
       "name": "The Concordian",
@@ -79,12 +84,18 @@
       "url": "https://theconcordian.com/feed/",
       "urlFallback": "https://theconcordian.substack.com/feed",
       "site": "https://theconcordian.com/",
-      "_lastChecked": "2026-06-27T06:15:00.000Z",
+      "_lastChecked": "2026-06-27T15:58:19.892Z",
       "_failCount": 0,
       "_status": "ok",
       "_lastItemDate": "2026-05-02T20:21:24.000Z",
       "popularity": 7,
-      "_note": "Journal indépendant de Concordia, distinct de The Link. Site principal WordPress (theconcordian.com) ; repli Substack si Cloudflare bloque le bot (newsletter/podcasts, pas tous les articles du site)."
+      "_note": "Journal indépendant de Concordia, distinct de The Link. Site principal WordPress (theconcordian.com) ; repli Substack si Cloudflare bloque le bot (newsletter/podcasts, pas tous les articles du site).",
+      "botHints": {
+        "fetch": {
+          "preferFallbackOn403": true
+        }
+      },
+      "_lastFetchOk": "2026-06-27T15:58:19.892Z"
     },
     {
       "name": "Zone Campus",
@@ -93,11 +104,12 @@
       "type": "universite",
       "lang": "fr",
       "url": "https://www.zonecampus.ca/feed/",
-      "_lastChecked": "2026-06-27T00:14:42.843Z",
+      "_lastChecked": "2026-06-27T15:58:21.501Z",
       "_failCount": 0,
       "_status": "ok",
-      "_lastItemDate": "2026-05-08T14:20:26.000Z",
-      "popularity": 9
+      "_lastItemDate": "2026-05-08T13:20:26.000Z",
+      "popularity": 9,
+      "_lastFetchOk": "2026-06-27T15:58:21.501Z"
     },
     {
       "name": "L'Exemplaire",
@@ -107,11 +119,21 @@
       "lang": "fr",
       "url": "https://www.exemplaire.com.ulaval.ca/feed/",
       "site": "https://www.exemplaire.com.ulaval.ca/",
-      "_lastChecked": "2026-06-27T00:14:45.852Z",
+      "botHints": {
+        "authors": {
+          "selectors": [
+            "post-author",
+            "td-post-author-name",
+            "schema.org/Person"
+          ]
+        }
+      },
+      "_lastChecked": "2026-06-27T15:58:25.643Z",
       "_failCount": 0,
       "_status": "ok",
       "_lastItemDate": "2026-05-15T16:31:24.000Z",
-      "popularity": 5
+      "popularity": 5,
+      "_lastFetchOk": "2026-06-27T15:58:25.643Z"
     },
     {
       "name": "Le Collectif",
@@ -120,11 +142,12 @@
       "type": "universite",
       "lang": "fr",
       "url": "https://lecollectif.ca/feed/",
-      "_lastChecked": "2026-06-27T00:14:47.483Z",
+      "_lastChecked": "2026-06-27T15:58:31.425Z",
       "_failCount": 0,
       "_status": "ok",
-      "_lastItemDate": "2026-06-26T20:18:05.000Z",
-      "popularity": 6
+      "_lastItemDate": "2026-06-27T00:18:05.000Z",
+      "popularity": 6,
+      "_lastFetchOk": "2026-06-27T15:58:31.425Z"
     },
     {
       "name": "Exil",
@@ -133,11 +156,12 @@
       "type": "cegep",
       "lang": "fr",
       "url": "https://exilecvm.ca/feed/",
-      "_lastChecked": "2026-06-27T00:14:48.525Z",
+      "_lastChecked": "2026-06-27T15:58:33.546Z",
       "_failCount": 0,
       "_status": "ok",
       "_lastItemDate": "2026-04-18T22:22:07.000Z",
-      "popularity": 10
+      "popularity": 10,
+      "_lastFetchOk": "2026-06-27T15:58:33.546Z"
     },
     {
       "name": "La Pige",
@@ -146,11 +170,27 @@
       "type": "cegep",
       "lang": "fr",
       "url": "https://lapige.atmjonquiere.com/feed/",
-      "_lastChecked": "2026-06-27T00:14:49.829Z",
+      "botHints": {
+        "authors": {
+          "selectors": [
+            "post-author",
+            "td-post-author-name"
+          ]
+        },
+        "images": {
+          "rejectPathPatterns": [
+            "lapige_web"
+          ],
+          "preferSizeFull": true,
+          "articleBodySelector": "itemprop=articleBody"
+        }
+      },
+      "_lastChecked": "2026-06-27T15:58:35.198Z",
       "_failCount": 0,
       "_status": "ok",
       "_lastItemDate": "2026-06-22T14:36:10.000Z",
-      "popularity": 11
+      "popularity": 11,
+      "_lastFetchOk": "2026-06-27T15:58:35.198Z"
     },
     {
       "name": "Le Polyscope",
@@ -175,9 +215,10 @@
       "x": "https://twitter.com/Polyscope",
       "_status": "ok",
       "_failCount": 0,
-      "_lastChecked": "2026-06-27T09:10:00.000Z",
-      "_lastItemDate": "2026-05-16T23:37:03.000Z",
-      "_note": "SPA React + Firestore public — pas de flux RSS. Réseaux sociaux en preset (HTML shell vide)."
+      "_lastChecked": "2026-06-27T15:58:36.472Z",
+      "_lastItemDate": "2026-02-25T14:38:32.764Z",
+      "_note": "SPA React + Firestore public — pas de flux RSS. Réseaux sociaux en preset (HTML shell vide).",
+      "_lastFetchOk": "2026-06-27T15:58:36.472Z"
     },
     {
       "name": "The Tribune",
@@ -188,9 +229,10 @@
       "url": "https://www.thetribune.ca/feed/",
       "_status": "ok",
       "_lastItemDate": "2026-06-26T15:24:28.000Z",
-      "_lastChecked": "2026-06-27T00:14:50.670Z",
+      "_lastChecked": "2026-06-27T15:58:38.347Z",
       "_failCount": 0,
-      "popularity": 8
+      "popularity": 8,
+      "_lastFetchOk": "2026-06-27T15:58:38.347Z"
     },
     {
       "name": "The Campus",
@@ -210,9 +252,11 @@
       "popularity": 13,
       "_status": "ok",
       "_failCount": 0,
-      "_lastChecked": "2026-06-27T10:21:58.383Z",
+      "_lastChecked": "2026-06-27T15:58:39.809Z",
       "site": "https://thebucampus.ca/",
-      "_note": "WordPress — le flux principal ne couvre qu'une catégorie; fusion news/sports/opinions/arts-culture"
+      "_note": "WordPress — le flux principal ne couvre qu'une catégorie; fusion news/sports/opinions/arts-culture",
+      "_lastItemDate": "2026-04-06T16:03:16.000Z",
+      "_lastFetchOk": "2026-06-27T15:58:39.809Z"
     }
   ],
   "candidates": [
@@ -267,5 +311,6 @@
       "_failCount": 2
     }
   ],
-  "_lastRun": "2026-06-27T00:17:00.337Z"
+  "_lastRun": "2026-06-27T00:17:00.337Z",
+  "_lastFetchRun": "2026-06-27T15:59:33.056Z"
 }

@@ -37,6 +37,16 @@ const {
 } = require('./article-image-lib');
 const { isHtmlListSource, parseHtmlListPage } = require('./html-list-fetcher');
 const { isFirebaseSource, fetchFirebaseFeed } = require('./firebase-list-fetcher');
+const {
+  groupItemsBySource,
+  markRetainedArticles,
+  retainablePriorArticles,
+  readRegistry,
+  writeRegistry,
+  applyFetchRegistryUpdate,
+  buildSourceRunMeta,
+  shouldDropSource,
+} = require('./source-retention-lib');
 
 const NEWS_PATH = path.join(__dirname, '..', 'news.json');
 const SOURCES_PATH = path.join(__dirname, '..', 'news-sources.json');
@@ -570,20 +580,30 @@ async function main() {
   }
 
   const all = [];
+  const sourceRuns = {};
+  const referenceDate = new Date();
   let priorByLink = new Map();
+  let priorBySource = new Map();
   try {
     const prev = JSON.parse(fs.readFileSync(NEWS_PATH, 'utf8'));
     for (const item of prev.items || []) {
       const key = normalizeArticleUrl(item.link);
       if (key) priorByLink.set(key, item);
     }
+    priorBySource = groupItemsBySource(prev.items || []);
   } catch {
     priorByLink = new Map();
+    priorBySource = new Map();
   }
+
+  const registry = readRegistry();
 
   for (const src of SOURCES) {
     process.stdout.write(`→ ${src.name} (${src.institution}) … `);
     let items = [];
+    let fetchOk = false;
+    let usedStaleCache = false;
+    const priorForSource = priorBySource.get(src.name) || [];
 
     if (isFirebaseSource(src)) {
       items = await fetchFirebaseFeed(src, { maxItems: MAX_PER_SOURCE });
@@ -592,17 +612,15 @@ async function main() {
         title: sanitizeTitle(it.title),
         excerpt: truncateExcerpt(it.excerpt, 280),
       }));
-      if (!items.length) {
-        console.log('✗ no articles (firebase)');
-        continue;
+      if (items.length) {
+        fetchOk = true;
+        console.log(`✓ ${items.length} articles (firebase)`);
       }
-      console.log(`✓ ${items.length} articles (firebase)`);
     } else if (isHtmlListSource(src)) {
       const listUrls = [src.url, src.urlFallback, ...(src.feedAlternates || [])].filter(Boolean);
-      let html = '';
       let listUsed = '';
       for (const listUrl of [...new Set(listUrls)]) {
-        html = await fetchText(listUrl);
+        const html = await fetchText(listUrl);
         const parsed = parseHtmlListPage(html, listUrl, { maxItems: MAX_PER_SOURCE });
         if (parsed.length) {
           listUsed = listUrl;
@@ -613,32 +631,75 @@ async function main() {
           }));
           break;
         }
-        html = '';
       }
-      if (!items.length) {
-        console.log('✗ no articles (html-list)');
-        continue;
+      if (items.length) {
+        fetchOk = true;
+        const altNote = listUsed && listUsed !== src.url ? ` [repli: ${listUsed}]` : '';
+        console.log(`✓ ${items.length} articles (html-list)${altNote}`);
       }
-      const altNote = listUsed && listUsed !== src.url ? ` [repli: ${listUsed}]` : '';
-      console.log(`✓ ${items.length} articles (html-list)${altNote}`);
     } else {
       const { items: rssItems, feedUsed, maxItems } = await fetchRssItems(src);
-      if (!rssItems.length) {
-        console.log('✗ no response');
+      if (rssItems.length) {
+        fetchOk = true;
+        let altNote = '';
+        if (feedUsed && feedUsed !== src.url) {
+          altNote = src.mergeFeedAlternates ? ` [${feedUsed}]` : ` [repli: ${feedUsed}]`;
+        }
+        items = rssItems;
+        const featuredItems = await fetchWpFeaturedPosts(src.url, src);
+        if (featuredItems.length) {
+          items = mergeSourceItems(rssItems, featuredItems, maxItems);
+        }
+        const featNote = featuredItems.length ? ` (+${featuredItems.length} vedettes WP)` : '';
+        console.log(`✓ ${items.length} articles${featNote}${altNote}`);
+      }
+    }
+
+    if (!items.length) {
+      const retainable = retainablePriorArticles(priorForSource, referenceDate);
+      if (retainable.length) {
+        items = markRetainedArticles(retainable);
+        usedStaleCache = true;
+        console.log(`⚠ ${items.length} articles conservés (flux indisponible, cache frais)`);
+      } else {
+        const registryEntry = (registry.active || []).find((s) => s.name === src.name);
+        if (shouldDropSource({
+          sourceName: src.name,
+          priorItems: priorForSource,
+          registryEntry,
+          referenceDate,
+        })) {
+          console.log('✗ no response (aucun article frais — source retirée)');
+        } else {
+          console.log('✗ no response');
+        }
+        applyFetchRegistryUpdate(
+          (registry.active || []).find((s) => s.name === src.name),
+          { fetchOk: false, usedStaleCache: false, items: [], referenceDate },
+        );
+        sourceRuns[src.name] = buildSourceRunMeta({
+          sourceName: src.name,
+          fetchOk: false,
+          usedStaleCache: false,
+          items: [],
+          referenceDate,
+        });
         continue;
       }
-      let altNote = '';
-      if (feedUsed && feedUsed !== src.url) {
-        altNote = src.mergeFeedAlternates ? ` [${feedUsed}]` : ` [repli: ${feedUsed}]`;
-      }
-      items = rssItems;
-      const featuredItems = await fetchWpFeaturedPosts(src.url, src);
-      if (featuredItems.length) {
-        items = mergeSourceItems(rssItems, featuredItems, maxItems);
-      }
-      const featNote = featuredItems.length ? ` (+${featuredItems.length} vedettes WP)` : '';
-      console.log(`✓ ${items.length} articles${featNote}${altNote}`);
     }
+
+    applyFetchRegistryUpdate(
+      (registry.active || []).find((s) => s.name === src.name),
+      { fetchOk, usedStaleCache, items, referenceDate },
+    );
+    sourceRuns[src.name] = buildSourceRunMeta({
+      sourceName: src.name,
+      fetchOk,
+      usedStaleCache,
+      items,
+      referenceDate,
+    });
+
     for (const it of items) {
       all.push({
         source: src.name,
@@ -690,9 +751,15 @@ async function main() {
     return db - da;
   });
 
+  const staleSources = Object.entries(sourceRuns)
+    .filter(([, meta]) => meta.stale)
+    .map(([name]) => name);
+
   const news = {
     updated: new Date().toISOString(),
     count: all.length,
+    freshnessSessions: 3,
+    sources: sourceRuns,
     items: all,
   };
 
@@ -701,14 +768,21 @@ async function main() {
   const withImage = news.items.filter(
     (i) => i.image && isCandidateImageUrl(i.image) && !isWeakImageUrl(i.image),
   ).length;
-  console.log(`\nTotal: ${news.items.length} articles from ${SOURCES.length} sources.`);
+  const liveSources = new Set(news.items.map((i) => i.source)).size;
+  console.log(`\nTotal: ${news.items.length} articles from ${liveSources} sources (${SOURCES.length} registered).`);
+  if (staleSources.length) {
+    console.log(`Cache: ${staleSources.length} source(s) served from prior run — ${staleSources.join(', ')}`);
+  }
   console.log(
     `Authors: ${withAuthor}/${news.items.length} · Excerpts: ${withExcerpt}/${news.items.length} · Images: ${withImage}/${news.items.length}`,
   );
 
   if (doUpdate) {
     fs.writeFileSync(NEWS_PATH, JSON.stringify(news, null, 2) + '\n');
+    registry._lastFetchRun = news.updated;
+    writeRegistry(registry);
     console.log(`✅ Wrote ${NEWS_PATH}`);
+    console.log(`✅ Updated ${SOURCES_PATH}`);
   } else {
     console.log('Dry-run complete. Use --update to write news.json.');
   }

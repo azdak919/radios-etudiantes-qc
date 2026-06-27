@@ -94,6 +94,13 @@ function buildStatus(steps) {
       message: `Flux inactif : ${s.name} — dernier article ${(s._lastItemDate || '?').slice(0, 10)}`,
     });
   }
+  for (const name of staleCacheSources) {
+    alerts.push({
+      level: 'warn',
+      code: 'stale_news_cache',
+      message: `Cache conservé : ${name} — flux indisponible, articles frais du run précédent`,
+    });
+  }
 
   const failedSteps = steps.filter((s) => !s.ok);
   for (const s of failedSteps) {
@@ -109,6 +116,9 @@ function buildStatus(steps) {
   }
 
   const items = news.items || news;
+  const staleCacheSources = Object.entries(news.sources || {})
+    .filter(([, meta]) => meta && meta.stale)
+    .map(([name]) => name);
   const withAuthor = items.filter((i) => i.author && String(i.author).trim()).length;
   const withExcerpt = items.filter((i) => i.excerpt && String(i.excerpt).trim().length > 20).length;
   const authorQc = readJson('author-qc.json', {});

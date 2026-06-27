@@ -121,8 +121,36 @@ Comme **The Concordian** : `url` = flux WordPress officiel, `urlFallback` = repl
 
 ### Champs bots (automatiques)
 
-`_status`, `_lastItemDate`, `_lastChecked`, `_failCount` — mis à jour par
-`discover-news-sources.js`.
+`_status`, `_lastItemDate`, `_lastChecked`, `_failCount`, `_lastFetchOk` —
+mis à jour par `discover-news-sources.js` et `fetch-news.js`.
+
+### Instructions par bot (`botHints`)
+
+Quand un journal a des particularités (Cloudflare, TagDiv, SPA, etc.), documenter
+les consignes dans `botHints` plutôt que d'éparpiller la logique dans le code :
+
+```json
+"botHints": {
+  "fetch": { "preferFallbackOn403": true },
+  "authors": { "selectors": ["post-author", "td-post-author-name"] },
+  "images": { "rejectPathPatterns": ["lapige_web"], "preferSizeFull": true },
+  "excerpts": {},
+  "credits": {}
+}
+```
+
+Lecture : `getBotHints(src, 'authors')` dans `scripts/source-retention-lib.js`.
+Les bots spécialisés (`author-lib.js`, `article-image-lib.js`, etc.) peuvent s'y
+brancher progressivement.
+
+### Rétention des sources (flux RSS peu fiables)
+
+`fetch-news.js` **ne retire plus une source** lorsqu'un flux échoue une fois.
+Il conserve les articles **encore dans la fenêtre de fraîcheur UI** (3 sessions
+universitaires), marqués `_retainedFromCache: true` dans `news.json`.
+
+Une source n'est retirée que si, après 3 sessions, **aucun article frais** n'est
+obtenu ni en cache ni via le flux. Voir `scripts/source-retention-lib.js`.
 
 ### Candidats (`candidates`)
 
@@ -196,7 +224,8 @@ Raccourci : `node scripts/maintain.js --update`
 |----------|------------------|
 | Auteur générique (« The Concordian », nom du journal) | `GENERIC_AUTHORS` dans `scripts/fetch-news.js` |
 | Vedettes WordPress absentes du RSS | `wpFeaturedCategories` dans `news-sources.json` |
-| Auteurs incorrects en masse | `scripts/verify-authors.js`, `scripts/author-lib.js` |
+| Auteurs incorrects en masse | `botHints.authors` dans `news-sources.json`, puis `verify-authors.js` |
+| Flux qui disparaît après un run CI | Automatique : cache 3 sessions via `source-retention-lib.js` |
 | Images vedette faibles | `scripts/stock-photo-lib.js`, `ensure-lead-images.js` |
 | Nouveau parseur HTML (autre CMS) | Étendre `scripts/html-list-fetcher.js` ou ajouter un `fetchMode` |
 
