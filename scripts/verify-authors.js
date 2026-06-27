@@ -53,7 +53,7 @@ async function fetchPageAuthors(items, feedDefaults) {
     if (!key || pageAuthors.has(key)) continue;
 
     const html = await fetchText(item.link, 3, PAGE_FETCH_TIMEOUT);
-    const author = authorFromArticleHtml(html);
+    const author = authorFromArticleHtml(html, item.lang === 'en' ? 'en' : 'fr');
     if (author) pageAuthors.set(key, author);
     fetched += 1;
 

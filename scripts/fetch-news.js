@@ -20,6 +20,7 @@ const {
   reconcileAuthor,
   authorFromArticleHtml,
   detectFeedDefaultAuthors,
+  isEditorialPlaceholder,
   needsPageAuthorVerification,
   normalizeArticleUrl,
 } = require('./author-lib');
@@ -171,9 +172,10 @@ function tag(block, name) {
   return m ? m[1].trim() : '';
 }
 
-function isGenericAuthor(name = '') {
+function isGenericAuthor(name = '', lang = 'fr') {
   const n = String(name).replace(/\s+/g, ' ').trim();
   if (!n || n.length < 2) return true;
+  if (isEditorialPlaceholder(n, lang)) return true;
   if (GENERIC_AUTHORS.test(n)) return true;
   if (/@/.test(n)) return true;
   return false;
@@ -522,7 +524,7 @@ async function enrichItem(item) {
     if (img) next.image = img;
   }
 
-  const pageAuthor = authorFromArticleHtml(html);
+  const pageAuthor = authorFromArticleHtml(html, item.lang === 'en' ? 'en' : 'fr');
   if (pageAuthor) {
     next._pageAuthor = pageAuthor;
   } else if (!next.author || isGenericAuthor(next.author)) {
@@ -600,7 +602,7 @@ async function fetchPageAuthors(items, feedDefaults, existing = new Map()) {
     if (!key || pageAuthors.has(key)) continue;
 
     const html = await fetchText(item.link, 3, ENRICH_TIMEOUT);
-    const author = authorFromArticleHtml(html);
+    const author = authorFromArticleHtml(html, item.lang === 'en' ? 'en' : 'fr');
     if (author) pageAuthors.set(key, author);
     fetched += 1;
     await sleep(250);

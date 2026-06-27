@@ -1,8 +1,8 @@
 {
-  "updated": "2026-06-27T09:09:02.764Z",
+  "updated": "2026-06-27T09:35:33.977Z",
   "total": 183,
   "withAuthor": 183,
-  "mismatches": 50,
+  "mismatches": 58,
   "ok": true,
   "samples": [
     {
@@ -146,8 +146,8 @@
       "link": "https://theconcordian.substack.com/p/last-day-to-apply-to-be-part-of-the",
       "source": "The Concordian",
       "fieldAuthor": "The editorial team",
-      "canonicalAuthor": "The Concordian",
-      "reason": "page-byline"
+      "canonicalAuthor": "The editorial team",
+      "reason": "rss-feed-default-rejected"
     },
     {
       "title": "McGill community members express concerns about McGill Athletics’ former partnership with InterRent REIT",
@@ -166,5 +166,5 @@
       "reason": "page-byline"
     }
   ],
-  "fixed": 50
+  "fixed": 58
 }

@@ -43,7 +43,35 @@ function normalizeAuthor(name = '') {
   const editorial = canonicalizeEditorialAuthor(a);
   if (editorial) return editorial;
   if (!a || a.length < 2 || GENERIC_AUTHORS.test(a) || /@/.test(a)) return '';
-  return a.slice(0, 80);
+  return a.slice(0, 120);
+}
+
+function isEditorialPlaceholder(name = '', lang = 'fr') {
+  const a = normalizeAuthor(name);
+  return !!canonicalizeEditorialAuthor(a) || a === editorialFallback(lang === 'en' ? 'en' : 'fr');
+}
+
+/** « A, B et C » ou « A and B » */
+function joinAuthorNames(names = [], lang = 'fr') {
+  const list = [...new Set(names.map((n) => normalizeAuthor(n)).filter(Boolean))];
+  if (!list.length) return '';
+  if (list.length === 1) return list[0];
+  const conj = lang === 'en' ? ' and ' : ' et ';
+  if (list.length === 2) return `${list[0]}${conj}${list[1]}`;
+  return `${list.slice(0, -1).join(', ')}${conj}${list[list.length - 1]}`;
+}
+
+function authorsFromRelLinks(html = '') {
+  const names = [...html.matchAll(/<a[^>]*\brel=["']author["'][^>]*>([\s\S]*?)<\/a>/gi)]
+    .map((m) => normalizeAuthor(stripHtml(m[1])))
+    .filter(Boolean);
+  return [...new Set(names)];
+}
+
+function authorsFromAuthorNameBlock(html = '') {
+  const block = html.match(/class=["'][^"']*author-name[^"']*["'][^>]*>([\s\S]*?)<\/span>/i);
+  if (!block) return [];
+  return authorsFromRelLinks(block[1]);
 }
 
 function normAuthorKey(name = '') {
@@ -136,15 +164,31 @@ function metaContent(html = '', key = '') {
  * Auteur depuis la page source — priorité à la byline visible « Par … » (rel=author),
  * pas au JSON-LD / dc:creator WordPress (souvent rédacteur·rice technique).
  */
-function authorFromArticleHtml(html = '') {
+function authorFromArticleHtml(html = '', lang = 'fr') {
   if (!html || html.length < 200) return '';
 
   const candidates = [];
+  const l = lang === 'en' ? 'en' : 'fr';
 
-  const parLink = html.match(
-    /(?:^|[\s>])(?:Par|By)\s*<a[^>]*\brel=["']author["'][^>]*>([\s\S]*?)<\/a>/i,
-  );
-  if (parLink) candidates.push({ author: stripHtml(parLink[1]), trust: 100 });
+  const bylineAuthors = authorsFromAuthorNameBlock(html);
+  if (bylineAuthors.length) {
+    candidates.push({ author: joinAuthorNames(bylineAuthors, l), trust: 100 });
+  }
+
+  const relAuthors = authorsFromRelLinks(html);
+  if (relAuthors.length > 1) {
+    candidates.push({ author: joinAuthorNames(relAuthors, l), trust: 98 });
+  } else if (relAuthors.length === 1 && !bylineAuthors.length) {
+    candidates.push({ author: relAuthors[0], trust: 95 });
+  }
+
+  const metaAuthor = metaContent(html, 'author');
+  if (metaAuthor && metaAuthor.includes(',')) {
+    candidates.push({
+      author: joinAuthorNames(metaAuthor.split(/,\s*/), l),
+      trust: 92,
+    });
+  }
 
   const parSpan = html.match(
     /(?:^|[\s>])(?:Par|By)\s*<[^>]+>([\s\S]*?)<\/[^>]+>\s*<\/span>/i,
@@ -160,14 +204,16 @@ function authorFromArticleHtml(html = '') {
   const authorTitle = html.match(/class=["'][^"']*author-title[^"']*["'][^>]*>[\s\S]*?<a[^>]*>([\s\S]*?)<\/a>/i);
   if (authorTitle) candidates.push({ author: stripHtml(authorTitle[1]), trust: 75 });
 
-  for (const key of ['parsely-author', 'article:author', 'author', 'dc.creator', 'dc:creator']) {
+  for (const key of ['parsely-author', 'article:author', 'dc.creator', 'dc:creator']) {
     const meta = metaContent(html, key);
     if (meta) candidates.push({ author: meta, trust: 40 });
   }
 
-  for (const { author, trust } of candidates.sort((a, b) => b.trust - a.trust)) {
-    const name = normalizeAuthor(author);
-    if (name) return name;
+  for (const { author } of candidates.sort((a, b) => b.trust - a.trust)) {
+    const name = author.includes(',')
+      ? joinAuthorNames(author.split(/,\s*/), l)
+      : normalizeAuthor(author);
+    if (name && !isEditorialPlaceholder(name, l)) return name;
   }
   return '';
 }
@@ -236,8 +282,10 @@ function extractFirstPersonAuthor(text = '') {
 
 function needsPageAuthorVerification(item, feedDefaults = new Map()) {
   if (!item.link) return false;
+  const lang = item.lang === 'en' ? 'en' : 'fr';
   const ex = String(item.excerpt || '').trim();
   if (excerptOpensWithByline(ex) && extractBylineFromText(ex).author) return false;
+  if (isEditorialPlaceholder(item.author, lang)) return true;
   if (isFeedDefaultAuthor(item, feedDefaults)) return true;
   if (!normalizeAuthor(item.author)) return true;
   return false;
@@ -391,6 +439,8 @@ module.exports = {
   GENERIC_AUTHORS,
   editorialFallback,
   canonicalizeEditorialAuthor,
+  isEditorialPlaceholder,
+  joinAuthorNames,
   normalizeAuthor,
   trimMangledAuthor,
   extractBylineFromText,
