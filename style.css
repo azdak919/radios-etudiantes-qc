@@ -1012,7 +1012,42 @@ a { color: inherit; }
 @media (max-width: 819px) {
   .filters-panel {
     --filters-row-h: 48px;
+    --filters-cols: 3;
     --filters-collapsed-h: calc(var(--filters-row-h) * 2 + 6px);
+  }
+
+  .filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    align-items: stretch;
+  }
+
+  .filter-btn {
+    box-sizing: border-box;
+    flex: 1 1 calc((100% - (var(--filters-cols) - 1) * 6px) / var(--filters-cols));
+    min-width: calc((100% - (var(--filters-cols) - 1) * 6px) / var(--filters-cols));
+    max-width: 100%;
+    transition:
+      flex-basis 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+      min-width 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+      border-color 130ms ease,
+      color 130ms ease,
+      background 130ms ease;
+  }
+
+  .filter-btn__name {
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .filter-btn__inst {
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
   .filters-panel:not(.is-expanded):not(.is-compact) .filters {
@@ -1053,9 +1088,14 @@ a { color: inherit; }
   }
 }
 
+@media (max-width: 420px) {
+  .filters-panel { --filters-cols: 2; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .filters-panel .filters,
-  .filters-toggle__chev {
+  .filters-toggle__chev,
+  .filter-btn {
     transition: none;
   }
 }

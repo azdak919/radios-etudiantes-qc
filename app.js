@@ -308,6 +308,7 @@ let filtersExpanded = false;
 
 const FILTERS_COLLAPSED_ROWS = 2;
 const FILTERS_ROW_CAPACITY = 3;
+const FILTERS_COLS_NARROW = 420;
 
 const GENERIC_AUTHORS = /^(admin|administrator|administrateur|editor|éditeur|editeur|rédaction|redaction|staff|wordpress|webmaster|collectif|tribune|link|daily|exemplaire|quartier libre|zone campus|la pige|le délit|le delit|the link|the tribune|the mcgill daily)$/i;
 
@@ -1384,10 +1385,21 @@ function sourceInfo(src) {
   };
 }
 
+function filtersColumnCount() {
+  if (!FILTERS_MOBILE.matches || !NEWS_FILTERS) return FILTERS_ROW_CAPACITY;
+  return NEWS_FILTERS.clientWidth < FILTERS_COLS_NARROW ? 2 : 3;
+}
+
+function syncFiltersColumns() {
+  if (!FILTERS_PANEL) return;
+  const cols = filtersColumnCount();
+  FILTERS_PANEL.style.setProperty('--filters-cols', String(cols));
+}
+
 function filtersOverflow() {
   if (!NEWS_FILTERS) return false;
   const count = NEWS_FILTERS.querySelectorAll('.filter-btn').length;
-  return count > FILTERS_COLLAPSED_ROWS * FILTERS_ROW_CAPACITY;
+  return count > FILTERS_COLLAPSED_ROWS * filtersColumnCount();
 }
 
 function updateFiltersCompactBar() {
@@ -1410,6 +1422,7 @@ function updateFiltersCompactBar() {
 
 function syncFiltersPanel() {
   if (!FILTERS_PANEL) return;
+  syncFiltersColumns();
 
   if (!FILTERS_MOBILE.matches) {
     FILTERS_PANEL.classList.remove('is-expanded', 'is-compact');
@@ -1474,6 +1487,11 @@ function bindFiltersPanel() {
   });
 
   FILTERS_MOBILE.addEventListener('change', () => syncFiltersPanel());
+
+  if (NEWS_FILTERS && typeof ResizeObserver !== 'undefined') {
+    const filtersResize = new ResizeObserver(() => syncFiltersPanel());
+    filtersResize.observe(NEWS_FILTERS);
+  }
 }
 
 function selectNewsSource(source) {
