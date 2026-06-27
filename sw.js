@@ -1,4 +1,4 @@
-const CACHE_NAME = "radar-shell-v158";
+const CACHE_NAME = "radar-shell-v159";
 const APP_SHELL = [
   "./",
   "./index.html",
@@ -10,6 +10,7 @@ const APP_SHELL = [
   "./radios.json",
   "./manifest.json",
   "./assets/icon.svg",
+  "./assets/icon-32.png",
   "./assets/icon-192.png",
   "./assets/icon-512.png",
 ];
