@@ -385,10 +385,33 @@ a { color: inherit; }
   white-space: nowrap;
 }
 
-.tuner-stations-list {
-  display: flex;
+.tuner-stations-viewport {
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.tuner-stations-viewport::-webkit-scrollbar {
+  display: none;
+}
+
+.tuner-stations-viewport.is-scrollable {
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    #000 10px,
+    #000 calc(100% - 10px),
+    transparent
+  );
+}
+
+.tuner-stations-track {
+  display: inline-flex;
   align-items: center;
   gap: 6px;
+  min-width: min-content;
 }
 
 .tuner-station-btn {
@@ -396,6 +419,7 @@ a { color: inherit; }
   flex-direction: column;
   align-items: flex-start;
   gap: 1px;
+  flex: 0 0 auto;
   padding: 5px 10px 4px;
   border: 1px solid rgba(255, 255, 255, 0.16);
   border-radius: 8px;

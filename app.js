@@ -356,16 +356,11 @@ function sortRadios(list) {
   });
 }
 
-const TUNER_FEATURED_COUNT = 4;
-const TUNER_FEATURED_STORAGE_KEY = 'radar-featured-stations';
-let featuredStationIds = [];
+const TUNER_CAROUSEL_VISIBLE = 4;
+let carouselViewportBound = false;
 
-function shuffleInPlace(list) {
-  for (let i = list.length - 1; i > 0; i -= 1) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [list[i], list[j]] = [list[j], list[i]];
-  }
-  return list;
+function radioPopularityRank(radio = {}) {
+  return typeof radio.popularity === 'number' ? radio.popularity : 50;
 }
 
 function radioAccentColor(radio) {
@@ -378,84 +373,14 @@ function radioAccentColor(radio) {
 }
 
 function playableRadios() {
-  return radios.filter((r) => getPlayableStream(r));
+  return sortPlayableRadios(radios.filter((r) => getPlayableStream(r)));
 }
 
-function featuredPoolKey(playable = []) {
-  return playable.map((r) => r.id).sort().join('|');
-}
-
-function persistFeaturedIds(ids = [], poolKey = '') {
-  featuredStationIds = ids;
-  try {
-    sessionStorage.setItem(TUNER_FEATURED_STORAGE_KEY, JSON.stringify({ poolKey, ids }));
-  } catch {
-    /* ignore */
-  }
-}
-
-function featuredRadiosFromIds(playable = [], ids = []) {
-  const limit = Math.min(TUNER_FEATURED_COUNT, playable.length);
-  return ids
-    .map((id) => playable.find((r) => r.id === id))
-    .filter(Boolean)
-    .slice(0, limit);
-}
-
-function pickFeaturedStations(playable = [], count = TUNER_FEATURED_COUNT) {
-  if (!playable.length) return [];
-  const limit = Math.min(count, playable.length);
-  const poolKey = featuredPoolKey(playable);
-
-  try {
-    const saved = JSON.parse(sessionStorage.getItem(TUNER_FEATURED_STORAGE_KEY) || 'null');
-    if (saved?.poolKey === poolKey && Array.isArray(saved.ids)) {
-      const kept = saved.ids.filter((id) => playable.some((r) => r.id === id)).slice(0, limit);
-      if (kept.length === limit) {
-        persistFeaturedIds(kept, poolKey);
-        return featuredRadiosFromIds(playable, kept);
-      }
-    }
-  } catch {
-    /* ignore */
-  }
-
-  const picked = shuffleInPlace([...playable]).slice(0, limit);
-  persistFeaturedIds(picked.map((r) => r.id), poolKey);
-  return picked;
-}
-
-/** Met la station sélectionnée en tête de la barre ; remplace la 4e si elle n'y est pas encore. */
-function promoteFeaturedStation(radio) {
-  if (!radio?.id || !getPlayableStream(radio)) return false;
-
-  const playable = playableRadios();
-  if (!playable.length) return false;
-
-  const poolKey = featuredPoolKey(playable);
-  const limit = Math.min(TUNER_FEATURED_COUNT, playable.length);
-  let ids = featuredStationIds.filter((id) => playable.some((r) => r.id === id));
-
-  if (ids.length < limit) {
-    pickFeaturedStations(playable);
-    ids = [...featuredStationIds];
-  }
-
-  const prev = ids.join('|');
-  const at = ids.indexOf(radio.id);
-  if (at > 0) {
-    ids.splice(at, 1);
-    ids.unshift(radio.id);
-  } else if (at < 0) {
-    ids.unshift(radio.id);
-    ids = ids.slice(0, limit);
-  } else {
-    return false;
-  }
-
-  if (ids.join('|') === prev) return false;
-  persistFeaturedIds(ids, poolKey);
-  return true;
+function sortPlayableRadios(list = []) {
+  return [...list].sort((a, b) => {
+    const diff = radioPopularityRank(a) - radioPopularityRank(b);
+    return diff !== 0 ? diff : a.name.localeCompare(b.name, 'fr');
+  });
 }
 
 function tunerStationBtnHtml(r) {
@@ -479,40 +404,84 @@ function mountTunerStationButtons() {
   updateTunerStationsUI();
 }
 
-function renderFeaturedStations(featured = []) {
+function renderTunerStationsCarousel(playable = []) {
   if (!TUNER_STATIONS) return;
   TUNER_STATIONS.innerHTML = `
     <span class="tuner-stations-label">Sur RADAR</span>
-    <div class="tuner-stations-list" role="group" aria-label="Écoute directe">
-      ${featured.map((r) => tunerStationBtnHtml(r)).join('')}
+    <div class="tuner-stations-viewport">
+      <div class="tuner-stations-track" role="group" aria-label="Écoute directe">
+        ${playable.map((r) => tunerStationBtnHtml(r)).join('')}
+      </div>
     </div>
   `;
   mountTunerStationButtons();
+  bindCarouselViewport();
+  requestAnimationFrame(() => {
+    sizeCarouselViewport();
+    if (currentStation?.id && getPlayableStream(currentStation)) {
+      revealCarouselStation(currentStation.id, { smooth: false });
+    }
+  });
 }
 
-function syncFeaturedBar(radio = currentStation) {
-  if (!TUNER_STATIONS) return;
-  const playable = playableRadios();
-  if (!playable.length) {
-    TUNER_STATIONS.innerHTML = '';
-    featuredStationIds = [];
+function sizeCarouselViewport() {
+  const viewport = TUNER_STATIONS?.querySelector('.tuner-stations-viewport');
+  const buttons = [...(TUNER_STATIONS?.querySelectorAll('.tuner-station-btn') || [])];
+  if (!viewport || !buttons.length) return;
+
+  if (buttons.length <= TUNER_CAROUSEL_VISIBLE) {
+    viewport.style.maxWidth = '';
+    viewport.classList.remove('is-scrollable');
     return;
   }
 
-  const changed = promoteFeaturedStation(radio);
-  if (!changed) {
-    updateTunerStationsUI();
-    return;
+  const styles = getComputedStyle(viewport);
+  const gap = parseFloat(styles.columnGap || styles.gap || '6') || 6;
+  let width = 0;
+  const visible = Math.min(TUNER_CAROUSEL_VISIBLE, buttons.length);
+  for (let i = 0; i < visible; i += 1) {
+    width += buttons[i].offsetWidth;
+    if (i > 0) width += gap;
   }
+  viewport.style.maxWidth = `${Math.ceil(width)}px`;
+  viewport.classList.add('is-scrollable');
+}
 
-  const featured = featuredRadiosFromIds(playable, featuredStationIds);
-  const list = TUNER_STATIONS.querySelector('.tuner-stations-list');
-  if (list && featured.length) {
-    list.innerHTML = featured.map((r) => tunerStationBtnHtml(r)).join('');
-    mountTunerStationButtons();
-  } else {
-    renderFeaturedStations(featured.length ? featured : pickFeaturedStations(playable));
-  }
+function revealCarouselStation(id, { smooth = true } = {}) {
+  if (!id || !TUNER_STATIONS) return;
+  const viewport = TUNER_STATIONS.querySelector('.tuner-stations-viewport');
+  const btn = viewport?.querySelector(`.tuner-station-btn[data-id="${id}"]`);
+  if (!viewport || !btn) return;
+
+  const btnLeft = btn.offsetLeft;
+  const btnRight = btnLeft + btn.offsetWidth;
+  const viewLeft = viewport.scrollLeft;
+  const viewRight = viewLeft + viewport.clientWidth;
+  if (btnLeft >= viewLeft - 1 && btnRight <= viewRight + 1) return;
+
+  const target = btnLeft < viewLeft
+    ? btnLeft
+    : btnRight - viewport.clientWidth;
+  const motion = smooth && !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  viewport.scrollTo({
+    left: Math.max(0, target),
+    behavior: motion ? 'smooth' : 'instant',
+  });
+}
+
+function bindCarouselViewport() {
+  if (carouselViewportBound) return;
+  carouselViewportBound = true;
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      sizeCarouselViewport();
+      if (currentStation?.id && getPlayableStream(currentStation)) {
+        revealCarouselStation(currentStation.id, { smooth: false });
+      }
+    }, 120);
+  });
 }
 
 function buildTunerStations() {
@@ -520,11 +489,10 @@ function buildTunerStations() {
   const playable = playableRadios();
   if (!playable.length) {
     TUNER_STATIONS.innerHTML = '';
-    featuredStationIds = [];
     return;
   }
 
-  renderFeaturedStations(pickFeaturedStations(playable));
+  renderTunerStationsCarousel(playable);
 }
 
 function updateTunerStationsUI() {
@@ -535,6 +503,9 @@ function updateTunerStationsUI() {
     btn.classList.toggle('is-playing', active && isPlaying());
     btn.setAttribute('aria-pressed', active ? 'true' : 'false');
   });
+  if (currentStation?.id && getPlayableStream(currentStation)) {
+    requestAnimationFrame(() => revealCarouselStation(currentStation.id));
+  }
 }
 
 function buildTunerOptions() {
@@ -622,7 +593,6 @@ function selectStation(id, { autoplay = false, openExternal = false } = {}) {
       : 'Flux direct indisponible';
 
   updateMediaSession(radio);
-  if (playable) syncFeaturedBar(radio);
 
   if (!playable) {
     stopPlayback({ keepStation: true });
