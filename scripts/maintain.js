@@ -203,6 +203,7 @@ async function main() {
     ['News sources verify', 'node scripts/verify-news-sources.js'],
     ['News aggregator', `node scripts/fetch-news.js ${flag}`.trim()],
     ['Author QC', `node scripts/verify-authors.js ${flag}`.trim()],
+    ['Lead excerpt enrichment', `node scripts/enrich-lead-excerpts.js ${flag}`.trim()],
     ['Lead image QC', `node scripts/ensure-lead-images.js ${flag}`.trim()],
     ['Social feed', `node scripts/fetch-social.js ${flag}`.trim()],
   ];

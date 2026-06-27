@@ -1,0 +1,77 @@
+{
+  "updated": "2026-06-27T07:36:09.574Z",
+  "total": 161,
+  "pool": 70,
+  "incomplete": 67,
+  "withLeadExcerpt": 32,
+  "candidates": 35,
+  "enriched": 32,
+  "failed": 3,
+  "ok": true,
+  "samples": [
+    {
+      "title": "Résumé du G7 à Évian",
+      "link": "https://lecollectif.ca/a-la-une/resume-du-g7-a-evian/",
+      "ok": true,
+      "chars": 447,
+      "sample": "Les personnes dirigeantes du G7 étaient réunies à Évian-les-Bains, en France, du 15 au 17 juin 2026.",
+      "changed": true
+    },
+    {
+      "title": "Virage à droite en Colombie",
+      "link": "https://lecollectif.ca/a-la-une/virage-a-droite-en-colombie/",
+      "ok": true,
+      "chars": 386,
+      "sample": "Après quatre années passées sous l’égide de Gustavo Petro, la Colombie change de cap et élit à sa tê",
+      "changed": true
+    },
+    {
+      "title": "Démission de Keir Starmer au Royaume-Uni",
+      "link": "https://lecollectif.ca/a-la-une/demission-de-keir-starmer-au-royaume-uni/",
+      "ok": true,
+      "chars": 277,
+      "sample": "Croulant sous les pressions provenant de l’opposition et de son propre parti, le premier ministre br",
+      "changed": true
+    },
+    {
+      "title": "Le PIF s’internationalise pour sa 49e édition",
+      "link": "https://lecollectif.ca/a-la-une/le-pif-sinternationalise-pour-sa-49e-edition/",
+      "ok": true,
+      "chars": 195,
+      "sample": "Le plus grand tournoi de balle donnée en Amérique du Nord accueille cette année une vague de joueurs",
+      "changed": true
+    },
+    {
+      "title": "Le mental, ça s’entraîne aussi",
+      "link": "https://lecollectif.ca/a-la-une/le-mental-ca-sentraine-aussi/",
+      "ok": true,
+      "chars": 343,
+      "sample": "À l’Université de Sherbrooke, une chaire de recherche unique au Québec redéfinit ce que signifie êtr",
+      "changed": true
+    },
+    {
+      "title": "Interdiction des boissons énergisantes pour les moins de 16 ans",
+      "link": "https://lecollectif.ca/a-la-une/interdiction-des-boissons-energisantes-pour-les-moins-de-16-ans/",
+      "ok": true,
+      "chars": 445,
+      "sample": "En janvier 2024, Zachary Miron, 15 ans, perd la vie après avoir consommé une boisson énergisante lor",
+      "changed": true
+    },
+    {
+      "title": "Les animaux et les déménagements",
+      "link": "https://lecollectif.ca/a-la-une/les-animaux-et-les-demenagements/",
+      "ok": true,
+      "chars": 407,
+      "sample": "Chaque année, à l’approche du 1 er juillet, date traditionnellement associée aux déménagements au Qu",
+      "changed": true
+    },
+    {
+      "title": "La surconsommation textile : un phénomène aux lourdes conséquences",
+      "link": "https://lecollectif.ca/a-la-une/la-surconsommation-textile-un-phenomene-aux-lourdes-consequences/",
+      "ok": true,
+      "chars": 402,
+      "sample": "Acheter de nouveaux vêtements plusieurs fois par année, multiplier les commandes en ligne, donner ou",
+      "changed": true
+    }
+  ]
+}

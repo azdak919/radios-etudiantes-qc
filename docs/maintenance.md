@@ -41,6 +41,7 @@ institutions  →  scan-media  →  news-sources  →  streams  →  news  →  
 | Santé + promotion journaux | `discover-news-sources.js` | Hebdo + quotidien via news |
 | Flux radio + promotion candidats | `discover-streams.js` | Quotidien + hebdo |
 | Agrégation articles | `fetch-news.js` | 7×/jour |
+| Extrait « à la une » | `enrich-lead-excerpts.js` | 7×/jour (après `fetch-news`) |
 | **Orchestrateur** | `maintain.js` | **Hebdo (lundi)** |
 
 ### Workflows GitHub Actions
@@ -94,10 +95,11 @@ Seuls les **médias étudiants** sont éligibles (pas les portails institutionne
 | 2. Site public | champ `site` (réseaux sociaux, découverte) | recommandé |
 | 3. Vérification | `node scripts/verify-news-sources.js --name "<journal>"` | oui |
 | 4. Agrégation | `node scripts/fetch-news.js --update` | oui |
-| 5. Images vedette | `node scripts/ensure-lead-images.js --update` | oui |
-| 6. Réseaux sociaux | `node scripts/fetch-social.js --update` | optionnel |
-| 7. Cache PWA | incrémenter `CACHE_NAME` dans `sw.js` | oui si `app.js` touché |
-| 8. Déploiement | `git commit` + `git push` | oui |
+| 5. Extrait vedette | `node scripts/enrich-lead-excerpts.js --update` | oui (articles `featured` + récents) |
+| 6. Images vedette | `node scripts/ensure-lead-images.js --update` | oui |
+| 7. Réseaux sociaux | `node scripts/fetch-social.js --update` | optionnel |
+| 8. Cache PWA | incrémenter `CACHE_NAME` dans `sw.js` | oui si `app.js` touché |
+| 9. Déploiement | `git commit` + `git push` | oui |
 
 ### Raccourci script
 
@@ -118,7 +120,8 @@ node scripts/add-news-source.js \
 - **Filtres UI** : générés depuis `news.json` + métadonnées `news-sources.json`
 - **Couleurs** : `brand-colors.json` par **institution** (deux journaux Concordia → même palette)
 - **Vue source** : filtre par `name` (chaque journal a sa propre vue magazine)
-- **Bots CI** : `discover-news-sources`, `fetch-news`, `ensure-lead-images` lisent le registre
+- **Bots CI** : `discover-news-sources`, `fetch-news`, `enrich-lead-excerpts`, `ensure-lead-images` lisent le registre
+- **Texte à la une** : `leadExcerpt` dans `news.json` = premier paragraphe substantiel scrapé depuis la page source (pas l'extrait RSS tronqué)
 
 ### Cas particuliers
 
@@ -159,6 +162,7 @@ node scripts/scan-media.js --update
 node scripts/discover-news-sources.js --update
 node scripts/discover-streams.js --update
 node scripts/fetch-news.js --update
+node scripts/enrich-lead-excerpts.js --update
 ```
 
 ---

@@ -1,8 +1,124 @@
 {
-  "updated": "2026-06-27T06:53:21.553Z",
-  "total": 143,
-  "withAuthor": 115,
-  "mismatches": 0,
+  "updated": "2026-06-27T07:36:15.059Z",
+  "total": 161,
+  "withAuthor": 105,
+  "mismatches": 17,
   "ok": true,
-  "samples": []
+  "samples": [
+    {
+      "title": "Résumé du G7 à Évian",
+      "link": "https://lecollectif.ca/a-la-une/resume-du-g7-a-evian/",
+      "source": "Le Collectif",
+      "fieldAuthor": "Salma Labiede",
+      "canonicalAuthor": "Médéric Dens",
+      "reason": "excerpt-byline-overrides-rss"
+    },
+    {
+      "title": "Virage à droite en Colombie",
+      "link": "https://lecollectif.ca/a-la-une/virage-a-droite-en-colombie/",
+      "source": "Le Collectif",
+      "fieldAuthor": "Salma Labiede",
+      "canonicalAuthor": "Médéric Dens",
+      "reason": "excerpt-byline-overrides-rss"
+    },
+    {
+      "title": "Démission de Keir Starmer au Royaume-Uni",
+      "link": "https://lecollectif.ca/a-la-une/demission-de-keir-starmer-au-royaume-uni/",
+      "source": "Le Collectif",
+      "fieldAuthor": "Salma Labiede",
+      "canonicalAuthor": "Médéric Dens",
+      "reason": "excerpt-byline-overrides-rss"
+    },
+    {
+      "title": "Le PIF s’internationalise pour sa 49e édition",
+      "link": "https://lecollectif.ca/a-la-une/le-pif-sinternationalise-pour-sa-49e-edition/",
+      "source": "Le Collectif",
+      "fieldAuthor": "Salma Labiede",
+      "canonicalAuthor": "Camille Guindon",
+      "reason": "excerpt-byline-overrides-rss"
+    },
+    {
+      "title": "Le mental, ça s’entraîne aussi",
+      "link": "https://lecollectif.ca/a-la-une/le-mental-ca-sentraine-aussi/",
+      "source": "Le Collectif",
+      "fieldAuthor": "Salma Labiede",
+      "canonicalAuthor": "Camille Guindon",
+      "reason": "excerpt-byline-overrides-rss"
+    },
+    {
+      "title": "Une année de hockey remplie de succès au Québec",
+      "link": "https://lecollectif.ca/a-la-une/une-annee-de-hockey-remplie-de-succes-au-quebec/",
+      "source": "Le Collectif",
+      "fieldAuthor": "Nicolas",
+      "canonicalAuthor": "Nicolas Mathieu",
+      "reason": "excerpt-byline-overrides-rss"
+    },
+    {
+      "title": "Se préparer et vivre sa retraite : un long fleuve, pas si tranquille",
+      "link": "https://lapige.atmjonquiere.com/2026/06/22/se-preparer-et-vivre-sa-retraite-un-long-fleuve-pas-si-tranquille/?utm_source=rss&utm_medium=rss&utm_campaign=se-preparer-et-vivre-sa-retraite-un-long-fleuve-pas-si-tranquille",
+      "source": "La Pige",
+      "canonicalAuthor": "Léa Morin"
+    },
+    {
+      "title": "Sans fin(s): au cœur des troubles du comportement alimentaire",
+      "link": "https://www.exemplaire.com.ulaval.ca/a-la-une/sans-fins-au-coeur-des-troubles-du-comportement-alimentaire/?utm_source=rss&utm_medium=rss&utm_campaign=sans-fins-au-coeur-des-troubles-du-comportement-alimentaire",
+      "source": "L'Exemplaire",
+      "canonicalAuthor": "Nathan Brisbois"
+    },
+    {
+      "title": "Quand la politique passe à table",
+      "link": "https://www.exemplaire.com.ulaval.ca/a-la-une/quand-la-politique-passe-a-table/?utm_source=rss&utm_medium=rss&utm_campaign=quand-la-politique-passe-a-table",
+      "source": "L'Exemplaire",
+      "canonicalAuthor": "Juliette Deshayes"
+    },
+    {
+      "title": "Mankind Project au service des hommes",
+      "link": "https://montrealcampus.ca/2026/05/01/masculinite-mankind-project-therapie/",
+      "source": "Montréal Campus",
+      "canonicalAuthor": "Camélie Bourret"
+    },
+    {
+      "title": "Wegovy attire l’attention à Berri-UQAM",
+      "link": "https://montrealcampus.ca/2026/04/30/publicites-wegovy-berri-uqam-minceur/",
+      "source": "Montréal Campus",
+      "canonicalAuthor": "Juliette Benoît"
+    },
+    {
+      "title": "L’hypocrisie qui rampe à l’Assemblée nationale",
+      "link": "https://exilecvm.wordpress.com/2026/04/18/opinion-lhypocrisie-qui-rampe-a-lassemblee-nationale/",
+      "source": "Exil",
+      "canonicalAuthor": "Maxime Ilan"
+    },
+    {
+      "title": "Second-Class Citizens",
+      "link": "https://www.mcgilldaily.com/2026/03/second-class-citizens/",
+      "source": "The McGill Daily",
+      "canonicalAuthor": "Helena Cruz"
+    },
+    {
+      "title": "Review: Hamnet, The Retelling of a Lost Figure",
+      "link": "https://www.mcgilldaily.com/2026/03/review-hamnet-the-retelling-of-a-lost-figure/",
+      "source": "The McGill Daily",
+      "canonicalAuthor": "Chiara Sainz"
+    },
+    {
+      "title": "The Wax Talk",
+      "link": "https://www.mcgilldaily.com/2026/03/the-wax-talk/",
+      "source": "The McGill Daily",
+      "canonicalAuthor": "Youmna El"
+    },
+    {
+      "title": "On the Ground in the West Bank: A Testimony with Giancarlo Cininni",
+      "link": "https://www.mcgilldaily.com/2026/03/on-the-ground-in-the-west-bank-a-testimony-with-giancarlo-cininni/",
+      "source": "The McGill Daily",
+      "canonicalAuthor": "Youmna El"
+    },
+    {
+      "title": "Carrying Home everywhere she goes",
+      "link": "https://www.mcgilldaily.com/2026/03/carrying-home-everywhere-she-goes/",
+      "source": "The McGill Daily",
+      "canonicalAuthor": "Youmna El"
+    }
+  ],
+  "fixed": 17
 }

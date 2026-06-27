@@ -1038,10 +1038,12 @@ function collectSourcePool(items, referenceDate = new Date()) {
 }
 
 function leadBriefCharCount(item) {
+  const lead = sanitizeBriefBody(String(item.leadExcerpt || ''));
+  if (lead.length >= LEAD_BRIEF_MIN_CHARS) return lead.length;
   const excerpt = sanitizeBriefBody(String(item.excerpt || ''));
   if (excerpt.length >= LEAD_BRIEF_MIN_CHARS) return excerpt.length;
   const { body } = splitByline(item);
-  return Math.max(excerpt.length, sanitizeBriefBody(body).length);
+  return Math.max(lead.length, excerpt.length, sanitizeBriefBody(body).length);
 }
 
 function hasSubstantialLeadBrief(item) {
@@ -1106,7 +1108,10 @@ function createArticle(item, role = 'standard', { hideSourceMeta = false } = {})
   const time = d ? formatStamp(d) : '';
   const fresh = d ? (Date.now() - d) < 120 * 60000 : false;
   const { author, body } = splitByline(item);
-  let { text: brief, truncated: briefTruncated } = resolveBrief(item, body, role);
+  const leadBody = role === 'lead'
+    ? (item.leadExcerpt || body || item.excerpt || '')
+    : body;
+  let { text: brief, truncated: briefTruncated } = resolveBrief(item, leadBody, role);
   if (role === 'lead' && !brief) {
     ({ text: brief, truncated: briefTruncated } = resolveBrief(item, item.excerpt || body, role));
   }
@@ -1668,7 +1673,9 @@ function stripLeadingByline(text = '', author = '') {
 
 function leadBriefSource(item) {
   const { author, body } = splitByline(item);
-  const raw = body || String(item.excerpt || '');
+  const raw = String(item.leadExcerpt || '').trim()
+    || body
+    || String(item.excerpt || '');
   return stripLeadingByline(sanitizeBriefBody(raw), author);
 }
 
