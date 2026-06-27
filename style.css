@@ -494,24 +494,15 @@ a { color: inherit; }
 }
 .tuner-vol-fill--base {
   left: 0;
-  width: min(
-    calc(50% + var(--vol-thumb) / 2),
-    calc(var(--vol-ratio) * 100% + var(--vol-thumb) / 2)
-  );
-  max-width: calc(50% + var(--vol-thumb) / 2);
+  width: min(50%, calc(var(--vol-ratio) * 100%));
+  max-width: 50%;
   background: var(--radio-bright);
   z-index: 1;
 }
 .tuner-vol-fill--boost {
   left: 50%;
-  width: max(
-    0px,
-    min(
-      calc(50% + var(--vol-thumb) / 2),
-      calc((var(--vol-ratio) - 0.5) * 100% + var(--vol-thumb) / 2)
-    )
-  );
-  max-width: calc(50% + var(--vol-thumb) / 2);
+  width: max(0px, min(50%, calc((var(--vol-ratio) - 0.5) * 100%)));
+  max-width: 50%;
   background: #ff7d6e;
   z-index: 2;
 }
@@ -555,15 +546,10 @@ a { color: inherit; }
   pointer-events: none;
   transition: border-color 140ms ease, box-shadow 140ms ease;
 }
-.tuner-vol-track.is-at-100:not(.is-boost) .tuner-vol-thumb {
-  border-color: rgba(93, 155, 224, 0.5);
-  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.48);
-}
 .tuner-vol-track.is-boost .tuner-vol-thumb {
   border-color: rgba(255, 125, 110, 0.55);
   box-shadow: 0 1px 8px rgba(255, 90, 70, 0.35);
 }
-.tuner-vol-track.is-at-100 .tuner-vol-tick--100 { opacity: 0; }
 .tuner-vol-labels {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;

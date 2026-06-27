@@ -1090,7 +1090,6 @@ function updateVolumeSliderVisual() {
   track.style.setProperty('--vol-base', `${Math.min(ratio / 0.5, 1) * 100}%`);
   track.style.setProperty('--vol-boost', `${Math.max((ratio - 0.5) / 0.5, 0) * 100}%`);
   track.classList.toggle('is-boost', gain > 1.001);
-  track.classList.toggle('is-at-100', !volumeMuted && gain >= 0.98 && gain <= 1.02);
 }
 
 function updateVolumeUI() {
