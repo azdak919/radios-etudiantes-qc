@@ -43,7 +43,57 @@ function showToast(msg) {
   TOAST_EL.textContent = msg;
   TOAST_EL.classList.remove('hidden');
   clearTimeout(showToast._t);
-  showToast._t = setTimeout(() => TOAST_EL.classList.add('hidden'), 2200);
+  showToast._t = setTimeout(() => TOAST_EL.classList.add('hidden'), 2800);
+}
+
+function releaseFocus(el) {
+  if (el && typeof el.blur === 'function') el.blur();
+}
+
+async function copyFeedUrl(url, { toast = true } = {}) {
+  try {
+    await navigator.clipboard.writeText(url);
+    if (toast) showToast('URL copiée dans le presse-papiers');
+    return true;
+  } catch {
+    if (toast) showToast(url);
+    return false;
+  }
+}
+
+function prefersFeedProtocol() {
+  return /firefox/i.test(navigator.userAgent);
+}
+
+/**
+ * Déclenche l'abonnement de façon universelle :
+ * - Web Share API (choix de l'app sur mobile)
+ * - protocole feed: (lecteur RSS par défaut, ex. Firefox)
+ * - copie de l'URL en dernier recours
+ */
+async function subscribeToFeed(url) {
+  if (navigator.share) {
+    try {
+      await navigator.share({
+        title: 'Le Radar — Fil étudiant',
+        text: 'Fil RSS des médias étudiants du Québec',
+        url,
+      });
+      return;
+    } catch (err) {
+      if (err?.name === 'AbortError') return;
+    }
+  }
+
+  if (prefersFeedProtocol()) {
+    window.location.href = `feed:${url}`;
+    return;
+  }
+
+  const copied = await copyFeedUrl(url, { toast: false });
+  showToast(copied
+    ? 'URL copiée — collez-la dans Inoreader, NetNewsWire ou votre lecteur RSS'
+    : 'Copiez l\'URL du flux dans votre lecteur RSS');
 }
 
 function initFeedCards() {
@@ -52,21 +102,20 @@ function initFeedCards() {
     const url = feedUrl(file);
     const code = card.querySelector('[data-feed-url]');
     const open = card.querySelector('[data-open]');
-    const feedly = card.querySelector('[data-feedly]');
+    const subscribeBtn = card.querySelector('[data-subscribe]');
     const copyBtn = card.querySelector('[data-copy]');
 
     if (code) code.textContent = url;
     if (open) open.href = url;
-    if (feedly) {
-      feedly.href = `https://feedly.com/i/subscription/feed/${encodeURIComponent(url)}`;
-    }
+
+    subscribeBtn?.addEventListener('click', async () => {
+      await subscribeToFeed(url);
+      releaseFocus(subscribeBtn);
+    });
+
     copyBtn?.addEventListener('click', async () => {
-      try {
-        await navigator.clipboard.writeText(url);
-        showToast('URL copiée dans le presse-papiers');
-      } catch {
-        showToast(url);
-      }
+      await copyFeedUrl(url);
+      releaseFocus(copyBtn);
     });
   });
 }

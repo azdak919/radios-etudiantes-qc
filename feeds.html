@@ -28,7 +28,7 @@
             <a href="./" class="masthead-icon masthead-home" title="Accueil" aria-label="Retour à l'accueil — Le Radar">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1v-9.5z"/></svg>
             </a>
-            <a href="feeds.html" class="masthead-icon masthead-rss is-active" aria-current="page" title="Flux RSS" aria-label="Flux RSS de LE RADAR">
+            <a href="feeds.html" class="masthead-icon masthead-rss" aria-current="page" title="Flux RSS" aria-label="Flux RSS de LE RADAR">
               <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="6.18" cy="17.82" r="2.18"/><path d="M4 4.44v2.83c7.03 0 12.73 5.7 12.73 12.73h2.83C19.56 12.06 12.94 5.44 4 4.44z"/><path d="M4 10.11v2.83c3.9 0 7.07 3.17 7.07 7.07h2.83c0-5.46-4.42-9.9-9.9-9.9z"/></svg>
             </a>
             <button id="theme-toggle" class="masthead-icon theme-toggle" type="button" aria-label="Changer de thème" title="Mode clair / sombre">
@@ -64,9 +64,9 @@
             </div>
           </div>
           <div class="feeds-subscribe__actions">
-            <button type="button" class="feed-btn feed-btn--primary" data-copy>Copier l'URL</button>
-            <a class="feed-btn" data-open target="_blank" rel="noopener">Ouvrir</a>
-            <a class="feed-btn feed-btn--quiet" data-feedly target="_blank" rel="noopener">Ajouter à Feedly</a>
+            <button type="button" class="feed-btn feed-btn--primary" data-subscribe>S'abonner</button>
+            <button type="button" class="feed-btn" data-copy>Copier l'URL</button>
+            <a class="feed-btn feed-btn--quiet" data-open target="_blank" rel="noopener">Voir le flux</a>
           </div>
         </div>
 
@@ -90,7 +90,7 @@
           <section class="feeds-panel feeds-panel--info" aria-labelledby="feeds-info-title">
             <h2 id="feeds-info-title" class="feeds-panel__title">En bref</h2>
             <ul class="feeds-points">
-              <li class="feeds-points__item">Collez l'URL dans Feedly, Inoreader, NetNewsWire ou tout lecteur RSS.</li>
+              <li class="feeds-points__item">« S'abonner » ouvre le menu de partage (mobile) ou votre lecteur RSS (Firefox), sinon copie l'URL.</li>
               <li class="feeds-points__item">Titre, brève, photo et lien vers la publication étudiante source.</li>
               <li class="feeds-points__item">Rafraîchi automatiquement tout au long de la journée.</li>
             </ul>

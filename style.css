@@ -126,12 +126,15 @@ a { color: inherit; }
   transform: scale(0.9);
 }
 .masthead-home.is-active,
-.masthead-home[aria-current="page"],
-.masthead-rss.is-active,
-.masthead-rss[aria-current="page"] {
+.masthead-home[aria-current="page"] {
   border-color: color-mix(in srgb, var(--accent) 55%, var(--rule));
   color: var(--accent);
   background: color-mix(in srgb, var(--accent) 8%, transparent);
+}
+.masthead-icon:focus { outline: none; }
+.masthead-icon:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
 }
 
 .masthead-brand { padding-top: 16px; text-align: center; }
@@ -1568,6 +1571,11 @@ a { color: inherit; }
   border-color: var(--accent);
   color: var(--accent);
 }
+.feed-btn:focus { outline: none; }
+.feed-btn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
 .feed-btn--primary {
   border-color: color-mix(in srgb, var(--accent) 45%, var(--rule));
   color: var(--accent);
@@ -1575,6 +1583,9 @@ a { color: inherit; }
 }
 .feed-btn--primary:hover {
   background: color-mix(in srgb, var(--accent) 14%, var(--bg));
+}
+.feed-btn--primary:active {
+  background: color-mix(in srgb, var(--accent) 10%, var(--bg));
 }
 .feed-btn--quiet {
   color: var(--muted);
