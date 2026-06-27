@@ -128,12 +128,12 @@ function itemSimpleDate(item = {}) {
   return d.toLocaleDateString(en ? 'en-CA' : 'fr-CA', opts);
 }
 
-/** Ligne prioritaire : auteur · média · date (affichée sous le titre dans les apps RSS). */
+/** Ligne prioritaire : média · auteur · date (affichée sous le titre dans les apps RSS). */
 function itemCompactMeta(item = {}) {
   const author = itemAuthor(item);
   const source = String(item.source || '').trim();
   const date = itemSimpleDate(item);
-  return [author, source, date].filter(Boolean).join(' · ');
+  return [source, author, date].filter(Boolean).join(' · ');
 }
 
 function sourceHomeUrl(item = {}, sourceSites = {}) {
