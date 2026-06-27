@@ -36,6 +36,7 @@ const KNOWN_STREAMS = {
   // HTTPS mount — playable directly on the HTTPS site (the :8000 HTTP one is blocked as mixed content)
   cism: 'https://stream03.ustream.ca/cism128.mp3',
   cjlo: 'https://cjlo.radioca.st/stream',
+  choq: 'https://14223.live.streamtheworld.com/SP_R4799664_SC',
 };
 
 // Per-station hints for faster/better discovery
@@ -60,8 +61,8 @@ const STATION_HINTS = {
     'http://www.cjlo.com/player.html',
   ],
   choq: [
-    'https://streams.radiomast.io/a372c74f-6c78-48b9-9933-81a8fc50b54a',
-    'https://choq.ca/stream',
+    'https://14223.live.streamtheworld.com/SP_R4799664_SC',
+    'https://www.choq.ca/api/live',
   ],
 };
 
@@ -281,8 +282,23 @@ function isLikelyStreamUrl(url = '') {
   if (!u.startsWith('http')) return false;
   if (/\.(html?|php|asp|aspx)(\?|$)/.test(u)) return false;
   if (/radio\.garden|facebook\.com|instagram\.com|twitter\.com|youtube\.com/.test(u)) return false;
-  return /stream|listen|icecast|airtime|radioca|shoutca|radiomast|xittel|\.m3u|\.pls|\/;/i.test(u)
+  return /stream|listen|icecast|airtime|radioca|shoutca|radiomast|streamtheworld|xittel|\.m3u|\.pls|\/;/i.test(u)
     || /\.(mp3|aac|ogg)(\?|$)/i.test(u);
+}
+
+/** CHOQ (Craft/Nuxt) expose le flux via /api/live → audio_stream_uri. */
+async function probeCraftLiveApi(radio = {}) {
+  if (!radio.website) return null;
+  try {
+    const apiUrl = new URL('/api/live', radio.website).toString();
+    const text = await fetchText(apiUrl, 'application/json');
+    if (!text) return null;
+    const data = JSON.parse(text);
+    const stream = data?.audio_stream_uri;
+    return typeof stream === 'string' && stream.startsWith('http') ? stream : null;
+  } catch {
+    return null;
+  }
 }
 
 async function parsePlaylist(url) {
@@ -305,6 +321,8 @@ function extractStreamUrlsFromHtml(html, baseUrl) {
     /https?:\/\/[^"'\s<>()]+\.(?:m3u8?|pls|mp3|aac|ogg)(?:\?[^"'\s<>()]*)?/gi,
     /https?:\/\/[^"'\s<>()]+\.radioca\.st\/stream/gi,
     /https?:\/\/streams\.radiomast\.io\/[a-f0-9-]+/gi,
+    /https?:\/\/[^"'\s<>()]+\.live\.streamtheworld\.com\/[^"'\s<>()]+/gi,
+    /"audio_stream_uri"\s*:\s*"([^"]+)"/gi,
     /https?:\/\/[^"'\s<>()]+\.out\.airtime\.pro\/[^"'\s<>()]+/gi,
     /https?:\/\/streamer\.xittel\.net:\d+\/[^"'\s<>()]+/gi,
     /https?:\/\/[^"'\s<>()]+\/(?:stream|live|radio|mount|proxy\/[^"'\s<>()]+)[^"'\s<>()]*/gi,
@@ -404,6 +422,9 @@ async function discoverForRadio(radio) {
       /* ignore */
     }
   }
+
+  const fromLiveApi = await probeCraftLiveApi(radio);
+  if (fromLiveApi) results.push(fromLiveApi);
 
   if (radio.website) {
     results.push(...await scrapePageForStreams(radio.website, radio.website));

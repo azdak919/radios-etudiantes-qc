@@ -164,9 +164,49 @@ function fetchIcyNowPlaying(url, redirects = 0, timeout = DEFAULT_TIMEOUT) {
   });
 }
 
+async function fetchCraftLiveShow(apiBase = '') {
+  if (!apiBase) return null;
+  try {
+    const url = new URL('/api/live', apiBase).toString();
+    const text = await new Promise((resolve) => {
+      https.get(
+        url,
+        { headers: { 'User-Agent': 'LE-RADAR-NowPlayingBot/1.0', Accept: 'application/json' }, timeout: DEFAULT_TIMEOUT },
+        (res) => {
+          if (res.statusCode >= 400) {
+            res.resume();
+            return resolve('');
+          }
+          let data = '';
+          res.on('data', (c) => (data += c));
+          res.on('end', () => resolve(data));
+        },
+      ).on('error', () => resolve(''));
+    });
+    if (!text) return null;
+    const payload = JSON.parse(text);
+    const title = normalizeShowTitle(payload?.live?.title || '');
+    const artist = normalizeShowTitle(payload?.live?.artist || '');
+    if (!title) return null;
+    return {
+      showTitle: title,
+      host: artist,
+      source: 'api-live',
+    };
+  } catch {
+    return null;
+  }
+}
+
 async function probeNowPlaying(radio = {}) {
   const stream = radio.stream;
   if (!stream) return { showTitle: '', source: 'none' };
+
+  const apiLive = radio._nowPlayingApi || (radio.id === 'choq' ? radio.website : '');
+  const fromApi = await fetchCraftLiveShow(apiLive);
+  if (fromApi?.showTitle && isUsableShowTitle(fromApi.showTitle, radio)) {
+    return fromApi;
+  }
 
   const icy = await fetchIcyNowPlaying(stream);
   if (!icy) return { showTitle: '', source: 'stream', icyName: '', icyDesc: '' };
@@ -194,6 +234,7 @@ async function probeNowPlaying(radio = {}) {
 
 module.exports = {
   fetchIcyNowPlaying,
+  fetchCraftLiveShow,
   probeNowPlaying,
   isUsableShowTitle,
   extractShowFromIcyTitle,

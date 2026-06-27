@@ -35,6 +35,7 @@ async function main() {
       id: radio.id,
       name: radio.name,
       showTitle: hit.showTitle || '',
+      host: hit.host || '',
       source: hit.source,
       checkedAt: new Date().toISOString(),
     };

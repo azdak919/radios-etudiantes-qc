@@ -123,5 +123,32 @@
     "_streamStatus": "working",
     "_streamChecked": "2026-06-27T17:44:51.007Z",
     "_streamIcyName": "CFAK - ÇA PART ICI"
+  },
+  {
+    "id": "choq",
+    "name": "CHOQ.ca",
+    "fullName": "CHOQ.ca",
+    "institution": "UQAM",
+    "city": "Montréal",
+    "region": "Montréal",
+    "type": "universite",
+    "frequency": "Web",
+    "website": "https://www.choq.ca/",
+    "slogan": "La radio numérique de l'UQAM",
+    "logo": "assets/logos/choq-logo.jpg",
+    "stream": "https://14223.live.streamtheworld.com/SP_R4799664_SC",
+    "description": "Radio numérique étudiante de l'UQAM. Émissions, musique et culture émergente.",
+    "instagram": "https://www.instagram.com/choq.ca/",
+    "facebook": "",
+    "tags": [
+      "musique",
+      "culture",
+      "UQAM"
+    ],
+    "popularity": 6,
+    "_streamStatus": "working",
+    "_streamChecked": "2026-06-27T22:20:00.000Z",
+    "_streamIcyName": "CHOQ.CA",
+    "_nowPlayingApi": "https://www.choq.ca/"
   }
 ]

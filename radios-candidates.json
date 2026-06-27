@@ -15,18 +15,6 @@
       "_lastChecked": "2026-06-27T08:46:27.429Z"
     },
     {
-      "id": "choq",
-      "name": "CHOQ.ca",
-      "institution": "UQAM",
-      "region": "Montréal",
-      "type": "universite",
-      "website": "https://www.choq.ca/",
-      "logo": "assets/logos/choq-logo.jpg",
-      "_note": "Retiré du syntoniseur — pas de flux direct. À réintégrer quand discover-streams.js trouve un stream.",
-      "_pausedReason": "no-stream",
-      "_lastChecked": "2026-06-27T08:49:32.064Z"
-    },
-    {
       "id": "cjep",
       "name": "CJEP",
       "institution": "Cégep de Jonquière",

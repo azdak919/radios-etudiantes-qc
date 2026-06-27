@@ -499,7 +499,9 @@ function nowAirLines(radio) {
     return { title: scheduled, sub };
   }
   if (live) {
-    return { title: live, sub: slogan || `Vous écoutez ${radio.name}` };
+    const host = String(nowPlayingEntry(radio)?.host || '').trim();
+    const sub = host || slogan || `Vous écoutez ${radio.name}`;
+    return { title: live, sub };
   }
   return { title: `Vous écoutez ${radio.name}`, sub: slogan };
 }

@@ -1,40 +1,53 @@
 {
-  "updatedAt": "2026-06-27T21:38:48.402Z",
+  "updatedAt": "2026-06-27T22:19:09.875Z",
   "stations": {
     "chyz": {
       "id": "chyz",
       "name": "CHYZ 94,3",
       "showTitle": "",
+      "host": "",
       "source": "stream",
-      "checkedAt": "2026-06-27T21:38:31.399Z"
+      "checkedAt": "2026-06-27T22:18:50.864Z"
     },
     "cism": {
       "id": "cism",
       "name": "CISM 89,3",
       "showTitle": "",
+      "host": "",
       "source": "stream",
-      "checkedAt": "2026-06-27T21:38:32.251Z"
+      "checkedAt": "2026-06-27T22:18:51.861Z"
     },
     "ckut": {
       "id": "ckut",
       "name": "CKUT 90,3",
       "showTitle": "West Indian Rhythms",
+      "host": "",
       "source": "stream",
-      "checkedAt": "2026-06-27T21:38:33.956Z"
+      "checkedAt": "2026-06-27T22:18:54.315Z"
     },
     "cjlo": {
       "id": "cjlo",
       "name": "CJLO 1690AM",
       "showTitle": "",
+      "host": "",
       "source": "stream",
-      "checkedAt": "2026-06-27T21:38:47.308Z"
+      "checkedAt": "2026-06-27T22:19:07.952Z"
     },
     "cfak": {
       "id": "cfak",
       "name": "CFAK 88,3",
       "showTitle": "",
+      "host": "",
       "source": "stream",
-      "checkedAt": "2026-06-27T21:38:48.001Z"
+      "checkedAt": "2026-06-27T22:19:08.571Z"
+    },
+    "choq": {
+      "id": "choq",
+      "name": "CHOQ.ca",
+      "showTitle": "Marathon",
+      "host": "Maria BC",
+      "source": "api-live",
+      "checkedAt": "2026-06-27T22:19:09.473Z"
     }
   }
 }
