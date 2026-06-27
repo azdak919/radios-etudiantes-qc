@@ -1,7 +1,9 @@
-const CACHE_NAME = "radar-shell-v97";
+const CACHE_NAME = "radar-shell-v98";
 const APP_SHELL = [
   "./",
   "./index.html",
+  "./feeds.html",
+  "./feeds-page.js",
   "./style.css",
   "./app.js",
   "./brand-colors.json",

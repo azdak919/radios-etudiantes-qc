@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="fr-CA">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="description" content="Abonnez-vous aux flux RSS de RADAR — l'agrégateur des médias étudiants du Québec. Fil complet, français et anglais." />
+    <meta name="theme-color" content="#ffffff" />
+    <title>Flux RSS — RADAR</title>
+
+    <link rel="manifest" href="manifest.json" />
+    <link rel="icon" href="assets/icon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="alternate" type="application/rss+xml" title="RADAR — Fil étudiant (tout)" href="feed.xml" />
+    <link rel="alternate" type="application/rss+xml" title="RADAR — Fil étudiant (français)" href="feed-fr.xml" />
+    <link rel="alternate" type="application/rss+xml" title="RADAR — Student feed (English)" href="feed-en.xml" />
+  </head>
+  <body>
+    <header class="masthead">
+      <div class="masthead-inner">
+        <div class="masthead-top">
+          <span id="today-date" class="masthead-date"></span>
+          <div class="masthead-actions">
+            <a href="feeds.html" class="masthead-icon masthead-rss is-active" aria-current="page" title="Flux RSS" aria-label="Flux RSS RADAR">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="6.18" cy="17.82" r="2.18"/><path d="M4 4.44v2.83c7.03 0 12.73 5.7 12.73 12.73h2.83C19.56 12.06 12.94 5.44 4 4.44z"/><path d="M4 10.11v2.83c3.9 0 7.07 3.17 7.07 7.07h2.83c0-5.46-4.42-9.9-9.9-9.9z"/></svg>
+            </a>
+            <button id="theme-toggle" class="masthead-icon theme-toggle" type="button" aria-label="Changer de thème" title="Mode clair / sombre">
+              <svg class="ico-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+              <svg class="ico-moon hidden" viewBox="0 0 24 24" fill="currentColor"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="masthead-brand">
+          <a href="./" class="wordmark">
+            <span class="wordmark-mark">RADAR</span>
+            <span class="wordmark-full">Les médias étudiants du Québec, sur ton radar</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main class="wire feeds-wire">
+      <header class="feeds-head">
+        <p class="feeds-eyebrow">Abonnement</p>
+        <h1 class="feeds-title">Flux RSS RADAR</h1>
+        <p class="feeds-lead">
+          Suivez l'actualité des journaux étudiants du Québec dans votre lecteur RSS préféré.
+          Chaque item renvoie vers l'article original — RADAR agrège les titres, brèves et métadonnées enrichies.
+        </p>
+        <p id="feeds-updated" class="feeds-updated" hidden></p>
+      </header>
+
+      <section class="feeds-list" aria-label="Flux disponibles">
+        <article class="feed-card" data-feed="feed.xml">
+          <div class="feed-card__head">
+            <h2 class="feed-card__title">Fil complet</h2>
+            <span class="feed-card__tag">FR + EN</span>
+          </div>
+          <p class="feed-card__desc">Tous les articles agrégés — journaux francophones et anglophones des cégeps et universités québécoises.</p>
+          <p class="feed-card__url"><code class="feed-card__code" data-feed-url></code></p>
+          <div class="feed-card__actions">
+            <button type="button" class="feed-btn feed-btn--primary" data-copy>Copier l'URL</button>
+            <a class="feed-btn" data-open target="_blank" rel="noopener">Ouvrir le flux</a>
+            <a class="feed-btn feed-btn--quiet" data-feedly target="_blank" rel="noopener">Feedly</a>
+          </div>
+        </article>
+
+        <article class="feed-card" data-feed="feed-fr.xml">
+          <div class="feed-card__head">
+            <h2 class="feed-card__title">Fil francophone</h2>
+            <span class="feed-card__tag">FR</span>
+          </div>
+          <p class="feed-card__desc">Quartier Libre, Montréal Campus, Le Délit, Le Collectif, La Pige, Le Polyscope, Exil…</p>
+          <p class="feed-card__url"><code class="feed-card__code" data-feed-url></code></p>
+          <div class="feed-card__actions">
+            <button type="button" class="feed-btn feed-btn--primary" data-copy>Copier l'URL</button>
+            <a class="feed-btn" data-open target="_blank" rel="noopener">Ouvrir le flux</a>
+            <a class="feed-btn feed-btn--quiet" data-feedly target="_blank" rel="noopener">Feedly</a>
+          </div>
+        </article>
+
+        <article class="feed-card" data-feed="feed-en.xml">
+          <div class="feed-card__head">
+            <h2 class="feed-card__title">English student feed</h2>
+            <span class="feed-card__tag">EN</span>
+          </div>
+          <p class="feed-card__desc">The Link, The Concordian, The McGill Daily, The Tribune…</p>
+          <p class="feed-card__url"><code class="feed-card__code" data-feed-url></code></p>
+          <div class="feed-card__actions">
+            <button type="button" class="feed-btn feed-btn--primary" data-copy>Copy URL</button>
+            <a class="feed-btn" data-open target="_blank" rel="noopener">Open feed</a>
+            <a class="feed-btn feed-btn--quiet" data-feedly target="_blank" rel="noopener">Feedly</a>
+          </div>
+        </article>
+      </section>
+
+      <section class="feeds-note" aria-label="À propos des flux">
+        <h2 class="feeds-note__title">Comment ça fonctionne</h2>
+        <ul class="feeds-note__list">
+          <li><strong>Méta-agrégateur</strong> — titres, brèves, auteurs et crédits photo ; le lien mène toujours à la publication étudiante source.</li>
+          <li><strong>RSS 2.0</strong> — format ouvert, compatible Feedly, NetNewsWire, Inoreader, Thunderbird et lecteurs intégrés aux navigateurs.</li>
+          <li><strong>Autodiscovery</strong> — les balises <code>rel="alternate"</code> sur RADAR permettent aux lecteurs de détecter automatiquement ces flux.</li>
+          <li><strong>Mise à jour</strong> — les flux sont régénérés automatiquement plusieurs fois par jour à partir de <code>news.json</code>.</li>
+        </ul>
+      </section>
+
+      <footer class="site-foot">
+        <p><a href="./">← Retour au fil RADAR</a></p>
+        <p>
+          RADAR est un projet non officiel et collaboratif. Les articles appartiennent à leurs
+          publications étudiantes respectives.
+        </p>
+      </footer>
+    </main>
+
+    <div id="toast" class="toast hidden"></div>
+
+    <script src="feeds-page.js" defer></script>
+  </body>
+</html>
