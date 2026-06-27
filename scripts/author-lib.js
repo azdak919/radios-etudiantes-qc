@@ -21,17 +21,10 @@ function stripHtml(text = '') {
   return String(text).replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
 }
 
+const { decodeHtmlEntities } = require('./html-entities-lib');
+
 function decodeBasicEntities(str = '') {
-  return String(str)
-    .replace(/&#(\d+);/g, (_, n) => String.fromCharCode(parseInt(n, 10)))
-    .replace(/&#x([0-9a-f]+);/gi, (_, n) => String.fromCharCode(parseInt(n, 16)))
-    .replace(/&nbsp;/g, ' ')
-    .replace(/&amp;/g, '&')
-    .replace(/&quot;/g, '"')
-    .replace(/&apos;/g, "'")
-    .replace(/&rsquo;/g, '’')
-    .replace(/&ndash;/g, '–')
-    .replace(/&mdash;/g, '—');
+  return decodeHtmlEntities(str);
 }
 
 function editorialFallback(lang = 'fr') {

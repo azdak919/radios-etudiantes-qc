@@ -24,18 +24,7 @@ function isPathRejected(path = '', extraRejectPatterns = []) {
   return false;
 }
 
-function decodeEntities(str = '') {
-  return str
-    .replace(/<!\[CDATA\[([\s\S]*?)\]\]>/g, '$1')
-    .replace(/&#(\d+);/g, (_, n) => String.fromCharCode(parseInt(n, 10)))
-    .replace(/&#x([0-9a-f]+);/gi, (_, n) => String.fromCharCode(parseInt(n, 16)))
-    .replace(/&nbsp;/g, ' ')
-    .replace(/&amp;/g, '&')
-    .replace(/&quot;/g, '"')
-    .replace(/&#0?39;|&apos;|&rsquo;/g, '’')
-    .replace(/&lt;/g, '<')
-    .replace(/&gt;/g, '>');
-}
+const { decodeEntities } = require('./html-entities-lib');
 
 function fetchText(url, redirects = 3, timeout = DEFAULT_TIMEOUT) {
   return new Promise((resolve) => {

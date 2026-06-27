@@ -8,6 +8,7 @@
 
 const https = require('https');
 const { extractBylineFromText } = require('./author-lib');
+const { decodeEntities, stripHtml: stripHtmlDecoded } = require('./html-entities-lib');
 
 const FETCH_TIMEOUT = 12000;
 const LEAD_EXCERPT_MAX = 1200;
@@ -51,25 +52,8 @@ const DECK_PATTERNS = [
 const NEWS_LEAD_OPENERS = /^(?:Les|La|Le|L['’]|Un|Une|À|En|Après|Depuis|Selon|Alors que|Cependant|Dans|Face à|Plus de|Croulant|Chaque|Acheter|Connue|Le programme|La confiance|Il fut)\b/iu;
 const FIRST_PERSON_OPENERS = /^(?:Salut|Je suis|Moi,? c['’]est|Aujourd['']hui,?\s+je|Mon nom est|Je m['’]appelle)\b/iu;
 
-function decodeEntities(str = '') {
-  return String(str)
-    .replace(/<!\[CDATA\[([\s\S]*?)\]\]>/g, '$1')
-    .replace(/&#(\d+);/g, (_, n) => String.fromCharCode(parseInt(n, 10)))
-    .replace(/&#x([0-9a-f]+);/gi, (_, n) => String.fromCharCode(parseInt(n, 16)))
-    .replace(/&nbsp;/g, ' ')
-    .replace(/&amp;/g, '&')
-    .replace(/&quot;/g, '"')
-    .replace(/&#0?39;|&apos;|&rsquo;/g, '’')
-    .replace(/&lt;/g, '<')
-    .replace(/&gt;/g, '>')
-    .replace(/&hellip;/gi, '…');
-}
-
 function stripHtml(html = '') {
-  return decodeEntities(html)
-    .replace(/<[^>]+>/g, ' ')
-    .replace(/\s+/g, ' ')
-    .trim();
+  return stripHtmlDecoded(html);
 }
 
 function stripTruncationArtifacts(text = '') {
