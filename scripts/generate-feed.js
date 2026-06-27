@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 /**
- * RADAR — Génération des flux RSS sortants (méta-agrégateur).
+ * LE RADAR — Génération des flux RSS sortants (méta-agrégateur).
  *
  * Lit news.json et publie feed.xml, feed-fr.xml et feed-en.xml.
- * Chaque item pointe vers l'article original ; description enrichie RADAR.
+ * Chaque item pointe vers l'article original ; description enrichie Le Radar.
  *
  *   node scripts/generate-feed.js
  *   node scripts/generate-feed.js --update
@@ -39,22 +39,22 @@ const FEEDS = [
     file: 'feed.xml',
     lang: 'fr-CA',
     filter: () => true,
-    title: 'RADAR — Les médias étudiants du Québec',
+    title: 'LE RADAR — Les médias étudiants du Québec',
     description: 'Fil agrégé des journaux étudiants des cégeps et universités du Québec. Titres, brèves et liens vers les articles originaux.',
   },
   {
     file: 'feed-fr.xml',
     lang: 'fr-CA',
     filter: (item) => item.lang !== 'en',
-    title: 'RADAR — Fil étudiant (français)',
-    description: 'Actualités des médias étudiants francophones du Québec, agrégées par RADAR.',
+    title: 'LE RADAR — Fil étudiant (français)',
+    description: 'Actualités des médias étudiants francophones du Québec, agrégées par Le Radar.',
   },
   {
     file: 'feed-en.xml',
     lang: 'en-CA',
     filter: (item) => item.lang === 'en',
-    title: 'RADAR — Student media feed (English)',
-    description: 'Quebec student newspaper headlines and briefs in English, aggregated by RADAR.',
+    title: 'LE RADAR — Student media feed (English)',
+    description: 'Quebec student newspaper headlines and briefs in English, aggregated by LE RADAR.',
   },
 ];
 
@@ -146,8 +146,8 @@ function buildDescriptionHtml(item = {}) {
   const credit = photoCreditLine(item);
   if (credit) parts.push(`<p><small>${escapeXml(credit)}</small></p>`);
   const note = item.lang === 'en'
-    ? 'Aggregated by RADAR — link opens the original student publication.'
-    : 'Agrégé par RADAR — le lien ouvre la publication étudiante originale.';
+    ? 'Aggregated by LE RADAR — link opens the original student publication.'
+    : 'Agrégé par Le Radar — le lien ouvre la publication étudiante originale.';
   parts.push(`<p><small>${escapeXml(note)}</small></p>`);
   return parts.join('\n');
 }
@@ -212,7 +212,7 @@ function buildFeedXml(items = [], config = {}) {
     <description>${escapeXml(config.description)}</description>
     <language>${escapeXml(config.lang)}</language>
     <lastBuildDate>${escapeXml(updated)}</lastBuildDate>
-    <generator>RADAR Student Media Aggregator</generator>
+    <generator>LE RADAR Student Media Aggregator</generator>
     <atom:link href="${escapeXml(feedUrl)}" rel="self" type="application/rss+xml" />
     <image>
       <url>${escapeXml(SITE_BASE)}/assets/icon-192.png</url>
@@ -237,7 +237,7 @@ function main() {
     process.exit(1);
   }
 
-  console.log('RADAR RSS Generator');
+  console.log('LE RADAR RSS Generator');
   console.log('===================\n');
   console.log(`Site     : ${SITE_BASE}`);
   console.log(`Articles : ${items.length} (max ${MAX_ITEMS} par flux)\n`);

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * RÉQ Institutions Bot
+ * LE RADAR Institutions Bot
  *
  * Maintains institutions.json — the canonical catalogue of Québec higher-
  * education institutions (universities + cégeps) that the news bots refer
@@ -224,7 +224,7 @@ function mergeCegeps(curated, wiki) {
 
 async function main() {
   const doUpdate = process.argv.includes('--update');
-  console.log('RÉQ Institutions Bot\n====================\n');
+  console.log('LE RADAR Institutions Bot\n=========================\n');
 
   const universities = buildUniversities();
   console.log(`▸ Universities (curated): ${universities.length}`);

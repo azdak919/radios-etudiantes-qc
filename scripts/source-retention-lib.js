@@ -1,5 +1,5 @@
 /**
- * Source retention — shared rules for all RADAR news bots.
+ * Source retention — shared rules for all LE RADAR news bots.
  *
  * Aligns server-side aggregation with the UI freshness window (3 university
  * sessions). Prevents transient RSS failures from wiping a source entirely.

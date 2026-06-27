@@ -100,30 +100,6 @@
     "_streamChecked": "2026-06-27T17:22:10.829Z"
   },
   {
-    "id": "cfou",
-    "name": "CFOU 89,1",
-    "fullName": "CFOU 89,1 FM",
-    "institution": "Université du Québec à Trois-Rivières",
-    "city": "Trois-Rivières",
-    "region": "Mauricie",
-    "type": "universite",
-    "frequency": "89,1 FM",
-    "website": "https://cfou.ca/",
-    "slogan": "La radio universitaire de l'UQTR",
-    "listenUrl": "https://radio.garden/listen/cfou-fm-89-1/QdJ2n1fA",
-    "logo": "assets/logos/cfou-logo.jpg",
-    "stream": null,
-    "description": "Radio universitaire francophone de l'UQTR. Diversité musicale, idées et développement de la connaissance.",
-    "instagram": "",
-    "facebook": "",
-    "tags": [
-      "musique",
-      "francophone"
-    ],
-    "_streamStatus": "none",
-    "_streamChecked": "2026-06-27T08:46:27.429Z"
-  },
-  {
     "id": "cfak",
     "name": "CFAK 88,3",
     "fullName": "CFAK 88,3 FM",
@@ -147,76 +123,5 @@
     "_streamStatus": "working",
     "_streamChecked": "2026-06-27T17:44:51.007Z",
     "_streamIcyName": "CFAK - ÇA PART ICI"
-  },
-  {
-    "id": "choq",
-    "name": "CHOQ.ca",
-    "fullName": "CHOQ.ca",
-    "institution": "UQAM",
-    "city": "Montréal",
-    "region": "Montréal",
-    "type": "universite",
-    "frequency": "Web",
-    "website": "https://www.choq.ca/",
-    "slogan": "La radio numérique des étudiant·e·s de l'UQAM",
-    "stream": null,
-    "logo": "assets/logos/choq-logo.jpg",
-    "description": "La radio numérique des étudiants de l'UQAM. Créative, engagée et à l'avant-garde des tendances médiatiques.",
-    "instagram": "https://www.instagram.com/choq.ca/",
-    "facebook": "",
-    "tags": [
-      "numérique",
-      "créatif",
-      "balados"
-    ],
-    "_streamStatus": "none",
-    "_streamChecked": "2026-06-27T08:49:32.064Z"
-  },
-  {
-    "id": "cjep",
-    "name": "CJEP",
-    "fullName": "CJEP Radio étudiante",
-    "institution": "Cégep de Jonquière",
-    "city": "Jonquière",
-    "region": "Saguenay–Lac-Saint-Jean",
-    "type": "cegep",
-    "frequency": "Web",
-    "website": "http://cjepradio.com/",
-    "slogan": "La radio du Cégep de Jonquière",
-    "stream": null,
-    "logo": "assets/logos/cjep-logo.jpg",
-    "description": "La radio étudiante du Cégep de Jonquière. Émissions étudiantes, balados et expression libre sur le campus.",
-    "instagram": "",
-    "facebook": "https://www.facebook.com/CJEPRADIO/",
-    "tags": [
-      "étudiant",
-      "cégep",
-      "balados"
-    ],
-    "_streamStatus": "none",
-    "_streamChecked": "2026-06-27T08:53:52.499Z"
-  },
-  {
-    "id": "crem",
-    "name": "CREM",
-    "fullName": "Comité Radio Étudiante de Montmorency",
-    "institution": "Cégep Montmorency",
-    "city": "Laval",
-    "region": "Montréal",
-    "type": "cegep",
-    "frequency": "Web",
-    "website": "https://www.agem.quebec/comites/crem/",
-    "slogan": "La radio étudiante du Cégep Montmorency",
-    "stream": null,
-    "logo": "assets/logos/crem-logo.jpg",
-    "description": "Donne vie au cégep avec des émissions musicales, de l'information et des projets étudiants passionnants.",
-    "instagram": "",
-    "facebook": "",
-    "tags": [
-      "cégep",
-      "étudiant"
-    ],
-    "_streamStatus": "none",
-    "_streamChecked": "2026-06-27T08:56:56.749Z"
   }
 ]

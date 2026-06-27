@@ -1,8 +1,8 @@
 /**
- * RÉQ Stream Proxy (Cloudflare Worker)
+ * LE RADAR Stream Proxy (Cloudflare Worker)
  *
  * Purpose:
- * - Makes any radio stream (HTTP or HTTPS) playable directly inside the RÉQ PWA.
+ * - Makes any radio stream (HTTP or HTTPS) playable directly inside the LE RADAR PWA.
  * - Adds proper CORS headers so the <audio> element works from GitHub Pages.
  * - Forwards ICY metadata if present.
  *
@@ -12,7 +12,7 @@
  * 3. Deploy
  * 4. Your worker URL will be something like https://req-stream-proxy.yourname.workers.dev
  *
- * Usage in RÉQ:
+ * Usage in LE RADAR:
  *   Set a global PROXY in app.js:
  *   const PROXY_BASE = 'https://req-stream-proxy.yourname.workers.dev';
  *
@@ -43,7 +43,7 @@ export default {
     try {
       const upstream = await fetch(target, {
         headers: {
-          'User-Agent': 'RÉQ-Proxy/1.0',
+          'User-Agent': 'LE-RADAR-Proxy/1.0',
           'Icy-MetaData': '1',
         },
       });

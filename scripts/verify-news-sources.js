@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Vérifie que chaque source active est bien intégrée à RADAR.
+ * Vérifie que chaque source active est bien intégrée à Le Radar.
  *
  *   node scripts/verify-news-sources.js
  *   node scripts/verify-news-sources.js --name "The Concordian"
@@ -38,7 +38,7 @@ function fetchFeed(url, timeout = 12000) {
       url,
       {
         headers: {
-          'User-Agent': 'Mozilla/5.0 (compatible; RADAR-VerifyBot/1.0)',
+          'User-Agent': 'Mozilla/5.0 (compatible; LE-RADAR-VerifyBot/1.0)',
           Accept: 'application/rss+xml, application/xml, text/xml, */*',
         },
         timeout,
@@ -211,7 +211,7 @@ async function main() {
   const ctx = { active, institutions, brand, newsCounts, socialNames };
   let fail = 0;
 
-  console.log('RADAR — Vérification des sources\n================================\n');
+  console.log('LE RADAR — Vérification des sources\n===================================\n');
 
   for (const src of targets) {
     const r = await verifySource(src, ctx);

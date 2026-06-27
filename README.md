@@ -1,4 +1,4 @@
-# RADAR — Les médias étudiants du Québec
+# LE RADAR — Les médias étudiants du Québec
 
 > *Les médias étudiants du Québec, sur ton radar • Student media on your radar.*
 
@@ -6,11 +6,11 @@
 ![PWA](https://img.shields.io/badge/PWA-ready-blue)
 ![License](https://img.shields.io/badge/license-GPL--2.0-green)
 
-**RADAR** est une application web progressive (PWA) **éditoriale, texte d'abord** qui rassemble en un seul endroit **les radios et les journaux étudiants** des cégeps et universités du Québec. Une page unique : un **syntoniseur radio** en tête, et le **fil des actualités étudiantes** en dessous.
+**LE RADAR** est une application web progressive (PWA) **éditoriale, texte d'abord** qui rassemble en un seul endroit **les radios et les journaux étudiants** des cégeps et universités du Québec. Une page unique : un **syntoniseur radio** en tête, et le **fil des actualités étudiantes** en dessous.
 
-**→ [Essayer RADAR maintenant](https://azdak919.github.io/radios-etudiantes-qc/)**
+**→ [Essayer LE RADAR maintenant](https://azdak919.github.io/radios-etudiantes-qc/)**
 
-> Projet non officiel et collaboratif. RADAR n’est affilié à aucun des médias listés.
+> Projet non officiel et collaboratif. Le Radar n’est affilié à aucun des médias listés.
 
 ---
 
@@ -18,7 +18,7 @@
 
 - **Design éditorial, texte d'abord** — titres, brèves et hiérarchie visuelle (manchette « À la une »)
 - **Syntoniseur radio** collant : choix du poste, lecture native (flux HTTPS), volume, Media Session API
-- **Postes natifs** — écoute directe sur RADAR pour les stations avec flux validé (ex. CHYZ, CISM, CKUT, CJLO, CFAK)
+- **Postes natifs** — écoute directe sur Le Radar pour les stations avec flux validé (ex. CHYZ, CISM, CKUT, CJLO, CFAK)
 - **Fil étudiant** — agrégation RSS des journaux étudiants, filtrable par source
 - **Identité couleur par établissement** — pastilles sources, accents radio et marques institutionnelles (`brand-colors.json`)
 - **« À l'antenne »** — émission en cours selon la grille horaire colligée (bot) + titre live via métadonnées ICY du flux
@@ -57,7 +57,7 @@ Ouvre **http://localhost:8080** — déploiement direct sur GitHub Pages (push s
 ```
 radios-etudiantes-qc/
 ├── index.html              # Page principale (fil + syntoniseur)
-├── feeds.html              # Page des flux RSS RADAR
+├── feeds.html              # Page des flux RSS LE RADAR
 ├── style.css               # Styles (clair / sombre, radio, fil)
 ├── app.js                  # Logique client (tuner, fil, PWA)
 ├── radios.json             # Registre des radios étudiantes
@@ -103,7 +103,7 @@ Le fil est **statique** : les bots GitHub Actions écrivent `news.json` ; le sit
 
 | Bot | Script | Rôle |
 |-----|--------|------|
-| Agrégateur | `scripts/fetch-news.js` | RSS → `news.json` |
+| Fil d'actualités | `scripts/fetch-news.js` | RSS → `news.json` |
 | Mainteneur sources | `scripts/discover-news-sources.js` | Santé et promotion des flux |
 | Images vedette | `scripts/ensure-lead-images.js` | Photos source, stock Openverse, QC |
 | Flux radio | `scripts/discover-streams.js` | Validation et découverte de streams |
@@ -152,7 +152,7 @@ Signale aussi les liens cassés, flux morts ou sources manquantes.
 
 Code libre utilisé conformément aux licences applicables; contenus et médias crédités à leurs auteurs respectifs.
 
-🤖 **Agrégateur automatisé de contenus** — RADAR collecte et reformate des publications étudiantes tierces (titres, brèves, liens, métadonnées). Chaque article renvoie vers sa source originale. Les radios et journaux listés restent propriété de leurs équipes respectives.
+🤖 **Agrégateur automatisé de contenus** — Le Radar collecte et reformate des publications étudiantes tierces (titres, brèves, liens, métadonnées). Chaque article renvoie vers sa source originale. Les radios et journaux listés restent propriété de leurs équipes respectives.
 
 ---
 

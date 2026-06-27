@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * RADAR Media Scanner
+ * LE RADAR Media Scanner
  *
  * Long-term discovery layer: reads institutions.json and looks for student
  * newspapers (RSS) and campus radios we don't cover yet. Findings land in
@@ -42,7 +42,7 @@ function fetchText(url, redirects = 4) {
         url,
         {
           headers: {
-            'User-Agent': 'Mozilla/5.0 (compatible; RADAR-MediaScanner/1.0)',
+            'User-Agent': 'Mozilla/5.0 (compatible; LE-RADAR-MediaScanner/1.0)',
             Accept: 'text/html,application/xhtml+xml,application/rss+xml,application/xml,*/*',
           },
           timeout: TIMEOUT,
@@ -318,7 +318,7 @@ async function main() {
     ...gaps.filter((i) => i.type === 'cegep'),
   ].slice(0, MAX_SCAN);
 
-  console.log('RADAR Media Scanner\n===================\n');
+  console.log('LE RADAR Media Scanner\n======================\n');
   console.log(`Institutions: ${insts.length} · gaps: ${gaps.length} · scanning: ${queue.length}\n`);
 
   const ctx = { hasNews, hasRadio, hosts };

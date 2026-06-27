@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * RADAR News Aggregator
+ * LE RADAR News Aggregator
  *
  * Builds news.json from the RSS feeds of Québec student newspapers
  * (universités + cégeps). Runs at build time (GitHub Actions) so the
@@ -584,7 +584,7 @@ async function fetchPageAuthors(items, feedDefaults, existing = new Map(), sourc
 // === Main ====================================================================
 async function main() {
   const doUpdate = process.argv.includes('--update');
-  console.log('RÉQ News Aggregator\n===================\n');
+  console.log('LE RADAR News Aggregator\n========================\n');
 
   if (!SOURCES.length) {
     console.error('No active sources in news-sources.json — aborting.');

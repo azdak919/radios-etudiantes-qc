@@ -1,4 +1,4 @@
-# Ajouter une source au fil RADAR
+# Ajouter une source au fil de Le Radar
 
 Guide pour intégrer un **média étudiant** (journal de campus, média
 indépendant tenu par des étudiant·e·s) au fil **Le fil étudiant**. Destiné aux

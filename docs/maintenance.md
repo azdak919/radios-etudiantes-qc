@@ -1,4 +1,4 @@
-# RADAR — Maintenance automatisée à long terme
+# LE RADAR — Maintenance automatisée à long terme
 
 Ce document décrit comment le projet se maintient **sans intervention humaine**
 dans l'idéal, et ce qui reste volontairement manuel.
@@ -86,7 +86,7 @@ La promotion radio est conservative : pas de flux = le candidat reste en file d'
 
 ---
 
-## Protocole : ajouter un journal au fil RADAR
+## Protocole : ajouter un journal au fil de Le Radar
 
 **Guide détaillé (humains et bots)** : [`docs/adding-news-source.md`](adding-news-source.md)
 — éligibilité, découverte RSS vs `html-list`, champs du registre, checklist complète.

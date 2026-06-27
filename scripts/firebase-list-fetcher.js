@@ -124,7 +124,7 @@ function postJson(url, body, timeout = DEFAULT_TIMEOUT) {
         headers: {
           'Content-Type': 'application/json',
           'Content-Length': Buffer.byteLength(payload),
-          'User-Agent': 'Mozilla/5.0 (compatible; RADAR-NewsBot/1.0)',
+          'User-Agent': 'Mozilla/5.0 (compatible; LE-RADAR-NewsBot/1.0)',
         },
         timeout,
       },

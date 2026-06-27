@@ -72,7 +72,7 @@ function buildFallbackSvg(item, brandColors = {}) {
   const color = resolveBrandColor(item, brandColors);
   const dark = darkenHex(color, 0.32);
   const title = (item.title || 'Article').replace(/\s+/g, ' ').trim();
-  const source = item.source || 'RADAR';
+  const source = item.source || 'Le Radar';
   const inst = item.institution || '';
   const lines = wrapLines(title, 36, 4);
   const tspans = lines.map((ln, i) =>
@@ -97,7 +97,7 @@ function buildFallbackSvg(item, brandColors = {}) {
   <text x="64" y="72" fill="rgba(255,255,255,0.92)" font-family="system-ui,Segoe UI,sans-serif" font-size="28" font-weight="700" letter-spacing="0.12em">${escapeXml(source.toUpperCase())}</text>
   ${inst ? `<text x="64" y="108" fill="rgba(255,255,255,0.72)" font-family="system-ui,Segoe UI,sans-serif" font-size="20" font-weight="500">${escapeXml(inst)}</text>` : ''}
   <text x="64" y="${inst ? 220 : 200}" fill="#ffffff" font-family="Georgia,'Times New Roman',serif" font-size="44" font-weight="700">${tspans}</text>
-  <text x="64" y="748" fill="rgba(255,255,255,0.55)" font-family="system-ui,Segoe UI,sans-serif" font-size="18" letter-spacing="0.08em">RADAR · MÉDIAS ÉTUDIANTS QC</text>
+  <text x="64" y="748" fill="rgba(255,255,255,0.55)" font-family="system-ui,Segoe UI,sans-serif" font-size="18" letter-spacing="0.08em">LE RADAR · MÉDIAS ÉTUDIANTS QC</text>
 </svg>`;
 }
 

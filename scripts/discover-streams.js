@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 /**
- * RÉQ Stream Tracker Bot
+ * LE RADAR Stream Tracker Bot
  *
  * Automatically finds and validates direct audio streams so stations
- * can be played inside the RÉQ site instead of sending users to the
+ * can be played inside the LE RADAR site instead of sending users to the
  * official websites.
  *
  * Features:
@@ -100,7 +100,7 @@ async function fetchText(url, accept = '*/*') {
       url,
       {
         headers: {
-          'User-Agent': 'RÉQ-StreamBot/1.0',
+          'User-Agent': 'LE-RADAR-StreamBot/1.0',
           'Accept': accept,
         },
         timeout: TIMEOUT,
@@ -149,7 +149,7 @@ async function validateStream(url, redirects = 0) {
       url,
       {
         headers: {
-          'User-Agent': 'RÉQ-StreamBot/1.0',
+          'User-Agent': 'LE-RADAR-StreamBot/1.0',
           'Icy-MetaData': '1',
         },
         timeout: TIMEOUT,
@@ -511,7 +511,7 @@ async function main() {
     candidateRegistry = JSON.parse(fs.readFileSync(CANDIDATES_PATH, 'utf8'));
   } catch {}
 
-  console.log('RÉQ Stream Tracker Bot');
+  console.log('LE RADAR Stream Tracker Bot');
   console.log('======================\n');
 
   const updatedRadios = [...radios];

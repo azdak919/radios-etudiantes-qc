@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════════
-   RÉQ — Le fil étudiant du Québec
+   LE RADAR — Le fil étudiant du Québec
    Design éditorial, texte d'abord. Pensé pour les jeunes adultes :
    typographie expressive, identité couleur par source, sobre et clair.
 ═══════════════════════════════════════════════════════════ */
@@ -220,8 +220,6 @@ a { color: inherit; }
   0% { box-shadow: 0 0 0 0 rgba(200,16,46,0.55); }
   100% { box-shadow: 0 0 0 7px rgba(200,16,46,0); }
 }
-@media (max-width: 480px) { .tuner-onair { font-size: 0; gap: 0; } }
-
 .tuner-step {
   flex-shrink: 0;
   width: 30px; height: 36px;
@@ -231,6 +229,9 @@ a { color: inherit; }
   border-radius: 8px;
   font-size: 21px; line-height: 1;
   cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   transition: background 120ms ease, border-color 120ms ease, transform 120ms ease;
 }
 .tuner-step:hover { background: rgba(255,255,255,0.14); border-color: rgba(255,255,255,0.3); }
@@ -412,8 +413,58 @@ a { color: inherit; }
   .tuner-vol-btn:hover { color: inherit; background: none; }
 }
 
-/* Mobile : le curseur se déplie dans une bulle ouverte par l'icône. */
+/* Mobile : contrôles proportionnels (carrés arrondis + volume circulaire). */
 @media (max-width: 679.98px) {
+  .tuner-inner { padding: 8px var(--pad); gap: 8px; }
+  .tuner-controls { gap: 6px; }
+
+  /* Espace fixe pour l'indicateur EN ONDES (pastille seule, pas un bouton). */
+  .tuner-label {
+    flex-shrink: 0;
+    width: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .tuner-onair {
+    font-size: 0;
+    gap: 0;
+    width: 36px;
+    height: 36px;
+    justify-content: center;
+  }
+  .tuner-onair::before {
+    width: 9px;
+    height: 9px;
+  }
+
+  .tuner-step {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    font-size: 22px;
+  }
+
+  .tuner-now { min-height: 36px; }
+
+  .tuner-actions { gap: 6px; }
+
+  .tuner-vol-btn {
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    margin: 0;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.16);
+    background: rgba(255,255,255,0.06);
+    color: rgba(255,255,255,0.72);
+    transition: background 120ms ease, border-color 120ms ease, color 120ms ease, transform 120ms ease;
+  }
+  .tuner-vol-btn:hover { color: rgba(255,255,255,0.95); background: rgba(255,255,255,0.12); }
+  .tuner-vol-btn:active { transform: scale(0.93); }
+  .tuner-vol-btn .ico-vol { width: 18px; height: 18px; }
+  .tuner.is-boosted .tuner-vol-btn { color: #ff7d6e; border-color: rgba(255,125,110,0.35); }
+
   .tuner-vol-slot {
     position: absolute;
     top: calc(100% + 12px);

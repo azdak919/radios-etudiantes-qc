@@ -1,6 +1,56 @@
 {
-  "_comment": "Candidats radios découverts automatiquement (scripts/scan-media.js) ou ajoutés manuellement. Promus vers radios.json quand discover-streams.js valide un flux direct. Ne pas éditer _failCount/_discovered à la main.",
-  "candidates": [],
+  "_comment": "Postes retirés du syntoniseur ou en attente de flux natif. Promus vers radios.json quand discover-streams.js valide un flux direct. Ne pas éditer _failCount/_discovered à la main.",
+  "candidates": [
+    {
+      "id": "cfou",
+      "name": "CFOU 89,1",
+      "institution": "Université du Québec à Trois-Rivières",
+      "region": "Mauricie",
+      "type": "universite",
+      "website": "https://cfou.ca/",
+      "listenUrl": "https://radio.garden/listen/cfou-fm-89-1/QdJ2n1fA",
+      "logo": "assets/logos/cfou-logo.jpg",
+      "_note": "Retiré du syntoniseur — écoute externe (radio.garden). Réintégrer quand un flux natif est validé.",
+      "_pausedReason": "external-listen",
+      "_lastChecked": "2026-06-27T08:46:27.429Z"
+    },
+    {
+      "id": "choq",
+      "name": "CHOQ.ca",
+      "institution": "UQAM",
+      "region": "Montréal",
+      "type": "universite",
+      "website": "https://www.choq.ca/",
+      "logo": "assets/logos/choq-logo.jpg",
+      "_note": "Retiré du syntoniseur — pas de flux direct. À réintégrer quand discover-streams.js trouve un stream.",
+      "_pausedReason": "no-stream",
+      "_lastChecked": "2026-06-27T08:49:32.064Z"
+    },
+    {
+      "id": "cjep",
+      "name": "CJEP",
+      "institution": "Cégep de Jonquière",
+      "region": "Saguenay–Lac-Saint-Jean",
+      "type": "cegep",
+      "website": "http://cjepradio.com/",
+      "logo": "assets/logos/cjep-logo.jpg",
+      "_note": "Retiré du syntoniseur — pas de flux direct.",
+      "_pausedReason": "no-stream",
+      "_lastChecked": "2026-06-27T08:53:52.499Z"
+    },
+    {
+      "id": "crem",
+      "name": "CREM",
+      "institution": "Cégep Montmorency",
+      "region": "Montréal",
+      "type": "cegep",
+      "website": "https://www.agem.quebec/comites/crem/",
+      "logo": "assets/logos/crem-logo.jpg",
+      "_note": "Retiré du syntoniseur — pas de flux direct.",
+      "_pausedReason": "no-stream",
+      "_lastChecked": "2026-06-27T08:56:56.749Z"
+    }
+  ],
   "_lastScan": "2026-06-27T02:45:42.157Z",
   "_lastRun": "2026-06-27T17:44:51.008Z"
 }

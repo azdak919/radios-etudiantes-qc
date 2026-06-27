@@ -1,4 +1,4 @@
-// RADAR — Les médias étudiants du Québec
+// LE RADAR — Les médias étudiants du Québec
 // Page unique : un syntoniseur radio en haut, un fil d'articles (texte) en dessous.
 
 // Proxy CORS optionnel pour les flux HTTP→HTTPS (déployer proxy/cloudflare-worker.js).
@@ -329,7 +329,9 @@ async function init() {
     loadNews(),
   ]);
 
-  radios = radiosData.status === 'fulfilled' ? sortRadios(radiosData.value) : [];
+  radios = radiosData.status === 'fulfilled'
+    ? sortRadios(radiosData.value).filter((r) => getPlayableStream(r))
+    : [];
   radioNowPlaying = nowPlayingData.status === 'fulfilled' ? nowPlayingData.value : { stations: {} };
   radioSchedules = schedulesData.status === 'fulfilled' && schedulesData.value?.stations
     ? schedulesData.value
@@ -577,8 +579,7 @@ function buildTunerOptions() {
     inGroup.forEach(r => {
       const opt = document.createElement('option');
       opt.value = r.id;
-      const suffix = getPlayableStream(r) ? '' : ' — écoute sur site externe ↗';
-      opt.textContent = `${r.name} · ${r.institution}${suffix}`;
+      opt.textContent = `${r.name} · ${r.institution}`;
       og.appendChild(opt);
     });
     TUNER_SELECT.appendChild(og);
@@ -1641,7 +1642,7 @@ function safeCreateArticle(item, role = 'standard') {
   try {
     return createArticle(item, role);
   } catch (err) {
-    console.error('RADAR: échec rendu article', item?.source, item?.title, err);
+    console.error('Le Radar: échec rendu article', item?.source, item?.title, err);
     return null;
   }
 }
@@ -1847,7 +1848,7 @@ function buildClientFallbackDataUrl(item) {
   const color = institutionBrandColor(item.institution || '') || sourceColors[item.source] || '#003DA5';
   const dark = darkenHex(color);
   const title = cleanTitle(item.title || 'Article');
-  const source = item.source || 'RADAR';
+  const source = item.source || 'Le Radar';
   const inst = item.institution || '';
   const lines = wrapTitleLines(title, 36, 4);
   const tspans = lines.map((ln, i) =>

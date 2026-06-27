@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * RADAR Social Feed
+ * LE RADAR Social Feed
  *
  * Builds social-feed.json: student media profiles on Instagram, Facebook, X…
  * Stats are read from public Open Graph metadata (no API keys).
@@ -32,7 +32,7 @@ function fetchText(url, redirects = 4) {
         url,
         {
           headers: {
-            'User-Agent': 'Mozilla/5.0 (compatible; RADAR-SocialBot/1.0)',
+            'User-Agent': 'Mozilla/5.0 (compatible; LE-RADAR-SocialBot/1.0)',
             Accept: 'text/html,application/xhtml+xml,*/*',
           },
           timeout: TIMEOUT,
@@ -226,7 +226,7 @@ function sleep(ms) {
 
 async function main() {
   const doUpdate = process.argv.includes('--update');
-  console.log('RADAR Social Feed\n=================\n');
+  console.log('LE RADAR Social Feed\n====================\n');
 
   const newsRegistry = JSON.parse(fs.readFileSync(NEWS_SOURCES_PATH, 'utf8'));
   const radios = JSON.parse(fs.readFileSync(RADIOS_PATH, 'utf8'));

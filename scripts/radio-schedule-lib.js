@@ -29,7 +29,7 @@ const AIRTIME_DAYS = {
 // UA de navigateur : plusieurs sites de radios bloquent les agents génériques.
 const BROWSER_UA =
   'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) ' +
-  'Chrome/124.0 Safari/537.36 RADAR-ScheduleBot/1.0';
+  'Chrome/124.0 Safari/537.36 LE-RADAR-ScheduleBot/1.0';
 
 // Jours en toutes lettres (FR + EN + schema.org) → index 0-6 (dimanche = 0).
 const DAY_INDEX = {
@@ -188,7 +188,7 @@ async function fetchJson(url, { fetchImpl = globalThis.fetch, timeoutMs = 15000 
     const res = await fetchImpl(url, {
       signal: ctrl.signal,
       redirect: 'follow',
-      headers: { 'User-Agent': 'RADAR-ScheduleBot/1.0', Accept: 'application/json' },
+      headers: { 'User-Agent': 'LE-RADAR-ScheduleBot/1.0', Accept: 'application/json' },
     });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     return await res.json();

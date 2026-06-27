@@ -16,5 +16,5 @@
   <text x="64" y="72" fill="rgba(255,255,255,0.92)" font-family="system-ui,Segoe UI,sans-serif" font-size="28" font-weight="700" letter-spacing="0.12em">LA PIGE</text>
   <text x="64" y="108" fill="rgba(255,255,255,0.72)" font-family="system-ui,Segoe UI,sans-serif" font-size="20" font-weight="500">Cégep de Jonquière (ATM – journalisme)</text>
   <text x="64" y="220" fill="#ffffff" font-family="Georgia,'Times New Roman',serif" font-size="44" font-weight="700"><tspan x="64" dy="0">Une page se tourne au Salon L’image</tspan><tspan x="64" dy="36">de Jonquière</tspan></text>
-  <text x="64" y="748" fill="rgba(255,255,255,0.55)" font-family="system-ui,Segoe UI,sans-serif" font-size="18" letter-spacing="0.08em">RADAR · MÉDIAS ÉTUDIANTS QC</text>
+  <text x="64" y="748" fill="rgba(255,255,255,0.55)" font-family="system-ui,Segoe UI,sans-serif" font-size="18" letter-spacing="0.08em">LE RADAR · MÉDIAS ÉTUDIANTS QC</text>
 </svg>

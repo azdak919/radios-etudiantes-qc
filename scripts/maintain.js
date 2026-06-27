@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * RADAR Maintenance Orchestrator
+ * LE RADAR Maintenance Orchestrator
  *
  * Single entry point for long-term automated upkeep. Runs the bot pipeline in
  * order, writes bot-status.json (health dashboard), and exits non-zero if
@@ -214,7 +214,7 @@ function buildStatus(steps) {
 }
 
 async function main() {
-  console.log('RADAR Maintenance Orchestrator');
+  console.log('LE RADAR Maintenance Orchestrator');
   console.log('================================\n');
   console.log(`Mode: ${doUpdate ? 'UPDATE' : 'dry-run'}${skipInstitutions ? ' (skip institutions)' : ''}`);
 

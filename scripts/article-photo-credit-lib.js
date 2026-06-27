@@ -348,7 +348,7 @@ function extractPhotoCreditFromHtml(html = '', imageUrl = '', lang = 'fr') {
 }
 
 function formatMediaFallbackCredit(item = {}) {
-  const media = String(item.source || '').trim() || 'RADAR';
+  const media = String(item.source || '').trim() || 'Le Radar';
   const en = item.lang === 'en';
   return {
     cited: false,

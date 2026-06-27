@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * RÉQ News Source Bot
+ * LE RADAR News Source Bot
  *
  * Maintains news-sources.json so the news feed keeps working over time:
  *
@@ -275,7 +275,7 @@ async function main() {
   registry.active = registry.active || [];
   registry.candidates = registry.candidates || [];
 
-  console.log('RÉQ News Source Bot\n===================\n');
+  console.log('LE RADAR News Source Bot\n========================\n');
 
   const cachedBySource = loadCachedBySource();
 

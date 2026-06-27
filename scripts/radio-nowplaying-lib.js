@@ -79,7 +79,7 @@ function fetchIcyNowPlaying(url, redirects = 0, timeout = DEFAULT_TIMEOUT) {
       url,
       {
         headers: {
-          'User-Agent': 'RADAR-NowPlayingBot/1.0',
+          'User-Agent': 'LE-RADAR-NowPlayingBot/1.0',
           'Icy-MetaData': '1',
         },
         timeout,
