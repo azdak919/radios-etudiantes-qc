@@ -377,18 +377,6 @@ function radioAccentColor(radio) {
   return palette[Math.max(0, idx) % palette.length];
 }
 
-function applyTunerAccent(radio) {
-  if (!TUNER) return;
-  const color = radio ? radioAccentColor(radio) : null;
-  if (color) {
-    TUNER.style.setProperty('--c', color);
-    TUNER.classList.add('has-station');
-  } else {
-    TUNER.style.removeProperty('--c');
-    TUNER.classList.remove('has-station');
-  }
-}
-
 function playableRadios() {
   return radios.filter((r) => getPlayableStream(r));
 }
@@ -634,7 +622,6 @@ function selectStation(id, { autoplay = false, openExternal = false } = {}) {
       : 'Flux direct indisponible';
 
   updateMediaSession(radio);
-  applyTunerAccent(radio);
   if (playable) syncFeaturedBar(radio);
 
   if (!playable) {
@@ -690,10 +677,7 @@ function stopPlayback({ keepStation = false } = {}) {
     audio.load();
     suppressAudioError = false;
   }
-  if (!keepStation) {
-    currentStation = null;
-    applyTunerAccent(null);
-  }
+  if (!keepStation) currentStation = null;
   updatePlayUI();
 }
 
