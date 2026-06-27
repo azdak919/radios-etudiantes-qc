@@ -545,7 +545,7 @@ function getArticleRole(index) {
   if (index === 0) return 'lead';
   if (index <= 2) return 'feature';
   if (index <= 11) return 'compact';
-  return 'standard';
+  return index <= 20 ? 'standard' : 'compact';
 }
 
 function createArticle(item, role = 'standard') {
@@ -562,7 +562,8 @@ function createArticle(item, role = 'standard') {
   const time = d ? formatStamp(d) : '';
   const fresh = d ? (Date.now() - d) < 120 * 60000 : false;
   const { author, body } = splitByline(item);
-  const brief = cleanBrief(body);
+  const { text: brief, truncated: briefTruncated } = prepareBrief(body, role, item.lang);
+  const readMore = item.lang === 'en' ? 'Read more →' : 'Lire la suite →';
   const byLabel = item.lang === 'en' ? 'By' : 'Par';
   const canUseImage = ['lead', 'feature'].includes(role);
   const hasImageCandidate = canUseImage && !!getCandidateImage(item.image);
@@ -578,7 +579,7 @@ function createArticle(item, role = 'standard') {
     ${canUseImage ? '<figure class="article-media" aria-hidden="true"></figure>' : ''}
     <h3 class="article-title">${escapeHtml(cleanTitle(item.title))}</h3>
     ${author ? `<p class="article-byline">${byLabel} <strong>${escapeHtml(author)}</strong></p>` : ''}
-    ${brief ? `<p class="article-brief">${escapeHtml(brief)}</p>` : ''}
+    ${brief ? `<p class="article-brief">${escapeHtml(brief)}${briefTruncated ? `<span class="article-more">${readMore}</span>` : ''}</p>` : ''}
   `;
 
   if (canUseImage) attachArticleImage(a, item, role);
@@ -660,13 +661,31 @@ function isUsableArticleImage(img, role) {
 // returning the author plus the remaining body text for the brief.
 function splitByline(item) {
   const ex = String(item.excerpt || '');
-  const m = ex.match(/^(\s*(?:Par|By)\s+([\p{Lu}][\p{L}'’.\-]+(?:\s+[\p{Lu}][\p{L}'’.\-]+){0,3}))/u);
   let author = normalizeAuthor(item.author);
   let body = ex;
-  if (m) {
-    if (!author) author = normalizeAuthor(m[2]);
-    body = ex.slice(m[0].length).trim();
+
+  if (author) {
+    const escaped = author.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const extended = new RegExp(
+      `^\\s*(?:Par|By)\\s+${escaped}(?:\\s+[\\p{Lu}][\\p{L}'’.\\-]+)?(?=\\s+(?:Le|La|Les|L'|L’|Un|Une|À|A|The|An)\\s)`,
+      'iu',
+    );
+    const known = new RegExp(`^\\s*(?:Par|By)\\s+${escaped}\\s*`, 'iu');
+    if (extended.test(ex)) body = ex.replace(extended, '').trim();
+    else if (known.test(ex)) body = ex.replace(known, '').trim();
+  } else if (/^(?:Par|By)\s+/i.test(ex)) {
+    for (let maxExtra = 0; maxExtra <= 2; maxExtra += 1) {
+      const re = new RegExp(`^(\\s*(?:Par|By)\\s+([\\p{Lu}][\\p{L}'’.\\-]+(?:\\s+[\\p{Lu}][\\p{L}'’.\\-]+){0,${maxExtra}}))`, 'u');
+      const m = ex.match(re);
+      if (!m) continue;
+      const next = ex.slice(m[0].length).trim();
+      if (!next || !/^[\p{Lu}0-9«"']/u.test(next)) continue;
+      author = normalizeAuthor(m[2]);
+      body = next;
+      break;
+    }
   }
+
   return { author, body };
 }
 
@@ -736,34 +755,9 @@ function cleanTitle(title = '') {
   return t;
 }
 
-const TRUNC_CHAR = '(?:…|\\.\\.\\.?)';
-const TRUNC_START_RE = new RegExp(`^\\s*(?:\\[\\s*${TRUNC_CHAR}\\s*\\]|\\(\\s*${TRUNC_CHAR}\\s*\\)|${TRUNC_CHAR})\\s*`, 'u');
-const TRUNC_END_RE = new RegExp(`\\s*(?:\\[\\s*${TRUNC_CHAR}\\s*\\]|\\(\\s*${TRUNC_CHAR}\\s*\\)|${TRUNC_CHAR})\\s*$`, 'u');
+const BRIEF_LIMITS = { lead: 300, feature: 210, standard: 170, compact: 0 };
 
-function parseTruncationMarkers(text = '') {
-  let s = String(text).replace(/\s+/g, ' ').trim();
-  const truncatedStart = TRUNC_START_RE.test(s);
-  const truncatedEnd = TRUNC_END_RE.test(s);
-  if (truncatedStart) s = s.replace(TRUNC_START_RE, '').trim();
-  if (truncatedEnd) s = s.replace(TRUNC_END_RE, '').trim();
-  return { text: s, truncatedStart, truncatedEnd };
-}
-
-function formatTruncatedBrief(text = '', { truncatedStart = false, truncatedEnd = false } = {}) {
-  let s = String(text).replace(/\s+/g, ' ').trim();
-  if (!s) return '';
-  if (truncatedStart) s = `… ${s}`;
-  if (truncatedEnd) s = `${s}…`;
-  return s;
-}
-
-function looksAbruptlyCut(text = '') {
-  const s = String(text).trim();
-  if (s.length < 200) return false;
-  return !TRUNC_END_RE.test(s) && !/[.!?…»"’)\]]\s*$/u.test(s);
-}
-
-function cleanBrief(raw = '') {
+function sanitizeBriefBody(raw = '') {
   let s = String(raw);
   s = s.replace(/<[^>]*>/g, ' ');
   s = s.replace(/\]\]>/g, '');
@@ -773,18 +767,34 @@ function cleanBrief(raw = '') {
   s = s.replace(/\[[^\]]*(?:read more|lire la suite|continue reading)[^\]]*\]/gi, '');
   s = s.replace(/\b(?:read more|lire la suite|continue reading)\b\.?\s*$/i, '');
   s = s.replace(/^(?:Dear Tribune|Dear Editor),?\s*/i, '');
+  s = s.replace(/(?:…|\.{3,}|\[…\]|\[\.\.\.\])/g, '');
   s = s.replace(/&(?:nbsp|#160);/gi, ' ');
   s = s.replace(/&amp;/gi, '&');
-  s = s.replace(/\s+/g, ' ').trim();
+  return s.replace(/\s+/g, ' ').trim();
+}
 
-  const { text, truncatedStart, truncatedEnd } = parseTruncationMarkers(s);
-  s = text;
-  if (s.length < 12) return '';
+function endsCompleteSentence(text = '') {
+  return /[.!?»"')\]]\s*$/.test(String(text).trim());
+}
 
-  return formatTruncatedBrief(s, {
-    truncatedStart,
-    truncatedEnd: truncatedEnd || looksAbruptlyCut(s),
-  });
+function prepareBrief(raw = '', role = 'standard') {
+  const limit = BRIEF_LIMITS[role] ?? 170;
+  let s = sanitizeBriefBody(raw);
+  if (!s || limit === 0 || s.length < 12) return { text: '', truncated: false };
+
+  if (s.length <= limit) {
+    const truncated = !endsCompleteSentence(s) && s.length >= 80;
+    const text = truncated ? `${s.replace(/[,;:\s]+$/u, '')}...` : s;
+    return { text, truncated };
+  }
+
+  let cut = s.slice(0, limit);
+  const lastSpace = cut.lastIndexOf(' ');
+  if (lastSpace > limit * 0.5) cut = cut.slice(0, lastSpace);
+  cut = cut.replace(/[,;:\s]+$/u, '').trimEnd();
+  if (!cut) return { text: '', truncated: false };
+
+  return { text: `${cut}...`, truncated: true };
 }
 
 function escapeHtml(str = '') {

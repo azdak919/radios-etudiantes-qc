@@ -102,47 +102,25 @@ function stripHtml(html = '') {
     .trim();
 }
 
-const TRUNC_CHAR = '(?:…|\\.\\.\\.?)';
-const TRUNC_START_RE = new RegExp(`^\\s*(?:\\[\\s*${TRUNC_CHAR}\\s*\\]|\\(\\s*${TRUNC_CHAR}\\s*\\)|${TRUNC_CHAR})\\s*`, 'u');
-const TRUNC_END_RE = new RegExp(`\\s*(?:\\[\\s*${TRUNC_CHAR}\\s*\\]|\\(\\s*${TRUNC_CHAR}\\s*\\)|${TRUNC_CHAR})\\s*$`, 'u');
+const TRUNC_MARKERS_RE = /(?:…|\.{3,}|\[…\]|\[\.\.\.\])/g;
 
-function parseTruncationMarkers(text = '') {
-  let s = String(text).replace(/\s+/g, ' ').trim();
-  const truncatedStart = TRUNC_START_RE.test(s);
-  const truncatedEnd = TRUNC_END_RE.test(s);
-  if (truncatedStart) s = s.replace(TRUNC_START_RE, '').trim();
-  if (truncatedEnd) s = s.replace(TRUNC_END_RE, '').trim();
-  return { text: s, truncatedStart, truncatedEnd };
-}
-
-function formatTruncatedExcerpt(text = '', { truncatedStart = false, truncatedEnd = false } = {}) {
-  let s = String(text).replace(/\s+/g, ' ').trim();
-  if (!s) return '';
-  if (truncatedStart) s = `… ${s}`;
-  if (truncatedEnd) s = `${s}…`;
-  return s;
-}
-
-function looksAbruptlyCut(text = '') {
-  const s = String(text).trim();
-  if (s.length < 200) return false;
-  return !TRUNC_END_RE.test(s) && !/[.!?…»"’)\]]\s*$/u.test(s);
+function stripTruncationArtifacts(text = '') {
+  return String(text)
+    .replace(TRUNC_MARKERS_RE, '')
+    .replace(/\s+/g, ' ')
+    .trim();
 }
 
 function truncateExcerpt(text = '', max = 280) {
-  const { text: body, truncatedStart, truncatedEnd } = parseTruncationMarkers(text);
-  if (!body) return '';
+  let s = stripTruncationArtifacts(stripHtml(text));
+  if (!s) return '';
 
-  if (body.length <= max) {
-    return formatTruncatedExcerpt(body, { truncatedStart, truncatedEnd });
-  }
+  if (s.length <= max) return s;
 
-  let cut = body.slice(0, max);
+  let cut = s.slice(0, max);
   const lastSpace = cut.lastIndexOf(' ');
   if (lastSpace > max * 0.55) cut = cut.slice(0, lastSpace);
-  cut = cut.replace(/[,;:\s]+$/u, '').trimEnd();
-
-  return formatTruncatedExcerpt(cut, { truncatedStart, truncatedEnd: true });
+  return cut.replace(/[,;:\s]+$/u, '').trimEnd();
 }
 
 const MC_CATEGORY_PREFIX = /^(?:Photoreportage|Marché aux puces|Cobaye|Incursion|Reportage|Opinion|Entrevue|Critique|Chronique)/;
@@ -195,11 +173,19 @@ function normalizeAuthor(name = '') {
 
 function extractBylineFromText(text = '') {
   const plain = stripHtml(text);
-  const m = plain.match(/^(?:Par|By)\s+([\p{Lu}][\p{L}'’.\-]+(?:\s+[\p{Lu}][\p{L}'’.\-]+){0,3})/u);
-  if (!m) return { author: '', body: plain };
-  const author = normalizeAuthor(m[1]);
-  const body = plain.slice(m[0].length).trim();
-  return { author, body };
+  if (!/^(?:Par|By)\s+/i.test(plain)) return { author: '', body: plain };
+
+  for (let maxExtra = 0; maxExtra <= 2; maxExtra += 1) {
+    const re = new RegExp(`^(?:Par|By)\\s+([\\p{Lu}][\\p{L}'’.\\-]+(?:\\s+[\\p{Lu}][\\p{L}'’.\\-]+){0,${maxExtra}})`, 'u');
+    const m = plain.match(re);
+    if (!m) continue;
+    const author = normalizeAuthor(m[1]);
+    const body = plain.slice(m[0].length).trim();
+    if (!body) continue;
+    if (/^[\p{Lu}0-9«"']/u.test(body)) return { author, body };
+  }
+
+  return { author: '', body: plain };
 }
 
 function isJunkExcerpt(text = '') {

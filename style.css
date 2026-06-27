@@ -674,10 +674,15 @@ a { color: inherit; }
   line-height: 1.55;
   color: var(--ink-soft);
   margin: 0;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
+}
+
+.article-more {
+  display: inline;
+  margin-left: 0.3em;
+  font-weight: 600;
+  font-size: 0.88em;
+  color: var(--c, var(--accent));
+  white-space: nowrap;
 }
 @media (min-width: 600px) { .article-title { font-size: 1.6rem; } }
 
@@ -708,18 +713,11 @@ a { color: inherit; }
 .article--lead .article-brief {
   font-size: 1.08rem;
   line-height: 1.6;
-  -webkit-line-clamp: 3;
   max-width: 64ch;
 }
 
-.article--lead.article--text .article-brief {
-  -webkit-line-clamp: 5;
-}
-
-.article--feature .article-brief { -webkit-line-clamp: 3; }
-
-.article--feature.article--text .article-brief {
-  -webkit-line-clamp: 4;
+.article--feature .article-brief {
+  line-height: 1.5;
 }
 
 .article--compact {
@@ -730,7 +728,7 @@ a { color: inherit; }
   line-height: 1.18;
 }
 .article--compact .article-brief {
-  -webkit-line-clamp: 2;
+  display: none;
 }
 
 /* Loading skeletons */
@@ -870,7 +868,6 @@ a { color: inherit; }
 
   .news-list[data-hero="text"] .article--lead .article-brief {
     max-width: none;
-    -webkit-line-clamp: 5;
   }
 
   .news-list[data-hero="image"] .article--lead.has-image .article-media {
@@ -884,9 +881,7 @@ a { color: inherit; }
     max-width: 16ch;
   }
 
-  .news-list[data-hero="image"] .article--lead .article-brief {
-    -webkit-line-clamp: 4;
-  }
+
 
   .article--feature {
     padding: 16px 32px 16px 0;
@@ -903,16 +898,12 @@ a { color: inherit; }
     line-height: 1.2;
   }
 
-  .article--feature .article-brief {
-    -webkit-line-clamp: 3;
-  }
-
   .article--feature .article-byline {
     margin-bottom: 5px;
   }
 
   .article--standard {
-    padding: 14px 32px 14px 0;
+    padding: 11px 32px 11px 0;
     border-top: 0;
   }
 
@@ -923,10 +914,6 @@ a { color: inherit; }
   .article--standard .article-title {
     font-size: 1.32rem;
     line-height: 1.2;
-  }
-
-  .article--standard .article-brief {
-    -webkit-line-clamp: 3;
   }
 
   /* Colonne droite : fil court multi-sources */
@@ -994,10 +981,6 @@ a { color: inherit; }
     line-height: 1.3;
     letter-spacing: 0;
     margin-bottom: 0;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
   }
 
   .article--compact .article-brief {
