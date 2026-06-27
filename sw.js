@@ -1,4 +1,4 @@
-const CACHE_NAME = "req-shell-v2";
+const CACHE_NAME = "req-shell-v3";
 const APP_SHELL = [
   "./",
   "./index.html",
