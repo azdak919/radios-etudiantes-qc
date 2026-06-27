@@ -1,4 +1,4 @@
-const CACHE_NAME = "radar-shell-v57";
+const CACHE_NAME = "radar-shell-v58";
 const APP_SHELL = [
   "./",
   "./index.html",
@@ -48,6 +48,20 @@ self.addEventListener("fetch", (event) => {
   if (request.mode === "navigate") {
     event.respondWith(
       fetch(request).catch(() => caches.match("./index.html"))
+    );
+    return;
+  }
+
+  // Network-first for app code so bugfixes reach users without stale cache.
+  if (url.pathname.endsWith(".js") || url.pathname.endsWith(".css")) {
+    event.respondWith(
+      fetch(request)
+        .then((networkResponse) => {
+          const clone = networkResponse.clone();
+          caches.open(CACHE_NAME).then((cache) => cache.put(request, clone));
+          return networkResponse;
+        })
+        .catch(() => caches.match(request))
     );
     return;
   }

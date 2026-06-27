@@ -125,6 +125,9 @@ function registerServiceWorker() {
   navigator.serviceWorker.register('./sw.js').catch((e) => {
     console.warn('Service worker registration failed', e);
   });
+  navigator.serviceWorker.getRegistrations?.().then((regs) => {
+    regs.forEach((reg) => reg.update());
+  }).catch(() => {});
 }
 
 // ─── Theme (clair / sombre) ────────────────────────────────────────────────────
@@ -638,12 +641,19 @@ function renderNews() {
 
   heroItems.forEach((item, i) => {
     const role = i === 0 ? 'lead' : 'feature';
-    hero.appendChild(createArticle(item, role, articleOpts));
+    const article = safeCreateArticle(item, role, articleOpts);
+    if (article) hero.appendChild(article);
   });
 
-  briefItems.forEach((item) => compacts.push(createArticle(item, 'compact', articleOpts)));
+  briefItems.forEach((item) => {
+    const article = safeCreateArticle(item, 'compact', articleOpts);
+    if (article) compacts.push(article);
+  });
 
-  tailItems.forEach((item) => tail.push(createArticle(item, 'standard', articleOpts)));
+  tailItems.forEach((item) => {
+    const article = safeCreateArticle(item, 'standard', articleOpts);
+    if (article) tail.push(article);
+  });
 
   const balanceColumns = !(isSourceView && leadHasImage);
 
@@ -699,6 +709,8 @@ const BRIEF_SIDEBAR_MAX = 7;
 const SOURCE_HERO_WITH_IMAGE_MAX = 2; /* à la une + 1 vedette si image */
 const CONTINGENCY_MAX_SESSIONS_BACK = 3;
 const CONTINGENCY_ULTIMATE_BAND = 4;
+const BRIEF_LIMITS = { lead: 500, feature: 360, compact: 170, standard: 170 };
+const LEAD_BRIEF_MIN_CHARS = 140;
 
 function articleKey(item) {
   return item.link || `${item.source}::${item.date}::${item.title}`;
@@ -1017,6 +1029,15 @@ function partitionSourceFeed(items, referenceDate = new Date()) {
     (item) => !heroKeys.has(articleKey(item)) && !briefKeys.has(articleKey(item)),
   );
   return { heroItems, briefItems, tailItems, contingencyBand, leadHasImage };
+}
+
+function safeCreateArticle(item, role = 'standard', opts = {}) {
+  try {
+    return createArticle(item, role, opts);
+  } catch (err) {
+    console.error('RADAR: échec rendu article', item?.source, item?.title, err);
+    return null;
+  }
 }
 
 function createArticle(item, role = 'standard', { hideSourceMeta = false } = {}) {
@@ -1473,9 +1494,6 @@ function cleanTitle(title = '') {
   if (prefix) t = t.slice(prefix[0].length).trim();
   return stripLeadingNonLetters(t);
 }
-
-const BRIEF_LIMITS = { lead: 500, feature: 360, compact: 170, standard: 170 };
-const LEAD_BRIEF_MIN_CHARS = 140;
 
 function ensureLeadBriefMinLines(brief, truncated, item) {
   if (brief.length >= LEAD_BRIEF_MIN_CHARS) {
