@@ -20,7 +20,8 @@
       "imageCredit": "Photo : Number 10 / CC BY 4.0 · Wikimedia Commons",
       "imageLicense": "CC BY 4.0",
       "imageProvider": "wikimedia",
-      "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Prime_Minister_Keir_Starmer_attends_G7_Leaders_Summit_in_Evian_(55340429351).jpg"
+      "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Prime_Minister_Keir_Starmer_attends_G7_Leaders_Summit_in_Evian_(55340429351).jpg",
+      "imageCreator": "Number 10"
     },
     {
       "source": "Le Collectif",
@@ -40,7 +41,8 @@
       "imageCredit": "Photo : Maurice Renard / PUBLIC DOMAIN · Wikimedia Commons",
       "imageLicense": "Public domain",
       "imageProvider": "wikimedia",
-      "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Renard_-_Le_Docteur_Lerne_sous-dieu,_1908.djvu"
+      "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Renard_-_Le_Docteur_Lerne_sous-dieu,_1908.djvu",
+      "imageCreator": "Maurice Renard"
     },
     {
       "source": "Le Collectif",
@@ -60,7 +62,8 @@
       "imageCredit": "Photo : Number 10 / CC BY · Openverse",
       "imageLicense": "by",
       "imageProvider": "openverse",
-      "imageSourceUrl": "https://commons.wikimedia.org/w/index.php?curid=165007886"
+      "imageSourceUrl": "https://commons.wikimedia.org/w/index.php?curid=165007886",
+      "imageCreator": "Number 10"
     },
     {
       "source": "Le Collectif",
@@ -106,11 +109,12 @@
       "image": "https://lecollectif.ca/wp-content/uploads/2026/06/SOCIETE_BoissonsEnergisantes_SourceAssociationPourLaSantePubliqueDuQuebec.jpg",
       "featured": true,
       "leadImageReady": false,
-      "stockImage": "https://live.staticflickr.com/6054/7003858477_8e56b67645_b.jpg",
-      "imageCredit": "Photo : DVIDSHUB / CC BY · Openverse",
-      "imageLicense": "by",
-      "imageProvider": "openverse",
-      "imageSourceUrl": "https://www.flickr.com/photos/28650594@N03/7003858477"
+      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/8/8b/Interdiction_de_l%27absinthe_-_16_ao%C3%BBt_1914.jpg",
+      "imageCredit": "Photo : Anonymous Unknown author / PUBLIC DOMAIN · Wikimedia Commons",
+      "imageLicense": "Public domain",
+      "imageProvider": "wikimedia",
+      "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Interdiction_de_l%27absinthe_-_16_ao%C3%BBt_1914.jpg",
+      "imageCreator": "Anonymous Unknown author"
     },
     {
       "source": "Le Collectif",
@@ -145,7 +149,8 @@
       "imageCredit": "Photo : Reyre, Joseph, 1735-1812 / PUBLIC DOMAIN · Wikimedia Commons",
       "imageLicense": "Public domain",
       "imageProvider": "wikimedia",
-      "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Ann%C3%A9e_pastorale_-_ou,_prones_nouveaux_en_forme_d%27hom%C3%A9lies,_contenant_une_explication_courte_et_famili%C3%A8re-_1._de_l%27Evangile_de_tous_les_Dimanches_de_lann%C3%A9e_(IA_annepastoraleo03reyr).pdf"
+      "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Ann%C3%A9e_pastorale_-_ou,_prones_nouveaux_en_forme_d%27hom%C3%A9lies,_contenant_une_explication_courte_et_famili%C3%A8re-_1._de_l%27Evangile_de_tous_les_Dimanches_de_lann%C3%A9e_(IA_annepastoraleo03reyr).pdf",
+      "imageCreator": "Reyre, Joseph, 1735-1812"
     },
     {
       "source": "Le Collectif",
@@ -192,7 +197,8 @@
       "imageCredit": "Photo : abdallahh / CC BY · Openverse",
       "imageLicense": "by",
       "imageProvider": "openverse",
-      "imageSourceUrl": "https://www.flickr.com/photos/22168167@N00/3683481290"
+      "imageSourceUrl": "https://www.flickr.com/photos/22168167@N00/3683481290",
+      "imageCreator": "abdallahh"
     },
     {
       "source": "The Tribune",
@@ -225,7 +231,8 @@
       "imageCredit": "Photo : Boudard, Jean-Baptiste, 1710-1768 Trattner, Johann Thomas, Edler von, 1717-1798 / PUBLIC DOMAIN · Wikimedia Commons",
       "imageLicense": "Public domain",
       "imageProvider": "wikimedia",
-      "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Iconologie,_tir%C3%A9e_de_divers_auteurs_-_ouvrage_utile_aux_gens_de_lettres,_aux_po%C3%ABtes,_aux_artistes,_%26_g%C3%A9n%C3%A9ralement_%C3%A0_tous_les_amateurs_des_beaux-arts_(IA_iconologietireed01boud).pdf"
+      "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Iconologie,_tir%C3%A9e_de_divers_auteurs_-_ouvrage_utile_aux_gens_de_lettres,_aux_po%C3%ABtes,_aux_artistes,_%26_g%C3%A9n%C3%A9ralement_%C3%A0_tous_les_amateurs_des_beaux-arts_(IA_iconologietireed01boud).pdf",
+      "imageCreator": "Boudard, Jean-Baptiste, 1710-1768 Trattner, Johann Thomas, Edler von,…"
     },
     {
       "source": "The Tribune",
@@ -314,7 +321,8 @@
       "imageCredit": "Photo : dalbera / CC BY · Openverse",
       "imageLicense": "by",
       "imageProvider": "openverse",
-      "imageSourceUrl": "https://www.flickr.com/photos/72746018@N00/3810712411"
+      "imageSourceUrl": "https://www.flickr.com/photos/72746018@N00/3810712411",
+      "imageCreator": "dalbera"
     },
     {
       "source": "La Pige",
@@ -333,7 +341,8 @@
       "imageCredit": "Photo : Gareth1953 All Right Now / CC BY · Openverse",
       "imageLicense": "by",
       "imageProvider": "openverse",
-      "imageSourceUrl": "https://www.flickr.com/photos/40837632@N05/11351422016"
+      "imageSourceUrl": "https://www.flickr.com/photos/40837632@N05/11351422016",
+      "imageCreator": "Gareth1953 All Right Now"
     },
     {
       "source": "La Pige",
@@ -352,7 +361,8 @@
       "imageCredit": "Photo : LordToran .mw-parser-output .messagebox{margin:4px 0;width:auto;border-collapse:collapse;border:2px solid var(--border-color-progressive,#6485d1);background-color:var(--background-color-neutral-subtle,#fbfcff);color:inherit;box-sizing:border-box;border-inline-start-width:8px}.mw-parser-output .messagebox.mbox-small{font-size:88%;line-height:1.25em}.mw-parser-output .mbox-warning,.mw-parser-output .mbox-speedy{border:2px solid var(--border-color-error,#b22222);background:var(--background-color-error-subtle,#ffdbdb);border-inline-start-width:8px}.mw-parser-output .mbox-serious,.mw-parser-output .mbox-delete,.mw-parser-output .mbox-stop{border:2px solid var(--border-color-error,#b22222);border-inline-start-width:8px}.mw-parser-output .mbox-issue,.mw-parser-output .mbox-content{border:2px solid #f28500;background:var(--background-color-warning-subtle,#ffe);border-inline-start-width:8px}.mw-parser-output .mbox-query,.mw-parser-output .mbox-style{border:2px solid #f4c430;background:var(--background-color-warning-subtle,#ffe);border-inline-start-width:8px}.mw-parser-output .mbox-shit{border:2px solid #960;border-inline-start-width:8px}.mw-parser-output .mbox-license{border:2px solid #88a;border-inline-start-width:initial}.mw-parser-output .mbox-legal{border:2px solid var(--border-color-notice,#666);background:var(--background-color-base,#fff);border-inline-start-width:8px}.mw-parser-output .mbox-honor{border:2px solid #ca3;background:var(--background-color-warning-subtle,#fcf4db);border-inline-start-width:8px}.mw-parser-output .mbox-growth{border:2px solid #8d4;background:var(--background-color-success-subtle,#d5fdf4);border-inline-start-width:8px}.mw-parser-output .mbox-move{border:2px solid #93c;border-inline-start-width:8px}.mw-parser-output .mbox-protection,.mw-parser-output .mbox-message{border:2px solid var(--border-color-base,#aaa);border-inline-start-width:8px}.mw-parser-output .messagebox .mbox-text{border:none;padding:0.25em 0.9em;width:100%}.mw-parser-output .me / CC BY-SA · Openverse",
       "imageLicense": "by-sa",
       "imageProvider": "openverse",
-      "imageSourceUrl": "https://commons.wikimedia.org/w/index.php?curid=2146635"
+      "imageSourceUrl": "https://commons.wikimedia.org/w/index.php?curid=2146635",
+      "imageCreator": "LordToran"
     },
     {
       "source": "La Pige",
@@ -368,10 +378,11 @@
       "image": "https://lapige.atmjonquiere.com/wp-content/uploads/sites/3/2026/05/Credit-photo-Raphaelle-Guillois-200x300.jpg",
       "leadImageReady": false,
       "stockImage": "https://upload.wikimedia.org/wikipedia/commons/2/2c/Buste_d%27enfant_%28portrait_pr%C3%A9sum%C3%A9_de_Marcel_Lerolle%29%2C_PPS3810%284%29.jpg",
-      "imageCredit": "Photo : Larche, Raoul (Saint-André-de-Cubzac, 22–10–1860 - Paris, 02–06–1912), sculpteur / CC0 · Openverse",
+      "imageCredit": "Photo : Larche, Raoul (Saint-André-de-Cubzac, 22–10–1860 - Paris, 02–06–1912),… / CC0 · Openverse",
       "imageLicense": "cc0",
       "imageProvider": "openverse",
-      "imageSourceUrl": "https://commons.wikimedia.org/w/index.php?curid=136569170"
+      "imageSourceUrl": "https://commons.wikimedia.org/w/index.php?curid=136569170",
+      "imageCreator": "Larche, Raoul (Saint-André-de-Cubzac, 22–10–1860 - Paris, 02–06–1912),…"
     },
     {
       "source": "La Pige",
@@ -390,7 +401,8 @@
       "imageCredit": "Photo : Géniaux, Paul (Rennes, 28–10–1873 - Paris, 21–12–1929), photographe / CC0 · Openverse",
       "imageLicense": "cc0",
       "imageProvider": "openverse",
-      "imageSourceUrl": "https://commons.wikimedia.org/w/index.php?curid=139343934"
+      "imageSourceUrl": "https://commons.wikimedia.org/w/index.php?curid=139343934",
+      "imageCreator": "Géniaux, Paul (Rennes, 28–10–1873 - Paris, 21–12–1929), photographe"
     },
     {
       "source": "La Pige",
@@ -423,7 +435,8 @@
       "imageCredit": "Photo : USDAgov / CC BY · Openverse",
       "imageLicense": "by",
       "imageProvider": "openverse",
-      "imageSourceUrl": "https://www.flickr.com/photos/41284017@N08/7631365364"
+      "imageSourceUrl": "https://www.flickr.com/photos/41284017@N08/7631365364",
+      "imageCreator": "USDAgov"
     },
     {
       "source": "L'Exemplaire",
@@ -438,7 +451,7 @@
       "excerpt": "Salut, moi c’est Elora. Je suis étudiante en journalisme, passionnée de voyages, de cinéma et de récits humains. Mais aujourd’hui, si je me présente, c’est surtout pour te parler d’une relation toxique qui a occupé toute mon adolescence. Au début, ça ressemblait presque à un",
       "image": "https://www.exemplaire.com.ulaval.ca/wp-content/uploads/2026/05/Illustration-recadree-16.9-scaled-e1778861785132.png",
       "featured": true,
-      "leadImageReady": true
+      "leadImageReady": false
     },
     {
       "source": "L'Exemplaire",
@@ -452,7 +465,7 @@
       "date": "2026-05-15T16:31:24.000Z",
       "excerpt": "Salut, moi c’est Elora. Je suis étudiante en journalisme, passionnée de voyages, de cinéma et de récits humains. Mais aujourd’hui, si je me présente, c’est surtout pour te parler d’une relation toxique qui a occupé toute mon adolescence. Au début, ça ressemblait presque à un",
       "image": "https://www.exemplaire.com.ulaval.ca/wp-content/uploads/2026/05/Illustration-recadree-16.9-scaled-e1778861785132.png",
-      "leadImageReady": true
+      "leadImageReady": false
     },
     {
       "source": "Quartier Libre",
@@ -485,7 +498,8 @@
       "imageCredit": "Photo : Lisa-Marie Duchesne / CC BY-SA · Openverse",
       "imageLicense": "by-sa",
       "imageProvider": "openverse",
-      "imageSourceUrl": "https://commons.wikimedia.org/w/index.php?curid=137030939"
+      "imageSourceUrl": "https://commons.wikimedia.org/w/index.php?curid=137030939",
+      "imageCreator": "Lisa-Marie Duchesne"
     },
     {
       "source": "Quartier Libre",
@@ -504,7 +518,8 @@
       "imageCredit": "Photo : MDGovpics / CC BY · Openverse",
       "imageLicense": "by",
       "imageProvider": "openverse",
-      "imageSourceUrl": "https://www.flickr.com/photos/64018555@N03/10026206755"
+      "imageSourceUrl": "https://www.flickr.com/photos/64018555@N03/10026206755",
+      "imageCreator": "MDGovpics"
     },
     {
       "source": "Quartier Libre",
@@ -565,7 +580,8 @@
       "imageCredit": "Photo : art_inthecity / CC BY · Openverse",
       "imageLicense": "by",
       "imageProvider": "openverse",
-      "imageSourceUrl": "https://www.flickr.com/photos/57286185@N04/51654724841"
+      "imageSourceUrl": "https://www.flickr.com/photos/57286185@N04/51654724841",
+      "imageCreator": "art_inthecity"
     },
     {
       "source": "Quartier Libre",
@@ -594,7 +610,7 @@
       "excerpt": "Selon une enquête récente par l’Institut de la statistique du Québec (ISQ), la consommation d’alcool chez les jeunes est en baisse depuis quelques années. Il s’agit d’un mouvement qui s’observe aussi, mais de manière moins prononcée, dans d’autres groupes d’âge. Cette",
       "image": "https://www.exemplaire.com.ulaval.ca/wp-content/uploads/2026/04/generated-image-2-e1777575466728.png",
       "featured": true,
-      "leadImageReady": true
+      "leadImageReady": false
     },
     {
       "source": "L'Exemplaire",
@@ -609,7 +625,7 @@
       "excerpt": "Tout doucement, on les voit apparaître sur le bord des tablettes des épiceries. Des écrans miniatures qui indiquent le prix des produits alimentaires, comme chez Super C, par exemple — notre photo en une. Techniquement, ces nouvelles étiquettes peuvent faire varier les prix",
       "image": "https://www.exemplaire.com.ulaval.ca/wp-content/uploads/2026/04/Photo-couverture-Super-C-scaled.jpg",
       "featured": true,
-      "leadImageReady": true
+      "leadImageReady": false
     },
     {
       "source": "L'Exemplaire",
@@ -624,7 +640,7 @@
       "excerpt": "Afin de lutter contre la violence armée, le gouvernement du Canada a interdit en mai 2020 plus de 2 500 marques d’armes d’assaut. Pour les citoyens ou les entreprises possédant les modèles concernés, le fédéral a mis sur pied le Programme d’indemnisation pour les armes à feu de",
       "image": "https://www.exemplaire.com.ulaval.ca/wp-content/uploads/2026/05/ChatGPT-Image-7-mai-2026-11-h-02-min-08-s.png",
       "featured": true,
-      "leadImageReady": true
+      "leadImageReady": false
     },
     {
       "source": "L'Exemplaire",
@@ -639,7 +655,7 @@
       "excerpt": "L’un des principaux reproches du public envers les médias traditionnels est la difficulté de faire la différence entre les genres journalistiques, par exemple, ce qui distingue un contenu informatif de l’opinion. Des propos qu’on retrouve chez les jeunes que nous avons",
       "image": "https://www.exemplaire.com.ulaval.ca/wp-content/uploads/2026/05/Image-de-une.jpg",
       "featured": true,
-      "leadImageReady": true
+      "leadImageReady": false
     },
     {
       "source": "L'Exemplaire",
@@ -653,7 +669,7 @@
       "date": "2026-05-12T18:48:27.000Z",
       "excerpt": "Selon une enquête récente par l’Institut de la statistique du Québec (ISQ), la consommation d’alcool chez les jeunes est en baisse depuis quelques années. Il s’agit d’un mouvement qui s’observe aussi, mais de manière moins prononcée, dans d’autres groupes d’âge. Cette",
       "image": "https://www.exemplaire.com.ulaval.ca/wp-content/uploads/2026/04/generated-image-2-e1777575466728.png",
-      "leadImageReady": true
+      "leadImageReady": false
     },
     {
       "source": "L'Exemplaire",
@@ -672,7 +688,8 @@
       "imageCredit": "Photo : Lenny K Photography / CC BY · Openverse",
       "imageLicense": "by",
       "imageProvider": "openverse",
-      "imageSourceUrl": "https://www.flickr.com/photos/57527070@N06/26164212704"
+      "imageSourceUrl": "https://www.flickr.com/photos/57527070@N06/26164212704",
+      "imageCreator": "Lenny K Photography"
     },
     {
       "source": "L'Exemplaire",
@@ -691,7 +708,8 @@
       "imageCredit": "Photo : Rijksmuseum / CC0 · Openverse",
       "imageLicense": "cc0",
       "imageProvider": "openverse",
-      "imageSourceUrl": "https://commons.wikimedia.org/w/index.php?curid=85510310"
+      "imageSourceUrl": "https://commons.wikimedia.org/w/index.php?curid=85510310",
+      "imageCreator": "Rijksmuseum"
     },
     {
       "source": "L'Exemplaire",
@@ -710,7 +728,8 @@
       "imageCredit": "Photo : Du Monceaux, Alexis / PUBLIC DOMAIN · Wikimedia Commons",
       "imageLicense": "Public domain",
       "imageProvider": "wikimedia",
-      "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Exercice_tr%C3%A8s_d%C3%A9vot_envers_S._Antoine_de_Padoue_le_thaumaturge_de_l%27ordre_s%C3%A9raphique_de_S._Fran%C3%A7ois_(microforme)_-_avec_un_petit_recueil_de_quelques_principaux_miracles_(IA_cihm_26543).pdf"
+      "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Exercice_tr%C3%A8s_d%C3%A9vot_envers_S._Antoine_de_Padoue_le_thaumaturge_de_l%27ordre_s%C3%A9raphique_de_S._Fran%C3%A7ois_(microforme)_-_avec_un_petit_recueil_de_quelques_principaux_miracles_(IA_cihm_26543).pdf",
+      "imageCreator": "Du Monceaux, Alexis"
     },
     {
       "source": "L'Exemplaire",
@@ -725,7 +744,7 @@
       "excerpt": "Une boutique de plus ! En mars dernier, Renaissance, une chaîne de friperies québécoise, ouvre une succursale de 18 000 pieds au centre commercial Laurier Québec. Signe, sans doute, d’une évolution dans les habitudes de consommation dans le commerce de détail. L’engouement pour",
       "image": "https://www.exemplaire.com.ulaval.ca/wp-content/uploads/2026/04/Marcelle-Friperie-nomade.jpg",
       "featured": true,
-      "leadImageReady": true
+      "leadImageReady": false
     },
     {
       "source": "L'Exemplaire",
@@ -740,7 +759,7 @@
       "excerpt": "Les militants du NPD auraient pu choisir de poursuivre une approche plus pragmatique avec Heather McPherson, la seule députée élue du NPD qui s’est lancée dans la course à la chefferie. Principale rivale d’Avi Lewis, elle a terminé deuxième à l’issue du scrutin, avec un score 29",
       "image": "https://www.exemplaire.com.ulaval.ca/wp-content/uploads/2026/05/Avi-Lewis-3-e1778471976855.jpg",
       "featured": true,
-      "leadImageReady": true
+      "leadImageReady": false
     },
     {
       "source": "L'Exemplaire",
@@ -755,7 +774,7 @@
       "excerpt": "Des fruits qui parlent, nouent des relations et suivent les codes de la téléréalité : c’est le concept derrière ces vidéos d’un nouveau genre. Entre humour, viralité et controverse, ces contenus ont explosé, début 2026, sur les réseaux sociaux. Mais derrière ces visuels",
       "image": "https://www.exemplaire.com.ulaval.ca/wp-content/uploads/2026/05/Miniature-article.png",
       "featured": true,
-      "leadImageReady": true
+      "leadImageReady": false
     },
     {
       "source": "L'Exemplaire",
@@ -774,7 +793,8 @@
       "imageCredit": "Photo : Guy de Maupassant / PUBLIC DOMAIN · Wikimedia Commons",
       "imageLicense": "Public domain",
       "imageProvider": "wikimedia",
-      "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Maupassant_-_Maison_d%E2%80%99artiste,_paru_dans_Le_Gaulois,_12_mars_1881.djvu"
+      "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Maupassant_-_Maison_d%E2%80%99artiste,_paru_dans_Le_Gaulois,_12_mars_1881.djvu",
+      "imageCreator": "Guy de Maupassant"
     },
     {
       "source": "L'Exemplaire",
@@ -793,7 +813,8 @@
       "imageCredit": "Photo : BL2017 / CC BY-SA · Openverse",
       "imageLicense": "by-sa",
       "imageProvider": "openverse",
-      "imageSourceUrl": "https://commons.wikimedia.org/w/index.php?curid=56156096"
+      "imageSourceUrl": "https://commons.wikimedia.org/w/index.php?curid=56156096",
+      "imageCreator": "BL2017"
     },
     {
       "source": "L'Exemplaire",
@@ -906,7 +927,7 @@
       "date": "2026-05-07T17:58:02.000Z",
       "excerpt": "Pendant longtemps, ces athlètes amateurs qui participaient à des épreuves de longues distances comme le marathon ou le triathlon étaient dans la marge. Depuis la pandémie de COVID-19, les sportifs de sports organisés se sont retrouvés devant un dilemme : s’assoir sur le sofa ou",
       "image": "https://www.exemplaire.com.ulaval.ca/wp-content/uploads/2026/05/IMG_2365-scaled.jpeg",
-      "leadImageReady": true
+      "leadImageReady": false
     },
     {
       "source": "L'Exemplaire",
@@ -920,7 +941,7 @@
       "date": "2026-05-07T15:03:42.000Z",
       "excerpt": "Le restaurant Le Parlementaire est l’un des seuls restaurants au monde, situé dans un parlement, encore en activité (photo: Juliette Deshayes / L’Exemplaire). Écoutez « Quand la politique passe à table » et vous ne regarderez plus jamais une assiette de la même façon ! The post",
       "image": "https://www.exemplaire.com.ulaval.ca/wp-content/uploads/2026/05/politiquetable.png",
-      "leadImageReady": true
+      "leadImageReady": false
     },
     {
       "source": "Montréal Campus",
@@ -982,7 +1003,8 @@
       "imageCredit": "Photo : USDAgov / Domaine public · Openverse",
       "imageLicense": "pdm",
       "imageProvider": "openverse",
-      "imageSourceUrl": "https://www.flickr.com/photos/41284017@N08/7641257330"
+      "imageSourceUrl": "https://www.flickr.com/photos/41284017@N08/7641257330",
+      "imageCreator": "USDAgov"
     },
     {
       "source": "Montréal Campus",
@@ -1044,7 +1066,8 @@
       "imageCredit": "Photo : Khayman / CC BY-SA · Openverse",
       "imageLicense": "by-sa",
       "imageProvider": "openverse",
-      "imageSourceUrl": "https://commons.wikimedia.org/w/index.php?curid=6943959"
+      "imageSourceUrl": "https://commons.wikimedia.org/w/index.php?curid=6943959",
+      "imageCreator": "Khayman"
     },
     {
       "source": "Montréal Campus",
@@ -1222,7 +1245,8 @@
       "imageCredit": "Photo : Farooq (Extremely busy ) / CC BY-SA · Openverse",
       "imageLicense": "by-sa",
       "imageProvider": "openverse",
-      "imageSourceUrl": "https://www.flickr.com/photos/21646964@N06/2093301959"
+      "imageSourceUrl": "https://www.flickr.com/photos/21646964@N06/2093301959",
+      "imageCreator": "Farooq (Extremely busy )"
     },
     {
       "source": "Zone Campus",
@@ -1255,7 +1279,8 @@
       "imageCredit": "Photo : US Army Africa / CC BY · Openverse",
       "imageLicense": "by",
       "imageProvider": "openverse",
-      "imageSourceUrl": "https://www.flickr.com/photos/36281822@N08/4665388329"
+      "imageSourceUrl": "https://www.flickr.com/photos/36281822@N08/4665388329",
+      "imageCreator": "US Army Africa"
     },
     {
       "source": "Zone Campus",
@@ -1297,7 +1322,13 @@
       "date": "2026-04-18T22:22:07.000Z",
       "excerpt": "Ma réponse à PSPP À quelques mois d’une élection provinciale qui promet (si on se fie aux sondages d’intentions de vote) un changement de parti au pouvoir, le monde politique québécois se remet en haute vitesse. Plus les intentions des candidats sont définies, plus les langues",
       "image": "https://exilecvm.wordpress.com/wp-content/uploads/2020/10/121330814_121456603062023_8783413434532337259_n.png?w=200",
-      "leadImageReady": false
+      "leadImageReady": false,
+      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/5/51/Assemblee_Nationale_Burkina_Faso.jpg",
+      "imageCredit": "Photo : Sputniktilt / CC BY-SA · Openverse",
+      "imageCreator": "Sputniktilt",
+      "imageLicense": "by-sa",
+      "imageProvider": "openverse",
+      "imageSourceUrl": "https://commons.wikimedia.org/w/index.php?curid=23898984"
     },
     {
       "source": "The Tribune",
@@ -1325,7 +1356,13 @@
       "date": "2026-04-13T04:44:51.000Z",
       "excerpt": "Canada’s prison system is predicated on rehabilitation and reintegration—yet, the country’s own correctional service is defunding the most integral program to realizing that aim. Correctional Service Canada (CSC) has announced the suspension of its federal prison education",
       "image": "https://www.thetribune.ca/wp-content/uploads/2026/04/Design-sans-titre.png",
-      "leadImageReady": false
+      "leadImageReady": false,
+      "stockImage": "https://live.staticflickr.com/5509/14244591721_5a94c2b42a_b.jpg",
+      "imageCredit": "Photo : Darron Birgenheier / CC BY-SA · Openverse",
+      "imageCreator": "Darron Birgenheier",
+      "imageLicense": "by-sa",
+      "imageProvider": "openverse",
+      "imageSourceUrl": "https://www.flickr.com/photos/28502132@N05/14244591721"
     },
     {
       "source": "The McGill Daily",
@@ -1367,7 +1404,13 @@
       "date": "2026-04-08T15:08:43.000Z",
       "excerpt": "“I got in an accident that involved some sea urchins,” Natalie Joy Gale, a PhD student in McGill’s Department of History and Classical Studies, said in an interview with //The Tribune//. Gale recalls wiping out in an ‘urchin-y’ area of reef while surfing in Puerto Rico",
       "image": "https://www.thetribune.ca/wp-content/uploads/2026/04/bottle.png",
-      "leadImageReady": false
+      "leadImageReady": false,
+      "stockImage": "https://live.staticflickr.com/4532/38561519546_37d0d16ddd_b.jpg",
+      "imageCredit": "Photo : Marie-Baeten / CC BY · Openverse",
+      "imageCreator": "Marie-Baeten",
+      "imageLicense": "by",
+      "imageProvider": "openverse",
+      "imageSourceUrl": "https://www.flickr.com/photos/155423788@N03/38561519546"
     },
     {
       "source": "The Tribune",

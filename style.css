@@ -671,6 +671,24 @@ a { color: inherit; }
   line-height: 1.35;
   color: var(--muted);
 }
+.article-media-credit a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-color: color-mix(in srgb, var(--muted) 55%, transparent);
+}
+.article-media-credit a:hover {
+  color: var(--ink-soft);
+  text-decoration-color: currentColor;
+}
+.article-media-credit__creator {
+  font-weight: 600;
+  color: var(--c, var(--ink-soft));
+  text-decoration-color: color-mix(in srgb, var(--c, var(--accent)) 45%, transparent);
+}
+.article-media-credit__creator:hover {
+  color: var(--c, var(--accent));
+}
 
 .article-meta {
   display: flex;

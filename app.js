@@ -1332,14 +1332,86 @@ function ensureHeroLeadHasImage(heroItems, allItems) {
   return next;
 }
 
+function cleanCreatorDisplay(raw = '') {
+  let s = String(raw).replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+  s = s.replace(/\.mw-parser-output[\s\S]*/i, '').trim();
+  if (s.length > 72) {
+    const cut = s.slice(0, 72);
+    const lastSpace = cut.lastIndexOf(' ');
+    s = `${(lastSpace > 36 ? cut.slice(0, lastSpace) : cut).trimEnd()}…`;
+  }
+  return s;
+}
+
+function parseImageCreditLine(credit = '') {
+  const m = String(credit).match(/^Photo\s*:\s*(.+?)\s*\/\s*(.+?)\s*·\s*(.+)$/i);
+  if (!m) return null;
+  return {
+    creator: cleanCreatorDisplay(m[1].trim()),
+    license: m[2].trim(),
+    via: m[3].trim(),
+  };
+}
+
+function creditLink(href, label, className = '') {
+  const a = document.createElement('a');
+  a.href = href;
+  a.target = '_blank';
+  a.rel = 'noopener license';
+  a.textContent = label;
+  if (className) a.className = className;
+  return a;
+}
+
+function buildMediaCreditElement(item = {}) {
+  const sourceUrl = String(item.imageSourceUrl || '').trim();
+  const credit = String(item.imageCredit || '').trim();
+  if (!credit && !sourceUrl) return null;
+
+  const cap = document.createElement('figcaption');
+  cap.className = 'article-media-credit';
+  const en = item.lang === 'en';
+  const parsed = credit ? parseImageCreditLine(credit) : null;
+  const creator = cleanCreatorDisplay(item.imageCreator || parsed?.creator || '')
+    || (en ? 'Unknown photographer' : 'Photographe inconnu');
+
+  if (!parsed) {
+    if (sourceUrl) {
+      cap.appendChild(creditLink(sourceUrl, credit || (en ? 'Photo source' : 'Source de la photo')));
+    } else {
+      cap.textContent = credit;
+    }
+    return cap;
+  }
+
+  cap.appendChild(document.createTextNode(en ? 'Photo: ' : 'Photo : '));
+  if (sourceUrl) {
+    cap.appendChild(creditLink(sourceUrl, creator, 'article-media-credit__creator'));
+  } else {
+    cap.appendChild(document.createTextNode(creator));
+  }
+  if (parsed.license) {
+    cap.appendChild(document.createTextNode(` / ${parsed.license}`));
+  }
+  if (parsed.via) {
+    cap.appendChild(document.createTextNode(' · '));
+    if (sourceUrl) {
+      cap.appendChild(creditLink(sourceUrl, parsed.via, 'article-media-credit__source'));
+    } else {
+      cap.appendChild(document.createTextNode(parsed.via));
+    }
+  }
+  return cap;
+}
+
 function showArticleImage(article, media, img, kind, item) {
   media.replaceChildren(img);
-  if (item?.imageCredit && (kind === 'stock' || kind === 'fallback')) {
-    const cap = document.createElement('figcaption');
-    cap.className = 'article-media-credit';
-    cap.textContent = item.imageCredit;
-    media.appendChild(cap);
-    media.removeAttribute('aria-hidden');
+  if ((kind === 'stock' || kind === 'fallback') && (item?.imageCredit || item?.imageSourceUrl)) {
+    const cap = buildMediaCreditElement(item);
+    if (cap) {
+      media.appendChild(cap);
+      media.removeAttribute('aria-hidden');
+    }
   }
   article.classList.add('has-image');
   article.classList.remove('article--text');

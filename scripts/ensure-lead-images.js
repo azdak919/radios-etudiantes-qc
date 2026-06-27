@@ -18,7 +18,7 @@ const {
   probeRemoteImageSize,
   sleep,
 } = require('./article-image-lib');
-const { findStockPhoto } = require('./stock-photo-lib');
+const { findStockPhoto, cleanCreatorName } = require('./stock-photo-lib');
 
 const ROOT = path.join(__dirname, '..');
 const NEWS_PATH = path.join(ROOT, 'news.json');
@@ -60,6 +60,7 @@ async function applyStockPhoto(item) {
   if (doUpdate) {
     item.stockImage = stock.stockImage;
     item.imageCredit = stock.imageCredit;
+    item.imageCreator = stock.imageCreator || '';
     item.imageLicense = stock.imageLicense;
     item.imageProvider = stock.imageProvider;
     item.imageSourceUrl = stock.imageSourceUrl;
@@ -70,9 +71,16 @@ async function applyStockPhoto(item) {
   return true;
 }
 
+function backfillImageCreator(item) {
+  if (item.imageCreator || !item.imageCredit) return;
+  const m = String(item.imageCredit).match(/^Photo\s*:\s*(.+?)\s*\/\s*/i);
+  if (m) item.imageCreator = cleanCreatorName(m[1].trim());
+}
+
 async function main() {
   const news = readJson(NEWS_PATH, { items: [] });
   const items = news.items || [];
+  items.forEach(backfillImageCreator);
   if (!items.length) {
     console.error('No items in news.json');
     process.exit(1);

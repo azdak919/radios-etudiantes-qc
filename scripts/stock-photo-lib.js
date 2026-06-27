@@ -150,8 +150,30 @@ function licenseLabel(code = '') {
   return map[String(code).toLowerCase()] || String(code).toUpperCase();
 }
 
+function cleanCreatorName(raw = '') {
+  let s = stripHtml(raw).trim();
+  s = s.replace(/\.mw-parser-output[\s\S]*/i, '').trim();
+  s = s.replace(/\s+/g, ' ');
+  if (s.length > 72) {
+    const cut = s.slice(0, 72);
+    const lastSpace = cut.lastIndexOf(' ');
+    s = `${(lastSpace > 36 ? cut.slice(0, lastSpace) : cut).trimEnd()}…`;
+  }
+  return s;
+}
+
+function parseOpenverseCreator(result = {}) {
+  const direct = cleanCreatorName(result.creator || '');
+  if (direct) return direct;
+  const attr = stripHtml(result.attribution || '');
+  const by = attr.match(/(?:photo\s+)?(?:by|par)\s+([^,·]+)/i);
+  if (by) return cleanCreatorName(by[1]);
+  const first = attr.split(/[,·]/)[0];
+  return cleanCreatorName(first);
+}
+
 function formatAttribution(hit) {
-  const creator = stripHtml(hit.creator || hit.artist || '').trim() || 'Auteur·e inconnu·e';
+  const creator = cleanCreatorName(hit.creator || hit.artist || '') || 'Auteur·e inconnu·e';
   const license = licenseLabel(hit.license || hit.licenseShort || 'CC');
   const via = hit.provider === 'wikimedia' ? 'Wikimedia Commons' : 'Openverse';
   return `Photo : ${creator} / ${license} · ${via}`;
@@ -216,7 +238,7 @@ async function searchOpenverse(query, matchTokens) {
       url: r.url,
       width: r.width || 0,
       height: r.height || 0,
-      creator: r.creator || '',
+      creator: parseOpenverseCreator(r),
       license: r.license || '',
       title: r.title || '',
       tags: (r.tags || []).map((t) => t.name || t).join(' '),
@@ -249,7 +271,7 @@ async function searchWikimedia(query, matchTokens) {
       url: info.url,
       width: w,
       height: h,
-      creator: artist,
+      creator: cleanCreatorName(artist),
       license: licenseShort,
       licenseShort,
       title: page.title || '',
@@ -294,9 +316,11 @@ async function findStockPhoto(item) {
       seen.add(cand.url);
       const valid = await validateCandidate(cand);
       if (!valid) continue;
+      const creator = cleanCreatorName(valid.creator || valid.artist || '');
       return {
         stockImage: valid.url,
         imageCredit: formatAttribution(valid),
+        imageCreator: creator,
         imageLicense: valid.license || '',
         imageProvider: valid.provider,
         imageSourceUrl: valid.foreignLandingUrl || valid.url,
@@ -313,6 +337,7 @@ module.exports = {
   buildMatchTokens,
   extractSearchQueries,
   formatAttribution,
+  cleanCreatorName,
   findStockPhoto,
   searchOpenverse,
   searchWikimedia,

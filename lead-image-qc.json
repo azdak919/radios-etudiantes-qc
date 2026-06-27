@@ -1,22 +1,16 @@
 {
-  "updated": "2026-06-27T07:14:46.264Z",
+  "updated": "2026-06-27T07:30:01.580Z",
   "total": 161,
   "withPhoto": 160,
-  "withStock": 24,
+  "withStock": 27,
   "fullyCovered": 160,
-  "leadReadyPhotos": 115,
-  "pageScraped": 36,
-  "photosRecovered": 26,
+  "leadReadyPhotos": 104,
+  "pageScraped": 0,
+  "photosRecovered": 0,
   "stockSearches": 28,
-  "stockFound": 25,
+  "stockFound": 19,
   "mainPageLeadReady": true,
   "gaps": [
-    {
-      "title": "Résumé du G7 à Évian",
-      "link": "https://lecollectif.ca/a-la-une/resume-du-g7-a-evian/",
-      "reason": "stock-too-small",
-      "image": "https://lecollectif.ca/wp-content/uploads/2026/06/SOCIETE_Resume-du-G7-a-Evian_Getty-Images.jpg"
-    },
     {
       "title": "Virage à droite en Colombie",
       "link": "https://lecollectif.ca/a-la-une/virage-a-droite-en-colombie/",
@@ -38,7 +32,7 @@
     {
       "title": "La surconsommation textile : un phénomène aux lourdes conséquences",
       "link": "https://lecollectif.ca/a-la-une/la-surconsommation-textile-un-phenomene-aux-lourdes-consequences/",
-      "reason": "stock-too-small",
+      "reason": "no-stock-match",
       "image": "https://lecollectif.ca/wp-content/uploads/2026/06/SOCIETE_La-surproduction_-le-veritable-defi-de-l_industrie-de-la-mode-SourceFashionNetwork.png"
     },
     {
@@ -50,7 +44,7 @@
     {
       "title": "Se préparer et vivre sa retraite : un long fleuve, pas si tranquille",
       "link": "https://lapige.atmjonquiere.com/2026/06/22/se-preparer-et-vivre-sa-retraite-un-long-fleuve-pas-si-tranquille/?utm_source=rss&utm_medium=rss&utm_campaign=se-preparer-et-vivre-sa-retraite-un-long-fleuve-pas-si-tranquille",
-      "reason": "stock-too-small",
+      "reason": "no-stock-match",
       "image": "https://lapige.atmjonquiere.com/wp-content/uploads/sites/3/2026/06/Bruno-Cormier-retraite-benevole.png"
     },
     {
@@ -66,12 +60,6 @@
       "image": "https://lapige.atmjonquiere.com/wp-content/uploads/sites/3/2026/05/image-mamik-750x375.jpg"
     },
     {
-      "title": "L’ERD sauvée de la dissolution par quatre membres",
-      "link": "https://lapige.atmjonquiere.com/2026/05/21/lerd-sauvee-de-la-dissolution-par-quatre-membres/?utm_source=rss&utm_medium=rss&utm_campaign=lerd-sauvee-de-la-dissolution-par-quatre-membres",
-      "reason": "stock-too-small",
-      "image": "https://lapige.atmjonquiere.com/wp-content/uploads/sites/3/2020/10/Andre-e1779394167998-216x300.png"
-    },
-    {
       "title": "Jeunes auteurs, à vos crayons : le « pouvoir des mots » pour rejoindre les étudiants",
       "link": "https://lapige.atmjonquiere.com/2026/05/21/jeunes-auteurs-a-vos-crayons-le-pouvoir-des-mots-pour-rejoindre-les-etudiants/?utm_source=rss&utm_medium=rss&utm_campaign=jeunes-auteurs-a-vos-crayons-le-pouvoir-des-mots-pour-rejoindre-les-etudiants",
       "reason": "stock-too-small",
@@ -82,6 +70,18 @@
       "link": "https://lapige.atmjonquiere.com/2026/05/20/un-pont-entre-lart-et-le-travail-de-rue/?utm_source=rss&utm_medium=rss&utm_campaign=un-pont-entre-lart-et-le-travail-de-rue",
       "reason": "stock-too-small",
       "image": "https://lapige.atmjonquiere.com/wp-content/uploads/sites/3/2026/05/Image-16-750x375.jpg"
+    },
+    {
+      "title": "El Niño s’approche du Québec",
+      "link": "https://lapige.atmjonquiere.com/2026/05/20/el-nino-sapproche-du-quebec/?utm_source=rss&utm_medium=rss&utm_campaign=el-nino-sapproche-du-quebec",
+      "reason": "no-stock-match",
+      "image": "https://lapige.atmjonquiere.com/wp-content/uploads/sites/3/2026/05/pexels-fatih-turan-63325184-12413177-750x375.jpg"
+    },
+    {
+      "title": "Assistance technique en pharmacie : de premières portes ouvertes à Alma",
+      "link": "https://lapige.atmjonquiere.com/2026/05/20/assistance-technique-en-pharmacie-de-premieres-portes-ouvertes-a-alma/?utm_source=rss&utm_medium=rss&utm_campaign=assistance-technique-en-pharmacie-de-premieres-portes-ouvertes-a-alma",
+      "reason": "stock-too-small",
+      "image": "https://lapige.atmjonquiere.com/wp-content/uploads/sites/3/2026/05/Image-2-1-300x225.jpg"
     }
   ]
 }
