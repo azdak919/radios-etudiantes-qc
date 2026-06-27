@@ -1038,7 +1038,7 @@ function createArticle(item, role = 'standard', { hideSourceMeta = false } = {})
     ({ text: brief, truncated: briefTruncated } = resolveBrief(item, item.excerpt || body, role));
   }
   if (role === 'lead' && brief) {
-    ({ text: brief, truncated: briefTruncated } = ensureLeadBriefMinLines(brief, truncated, item));
+    ({ text: brief, truncated: briefTruncated } = ensureLeadBriefMinLines(brief, briefTruncated, item));
   }
   const readMore = item.lang === 'en' ? 'Read more →' : 'Lire la suite →';
   const byLabel = item.lang === 'en' ? 'By' : 'Par';
