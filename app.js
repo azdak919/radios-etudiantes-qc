@@ -651,6 +651,7 @@ function updateNewsLayout() {
 
 const HERO_SPOTLIGHT_MAX = 4; /* 1 à la une + 3 vedettes */
 const BRIEF_SIDEBAR_MAX = 4;
+const SPOTLIGHT_MAX_AGE_MS = 7 * 24 * 60 * 60 * 1000;
 
 function articleKey(item) {
   return item.link || `${item.source}::${item.date}::${item.title}`;
@@ -664,48 +665,78 @@ function sortByDateDesc(items) {
   return [...items].sort((a, b) => new Date(b.date || 0) - new Date(a.date || 0));
 }
 
-function latestArticlePerInstitution(items) {
-  const byInst = new Map();
-  for (const item of items) {
-    const inst = institutionKey(item);
-    const cur = byInst.get(inst);
-    if (!cur || new Date(item.date || 0) > new Date(cur.date || 0)) {
-      byInst.set(inst, item);
-    }
-  }
-  return byInst;
+function isWithinSpotlightWindow(item) {
+  const age = Date.now() - new Date(item.date || 0);
+  return Number.isFinite(age) && age >= 0 && age <= SPOTLIGHT_MAX_AGE_MS;
 }
 
-/** Vedette : max 1 article le plus récent par institution, institutions les plus actives d'abord. */
-function pickHeroSpotlight(items) {
-  const picks = [...latestArticlePerInstitution(items).values()]
-    .sort((a, b) => new Date(b.date || 0) - new Date(a.date || 0))
-    .slice(0, HERO_SPOTLIGHT_MAX);
-  return sortByDateDesc(picks);
+function spotlightPool(items) {
+  return sortByDateDesc(items.filter(isWithinSpotlightWindow));
 }
 
 /**
- * En bref : le plus récent par institution encore disponible (hors vedette).
- * Institutions déjà en vedette sont ignorées pour favoriser le mix.
+ * Remplit jusqu'à max : d'abord 1 article récent par institution (hors excludeInsts),
+ * puis complète avec des sources déjà représentées si le pool frais est trop maigre.
+ */
+function pickSpotlightSlots(items, max, excludeInsts = new Set()) {
+  const picks = [];
+  const usedKeys = new Set();
+  const usedInsts = new Set(excludeInsts);
+
+  for (const item of items) {
+    if (picks.length >= max) break;
+    const inst = institutionKey(item);
+    if (usedInsts.has(inst)) continue;
+    picks.push(item);
+    usedKeys.add(articleKey(item));
+    usedInsts.add(inst);
+  }
+
+  for (const item of items) {
+    if (picks.length >= max) break;
+    const key = articleKey(item);
+    if (usedKeys.has(key)) continue;
+    picks.push(item);
+    usedKeys.add(key);
+  }
+
+  return picks;
+}
+
+/** Vedette : articles ≤ 7 jours, mix d'institutions puis repli sur sources déjà vues. */
+function pickHeroSpotlight(items) {
+  const fresh = spotlightPool(items);
+  if (!fresh.length) return [];
+  return sortByDateDesc(pickSpotlightSlots(fresh, HERO_SPOTLIGHT_MAX));
+}
+
+/**
+ * En bref : articles ≤ 7 jours hors vedette, institutions nouvelles d'abord,
+ * puis repli sur des sources déjà en vedette si nécessaire.
  */
 function pickBriefSidebar(pool, heroItems = []) {
-  if (!pool.length) return [];
+  const fresh = spotlightPool(pool);
+  if (!fresh.length) return [];
 
   const heroInsts = new Set(heroItems.map(institutionKey));
-  const latestByInst = latestArticlePerInstitution(pool);
+  const distinctInsts = new Set([...heroInsts]);
+  for (const item of fresh) distinctInsts.add(institutionKey(item));
+  if (distinctInsts.size < 2) return [];
 
-  const candidates = [...latestByInst.entries()]
-    .filter(([inst]) => !heroInsts.has(inst))
-    .map(([, item]) => item);
+  const withoutHeroInst = fresh.filter((item) => !heroInsts.has(institutionKey(item)));
+  const picks = pickSpotlightSlots(withoutHeroInst, BRIEF_SIDEBAR_MAX);
+  if (picks.length < BRIEF_SIDEBAR_MAX) {
+    const usedKeys = new Set(picks.map(articleKey));
+    for (const item of fresh) {
+      if (picks.length >= BRIEF_SIDEBAR_MAX) break;
+      const key = articleKey(item);
+      if (usedKeys.has(key)) continue;
+      picks.push(item);
+      usedKeys.add(key);
+    }
+  }
 
-  const distinctInFeed = new Set([...latestByInst.keys(), ...heroInsts]).size;
-  if (distinctInFeed < 2 || !candidates.length) return [];
-
-  const max = Math.min(BRIEF_SIDEBAR_MAX, candidates.length);
-  return candidates
-    .sort((a, b) => new Date(b.date || 0) - new Date(a.date || 0))
-    .slice(0, max)
-    .sort((a, b) => a.source.localeCompare(b.source, 'fr'));
+  return picks.sort((a, b) => a.source.localeCompare(b.source, 'fr'));
 }
 
 function partitionNewsFeed(items) {
