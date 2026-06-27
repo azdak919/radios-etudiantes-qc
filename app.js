@@ -460,6 +460,7 @@ const SOURCE_POPULARITY = {
   "L'Exemplaire": 5,
   'Le Collectif': 6,
   'The Link': 7,
+  'The Concordian': 7,
   'The Tribune': 8,
   'Zone Campus': 9,
   'Exil': 10,

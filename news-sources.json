@@ -63,6 +63,19 @@
       "_lastItemDate": "2026-06-10T17:09:00.000Z"
     },
     {
+      "name": "The Concordian",
+      "institution": "Concordia University",
+      "region": "Montréal",
+      "type": "universite",
+      "lang": "en",
+      "url": "https://theconcordian.substack.com/feed",
+      "site": "https://theconcordian.com/",
+      "_lastChecked": "2026-06-27T06:15:00.000Z",
+      "_failCount": 0,
+      "_status": "ok",
+      "_lastItemDate": "2026-05-02T20:21:24.000Z"
+    },
+    {
       "name": "Zone Campus",
       "institution": "Université du Québec à Trois-Rivières",
       "region": "Mauricie",
@@ -176,16 +189,7 @@
       "_lastChecked": "2026-06-27T00:15:11.360Z",
       "_failCount": 2
     },
-    {
-      "name": "The Concordian",
-      "institution": "Concordia University",
-      "region": "Montréal",
-      "type": "universite",
-      "lang": "en",
-      "site": "https://theconcordian.com/",
-      "_lastChecked": "2026-06-27T00:15:13.200Z",
-      "_failCount": 2
-    },
+
     {
       "name": "Le Brise-Glace",
       "institution": "Cégep de Rimouski",
