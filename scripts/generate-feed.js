@@ -41,7 +41,7 @@ const FEEDS = [
     file: 'feed.xml',
     lang: 'fr-CA',
     filter: () => true,
-    title: 'LE RADAR — Les médias étudiants du Québec',
+    title: 'Le Radar',
     description: 'Fil agrégé des journaux étudiants des cégeps et universités du Québec (français et anglais). Titres, brèves, images et liens vers les articles originaux.',
   },
 ];
@@ -117,6 +117,25 @@ function itemDateline(item = {}) {
   return dateStr;
 }
 
+/** Date courte pour lecteurs RSS à espace limité (sous le titre). */
+function itemSimpleDate(item = {}) {
+  const d = new Date(item.date);
+  if (Number.isNaN(d.getTime())) return '';
+  const en = item.lang === 'en';
+  const now = new Date();
+  const opts = { day: 'numeric', month: 'short', timeZone: 'America/Toronto' };
+  if (d.getFullYear() !== now.getFullYear()) opts.year = 'numeric';
+  return d.toLocaleDateString(en ? 'en-CA' : 'fr-CA', opts);
+}
+
+/** Ligne prioritaire : auteur · média · date (affichée sous le titre dans les apps RSS). */
+function itemCompactMeta(item = {}) {
+  const author = itemAuthor(item);
+  const source = String(item.source || '').trim();
+  const date = itemSimpleDate(item);
+  return [author, source, date].filter(Boolean).join(' · ');
+}
+
 function sourceHomeUrl(item = {}, sourceSites = {}) {
   const named = sourceSites[item.source];
   if (named) return named;
@@ -169,16 +188,21 @@ function imageMimeType(url = '') {
   return 'image/jpeg';
 }
 
-/** Corps HTML complet (dateline, image, brève, byline) pour content:encoded et description. */
+/** Résumé court pour &lt;description&gt; — priorise auteur, média et date. */
+function buildDescriptionHtml(item = {}) {
+  return itemCompactMeta(item);
+}
+
+/** Corps HTML complet (image, brève, crédits) pour content:encoded. */
 function buildItemBodyHtml(item = {}) {
   const parts = [];
   const imageUrl = itemImageUrl(item);
   const title = String(item.title || 'Article').trim();
   const credit = photoCreditLine(item);
-  const dateline = itemDateline(item);
+  const meta = itemCompactMeta(item);
 
-  if (dateline) {
-    parts.push(`<p style="margin:0 0 0.75em;font-size:0.9em;color:#555"><strong>${escapeXml(dateline)}</strong></p>`);
+  if (meta) {
+    parts.push(`<p style="margin:0 0 0.75em;font-size:0.9em;color:#555"><strong>${escapeXml(meta)}</strong></p>`);
   }
 
   if (imageUrl) {
@@ -192,14 +216,8 @@ function buildItemBodyHtml(item = {}) {
 
   const brief = itemBrief(item);
   if (brief) parts.push(`<p style="margin:0 0 0.75em;line-height:1.5">${escapeXml(brief)}</p>`);
-  const attr = attributionLine(item);
-  if (attr) parts.push(`<p style="margin:0;font-size:0.92em;color:#444"><em>${escapeXml(attr)}</em></p>`);
   if (credit && !imageUrl) parts.push(`<p><small>${escapeXml(credit)}</small></p>`);
   return parts.join('\n');
-}
-
-function buildDescriptionHtml(item = {}) {
-  return buildItemBodyHtml(item);
 }
 
 function buildItemXml(item = {}, sourceSites = {}) {

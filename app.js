@@ -662,6 +662,9 @@ function renderTunerNowAir() {
     else TUNER_NOWAIR_SUB.replaceChildren();
   }
   syncTunerSubRotate(title, sub, empty);
+  if (currentStation && isPlaying()) {
+    updateMediaSession(currentStation, empty ? {} : { title, sub });
+  }
 }
 
 /**
@@ -1079,15 +1082,25 @@ function setupAudio() {
   }
 }
 
-function updateMediaSession(radio) {
+function assetUrl(path) {
+  try {
+    return new URL(String(path).replace(/^\.\//, ''), window.location.href).href;
+  } catch {
+    return path;
+  }
+}
+
+function updateMediaSession(radio, { title, sub } = {}) {
   if (!('mediaSession' in navigator)) return;
+  const showTitle = title || radio.fullName || radio.name;
+  const showSub = sub || tunerInstitutionLabel(radio.institution);
   navigator.mediaSession.metadata = new MediaMetadata({
-    title: radio.fullName || radio.name,
-    artist: radio.institution,
-    album: 'LE RADAR — Les médias étudiants du Québec',
+    title: showTitle,
+    artist: showSub,
+    album: 'Le Radar',
     artwork: [
-      { src: './assets/icon-192.png', sizes: '192x192', type: 'image/png' },
-      { src: './assets/icon-512.png', sizes: '512x512', type: 'image/png' },
+      { src: assetUrl('assets/icon-192.png'), sizes: '192x192', type: 'image/png' },
+      { src: assetUrl('assets/icon-512.png'), sizes: '512x512', type: 'image/png' },
     ],
   });
 }
