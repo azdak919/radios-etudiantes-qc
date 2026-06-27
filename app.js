@@ -367,6 +367,27 @@ function shuffleInPlace(list) {
   return list;
 }
 
+function radioAccentColor(radio) {
+  if (!radio) return null;
+  const fromBrand = institutionBrandColor(radio.institution);
+  if (fromBrand) return fromBrand;
+  const palette = brandColors.fallback_palette || ['#003DA5', '#6C2163', '#047857'];
+  const idx = radios.findIndex((r) => r.id === radio.id);
+  return palette[Math.max(0, idx) % palette.length];
+}
+
+function applyTunerAccent(radio) {
+  if (!TUNER) return;
+  const color = radio ? radioAccentColor(radio) : null;
+  if (color) {
+    TUNER.style.setProperty('--c', color);
+    TUNER.classList.add('has-station');
+  } else {
+    TUNER.style.removeProperty('--c');
+    TUNER.classList.remove('has-station');
+  }
+}
+
 function pickFeaturedStations(playable = [], count = TUNER_FEATURED_COUNT) {
   if (!playable.length) return [];
   const limit = Math.min(count, playable.length);
@@ -410,6 +431,7 @@ function buildTunerStations() {
     <div class="tuner-stations-list" role="group" aria-label="Écoute directe">
       ${featured.map(r => `
         <button type="button" class="tuner-station-btn" data-id="${escapeHtml(r.id)}"
+          style="--c: ${escapeHtml(radioAccentColor(r))}"
           title="${escapeHtml(r.fullName || r.name)} · ${escapeHtml(r.institution)}">
           <span class="tuner-station-call">${escapeHtml(r.name.replace(/\s+FM.*/i, '').trim())}</span>
           <span class="tuner-station-inst">${escapeHtml(shortInstitution(r.institution, r.type))}</span>
@@ -522,6 +544,7 @@ function selectStation(id, { autoplay = false, openExternal = false } = {}) {
       : 'Flux direct indisponible';
 
   updateMediaSession(radio);
+  applyTunerAccent(radio);
 
   if (!playable) {
     stopPlayback({ keepStation: true });
@@ -576,7 +599,10 @@ function stopPlayback({ keepStation = false } = {}) {
     audio.load();
     suppressAudioError = false;
   }
-  if (!keepStation) currentStation = null;
+  if (!keepStation) {
+    currentStation = null;
+    applyTunerAccent(null);
+  }
   updatePlayUI();
 }
 

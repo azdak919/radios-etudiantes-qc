@@ -88,6 +88,10 @@
     "Collège Montmorency": {
       "color": "#002768",
       "source": "Guide normes graphiques Montmorency — bleu foncé"
+    },
+    "Cégep Montmorency": {
+      "color": "#002768",
+      "source": "Guide normes graphiques Montmorency — bleu foncé"
     }
   },
   "fallback_palette": [
