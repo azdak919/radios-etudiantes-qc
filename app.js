@@ -559,7 +559,7 @@ function shortInstitution(name = '', type = '') {
   if (acronym) return acronym;
 
   const CEGEP_SHORT = {
-    'Cégep du Vieux Montréal': 'Cégep du Vieux-Montréal',
+    'Cégep du Vieux Montréal': 'Cégep Vieux-Montréal',
     'Cégep de Jonquière (ATM – journalisme)': 'Cégep Jonquière',
     'Cégep de Jonquière': 'Cégep Jonquière',
   };
