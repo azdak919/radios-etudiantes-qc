@@ -963,6 +963,15 @@ a { color: inherit; }
     max-width: 16ch;
   }
 
+  .news-list[data-mode="source"][data-hero="image"] .article--lead .article-title,
+  .news-list[data-mode="source"][data-hero="image"] .article--lead .article-brief {
+    max-width: none;
+  }
+
+  .news-list[data-mode="source"][data-hero="image"] .article--lead.has-image .article-media {
+    aspect-ratio: 16 / 10;
+  }
+
   .news-hero .article--feature {
     padding: 16px 0;
   }

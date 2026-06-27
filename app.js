@@ -624,6 +624,11 @@ function renderNews() {
   NEWS_EMPTY.classList.toggle('hidden', items.length > 0);
   NEWS_COUNT.textContent = `${items.length} article${items.length !== 1 ? 's' : ''}`;
   NEWS_LIST.innerHTML = '';
+  if (isSourceView) {
+    NEWS_LIST.dataset.mode = 'source';
+  } else {
+    NEWS_LIST.removeAttribute('data-mode');
+  }
 
   const hero = document.createElement('div');
   hero.className = 'news-hero';
@@ -633,7 +638,7 @@ function renderNews() {
   const partition = isSourceView
     ? partitionSourceFeed(items)
     : partitionNewsFeed(items);
-  const { heroItems, briefItems, tailItems, contingencyBand } = partition;
+  const { heroItems, briefItems, tailItems, contingencyBand, leadHasImage = false } = partition;
 
   if (contingencyBand > 0) {
     NEWS_LIST.dataset.contingency = String(contingencyBand);
@@ -652,8 +657,10 @@ function renderNews() {
 
   tailItems.forEach((item) => tail.push(createArticle(item, 'standard', articleOpts)));
 
+  const balanceColumns = !(isSourceView && leadHasImage);
+
   if (hero.childElementCount) {
-    if (compacts.length) {
+    if (compacts.length && balanceColumns) {
       const spacer = document.createElement('div');
       spacer.className = 'news-hero-spacer';
       spacer.setAttribute('aria-hidden', 'true');
@@ -666,7 +673,7 @@ function renderNews() {
     briefRail.className = 'brief-rail';
     briefRail.innerHTML = '<h3 class="brief-rail-title">En bref</h3>';
     compacts.forEach((article) => briefRail.appendChild(article));
-    if (hero.childElementCount) {
+    if (hero.childElementCount && balanceColumns) {
       const railSpacer = document.createElement('div');
       railSpacer.className = 'brief-rail-spacer';
       railSpacer.setAttribute('aria-hidden', 'true');
@@ -697,6 +704,7 @@ function updateNewsLayout() {
 
 const HERO_SPOTLIGHT_MAX = 4; /* 1 à la une + 3 vedettes */
 const BRIEF_SIDEBAR_MAX = 4;
+const SOURCE_HERO_WITH_IMAGE_MAX = 2; /* à la une + 1 vedette si image */
 const CONTINGENCY_MAX_SESSIONS_BACK = 3;
 const CONTINGENCY_ULTIMATE_BAND = 4;
 
@@ -971,17 +979,19 @@ function pickSourceLead(pool) {
 }
 
 /**
- * Vue média : même gabarit que le fil global (1 à la une + 3 vedettes,
- * En bref, Suite du fil), mais sélection chronologique d'un seul journal.
+ * Vue média : gabarit magazine, sélection chronologique.
+ * Si la une a une image : 1 vedette seulement, le reste remplit En bref et la suite.
  */
 function partitionSourceFeed(items, referenceDate = new Date()) {
   const sorted = sortByDateDesc(items);
   const { items: pool, contingencyBand } = collectSourcePool(sorted, referenceDate);
   const lead = pickSourceLead(pool);
   const leadKey = lead ? articleKey(lead) : null;
+  const leadHasImage = !!(lead && getCandidateImage(lead.image));
+  const heroMax = leadHasImage ? SOURCE_HERO_WITH_IMAGE_MAX : HERO_SPOTLIGHT_MAX;
   const afterLead = pool.filter((item) => articleKey(item) !== leadKey);
-  const features = afterLead.slice(0, HERO_SPOTLIGHT_MAX - 1);
-  const heroItems = lead ? [lead, ...features] : afterLead.slice(0, HERO_SPOTLIGHT_MAX);
+  const features = afterLead.slice(0, heroMax - (lead ? 1 : 0));
+  const heroItems = lead ? [lead, ...features] : afterLead.slice(0, heroMax);
   const heroKeys = new Set(heroItems.map(articleKey));
   const briefItems = pool
     .filter((item) => !heroKeys.has(articleKey(item)))
@@ -990,7 +1000,7 @@ function partitionSourceFeed(items, referenceDate = new Date()) {
   const tailItems = sorted.filter(
     (item) => !heroKeys.has(articleKey(item)) && !briefKeys.has(articleKey(item)),
   );
-  return { heroItems, briefItems, tailItems, contingencyBand };
+  return { heroItems, briefItems, tailItems, contingencyBand, leadHasImage };
 }
 
 function createArticle(item, role = 'standard', { hideSourceMeta = false } = {}) {
