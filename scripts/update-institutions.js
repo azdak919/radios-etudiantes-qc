@@ -32,6 +32,62 @@ const SPARQL = 'https://query.wikidata.org/sparql';
 const CEGEP_QID = 'Q1110056';
 const TIMEOUT = 60000;
 
+// Curated canonical list of the public cégeps (Fédération des cégeps members).
+// Wikidata types cégeps inconsistently (some as CEGEP, some as "collège", some
+// missing), so we keep an authoritative base here and *enrich* it from Wikidata
+// (websites, plus any extra/private colleges Wikidata knows). Stable: the set
+// changes maybe once a decade. Source of truth for completeness.
+const CEGEPS = [
+  { name: "Cégep de l'Abitibi-Témiscamingue", region: 'Abitibi-Témiscamingue', website: 'https://www.cegepat.qc.ca/' },
+  { name: 'Cégep André-Laurendeau', region: 'Montréal', website: 'https://www.claurendeau.qc.ca/' },
+  { name: "Cégep d'Alma", region: 'Saguenay–Lac-Saint-Jean', website: 'https://www.cegepalma.ca/' },
+  { name: 'Collège Ahuntsic', region: 'Montréal', website: 'https://www.collegeahuntsic.qc.ca/' },
+  { name: 'Cégep de Baie-Comeau', region: 'Côte-Nord', website: 'https://www.cegep-baie-comeau.qc.ca/' },
+  { name: 'Cégep Beauce-Appalaches', region: 'Chaudière-Appalaches', website: 'https://www.cegepba.qc.ca/' },
+  { name: 'Collège de Bois-de-Boulogne', region: 'Montréal', website: 'https://www.bdeb.qc.ca/' },
+  { name: 'Champlain Regional College', region: 'Estrie', website: 'https://www.champlaincollege.qc.ca/' },
+  { name: 'Cégep de Chicoutimi', region: 'Saguenay–Lac-Saint-Jean', website: 'https://cchic.ca/' },
+  { name: 'Dawson College', region: 'Montréal', website: 'https://www.dawsoncollege.qc.ca/' },
+  { name: 'Cégep de Drummondville', region: 'Centre-du-Québec', website: 'https://www.cegepdrummond.ca/' },
+  { name: 'Cégep Édouard-Montpetit', region: 'Montérégie', website: 'https://www.cegepmontpetit.ca/' },
+  { name: 'Cégep Garneau', region: 'Capitale-Nationale', website: 'https://www.cegepgarneau.ca/' },
+  { name: 'Cégep de la Gaspésie et des Îles', region: 'Gaspésie–Îles-de-la-Madeleine', website: 'https://www.cegepgim.ca/' },
+  { name: 'Cégep Gérald-Godin', region: 'Montréal', website: 'https://www.cgodin.qc.ca/' },
+  { name: 'Cégep de Granby', region: 'Montérégie', website: 'https://cegepgranby.qc.ca/' },
+  { name: 'Collège Heritage', region: 'Outaouais', website: 'https://www.cegep-heritage.qc.ca/' },
+  { name: 'John Abbott College', region: 'Montréal', website: 'https://www.johnabbott.qc.ca/' },
+  { name: 'Cégep de Jonquière', region: 'Saguenay–Lac-Saint-Jean', website: 'https://www.cegepjonquiere.ca/' },
+  { name: 'Cégep régional de Lanaudière', region: 'Lanaudière', website: 'https://www.cegep-lanaudiere.qc.ca/' },
+  { name: 'Cégep de Lévis', region: 'Chaudière-Appalaches', website: 'https://www.cegeplevis.ca/' },
+  { name: 'Cégep Limoilou', region: 'Capitale-Nationale', website: 'https://www.cegeplimoilou.ca/' },
+  { name: 'Collège Lionel-Groulx', region: 'Laurentides', website: 'https://www.clg.qc.ca/' },
+  { name: 'Collège de Maisonneuve', region: 'Montréal', website: 'https://www.cmaisonneuve.qc.ca/' },
+  { name: 'Cégep Marie-Victorin', region: 'Montréal', website: 'https://www.collegemv.qc.ca/' },
+  { name: 'Cégep de Matane', region: 'Bas-Saint-Laurent', website: 'https://www.cegep-matane.qc.ca/' },
+  { name: 'Collège Montmorency', region: 'Laval', website: 'https://www.cmontmorency.qc.ca/' },
+  { name: "Cégep de l'Outaouais", region: 'Outaouais', website: 'https://www.cegepoutaouais.qc.ca/' },
+  { name: 'Cégep de Rimouski', region: 'Bas-Saint-Laurent', website: 'https://www.cegep-rimouski.qc.ca/' },
+  { name: 'Cégep de Rivière-du-Loup', region: 'Bas-Saint-Laurent', website: 'https://www.cegeprdl.ca/' },
+  { name: 'Cégep de La Pocatière', region: 'Bas-Saint-Laurent', website: 'https://www.cegeplapocatiere.qc.ca/' },
+  { name: 'Collège de Rosemont', region: 'Montréal', website: 'https://www.crosemont.qc.ca/' },
+  { name: 'Cégep de Saint-Félicien', region: 'Saguenay–Lac-Saint-Jean', website: 'https://cegepstfe.ca/' },
+  { name: 'Cégep de Saint-Hyacinthe', region: 'Montérégie', website: 'https://www.cegepsth.qc.ca/' },
+  { name: 'Cégep Saint-Jean-sur-Richelieu', region: 'Montérégie', website: 'https://www.cstjean.qc.ca/' },
+  { name: 'Cégep de Saint-Jérôme', region: 'Laurentides', website: 'https://www.cstj.qc.ca/' },
+  { name: 'Cégep de Saint-Laurent', region: 'Montréal', website: 'https://www.cegepsl.qc.ca/' },
+  { name: 'Cégep de Sainte-Foy', region: 'Capitale-Nationale', website: 'https://www.cegep-ste-foy.qc.ca/' },
+  { name: 'Cégep de Sept-Îles', region: 'Côte-Nord', website: 'https://www.cegepsept-iles.ca/' },
+  { name: 'Cégep de Shawinigan', region: 'Mauricie', website: 'https://www.cegepshawinigan.ca/' },
+  { name: 'Cégep de Sherbrooke', region: 'Estrie', website: 'https://www.cegepsherbrooke.qc.ca/' },
+  { name: 'Cégep de Sorel-Tracy', region: 'Montérégie', website: 'https://www.cegepst.qc.ca/' },
+  { name: 'Cégep de Thetford', region: 'Chaudière-Appalaches', website: 'https://www.cegepthetford.ca/' },
+  { name: 'Cégep de Trois-Rivières', region: 'Mauricie', website: 'https://www.cegeptr.qc.ca/' },
+  { name: 'Cégep de Valleyfield', region: 'Montérégie', website: 'https://www.colval.qc.ca/' },
+  { name: 'Vanier College', region: 'Montréal', website: 'https://www.vaniercollege.qc.ca/' },
+  { name: 'Cégep de Victoriaville', region: 'Centre-du-Québec', website: 'https://www.cegepvicto.ca/' },
+  { name: 'Cégep du Vieux Montréal', region: 'Montréal', website: 'https://www.cvm.qc.ca/' },
+];
+
 // Curated, stable list of Québec universities (with official site + region).
 // Universities in Québec change essentially never; this is the source of truth
 // for them, kept in code so the bot is never empty if Wikidata is down.
@@ -120,6 +176,52 @@ function buildUniversities() {
   }));
 }
 
+// Normalized key to match a curated cégep with its Wikidata twin despite
+// "Cégep"/"Collège" prefixes, accents, casing and punctuation differences.
+function cegepKey(name) {
+  return name
+    .normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase()
+    .replace(/\b(cegep|college|campus|de|du|des|la|le|les|et|d|l)\b/g, '')
+    .replace(/[^a-z0-9]/g, '');
+}
+
+// Merge the curated cégep base with Wikidata results: curated guarantees
+// completeness + correct names/regions; Wikidata fills missing websites and
+// contributes any extra colleges/campuses it knows (flagged source: wikidata).
+// Stale/duplicate Wikidata variants to drop (the canonical entry is curated).
+const DROP_KEYS = new Set([
+  'granbyhauteyamaska', // old name of "Cégep de Granby"
+]);
+
+function mergeCegeps(curated, wiki) {
+  const byKey = new Map();
+  for (const c of curated) {
+    byKey.set(cegepKey(c.name), {
+      name: c.name,
+      type: 'cegep',
+      region: c.region,
+      location: '',
+      website: c.website || '',
+      wikidata: '',
+      source: 'curated',
+    });
+  }
+  for (const w of wiki || []) {
+    const k = cegepKey(w.name);
+    if (DROP_KEYS.has(k)) continue;
+    const hit = byKey.get(k);
+    if (hit) {
+      if (!hit.website && w.website) hit.website = w.website;
+      if (w.wikidata) hit.wikidata = w.wikidata;
+      if (w.location) hit.location = w.location;
+      hit.source = 'both';
+    } else {
+      byKey.set(k, { ...w, type: 'cegep', region: w.region || '', source: 'wikidata' });
+    }
+  }
+  return [...byKey.values()];
+}
+
 async function main() {
   const doUpdate = process.argv.includes('--update');
   console.log('RÉQ Institutions Bot\n====================\n');
@@ -127,25 +229,17 @@ async function main() {
   const universities = buildUniversities();
   console.log(`▸ Universities (curated): ${universities.length}`);
 
-  console.log('▸ Cégeps (Wikidata): querying…');
-  let cegeps = await fetchCegeps();
-
-  if (!cegeps || cegeps.length < 20) {
-    // Wikidata unreachable or implausibly small → keep what we already have.
-    console.log(`  ! Wikidata query failed or too small (${cegeps ? cegeps.length : 'null'}). Preserving existing cégeps.`);
-    try {
-      const existing = JSON.parse(fs.readFileSync(OUT_PATH, 'utf8'));
-      cegeps = (existing.institutions || []).filter((i) => i.type === 'cegep');
-    } catch {
-      cegeps = [];
-    }
-    if (!cegeps.length) {
-      console.error('  ✗ No cégep data available (no Wikidata, no existing file). Aborting.');
-      process.exit(1);
-    }
+  console.log('▸ Cégeps: curated base + Wikidata enrichment…');
+  const wiki = await fetchCegeps();
+  if (wiki) {
+    console.log(`  ✓ Wikidata returned ${wiki.length} entries`);
   } else {
-    console.log(`  ✓ ${cegeps.length} cégeps`);
+    console.log('  ! Wikidata unreachable — using curated base only (still complete).');
   }
+  const cegeps = mergeCegeps(CEGEPS, wiki);
+  const enriched = cegeps.filter((c) => c.source === 'both').length;
+  const extras = cegeps.filter((c) => c.source === 'wikidata').length;
+  console.log(`  → ${cegeps.length} cégeps (${enriched} enrichis par Wikidata, ${extras} extras Wikidata)`);
 
   const institutions = [...universities, ...cegeps].sort((a, b) => {
     if (a.type !== b.type) return a.type === 'universite' ? -1 : 1;
