@@ -278,6 +278,8 @@ let mediaSource = null;
 let boostWired = false;             // graphe Web Audio branché sur l'élément courant
 let webAudioSupported = !!(window.AudioContext || window.webkitAudioContext);
 let currentGain = 0.8;              // valeur du curseur (0 → MAX_GAIN)
+let volumeMuted = false;
+let gainBeforeMute = 0.8;
 const MAX_GAIN = 2;                 // jusqu'à 200 %
 const boostUnavailable = new Set(); // ids des postes sans CORS
 // Réglages de lecture par poste. CFAK (Sherbrooke) a de petites coupures : on
@@ -752,6 +754,7 @@ function bindTuner() {
   TUNER_VOLUME.addEventListener('input', (e) => {
     const v = parseFloat(e.target.value);
     currentGain = Number.isFinite(v) ? v : currentGain;
+    if (volumeMuted && currentGain > 0) setVolumeMuted(false);
     applyGain();
     localStorage.setItem('req-player-vol', currentGain);
   });
@@ -769,10 +772,13 @@ function bindVolumePopover() {
   };
 
   TUNER_VOL_TOGGLE.addEventListener('click', (e) => {
-    if (!VOL_COMPACT.matches) return; // bureau : le curseur est déjà visible
     e.stopPropagation();
-    const open = TUNER_VOL.classList.toggle('is-open');
-    TUNER_VOL_TOGGLE.setAttribute('aria-expanded', open ? 'true' : 'false');
+    if (VOL_COMPACT.matches) {
+      const open = TUNER_VOL.classList.toggle('is-open');
+      TUNER_VOL_TOGGLE.setAttribute('aria-expanded', open ? 'true' : 'false');
+      return;
+    }
+    toggleVolumeMute();
   });
 
   document.addEventListener('click', (e) => {
@@ -1062,18 +1068,54 @@ function rebuildAudio(withBoost) {
   applyGain();
 }
 
+function setVolumeMuted(muted) {
+  volumeMuted = muted;
+  if (muted) {
+    gainBeforeMute = currentGain > 0 ? currentGain : (gainBeforeMute || 0.8);
+  }
+  updateVolumeUI();
+  applyGain();
+}
+
+function toggleVolumeMute() {
+  setVolumeMuted(!volumeMuted);
+}
+
+function updateVolumeUI() {
+  const icoVol = TUNER_VOL_TOGGLE?.querySelector('.ico-vol');
+  const icoMute = TUNER_VOL_TOGGLE?.querySelector('.ico-vol-mute');
+  TUNER_VOL?.classList.toggle('is-muted', volumeMuted);
+  icoVol?.classList.toggle('hidden', volumeMuted);
+  icoMute?.classList.toggle('hidden', !volumeMuted);
+  if (TUNER_VOL_TOGGLE) {
+    TUNER_VOL_TOGGLE.setAttribute('aria-pressed', String(volumeMuted));
+    TUNER_VOL_TOGGLE.setAttribute(
+      'aria-label',
+      volumeMuted ? 'Réactiver le son' : 'Couper le son',
+    );
+    TUNER_VOL_TOGGLE.title = volumeMuted
+      ? 'Réactiver le son'
+      : 'Couper le son — curseur à droite pour amplifier les flux faibles';
+  }
+  if (TUNER_VOLUME) {
+    const pct = volumeMuted ? 0 : Math.round(currentGain * 100);
+    TUNER_VOLUME.setAttribute('aria-valuetext', volumeMuted ? 'Muet' : `${pct} %`);
+  }
+}
+
 /** Applique la valeur du curseur : gain Web Audio si amplifiable, sinon volume natif. */
 function applyGain() {
   if (!audio) return;
+  const effective = volumeMuted ? 0 : currentGain;
   if (boostWired && gainNode) {
     audio.volume = 1;
-    try { gainNode.gain.value = currentGain; } catch {}
+    try { gainNode.gain.value = effective; } catch {}
   } else {
     // Sans graphe Web Audio, le volume natif plafonne à 100 %.
-    audio.volume = Math.min(1, currentGain);
+    audio.volume = Math.min(1, effective);
   }
-  TUNER.classList.toggle('is-boosted', currentGain > 1.001);
-  if (TUNER_VOLUME) TUNER_VOLUME.setAttribute('aria-valuetext', `${Math.round(currentGain * 100)} %`);
+  TUNER.classList.toggle('is-boosted', !volumeMuted && currentGain > 1.001);
+  updateVolumeUI();
 }
 
 function setupAudio() {
@@ -1116,7 +1158,9 @@ function updateMediaSession(radio, { title, sub } = {}) {
 function restoreVolume() {
   const saved = parseFloat(localStorage.getItem('req-player-vol') ?? '0.8');
   currentGain = Number.isFinite(saved) ? Math.min(MAX_GAIN, Math.max(0, saved)) : 0.8;
+  gainBeforeMute = currentGain;
   TUNER_VOLUME.value = currentGain;
+  volumeMuted = false;
   applyGain();
 }
 

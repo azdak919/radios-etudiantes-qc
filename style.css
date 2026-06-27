@@ -425,18 +425,49 @@ a { color: inherit; }
   transition: color 0.15s ease, background 0.15s ease;
 }
 .tuner-vol-btn:hover { color: rgba(255,255,255,0.85); }
-.tuner-vol-btn .ico-vol { width: 16px; height: 16px; display: block; }
+.tuner-vol-btn .ico-vol,
+.tuner-vol-btn .ico-vol-mute { width: 16px; height: 16px; display: block; }
 /* L'icône reflète la zone d'amplification (curseur masqué sur mobile). */
 .tuner.is-boosted .tuner-vol-btn { color: #ff7d6e; }
+.tuner-vol.is-muted .tuner-vol-btn { color: rgba(255,255,255,0.38); }
 .tuner-volume { width: 88px; accent-color: var(--radio-bright); cursor: pointer; }
 /* Au-delà de la mi-course, le curseur amplifie le son : on signale la zone. */
 .tuner.is-boosted .tuner-volume { accent-color: #ff7d6e; }
+.tuner-vol.is-muted .tuner-volume { opacity: 0.45; }
 
-/* Bureau : curseur affiché en ligne, le bouton n'est qu'une icône. */
+/* Bureau : curseur en ligne + bouton circulaire (mute au clic). */
 @media (min-width: 680px) {
   .tuner-vol-slot { display: flex; align-items: center; }
-  .tuner-vol-btn { cursor: default; }
-  .tuner-vol-btn:hover { color: inherit; background: none; }
+  .tuner-vol-btn {
+    flex-shrink: 0;
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    margin: 0;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.16);
+    background: rgba(255,255,255,0.06);
+    color: rgba(255,255,255,0.72);
+    cursor: pointer;
+    transition: background 120ms ease, border-color 120ms ease, color 120ms ease, transform 120ms ease;
+  }
+  .tuner-vol-btn:hover {
+    color: rgba(255,255,255,0.95);
+    background: rgba(255,255,255,0.12);
+    border-color: rgba(255,255,255,0.28);
+  }
+  .tuner-vol-btn:active { transform: scale(0.93); }
+  .tuner-vol-btn .ico-vol,
+  .tuner-vol-btn .ico-vol-mute { width: 20px; height: 20px; }
+  .tuner.is-boosted .tuner-vol-btn {
+    color: #ff7d6e;
+    border-color: rgba(255,125,110,0.35);
+  }
+  .tuner-vol.is-muted .tuner-vol-btn {
+    color: rgba(255,255,255,0.42);
+    border-color: rgba(255,255,255,0.12);
+    background: rgba(255,255,255,0.04);
+  }
 }
 
 /* Mobile : contrôles proportionnels (carrés arrondis + volume circulaire). */
