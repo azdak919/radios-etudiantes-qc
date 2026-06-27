@@ -708,7 +708,8 @@ function updateNewsLayout() {
 
 const HERO_SPOTLIGHT_MAX = 3; /* 1 à la une + 2 vedettes */
 const BRIEF_SIDEBAR_MAX = 7;
-const SOURCE_HERO_WITH_IMAGE_MAX = 2; /* à la une + 1 vedette si image */
+const SOURCE_HERO_WITH_IMAGE_MAX = 3; /* à la une + 2 vedettes si image */
+const SOURCE_HERO_TEXT_MAX = 4; /* à la une + 3 vedettes sans image */
 /** Fenêtre de fraîcheur : 3 sessions max (= une année universitaire complète). */
 const FRESHNESS_SESSION_COUNT = 3;
 const CONTINGENCY_MAX_SESSIONS_BACK = FRESHNESS_SESSION_COUNT - 1;
@@ -1053,7 +1054,7 @@ function pickSourceLead(pool) {
 
 /**
  * Vue média : gabarit magazine, sélection chronologique.
- * À la une = article le plus récent ; s'il a une image, 1 vedette seulement,
+ * À la une = article le plus récent ; s'il a une image, 2 vedettes,
  * sinon 1 à la une + 3 vedettes, puis En bref et la suite.
  */
 function partitionSourceFeed(items, referenceDate = new Date()) {
@@ -1062,7 +1063,7 @@ function partitionSourceFeed(items, referenceDate = new Date()) {
   const lead = pickSourceLead(pool);
   const leadKey = lead ? articleKey(lead) : null;
   const leadHasImage = !!(lead && hasDisplayImage(lead));
-  const heroMax = leadHasImage ? SOURCE_HERO_WITH_IMAGE_MAX : HERO_SPOTLIGHT_MAX;
+  const heroMax = leadHasImage ? SOURCE_HERO_WITH_IMAGE_MAX : SOURCE_HERO_TEXT_MAX;
   const afterLead = pool.filter((item) => articleKey(item) !== leadKey);
   const features = afterLead.slice(0, heroMax - (lead ? 1 : 0));
   const heroItems = lead ? [lead, ...features] : afterLead.slice(0, heroMax);
