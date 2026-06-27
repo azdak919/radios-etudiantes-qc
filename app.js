@@ -94,15 +94,17 @@ async function init() {
   setupAudio();
   bindTuner();
 
-  const [radiosData, newsLoaded, brandLoaded] = await Promise.allSettled([
+  try {
+    const brandData = await fetch('./brand-colors.json').then((r) => r.json());
+    if (brandData?.institutions) brandColors = brandData;
+  } catch (e) {
+    console.warn('Failed to load brand-colors.json', e);
+  }
+
+  const [radiosData] = await Promise.allSettled([
     fetch('./radios.json').then(r => r.json()),
     loadNews(),
-    fetch('./brand-colors.json').then(r => r.json()),
   ]);
-
-  if (brandLoaded.status === 'fulfilled' && brandLoaded.value?.institutions) {
-    brandColors = brandLoaded.value;
-  }
 
   radios = radiosData.status === 'fulfilled' ? sortRadios(radiosData.value) : [];
   buildTunerOptions();
@@ -419,17 +421,37 @@ async function loadNews() {
   renderNews();
 }
 
+function normInstitutionKey(name = '') {
+  return name
+    .normalize('NFD')
+    .replace(/\p{M}/gu, '')
+    .toLowerCase()
+    .replace(/\s*\([^)]*\)/g, '')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function institutionBrandColor(institution = '') {
+  if (!institution) return null;
+  const table = brandColors.institutions || {};
+  if (table[institution]?.color) return table[institution].color;
+
+  const norm = normInstitutionKey(institution);
+  for (const [key, entry] of Object.entries(table)) {
+    if (key.startsWith('_')) continue;
+    if (normInstitutionKey(key) === norm) return entry.color;
+  }
+  return null;
+}
+
 function assignSourceColors() {
   const palette = brandColors.fallback_palette || ['#003DA5', '#6C2163', '#047857'];
-  const byInstitution = brandColors.institutions || {};
   const sources = [...new Set(news.map(n => n.source))].sort((a, b) => a.localeCompare(b, 'fr'));
   sourceColors = {};
 
   sources.forEach((src, i) => {
     const item = news.find(n => n.source === src);
-    const inst = item?.institution || '';
-    const brand = byInstitution[inst];
-    sourceColors[src] = brand?.color || palette[i % palette.length];
+    sourceColors[src] = institutionBrandColor(item?.institution || '') || palette[i % palette.length];
   });
 }
 

@@ -7,11 +7,11 @@
     },
     "UQAM": {
       "color": "#0079BE",
-      "source": "Site uqam.ca — bleu institutionnel"
+      "source": "Réseau UQ / site uqam.ca — bleu institutionnel"
     },
     "Université du Québec à Montréal (UQAM)": {
       "color": "#0079BE",
-      "source": "Site uqam.ca — bleu institutionnel"
+      "source": "Réseau UQ / site uqam.ca — bleu institutionnel"
     },
     "Université McGill": {
       "color": "#ED1B2F",
@@ -31,11 +31,23 @@
     },
     "Université Laval": {
       "color": "#E30513",
-      "source": "Site ulaval.ca — rouge institutionnel"
+      "source": "Guide identité ULaval — rouge primaire #e30513"
     },
     "Université de Sherbrooke": {
-      "color": "#006B3F",
-      "source": "Identité visuelle UdeS — vert"
+      "color": "#00A759",
+      "source": "Charte UdeS — vert fierté (RGB web #00A759)"
+    },
+    "Université du Québec à Chicoutimi": {
+      "color": "#5A7411",
+      "source": "Réseau UQ — couleurs établissements (Pantone 575)"
+    },
+    "Université du Québec à Chicoutimi (UQAC)": {
+      "color": "#5A7411",
+      "source": "Réseau UQ — couleurs établissements (Pantone 575)"
+    },
+    "Université du Québec à Rimouski (UQAR)": {
+      "color": "#004990",
+      "source": "Réseau UQ — couleurs établissements (Pantone 280)"
     },
     "Cégep du Vieux Montréal": {
       "color": "#CF1F1F",
@@ -48,6 +60,26 @@
     "Cégep de Jonquière": {
       "color": "#FF8B00",
       "source": "Site cegepjonquiere.ca — orange institutionnel"
+    },
+    "Cégep de Chicoutimi": {
+      "color": "#00994C",
+      "source": "Site cchic.ca — vert institutionnel"
+    },
+    "Cégep de Rimouski": {
+      "color": "#1B4F8C",
+      "source": "Identité visuelle 2018 — bleu profond"
+    },
+    "Collège de Maisonneuve": {
+      "color": "#002768",
+      "source": "Site cmaisonneuve.qc.ca — bleu emblématique"
+    },
+    "Collège Lionel-Groulx": {
+      "color": "#2F98D6",
+      "source": "Site clg.qc.ca — bleu institutionnel"
+    },
+    "Collège Montmorency": {
+      "color": "#002768",
+      "source": "Guide normes graphiques Montmorency — bleu foncé"
     }
   },
   "fallback_palette": [
