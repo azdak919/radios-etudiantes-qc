@@ -466,31 +466,67 @@ function newsSkeleton(n) {
     </div>`).join('');
 }
 
-function articleInstitutionLabel(name = '') {
-  const DISPLAY = {
-    UQAM: 'Université du Québec à Montréal',
-    'Université du Québec à Montréal (UQAM)': 'Université du Québec à Montréal',
-    'Cégep de Jonquière (ATM – journalisme)': 'Cégep de Jonquière',
-  };
-  if (DISPLAY[name]) return DISPLAY[name];
+const INSTITUTION_ACRONYMS = {
+  'Université de Montréal': 'UdeM',
+  UQAM: 'UQAM',
+  'Université du Québec à Montréal': 'UQAM',
+  'Université du Québec à Montréal (UQAM)': 'UQAM',
+  'Université McGill': 'McGill',
+  'McGill University': 'McGill',
+  'Concordia University': 'Concordia',
+  'Université Laval': 'ULaval',
+  'Université de Sherbrooke': 'UdeS',
+  'Université du Québec à Trois-Rivières': 'UQTR',
+  'Université du Québec à Trois-Rivières (UQTR)': 'UQTR',
+  'Université du Québec à Chicoutimi': 'UQAC',
+  'Université du Québec à Chicoutimi (UQAC)': 'UQAC',
+  'Université du Québec à Rimouski': 'UQAR',
+  'Université du Québec à Rimouski (UQAR)': 'UQAR',
+  'Université du Québec en Outaouais': 'UQO',
+  'Université du Québec en Outaouais (UQO)': 'UQO',
+  'Université du Québec en Abitibi-Témiscamingue': 'UQAT',
+  'Université du Québec en Abitibi-Témiscamingue (UQAT)': 'UQAT',
+};
+
+function resolveInstitutionAcronym(name = '') {
+  if (!name) return '';
+  if (INSTITUTION_ACRONYMS[name]) return INSTITUTION_ACRONYMS[name];
+
+  const norm = normInstitutionKey(name);
+  for (const [key, acronym] of Object.entries(INSTITUTION_ACRONYMS)) {
+    if (normInstitutionKey(key) === norm) return acronym;
+  }
+
+  const paren = name.match(/\((UQ[A-Z]{1,4}|UdeM|ULaval|UdeS|McGill)\)/i);
+  if (paren) return paren[1];
+
+  return '';
+}
+
+function isQuebecUniversity(name = '', type = '') {
+  return type === 'universite'
+    || /^université|^university|^mcgill|^concordia$/i.test(name)
+    || name === 'UQAM';
+}
+
+function articleInstitutionLabel(name = '', type = '') {
+  if (!name) return '';
+  if (isQuebecUniversity(name, type)) {
+    return resolveInstitutionAcronym(name) || name;
+  }
   return name.replace(/\s*\([^)]*\)\s*$/, '').trim() || name;
 }
 
 function shortInstitution(name = '', type = '') {
-  const SHORT = {
-    'Université de Montréal': 'UdeM',
-    'UQAM': 'UQAM',
-    'Université du Québec à Montréal (UQAM)': 'UQAM',
-    'Université McGill': 'McGill',
-    'McGill University': 'McGill',
-    'Concordia University': 'Concordia',
-    'Université Laval': 'ULaval',
-    'Université de Sherbrooke': 'UdeS',
-    'Université du Québec à Trois-Rivières': 'UQTR',
+  const acronym = resolveInstitutionAcronym(name);
+  if (acronym) return acronym;
+
+  const CEGEP_SHORT = {
     'Cégep du Vieux Montréal': 'CVM',
     'Cégep de Jonquière (ATM – journalisme)': 'Cégep Jonquière',
+    'Cégep de Jonquière': 'Cégep Jonquière',
   };
-  if (SHORT[name]) return SHORT[name];
+  if (CEGEP_SHORT[name]) return CEGEP_SHORT[name];
 
   const paren = name.match(/\(([^)]+)\)/);
   if (paren) {
@@ -498,14 +534,7 @@ function shortInstitution(name = '', type = '') {
     if (inner.length <= 14) return inner;
   }
   if (/^cégep/i.test(name)) return name.replace(/\s*\(.*$/, '').replace(/^Cégep (de |du )?/i, 'Cégep ');
-  if (/^université/i.test(name)) {
-    return name
-      .replace(/\s*\(.*$/, '')
-      .replace(/^Université du Québec à /i, 'UQ ')
-      .replace(/^Université de /i, '')
-      .replace(/^Université /i, '')
-      .trim();
-  }
+  if (isQuebecUniversity(name, type)) return name;
   return type === 'cegep' ? 'Cégep' : name.length > 24 ? name.slice(0, 22) + '…' : name;
 }
 
@@ -717,7 +746,7 @@ function createArticle(item, role = 'standard') {
     ${role === 'lead' ? '<span class="article-eyebrow">À la une</span>' : ''}
     <div class="article-meta">
       <span class="article-source">${escapeHtml(item.source)}</span>
-      ${item.institution ? `<span class="article-inst">${escapeHtml(articleInstitutionLabel(item.institution))}</span>` : ''}
+      ${item.institution ? `<span class="article-inst">${escapeHtml(articleInstitutionLabel(item.institution, item.type))}</span>` : ''}
       ${time ? `<time class="article-time${fresh ? ' is-fresh' : ''}" datetime="${escapeHtml(item.date)}">${time}</time>` : ''}
     </div>
     ${canUseImage ? '<figure class="article-media" aria-hidden="true"></figure>' : ''}
