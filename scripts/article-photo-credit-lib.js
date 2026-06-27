@@ -7,6 +7,7 @@ const { fetchText, articleBodyHtml, decodeEntities } = require('./article-image-
 
 const CREDIT_LINE_RE = /^(?:Photo|Crédit(?:\s+photo)?|Credit(?:\s+photo)?)\s*[:]\s*(.+)$/i;
 const PHOTO_BY_RE = /(?:\(|^)\s*Photo\s+by\s+([^).]+?)(?:\s+via\s+([^).]+))?\s*\)?\.?$/i;
+const MENTION_PHOTO_RE = /(?:Mention\s+)?(?:Photo|Crédit|Credit)\s*:\s*([^\n<.]+)/i;
 
 function stripHtml(text = '') {
   return decodeEntities(String(text))
@@ -91,12 +92,65 @@ function extractEmbeddedPhotoCredit(text = '') {
     /\((?:Photo|Crédit|Credit)\s*:\s*([^)]+)\)/gi,
     /\((?:Photo|Crédit|Credit)\s+(?:by|par)\s+([^)]+)\)/gi,
     /\((?:Photo|Crédit|Credit)\s*:\s*([^)"']+)$/gi,
+    /(?:Mention\s+)?(?:Photo|Crédit|Credit)\s*:\s*([^\n<.]+)/gi,
   ];
   let last = '';
   for (const re of patterns) {
     for (const m of t.matchAll(re)) last = m[1];
   }
   return sanitizeCreditText(last);
+}
+
+function parseMediaCreditPipe(text = '') {
+  const t = stripHtml(text).replace(/\s+/g, ' ').trim();
+  const creator = t.split('|')[0].trim();
+  if (!creator || creator.length < 2 || creator.length > 80) return '';
+  if (/^(?:le|la|the)\s+/i.test(creator) && creator.split(/\s+/).length <= 3) return '';
+  return sanitizeCreditText(creator);
+}
+
+/** Plugin WordPress Media Credit (The McGill Daily, Le Délit, etc.). */
+function extractMediaCreditPlugin(html = '', imageUrl = '') {
+  const entryIdx = html.search(/class=["'][^"']*\bentry-content\b/i);
+  const header = entryIdx > 0 ? html.slice(0, entryIdx) : html.slice(0, 80000);
+
+  const featured = header.match(/class=["']media_credit_featured["'][^>]*>([\s\S]*?)<\/div>/i);
+  if (featured) {
+    const creator = parseMediaCreditPipe(featured[1]);
+    if (creator) {
+      const parsed = creditFromPhrase(creator);
+      if (parsed) return { ...parsed, source: 'media-credit-featured' };
+    }
+  }
+
+  const spans = header.match(/<span[^>]*class=["'][^"']*media-credit[^"']*["'][^>]*>[\s\S]*?<\/span>/gi) || [];
+  for (const span of spans) {
+    if (/max-width:\s*2\d{2}px/i.test(span)) continue;
+    const inner = span.replace(/<span[^>]*>|<\/span>/gi, '');
+    const creator = parseMediaCreditPipe(inner);
+    if (creator) {
+      const parsed = creditFromPhrase(creator);
+      if (parsed) return { ...parsed, source: 'media-credit' };
+    }
+  }
+
+  if (imageUrl) {
+    const key = imageUrlKey(imageUrl).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    if (key.length > 8) {
+      const near = html.match(
+        new RegExp(`${key}[\\s\\S]{0,1200}?class=["'][^"']*media-credit[^"']*["'][^>]*>([\\s\\S]*?)<\\/span>`, 'i'),
+      );
+      if (near) {
+        const creator = parseMediaCreditPipe(near[1]);
+        if (creator) {
+          const parsed = creditFromPhrase(creator);
+          if (parsed) return { ...parsed, source: 'media-credit-near' };
+        }
+      }
+    }
+  }
+
+  return null;
 }
 
 function normalizeCreditPhrase(text = '') {
@@ -112,6 +166,7 @@ function looksLikePhotoCredit(text = '') {
   const t = stripHtml(text);
   if (!t || t.length < 4) return false;
   if (extractEmbeddedPhotoCredit(t)) return true;
+  if (MENTION_PHOTO_RE.test(t)) return true;
   if (CREDIT_LINE_RE.test(t)) return true;
   if (/\((?:Photo|Crédit|Credit)\s*:\s*[^)]+\)/i.test(t)) return true;
   if (/\((?:Photo|Crédit|Credit)\s+(?:by|par)\s+[^)]+\)/i.test(t)) return true;
@@ -164,9 +219,16 @@ function extractFigureCredit(html = '', imageUrl = '') {
     const srcM = fig.match(/<img[^>]+src=["']([^"']+)["']/i);
     if (!srcM || (imageUrl && !urlsMatch(srcM[1], imageUrl))) continue;
     const capM = fig.match(/<figcaption[^>]*>([\s\S]*?)<\/figcaption>/i);
-    if (capM && looksLikePhotoCredit(capM[1])) {
-      const parsed = creditFromPhrase(capM[1]);
-      if (parsed) return { ...parsed, source: 'figcaption' };
+    if (capM) {
+      const embedded = extractEmbeddedPhotoCredit(capM[1]);
+      if (embedded) {
+        const parsed = creditFromPhrase(embedded);
+        if (parsed) return { ...parsed, source: 'figcaption' };
+      }
+      if (looksLikePhotoCredit(capM[1])) {
+        const parsed = creditFromPhrase(capM[1]);
+        if (parsed) return { ...parsed, source: 'figcaption' };
+      }
     }
   }
 
@@ -218,6 +280,7 @@ function extractPhotoCreditFromHtml(html = '', imageUrl = '') {
   if (!html || html.length < 200) return null;
 
   const extractors = [
+    () => extractMediaCreditPlugin(html, imageUrl),
     () => extractJsonLdCredit(html, imageUrl),
     () => extractFigureCredit(html, imageUrl),
     () => extractBodyCredit(html, imageUrl),
@@ -317,6 +380,7 @@ module.exports = {
   sanitizeCreditText,
   creditLooksCorrupt,
   looksLikePhotoCredit,
+  extractMediaCreditPlugin,
   extractPhotoCreditFromHtml,
   resolveSourcePhotoCredit,
   fetchSourcePhotoCredit,

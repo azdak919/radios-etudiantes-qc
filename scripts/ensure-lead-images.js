@@ -31,7 +31,7 @@ const QC_PATH = path.join(ROOT, 'lead-image-qc.json');
 const HERO_MIN_POOL = 4;
 const PAGE_SCRAPE_LIMIT = 30;
 const STOCK_SEARCH_LIMIT = 28;
-const SOURCE_CREDIT_LIMIT = 40;
+const SOURCE_CREDIT_LIMIT = 200;
 
 const doUpdate = process.argv.includes('--update');
 
@@ -161,7 +161,7 @@ async function main() {
   }
 
   const creditQueue = items
-    .filter((item, index) => (item.featured || index < 50) && needsSourceCreditCheck(item))
+    .filter((item) => item.image && isCandidateImageUrl(item.image) && needsSourceCreditCheck(item))
     .slice(0, SOURCE_CREDIT_LIMIT);
 
   for (const item of creditQueue) {
