@@ -358,6 +358,7 @@ function sortRadios(list) {
 
 const TUNER_FEATURED_COUNT = 4;
 const TUNER_FEATURED_STORAGE_KEY = 'radar-featured-stations';
+let featuredStationIds = [];
 
 function shuffleInPlace(list) {
   for (let i = list.length - 1; i > 0; i -= 1) {
@@ -388,17 +389,43 @@ function applyTunerAccent(radio) {
   }
 }
 
+function playableRadios() {
+  return radios.filter((r) => getPlayableStream(r));
+}
+
+function featuredPoolKey(playable = []) {
+  return playable.map((r) => r.id).sort().join('|');
+}
+
+function persistFeaturedIds(ids = [], poolKey = '') {
+  featuredStationIds = ids;
+  try {
+    sessionStorage.setItem(TUNER_FEATURED_STORAGE_KEY, JSON.stringify({ poolKey, ids }));
+  } catch {
+    /* ignore */
+  }
+}
+
+function featuredRadiosFromIds(playable = [], ids = []) {
+  const limit = Math.min(TUNER_FEATURED_COUNT, playable.length);
+  return ids
+    .map((id) => playable.find((r) => r.id === id))
+    .filter(Boolean)
+    .slice(0, limit);
+}
+
 function pickFeaturedStations(playable = [], count = TUNER_FEATURED_COUNT) {
   if (!playable.length) return [];
   const limit = Math.min(count, playable.length);
-  const poolKey = playable.map((r) => r.id).sort().join('|');
+  const poolKey = featuredPoolKey(playable);
 
   try {
     const saved = JSON.parse(sessionStorage.getItem(TUNER_FEATURED_STORAGE_KEY) || 'null');
     if (saved?.poolKey === poolKey && Array.isArray(saved.ids)) {
       const kept = saved.ids.filter((id) => playable.some((r) => r.id === id)).slice(0, limit);
       if (kept.length === limit) {
-        return kept.map((id) => playable.find((r) => r.id === id)).filter(Boolean);
+        persistFeaturedIds(kept, poolKey);
+        return featuredRadiosFromIds(playable, kept);
       }
     }
   } catch {
@@ -406,47 +433,110 @@ function pickFeaturedStations(playable = [], count = TUNER_FEATURED_COUNT) {
   }
 
   const picked = shuffleInPlace([...playable]).slice(0, limit);
-  try {
-    sessionStorage.setItem(TUNER_FEATURED_STORAGE_KEY, JSON.stringify({
-      poolKey,
-      ids: picked.map((r) => r.id),
-    }));
-  } catch {
-    /* ignore */
-  }
+  persistFeaturedIds(picked.map((r) => r.id), poolKey);
   return picked;
 }
 
-function buildTunerStations() {
-  if (!TUNER_STATIONS) return;
-  const playable = radios.filter(r => getPlayableStream(r));
-  if (!playable.length) {
-    TUNER_STATIONS.innerHTML = '';
-    return;
+/** Met la station sélectionnée en tête de la barre ; remplace la 4e si elle n'y est pas encore. */
+function promoteFeaturedStation(radio) {
+  if (!radio?.id || !getPlayableStream(radio)) return false;
+
+  const playable = playableRadios();
+  if (!playable.length) return false;
+
+  const poolKey = featuredPoolKey(playable);
+  const limit = Math.min(TUNER_FEATURED_COUNT, playable.length);
+  let ids = featuredStationIds.filter((id) => playable.some((r) => r.id === id));
+
+  if (ids.length < limit) {
+    pickFeaturedStations(playable);
+    ids = [...featuredStationIds];
   }
 
-  const featured = pickFeaturedStations(playable);
-  TUNER_STATIONS.innerHTML = `
-    <span class="tuner-stations-label">Sur RADAR</span>
-    <div class="tuner-stations-list" role="group" aria-label="Écoute directe">
-      ${featured.map(r => `
-        <button type="button" class="tuner-station-btn" data-id="${escapeHtml(r.id)}"
-          style="--c: ${escapeHtml(radioAccentColor(r))}"
-          title="${escapeHtml(r.fullName || r.name)} · ${escapeHtml(r.institution)}">
-          <span class="tuner-station-call">${escapeHtml(r.name.replace(/\s+FM.*/i, '').trim())}</span>
-          <span class="tuner-station-inst">${escapeHtml(shortInstitution(r.institution, r.type))}</span>
-        </button>
-      `).join('')}
-    </div>
-  `;
+  const prev = ids.join('|');
+  const at = ids.indexOf(radio.id);
+  if (at > 0) {
+    ids.splice(at, 1);
+    ids.unshift(radio.id);
+  } else if (at < 0) {
+    ids.unshift(radio.id);
+    ids = ids.slice(0, limit);
+  } else {
+    return false;
+  }
 
-  TUNER_STATIONS.querySelectorAll('.tuner-station-btn').forEach(btn => {
+  if (ids.join('|') === prev) return false;
+  persistFeaturedIds(ids, poolKey);
+  return true;
+}
+
+function tunerStationBtnHtml(r) {
+  return `
+    <button type="button" class="tuner-station-btn" data-id="${escapeHtml(r.id)}"
+      style="--c: ${escapeHtml(radioAccentColor(r))}"
+      title="${escapeHtml(r.fullName || r.name)} · ${escapeHtml(r.institution)}">
+      <span class="tuner-station-call">${escapeHtml(r.name.replace(/\s+FM.*/i, '').trim())}</span>
+      <span class="tuner-station-inst">${escapeHtml(shortInstitution(r.institution, r.type))}</span>
+    </button>`;
+}
+
+function mountTunerStationButtons() {
+  if (!TUNER_STATIONS) return;
+  TUNER_STATIONS.querySelectorAll('.tuner-station-btn').forEach((btn) => {
     btn.addEventListener('click', () => {
       TUNER_SELECT.value = btn.dataset.id;
       selectStation(btn.dataset.id, { autoplay: true });
     });
   });
   updateTunerStationsUI();
+}
+
+function renderFeaturedStations(featured = []) {
+  if (!TUNER_STATIONS) return;
+  TUNER_STATIONS.innerHTML = `
+    <span class="tuner-stations-label">Sur RADAR</span>
+    <div class="tuner-stations-list" role="group" aria-label="Écoute directe">
+      ${featured.map((r) => tunerStationBtnHtml(r)).join('')}
+    </div>
+  `;
+  mountTunerStationButtons();
+}
+
+function syncFeaturedBar(radio = currentStation) {
+  if (!TUNER_STATIONS) return;
+  const playable = playableRadios();
+  if (!playable.length) {
+    TUNER_STATIONS.innerHTML = '';
+    featuredStationIds = [];
+    return;
+  }
+
+  const changed = promoteFeaturedStation(radio);
+  if (!changed) {
+    updateTunerStationsUI();
+    return;
+  }
+
+  const featured = featuredRadiosFromIds(playable, featuredStationIds);
+  const list = TUNER_STATIONS.querySelector('.tuner-stations-list');
+  if (list && featured.length) {
+    list.innerHTML = featured.map((r) => tunerStationBtnHtml(r)).join('');
+    mountTunerStationButtons();
+  } else {
+    renderFeaturedStations(featured.length ? featured : pickFeaturedStations(playable));
+  }
+}
+
+function buildTunerStations() {
+  if (!TUNER_STATIONS) return;
+  const playable = playableRadios();
+  if (!playable.length) {
+    TUNER_STATIONS.innerHTML = '';
+    featuredStationIds = [];
+    return;
+  }
+
+  renderFeaturedStations(pickFeaturedStations(playable));
 }
 
 function updateTunerStationsUI() {
@@ -545,6 +635,7 @@ function selectStation(id, { autoplay = false, openExternal = false } = {}) {
 
   updateMediaSession(radio);
   applyTunerAccent(radio);
+  if (playable) syncFeaturedBar(radio);
 
   if (!playable) {
     stopPlayback({ keepStation: true });
