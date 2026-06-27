@@ -807,7 +807,7 @@ function cleanTitle(title = '') {
   return t;
 }
 
-const BRIEF_LIMITS = { lead: 300, feature: 210, compact: 120, standard: 0 };
+const BRIEF_LIMITS = { lead: 300, feature: 210, compact: 120, standard: 170 };
 
 function sanitizeBriefBody(raw = '') {
   let s = String(raw);
