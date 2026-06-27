@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-27T22:19:09.875Z",
+  "updatedAt": "2026-06-27T23:04:50.324Z",
   "stations": {
     "chyz": {
       "id": "chyz",
@@ -7,7 +7,7 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-06-27T22:18:50.864Z"
+      "checkedAt": "2026-06-27T23:04:31.031Z"
     },
     "cism": {
       "id": "cism",
@@ -15,15 +15,15 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-06-27T22:18:51.861Z"
+      "checkedAt": "2026-06-27T23:04:32.094Z"
     },
     "ckut": {
       "id": "ckut",
       "name": "CKUT 90,3",
-      "showTitle": "West Indian Rhythms",
+      "showTitle": "Masters At Work",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-06-27T22:18:54.315Z"
+      "checkedAt": "2026-06-27T23:04:34.221Z"
     },
     "cjlo": {
       "id": "cjlo",
@@ -31,7 +31,7 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-06-27T22:19:07.952Z"
+      "checkedAt": "2026-06-27T23:04:48.416Z"
     },
     "cfak": {
       "id": "cfak",
@@ -39,15 +39,15 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-06-27T22:19:08.571Z"
+      "checkedAt": "2026-06-27T23:04:49.086Z"
     },
     "choq": {
       "id": "choq",
       "name": "CHOQ.ca",
-      "showTitle": "Marathon",
-      "host": "Maria BC",
+      "showTitle": "Living on Mercy",
+      "host": "Mamas Gun",
       "source": "api-live",
-      "checkedAt": "2026-06-27T22:19:09.473Z"
+      "checkedAt": "2026-06-27T23:04:49.923Z"
     }
   }
 }
