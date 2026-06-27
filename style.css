@@ -834,6 +834,15 @@ a { color: inherit; }
   color: var(--ink-soft);
   margin-top: 5px;
 }
+.brief-rail .article--compact .article-brief-text {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+.brief-rail .article--compact .article-brief.is-truncated .article-brief-text {
+  -webkit-line-clamp: 2;
+}
 
 /* Loading skeletons */
 .skeleton { pointer-events: none; }
@@ -1205,7 +1214,7 @@ a { color: inherit; }
 
   .brief-rail .article--compact {
     flex: 0 0 auto;
-    padding: 6px 0;
+    padding: 9px 0;
     border-left: none;
     padding-left: 0;
     overflow: hidden;
@@ -1238,33 +1247,6 @@ a { color: inherit; }
 
   .brief-rail .article--compact .article-brief.is-truncated .article-brief-text {
     -webkit-line-clamp: 2;
-  }
-
-  .news-list[data-brief-count="9"] .brief-rail .article--compact,
-  .news-list[data-brief-count="8"] .brief-rail .article--compact,
-  .news-list[data-brief-count="7"] .brief-rail .article--compact,
-  .news-list[data-brief-count="6"] .brief-rail .article--compact {
-    padding: 4px 0;
-  }
-
-  .news-list[data-brief-count="9"] .brief-rail .article--compact .article-brief-text,
-  .news-list[data-brief-count="8"] .brief-rail .article--compact .article-brief-text {
-    -webkit-line-clamp: 2;
-  }
-
-  .news-list[data-brief-count="9"] .brief-rail .article--compact .article-brief.is-truncated .article-brief-text,
-  .news-list[data-brief-count="8"] .brief-rail .article--compact .article-brief.is-truncated .article-brief-text {
-    -webkit-line-clamp: 1;
-  }
-
-  .news-list[data-brief-count="7"] .brief-rail .article--compact .article-brief-text,
-  .news-list[data-brief-count="6"] .brief-rail .article--compact .article-brief-text {
-    -webkit-line-clamp: 2;
-  }
-
-  .news-list[data-brief-count="7"] .brief-rail .article--compact .article-brief.is-truncated .article-brief-text,
-  .news-list[data-brief-count="6"] .brief-rail .article--compact .article-brief.is-truncated .article-brief-text {
-    -webkit-line-clamp: 1;
   }
 
   .brief-rail-spacer {

@@ -703,7 +703,7 @@ function updateNewsLayout() {
 }
 
 const HERO_SPOTLIGHT_MAX = 4; /* 1 à la une + 3 vedettes */
-const BRIEF_SIDEBAR_MAX = 9;
+const BRIEF_SIDEBAR_MAX = 5;
 const SOURCE_HERO_WITH_IMAGE_MAX = 2; /* à la une + 1 vedette si image */
 /** Fenêtre de fraîcheur : 3 sessions max (= une année universitaire complète). */
 const FRESHNESS_SESSION_COUNT = 3;
@@ -713,8 +713,9 @@ const CONTINGENCY_MAX_SESSIONS_BACK = FRESHNESS_SESSION_COUNT - 1;
  * dans la session en cours — on accepte leur dernier article des 2 sessions précédentes.
  */
 const AUTUMN_GRACE_END_MONTH = 10; /* novembre inclus */
-const BRIEF_LIMITS = { lead: 720, feature: 360, compact: 170, standard: 170 };
+const BRIEF_LIMITS = { lead: 720, feature: 360, compact: 280, standard: 170 };
 const LEAD_BRIEF_MIN_CHARS = 160;
+const BRIEF_COMPACT_MIN_CHARS = 110;
 
 function articleKey(item) {
   return item.link || `${item.source}::${item.date}::${item.title}`;
@@ -1107,6 +1108,9 @@ function createArticle(item, role = 'standard', { hideSourceMeta = false } = {})
     if (fullSource.length > brief.length + 12 || (brief.length >= 100 && item.link)) {
       briefTruncated = true;
     }
+  }
+  if (role === 'compact' && brief) {
+    ({ text: brief, truncated: briefTruncated } = ensureCompactBriefMinLines(brief, briefTruncated, item));
   }
   if (author && brief) {
     brief = stripLeadingByline(brief, author);
@@ -1717,6 +1721,33 @@ function leadBriefSource(item) {
     || body
     || String(item.excerpt || '');
   return stripLeadingByline(sanitizeBriefBody(raw), author);
+}
+
+function compactBriefSource(item) {
+  const { author, body } = splitByline(item);
+  return stripLeadingByline(sanitizeBriefBody(body || item.excerpt || ''), author);
+}
+
+function ensureCompactBriefMinLines(brief, truncated, item) {
+  const { author } = splitByline(item);
+  brief = stripLeadingByline(brief, author);
+
+  if (brief.length >= BRIEF_COMPACT_MIN_CHARS) {
+    const full = compactBriefSource(item);
+    if (full.length > brief.length + 12) truncated = true;
+    return { text: brief, truncated };
+  }
+
+  const fallback = compactBriefSource(item);
+  if (fallback.length > brief.length) {
+    const extended = prepareBrief(fallback, 'compact');
+    if (extended.text.length > brief.length) {
+      brief = stripLeadingByline(extended.text, author);
+      truncated = extended.truncated;
+    }
+  }
+  if (fallback.length > brief.length + 12) truncated = true;
+  return { text: brief, truncated };
 }
 
 function ensureLeadBriefMinLines(brief, truncated, item) {
