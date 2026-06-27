@@ -591,6 +591,12 @@ function renderNews() {
     briefRail.className = 'brief-rail';
     briefRail.innerHTML = '<h3 class="brief-rail-title">En bref</h3>';
     compacts.forEach((article) => briefRail.appendChild(article));
+    if (hero.childElementCount) {
+      const railSpacer = document.createElement('div');
+      railSpacer.className = 'brief-rail-spacer';
+      railSpacer.setAttribute('aria-hidden', 'true');
+      briefRail.appendChild(railSpacer);
+    }
     NEWS_LIST.appendChild(briefRail);
   }
 
@@ -909,7 +915,7 @@ function cleanTitle(title = '') {
   return t;
 }
 
-const BRIEF_LIMITS = { lead: 300, feature: 210, compact: 170, standard: 170 };
+const BRIEF_LIMITS = { lead: 500, feature: 360, compact: 170, standard: 170 };
 
 function sanitizeBriefBody(raw = '') {
   let s = String(raw);
@@ -951,8 +957,13 @@ function prepareBrief(raw = '', role = 'standard') {
   }
 
   let cut = s.slice(0, limit);
-  const lastSpace = cut.lastIndexOf(' ');
-  if (lastSpace > limit * 0.5) cut = cut.slice(0, lastSpace);
+  const sentenceEnd = s.slice(limit).search(/[.!?»"')\]](?:\s|$)/);
+  if (sentenceEnd >= 0 && sentenceEnd < 100) {
+    cut = s.slice(0, limit + sentenceEnd + 1);
+  } else {
+    const lastSpace = cut.lastIndexOf(' ');
+    if (lastSpace > limit * 0.5) cut = cut.slice(0, lastSpace);
+  }
   cut = cut.replace(/[,;:\s]+$/u, '').trimEnd();
   if (!cut) return { text: '', truncated: false };
 
