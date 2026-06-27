@@ -2,17 +2,19 @@ name: Update Student News
 
 on:
   schedule:
-    # Six passes/jour alignées sur la consommation d'actualité (Québec).
+    # Huit passes/jour alignées sur la consommation d'actualité (Québec).
     # Cron en UTC ; heures locales ci-dessous en été (EDT, UTC−4).
     # En hiver (EST, UTC−5), chaque passage arrive ~1 h plus tôt localement.
-    #   07:00 → réveil, transport, premier check     (11:00 UTC)
-    #   10:00 → entre les cours du matin               (14:00 UTC)
-    #   12:00 → pause dîner                            (16:00 UTC)
-    #   16:00 → fin de classes / retour                (20:00 UTC)
-    #   19:00 → soirée, retour à la maison             (23:00 UTC)
-    #   21:00 → dernière passe avant la nuit           (01:00 UTC, lendemain)
-    # Retiré : 05 h et 23 h (peu de lecteurs), 14 h (creux entre midi et 16 h).
+    #   05:30 → lève-tôt, avant le pic du matin         (09:30 UTC)
+    #   07:00 → réveil, transport, premier check       (11:00 UTC)
+    #   10:00 → entre les cours du matin                 (14:00 UTC)
+    #   12:00 → pause dîner                              (16:00 UTC)
+    #   13:30 → fin de dîner, retour en classe           (17:30 UTC)
+    #   16:00 → fin de classes / retour                  (20:00 UTC)
+    #   19:00 → soirée, retour à la maison               (23:00 UTC)
+    #   21:00 → dernière passe avant la nuit             (01:00 UTC, lendemain)
     - cron: '0 1,11,14,16,20,23 * * *'
+    - cron: '30 9,17 * * *'
   workflow_dispatch:   # Allow manual trigger
 
 # Never run two news-update jobs against the same ref at once.

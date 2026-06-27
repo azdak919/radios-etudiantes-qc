@@ -1,4 +1,4 @@
-const CACHE_NAME = "radar-shell-v143";
+const CACHE_NAME = "radar-shell-v144";
 const APP_SHELL = [
   "./",
   "./index.html",
