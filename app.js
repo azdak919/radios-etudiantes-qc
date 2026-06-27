@@ -677,8 +677,6 @@ function updateNewsLayout() {
 
 const HERO_SPOTLIGHT_MAX = 4; /* 1 à la une + 3 vedettes */
 const BRIEF_SIDEBAR_MAX = 4;
-const SPOTLIGHT_MAX_AGE_MS = 30 * 24 * 60 * 60 * 1000;
-const BRIEF_BACKFILL_MAX_AGE_MS = 90 * 24 * 60 * 60 * 1000;
 
 function articleKey(item) {
   return item.link || `${item.source}::${item.date}::${item.title}`;
@@ -708,22 +706,29 @@ function sortByDateDesc(items) {
   return [...items].sort((a, b) => new Date(b.date || 0) - new Date(a.date || 0));
 }
 
-function isWithinSpotlightWindow(item) {
-  const age = Date.now() - new Date(item.date || 0);
-  return Number.isFinite(age) && age >= 0 && age <= SPOTLIGHT_MAX_AGE_MS;
+/**
+ * Début de la session universitaire québécoise en cours.
+ * Automne : 1er sept. | Hiver : 1er janv. | Été : 1er mai
+ */
+function getCurrentUniversitySessionStart(referenceDate = new Date()) {
+  const year = referenceDate.getFullYear();
+  const month = referenceDate.getMonth();
+  if (month >= 8) return new Date(year, 8, 1);
+  if (month >= 4) return new Date(year, 4, 1);
+  return new Date(year, 0, 1);
 }
 
-function isWithinBriefBackfillWindow(item) {
-  const age = Date.now() - new Date(item.date || 0);
-  return Number.isFinite(age) && age >= 0 && age <= BRIEF_BACKFILL_MAX_AGE_MS;
+function isWithinCurrentUniversitySession(item, referenceDate = new Date()) {
+  const published = new Date(item.date || 0);
+  if (!Number.isFinite(published.getTime())) return false;
+  const sessionStart = getCurrentUniversitySessionStart(referenceDate);
+  const now = referenceDate.getTime();
+  const t = published.getTime();
+  return t >= sessionStart.getTime() && t <= now;
 }
 
-function spotlightPool(items) {
-  return sortByDateDesc(items.filter(isWithinSpotlightWindow));
-}
-
-function briefBackfillPool(items) {
-  return sortByDateDesc(items.filter(isWithinBriefBackfillWindow));
+function spotlightPool(items, referenceDate = new Date()) {
+  return sortByDateDesc(items.filter((i) => isWithinCurrentUniversitySession(i, referenceDate)));
 }
 
 function compareBriefCandidates(a, b) {
@@ -760,7 +765,7 @@ function pickSpotlightSlots(items, max, excludeInsts = new Set()) {
   return picks;
 }
 
-/** Vedette : articles ≤ 1 mois, mix d'institutions puis repli sur sources déjà vues. */
+/** Vedette : session en cours, mix d'institutions puis repli sur sources déjà vues. */
 function pickHeroSpotlight(items) {
   const fresh = spotlightPool(items);
   if (!fresh.length) return [];
@@ -768,10 +773,9 @@ function pickHeroSpotlight(items) {
 }
 
 /**
- * En bref : diversité par journal (pas par institution).
- * 1) Articles ≤ 1 mois hors vedette, max 1 par journal.
- * 2) Repli sur médias encore absents (≤ 3 mois), par popularité.
- * 3) Complète avec d'autres articles récents si les slots restent vides.
+ * En bref : session en cours, diversité par journal (pas par institution).
+ * Priorité aux médias absents de la vedette, puis un autre article du même
+ * journal, puis repli chronologique si les slots restent vides.
  */
 function pickBriefSidebar(allItems, heroItems = []) {
   const heroKeys = new Set(heroItems.map(articleKey));
@@ -796,46 +800,28 @@ function pickBriefSidebar(allItems, heroItems = []) {
   const freshEligible = spotlightPool(allItems).filter((i) => !heroKeys.has(articleKey(i)));
   const freshLatest = latestPerKey(freshEligible, sourceKey);
 
-  // Journaux frais absents de la vedette
+  // Journaux de la session absents de la vedette
   [...freshLatest.entries()]
     .filter(([src]) => !heroSources.has(src))
     .map(([, item]) => item)
     .sort(compareBriefCandidates)
     .forEach((item) => add(item));
 
-  // Journaux déjà en vedette : un autre article récent du même média
+  // Journaux déjà en vedette : un autre article de la session
   [...freshLatest.entries()]
     .filter(([src]) => heroSources.has(src))
     .map(([, item]) => item)
     .sort(compareBriefCandidates)
     .forEach((item) => add(item));
 
-  // Autres articles frais, un par journal encore absent d'En bref
+  // Autres articles de la session, un par journal encore absent d'En bref
   for (const item of freshEligible) {
     if (picks.length >= BRIEF_SIDEBAR_MAX) break;
     add(item);
   }
 
-  // Médias sans article ≤ 1 mois : dernier article ≤ 3 mois si le journal
-  // n'apparaît ni en vedette ni déjà dans En bref
-  const backfillEligible = briefBackfillPool(allItems).filter(
-    (i) => !heroKeys.has(articleKey(i)) && !usedKeys.has(articleKey(i)),
-  );
-  const backfillLatest = latestPerKey(backfillEligible, sourceKey);
-  const representedSources = () => new Set([...heroSources, ...usedSources]);
-
-  [...backfillLatest.entries()]
-    .filter(([src]) => !representedSources().has(src))
-    .map(([, item]) => item)
-    .sort(compareBriefCandidates)
-    .forEach((item) => add(item));
-
-  // Dernier repli : articles frais, puis backfill, doublons de journal permis
+  // Dernier repli : complète avec d'autres articles de la session
   for (const item of freshEligible) {
-    if (picks.length >= BRIEF_SIDEBAR_MAX) break;
-    add(item, { allowDuplicateSource: true });
-  }
-  for (const item of backfillEligible) {
     if (picks.length >= BRIEF_SIDEBAR_MAX) break;
     add(item, { allowDuplicateSource: true });
   }
