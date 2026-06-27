@@ -1699,11 +1699,31 @@ function normalizeAuthor(name = '') {
 }
 
 // ─── Date / time formatting (Québec) ────────────────────────────────────────────
-function formatTime(d) {
-  // "16 h 18" — heure de publication
+function formatTime(d, lang = 'fr') {
+  if (isNaN(d)) return '';
+  if (lang === 'en') {
+    return d.toLocaleTimeString('en-CA', {
+      hour: 'numeric',
+      minute: '2-digit',
+      hour12: true,
+    });
+  }
   const h = d.getHours();
   const m = String(d.getMinutes()).padStart(2, '0');
   return `${h} h ${m}`;
+}
+
+function formatCompactCalendarDate(d, lang = 'fr') {
+  if (isNaN(d)) return '';
+  if (lang === 'en') {
+    return d.toLocaleDateString('en-CA', {
+      day: 'numeric',
+      month: 'short',
+      year: 'numeric',
+    });
+  }
+  const months = MONTH_SHORT.fr;
+  return `${d.getDate()} ${months[d.getMonth()]} ${d.getFullYear()}`.trim();
 }
 
 function formatStamp(d) {
@@ -1732,7 +1752,6 @@ function formatStamp(d) {
 
 const MONTH_SHORT = {
   fr: ['jan.', 'fév.', 'mars', 'avr.', 'mai', 'juin', 'juil.', 'août', 'sept.', 'oct.', 'nov.', 'déc.'],
-  en: ['Jan.', 'Feb.', 'Mar.', 'Apr.', 'May', 'Jun.', 'Jul.', 'Aug.', 'Sep.', 'Oct.', 'Nov.', 'Dec.'],
 };
 
 /** Date courte pour cartes compactes (En bref, Suite du fil). */
@@ -1748,21 +1767,18 @@ function formatStampCompact(d, lang = 'fr') {
   const sameDay = d.toDateString() === now.toDateString();
   const yest = new Date(now); yest.setDate(now.getDate() - 1);
   const isYesterday = d.toDateString() === yest.toDateString();
-  const clock = formatTime(d);
+  const clock = formatTime(d, l);
 
   if (sameDay) {
-    if (l === 'en') return clock ? `today, ${clock}` : 'today';
+    if (l === 'en') return clock ? `Today, ${clock}` : 'Today';
     return clock ? `aujourd'hui, ${clock}` : "aujourd'hui";
   }
   if (isYesterday) {
-    if (l === 'en') return clock ? `yesterday, ${clock}` : 'yesterday';
+    if (l === 'en') return clock ? `Yesterday, ${clock}` : 'Yesterday';
     return clock ? `hier, ${clock}` : 'hier';
   }
 
-  const months = MONTH_SHORT[l] || MONTH_SHORT.fr;
-  const day = d.getDate();
-  const month = months[d.getMonth()] || '';
-  return `${day} ${month} ${d.getFullYear()}`.trim();
+  return formatCompactCalendarDate(d, l);
 }
 
 // ─── Title / brief cleanup ───────────────────────────────────────────────────────
