@@ -574,7 +574,15 @@ function renderNews() {
     else compacts.push(article);
   });
 
-  if (hero.childElementCount) NEWS_LIST.appendChild(hero);
+  if (hero.childElementCount) {
+    if (compacts.length) {
+      const spacer = document.createElement('div');
+      spacer.className = 'news-hero-spacer';
+      spacer.setAttribute('aria-hidden', 'true');
+      hero.appendChild(spacer);
+    }
+    NEWS_LIST.appendChild(hero);
+  }
   if (compacts.length) {
     const briefTitle = document.createElement('h3');
     briefTitle.className = 'brief-rail-title';

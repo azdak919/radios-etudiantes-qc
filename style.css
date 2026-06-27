@@ -816,6 +816,10 @@ a { color: inherit; }
     display: contents;
   }
 
+  .news-hero-spacer {
+    display: none;
+  }
+
   .brief-rail-title {
     grid-column: 1 / -1;
     padding: 20px 0 6px;
@@ -903,12 +907,16 @@ a { color: inherit; }
   }
 
   .news-hero .article--feature {
-    flex: 1 1 0;
-    min-height: 0;
+    flex: 0 0 auto;
   }
 
-  .news-hero .article--feature:last-child {
+  .news-hero .article--feature:last-of-type {
     border-bottom: none;
+  }
+
+  .news-hero-spacer {
+    flex: 1 1 auto;
+    min-height: 0;
   }
 
   .article--lead {
