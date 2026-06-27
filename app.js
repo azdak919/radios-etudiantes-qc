@@ -12,6 +12,42 @@ function getPlayableStream(radio) {
   return `${PROXY_BASE}/?url=${encodeURIComponent(url)}`;
 }
 
+function getListenUrl(radio) {
+  return radio?.listenUrl || radio?.website || null;
+}
+
+function isExternalListen(radio) {
+  return !!radio && !getPlayableStream(radio) && !!getListenUrl(radio);
+}
+
+function openListenWindow(radio) {
+  const url = getListenUrl(radio);
+  if (!url) {
+    showToast('Aucun site d\'écoute disponible pour ce poste.');
+    return false;
+  }
+
+  const name = `radar-listen-${radio.id}`;
+  const features = 'popup=yes,width=440,height=720,menubar=no,toolbar=no,location=yes,status=no,scrollbars=yes,resizable=yes';
+
+  if (listenWindow && !listenWindow.closed && listenWindowId === radio.id) {
+    listenWindow.focus();
+    return true;
+  }
+
+  listenWindow = window.open(url, name, features);
+  listenWindowId = radio.id;
+
+  if (!listenWindow) {
+    window.open(url, '_blank', 'noopener');
+    showToast('Écoute ouverte dans un nouvel onglet.');
+    return true;
+  }
+
+  listenWindow.opener = null;
+  return true;
+}
+
 // ─── DOM refs ────────────────────────────────────────────────────────────────
 const TUNER          = document.getElementById('tuner');
 const TUNER_SELECT   = document.getElementById('tuner-select');
@@ -24,6 +60,7 @@ const TUNER_VOLUME   = document.getElementById('tuner-volume');
 const TUNER_SITE     = document.getElementById('tuner-site');
 const ICO_PLAY       = TUNER_PLAY.querySelector('.ico-play');
 const ICO_PAUSE      = TUNER_PLAY.querySelector('.ico-pause');
+const ICO_EXTERNAL   = TUNER_PLAY.querySelector('.ico-external');
 
 const NEWS_LIST      = document.getElementById('news-list');
 const NEWS_FILTERS   = document.getElementById('news-filters');
@@ -41,6 +78,8 @@ let newsSourceFilter = 'all';
 let currentStation = null; // radio object selected in tuner
 let audio = null;
 let suppressAudioError = false;
+let listenWindow = null;
+let listenWindowId = null;
 let sourceColors = {};     // source name → accent colour
 let brandColors = { institutions: {}, fallback_palette: ['#003DA5', '#6C2163', '#047857'] };
 
@@ -134,8 +173,8 @@ function buildTunerOptions() {
     inGroup.forEach(r => {
       const opt = document.createElement('option');
       opt.value = r.id;
-      const playable = getPlayableStream(r) ? '' : ' — site';
-      opt.textContent = `${r.name} · ${r.city}${playable}`;
+      const suffix = getPlayableStream(r) ? '' : ' — écoute sur site externe ↗';
+      opt.textContent = `${r.name} · ${r.city}${suffix}`;
       og.appendChild(opt);
     });
     TUNER_SELECT.appendChild(og);
@@ -145,13 +184,19 @@ function buildTunerOptions() {
 function bindTuner() {
   TUNER_SELECT.addEventListener('change', () => {
     const wasPlaying = isPlaying();
-    selectStation(TUNER_SELECT.value, { autoplay: wasPlaying });
+    selectStation(TUNER_SELECT.value, { autoplay: wasPlaying, openExternal: true });
   });
 
   TUNER_PREV.addEventListener('click', () => stepStation(-1));
   TUNER_NEXT.addEventListener('click', () => stepStation(1));
 
   TUNER_PLAY.addEventListener('click', togglePlay);
+
+  TUNER_SITE.addEventListener('click', (e) => {
+    if (!currentStation || !isExternalListen(currentStation)) return;
+    e.preventDefault();
+    openListenWindow(currentStation);
+  });
 
   TUNER_VOLUME.addEventListener('input', (e) => {
     const v = parseFloat(e.target.value);
@@ -174,30 +219,44 @@ function stepStation(dir) {
   selectStation(next.id, { autoplay: isPlaying() });
 }
 
-function selectStation(id, { autoplay = false } = {}) {
+function selectStation(id, { autoplay = false, openExternal = false } = {}) {
   const radio = radios.find(r => r.id === id);
   if (!radio) return;
   currentStation = radio;
 
   const playable = getPlayableStream(radio);
-  TUNER_NAME.textContent = radio.fullName || radio.name;
-  TUNER_SUB.textContent  = `${radio.frequency} · ${radio.institution}`;
+  const external = isExternalListen(radio);
 
-  // Site link (always available; emphasised when no direct stream)
-  if (radio.website) {
+  TUNER_NAME.textContent = radio.fullName || radio.name;
+  TUNER_SUB.textContent = external
+    ? `Écoute sur site externe · ${radio.institution}`
+    : `${radio.frequency} · ${radio.institution}`;
+
+  if (external) {
+    const listenUrl = getListenUrl(radio);
+    TUNER_SITE.href = listenUrl;
+    TUNER_SITE.classList.remove('hidden');
+    TUNER_SITE.title = 'Ouvrir le site du poste dans une fenêtre';
+  } else if (radio.website) {
     TUNER_SITE.href = radio.website;
-    TUNER_SITE.classList.toggle('hidden', !!playable);
+    TUNER_SITE.classList.add('hidden');
   } else {
     TUNER_SITE.classList.add('hidden');
   }
 
-  TUNER_PLAY.disabled = !playable;
-  TUNER_PLAY.title = playable ? 'Écouter' : 'Flux direct indisponible — voir le site';
+  TUNER_PLAY.disabled = !playable && !external;
+  TUNER_PLAY.title = playable
+    ? 'Écouter'
+    : external
+      ? 'Écouter sur le site du poste (fenêtre externe)'
+      : 'Flux direct indisponible';
 
   updateMediaSession(radio);
 
   if (!playable) {
     stopPlayback({ keepStation: true });
+    updatePlayUI();
+    if (external && openExternal) openListenWindow(radio);
     return;
   }
 
@@ -210,11 +269,14 @@ function selectStation(id, { autoplay = false } = {}) {
 
 function togglePlay() {
   if (!currentStation) {
-    // Nothing chosen yet → tune the first station and play it.
     const first = radios.find(r => getPlayableStream(r)) || radios[0];
     if (!first) return;
     TUNER_SELECT.value = first.id;
-    selectStation(first.id, { autoplay: true });
+    selectStation(first.id, { autoplay: !isExternalListen(first), openExternal: isExternalListen(first) });
+    return;
+  }
+  if (isExternalListen(currentStation)) {
+    openListenWindow(currentStation);
     return;
   }
   if (isPlaying()) {
@@ -254,9 +316,13 @@ function isPlaying() {
 
 function updatePlayUI() {
   const playing = isPlaying();
-  ICO_PLAY.classList.toggle('hidden', playing);
+  const external = !!currentStation && isExternalListen(currentStation);
+  ICO_PLAY.classList.toggle('hidden', playing || external);
   ICO_PAUSE.classList.toggle('hidden', !playing);
+  ICO_EXTERNAL?.classList.toggle('hidden', !external || playing);
+  TUNER_PLAY.classList.toggle('is-external', external && !playing);
   TUNER.classList.toggle('is-playing', playing);
+  TUNER.classList.toggle('is-external', external && !playing);
 }
 
 // ─── Audio engine ──────────────────────────────────────────────────────────────
