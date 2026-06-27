@@ -191,6 +191,20 @@
       "_lastChecked": "2026-06-27T00:14:50.670Z",
       "_failCount": 0,
       "popularity": 8
+    },
+    {
+      "name": "The Campus",
+      "institution": "Bishop's University",
+      "region": "Estrie",
+      "type": "universite",
+      "lang": "en",
+      "url": "https://thebucampus.ca/feed/",
+      "popularity": 13,
+      "_status": "ok",
+      "_failCount": 0,
+      "_lastChecked": "2026-06-27T10:21:58.383Z",
+      "site": "https://thebucampus.ca/",
+      "_note": "Independent student newspaper of Bishop's University (Lennoxville)"
     }
   ],
   "candidates": [

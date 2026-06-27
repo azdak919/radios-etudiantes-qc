@@ -523,6 +523,7 @@ const INSTITUTION_ACRONYMS = {
   'Université du Québec en Abitibi-Témiscamingue': 'UQAT',
   'Université du Québec en Abitibi-Témiscamingue (UQAT)': 'UQAT',
   'Polytechnique Montréal': 'Poly Montréal',
+  "Bishop's University": "Bishop's",
 };
 
 function resolveInstitutionAcronym(name = '') {

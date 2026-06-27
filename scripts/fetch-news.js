@@ -37,7 +37,7 @@ const MAX_WP_FEATURED = 8;  // vedettes WordPress (catégorie slider, etc.)
 const WP_FEATURED_SLUGS = ['slider', 'a-la-une', 'featured'];
 const MAX_ENRICH = 45;      // cap article-page fetches per run
 
-const GENERIC_AUTHORS = /^(admin|administrator|administrateur|editor|éditeur|editeur|rédaction|redaction|staff|wordpress|webmaster|collectif|le collectif|tribune|link|daily|exemplaire|quartier libre|zone campus|la pige|le délit|le delit|the link|the concordian|the tribune|the mcgill daily)$/i;
+const GENERIC_AUTHORS = /^(admin|administrator|administrateur|editor|éditeur|editeur|rédaction|redaction|staff|wordpress|webmaster|collectif|le collectif|tribune|link|daily|exemplaire|quartier libre|zone campus|la pige|le délit|le delit|the link|the concordian|the tribune|the mcgill daily|the campus)$/i;
 
 // Active feeds come from the registry (news-sources.json), maintained by
 // scripts/discover-news-sources.js. Feeds flagged "_status": "dead" are skipped.

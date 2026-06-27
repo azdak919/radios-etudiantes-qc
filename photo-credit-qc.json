@@ -1,98 +1,98 @@
 {
-  "updated": "2026-06-27T09:06:10.076Z",
-  "total": 183,
-  "withImage": 153,
-  "withCredit": 153,
-  "cited": 45,
+  "updated": "2026-06-27T10:24:57.643Z",
+  "total": 211,
+  "withImage": 180,
+  "withCredit": 180,
+  "cited": 53,
   "pending": 0,
   "missingHero": 0,
   "ok": true,
-  "checked": 43,
-  "updatedCount": 43,
-  "citedNew": 0,
-  "fallbackNew": 43,
+  "checked": 30,
+  "updatedCount": 30,
+  "citedNew": 8,
+  "fallbackNew": 22,
   "samples": [
     {
-      "title": "Road to the 2026 FIFA World Cup",
-      "source": "The Link",
-      "credit": "Photo credit: The Link",
+      "title": "Sans fin(s) : au cœur des troubles du comportement alimentaire",
+      "source": "L'Exemplaire",
+      "credit": "Crédit photo : L'Exemplaire",
       "cited": false,
       "method": null
     },
     {
-      "title": "Artemis II takes over Place-des-Arts",
-      "source": "The Link",
-      "credit": "Photo credit: The Link",
+      "title": "Sans fin(s): au cœur des troubles du comportement alimentaire",
+      "source": "L'Exemplaire",
+      "credit": "Crédit photo : L'Exemplaire",
       "cited": false,
       "method": null
     },
     {
-      "title": "CSU rejects motion for Israel and Jewish solidarity fund ad hoc committee",
-      "source": "The Link",
-      "credit": "Photo credit: The Link",
+      "title": "L’ alcool est-il vraiment le nouveau tabac ?",
+      "source": "L'Exemplaire",
+      "credit": "Crédit photo : L'Exemplaire",
       "cited": false,
       "method": null
     },
     {
-      "title": "Hundreds gather in Montreal in recognition of Red Dress Day",
-      "source": "The Link",
-      "credit": "Photo credit: The Link",
+      "title": "Derrière les étiquettes électroniques , la tarification dynamique ?",
+      "source": "L'Exemplaire",
+      "credit": "Photo : Thomas Harton",
+      "cited": true,
+      "method": "json-ld"
+    },
+    {
+      "title": "Rachat des armes à feu : le Québec est-il l’ exception canadienne ?",
+      "source": "L'Exemplaire",
+      "credit": "Crédit photo : L'Exemplaire",
       "cited": false,
       "method": null
     },
     {
-      "title": "CSU approves affinity group policy, club rules update and councillor pay increase at special meeting",
-      "source": "The Link",
-      "credit": "Photo credit: The Link",
+      "title": "Les jeunes et les médias d’actualité : une confiance de plus en plus érodée",
+      "source": "L'Exemplaire",
+      "credit": "Crédit photo : L'Exemplaire",
       "cited": false,
       "method": null
     },
     {
-      "title": "L’hypocrisie qui rampe à l’Assemblée nationale",
-      "source": "Exil",
-      "credit": "Crédit photo : Exil",
+      "title": "L’alcool est-il vraiment le nouveau tabac ?",
+      "source": "L'Exemplaire",
+      "credit": "Crédit photo : L'Exemplaire",
       "cited": false,
       "method": null
     },
     {
-      "title": "Liberal convention returns to Montreal after 10 years",
-      "source": "The Link",
-      "credit": "Photo credit: The Link",
-      "cited": false,
-      "method": null
+      "title": "Derrière les étiquettes électroniques, la tarification dynamique ?",
+      "source": "L'Exemplaire",
+      "credit": "Photo : Université Laval",
+      "cited": true,
+      "method": "figcaption"
     },
     {
-      "title": "Dragon Jam: When music gives back",
-      "source": "The Link",
-      "credit": "Photo credit: The Link",
-      "cited": false,
-      "method": null
+      "title": "Rachat des armes à feu : le Québec est-il l’exception canadienne ?",
+      "source": "L'Exemplaire",
+      "credit": "Photo : Chaire Raoul-Dandurand en études stratégiques et diplomatiques",
+      "cited": true,
+      "method": "figcaption"
     },
     {
-      "title": "Jaywalking encouraged",
-      "source": "The Link",
-      "credit": "Photo credit: The Link",
-      "cited": false,
-      "method": null
+      "title": "Achat de seconde main : une mode dans la mode ?",
+      "source": "L'Exemplaire",
+      "credit": "Photo : Marcelle - Friperie Nomade",
+      "cited": true,
+      "method": "json-ld"
     },
     {
-      "title": "Iranian Concordia students say requests for university support went unanswered",
-      "source": "The Link",
-      "credit": "Photo credit: The Link",
-      "cited": false,
-      "method": null
+      "title": "Le NPD : soigne-t-il sa gauche ou se radicalise -t-il ?",
+      "source": "L'Exemplaire",
+      "credit": "Photo : John Woods / La Presse canadienne",
+      "cited": true,
+      "method": "json-ld"
     },
     {
-      "title": "The Sum of Sound",
-      "source": "The Link",
-      "credit": "Photo credit: The Link",
-      "cited": false,
-      "method": null
-    },
-    {
-      "title": "CSU approves $36,000 in funding for student-led initiatives",
-      "source": "The Link",
-      "credit": "Photo credit: The Link",
+      "title": "Skibidi Tentafruit ou quand l’ IA accentue les stéréotypes",
+      "source": "L'Exemplaire",
+      "credit": "Crédit photo : L'Exemplaire",
       "cited": false,
       "method": null
     }
