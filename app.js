@@ -544,7 +544,7 @@ function updateNewsLayout() {
 function getArticleRole(index) {
   if (index === 0) return 'lead';
   if (index <= 2) return 'feature';
-  if (index <= 7) return 'compact';
+  if (index <= 11) return 'compact';
   return 'standard';
 }
 
