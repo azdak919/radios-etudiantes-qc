@@ -123,8 +123,8 @@ function buildStatus(steps) {
   if ((leadQc.gaps || []).length > 0) {
     alerts.push({
       level: 'info',
-      code: 'lead_svg_fallback',
-      message: `${leadQc.gaps.length}+ articles avec repli SVG (photo absente ou trop petite)`,
+      code: 'lead_stock_gap',
+      message: `${leadQc.gaps.length}+ articles sans photo vedette (banques libres consultées)`,
     });
   }
 
@@ -148,7 +148,7 @@ function buildStatus(steps) {
         leadImageQc: {
           fullyCovered: leadQc.fullyCovered ?? null,
           withPhoto: leadQc.withPhoto ?? null,
-          withFallback: leadQc.withFallback ?? null,
+          withStock: leadQc.withStock ?? null,
           leadReadyPhotos: leadQc.leadReadyPhotos ?? null,
           pageScraped: leadQc.pageScraped ?? null,
           mainPageLeadReady: leadQc.mainPageLeadReady ?? null,

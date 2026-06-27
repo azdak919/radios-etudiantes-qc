@@ -322,7 +322,11 @@
       "date": "2026-05-21T20:13:17.000Z",
       "excerpt": "Depuis 2011, l’Équipe du renouveau démocratique de Saguenay tente d’être plus à l’écoute des citoyens. Le départ de huit des onze membres du conseil d’administration a failli mener la dissolution de l’Équipe du renouveau démocratique de Saguenay (ERD), mercredi soir. In",
       "image": "https://lapige.atmjonquiere.com/wp-content/uploads/sites/3/2020/10/Andre-e1779394167998-216x300.png",
-      "fallbackImage": "./assets/lead-fallbacks/542caaa7c5ca4375.svg"
+      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/2/2c/Erd_minarett02.jpg",
+      "imageCredit": "Photo : Dominik.Tefert at German Wikipedia / PUBLIC DOMAIN · Wikimedia Commons",
+      "imageLicense": "Public domain",
+      "imageProvider": "wikimedia",
+      "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Erd_minarett02.jpg"
     },
     {
       "source": "La Pige",
@@ -336,7 +340,11 @@
       "date": "2026-05-21T20:12:36.000Z",
       "excerpt": "Plusieurs prix ont été remis à des jeunes, mardi. (Crédit : Marc-André Houde) Le concours « Jeunes auteurs à vos crayons! » était dans la région mardi, en compagnie de sa marraine Frédérique Dufort, écrivaine et comédienne, pour distribuer des prix destinés aux élèves. La",
       "image": "https://lapige.atmjonquiere.com/wp-content/uploads/sites/3/2026/05/Credit-photo-Raphaelle-Guillois-200x300.jpg",
-      "fallbackImage": "./assets/lead-fallbacks/25e36bf24eca0bce.svg"
+      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/4/48/Jeunes_Chefs_R%C3%B4tisseurs_2020_%282%29.jpg",
+      "imageCredit": "Photo : Elekes Andor / CC BY-SA 4.0 · Wikimedia Commons",
+      "imageLicense": "CC BY-SA 4.0",
+      "imageProvider": "wikimedia",
+      "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Jeunes_Chefs_R%C3%B4tisseurs_2020_(2).jpg"
     },
     {
       "source": "La Pige",
@@ -376,7 +384,11 @@
       "date": "2026-05-20T20:48:26.000Z",
       "excerpt": "Mélissa Girard, Cindy Duchesne, Mireille Fortin, Claudia Boily et Julie Guay, du programme d’Assistance technique en pharmacie, étaient présentes pour la Journée portes ouvertes, mercredi. (Crédit : Étienne Harvey-Soucy) Le Pavillon de la santé Marie-Hélène Côté, à Alma, a",
       "image": "https://lapige.atmjonquiere.com/wp-content/uploads/sites/3/2026/05/Image-2-1-300x225.jpg",
-      "fallbackImage": "./assets/lead-fallbacks/a5da795a3adeec82.svg"
+      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/4/4a/Alma_Sutherland_stands_in_the_doorway_of_her_home_in_Monument_Valley%2C_UT_on_June_28%2C_2012_%287514474820%29.jpg",
+      "imageCredit": "Photo : USDAgov / PUBLIC DOMAIN · Wikimedia Commons",
+      "imageLicense": "Public domain",
+      "imageProvider": "wikimedia",
+      "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Alma_Sutherland_stands_in_the_doorway_of_her_home_in_Monument_Valley,_UT_on_June_28,_2012_(7514474820).jpg"
     },
     {
       "source": "Quartier Libre",
@@ -416,7 +428,11 @@
       "date": "2026-05-14T19:09:17.000Z",
       "excerpt": "Le 5 mai dernier, le pavillon Roger-Gaudry a accueilli le premier forum du Réseau des écoles associées ( RÉA ). Ce projet ambitieux de la Faculté des sciences de l’éducation (FSÉ) transforme des écoles primaires et secondaires en véritables « hôpitaux universitaires » de la",
       "image": "https://quartierlibre.ca/wp-content/uploads/2026/05/image-2-768x1024.jpeg",
-      "fallbackImage": "./assets/lead-fallbacks/da5fce0ec3d3daa3.svg"
+      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Rome%2C_Italy%2C_Ancient_Roman_Forum_%28Forum_Romanum%29.jpg",
+      "imageCredit": "Photo : Vyacheslav Argenberg / CC BY · Openverse",
+      "imageLicense": "by",
+      "imageProvider": "openverse",
+      "imageSourceUrl": "https://commons.wikimedia.org/w/index.php?curid=94356916"
     },
     {
       "source": "Quartier Libre",
@@ -667,7 +683,11 @@
       "excerpt": "Le 28 avril dernier, les personnes étudiantes à l’Université du Québec à Trois-Rivières (UQTR) se sont réunies au local 1012 du pavillon étudiant. Elles étaient toutes présentes afin de célébrer la fin d’une session chargée lors du traditionnel party de fin de session. Cette",
       "image": "https://zonecampus.ca/wp-content/uploads/2026/04/7fcb657d-3a26-4582-b42d-8810b9b1dbbd.jpeg",
       "featured": true,
-      "fallbackImage": "./assets/lead-fallbacks/4e7861e925f62d1f.svg"
+      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/7/72/Hockey_UQTR_%40_Carleton_Feb_2014_%281%29.jpeg",
+      "imageCredit": "Photo : MB-one / CC BY-SA · Openverse",
+      "imageLicense": "by-sa",
+      "imageProvider": "openverse",
+      "imageSourceUrl": "https://commons.wikimedia.org/w/index.php?curid=31089724"
     },
     {
       "source": "Montréal Campus",
@@ -868,7 +888,11 @@
       "date": "2026-04-18T22:22:07.000Z",
       "excerpt": "Ma réponse à PSPP À quelques mois d’une élection provinciale qui promet (si on se fie aux sondages d’intentions de vote) un changement de parti au pouvoir, le monde politique québécois se remet en haute vitesse. Plus les intentions des candidats sont définies, plus les langues",
       "image": "https://exilecvm.wordpress.com/wp-content/uploads/2020/10/121330814_121456603062023_8783413434532337259_n.png?w=200",
-      "fallbackImage": "./assets/lead-fallbacks/040560dfdccd2fa3.svg"
+      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/6/6c/Paris_Assemblee_Nationale_DSC00074.jpg",
+      "imageCredit": "Photo : Auteur·e inconnu·e / CC BY-SA · Openverse",
+      "imageLicense": "by-sa",
+      "imageProvider": "openverse",
+      "imageSourceUrl": "https://commons.wikimedia.org/w/index.php?curid=70503"
     },
     {
       "source": "The Tribune",
@@ -908,7 +932,11 @@
       "date": "2026-04-14T03:00:00.000Z",
       "excerpt": "The Chinatown studio brings together artists of all levels in a space designed for connection Located in Chinatown, Dragon Jam serves as a rehearsal space and venue for intimate performances. Courtesy Dragon Jam",
       "image": "https://thelinknewspaper.ca/images/made/images/articles/_resized/IMG_0291-2_690_863_90.jpg",
-      "fallbackImage": "./assets/lead-fallbacks/a2f49220b622a58e.svg"
+      "stockImage": "https://live.staticflickr.com/6166/6226883715_e2184848f8_b.jpg",
+      "imageCredit": "Photo : Charles de Mille-Isles / CC BY · Openverse",
+      "imageLicense": "by",
+      "imageProvider": "openverse",
+      "imageSourceUrl": "https://www.flickr.com/photos/46639194@N05/6226883715"
     },
     {
       "source": "The Link",
@@ -961,7 +989,11 @@
       "date": "2026-04-13T01:00:00.000Z",
       "excerpt": "Odie Harr’s ever-shifting collective turns their shows into something shared Members of Odie Harr. Courtesy Alice Hirsch",
       "image": "https://thelinknewspaper.ca/images/made/images/articles/_resized/ODIE_HARR-2_690_1034_90.jpg",
-      "fallbackImage": "./assets/lead-fallbacks/b7e8c3030dfa78a0.svg"
+      "stockImage": "https://live.staticflickr.com/3346/3423192529_c561cb4a07_b.jpg",
+      "imageCredit": "Photo : Jamiecat * / CC BY · Openverse",
+      "imageLicense": "by",
+      "imageProvider": "openverse",
+      "imageSourceUrl": "https://www.flickr.com/photos/27330325@N08/3423192529"
     },
     {
       "source": "The Link",
@@ -1001,7 +1033,11 @@
       "date": "2026-04-11T20:45:00.000Z",
       "excerpt": "Chandler Levack on Montreal’s music scene, early-2010s nostalgia and the charm of being awkward Chandler Levack on the set of her latest film Mile End Kicks. Courtesy Joe Fuda",
       "image": "https://thelinknewspaper.ca/images/articles/_resized/Screenshot_2026-04-11_17.01.52.png",
-      "fallbackImage": "./assets/lead-fallbacks/e68c6c99855576d4.svg"
+      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/8/86/Torness%2C_inside_the_sea_wall_-_geograph.org.uk_-_1274922.jpg",
+      "imageCredit": "Photo : Richard Webb / CC BY-SA · Openverse",
+      "imageLicense": "by-sa",
+      "imageProvider": "openverse",
+      "imageSourceUrl": "https://commons.wikimedia.org/w/index.php?curid=14003649"
     },
     {
       "source": "The Link",
@@ -1054,7 +1090,11 @@
       "date": "2026-04-09T18:16:00.000Z",
       "excerpt": "The Concordia alumnus sits down with The Link to speak about his experiences as an activist for the Palestinian cause Courtesy Aaron Maté",
       "image": "https://thelinknewspaper.ca/images/made/images/articles/_resized/12.news.AaronMaté.Sean.online.CourtesyAaronMaté_690_1034_90.jpg",
-      "fallbackImage": "./assets/lead-fallbacks/3649bb2fa4521911.svg"
+      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/1/10/Aaron_Mate.jpg",
+      "imageCredit": "Photo : DiEM25 / CC BY · Openverse",
+      "imageLicense": "by",
+      "imageProvider": "openverse",
+      "imageSourceUrl": "https://commons.wikimedia.org/w/index.php?curid=104888952"
     },
     {
       "source": "The Link",
@@ -1107,7 +1147,11 @@
       "date": "2026-04-08T15:08:43.000Z",
       "excerpt": "“I got in an accident that involved some sea urchins,” Natalie Joy Gale, a PhD student in McGill’s Department of History and Classical Studies, said in an interview with //The Tribune//. Gale recalls wiping out in an ‘urchin-y’ area of reef while surfing in Puerto Rico",
       "image": "https://www.thetribune.ca/wp-content/uploads/2026/04/bottle.png",
-      "fallbackImage": "./assets/lead-fallbacks/4da00ae4355a8083.svg"
+      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/9/9c/Truly_yours%2C_your_biggest_fan%2C_this_is_-_panoramio.jpg",
+      "imageCredit": "Photo : Иван Манилов / CC BY · Openverse",
+      "imageLicense": "by",
+      "imageProvider": "openverse",
+      "imageSourceUrl": "https://commons.wikimedia.org/w/index.php?curid=57887937"
     },
     {
       "source": "The Tribune",
@@ -1546,7 +1590,11 @@
       "date": "2026-03-23T12:00:00.000Z",
       "excerpt": "Every year, March 8 serves as a benchmark to gauge the causes that women are fighting for, a moment to reflect on the progress of last year’s concerns, and on the wave of new ones that have since emerged. This year, indignation towards legislative amendments in the province",
       "image": "",
-      "fallbackImage": "./assets/lead-fallbacks/7b6b8b22bc73ed73.svg"
+      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/e/e6/Women_Hunger_for_Justice_activists_meeting_with_the_Grassroots_Group_of_Second_Class_Citizens_in_support_of_the_Equal_Rights_Amendment_in_1982.jpg",
+      "imageCredit": "Photo : Zoe Nicholson / CC0 · Openverse",
+      "imageLicense": "cc0",
+      "imageProvider": "openverse",
+      "imageSourceUrl": "https://commons.wikimedia.org/w/index.php?curid=147593529"
     },
     {
       "source": "The McGill Daily",
@@ -1573,7 +1621,11 @@
       "date": "2026-03-23T12:00:00.000Z",
       "excerpt": "I watched Hamnet a little later than most — and it surprised me far more than I expected. I anticipated another William Shakespeare bio-pic, with the great man at its centre. Surprisingly, what I found was something more radical and affecting: a loose adaptation that stays",
       "image": "https://www.mcgilldaily.com/wp-content/uploads/2026/03/IMG_1649.jpeg",
-      "fallbackImage": "./assets/lead-fallbacks/b1655771832d2c7e.svg"
+      "stockImage": "https://live.staticflickr.com/4369/37026801232_1a78ea7486_b.jpg",
+      "imageCredit": "Photo : AntMan3001 / CC BY-SA · Openverse",
+      "imageLicense": "by-sa",
+      "imageProvider": "openverse",
+      "imageSourceUrl": "https://www.flickr.com/photos/92461652@N07/37026801232"
     },
     {
       "source": "The McGill Daily",
@@ -1641,7 +1693,11 @@
       "excerpt": "Kristi Noem et Erika Kirk comme figures de proue du néo-fascisme américain.",
       "image": "https://www.delitfrancais.com/wp-content/uploads/2026/03/MAGA_marius.png",
       "featured": true,
-      "fallbackImage": "./assets/lead-fallbacks/75235bdee3cecef7.svg"
+      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/1/1b/Une_femme_sauve_son_b%C3%A9b%C3%A9_%C3%A0_Maga.png",
+      "imageCredit": "Photo : HAMIDOU KAOU 6767 / CC BY-SA · Openverse",
+      "imageLicense": "by-sa",
+      "imageProvider": "openverse",
+      "imageSourceUrl": "https://commons.wikimedia.org/w/index.php?curid=130825146"
     },
     {
       "source": "The McGill Daily",
@@ -1655,7 +1711,11 @@
       "date": "2026-03-16T16:01:54.000Z",
       "excerpt": "Good People is a bi-weekly column highlighting McGill students doing community-oriented work on and around campus. Because it’s important to celebrate good people doing good things.",
       "image": "https://www.mcgilldaily.com/wp-content/uploads/2026/03/JackGill.jpg",
-      "fallbackImage": "./assets/lead-fallbacks/8200f3111537e8a4.svg"
+      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/8/81/Repetitie_groep_Power_Play%2C_1981_-_07.jpg",
+      "imageCredit": "Photo : Fotopersbureau De Boer / CC0 · Openverse",
+      "imageLicense": "cc0",
+      "imageProvider": "openverse",
+      "imageSourceUrl": "https://commons.wikimedia.org/w/index.php?curid=116341152"
     },
     {
       "source": "The McGill Daily",
@@ -1722,7 +1782,11 @@
       "date": "2026-02-07T22:21:15.000Z",
       "excerpt": "Compte rendu de l’assemblée générale étudiante H26 L’assemblée générale (AG) de l’association étudiante du Cégep du Vieux-Montréal s’est déroulée dans l’après-midi du 4 février dernier à l’Exode. Le refus d’une grève cet hiver, l’intronisation du programme FIL, les nouveautés du",
       "image": "https://exilecvm.wordpress.com/wp-content/uploads/2020/10/121330814_121456603062023_8783413434532337259_n.png?w=200",
-      "fallbackImage": "./assets/lead-fallbacks/32acec21c3220afe.svg"
+      "stockImage": "https://live.staticflickr.com/7367/12301507923_1373ebfb30_b.jpg",
+      "imageCredit": "Photo : Bibliothèque - Les Champs Libres - Rennes / CC BY · Openverse",
+      "imageLicense": "by",
+      "imageProvider": "openverse",
+      "imageSourceUrl": "https://www.flickr.com/photos/59000460@N03/12301507923"
     },
     {
       "source": "Exil",
@@ -1736,7 +1800,11 @@
       "date": "2025-11-15T19:32:28.000Z",
       "excerpt": "Non, vous ne rêvez pas, la deuxième édition de La Note Nocturne aura bel et bien lieu et est déjà en cours de préparation. Comme annoncé par le comité Individus (comité organisateur de l’événement), celui-ci se tiendra pour la deuxième fois le 21 novembre 2025. Le concept La",
       "image": "https://exilecvm.wordpress.com/wp-content/uploads/2025/11/1.png",
-      "fallbackImage": "./assets/lead-fallbacks/1767234ccdc7aef5.svg"
+      "stockImage": "https://live.staticflickr.com/7261/8157863298_1fbe19f6bc.jpg",
+      "imageCredit": "Photo : BiblioArchives / LibraryArchives / CC BY · Openverse",
+      "imageLicense": "by",
+      "imageProvider": "openverse",
+      "imageSourceUrl": "https://www.flickr.com/photos/28853433@N02/8157863298"
     },
     {
       "source": "Exil",
@@ -1777,7 +1845,11 @@
       "date": "2025-05-22T20:33:23.000Z",
       "excerpt": "La statue de Copernic et moi baignons tous deux dans le silence du Parc olympique caché sous huit centimètres de neige. J’essaie de me tenir fière et franche sur mes espadrilles trempées, en vain. Je tremble malgré moi. Copernic me dévisage: serait-ce une larme sur ma joue? Je",
       "image": "https://exilecvm.wordpress.com/wp-content/uploads/2025/04/reve-de-jour-image-picsart-aiimageenhancer-1.png",
-      "fallbackImage": "./assets/lead-fallbacks/9e4c3dcad96b24d2.svg"
+      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Montparnasse_marquet_reve_2.jpg",
+      "imageCredit": "Photo : Alix Marquet (1875-1939) / PUBLIC DOMAIN · Wikimedia Commons",
+      "imageLicense": "Public domain",
+      "imageProvider": "wikimedia",
+      "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Montparnasse_marquet_reve_2.jpg"
     },
     {
       "source": "Exil",
@@ -1860,7 +1932,11 @@
       "excerpt": "L’équipe du Montréal Campus est fière de vous présenter son édition papier de l’hiver 2025. Pour lire les articles, c’est par ici :",
       "image": "https://montrealcampus.ca/wp-content/uploads/2025/04/Screenshot_22.png",
       "featured": true,
-      "fallbackImage": "./assets/lead-fallbacks/b7cd7b90e16d8b5f.svg"
+      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/2/23/2025_edition_of_the_Mugerere_netball_competitions49.jpg",
+      "imageCredit": "Photo : Samson Ssemakadde / CC0 · Openverse",
+      "imageLicense": "cc0",
+      "imageProvider": "openverse",
+      "imageSourceUrl": "https://commons.wikimedia.org/w/index.php?curid=177444774"
     },
     {
       "source": "Montréal Campus",
@@ -1875,7 +1951,11 @@
       "excerpt": "Cette année, le Montréal Campus lance une nouvelle campagne, cette fois pour acheter du matériel audio. Le Montréal Campus manque de micros, d’enregistreuses et d’autres accessoires audio alors que le futur du journalisme est numérique et que la publicité est toujours en baisse",
       "image": "https://montrealcampus.ca/wp-content/uploads/2025/03/Vignette-campagne-Campus-1.jpg",
       "featured": true,
-      "fallbackImage": "./assets/lead-fallbacks/41d2f7c83ef7cbd8.svg"
+      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/a/ae/Campagne_%C3%A9lectorale_Montr%C3%A9al_electoral_campaign%2C_2017_%2839708333855%29.jpg",
+      "imageCredit": "Photo : Coastal Elite from Halifax, Canada / CC BY-SA 2.0 · Wikimedia Commons",
+      "imageLicense": "CC BY-SA 2.0",
+      "imageProvider": "wikimedia",
+      "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Campagne_%C3%A9lectorale_Montr%C3%A9al_electoral_campaign,_2017_(39708333855).jpg"
     },
     {
       "source": "Montréal Campus",

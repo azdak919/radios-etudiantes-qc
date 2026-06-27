@@ -1043,7 +1043,7 @@ function createArticle(item, role = 'standard', { hideSourceMeta = false } = {})
       ${!hideSourceMeta && item.institution ? `<span class="article-inst">${escapeHtml(articleInstitutionLabel(item.institution, item.type))}</span>` : ''}
       ${time ? `<time class="article-time${fresh ? ' is-fresh' : ''}" datetime="${escapeHtml(item.date)}">${time}</time>` : ''}
     </div>
-    ${canUseImage ? '<figure class="article-media" aria-hidden="true"></figure>' : ''}
+    ${canUseImage ? '<figure class="article-media"></figure>' : ''}
     <h3 class="article-title">${escapeHtml(cleanTitle(item.title))}</h3>
     ${author ? `<p class="article-byline">${byLabel} <strong>${escapeHtml(author)}</strong></p>` : ''}
     ${brief ? `<p class="article-brief">${escapeHtml(brief)}${briefTruncated ? `<span class="article-more">${readMore}</span>` : ''}</p>` : ''}
@@ -1098,8 +1098,12 @@ function hasUsablePhoto(item) {
   return !!getCandidateImage(item?.image);
 }
 
+function hasStockPhoto(item) {
+  return !!getCandidateImage(item?.stockImage);
+}
+
 function hasDisplayImage(item) {
-  return hasUsablePhoto(item) || isFallbackImageUrl(item?.fallbackImage);
+  return hasUsablePhoto(item) || hasStockPhoto(item) || isFallbackImageUrl(item?.fallbackImage);
 }
 
 function darkenHex(hex, amount = 0.32) {
@@ -1153,13 +1157,16 @@ function resolveDisplayImage(item, { preferPhoto = true } = {}) {
   if (preferPhoto && hasUsablePhoto(item)) {
     return { src: getCandidateImage(item.image), kind: 'photo' };
   }
+  if (hasStockPhoto(item)) {
+    return { src: getCandidateImage(item.stockImage), kind: 'stock' };
+  }
   if (isFallbackImageUrl(item?.fallbackImage)) {
     return { src: getCandidateImage(item.fallbackImage), kind: 'fallback' };
   }
   if (!preferPhoto && hasUsablePhoto(item)) {
     return { src: getCandidateImage(item.image), kind: 'photo' };
   }
-  return { src: buildClientFallbackDataUrl(item), kind: 'client' };
+  return { src: '', kind: 'none' };
 }
 
 /**
@@ -1189,26 +1196,39 @@ function ensureHeroLeadHasImage(heroItems, allItems) {
   return heroItems;
 }
 
-function showArticleImage(article, media, img, kind) {
-  media.appendChild(img);
+function showArticleImage(article, media, img, kind, item) {
+  media.replaceChildren(img);
+  if (item?.imageCredit && (kind === 'stock' || kind === 'fallback')) {
+    const cap = document.createElement('figcaption');
+    cap.className = 'article-media-credit';
+    cap.textContent = item.imageCredit;
+    media.appendChild(cap);
+    media.removeAttribute('aria-hidden');
+  }
   article.classList.add('has-image');
   article.classList.remove('article--text');
-  if (kind !== 'photo') article.classList.add('article--fallback-image');
+  if (kind === 'stock') article.classList.add('article--stock-image');
+  else if (kind !== 'photo') article.classList.add('article--fallback-image');
   updateNewsLayout();
 }
 
-function dropArticleImage(article, media, role) {
-  if (role === 'lead') {
-    const fb = buildClientFallbackDataUrl(
-      article.__radarItem || { title: article.querySelector('.article-title')?.textContent || 'Article' },
-    );
-    const img = new Image();
-    img.decoding = 'async';
-    img.loading = 'eager';
-    img.alt = '';
-    img.onload = () => showArticleImage(article, media, img, 'client');
-    img.src = fb;
-    return;
+function dropArticleImage(article, media, role, item) {
+  if (role === 'lead' && item && hasStockPhoto(item)) {
+    const alt = resolveDisplayImage(item, { preferPhoto: false });
+    if (alt.kind === 'stock' && alt.src) {
+      const img = new Image();
+      img.decoding = 'async';
+      img.loading = 'eager';
+      img.alt = '';
+      img.onload = () => showArticleImage(article, media, img, 'stock', item);
+      img.onerror = () => {
+        media.remove();
+        article.classList.add('article--text');
+        updateNewsLayout();
+      };
+      img.src = alt.src;
+      return;
+    }
   }
   media.remove();
   article.classList.add('article--text');
@@ -1220,7 +1240,7 @@ function attachArticleImage(article, item, role) {
   if (!media) return;
   article.__radarItem = item;
 
-  const failToText = () => dropArticleImage(article, media, role);
+  const failToText = () => dropArticleImage(article, media, role, item);
 
   const loadImage = (src, kind, allowRetry = true) => {
     if (!src) {
@@ -1238,28 +1258,26 @@ function attachArticleImage(article, item, role) {
         const w = img.naturalWidth || 0;
         const h = img.naturalHeight || 0;
         if (role === 'lead' && w >= 200 && h >= 150) {
-          showArticleImage(article, media, img, kind);
+          showArticleImage(article, media, img, kind, item);
           return;
         }
         if (allowRetry) {
           const alt = resolveDisplayImage(item, { preferPhoto: false });
-          if (alt.kind !== 'photo') loadImage(alt.src, alt.kind, false);
+          if (alt.src && alt.kind !== 'photo') loadImage(alt.src, alt.kind, false);
           else failToText();
         } else {
           failToText();
         }
         return;
       }
-      showArticleImage(article, media, img, kind);
+      showArticleImage(article, media, img, kind, item);
     };
 
     img.onerror = () => {
-      if (allowRetry && kind === 'photo') {
-        const alt = resolveDisplayImage(item, { preferPhoto: false });
-        if (alt.kind !== 'photo') loadImage(alt.src, alt.kind, false);
+      if (allowRetry && (kind === 'photo' || kind === 'stock')) {
+        const alt = resolveDisplayImage(item, { preferPhoto: kind !== 'photo' });
+        if (alt.src && alt.kind !== kind) loadImage(alt.src, alt.kind, false);
         else failToText();
-      } else if (allowRetry && kind === 'fallback') {
-        loadImage(buildClientFallbackDataUrl(item), 'client', false);
       } else {
         failToText();
       }
@@ -1269,11 +1287,11 @@ function attachArticleImage(article, item, role) {
 
     window.setTimeout(() => {
       if (!article.classList.contains('has-image') && media.isConnected) {
-        if (role === 'lead' && allowRetry) {
-          const alt = resolveDisplayImage(item, { preferPhoto: false });
-          if (alt.src !== src) loadImage(alt.src, alt.kind, false);
-          else loadImage(buildClientFallbackDataUrl(item), 'client', false);
-        } else if (role !== 'lead') {
+        if (allowRetry) {
+          const alt = resolveDisplayImage(item, { preferPhoto: kind === 'photo' });
+          if (alt.src && alt.src !== src) loadImage(alt.src, alt.kind, false);
+          else failToText();
+        } else {
           failToText();
         }
       }

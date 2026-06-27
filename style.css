@@ -607,6 +607,25 @@ a { color: inherit; }
   height: 100%;
   object-fit: cover;
 }
+.article--stock-image .article-media,
+.article--fallback-image .article-media {
+  aspect-ratio: auto;
+  overflow: visible;
+  background: transparent;
+}
+.article--stock-image .article-media img,
+.article--fallback-image .article-media img {
+  aspect-ratio: 16 / 9;
+  height: auto;
+  border-radius: 8px;
+  background: var(--bg-soft);
+}
+.article-media-credit {
+  margin: 6px 0 0;
+  font-size: 0.68rem;
+  line-height: 1.35;
+  color: var(--text-muted, #6b7280);
+}
 
 .article-meta {
   display: flex;

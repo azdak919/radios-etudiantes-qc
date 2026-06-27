@@ -44,7 +44,7 @@ jobs:
       - name: Check for changes
         id: check
         run: |
-          if git diff --quiet news.json social-feed.json lead-image-qc.json assets/lead-fallbacks/; then
+          if git diff --quiet news.json social-feed.json lead-image-qc.json; then
             echo "changed=false" >> $GITHUB_OUTPUT
           else
             echo "changed=true" >> $GITHUB_OUTPUT
@@ -55,7 +55,7 @@ jobs:
         run: |
           git config user.name "RÉQ News Bot"
           git config user.email "actions@users.noreply.github.com"
-          git add news.json social-feed.json lead-image-qc.json assets/lead-fallbacks/
+          git add news.json social-feed.json lead-image-qc.json
           git commit -m "bot: update student news feed, lead images QC and social profiles (auto)"
           # Rebase onto any work pushed since checkout so the bot never
           # clobbers manual commits and never fails on a fast-forward race.

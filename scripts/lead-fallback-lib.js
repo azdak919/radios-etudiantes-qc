@@ -31,6 +31,7 @@ function isWeakImageUrl(raw = '') {
 function hasUsableImage(item) {
   return (
     (item.image && isCandidateImageUrl(item.image) && !isWeakImageUrl(item.image))
+    || (item.stockImage && isCandidateImageUrl(item.stockImage))
     || (item.fallbackImage && isCandidateImageUrl(item.fallbackImage))
   );
 }

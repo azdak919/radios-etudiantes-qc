@@ -1,86 +1,86 @@
 {
-  "updated": "2026-06-27T06:07:59.769Z",
+  "updated": "2026-06-27T06:12:14.827Z",
   "total": 143,
   "withPhoto": 142,
-  "withFallback": 26,
+  "withStock": 20,
   "fullyCovered": 143,
   "leadReadyPhotos": 117,
-  "pageScraped": 24,
-  "photosRecovered": 23,
-  "svgGeneratedThisRun": 25,
-  "svgKept": 1,
+  "pageScraped": 0,
+  "photosRecovered": 0,
+  "stockSearches": 26,
+  "stockFound": 20,
   "mainPageLeadReady": true,
   "gaps": [
     {
       "title": "Se préparer et vivre sa retraite : un long fleuve, pas si tranquille",
       "link": "https://lapige.atmjonquiere.com/2026/06/22/se-preparer-et-vivre-sa-retraite-un-long-fleuve-pas-si-tranquille/?utm_source=rss&utm_medium=rss&utm_campaign=se-preparer-et-vivre-sa-retraite-un-long-fleuve-pas-si-tranquille",
-      "reason": "photo-too-small-or-missing",
+      "reason": "no-stock-match",
       "image": "https://lapige.atmjonquiere.com/wp-content/uploads/sites/3/2026/06/Bruno-Cormier-retraite-benevole.png"
     },
     {
       "title": "L’ERD sauvée de la dissolution par quatre membres",
       "link": "https://lapige.atmjonquiere.com/2026/05/21/lerd-sauvee-de-la-dissolution-par-quatre-membres/?utm_source=rss&utm_medium=rss&utm_campaign=lerd-sauvee-de-la-dissolution-par-quatre-membres",
-      "reason": "photo-too-small-or-missing",
+      "reason": "stock-too-small",
       "image": "https://lapige.atmjonquiere.com/wp-content/uploads/sites/3/2020/10/Andre-e1779394167998-216x300.png"
     },
     {
       "title": "Jeunes auteurs, à vos crayons : le « pouvoir des mots » pour rejoindre les étudiants",
       "link": "https://lapige.atmjonquiere.com/2026/05/21/jeunes-auteurs-a-vos-crayons-le-pouvoir-des-mots-pour-rejoindre-les-etudiants/?utm_source=rss&utm_medium=rss&utm_campaign=jeunes-auteurs-a-vos-crayons-le-pouvoir-des-mots-pour-rejoindre-les-etudiants",
-      "reason": "photo-too-small-or-missing",
+      "reason": "stock-too-small",
       "image": "https://lapige.atmjonquiere.com/wp-content/uploads/sites/3/2026/05/Credit-photo-Raphaelle-Guillois-200x300.jpg"
     },
     {
       "title": "Assistance technique en pharmacie : de premières portes ouvertes à Alma",
       "link": "https://lapige.atmjonquiere.com/2026/05/20/assistance-technique-en-pharmacie-de-premieres-portes-ouvertes-a-alma/?utm_source=rss&utm_medium=rss&utm_campaign=assistance-technique-en-pharmacie-de-premieres-portes-ouvertes-a-alma",
-      "reason": "photo-too-small-or-missing",
+      "reason": "stock-too-small",
       "image": "https://lapige.atmjonquiere.com/wp-content/uploads/sites/3/2026/05/Image-2-1-300x225.jpg"
     },
     {
       "title": "Forum RÉA : une alliance pour l’éducation en milieu défavorisé",
       "link": "https://quartierlibre.ca/forum-rea-education-en-milieu-defavorise/",
-      "reason": "photo-too-small-or-missing",
+      "reason": "stock-too-small",
       "image": "https://quartierlibre.ca/wp-content/uploads/2026/05/image-2-768x1024.jpeg"
     },
     {
       "title": "Beach party à l’UQTR : une fin de session sous les palmiers",
       "link": "https://zonecampus.ca/beach-party-a-luqtr-une-fin-de-session-sous-les-palmiers/",
-      "reason": "photo-too-small-or-missing",
+      "reason": "stock-too-small",
       "image": "https://zonecampus.ca/wp-content/uploads/2026/04/7fcb657d-3a26-4582-b42d-8810b9b1dbbd.jpeg"
     },
     {
       "title": "L’hypocrisie qui rampe à l’Assemblée nationale",
       "link": "https://exilecvm.wordpress.com/2026/04/18/opinion-lhypocrisie-qui-rampe-a-lassemblee-nationale/",
-      "reason": "photo-too-small-or-missing",
+      "reason": "stock-too-small",
       "image": "https://exilecvm.wordpress.com/wp-content/uploads/2020/10/121330814_121456603062023_8783413434532337259_n.png?w=200"
     },
     {
       "title": "Dragon Jam: When music gives back",
       "link": "https://thelinknewspaper.ca/article/16324",
-      "reason": "photo-too-small-or-missing",
+      "reason": "stock-too-small",
       "image": "https://thelinknewspaper.ca/images/made/images/articles/_resized/IMG_0291-2_690_863_90.jpg"
     },
     {
       "title": "The Sum of Sound",
       "link": "https://thelinknewspaper.ca/article/16320",
-      "reason": "photo-too-small-or-missing",
+      "reason": "stock-too-small",
       "image": "https://thelinknewspaper.ca/images/made/images/articles/_resized/ODIE_HARR-2_690_1034_90.jpg"
     },
     {
       "title": "Inside Mile End Kicks",
       "link": "https://thelinknewspaper.ca/article/16318",
-      "reason": "photo-too-small-or-missing",
+      "reason": "stock-too-small",
       "image": "https://thelinknewspaper.ca/images/articles/_resized/Screenshot_2026-04-11_17.01.52.png"
     },
     {
       "title": "In conversation with Aaron Maté",
       "link": "https://thelinknewspaper.ca/article/16314",
-      "reason": "photo-too-small-or-missing",
+      "reason": "stock-too-small",
       "image": "https://thelinknewspaper.ca/images/made/images/articles/_resized/12.news.AaronMaté.Sean.online.CourtesyAaronMaté_690_1034_90.jpg"
     },
     {
       "title": "Your health, your problem",
       "link": "https://www.thetribune.ca/features/your-health-your-problem/?utm_source=rss&utm_medium=rss&utm_campaign=your-health-your-problem",
-      "reason": "photo-too-small-or-missing",
+      "reason": "stock-too-small",
       "image": "https://www.thetribune.ca/wp-content/uploads/2026/04/bottle.png"
     }
   ]
