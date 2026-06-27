@@ -25,6 +25,7 @@ const path = require('path');
 const https = require('https');
 
 const SOURCES_PATH = path.join(__dirname, '..', 'news-sources.json');
+const INSTITUTIONS_PATH = path.join(__dirname, '..', 'institutions.json');
 const TIMEOUT = 15000;
 
 const DAY = 86400000;
@@ -164,6 +165,49 @@ async function probeCandidate(cand) {
   return { promoted: false };
 }
 
+// === Coverage report (cross-reference institutions.json) =====================
+function norm(s = '') {
+  return s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
+}
+
+// Core tokens that identify an institution (full name + parenthetical acronym).
+function instKeys(name) {
+  const keys = [norm(name).replace(/\(.*?\)/g, '').trim()];
+  const acro = name.match(/\(([^)]+)\)/);
+  if (acro) keys.push(norm(acro[1]));
+  return keys.filter(Boolean);
+}
+
+function reportCoverage(registry) {
+  let catalogue;
+  try {
+    catalogue = JSON.parse(fs.readFileSync(INSTITUTIONS_PATH, 'utf8'));
+  } catch {
+    console.log('\n▸ Coverage: institutions.json not found — skipping.');
+    return;
+  }
+  const covered = registry.active
+    .filter((s) => s._status !== 'dead')
+    .map((s) => norm(s.institution || ''));
+
+  const isCovered = (inst) =>
+    instKeys(inst.name).some((k) => covered.some((c) => c.includes(k) || k.includes(c)));
+
+  const insts = catalogue.institutions || [];
+  const gapsU = insts.filter((i) => i.type === 'universite' && !isCovered(i));
+  const gapsC = insts.filter((i) => i.type === 'cegep' && !isCovered(i));
+  const nU = insts.filter((i) => i.type === 'universite').length;
+  const nC = insts.filter((i) => i.type === 'cegep').length;
+
+  console.log('\n▸ Coverage vs institutions.json');
+  console.log(`  Universités : ${nU - gapsU.length}/${nU} avec une source`);
+  console.log(`  Cégeps      : ${nC - gapsC.length}/${nC} avec une source`);
+  if (gapsU.length) {
+    console.log(`  Universités sans source (${gapsU.length}): ${gapsU.map((i) => i.name).join(', ')}`);
+  }
+  console.log(`  Cégeps sans source : ${gapsC.length} (voir institutions.json pour candidats potentiels)`);
+}
+
 // === Main ====================================================================
 async function main() {
   const doUpdate = process.argv.includes('--update');
@@ -197,6 +241,9 @@ async function main() {
     }
   }
   registry.candidates = stillCandidates;
+
+  // 3. Coverage report against the institutions catalogue
+  reportCoverage(registry);
 
   registry._lastRun = new Date().toISOString();
 

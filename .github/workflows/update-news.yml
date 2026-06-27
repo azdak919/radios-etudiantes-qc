@@ -2,15 +2,16 @@ name: Update Student News
 
 on:
   schedule:
-    # Six times a day. Cron is UTC; times below are Québec local (EDT, UTC-4).
+    # Seven times a day. Cron is UTC; times below are Québec local (EDT, UTC-4).
     # In winter (EST, UTC-5) each slot lands ~1 h earlier locally.
     #   05:00 → early morning   (09:00 UTC)
     #   07:00 → morning         (11:00 UTC)
     #   10:00 → mid-morning     (14:00 UTC)
+    #   12:00 → noon            (16:00 UTC)
     #   14:00 → afternoon       (18:00 UTC)
     #   19:00 → early night     (23:00 UTC)
     #   23:00 → late night      (03:00 UTC, next day)
-    - cron: '0 3,9,11,14,18,23 * * *'
+    - cron: '0 3,9,11,14,16,18,23 * * *'
   workflow_dispatch:   # Allow manual trigger
 
 # Never run two news-update jobs against the same ref at once.

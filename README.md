@@ -206,6 +206,20 @@ Lancer en local : `node scripts/discover-news-sources.js` (dry-run) puis `--upda
 Ajoute une entrée dans `candidates` de `news-sources.json` (`name`, `institution`, `region`, `type`,
 `lang`, `site`). Au prochain passage, le bot la testera et la promouvra si le flux est valide et récent.
 
+### Catalogue des établissements — `institutions.json`
+Liste canonique des **établissements d'enseignement supérieur du Québec** (universités + cégeps) à
+laquelle les bots se réfèrent.
+- **Bot** `scripts/update-institutions.js` (`.github/workflows/update-institutions.yml`) — tourne
+  **3×/an** (5 janvier / 5 mai / 5 septembre, aligné sur les sessions).
+  - **Cégeps** : tirés en direct de **Wikidata** (instances de CEGEP `Q1110056`) → fusions, nouveaux
+    campus et sites renommés sont captés automatiquement.
+  - **Universités** : liste curée stable (l'ensemble québécois ne change pratiquement jamais).
+  - Résilient : si Wikidata est injoignable, le fichier existant est conservé (jamais écrasé à vide).
+- Le bot de découverte croise ce catalogue pour **rapporter les trous de couverture** (établissements
+  sans source de nouvelles), ce qui guide l'ajout de nouveaux `candidates`.
+
+Lancer en local : `node scripts/update-institutions.js` (dry-run) puis `--update`.
+
 ---
 
 ## 🎨 Identité visuelle RÉQ
