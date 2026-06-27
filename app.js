@@ -15,7 +15,6 @@ function getPlayableStream(radio) {
 
 // ─── DOM refs ───────────────────────────────────────────────────────────────
 const GRID             = document.getElementById('radios-grid');
-const SEARCH           = document.getElementById('search-input');
 const TYPE_FILTERS     = document.getElementById('type-filters');
 const REGION_CONTAINER = document.getElementById('region-filters');
 const RESULTS_COUNT    = document.getElementById('results-count');
@@ -39,10 +38,22 @@ const PB_FWD           = document.getElementById('pb-fwd');
 const PB_VOLUME        = document.getElementById('pb-volume');
 const PB_CLOSE         = document.getElementById('pb-close');
 const PB_EQ            = document.getElementById('pb-eq');
+// Sections + news
+const SECTION_NAV      = document.getElementById('section-nav');
+const SECTION_RADIOS   = document.getElementById('section-radios');
+const SECTION_NEWS     = document.getElementById('section-news');
+const NEWS_GRID        = document.getElementById('news-grid');
+const NEWS_FILTERS     = document.getElementById('news-filters');
+const NEWS_COUNT       = document.getElementById('news-count');
+const NEWS_UPDATED     = document.getElementById('news-updated');
+const NEWS_EMPTY       = document.getElementById('news-empty');
 
 // ─── State ──────────────────────────────────────────────────────────────────
 let radios = [];
-let currentFilters = { type: 'all', regions: new Set(), query: '', showFavorites: false };
+let news = [];
+let newsLoaded = false;
+let newsSourceFilter = 'all';
+let currentFilters = { type: 'all', regions: new Set(), showFavorites: false };
 let currentRadio   = null; // radio shown in modal
 let playingRadio   = null; // radio currently loaded in audio element
 let audio          = null;
@@ -62,18 +73,14 @@ async function init() {
 
   renderRegions();
   bindFilters();
-  bindSearch();
   bindGlobalActions();
+  bindSectionNav();
   renderGrid();
   bindInstallFlow();
   setupAudio();
   bindPlayerBar();
 
   document.addEventListener('keydown', (e) => {
-    if (e.key === '/' && document.activeElement !== SEARCH) {
-      e.preventDefault();
-      SEARCH.focus();
-    }
     if (e.key === 'Escape' && !MODAL.classList.contains('hidden')) {
       closeModal();
     }
@@ -155,20 +162,8 @@ function bindFilters() {
   CLEAR_BTN?.addEventListener('click', resetFilters);
 }
 
-function bindSearch() {
-  let t;
-  SEARCH.addEventListener('input', () => {
-    clearTimeout(t);
-    t = setTimeout(() => {
-      currentFilters.query = SEARCH.value.trim().toLowerCase();
-      renderGrid();
-    }, 120);
-  });
-}
-
 function resetFilters() {
-  currentFilters = { type: 'all', regions: new Set(), query: '', showFavorites: false };
-  SEARCH.value = '';
+  currentFilters = { type: 'all', regions: new Set(), showFavorites: false };
   TYPE_FILTERS.querySelectorAll('button').forEach(b => b.classList.remove('active'));
   TYPE_FILTERS.querySelector('[data-type="all"]').classList.add('active');
   document.getElementById('fav-filter-btn')?.classList.remove('active');
@@ -182,16 +177,8 @@ function getFilteredRadios() {
   return radios.filter(r => {
     const matchesType = currentFilters.type === 'all' || r.type === currentFilters.type;
     const matchesRegion = currentFilters.regions.size === 0 || currentFilters.regions.has(r.region);
-    const q = currentFilters.query;
-    const matchesQuery =
-      !q ||
-      r.name.toLowerCase().includes(q) ||
-      r.fullName.toLowerCase().includes(q) ||
-      r.institution.toLowerCase().includes(q) ||
-      r.city.toLowerCase().includes(q) ||
-      (r.description && r.description.toLowerCase().includes(q));
     const matchesFav = !currentFilters.showFavorites || favs.includes(r.id);
-    return matchesType && matchesRegion && matchesQuery && matchesFav;
+    return matchesType && matchesRegion && matchesFav;
   });
 }
 
@@ -304,6 +291,129 @@ function bindGlobalActions() {
     const pool = filtered.length ? filtered : radios;
     openModal(pool[Math.floor(Math.random() * pool.length)]);
   });
+}
+
+// ─── Section navigation (Radios / Actualités) ─────────────────────────────────
+function bindSectionNav() {
+  SECTION_NAV?.querySelectorAll('.section-tab').forEach(tab => {
+    tab.addEventListener('click', () => switchSection(tab.dataset.section));
+  });
+}
+
+function switchSection(section) {
+  SECTION_NAV.querySelectorAll('.section-tab').forEach(t =>
+    t.classList.toggle('active', t.dataset.section === section)
+  );
+  SECTION_RADIOS.classList.toggle('hidden', section !== 'radios');
+  SECTION_NEWS.classList.toggle('hidden', section !== 'news');
+
+  if (section === 'news' && !newsLoaded) loadNews();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// ─── News feed ────────────────────────────────────────────────────────────────
+async function loadNews() {
+  newsLoaded = true;
+  NEWS_GRID.innerHTML = newsSkeleton(6);
+  try {
+    const res = await fetch('./news.json', { cache: 'no-cache' });
+    const data = await res.json();
+    news = Array.isArray(data) ? data : (data.items || []);
+    if (data.updated) {
+      const d = new Date(data.updated);
+      NEWS_UPDATED.textContent = `mis à jour le ${d.toLocaleDateString('fr-CA', { day: 'numeric', month: 'long' })}`;
+    }
+  } catch (e) {
+    console.error('Failed to load news.json', e);
+    news = [];
+  }
+  renderNewsFilters();
+  renderNews();
+}
+
+function newsSkeleton(n) {
+  return Array.from({ length: n }).map(() => `
+    <div class="news-card news-skeleton">
+      <div class="news-thumb skel"></div>
+      <div class="news-body">
+        <div class="skel-line w-1/3"></div>
+        <div class="skel-line w-full"></div>
+        <div class="skel-line w-4/5"></div>
+      </div>
+    </div>`).join('');
+}
+
+function renderNewsFilters() {
+  const sources = [...new Set(news.map(n => n.source))];
+  // Remove any previously injected source pills (keep the "all" button)
+  [...NEWS_FILTERS.querySelectorAll('[data-source]:not([data-source="all"])')].forEach(b => b.remove());
+
+  sources.forEach(src => {
+    const btn = document.createElement('button');
+    btn.className = 'filter-btn';
+    btn.dataset.source = src;
+    btn.textContent = src;
+    NEWS_FILTERS.appendChild(btn);
+  });
+
+  NEWS_FILTERS.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.onclick = () => {
+      newsSourceFilter = btn.dataset.source;
+      NEWS_FILTERS.querySelectorAll('.filter-btn').forEach(b =>
+        b.classList.toggle('active', b === btn)
+      );
+      renderNews();
+    };
+  });
+}
+
+function renderNews() {
+  const items = newsSourceFilter === 'all'
+    ? news
+    : news.filter(n => n.source === newsSourceFilter);
+
+  NEWS_EMPTY.classList.toggle('hidden', items.length > 0);
+  NEWS_COUNT.textContent = `${items.length} article${items.length !== 1 ? 's' : ''}`;
+  NEWS_GRID.innerHTML = '';
+  items.forEach(item => NEWS_GRID.appendChild(createNewsCard(item)));
+}
+
+function createNewsCard(item) {
+  const a = document.createElement('a');
+  a.className = 'news-card glass';
+  a.href = item.link;
+  a.target = '_blank';
+  a.rel = 'noopener';
+
+  const dateStr = item.date
+    ? new Date(item.date).toLocaleDateString('fr-CA', { day: 'numeric', month: 'short', year: 'numeric' })
+    : '';
+
+  const thumb = item.image
+    ? `<div class="news-thumb"><img src="${escapeHtml(item.image)}" alt="" loading="lazy" onerror="this.closest('.news-thumb').classList.add('news-thumb--empty')"></div>`
+    : `<div class="news-thumb news-thumb--empty"></div>`;
+
+  a.innerHTML = `
+    ${thumb}
+    <div class="news-body">
+      <div class="news-meta">
+        <span class="news-source">${escapeHtml(item.source)}</span>
+        ${dateStr ? `<span class="news-date">${dateStr}</span>` : ''}
+      </div>
+      <h3 class="news-title">${escapeHtml(item.title)}</h3>
+      <p class="news-excerpt">${escapeHtml(item.excerpt || '')}</p>
+      <div class="news-foot">${escapeHtml(item.institution || '')} <span class="news-arrow">→</span></div>
+    </div>
+  `;
+  return a;
+}
+
+function escapeHtml(str = '') {
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
 }
 
 // ─── Modal ───────────────────────────────────────────────────────────────────

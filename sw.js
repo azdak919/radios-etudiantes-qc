@@ -1,4 +1,4 @@
-const CACHE_NAME = "req-shell-v1";
+const CACHE_NAME = "req-shell-v2";
 const APP_SHELL = [
   "./",
   "./index.html",
@@ -49,6 +49,20 @@ self.addEventListener("fetch", (event) => {
   if (request.mode === "navigate") {
     event.respondWith(
       fetch(request).catch(() => caches.match("./index.html"))
+    );
+    return;
+  }
+
+  // Network-first for live data (news.json, radios.json) so content stays fresh.
+  if (url.pathname.endsWith(".json")) {
+    event.respondWith(
+      fetch(request)
+        .then((networkResponse) => {
+          const clone = networkResponse.clone();
+          caches.open(CACHE_NAME).then((cache) => cache.put(request, clone));
+          return networkResponse;
+        })
+        .catch(() => caches.match(request))
     );
     return;
   }

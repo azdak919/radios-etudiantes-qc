@@ -15,10 +15,12 @@
 ## ✨ Fonctionnalités
 
 - **Interface magnifique et mobile-first** — Design glassmorphism moderne, typographie soignée et animations fluides
-- **Recherche instantanée** + filtres puissants :
-  - Par type (Universités / Cégeps / Tous)
-  - Par région (Montréal, Québec, Estrie, Saguenay, etc.)
-  - Favoris (♥)
+- **Deux sections** via une navigation segmentée :
+  - 📻 **Radios** — le répertoire avec filtres puissants :
+    - Par type (Universités / Cégeps / Tous)
+    - Par région (Montréal, Québec, Estrie, Saguenay, etc.)
+    - Favoris (♥)
+  - 📰 **Actualités étudiantes** — un fil de nouvelles agrégeant les flux RSS des journaux étudiants (Quartier Libre, Montréal Campus, Le Délit, The McGill Daily, The Link, Zone Campus…), filtrable par source
 - **Cartes claires et informatives** : nom, fréquence, institution, ville + indicateur "LIVE" quand un flux direct est disponible
 - **Lecteur audio intégré** dans le modal pour les stations qui fournissent un flux HTTPS public (ex: CHYZ, CKUT)
 - **Modal riche** avec description, liens sociaux, site officiel et informations pratiques
@@ -26,6 +28,7 @@
 - Favoris persistants (localStorage)
 - Support **PWA complet** : installation sur mobile, icônes, offline shell, Media Session API (contrôles sur l’écran de verrouillage)
 - **Très léger** : site statique, Tailwind via CDN, JavaScript vanilla pur
+- **100 % sans serveur** : le fil de nouvelles est reconstruit par un bot GitHub Actions (`scripts/fetch-news.js`) qui écrit `news.json` — aucune requête CORS côté navigateur
 
 ---
 
@@ -34,7 +37,8 @@
 Ouvre l’application sur ton téléphone ou dans un navigateur desktop :
 
 - Grille responsive (1 à 4 colonnes)
-- Recherche et filtres ultra-réactifs
+- Navigation segmentée Radios / Actualités
+- Filtres ultra-réactifs (type, région, source de nouvelles)
 - Modal qui s’ouvre parfaitement sur mobile
 - Lecteur avec visualiseur d’égaliseur quand tu écoutes en direct
 
@@ -174,6 +178,47 @@ Tu peux déployer ce proxy une seule fois et l’utiliser pour tout le projet. I
 - Si tu trouves un bon proxy alternatif, ouvre une PR
 
 L’objectif : que **le plus possible** de radios puissent s’écouter directement dans RÉQ sans jamais quitter le site.
+
+---
+
+## 📰 Fil d’actualités étudiantes (RSS) + bots
+
+La section **Actualités** agrège les flux RSS de journaux étudiants québécois. Tout est
+**statique et sans CORS** : un bot reconstruit `news.json` côté GitHub Actions, le site ne fait que le lire.
+
+### Registre des sources — `news-sources.json`
+- `active` : les flux validés, lus par `scripts/fetch-news.js`. Champs `_status` (`ok`/`stale`/`dead`),
+  `_lastItemDate`, `_lastChecked`, `_failCount` **maintenus par le bot** (ne pas éditer à la main).
+- `candidates` : journaux à surveiller (URL du site). Le bot les sonde et **promeut** automatiquement
+  ceux qui exposent un flux RSS frais.
+
+### Deux bots
+1. **Agrégateur** — `scripts/fetch-news.js` (`.github/workflows/update-news.yml`, 3×/jour)
+   - Lit les sources `active`, télécharge chaque flux, normalise (titre, lien, extrait, image, date), écrit `news.json`.
+2. **Mainteneur & découvreur** — `scripts/discover-news-sources.js` (`.github/workflows/discover-news-sources.yml`, 1×/semaine)
+   - Santé des flux actifs (joignables ? publient-ils encore ?) → met à jour `_status`.
+   - Sonde les `candidates` (`/feed/`, `?feed=rss2`, etc.) et promeut les flux frais vers `active`.
+   - Les flux marqués `dead` sont conservés (ils peuvent revivre à la rentrée) mais ignorés par l’agrégateur.
+
+Lancer en local : `node scripts/discover-news-sources.js` (dry-run) puis `--update` pour écrire.
+
+### Ajouter une source
+Ajoute une entrée dans `candidates` de `news-sources.json` (`name`, `institution`, `region`, `type`,
+`lang`, `site`). Au prochain passage, le bot la testera et la promouvra si le flux est valide et récent.
+
+### Catalogue des établissements — `institutions.json`
+Liste canonique des **établissements d'enseignement supérieur du Québec** (universités + cégeps) à
+laquelle les bots se réfèrent.
+- **Bot** `scripts/update-institutions.js` (`.github/workflows/update-institutions.yml`) — tourne
+  **3×/an** (5 janvier / 5 mai / 5 septembre, aligné sur les sessions).
+  - **Cégeps** : tirés en direct de **Wikidata** (instances de CEGEP `Q1110056`) → fusions, nouveaux
+    campus et sites renommés sont captés automatiquement.
+  - **Universités** : liste curée stable (l'ensemble québécois ne change pratiquement jamais).
+  - Résilient : si Wikidata est injoignable, le fichier existant est conservé (jamais écrasé à vide).
+- Le bot de découverte croise ce catalogue pour **rapporter les trous de couverture** (établissements
+  sans source de nouvelles), ce qui guide l'ajout de nouveaux `candidates`.
+
+Lancer en local : `node scripts/update-institutions.js` (dry-run) puis `--update`.
 
 ---
 

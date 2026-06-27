@@ -1,0 +1,722 @@
+{
+  "updated": "2026-06-27T00:35:50.430Z",
+  "source": "Wikidata (cégeps) + liste curée (universités)",
+  "counts": {
+    "universite": 19,
+    "cegep": 60,
+    "total": 79
+  },
+  "institutions": [
+    {
+      "name": "Bishop's University",
+      "type": "universite",
+      "region": "Estrie",
+      "location": "",
+      "website": "https://www.ubishops.ca/",
+      "wikidata": "",
+      "source": "curated"
+    },
+    {
+      "name": "Concordia University",
+      "type": "universite",
+      "region": "Montréal",
+      "location": "",
+      "website": "https://www.concordia.ca/",
+      "wikidata": "",
+      "source": "curated"
+    },
+    {
+      "name": "École de technologie supérieure (ÉTS)",
+      "type": "universite",
+      "region": "Montréal",
+      "location": "",
+      "website": "https://www.etsmtl.ca/",
+      "wikidata": "",
+      "source": "curated"
+    },
+    {
+      "name": "École nationale d'administration publique (ENAP)",
+      "type": "universite",
+      "region": "Capitale-Nationale",
+      "location": "",
+      "website": "https://enap.ca/",
+      "wikidata": "",
+      "source": "curated"
+    },
+    {
+      "name": "HEC Montréal",
+      "type": "universite",
+      "region": "Montréal",
+      "location": "",
+      "website": "https://www.hec.ca/",
+      "wikidata": "",
+      "source": "curated"
+    },
+    {
+      "name": "Institut national de la recherche scientifique (INRS)",
+      "type": "universite",
+      "region": "Capitale-Nationale",
+      "location": "",
+      "website": "https://inrs.ca/",
+      "wikidata": "",
+      "source": "curated"
+    },
+    {
+      "name": "McGill University",
+      "type": "universite",
+      "region": "Montréal",
+      "location": "",
+      "website": "https://www.mcgill.ca/",
+      "wikidata": "",
+      "source": "curated"
+    },
+    {
+      "name": "Polytechnique Montréal",
+      "type": "universite",
+      "region": "Montréal",
+      "location": "",
+      "website": "https://www.polymtl.ca/",
+      "wikidata": "",
+      "source": "curated"
+    },
+    {
+      "name": "Université de Montréal",
+      "type": "universite",
+      "region": "Montréal",
+      "location": "",
+      "website": "https://www.umontreal.ca/",
+      "wikidata": "",
+      "source": "curated"
+    },
+    {
+      "name": "Université de Sherbrooke",
+      "type": "universite",
+      "region": "Estrie",
+      "location": "",
+      "website": "https://www.usherbrooke.ca/",
+      "wikidata": "",
+      "source": "curated"
+    },
+    {
+      "name": "Université du Québec (réseau)",
+      "type": "universite",
+      "region": "Capitale-Nationale",
+      "location": "",
+      "website": "https://www.uquebec.ca/",
+      "wikidata": "",
+      "source": "curated"
+    },
+    {
+      "name": "Université du Québec à Chicoutimi (UQAC)",
+      "type": "universite",
+      "region": "Saguenay–Lac-Saint-Jean",
+      "location": "",
+      "website": "https://www.uqac.ca/",
+      "wikidata": "",
+      "source": "curated"
+    },
+    {
+      "name": "Université du Québec à Montréal (UQAM)",
+      "type": "universite",
+      "region": "Montréal",
+      "location": "",
+      "website": "https://uqam.ca/",
+      "wikidata": "",
+      "source": "curated"
+    },
+    {
+      "name": "Université du Québec à Rimouski (UQAR)",
+      "type": "universite",
+      "region": "Bas-Saint-Laurent",
+      "location": "",
+      "website": "https://www.uqar.ca/",
+      "wikidata": "",
+      "source": "curated"
+    },
+    {
+      "name": "Université du Québec à Trois-Rivières (UQTR)",
+      "type": "universite",
+      "region": "Mauricie",
+      "location": "",
+      "website": "https://www.uqtr.ca/",
+      "wikidata": "",
+      "source": "curated"
+    },
+    {
+      "name": "Université du Québec en Abitibi-Témiscamingue (UQAT)",
+      "type": "universite",
+      "region": "Abitibi-Témiscamingue",
+      "location": "",
+      "website": "https://www.uqat.ca/",
+      "wikidata": "",
+      "source": "curated"
+    },
+    {
+      "name": "Université du Québec en Outaouais (UQO)",
+      "type": "universite",
+      "region": "Outaouais",
+      "location": "",
+      "website": "https://uqo.ca/",
+      "wikidata": "",
+      "source": "curated"
+    },
+    {
+      "name": "Université Laval",
+      "type": "universite",
+      "region": "Capitale-Nationale",
+      "location": "",
+      "website": "https://www.ulaval.ca/",
+      "wikidata": "",
+      "source": "curated"
+    },
+    {
+      "name": "Université TÉLUQ",
+      "type": "universite",
+      "region": "Capitale-Nationale",
+      "location": "",
+      "website": "https://www.teluq.ca/",
+      "wikidata": "",
+      "source": "curated"
+    },
+    {
+      "name": "Cégep à distance",
+      "type": "cegep",
+      "region": "",
+      "location": "",
+      "website": "https://cegepadistance.ca",
+      "wikidata": "Q3010027",
+      "source": "wikidata"
+    },
+    {
+      "name": "Cégep André-Laurendeau",
+      "type": "cegep",
+      "region": "Montréal",
+      "location": "Montréal",
+      "website": "https://www.claurendeau.qc.ca/",
+      "wikidata": "Q3009982",
+      "source": "both"
+    },
+    {
+      "name": "Cégep Beauce-Appalaches",
+      "type": "cegep",
+      "region": "Chaudière-Appalaches",
+      "location": "Chaudière-Appalaches",
+      "website": "https://www.cegepba.qc.ca/",
+      "wikidata": "Q3009983",
+      "source": "both"
+    },
+    {
+      "name": "cégep Champlain campus Saint-Lambert",
+      "type": "cegep",
+      "region": "",
+      "location": "Québec",
+      "website": "http://champlainonline.com",
+      "wikidata": "Q14875514",
+      "source": "wikidata"
+    },
+    {
+      "name": "cégep Champlain campus Saint-Lawrence",
+      "type": "cegep",
+      "region": "",
+      "location": "Québec",
+      "website": "http://www.slc.qc.ca/",
+      "wikidata": "Q536501",
+      "source": "wikidata"
+    },
+    {
+      "name": "Cégep d'Alma",
+      "type": "cegep",
+      "region": "Saguenay–Lac-Saint-Jean",
+      "location": "",
+      "website": "https://www.cegepalma.ca/",
+      "wikidata": "",
+      "source": "curated"
+    },
+    {
+      "name": "Cégep de Baie-Comeau",
+      "type": "cegep",
+      "region": "Côte-Nord",
+      "location": "Baie-Comeau",
+      "website": "https://www.cegep-baie-comeau.qc.ca/",
+      "wikidata": "Q3009992",
+      "source": "both"
+    },
+    {
+      "name": "Cégep de Chicoutimi",
+      "type": "cegep",
+      "region": "Saguenay–Lac-Saint-Jean",
+      "location": "Québec",
+      "website": "https://cchic.ca/",
+      "wikidata": "Q3009993",
+      "source": "both"
+    },
+    {
+      "name": "Cégep de Drummondville",
+      "type": "cegep",
+      "region": "Centre-du-Québec",
+      "location": "Drummondville",
+      "website": "https://www.cegepdrummond.ca/",
+      "wikidata": "Q3009995",
+      "source": "both"
+    },
+    {
+      "name": "Cégep de Granby",
+      "type": "cegep",
+      "region": "Montérégie",
+      "location": "",
+      "website": "https://cegepgranby.qc.ca/",
+      "wikidata": "",
+      "source": "curated"
+    },
+    {
+      "name": "Cégep de Jonquière",
+      "type": "cegep",
+      "region": "Saguenay–Lac-Saint-Jean",
+      "location": "",
+      "website": "https://www.cegepjonquiere.ca/",
+      "wikidata": "",
+      "source": "curated"
+    },
+    {
+      "name": "Cégep de l'Abitibi-Témiscamingue",
+      "type": "cegep",
+      "region": "Abitibi-Témiscamingue",
+      "location": "Québec",
+      "website": "https://www.cegepat.qc.ca/",
+      "wikidata": "Q3010017",
+      "source": "both"
+    },
+    {
+      "name": "Cégep de l'Outaouais",
+      "type": "cegep",
+      "region": "Outaouais",
+      "location": "Gatineau",
+      "website": "https://www.cegepoutaouais.qc.ca/",
+      "wikidata": "Q3010024",
+      "source": "both"
+    },
+    {
+      "name": "Cégep de la Gaspésie et des Îles",
+      "type": "cegep",
+      "region": "Gaspésie–Îles-de-la-Madeleine",
+      "location": "Gaspé",
+      "website": "https://www.cegepgim.ca/",
+      "wikidata": "Q3010020",
+      "source": "both"
+    },
+    {
+      "name": "Cégep de La Pocatière",
+      "type": "cegep",
+      "region": "Bas-Saint-Laurent",
+      "location": "La Pocatière",
+      "website": "https://www.cegeplapocatiere.qc.ca/",
+      "wikidata": "Q3009999",
+      "source": "both"
+    },
+    {
+      "name": "Cégep de Lévis",
+      "type": "cegep",
+      "region": "Chaudière-Appalaches",
+      "location": "Lévis",
+      "website": "https://www.cegeplevis.ca/",
+      "wikidata": "Q3010001",
+      "source": "both"
+    },
+    {
+      "name": "Cégep de Matane",
+      "type": "cegep",
+      "region": "Bas-Saint-Laurent",
+      "location": "Matane",
+      "website": "https://www.cegep-matane.qc.ca/",
+      "wikidata": "Q3010002",
+      "source": "both"
+    },
+    {
+      "name": "Cégep de Rimouski",
+      "type": "cegep",
+      "region": "Bas-Saint-Laurent",
+      "location": "Rimouski",
+      "website": "https://www.cegep-rimouski.qc.ca/",
+      "wikidata": "Q3010003",
+      "source": "both"
+    },
+    {
+      "name": "Cégep de Rivière-du-Loup",
+      "type": "cegep",
+      "region": "Bas-Saint-Laurent",
+      "location": "Rivière-du-Loup",
+      "website": "https://www.cegeprdl.ca/",
+      "wikidata": "Q3010004",
+      "source": "both"
+    },
+    {
+      "name": "Cégep de Saint-Félicien",
+      "type": "cegep",
+      "region": "Saguenay–Lac-Saint-Jean",
+      "location": "Saint-Félicien",
+      "website": "https://cegepstfe.ca/",
+      "wikidata": "Q3010005",
+      "source": "both"
+    },
+    {
+      "name": "Cégep de Saint-Hyacinthe",
+      "type": "cegep",
+      "region": "Montérégie",
+      "location": "Saint-Hyacinthe",
+      "website": "https://www.cegepsth.qc.ca/",
+      "wikidata": "Q3010007",
+      "source": "both"
+    },
+    {
+      "name": "Cégep de Saint-Jérôme",
+      "type": "cegep",
+      "region": "Laurentides",
+      "location": "Québec",
+      "website": "https://www.cstj.qc.ca/",
+      "wikidata": "Q3010008",
+      "source": "both"
+    },
+    {
+      "name": "Cégep de Saint-Laurent",
+      "type": "cegep",
+      "region": "Montréal",
+      "location": "Montréal",
+      "website": "https://www.cegepsl.qc.ca/",
+      "wikidata": "Q3010009",
+      "source": "both"
+    },
+    {
+      "name": "Cégep de Sainte-Foy",
+      "type": "cegep",
+      "region": "Capitale-Nationale",
+      "location": "Sainte-Foy–Sillery–Cap-Rouge",
+      "website": "https://www.cegep-ste-foy.qc.ca/",
+      "wikidata": "Q3010010",
+      "source": "both"
+    },
+    {
+      "name": "Cégep de Sept-Îles",
+      "type": "cegep",
+      "region": "Côte-Nord",
+      "location": "Québec",
+      "website": "https://www.cegepsept-iles.ca/",
+      "wikidata": "Q3010011",
+      "source": "both"
+    },
+    {
+      "name": "Cégep de Shawinigan",
+      "type": "cegep",
+      "region": "Mauricie",
+      "location": "Shawinigan",
+      "website": "https://www.cegepshawinigan.ca/",
+      "wikidata": "Q2983692",
+      "source": "both"
+    },
+    {
+      "name": "Cégep de Sherbrooke",
+      "type": "cegep",
+      "region": "Estrie",
+      "location": "Québec",
+      "website": "https://www.cegepsherbrooke.qc.ca/",
+      "wikidata": "Q592970",
+      "source": "both"
+    },
+    {
+      "name": "Cégep de Sorel-Tracy",
+      "type": "cegep",
+      "region": "Montérégie",
+      "location": "Sorel-Tracy",
+      "website": "https://www.cegepst.qc.ca/",
+      "wikidata": "Q742142",
+      "source": "both"
+    },
+    {
+      "name": "Cégep de Thetford",
+      "type": "cegep",
+      "region": "Chaudière-Appalaches",
+      "location": "Québec",
+      "website": "https://www.cegepthetford.ca/",
+      "wikidata": "Q3010013",
+      "source": "both"
+    },
+    {
+      "name": "Cégep de Trois-Rivières",
+      "type": "cegep",
+      "region": "Mauricie",
+      "location": "Trois-Rivières",
+      "website": "https://www.cegeptr.qc.ca/",
+      "wikidata": "Q3010014",
+      "source": "both"
+    },
+    {
+      "name": "Cégep de Valleyfield",
+      "type": "cegep",
+      "region": "Montérégie",
+      "location": "Salaberry-de-Valleyfield",
+      "website": "https://www.colval.qc.ca/",
+      "wikidata": "Q5147640",
+      "source": "both"
+    },
+    {
+      "name": "Cégep de Victoriaville",
+      "type": "cegep",
+      "region": "Centre-du-Québec",
+      "location": "Victoriaville",
+      "website": "https://www.cegepvicto.ca/",
+      "wikidata": "Q3010016",
+      "source": "both"
+    },
+    {
+      "name": "Cégep du Vieux Montréal",
+      "type": "cegep",
+      "region": "Montréal",
+      "location": "Ville-Marie",
+      "website": "https://www.cvm.qc.ca/",
+      "wikidata": "Q3010022",
+      "source": "both"
+    },
+    {
+      "name": "Cégep Édouard-Montpetit",
+      "type": "cegep",
+      "region": "Montérégie",
+      "location": "Québec",
+      "website": "https://www.cegepmontpetit.ca/",
+      "wikidata": "Q2983897",
+      "source": "both"
+    },
+    {
+      "name": "Cégep Garneau",
+      "type": "cegep",
+      "region": "Capitale-Nationale",
+      "location": "Québec",
+      "website": "https://www.cegepgarneau.ca/",
+      "wikidata": "Q3009985",
+      "source": "both"
+    },
+    {
+      "name": "Cégep Gérald-Godin",
+      "type": "cegep",
+      "region": "Montréal",
+      "location": "Québec",
+      "website": "https://www.cgodin.qc.ca/",
+      "wikidata": "Q2983590",
+      "source": "both"
+    },
+    {
+      "name": "Cégep Limoilou",
+      "type": "cegep",
+      "region": "Capitale-Nationale",
+      "location": "La Cité-Limoilou",
+      "website": "https://www.cegeplimoilou.ca/",
+      "wikidata": "Q3009986",
+      "source": "both"
+    },
+    {
+      "name": "Cégep Marie-Victorin",
+      "type": "cegep",
+      "region": "Montréal",
+      "location": "Montréal-Nord",
+      "website": "https://www.collegemv.qc.ca/",
+      "wikidata": "Q3009989",
+      "source": "both"
+    },
+    {
+      "name": "Cégep régional de Lanaudière",
+      "type": "cegep",
+      "region": "Lanaudière",
+      "location": "Lanaudière",
+      "website": "https://www.cegep-lanaudiere.qc.ca/",
+      "wikidata": "Q3010025",
+      "source": "both"
+    },
+    {
+      "name": "cégep régional de Lanaudière à Joliette",
+      "type": "cegep",
+      "region": "",
+      "location": "Joliette",
+      "website": "https://cegep-lanaudiere.qc.ca/joliette/",
+      "wikidata": "Q3010021",
+      "source": "wikidata"
+    },
+    {
+      "name": "cégep régional de Lanaudière à L'Assomption",
+      "type": "cegep",
+      "region": "",
+      "location": "L'Assomption",
+      "website": "",
+      "wikidata": "Q3010023",
+      "source": "wikidata"
+    },
+    {
+      "name": "Cégep régional de Lanaudière à Terrebonne",
+      "type": "cegep",
+      "region": "",
+      "location": "Terrebonne",
+      "website": "http://www.cegep-lanaudiere.qc.ca/college-terrebonne",
+      "wikidata": "Q3010026",
+      "source": "wikidata"
+    },
+    {
+      "name": "Cégep Saint-Jean-sur-Richelieu",
+      "type": "cegep",
+      "region": "Montérégie",
+      "location": "",
+      "website": "https://www.cstjean.qc.ca/",
+      "wikidata": "",
+      "source": "curated"
+    },
+    {
+      "name": "Champlain Regional College",
+      "type": "cegep",
+      "region": "Estrie",
+      "location": "",
+      "website": "https://www.champlaincollege.qc.ca/",
+      "wikidata": "",
+      "source": "curated"
+    },
+    {
+      "name": "Collège Ahuntsic",
+      "type": "cegep",
+      "region": "Montréal",
+      "location": "Québec",
+      "website": "https://www.collegeahuntsic.qc.ca/",
+      "wikidata": "Q2983556",
+      "source": "both"
+    },
+    {
+      "name": "collège André-Grasset",
+      "type": "cegep",
+      "region": "",
+      "location": "Montréal",
+      "website": "http://www.grasset.qc.ca",
+      "wikidata": "Q2983559",
+      "source": "wikidata"
+    },
+    {
+      "name": "collège Champlain campus de Lennoxville",
+      "type": "cegep",
+      "region": "",
+      "location": "Lennoxville",
+      "website": "http://www.crc-lennox.qc.ca",
+      "wikidata": "Q5070170",
+      "source": "wikidata"
+    },
+    {
+      "name": "Collège de Bois-de-Boulogne",
+      "type": "cegep",
+      "region": "Montréal",
+      "location": "Montréal",
+      "website": "https://www.bdeb.qc.ca/",
+      "wikidata": "Q2983741",
+      "source": "both"
+    },
+    {
+      "name": "Collège de Maisonneuve",
+      "type": "cegep",
+      "region": "Montréal",
+      "location": "",
+      "website": "https://www.cmaisonneuve.qc.ca/",
+      "wikidata": "",
+      "source": "curated"
+    },
+    {
+      "name": "Collège de Rosemont",
+      "type": "cegep",
+      "region": "Montréal",
+      "location": "Québec",
+      "website": "https://www.crosemont.qc.ca/",
+      "wikidata": "Q2983788",
+      "source": "both"
+    },
+    {
+      "name": "Collège Heritage",
+      "type": "cegep",
+      "region": "Outaouais",
+      "location": "Gatineau",
+      "website": "https://www.cegep-heritage.qc.ca/",
+      "wikidata": "Q2983598",
+      "source": "both"
+    },
+    {
+      "name": "Collège Jean-de-Brébeuf",
+      "type": "cegep",
+      "region": "",
+      "location": "Montréal",
+      "website": "http://www.brebeuf.qc.ca",
+      "wikidata": "Q2983603",
+      "source": "wikidata"
+    },
+    {
+      "name": "Collège Lionel-Groulx",
+      "type": "cegep",
+      "region": "Laurentides",
+      "location": "",
+      "website": "https://www.clg.qc.ca/",
+      "wikidata": "",
+      "source": "curated"
+    },
+    {
+      "name": "Collège Montmorency",
+      "type": "cegep",
+      "region": "Laval",
+      "location": "Québec",
+      "website": "https://www.cmontmorency.qc.ca/",
+      "wikidata": "Q2983625",
+      "source": "both"
+    },
+    {
+      "name": "collège régional Champlain de Saint-Lambert",
+      "type": "cegep",
+      "region": "",
+      "location": "Sherbrooke",
+      "website": "http://admin.crc-sher.qc.ca/",
+      "wikidata": "Q2371986",
+      "source": "wikidata"
+    },
+    {
+      "name": "Dawson College",
+      "type": "cegep",
+      "region": "Montréal",
+      "location": "",
+      "website": "https://www.dawsoncollege.qc.ca/",
+      "wikidata": "",
+      "source": "curated"
+    },
+    {
+      "name": "Institut maritime du Québec",
+      "type": "cegep",
+      "region": "",
+      "location": "Rimouski",
+      "website": "",
+      "wikidata": "Q3152355",
+      "source": "wikidata"
+    },
+    {
+      "name": "Institution Kiuna",
+      "type": "cegep",
+      "region": "",
+      "location": "Odanak",
+      "website": "https://kiuna-college.com",
+      "wikidata": "Q3152813",
+      "source": "wikidata"
+    },
+    {
+      "name": "John Abbott College",
+      "type": "cegep",
+      "region": "Montréal",
+      "location": "Sainte-Anne-de-Bellevue",
+      "website": "https://www.johnabbott.qc.ca/",
+      "wikidata": "Q930450",
+      "source": "both"
+    },
+    {
+      "name": "Vanier College",
+      "type": "cegep",
+      "region": "Montréal",
+      "location": "",
+      "website": "https://www.vaniercollege.qc.ca/",
+      "wikidata": "",
+      "source": "curated"
+    }
+  ]
+}

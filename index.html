@@ -68,58 +68,83 @@
         <div class="max-w-2xl">
           <p class="text-base text-white/65 sm:text-lg leading-relaxed">
             Le répertoire des radios étudiantes des cégeps et universités du Québec.
-            Écoute en direct, simple, fait pour mobile.
+            Écoute en direct et suis l'actu des journaux étudiants.
           </p>
         </div>
 
-        <!-- Search + type filters -->
-        <div class="flex flex-col gap-3 sm:flex-row sm:items-center">
-          <div class="relative flex-1">
-            <input
-              id="search-input"
-              type="text"
-              placeholder="Rechercher une radio, une ville, une université…"
-              class="w-full rounded-3xl border border-white/10 bg-white/5 px-5 py-3.5 pl-12 text-base placeholder:text-white/40 focus:border-accent/50 focus:outline-none focus:bg-white/[0.07] transition-colors"
-            />
-            <svg class="absolute left-4 top-1/2 -translate-y-1/2 text-white/35 w-5 h-5 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-            </svg>
-          </div>
+        <!-- Section nav (segmented) -->
+        <nav id="section-nav" class="section-nav" role="tablist">
+          <button class="section-tab active" data-section="radios" role="tab">
+            <span class="section-tab-ico">📻</span> Radios
+          </button>
+          <button class="section-tab" data-section="news" role="tab">
+            <span class="section-tab-ico">📰</span> Actualités
+          </button>
+        </nav>
+      </header>
 
-          <div class="flex flex-wrap gap-2" id="type-filters">
-            <button data-type="all" class="filter-btn active">Tous</button>
-            <button data-type="universite" class="filter-btn">Universités</button>
-            <button data-type="cegep" class="filter-btn">Cégeps</button>
-            <button id="fav-filter-btn" class="filter-btn">♥ Favoris</button>
-          </div>
+      <!-- ══════════ SECTION: RADIOS ══════════ -->
+      <section id="section-radios">
+        <!-- Type filters -->
+        <div class="flex flex-wrap gap-2 mb-3" id="type-filters">
+          <button data-type="all" class="filter-btn active">Tous</button>
+          <button data-type="universite" class="filter-btn">Universités</button>
+          <button data-type="cegep" class="filter-btn">Cégeps</button>
+          <button id="fav-filter-btn" class="filter-btn">♥ Favoris</button>
         </div>
 
         <!-- Region pills -->
         <div class="flex flex-wrap gap-2" id="region-filters">
           <!-- populated by JS -->
         </div>
-      </header>
 
-      <!-- Stats bar -->
-      <div class="mb-4 flex items-center gap-2 text-sm text-white/45">
-        <span id="results-count">— radios</span>
-        <span class="text-white/15">•</span>
-        <button id="random-btn" class="flex items-center gap-1.5 rounded-full border border-white/10 px-3 py-1 text-xs transition hover:border-white/25 hover:text-white/80 active:scale-95">
-          🎲 Aléatoire
-        </button>
-      </div>
+        <!-- Stats bar -->
+        <div class="mt-4 mb-4 flex items-center gap-2 text-sm text-white/45">
+          <span id="results-count">— radios</span>
+          <span class="text-white/15">•</span>
+          <button id="random-btn" class="flex items-center gap-1.5 rounded-full border border-white/10 px-3 py-1 text-xs transition hover:border-white/25 hover:text-white/80 active:scale-95">
+            🎲 Aléatoire
+          </button>
+        </div>
 
-      <!-- Grid -->
-      <div id="radios-grid" class="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-        <!-- Cards injected by JS -->
-      </div>
+        <!-- Grid -->
+        <div id="radios-grid" class="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          <!-- Cards injected by JS -->
+        </div>
 
-      <!-- Empty state -->
-      <div id="empty-state" class="hidden mt-14 text-center">
-        <div class="text-4xl mb-3">📻</div>
-        <p class="text-white/55 text-base">Aucune radio trouvée avec ces filtres.</p>
-        <button id="clear-filters" class="mt-4 text-sm text-accentSoft underline decoration-accent/30">Effacer les filtres</button>
-      </div>
+        <!-- Empty state -->
+        <div id="empty-state" class="hidden mt-14 text-center">
+          <div class="text-4xl mb-3">📻</div>
+          <p class="text-white/55 text-base">Aucune radio trouvée avec ces filtres.</p>
+          <button id="clear-filters" class="mt-4 text-sm text-accentSoft underline decoration-accent/30">Effacer les filtres</button>
+        </div>
+      </section>
+
+      <!-- ══════════ SECTION: ACTUALITÉS ══════════ -->
+      <section id="section-news" class="hidden">
+        <!-- Source filters -->
+        <div class="flex flex-wrap gap-2 mb-2" id="news-filters">
+          <button data-source="all" class="filter-btn active">Toutes les sources</button>
+          <!-- source pills injected by JS -->
+        </div>
+
+        <div class="mt-3 mb-4 flex items-center gap-2 text-sm text-white/45">
+          <span id="news-count">— articles</span>
+          <span class="text-white/15">•</span>
+          <span id="news-updated" class="text-xs text-white/35"></span>
+        </div>
+
+        <!-- News grid -->
+        <div id="news-grid" class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <!-- News cards injected by JS -->
+        </div>
+
+        <!-- News empty / loading -->
+        <div id="news-empty" class="hidden mt-14 text-center">
+          <div class="text-4xl mb-3">📰</div>
+          <p class="text-white/55 text-base">Aucun article pour le moment.</p>
+        </div>
+      </section>
 
       <!-- Footer -->
       <footer class="mt-14 border-t border-white/8 pt-6 text-center text-xs text-white/40">
@@ -132,8 +157,8 @@
     </div>
 
     <!-- Radio Detail Modal -->
-    <div id="modal" class="hidden fixed inset-0 z-[100] flex items-end justify-center bg-black/75 p-0 sm:items-center sm:p-6">
-      <div id="modal-panel" class="w-full max-w-2xl rounded-t-3xl border border-white/10 bg-surface shadow-2xl sm:rounded-3xl overflow-y-auto max-h-[92vh]">
+    <div id="modal" class="hidden fixed inset-0 z-[100] flex items-end justify-center p-0 sm:items-center sm:p-6">
+      <div id="modal-panel" class="w-full max-w-2xl rounded-t-3xl border border-white/10 shadow-2xl sm:rounded-3xl overflow-y-auto max-h-[92vh]">
         <!-- Modal content injected by JS -->
       </div>
     </div>

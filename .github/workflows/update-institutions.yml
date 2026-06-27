@@ -1,0 +1,57 @@
+name: Update Institutions Catalogue
+
+on:
+  schedule:
+    # Three times a year, aligned with the academic terms (winter / summer /
+    # fall): the 5th of January, May and September at 06:00 UTC.
+    - cron: '0 6 5 1,5,9 *'
+  workflow_dispatch:   # Allow manual trigger
+
+concurrency:
+  group: update-institutions-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  catalogue:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Refresh the Québec higher-ed institutions catalogue (Wikidata)
+        run: node scripts/update-institutions.js --update
+        env:
+          CI: true
+
+      - name: Check for changes
+        id: check
+        run: |
+          if git diff --quiet institutions.json; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+          else
+            echo "changed=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Commit and push updates
+        if: steps.check.outputs.changed == 'true'
+        run: |
+          git config user.name "RÉQ Institutions Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add institutions.json
+          git commit -m "bot: refresh higher-ed institutions catalogue (auto)"
+          for i in 1 2 3; do
+            git pull --rebase --autostash origin "${GITHUB_REF_NAME}" && git push && exit 0
+            echo "push attempt $i failed, retrying…"
+            sleep $((i * 3))
+          done
+          echo "::error::could not push bot update after retries"
+          exit 1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

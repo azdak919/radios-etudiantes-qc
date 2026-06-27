@@ -1,0 +1,200 @@
+{
+  "_comment": "Registre des sources de nouvelles étudiantes. 'active' est lu par scripts/fetch-news.js. 'candidates' est sondé par scripts/discover-news-sources.js, qui promeut les flux valides vers 'active' et met à jour les statuts. Ne pas éditer les champs _status/_lastItemDate/_lastChecked/_failCount à la main : les bots s'en chargent.",
+  "active": [
+    {
+      "name": "Quartier Libre",
+      "institution": "Université de Montréal",
+      "region": "Montréal",
+      "type": "universite",
+      "lang": "fr",
+      "url": "https://quartierlibre.ca/feed/",
+      "_lastChecked": "2026-06-27T00:14:36.713Z",
+      "_failCount": 0,
+      "_status": "ok",
+      "_lastItemDate": "2026-05-15T16:00:00.000Z"
+    },
+    {
+      "name": "Montréal Campus",
+      "institution": "UQAM",
+      "region": "Montréal",
+      "type": "universite",
+      "lang": "fr",
+      "url": "https://montrealcampus.ca/feed/",
+      "_lastChecked": "2026-06-27T00:14:38.139Z",
+      "_failCount": 0,
+      "_status": "ok",
+      "_lastItemDate": "2026-05-09T03:14:30.000Z"
+    },
+    {
+      "name": "Le Délit",
+      "institution": "Université McGill",
+      "region": "Montréal",
+      "type": "universite",
+      "lang": "fr",
+      "url": "https://www.delitfrancais.com/feed/",
+      "_lastChecked": "2026-06-27T00:14:39.045Z",
+      "_failCount": 0,
+      "_status": "ok",
+      "_lastItemDate": "2026-03-25T11:00:00.000Z"
+    },
+    {
+      "name": "The McGill Daily",
+      "institution": "McGill University",
+      "region": "Montréal",
+      "type": "universite",
+      "lang": "en",
+      "url": "https://www.mcgilldaily.com/feed/",
+      "_lastChecked": "2026-06-27T00:14:39.829Z",
+      "_failCount": 0,
+      "_status": "ok",
+      "_lastItemDate": "2026-04-11T23:32:01.000Z"
+    },
+    {
+      "name": "The Link",
+      "institution": "Concordia University",
+      "region": "Montréal",
+      "type": "universite",
+      "lang": "en",
+      "url": "https://thelinknewspaper.ca/feed/",
+      "_lastChecked": "2026-06-27T00:14:40.622Z",
+      "_failCount": 0,
+      "_status": "ok",
+      "_lastItemDate": "2026-06-10T17:09:00.000Z"
+    },
+    {
+      "name": "Zone Campus",
+      "institution": "Université du Québec à Trois-Rivières",
+      "region": "Mauricie",
+      "type": "universite",
+      "lang": "fr",
+      "url": "https://www.zonecampus.ca/feed/",
+      "_lastChecked": "2026-06-27T00:14:42.843Z",
+      "_failCount": 0,
+      "_status": "ok",
+      "_lastItemDate": "2026-05-08T14:20:26.000Z"
+    },
+    {
+      "name": "L'Exemplaire",
+      "institution": "Université Laval",
+      "region": "Capitale-Nationale",
+      "type": "universite",
+      "lang": "fr",
+      "url": "https://exemplaire.com.ulaval.ca/feed/",
+      "_lastChecked": "2026-06-27T00:14:45.852Z",
+      "_failCount": 0,
+      "_status": "ok",
+      "_lastItemDate": "2026-05-15T16:31:24.000Z"
+    },
+    {
+      "name": "Le Collectif",
+      "institution": "Université de Sherbrooke",
+      "region": "Estrie",
+      "type": "universite",
+      "lang": "fr",
+      "url": "https://lecollectif.ca/feed/",
+      "_lastChecked": "2026-06-27T00:14:47.483Z",
+      "_failCount": 0,
+      "_status": "ok",
+      "_lastItemDate": "2026-06-26T20:18:05.000Z"
+    },
+    {
+      "name": "Exil",
+      "institution": "Cégep du Vieux Montréal",
+      "region": "Montréal",
+      "type": "cegep",
+      "lang": "fr",
+      "url": "https://exilecvm.ca/feed/",
+      "_lastChecked": "2026-06-27T00:14:48.525Z",
+      "_failCount": 0,
+      "_status": "ok",
+      "_lastItemDate": "2026-04-18T22:22:07.000Z"
+    },
+    {
+      "name": "La Pige",
+      "institution": "Cégep de Jonquière (ATM – journalisme)",
+      "region": "Saguenay–Lac-Saint-Jean",
+      "type": "cegep",
+      "lang": "fr",
+      "url": "https://lapige.atmjonquiere.com/feed/",
+      "_lastChecked": "2026-06-27T00:14:49.829Z",
+      "_failCount": 0,
+      "_status": "ok",
+      "_lastItemDate": "2026-06-22T14:36:10.000Z"
+    },
+    {
+      "name": "The Tribune",
+      "institution": "McGill University",
+      "region": "Montréal",
+      "type": "universite",
+      "lang": "en",
+      "url": "https://www.thetribune.ca/feed/",
+      "_status": "ok",
+      "_lastItemDate": "2026-06-26T15:24:28.000Z",
+      "_lastChecked": "2026-06-27T00:14:50.670Z",
+      "_failCount": 0
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Le Griffonnier",
+      "institution": "Université du Québec à Chicoutimi",
+      "region": "Saguenay–Lac-Saint-Jean",
+      "type": "universite",
+      "lang": "fr",
+      "site": "https://ceuc.ca/",
+      "_lastChecked": "2026-06-27T00:14:50.674Z",
+      "_failCount": 2
+    },
+    {
+      "name": "L'Oisif",
+      "institution": "Cégep de Chicoutimi",
+      "region": "Saguenay–Lac-Saint-Jean",
+      "type": "cegep",
+      "lang": "fr",
+      "site": "https://cchic.ca/categorie/journal-etudiant-loisif/",
+      "_lastChecked": "2026-06-27T00:14:52.547Z",
+      "_failCount": 2
+    },
+    {
+      "name": "Le Trait d'Union",
+      "institution": "Collège de Maisonneuve",
+      "region": "Montréal",
+      "type": "cegep",
+      "lang": "fr",
+      "site": "https://letraitdunion.org/",
+      "_lastChecked": "2026-06-27T00:15:05.237Z",
+      "_failCount": 2
+    },
+    {
+      "name": "La Gifle",
+      "institution": "Collège Lionel-Groulx",
+      "region": "Laurentides",
+      "type": "cegep",
+      "lang": "fr",
+      "site": "https://lagifleblog.wordpress.com/",
+      "_lastChecked": "2026-06-27T00:15:11.360Z",
+      "_failCount": 2
+    },
+    {
+      "name": "The Concordian",
+      "institution": "Concordia University",
+      "region": "Montréal",
+      "type": "universite",
+      "lang": "en",
+      "site": "https://theconcordian.com/",
+      "_lastChecked": "2026-06-27T00:15:13.200Z",
+      "_failCount": 2
+    },
+    {
+      "name": "Le Brise-Glace",
+      "institution": "Cégep de Rimouski",
+      "region": "Bas-Saint-Laurent",
+      "type": "cegep",
+      "lang": "fr",
+      "site": "https://lebrise-glace.com/",
+      "_lastChecked": "2026-06-27T00:15:14.498Z",
+      "_failCount": 2
+    }
+  ],
+  "_lastRun": "2026-06-27T00:17:00.337Z"
+}
