@@ -47,6 +47,7 @@ jobs:
           node scripts/generate-feed.js --update
         env:
           CI: true
+          FIREBASE_POLYSCOPE_API_KEY: ${{ secrets.FIREBASE_POLYSCOPE_API_KEY }}
 
       - name: Check for changes
         id: check

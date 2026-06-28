@@ -39,6 +39,7 @@ const {
 } = require('./article-image-lib');
 const { isHtmlListSource, parseHtmlListPage } = require('./html-list-fetcher');
 const { isFirebaseSource, fetchFirebaseFeed } = require('./firebase-list-fetcher');
+const { isAllowedFetchUrl } = require('./url-security-lib');
 const {
   groupItemsBySource,
   markRetainedArticles,
@@ -80,6 +81,10 @@ const SOURCES = loadSources();
 
 // === Tiny HTTP fetch =========================================================
 function fetchText(url, redirects = 3, timeout = TIMEOUT) {
+  if (!isAllowedFetchUrl(url)) {
+    console.warn('fetch-news: URL bloquée (sécurité):', url);
+    return Promise.resolve('');
+  }
   return new Promise((resolve) => {
     const req = https.get(
       url,

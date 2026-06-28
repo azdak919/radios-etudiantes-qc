@@ -23,6 +23,7 @@
 const fs = require('fs');
 const path = require('path');
 const https = require('https');
+const { isAllowedFetchUrl } = require('./url-security-lib');
 const {
   isHtmlListSource,
   classifyHtmlList,
@@ -51,6 +52,10 @@ const FEED_PATHS = ['feed/', 'feed', '?feed=rss2', 'rss/', 'rss', 'index.xml', '
 
 // === HTTP ====================================================================
 function fetchText(url, redirects = 4) {
+  if (!isAllowedFetchUrl(url)) {
+    console.warn('discover-news: URL bloquée (sécurité):', url);
+    return Promise.resolve({ ok: false, body: '' });
+  }
   return new Promise((resolve) => {
     let req;
     try {

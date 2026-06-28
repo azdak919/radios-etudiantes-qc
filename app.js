@@ -4,6 +4,26 @@
 // Proxy CORS optionnel pour les flux HTTP→HTTPS (déployer proxy/cloudflare-worker.js).
 const PROXY_BASE = '';
 
+function safeHttpUrl(url, { allowHttp = false } = {}) {
+  if (!url || typeof url !== 'string') return null;
+  try {
+    const u = new URL(url.trim());
+    if (u.protocol === 'https:') return u.href;
+    if (allowHttp && u.protocol === 'http:') return u.href;
+    return null;
+  } catch {
+    return null;
+  }
+}
+
+function safeCssColor(color) {
+  if (!color || typeof color !== 'string') return null;
+  const c = color.trim();
+  if (c === 'var(--accent)') return c;
+  if (/^#[0-9A-Fa-f]{3,8}$/.test(c)) return c;
+  return null;
+}
+
 function getPlayableStream(radio) {
   if (!radio?.stream) return null;
   const url = radio.stream;
@@ -21,11 +41,7 @@ function isExternalListen(radio) {
 }
 
 function isSecurePageUrl(url = '') {
-  try {
-    return new URL(url).protocol === 'https:';
-  } catch {
-    return false;
-  }
+  return !!safeHttpUrl(url);
 }
 
 const EXTERNAL_LISTEN_LOAD_MS = 14000;
@@ -80,7 +96,7 @@ function bindExternalListen() {
 }
 
 function openExternalListenPopup(radio, { focus = true } = {}) {
-  const url = getListenUrl(radio);
+  const url = safeHttpUrl(getListenUrl(radio), { allowHttp: true });
   if (!url) return false;
 
   const name = `radar-listen-${radio.id}`;
@@ -129,7 +145,7 @@ function openExternalListenPopup(radio, { focus = true } = {}) {
 }
 
 function openExternalListenIframe(radio) {
-  const url = getListenUrl(radio);
+  const url = safeHttpUrl(getListenUrl(radio));
   if (!url || !EXTERNAL_FRAME || !EXTERNAL_FRAME_WRAP) return;
 
   EXTERNAL_FRAME_WRAP.classList.remove('hidden');
@@ -182,7 +198,7 @@ function openListenWindow(radio) {
   EXTERNAL_TITLE.textContent = radio.fullName || radio.name;
   EXTERNAL_SUB.textContent = `${radio.frequency || 'Web'} · ${inst}`;
   if (EXTERNAL_HINT) EXTERNAL_HINT.textContent = hint;
-  if (EXTERNAL_TAB) EXTERNAL_TAB.href = url;
+  if (EXTERNAL_TAB) EXTERNAL_TAB.href = safeHttpUrl(url, { allowHttp: true }) || '#';
 
   if (EXTERNAL_LOGO) {
     if (radio.logo) {
@@ -2030,9 +2046,10 @@ function institutionBrandColor(institution = '') {
 
 /** Couleur d'accent d'un article : marque de l'établissement (pastilles, « Lire la suite »). */
 function sourceAccentColor(item = {}) {
-  return institutionBrandColor(item.institution || '')
+  const raw = institutionBrandColor(item.institution || '')
     || sourceColors[item.source || '']
     || null;
+  return safeCssColor(raw);
 }
 
 /** Popularité des filtres UI : lue depuis news-sources.json (champ popularity). */
@@ -2084,7 +2101,9 @@ function assignSourceColors() {
 
   sources.forEach((src, i) => {
     const item = news.find(n => n.source === src);
-    sourceColors[src] = institutionBrandColor(item?.institution || '') || palette[i % palette.length];
+    sourceColors[src] = safeCssColor(
+      institutionBrandColor(item?.institution || '') || palette[i % palette.length],
+    ) || '#003DA5';
   });
 }
 
@@ -2855,13 +2874,16 @@ function safeCreateArticle(item, role = 'standard') {
 }
 
 function createArticle(item, role = 'standard') {
-  const a = document.createElement('a');
+  const link = safeHttpUrl(item.link);
+  const a = document.createElement(link ? 'a' : 'div');
   a.className = `article article--${role}`;
-  a.href = item.link;
-  a.target = '_blank';
-  a.rel = 'noopener';
+  if (link) {
+    a.href = link;
+    a.target = '_blank';
+    a.rel = 'noopener noreferrer';
+  }
 
-  const color = sourceAccentColor(item) || 'var(--accent)';
+  const color = safeCssColor(sourceAccentColor(item)) || 'var(--accent)';
   a.style.setProperty('--c', color);
 
   const d = item.date ? new Date(item.date) : null;
@@ -3052,7 +3074,9 @@ function wrapTitleLines(text = '', max = 36, lines = 4) {
 }
 
 function buildClientFallbackDataUrl(item) {
-  const color = institutionBrandColor(item.institution || '') || sourceColors[item.source] || '#003DA5';
+  const color = safeCssColor(
+    institutionBrandColor(item.institution || '') || sourceColors[item.source],
+  ) || '#003DA5';
   const dark = darkenHex(color);
   const title = cleanTitle(item.title || 'Article');
   const source = item.source || 'Le Radar';
@@ -3166,16 +3190,23 @@ function parseImageCreditLine(credit = '') {
 }
 
 function creditLink(href, label, className = '') {
+  const safe = safeHttpUrl(href, { allowHttp: true });
+  if (!safe) {
+    const span = document.createElement('span');
+    span.textContent = label;
+    if (className) span.className = className;
+    return span;
+  }
   const a = document.createElement('a');
-  a.href = href;
+  a.href = safe;
   a.target = '_blank';
-  a.rel = 'noopener license';
+  a.rel = 'noopener noreferrer license';
   a.textContent = label;
   if (className) a.className = className;
   a.addEventListener('click', (event) => {
     event.preventDefault();
     event.stopPropagation();
-    window.open(href, '_blank', 'noopener');
+    window.open(safe, '_blank', 'noopener,noreferrer');
   });
   return a;
 }

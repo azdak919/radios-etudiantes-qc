@@ -211,7 +211,6 @@
       "fetchMode": "firebase",
       "firebase": {
         "projectId": "polyscope-6feba",
-        "apiKey": "AIzaSyAkP_4bZPCjo0QS-GZGkaOx5KZP4A8x2LU",
         "collection": "blogs",
         "publishField": "publish",
         "dateField": "publishedDate",

@@ -1,4 +1,4 @@
-const CACHE_NAME = "radar-shell-v236";
+const CACHE_NAME = "radar-shell-v237";
 const APP_SHELL = [
   "./",
   "./index.html",
@@ -36,8 +36,29 @@ self.addEventListener("activate", (event) => {
 });
 
 self.addEventListener("message", (event) => {
+  if (event.origin !== self.location.origin) return;
   if (event.data?.type === "SKIP_WAITING") self.skipWaiting();
 });
+
+const CACHEABLE_TYPES = /^(text\/html|text\/css|application\/javascript|text\/javascript|application\/json|image\/|font\/|application\/manifest\+json)/i;
+const CACHEABLE_EXT = /\.(html?|css|js|json|png|svg|ico|webmanifest|xml|woff2?)$/i;
+
+function isCacheableResponse(response, request) {
+  if (!response || !response.ok) return false;
+  const type = response.headers.get("content-type") || "";
+  if (CACHEABLE_TYPES.test(type)) return true;
+  try {
+    return CACHEABLE_EXT.test(new URL(request.url).pathname);
+  } catch {
+    return false;
+  }
+}
+
+function cacheIfOk(cache, request, response) {
+  if (isCacheableResponse(response, request)) {
+    cache.put(request, response.clone());
+  }
+}
 
 self.addEventListener("fetch", (event) => {
   const { request } = event;
@@ -57,7 +78,7 @@ self.addEventListener("fetch", (event) => {
       fetch(request)
         .then((networkResponse) => {
           const clone = networkResponse.clone();
-          caches.open(CACHE_NAME).then((cache) => cache.put(request, clone));
+          caches.open(CACHE_NAME).then((cache) => cacheIfOk(cache, request, clone));
           return networkResponse;
         })
         .catch(() => caches.match("./index.html"))
@@ -71,7 +92,7 @@ self.addEventListener("fetch", (event) => {
       fetch(request)
         .then((networkResponse) => {
           const clone = networkResponse.clone();
-          caches.open(CACHE_NAME).then((cache) => cache.put(request, clone));
+          caches.open(CACHE_NAME).then((cache) => cacheIfOk(cache, request, clone));
           return networkResponse;
         })
         .catch(() => caches.match(request))
@@ -85,7 +106,7 @@ self.addEventListener("fetch", (event) => {
       fetch(request)
         .then((networkResponse) => {
           const clone = networkResponse.clone();
-          caches.open(CACHE_NAME).then((cache) => cache.put(request, clone));
+          caches.open(CACHE_NAME).then((cache) => cacheIfOk(cache, request, clone));
           return networkResponse;
         })
         .catch(() => caches.match(request))
@@ -99,7 +120,7 @@ self.addEventListener("fetch", (event) => {
       fetch(request)
         .then((networkResponse) => {
           const clone = networkResponse.clone();
-          caches.open(CACHE_NAME).then((cache) => cache.put(request, clone));
+          caches.open(CACHE_NAME).then((cache) => cacheIfOk(cache, request, clone));
           return networkResponse;
         })
         .catch(() => caches.match(request))
@@ -115,7 +136,7 @@ self.addEventListener("fetch", (event) => {
 
       return fetch(request).then((networkResponse) => {
         const responseClone = networkResponse.clone();
-        caches.open(CACHE_NAME).then((cache) => cache.put(request, responseClone));
+        caches.open(CACHE_NAME).then((cache) => cacheIfOk(cache, request, responseClone));
         return networkResponse;
       });
     })

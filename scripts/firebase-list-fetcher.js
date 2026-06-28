@@ -12,8 +12,15 @@ const STALE_DAYS = 540;
 const DEAD_DAYS = 730;
 const DEFAULT_TIMEOUT = 15000;
 
+function resolveFirebaseApiKey(fb = {}) {
+  if (!fb.projectId) return null;
+  const envKey = process.env.FIREBASE_POLYSCOPE_API_KEY
+    || process.env[`FIREBASE_API_KEY_${String(fb.projectId).replace(/-/g, '_').toUpperCase()}`];
+  return envKey || fb.apiKey || null;
+}
+
 function isFirebaseSource(src = {}) {
-  return src.fetchMode === 'firebase' && src.firebase?.projectId && src.firebase?.apiKey;
+  return src.fetchMode === 'firebase' && !!src.firebase?.projectId;
 }
 
 function decodeEntities(str = '') {
@@ -148,10 +155,15 @@ function postJson(url, body, timeout = DEFAULT_TIMEOUT) {
 async function runFirestoreQuery(src = {}, { limit = 25 } = {}) {
   const fb = src.firebase || {};
   const projectId = fb.projectId;
-  const apiKey = fb.apiKey;
+  const apiKey = resolveFirebaseApiKey(fb);
   const collection = fb.collection || 'blogs';
   const dateField = fb.dateField || 'publishedDate';
-  if (!projectId || !apiKey) return [];
+  if (!projectId || !apiKey) {
+    if (projectId && !apiKey) {
+      console.warn(`Firebase ${projectId}: clé API absente (secret FIREBASE_POLYSCOPE_API_KEY requis en CI)`);
+    }
+    return [];
+  }
 
   const url = `https://firestore.googleapis.com/v1/projects/${projectId}/databases/(default)/documents:runQuery?key=${encodeURIComponent(apiKey)}`;
   const body = {
