@@ -226,6 +226,8 @@ const TUNER_NAME     = document.getElementById('tuner-now-name');
 const TUNER_SUB      = document.getElementById('tuner-now-sub');
 const TUNER_SUB_AIR  = document.getElementById('tuner-now-sub-air');
 const TUNER_SUB_ROTATE_MQ = window.matchMedia?.('(max-width: 1099.98px)');
+const TUNER_SUB_ROTATE_NARROW_MQ = window.matchMedia?.('(max-width: 479.98px)');
+const TUNER_SUB_ROTATE_VERY_NARROW_MQ = window.matchMedia?.('(max-width: 359.98px)');
 const TUNER_VOLUME   = document.getElementById('tuner-volume');
 const TUNER_VOL      = document.getElementById('tuner-vol');
 const TUNER_VOL_TOGGLE = document.getElementById('tuner-vol-toggle');
@@ -307,6 +309,8 @@ let tunerSubAirText = '';
 let tunerSubRotateTimer = null;
 let tunerSubRotateShowAir = false;
 const TUNER_SUB_ROTATE_MS = 8000;
+const TUNER_SUB_ROTATE_NARROW_MS = 14000;
+const TUNER_SUB_ROTATE_VERY_NARROW_MS = 18000;
 const NOW_AIR_CROSSFADE_MS = 700;
 const PREFERS_REDUCED_MOTION = window.matchMedia?.('(prefers-reduced-motion: reduce)');
 let sourceColors = {};     // source name → accent colour
@@ -645,9 +649,47 @@ function formatPreviewNowAir(radio) {
 
 function stopNowAirPreview() {
   if (nowAirPreviewTimer) {
-    clearInterval(nowAirPreviewTimer);
+    clearTimeout(nowAirPreviewTimer);
     nowAirPreviewTimer = null;
   }
+}
+
+/** Temps de lecture minimal quand le texte défile (aller-retour + pauses). */
+function marqueeReadingTimeMs(el) {
+  if (!el?.classList.contains('is-marquee')) return 0;
+  const sec = parseFloat(el.style.getPropertyValue('--marquee-duration'));
+  if (!Number.isFinite(sec) || sec <= 0) return 0;
+  return Math.ceil(sec * 1000 * 2.4) + 2500;
+}
+
+/** Délai avant la prochaine alternance du sous-titre (plus long si écran étroit / texte long). */
+function getTunerSubRotateDelayMs(activeEl) {
+  let delay = TUNER_SUB_ROTATE_MS;
+
+  if (TUNER_SUB_ROTATE_MQ?.matches) {
+    if (TUNER_SUB_ROTATE_VERY_NARROW_MQ?.matches) {
+      delay = TUNER_SUB_ROTATE_VERY_NARROW_MS;
+    } else if (TUNER_SUB_ROTATE_NARROW_MQ?.matches) {
+      delay = TUNER_SUB_ROTATE_NARROW_MS;
+    }
+    const readTime = marqueeReadingTimeMs(activeEl);
+    if (readTime) delay = Math.max(delay, readTime);
+  }
+
+  return delay;
+}
+
+function planTunerSubRotateDelay(activeEl, attempt, onReady) {
+  const span = activeEl?.querySelector('.tuner-now-sub-text');
+  const mightOverflow = span && activeEl?.clientWidth > 0
+    && span.scrollWidth > activeEl.clientWidth + 4;
+
+  if (attempt < 4 && mightOverflow && !activeEl?.classList.contains('is-marquee')) {
+    requestAnimationFrame(() => planTunerSubRotateDelay(activeEl, attempt + 1, onReady));
+    return;
+  }
+
+  onReady(getTunerSubRotateDelayMs(activeEl));
 }
 
 function isNowAirPanelPreviewMode() {
@@ -701,17 +743,29 @@ function syncDesktopDialPreview(airTitle, crossfade = false) {
   applyDialTextCrossfade(TUNER_SUB, stationLine, crossfade);
 }
 
+function scheduleNowAirPreviewTick() {
+  if (nowAirPreviewTimer) {
+    clearTimeout(nowAirPreviewTimer);
+    nowAirPreviewTimer = null;
+  }
+  if (currentStation || !isNowAirPanelPreviewMode()) return;
+
+  planTunerSubRotateDelay(TUNER_SUB, 0, (delay) => {
+    if (currentStation || !isNowAirPanelPreviewMode()) return;
+    nowAirPreviewTimer = setTimeout(() => {
+      nowAirPreviewTimer = null;
+      if (currentStation || !isNowAirPanelPreviewMode()) return;
+      pickNowAirPreviewRadio();
+      renderTunerNowAir();
+      scheduleNowAirPreviewTick();
+    }, delay);
+  });
+}
+
 function startNowAirPreview() {
   if (nowAirPreviewTimer || currentStation || !isNowAirPanelPreviewMode()) return;
   if (!nowAirPreviewRadio) pickNowAirPreviewRadio();
-  nowAirPreviewTimer = setInterval(() => {
-    if (currentStation) {
-      stopNowAirPreview();
-      return;
-    }
-    pickNowAirPreviewRadio();
-    renderTunerNowAir();
-  }, TUNER_SUB_ROTATE_MS);
+  scheduleNowAirPreviewTick();
 }
 
 function isTunerSubRotateMode() {
@@ -720,10 +774,36 @@ function isTunerSubRotateMode() {
 
 function stopTunerSubRotate() {
   if (tunerSubRotateTimer) {
-    clearInterval(tunerSubRotateTimer);
+    clearTimeout(tunerSubRotateTimer);
     tunerSubRotateTimer = null;
   }
   TUNER_SUB?.parentElement?.classList.remove('is-rotating');
+}
+
+function scheduleTunerSubRotateTick() {
+  if (tunerSubRotateTimer) {
+    clearTimeout(tunerSubRotateTimer);
+    tunerSubRotateTimer = null;
+  }
+  if (!isTunerSubRotateMode() || !currentStation) return;
+
+  const activeEl = tunerSubRotateShowAir ? TUNER_SUB_AIR : TUNER_SUB;
+  planTunerSubRotateDelay(activeEl, 0, (delay) => {
+    if (!isTunerSubRotateMode() || !currentStation) return;
+    tunerSubRotateTimer = setTimeout(() => {
+      tunerSubRotateTimer = null;
+      if (!isTunerSubRotateMode() || !currentStation) return;
+      tunerSubRotateShowAir = !tunerSubRotateShowAir;
+      setTunerSubRotateActive(tunerSubRotateShowAir);
+      scheduleTunerSubRotateTick();
+    }, delay);
+  });
+}
+
+function restartTunerSubRotateTimer() {
+  if (TUNER_SUB?.parentElement?.classList.contains('is-rotating') && currentStation) {
+    scheduleTunerSubRotateTick();
+  }
 }
 
 function setTunerSubRotateActive(showAir) {
@@ -824,10 +904,7 @@ function syncTunerSubRotate(title, sub, empty, crossfade = false) {
   if (!tunerSubRotateTimer) {
     tunerSubRotateShowAir = false;
     setTunerSubRotateActive(false);
-    tunerSubRotateTimer = setInterval(() => {
-      tunerSubRotateShowAir = !tunerSubRotateShowAir;
-      setTunerSubRotateActive(tunerSubRotateShowAir);
-    }, TUNER_SUB_ROTATE_MS);
+    scheduleTunerSubRotateTick();
   } else if (tunerSubRotateShowAir) {
     updateNowAirSubAirText(tunerSubAirText, crossfade);
   } else {
@@ -839,10 +916,16 @@ function syncTunerSubRotate(title, sub, empty, crossfade = false) {
 function onTunerSubRotateLayoutChange() {
   renderTunerNowAir();
   scheduleMarqueeRefresh();
+  restartTunerSubRotateTimer();
+  if (!currentStation && isNowAirPanelPreviewMode()) {
+    scheduleNowAirPreviewTick();
+  }
 }
 
 function initTunerSubRotateListeners() {
   TUNER_SUB_ROTATE_MQ?.addEventListener?.('change', onTunerSubRotateLayoutChange);
+  TUNER_SUB_ROTATE_NARROW_MQ?.addEventListener?.('change', onTunerSubRotateLayoutChange);
+  TUNER_SUB_ROTATE_VERY_NARROW_MQ?.addEventListener?.('change', onTunerSubRotateLayoutChange);
   PREFERS_REDUCED_MOTION?.addEventListener?.('change', onTunerSubRotateLayoutChange);
 }
 
