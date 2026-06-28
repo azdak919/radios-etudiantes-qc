@@ -1,10 +1,18 @@
 {
-  "updated": "2026-06-28T12:13:45.908Z",
+  "updated": "2026-06-28T15:09:38.174Z",
   "total": 205,
   "withAuthor": 205,
-  "mismatches": 68,
+  "mismatches": 82,
   "ok": true,
   "samples": [
+    {
+      "title": "The McGill Community takes on the Montreal International Jazz Festival",
+      "link": "https://www.mcgilldaily.com/2026/06/the-mcgill-community-takes-on-the-montreal-international-jazz-festival/",
+      "source": "The McGill Daily",
+      "fieldAuthor": "The editorial team",
+      "canonicalAuthor": "Shai Geballe",
+      "reason": "page-byline"
+    },
     {
       "title": "Ask the Trib: How do I survive summer in my hometown?",
       "link": "https://www.thetribune.ca/student-life/ask-the-trib-how-do-i-survive-summer-in-my-hometown-26062026/?utm_source=rss&utm_medium=rss&utm_campaign=ask-the-trib-how-do-i-survive-summer-in-my-hometown-26062026",
@@ -156,15 +164,7 @@
       "fieldAuthor": "The editorial team",
       "canonicalAuthor": "Rebecca Hamilton",
       "reason": "page-byline"
-    },
-    {
-      "title": "Journalism After Gaza’ panel discusses media bias and the future of reporting in Palestine",
-      "link": "https://www.thetribune.ca/student-life/journalism-after-gaza-panel-discusses-media-bias-and-the-future-of-reporting-in-palestine-27042026/?utm_source=rss&utm_medium=rss&utm_campaign=journalism-after-gaza-panel-discusses-media-bias-and-the-future-of-reporting-in-palestine-27042026",
-      "source": "The Tribune",
-      "fieldAuthor": "The editorial team",
-      "canonicalAuthor": "Ellen Lurie",
-      "reason": "page-byline"
     }
   ],
-  "fixed": 68
+  "fixed": 82
 }

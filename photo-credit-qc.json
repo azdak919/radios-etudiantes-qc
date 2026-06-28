@@ -1,15 +1,15 @@
 {
-  "updated": "2026-06-28T12:23:28.515Z",
+  "updated": "2026-06-28T15:15:58.468Z",
   "total": 205,
-  "withImage": 165,
-  "withCredit": 165,
-  "cited": 58,
+  "withImage": 164,
+  "withCredit": 164,
+  "cited": 57,
   "pending": 0,
   "missingHero": 0,
   "ok": true,
-  "checked": 56,
-  "updatedCount": 56,
-  "citedNew": 20,
+  "checked": 53,
+  "updatedCount": 53,
+  "citedNew": 17,
   "fallbackNew": 36,
   "samples": [
     {

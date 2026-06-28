@@ -1,12 +1,12 @@
 {
-  "updated": "2026-06-28T12:14:07.924Z",
+  "updated": "2026-06-28T15:09:47.660Z",
   "total": 205,
   "pool": 58,
   "incomplete": 10,
   "withLeadExcerpt": 66,
   "candidates": 10,
   "enriched": 1,
-  "failed": 1,
+  "failed": 0,
   "ok": true,
   "samples": [
     {
@@ -34,6 +34,15 @@
       "score": 96,
       "chars": 572,
       "sample": "L a montée en puissance de l’idéologie du mouvement politique Make America Great Again (MAGA) n’est ",
+      "changed": false
+    },
+    {
+      "title": "Le PIF s’internationalise pour sa 49e édition",
+      "link": "https://lecollectif.ca/a-la-une/le-pif-sinternationalise-pour-sa-49e-edition/",
+      "ok": true,
+      "score": 100,
+      "chars": 591,
+      "sample": "Le plus grand tournoi de balle donnée en Amérique du Nord accueille cette année une vague de joueurs",
       "changed": true
     },
     {
@@ -70,15 +79,6 @@
       "score": 96,
       "chars": 531,
       "sample": "Canadian goalkeeper Maxime Crépeau, who hails from nearby Greenfield Park, appeared emotional during",
-      "changed": false
-    },
-    {
-      "title": "CALAMINE : RAPPER AUTREMENT QUE LE « BOYS CLUB »",
-      "link": "https://quartierlibre.ca/calamine-rapper-autrement/",
-      "ok": true,
-      "score": 100,
-      "chars": 445,
-      "sample": "Le 13 mars dernier, la rappeuse Calamine a dévoilé son nouvel album , Rétrograde . Avec cette quatri",
       "changed": false
     }
   ]

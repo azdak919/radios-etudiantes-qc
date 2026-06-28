@@ -1,6 +1,6 @@
 {
-  "updated": "2026-06-28T12:24:47.852Z",
-  "count": 18,
+  "updated": "2026-06-28T15:16:40.734Z",
+  "count": 19,
   "items": [
     {
       "name": "Quartier Libre",
@@ -84,7 +84,7 @@
           "type": "facebook",
           "url": "https://facebook.com/ledelitfrancais",
           "handle": "ledelitfrancais",
-          "stats": "",
+          "stats": "4 695 mentions J'aime",
           "label": "Facebook"
         },
         {
@@ -113,7 +113,7 @@
           "type": "facebook",
           "url": "https://www.facebook.com/themcgilldaily",
           "handle": "themcgilldaily",
-          "stats": "",
+          "stats": "7 226 mentions J'aime",
           "label": "Facebook"
         },
         {
@@ -142,7 +142,7 @@
           "type": "facebook",
           "url": "https://facebook.com/thelinknewspaper",
           "handle": "thelinknewspaper",
-          "stats": "",
+          "stats": "4 753 mentions J'aime",
           "label": "Facebook"
         },
         {
@@ -202,6 +202,28 @@
           "handle": "@lexemplaire",
           "stats": "Le média-école des étudiant.e.s en journalisme de l'Université Laval, Québec.",
           "label": "X"
+        }
+      ]
+    },
+    {
+      "name": "Le Collectif",
+      "institution": "Université de Sherbrooke",
+      "type": "universite",
+      "kind": "journal",
+      "networks": [
+        {
+          "type": "instagram",
+          "url": "https://www.instagram.com/jlecollectif/",
+          "handle": "@jlecollectif",
+          "stats": "",
+          "label": "Instagram"
+        },
+        {
+          "type": "facebook",
+          "url": "https://www.facebook.com/journallecollectif",
+          "handle": "journallecollectif",
+          "stats": "",
+          "label": "Facebook"
         }
       ]
     },
@@ -440,7 +462,7 @@
           "type": "facebook",
           "url": "https://www.facebook.com/cjlo1690am",
           "handle": "cjlo1690am",
-          "stats": "7 021 mentions J'aime",
+          "stats": "",
           "label": "Facebook"
         }
       ]
@@ -462,7 +484,7 @@
           "type": "facebook",
           "url": "https://www.facebook.com/CFAK883",
           "handle": "CFAK883",
-          "stats": "3 786 mentions J'aime",
+          "stats": "",
           "label": "Facebook"
         },
         {
