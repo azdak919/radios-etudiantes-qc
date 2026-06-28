@@ -647,8 +647,8 @@ a { color: inherit; }
 }
 .tuner-volume::-webkit-slider-thumb {
   -webkit-appearance: none;
-  width: var(--vol-thumb);
-  height: var(--vol-thumb);
+  width: max(var(--vol-thumb), 44px);
+  height: max(var(--vol-thumb), 44px);
   border: none;
   background: transparent;
   cursor: pointer;
@@ -659,11 +659,14 @@ a { color: inherit; }
   border: none;
 }
 .tuner-volume::-moz-range-thumb {
-  width: var(--vol-thumb);
-  height: var(--vol-thumb);
+  width: max(var(--vol-thumb), 44px);
+  height: max(var(--vol-thumb), 44px);
   border: none;
   background: transparent;
   cursor: pointer;
+}
+.tuner-vol-track.is-dragging .tuner-vol-thumb {
+  transition: none;
 }
 .tuner-vol.is-muted .tuner-vol-track { opacity: 0.42; }
 
@@ -696,6 +699,12 @@ a { color: inherit; }
     gap: 0;
     position: relative;
     overflow: visible;
+  }
+
+  .tuner-vol-slider {
+    min-height: 0;
+    height: 100%;
+    width: 100%;
   }
 
   .tuner-vol-labels {
@@ -828,31 +837,7 @@ a { color: inherit; }
     pointer-events: auto;
   }
   .tuner-vol-slot .tuner-vol-track { width: 156px; }
-
-  /* Zone tactile large : le range invisible ne glisse pas bien au doigt sinon. */
-  .tuner-vol-slot .tuner-vol-slider {
-    min-height: 44px;
-    display: flex;
-    align-items: center;
-    touch-action: none;
-    cursor: pointer;
-    -webkit-tap-highlight-color: transparent;
-  }
-  .tuner-vol-slot .tuner-volume {
-    touch-action: none;
-    cursor: pointer;
-  }
-  .tuner-vol-slot .tuner-volume::-webkit-slider-thumb {
-    width: 44px;
-    height: 44px;
-  }
-  .tuner-vol-slot .tuner-volume::-moz-range-thumb {
-    width: 44px;
-    height: 44px;
-  }
-  .tuner-vol-track.is-dragging .tuner-vol-thumb {
-    transition: none;
-  }
+  .tuner-vol-slot .tuner-vol-slider { min-height: 44px; }
 
   .tuner-vol.is-open .tuner-vol-btn { color: rgba(255,255,255,0.95); }
 }
