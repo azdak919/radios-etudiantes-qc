@@ -305,7 +305,7 @@ let tunerSubMeta = '';
 let tunerSubAirText = '';
 let tunerSubRotateTimer = null;
 let tunerSubRotateShowAir = false;
-const TUNER_SUB_ROTATE_MS = 8000;
+const TUNER_SUB_ROTATE_MS = 5000;
 const PREFERS_REDUCED_MOTION = window.matchMedia?.('(prefers-reduced-motion: reduce)');
 let sourceColors = {};     // source name → accent colour
 let brandColors = { institutions: {}, fallback_palette: ['#003DA5', '#6C2163', '#047857'] };
@@ -601,12 +601,34 @@ function pickNowAirPreviewRadio() {
   return pick;
 }
 
+function formatStationNowAirLabel(radio) {
+  const inst = shortInstitution(radio.institution, radio.type);
+  if (!inst) return radio.name;
+  const typeLabel = radio.type === 'cegep' ? 'Cégep' : radio.type === 'universite' ? 'Univ.' : '';
+  return typeLabel ? `${radio.name} · ${inst} ${typeLabel}` : `${radio.name} · ${inst}`;
+}
+
 function formatPreviewNowAir(radio) {
+  const stationLine = formatStationNowAirLabel(radio);
   const { title, sub } = nowAirLines(radio);
-  const station = radio.name;
+  const genericListen = `Vous écoutez ${radio.name}`;
+  const slogan = radioSlogan(radio);
+
+  let airDetail = sub || '';
+  if (!airDetail || airDetail === genericListen || airDetail === slogan) {
+    airDetail = '';
+  }
+
+  if (title === genericListen) {
+    return {
+      title: stationLine,
+      sub: airDetail || slogan || '',
+    };
+  }
+
   return {
     title,
-    sub: sub ? `${station} · ${sub}` : station,
+    sub: airDetail ? `${stationLine} · ${airDetail}` : stationLine,
   };
 }
 
