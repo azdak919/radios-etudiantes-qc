@@ -312,8 +312,10 @@
     }
 
     function onStall() {
-      if (!shouldRecover() || stallTimer) return;
-      const delay = isBackground() ? cfg.stallDelayBgMs : cfg.stallDelayFgMs;
+      // En premier plan, laisser le navigateur tamponner (reconnecter sur « waiting »
+      // provoquait des boucles de buffering, surtout sur CFAK / Radiomast).
+      if (!isBackground() || stallTimer) return;
+      const delay = cfg.stallDelayBgMs;
       stallTimer = setTimeout(() => {
         stallTimer = null;
         const player = deps.getPlayer();
