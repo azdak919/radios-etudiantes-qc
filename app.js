@@ -2167,6 +2167,13 @@ function formatInstitutionDisplay(name = '') {
     .replace(/\bcegep\b/giu, 'Cégep');
 }
 
+/** Libellé institution sur les pastilles sources (nom complet, sans suffixe Univ./Cégep). */
+function filterSourceInstitutionLabel(institution = '', _type = '', sourceName = '') {
+  if (!institution) return '';
+  if (sourceName === 'Le Délit') return 'Université McGill';
+  return tunerInstitutionLabel(institution);
+}
+
 /** Nom d'institution au complet pour le sous-titre du syntoniseur. */
 function tunerInstitutionLabel(name = '') {
   if (!name) return '';
@@ -2291,13 +2298,12 @@ function updateFiltersCompactBar() {
   if (newsSourceFilter === 'all') return;
 
   const { institution, type, color } = sourceInfo(newsSourceFilter);
-  const instShort = institution ? shortInstitution(institution, type) : '';
-  const typeLabel = type === 'cegep' ? 'Cégep' : type === 'universite' ? 'Univ.' : '';
+  const instLabel = filterSourceInstitutionLabel(institution, type, newsSourceFilter);
   FILTERS_COMPACT.style.setProperty('--c', color);
   if (dot) dot.style.setProperty('--c', color);
   if (text) {
-    text.textContent = instShort
-      ? `${newsSourceFilter} · ${instShort}${typeLabel ? ` ${typeLabel}` : ''}`
+    text.textContent = instLabel
+      ? `${newsSourceFilter} · ${instLabel}`
       : newsSourceFilter;
   }
 }
@@ -2387,19 +2393,18 @@ function renderNewsFilters() {
   sources.forEach(src => {
     const btn = document.createElement('button');
     const { institution, type, color } = sourceInfo(src);
-    const instShort = institution ? shortInstitution(institution, type) : '';
-    const typeLabel = type === 'cegep' ? 'Cégep' : type === 'universite' ? 'Univ.' : '';
+    const instLabel = filterSourceInstitutionLabel(institution, type, src);
 
     btn.className = 'filter-btn';
     btn.dataset.source = src;
     btn.style.setProperty('--c', color);
-    btn.title = institution ? `${src} — ${formatInstitutionDisplay(institution)}` : src;
+    btn.title = institution ? `${src} — ${instLabel || formatInstitutionDisplay(institution)}` : src;
     btn.innerHTML = `
       <span class="filter-btn__row">
         <span class="filter-btn__dot" aria-hidden="true"></span>
         <span class="filter-btn__name">${escapeHtml(src)}</span>
       </span>
-      ${instShort ? `<span class="filter-btn__inst">${escapeHtml(instShort)}${typeLabel ? ` <span class="filter-btn__type">${typeLabel}</span>` : ''}</span>` : ''}
+      ${instLabel ? `<span class="filter-btn__inst">${escapeHtml(instLabel)}</span>` : ''}
     `;
     NEWS_FILTERS.appendChild(btn);
   });

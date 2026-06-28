@@ -1406,9 +1406,9 @@ html.is-firefox .tuner-cast--bar.hidden { display: flex !important; }
   white-space: nowrap;
 }
 .filter-btn__inst {
-  font-size: 10px;
+  font-size: 9px;
   font-weight: 500;
-  line-height: 1.2;
+  line-height: 1.25;
   color: var(--muted);
   padding-left: 13px;
   text-align: left;
@@ -1416,13 +1416,6 @@ html.is-firefox .tuner-cast--bar.hidden { display: flex !important; }
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-}
-.filter-btn__type {
-  font-size: 9px;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  opacity: 0.85;
 }
 .filter-btn:hover {
   border-color: color-mix(in srgb, var(--c, var(--accent)) 40%, var(--rule));
