@@ -309,7 +309,7 @@ let brandColors = { institutions: {}, fallback_palette: ['#003DA5', '#6C2163', '
 let filtersExpanded = false;
 let volSliderResizeObs = null;
 
-const FILTERS_COLLAPSED_ROWS = 2;
+const FILTERS_COLLAPSED_ROWS = 3;
 const FILTERS_ROW_CAPACITY = 3;
 const FILTERS_COLS_NARROW = 420;
 const FILTERS_DESKTOP_DEFAULT_COLS = 5;
@@ -1274,6 +1274,34 @@ function sortSourcesByPopularity(sources) {
   });
 }
 
+function filterInstitutionKey(sourceName = '') {
+  const { institution } = sourceInfo(sourceName);
+  if (!institution) return sourceName;
+  const acronym = resolveInstitutionAcronym(institution);
+  if (acronym) return acronym.toLowerCase();
+  return normInstitutionKey(institution);
+}
+
+/** Tri filtres : meilleur média par établissement d'abord, puis seconds médias. */
+function sortSourcesForFilters(sources) {
+  const byInst = new Map();
+  for (const src of sources) {
+    const key = filterInstitutionKey(src);
+    if (!byInst.has(key)) byInst.set(key, []);
+    byInst.get(key).push(src);
+  }
+
+  const primary = [];
+  const secondary = [];
+  for (const list of byInst.values()) {
+    const sorted = sortSourcesByPopularity(list);
+    primary.push(sorted[0]);
+    if (sorted.length > 1) secondary.push(...sorted.slice(1));
+  }
+
+  return [...sortSourcesByPopularity(primary), ...sortSourcesByPopularity(secondary)];
+}
+
 function assignSourceColors() {
   const palette = brandColors.fallback_palette || ['#003DA5', '#6C2163', '#047857'];
   const sources = sortSourcesByPopularity([...new Set(news.map(n => n.source))]);
@@ -1538,7 +1566,7 @@ function selectNewsSource(source) {
 }
 
 function renderNewsFilters() {
-  const sources = sortSourcesByPopularity([...new Set(news.map(n => n.source))]);
+  const sources = sortSourcesForFilters([...new Set(news.map(n => n.source))]);
   [...NEWS_FILTERS.querySelectorAll('[data-source]:not([data-source="all"])')].forEach(b => b.remove());
 
   sources.forEach(src => {

@@ -926,7 +926,7 @@ a { color: inherit; }
   margin: 16px 0 6px;
   --filters-row-h: 48px;
   --filters-cols: 5;
-  --filters-collapsed-h: calc(var(--filters-row-h) * 2 + 6px);
+  --filters-collapsed-h: calc(var(--filters-row-h) * 3 + 12px);
 }
 
 .filters-panel:not(.is-expanded):not(.is-compact) .filters {
@@ -1079,8 +1079,8 @@ a { color: inherit; }
   flex-direction: column;
   align-items: flex-start;
   gap: 2px;
-  flex: 1 1 calc((100% - (var(--filters-cols) - 1) * 6px) / var(--filters-cols));
-  min-width: calc((100% - (var(--filters-cols) - 1) * 6px) / var(--filters-cols));
+  flex: 0 0 calc((100% - (var(--filters-cols) - 1) * 6px) / var(--filters-cols));
+  min-width: 0;
   padding: 6px 12px 5px;
   border-radius: 12px;
   border: 1px solid var(--rule);
