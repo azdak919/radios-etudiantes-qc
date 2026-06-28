@@ -351,8 +351,8 @@ const FILTER_MARQUEE_RESYNC_MS = 480;
 const FILTERS_COLLAPSED_ROWS = 3;
 const FILTERS_ROW_CAPACITY = 3;
 const FILTERS_COLS_NARROW = 420;
-/** Max colonnes bureau : 4 ≈ 270 px/pastille à 1180 px — noms complets sans défilement. */
-const FILTERS_DESKTOP_MAX_COLS = 4;
+/** Max colonnes bureau (grand écran). */
+const FILTERS_DESKTOP_MAX_COLS = 5;
 const FILTERS_DESKTOP_WIDE_MIN = 960;
 const FILTERS_DESKTOP_DEFAULT_COLS = FILTERS_DESKTOP_MAX_COLS;
 

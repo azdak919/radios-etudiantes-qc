@@ -1220,7 +1220,7 @@ html.is-firefox .tuner-cast--bar.hidden { display: flex !important; }
   position: relative;
   margin: 16px 0 6px;
   --filters-row-h: 48px;
-  --filters-cols: 4;
+  --filters-cols: 5;
   --filters-collapsed-h: calc(var(--filters-row-h) * 3 + 12px);
 }
 
