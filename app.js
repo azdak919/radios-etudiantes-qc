@@ -281,6 +281,7 @@ let currentGain = 0.8;              // valeur du curseur (0 → MAX_GAIN)
 let volumeMuted = false;
 let gainBeforeMute = 0.8;
 const MAX_GAIN = 2;                 // jusqu'à 200 %
+const VOL_THUMB_PX = 16;
 const boostUnavailable = new Set(); // ids des postes sans CORS
 // Réglages de lecture par poste. CFAK (Sherbrooke) a de petites coupures : on
 // précharge davantage et on reconnecte automatiquement quand le flux décroche.
@@ -761,6 +762,16 @@ function bindTuner() {
   });
 
   bindVolumePopover();
+  bindVolumeSliderLayout();
+}
+
+let volSliderResizeObs = null;
+function bindVolumeSliderLayout() {
+  const slider = TUNER_VOLUME?.closest('.tuner-vol-slider');
+  if (!slider || volSliderResizeObs) return;
+  volSliderResizeObs = new ResizeObserver(() => updateVolumeSliderVisual());
+  volSliderResizeObs.observe(slider);
+  updateVolumeSliderVisual();
 }
 
 // Sur mobile, le curseur de volume est masqué : l'icône ouvre une bulle.
@@ -777,6 +788,7 @@ function bindVolumePopover() {
     if (VOL_COMPACT.matches) {
       const open = TUNER_VOL.classList.toggle('is-open');
       TUNER_VOL_TOGGLE.setAttribute('aria-expanded', open ? 'true' : 'false');
+      if (open) requestAnimationFrame(() => updateVolumeSliderVisual());
       return;
     }
     toggleVolumeMute();
@@ -1084,11 +1096,25 @@ function toggleVolumeMute() {
 
 function updateVolumeSliderVisual() {
   const track = TUNER_VOLUME?.closest('.tuner-vol-track');
-  if (!track) return;
+  const slider = track?.querySelector('.tuner-vol-slider');
+  if (!track || !slider) return;
+
+  const width = slider.clientWidth;
+  if (width < 1) return;
+
+  const travel = width - VOL_THUMB_PX;
+  const xMin = VOL_THUMB_PX / 2;
+  const xMid = xMin + travel * 0.5;
+  const xMax = xMin + travel;
   const gain = volumeMuted ? 0 : currentGain;
   const ratio = Math.min(Math.max(gain / MAX_GAIN, 0), 1);
+  const xThumb = xMin + travel * ratio;
+
+  track.style.setProperty('--vol-x', `${xThumb}px`);
+  track.style.setProperty('--vol-x-min', `${xMin}px`);
+  track.style.setProperty('--vol-x-mid', `${xMid}px`);
+  track.style.setProperty('--vol-x-max', `${xMax}px`);
   track.style.setProperty('--vol-ratio', String(ratio));
-  track.style.setProperty('--vol-x', `calc(var(--vol-thumb) / 2 + var(--vol-travel) * ${ratio})`);
   track.style.setProperty('--vol-base', `${Math.min(ratio / 0.5, 1) * 100}%`);
   track.style.setProperty('--vol-boost', `${Math.max((ratio - 0.5) / 0.5, 0) * 100}%`);
   track.classList.toggle('is-boost', gain > 1.001);
@@ -1119,14 +1145,15 @@ function updateVolumeUI() {
 
 /** Applique la valeur du curseur : gain Web Audio si amplifiable, sinon volume natif. */
 function applyGain() {
-  if (!audio) return;
   const effective = volumeMuted ? 0 : currentGain;
-  if (boostWired && gainNode) {
-    audio.volume = 1;
-    try { gainNode.gain.value = effective; } catch {}
-  } else {
-    // Sans graphe Web Audio, le volume natif plafonne à 100 %.
-    audio.volume = Math.min(1, effective);
+  if (audio) {
+    if (boostWired && gainNode) {
+      audio.volume = 1;
+      try { gainNode.gain.value = effective; } catch {}
+    } else {
+      // Sans graphe Web Audio, le volume natif plafonne à 100 %.
+      audio.volume = Math.min(1, effective);
+    }
   }
   TUNER.classList.toggle('is-boosted', !volumeMuted && currentGain > 1.001);
   updateVolumeUI();

@@ -444,13 +444,11 @@ a { color: inherit; }
   --vol-ratio: 0.4;
   --vol-base: 80%;
   --vol-boost: 0%;
-  --vol-travel: calc(100% - var(--vol-thumb));
-  --vol-x: calc(var(--vol-thumb) / 2 + var(--vol-travel) * var(--vol-ratio));
-  width: 140px;
+  width: 132px;
   flex-shrink: 0;
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 4px;
   overflow: visible;
 }
 .tuner-vol-slider {
@@ -514,14 +512,14 @@ a { color: inherit; }
   background: rgba(255, 255, 255, 0.34);
   pointer-events: none;
 }
-.tuner-vol-tick--min { left: calc(var(--vol-thumb) / 2); }
+.tuner-vol-tick--min { left: var(--vol-x-min, 8px); }
 .tuner-vol-tick--100 {
-  left: calc(var(--vol-thumb) / 2 + var(--vol-travel) * 0.5);
+  left: var(--vol-x-mid, 50%);
   height: 11px;
   background: rgba(255, 255, 255, 0.58);
 }
 .tuner-vol-tick--max {
-  left: calc(100% - var(--vol-thumb) / 2);
+  left: var(--vol-x-max, calc(100% - 8px));
   height: 11px;
   background: rgba(255, 154, 144, 0.85);
 }
@@ -548,7 +546,8 @@ a { color: inherit; }
   box-shadow: 0 1px 8px rgba(255, 90, 70, 0.35);
 }
 .tuner-vol-labels {
-  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   height: 10px;
   overflow: visible;
   font-size: 9px;
@@ -559,19 +558,12 @@ a { color: inherit; }
   user-select: none;
 }
 .tuner-vol-labels span {
-  position: absolute;
-  top: 0;
   white-space: nowrap;
-  transform: translateX(-50%);
 }
-.tuner-vol-labels span:nth-child(1) {
-  left: calc(var(--vol-thumb) / 2);
-}
-.tuner-vol-labels span:nth-child(2) {
-  left: calc(var(--vol-thumb) / 2 + var(--vol-travel) * 0.5);
-}
+.tuner-vol-labels span:nth-child(1) { text-align: left; }
+.tuner-vol-labels span:nth-child(2) { text-align: center; }
 .tuner-vol-labels span:nth-child(3) {
-  left: calc(100% - var(--vol-thumb) / 2);
+  text-align: right;
   color: rgba(255, 154, 144, 0.72);
 }
 .tuner-volume {
@@ -777,7 +769,7 @@ a { color: inherit; }
     transform: none;
     pointer-events: auto;
   }
-  .tuner-vol-slot .tuner-vol-track { width: 164px; }
+  .tuner-vol-slot .tuner-vol-track { width: 156px; }
   .tuner-vol.is-open .tuner-vol-btn { color: rgba(255,255,255,0.95); }
 }
 @media (prefers-reduced-motion: reduce) {
