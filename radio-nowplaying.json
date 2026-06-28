@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-28T21:04:26.382Z",
+  "updatedAt": "2026-06-28T22:35:55.718Z",
   "stations": {
     "chyz": {
       "id": "chyz",
@@ -7,7 +7,7 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-06-28T21:04:08.483Z"
+      "checkedAt": "2026-06-28T22:35:37.372Z"
     },
     "cism": {
       "id": "cism",
@@ -15,15 +15,15 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-06-28T21:04:09.381Z"
+      "checkedAt": "2026-06-28T22:35:38.372Z"
     },
     "ckut": {
       "id": "ckut",
       "name": "CKUT 90,3",
-      "showTitle": "Bhum Bhum Time",
+      "showTitle": "Desi Beats (must be .mp3!!)",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-06-28T21:04:10.923Z"
+      "checkedAt": "2026-06-28T22:35:40.102Z"
     },
     "cjlo": {
       "id": "cjlo",
@@ -31,7 +31,7 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-06-28T21:04:24.419Z"
+      "checkedAt": "2026-06-28T22:35:53.678Z"
     },
     "cfak": {
       "id": "cfak",
@@ -39,15 +39,15 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-06-28T21:04:25.251Z"
+      "checkedAt": "2026-06-28T22:35:54.446Z"
     },
     "choq": {
       "id": "choq",
       "name": "CHOQ.ca",
-      "showTitle": "Sea Within A Sea",
-      "host": "The Horrors",
+      "showTitle": "International Fly Shit",
+      "host": "Coolman Logan",
       "source": "api-live",
-      "checkedAt": "2026-06-28T21:04:25.981Z"
+      "checkedAt": "2026-06-28T22:35:55.317Z"
     }
   }
 }
