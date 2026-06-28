@@ -251,11 +251,9 @@ const TUNER_VOL      = document.getElementById('tuner-vol');
 const TUNER_VOL_TOGGLE = document.getElementById('tuner-vol-toggle');
 const TUNER_VOL_MUTE   = document.getElementById('tuner-vol-mute');
 const VOL_COMPACT    = window.matchMedia('(max-width: 1099.98px)');
-const EMBED_VOL_COMPACT_MQ = window.matchMedia?.('(max-width: 559.98px)');
-
-/** Embed iframe : popover volume seulement sous 560 px ; sinon curseur en ligne. */
+/** Embed iframe : volume en ligne, icône = mute (pas de popover). */
 function isVolCompactMode() {
-  if (IS_TUNER_EMBED) return !!EMBED_VOL_COMPACT_MQ?.matches;
+  if (IS_TUNER_EMBED) return false;
   return VOL_COMPACT.matches;
 }
 const TUNER_NOWAIR = document.getElementById('tuner-nowair');
@@ -1242,7 +1240,6 @@ function bindVolumeSliderLayout() {
   if (inner) volSliderResizeObs.observe(inner);
   window.addEventListener('resize', schedule, { passive: true });
   VOL_COMPACT.addEventListener('change', schedule);
-  if (IS_TUNER_EMBED) EMBED_VOL_COMPACT_MQ?.addEventListener?.('change', schedule);
   schedule();
 }
 
@@ -1284,7 +1281,6 @@ function bindVolumePopover() {
     updateVolumeUI();
   };
   VOL_COMPACT.addEventListener('change', onVolLayoutChange);
-  if (IS_TUNER_EMBED) EMBED_VOL_COMPACT_MQ?.addEventListener?.('change', onVolLayoutChange);
 }
 
 function bindVolumePopoverMute() {
