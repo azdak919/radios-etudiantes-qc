@@ -116,14 +116,16 @@ a { color: inherit; }
 }
 .theme-toggle:hover,
 .masthead-home:hover,
-.masthead-rss:hover {
+.masthead-rss:hover,
+.masthead-solitaire:hover {
   border-color: var(--accent);
   color: var(--accent);
 }
 .theme-toggle:active,
 .masthead-home:active,
 .masthead-rss:active,
-.masthead-ataraxia:active {
+.masthead-ataraxia:active,
+.masthead-solitaire:active {
   transform: scale(0.9);
 }
 /* Ataraxia : seul bouton rouge du header (tomate Pomodoro, hors thème accent). */
