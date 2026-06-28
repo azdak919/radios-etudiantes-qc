@@ -307,6 +307,7 @@ const PREFERS_REDUCED_MOTION = window.matchMedia?.('(prefers-reduced-motion: red
 let sourceColors = {};     // source name → accent colour
 let brandColors = { institutions: {}, fallback_palette: ['#003DA5', '#6C2163', '#047857'] };
 let filtersExpanded = false;
+let volSliderResizeObs = null;
 
 const FILTERS_COLLAPSED_ROWS = 2;
 const FILTERS_ROW_CAPACITY = 3;
@@ -315,7 +316,7 @@ const FILTERS_COLS_NARROW = 420;
 const GENERIC_AUTHORS = /^(admin|administrator|administrateur|editor|éditeur|editeur|rédaction|redaction|staff|wordpress|webmaster|collectif|tribune|link|daily|exemplaire|quartier libre|zone campus|la pige|le délit|le delit|the link|the tribune|the mcgill daily)$/i;
 
 // ─── Bootstrap ───────────────────────────────────────────────────────────────
-init();
+init().catch((e) => console.error('init failed', e));
 
 async function init() {
   initTheme();
@@ -766,7 +767,6 @@ function bindTuner() {
   bindVolumeSliderLayout();
 }
 
-let volSliderResizeObs = null;
 function bindVolumeSliderLayout() {
   const slider = TUNER_VOLUME?.closest('.tuner-vol-slider');
   if (!slider || volSliderResizeObs) return;
