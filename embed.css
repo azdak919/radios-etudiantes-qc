@@ -4,7 +4,7 @@
 html[data-embed="tuner"] {
   --pad: 10px;
   --embed-vol-inline: 560px;
-  height: 100%;
+  --embed-bar-h: 58px;
   background: transparent;
   overflow: visible;
 }
@@ -20,6 +20,10 @@ html[data-embed="tuner"] .tuner {
   box-shadow: none;
   border-radius: 12px;
   overflow: visible;
+  height: var(--embed-bar-h);
+  max-height: var(--embed-bar-h);
+  min-height: var(--embed-bar-h);
+  box-sizing: border-box;
 }
 
 html[data-embed="tuner"] .tuner-inner {
@@ -27,6 +31,8 @@ html[data-embed="tuner"] .tuner-inner {
   margin: 0;
   padding: 8px 10px;
   gap: 8px;
+  height: 100%;
+  box-sizing: border-box;
 }
 
 html[data-embed="tuner"] .tuner-controls {
