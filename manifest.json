@@ -6,6 +6,7 @@
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
+  "categories": ["music", "entertainment"],
   "orientation": "portrait-primary",
   "background_color": "#ffffff",
   "theme_color": "#ffffff",

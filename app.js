@@ -281,6 +281,12 @@ let gainNode = null;
 let mediaSource = null;
 let boostWired = false;             // graphe Web Audio branché sur l'élément courant
 let webAudioSupported = !!(window.AudioContext || window.webkitAudioContext);
+// Web Audio suspend l'AudioContext à l'écran verrouillé → lecture native seule sur mobile.
+const MOBILE_PLAYBACK = window.matchMedia('(hover: none) and (pointer: coarse)').matches
+  || /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+let userPaused = false;
+let bgPlaybackWatch = null;
+const playerListenersAttached = new WeakSet();
 const DEFAULT_GAIN = 1;             // 100 % — centre du curseur 0–200 %
 let currentGain = DEFAULT_GAIN;
 let volumeMuted = false;
@@ -1516,8 +1522,9 @@ function togglePlay() {
     return;
   }
   if (isPlaying()) {
-    audio.pause();
+    pauseByUser();
   } else {
+    userPaused = false;
     play(currentStation);
   }
 }
@@ -1525,8 +1532,9 @@ function togglePlay() {
 async function play(radio) {
   const url = getPlayableStream(radio);
   if (!url) return;
+  userPaused = false;
   // Branche (ou non) le graphe d'amplification selon le support CORS du poste.
-  const wantBoost = webAudioSupported && !boostUnavailable.has(radio.id);
+  const wantBoost = wantsAudioBoost() && !boostUnavailable.has(radio.id);
   if (wantBoost !== boostWired) rebuildAudio(wantBoost);
   reconnectTries = 0;
   // Plus de tampon pour les flux sujets aux coupures (ex. CFAK).
@@ -1545,6 +1553,7 @@ async function play(radio) {
 function stopPlayback({ keepStation = false } = {}) {
   clearStallWatchdog();
   reconnectTries = 0;
+  userPaused = false;
   if (audio) {
     suppressAudioError = true;
     audio.pause();
@@ -1571,12 +1580,95 @@ function updatePlayUI() {
   TUNER.classList.toggle('is-external', external && !playing);
   renderTunerNowAir();
   syncNowPlayingPoll();
+  syncMediaSessionPlaybackState();
+}
+
+function wantsAudioBoost() {
+  return webAudioSupported && !MOBILE_PLAYBACK;
+}
+
+function getPlayerElement() {
+  let el = document.getElementById('radar-player');
+  if (!el) {
+    el = document.createElement('audio');
+    el.id = 'radar-player';
+    el.preload = 'none';
+    el.setAttribute('playsinline', '');
+    el.setAttribute('webkit-playsinline', '');
+    el.hidden = true;
+    document.body.appendChild(el);
+  }
+  return el;
+}
+
+function pauseByUser() {
+  userPaused = true;
+  if (!audio) { updatePlayUI(); return; }
+  suppressAudioError = true;
+  try { audio.pause(); } catch {}
+  suppressAudioError = false;
+  updatePlayUI();
+}
+
+function syncMediaSessionPlaybackState() {
+  if (!('mediaSession' in navigator)) return;
+  navigator.mediaSession.playbackState = isPlaying() ? 'playing' : 'paused';
+}
+
+function resumeBackgroundPlayback() {
+  if (userPaused || !currentStation || isExternalListen(currentStation)) return;
+  if (audioCtx?.state === 'suspended') {
+    audioCtx.resume().catch(() => {});
+  }
+  if (audio && audio.paused && audio.src) {
+    audio.play().catch(() => play(currentStation));
+  } else if (!isPlaying()) {
+    play(currentStation);
+  }
+}
+
+function clearBackgroundPlaybackWatch() {
+  if (bgPlaybackWatch) {
+    clearInterval(bgPlaybackWatch);
+    bgPlaybackWatch = null;
+  }
+}
+
+function setupBackgroundPlayback() {
+  document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'hidden') {
+      if (isPlaying() && boostWired && MOBILE_PLAYBACK) {
+        rebuildAudio(false);
+        play(currentStation);
+      }
+      if (!userPaused && currentStation && !isExternalListen(currentStation)) {
+        clearBackgroundPlaybackWatch();
+        bgPlaybackWatch = setInterval(resumeBackgroundPlayback, 12000);
+      }
+      return;
+    }
+    clearBackgroundPlaybackWatch();
+    resumeBackgroundPlayback();
+  });
+
+  window.addEventListener('pageshow', (e) => {
+    if (e.persisted) resumeBackgroundPlayback();
+  });
+
+  document.addEventListener('resume', resumeBackgroundPlayback);
 }
 
 // ─── Audio engine ──────────────────────────────────────────────────────────────
 function attachAudioListeners(el) {
+  if (playerListenersAttached.has(el)) return;
+  playerListenersAttached.add(el);
   el.addEventListener('play',    updatePlayUI);
-  el.addEventListener('pause',   updatePlayUI);
+  el.addEventListener('pause',   () => {
+    updatePlayUI();
+    if (!userPaused && currentStation && document.hidden) {
+      setTimeout(resumeBackgroundPlayback, 120);
+    }
+  });
   el.addEventListener('ended',   onAudioEnded);
   el.addEventListener('playing', onAudioPlaying);
   el.addEventListener('waiting', onAudioStall);
@@ -1659,6 +1751,11 @@ function wireBoost() {
     mediaSource = audioCtx.createMediaElementSource(audio);
     gainNode = audioCtx.createGain();
     mediaSource.connect(gainNode).connect(audioCtx.destination);
+    audioCtx.onstatechange = () => {
+      if (audioCtx.state === 'suspended' && isPlaying() && !userPaused) {
+        audioCtx.resume().catch(() => {});
+      }
+    };
     boostWired = true;
   } catch {
     boostWired = false;
@@ -1676,13 +1773,20 @@ function rebuildAudio(withBoost) {
     try { audio.load(); } catch {}
     suppressAudioError = false;
   }
-  audio = new Audio();
+  audio = getPlayerElement();
   audio.preload = 'none';
   attachAudioListeners(audio);
   mediaSource = null;
   gainNode = null;
   boostWired = false;
   if (withBoost) wireBoost();
+  if (audioCtx) {
+    audioCtx.onstatechange = () => {
+      if (audioCtx.state === 'suspended' && isPlaying() && !userPaused) {
+        audioCtx.resume().catch(() => {});
+      }
+    };
+  }
   applyGain();
 }
 
@@ -1798,13 +1902,17 @@ function applyGain() {
 
 function setupAudio() {
   if (audio) return;
-  audio = new Audio();
+  audio = getPlayerElement();
   audio.preload = 'none';
   attachAudioListeners(audio);
+  setupBackgroundPlayback();
 
   if ('mediaSession' in navigator) {
-    navigator.mediaSession.setActionHandler('play',  () => currentStation && play(currentStation));
-    navigator.mediaSession.setActionHandler('pause', () => audio.pause());
+    navigator.mediaSession.setActionHandler('play', () => {
+      userPaused = false;
+      if (currentStation) play(currentStation);
+    });
+    navigator.mediaSession.setActionHandler('pause', () => pauseByUser());
     navigator.mediaSession.setActionHandler('previoustrack', () => stepStation(-1));
     navigator.mediaSession.setActionHandler('nexttrack', () => stepStation(1));
   }
