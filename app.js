@@ -604,9 +604,7 @@ function pickNowAirPreviewRadio() {
 
 function formatStationNowAirLabel(radio) {
   const inst = shortInstitution(radio.institution, radio.type);
-  if (!inst) return radio.name;
-  const typeLabel = radio.type === 'cegep' ? 'Cégep' : radio.type === 'universite' ? 'Univ.' : '';
-  return typeLabel ? `${radio.name} · ${inst} ${typeLabel}` : `${radio.name} · ${inst}`;
+  return inst ? `${radio.name} · ${inst}` : radio.name;
 }
 
 function formatPreviewNowAir(radio) {
