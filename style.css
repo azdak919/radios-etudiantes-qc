@@ -481,7 +481,17 @@ a { color: inherit; }
 .tuner-vol-btn .ico-vol-mute { width: 16px; height: 16px; display: block; }
 /* L'icône reflète la zone d'amplification (curseur masqué sur mobile). */
 .tuner.is-boosted .tuner-vol-btn { color: #ff7d6e; }
-.tuner-vol.is-muted .tuner-vol-btn { color: rgba(255,255,255,0.38); }
+.tuner-vol.is-muted .tuner-vol-btn[aria-pressed="true"] {
+  color: #ff7d6e;
+  border-color: rgba(255, 125, 110, 0.72);
+  background: rgba(255, 125, 110, 0.14);
+  box-shadow: 0 0 0 1px rgba(255, 125, 110, 0.22);
+}
+.tuner-vol.is-muted .tuner-vol-btn[aria-pressed="true"]:hover {
+  color: #ff9a90;
+  border-color: rgba(255, 125, 110, 0.88);
+  background: rgba(255, 125, 110, 0.22);
+}
 .tuner-vol-track {
   --vol-thumb: 16px;
   --vol-ratio: 0.5;
@@ -641,8 +651,17 @@ a { color: inherit; }
   color: #ff7d6e;
   border-color: rgba(255, 125, 110, 0.35);
 }
-.tuner-vol.is-muted .tuner-vol-mute-btn { color: rgba(255, 255, 255, 0.38); }
-.tuner-vol.is-muted .tuner-vol-mute-btn[aria-pressed="true"] { color: #ff9a90; }
+.tuner-vol.is-muted .tuner-vol-mute-btn[aria-pressed="true"] {
+  color: #ff7d6e;
+  border-color: rgba(255, 125, 110, 0.72);
+  background: rgba(255, 125, 110, 0.14);
+  box-shadow: 0 0 0 1px rgba(255, 125, 110, 0.22);
+}
+.tuner-vol.is-muted .tuner-vol-mute-btn[aria-pressed="true"]:hover {
+  color: #ff9a90;
+  border-color: rgba(255, 125, 110, 0.88);
+  background: rgba(255, 125, 110, 0.22);
+}
 .tuner-vol-labels > span:nth-child(1) {
   left: var(--vol-x-min, 8px);
   transform: translateX(0);
@@ -774,11 +793,6 @@ a { color: inherit; }
   .tuner.is-boosted .tuner-vol-btn {
     color: #ff7d6e;
     border-color: rgba(255,125,110,0.35);
-  }
-  .tuner-vol.is-muted .tuner-vol-btn {
-    color: rgba(255,255,255,0.42);
-    border-color: rgba(255,255,255,0.12);
-    background: rgba(255,255,255,0.04);
   }
 }
 
