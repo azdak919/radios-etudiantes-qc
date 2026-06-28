@@ -1463,17 +1463,11 @@ function syncFiltersPanel() {
   if (!FILTERS_PANEL) return;
   syncFiltersColumns();
 
-  if (!FILTERS_MOBILE.matches) {
-    FILTERS_PANEL.classList.remove('is-expanded', 'is-compact');
-    FILTERS_TOGGLE?.setAttribute('hidden', '');
-    FILTERS_COMPACT?.setAttribute('hidden', '');
-    return;
-  }
-
   const isSourceView = newsSourceFilter !== 'all';
   const overflow = filtersOverflow();
 
-  if (isSourceView) {
+  if (FILTERS_MOBILE.matches && isSourceView) {
+    FILTERS_PANEL.classList.toggle('has-overflow', true);
     if (filtersExpanded) {
       FILTERS_PANEL.classList.remove('is-compact');
       FILTERS_PANEL.classList.add('is-expanded');
@@ -1496,6 +1490,7 @@ function syncFiltersPanel() {
 
   FILTERS_PANEL.classList.remove('is-compact');
   FILTERS_COMPACT?.setAttribute('hidden', '');
+  FILTERS_PANEL.classList.toggle('has-overflow', overflow);
 
   if (overflow) {
     FILTERS_TOGGLE?.removeAttribute('hidden');
