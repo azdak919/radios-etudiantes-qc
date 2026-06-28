@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-28T19:55:03.163Z",
+  "updatedAt": "2026-06-28T21:04:26.382Z",
   "stations": {
     "chyz": {
       "id": "chyz",
@@ -7,7 +7,7 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-06-28T19:54:44.808Z"
+      "checkedAt": "2026-06-28T21:04:08.483Z"
     },
     "cism": {
       "id": "cism",
@@ -15,15 +15,15 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-06-28T19:54:45.765Z"
+      "checkedAt": "2026-06-28T21:04:09.381Z"
     },
     "ckut": {
       "id": "ckut",
       "name": "CKUT 90,3",
-      "showTitle": "The Magic Roundabout",
+      "showTitle": "Bhum Bhum Time",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-06-28T19:54:47.452Z"
+      "checkedAt": "2026-06-28T21:04:10.923Z"
     },
     "cjlo": {
       "id": "cjlo",
@@ -31,7 +31,7 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-06-28T19:55:01.071Z"
+      "checkedAt": "2026-06-28T21:04:24.419Z"
     },
     "cfak": {
       "id": "cfak",
@@ -39,15 +39,15 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-06-28T19:55:01.883Z"
+      "checkedAt": "2026-06-28T21:04:25.251Z"
     },
     "choq": {
       "id": "choq",
       "name": "CHOQ.ca",
-      "showTitle": "La rage au coeur",
-      "host": "Qualiasonic",
+      "showTitle": "Sea Within A Sea",
+      "host": "The Horrors",
       "source": "api-live",
-      "checkedAt": "2026-06-28T19:55:02.762Z"
+      "checkedAt": "2026-06-28T21:04:25.981Z"
     }
   }
 }
