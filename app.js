@@ -625,30 +625,6 @@ function formatDialStationLine(radio) {
   return inst ? `${radio.name} · ${inst}` : radio.name;
 }
 
-/** Sous 1100 px : institution sur la ligne du titre (plus de rotation avec l'antenne). */
-function isDialCompactLayout() {
-  return !!TUNER_SUB_ROTATE_MQ?.matches;
-}
-
-function formatDialMetaLine(radio) {
-  if (!radio) return '';
-  const inst = tunerInstitutionLabel(radio.institution);
-  if (isExternalListen(radio)) return inst ? `Site externe · ${inst}` : 'Site externe';
-  return inst ? `${radio.frequency || 'Web'} · ${inst}` : (radio.frequency || 'Web');
-}
-
-/** Ligne 2 du dial compact : fréquence ou « À l'antenne » (sans répéter l'institution). */
-function formatDialCompactSubLine(radio, title, sub, empty) {
-  if (!radio) return tunerSubMeta || 'Radios étudiantes en direct';
-  const airLine = formatNowAirSubLine(title, sub, empty);
-  const genericListen = `Vous écoutez ${radio.name}`;
-  const freqLine = isExternalListen(radio) ? 'Site externe' : (radio.frequency || 'Web');
-  if (!empty && airLine && airLine !== genericListen && airLine !== freqLine) {
-    return airLine;
-  }
-  return freqLine;
-}
-
 function formatPreviewNowAir(radio, { omitStation = false } = {}) {
   const stationLine = formatStationNowAirLabel(radio);
   const { title, sub } = nowAirLines(radio);
@@ -861,8 +837,8 @@ function setTunerSubRotateActive(showAir) {
 }
 
 /**
- * Sous 1100 px avec poste : titre = poste · institution, sous-titre = fréquence ou « À l'antenne ».
- * Sans poste : alterne aperçu à l'antenne (mobile) ou carrousel de postes (bureau).
+ * Alterne doucement fréquence · institution et « À l'antenne » dans la ligne du bas.
+ * Le module latéral reste visible sur ordinateur en complément.
  */
 function updateNowAirSubAirText(text, crossfade = false) {
   if (!TUNER_SUB_AIR) return;
@@ -915,19 +891,6 @@ function syncTunerSubRotate(title, sub, empty, crossfade = false) {
     return;
   }
 
-  if (currentStation && isDialCompactLayout()) {
-    stopTunerSubRotate();
-    wrapper?.classList.remove('is-rotating');
-    TUNER_SUB.classList.add('is-active');
-    TUNER_SUB_AIR.classList.remove('is-active');
-    TUNER_SUB.setAttribute('aria-hidden', 'false');
-    TUNER_SUB_AIR.setAttribute('aria-hidden', 'true');
-    const subLine = formatDialCompactSubLine(currentStation, title, sub, empty);
-    applyDialTextCrossfade(TUNER_SUB, subLine, crossfade);
-    setTunerNameText(formatDialStationLine(currentStation), crossfade);
-    return;
-  }
-
   if (!isTunerSubRotateMode()) {
     stopTunerSubRotate();
     TUNER_SUB.classList.add('is-active');
@@ -939,7 +902,10 @@ function syncTunerSubRotate(title, sub, empty, crossfade = false) {
       return;
     }
 
-    if (tunerSubMeta) {
+    const showAirInDialSub = currentStation && TUNER_SUB_ROTATE_MQ?.matches;
+    if (showAirInDialSub) {
+      applyMarquee(TUNER_SUB, tunerSubAirText);
+    } else if (tunerSubMeta) {
       applyMarquee(TUNER_SUB, tunerSubMeta);
     }
     return;
@@ -1036,11 +1002,7 @@ function renderTunerNowAir() {
     nowAirPreviewRadio = null;
     lastNowAirPreviewId = null;
     lastDialCarouselText = '';
-    setTunerNameText(
-      isDialCompactLayout()
-        ? formatDialStationLine(currentStation)
-        : currentStation.name,
-    );
+    setTunerNameText(currentStation.name);
   } else if (previewing) {
     startNowAirPreview();
   } else {
@@ -1415,16 +1377,11 @@ function selectStation(id, { autoplay = false, openExternal = false } = {}) {
   const playable = getPlayableStream(radio);
   const external = isExternalListen(radio);
 
-  if (isDialCompactLayout()) {
-    setTunerNameText(formatDialStationLine(radio));
-    setTunerSubText(external ? 'Site externe' : (radio.frequency || 'Web'));
-  } else {
-    const inst = tunerInstitutionLabel(radio.institution);
-    setTunerNameText(radio.name);
-    setTunerSubText(external
-      ? `Site externe · ${inst}`
-      : `${radio.frequency} · ${inst}`);
-  }
+  const inst = tunerInstitutionLabel(radio.institution);
+  setTunerNameText(radio.name);
+  setTunerSubText(external
+    ? `Site externe · ${inst}`
+    : `${radio.frequency} · ${inst}`);
 
   TUNER_PLAY.disabled = !playable && !external;
   TUNER_PLAY.title = playable
