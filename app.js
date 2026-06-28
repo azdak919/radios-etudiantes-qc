@@ -305,7 +305,8 @@ let tunerSubMeta = '';
 let tunerSubAirText = '';
 let tunerSubRotateTimer = null;
 let tunerSubRotateShowAir = false;
-const TUNER_SUB_ROTATE_MS = 5000;
+const TUNER_SUB_ROTATE_MS = 8000;
+const NOW_AIR_CROSSFADE_MS = 700;
 const PREFERS_REDUCED_MOTION = window.matchMedia?.('(prefers-reduced-motion: reduce)');
 let sourceColors = {};     // source name → accent colour
 let brandColors = { institutions: {}, fallback_palette: ['#003DA5', '#6C2163', '#047857'] };
@@ -683,7 +684,42 @@ function setTunerSubRotateActive(showAir) {
  * Alterne doucement fréquence · institution et « À l'antenne » dans la ligne du bas.
  * Le module latéral reste visible sur ordinateur en complément.
  */
-function syncTunerSubRotate(title, sub, empty) {
+function updateNowAirSubAirText(text, crossfade = false) {
+  if (!TUNER_SUB_AIR) return;
+  if (!crossfade || !isTunerSubRotateMode()) {
+    applyMarquee(TUNER_SUB_AIR, text);
+    return;
+  }
+  TUNER_SUB_AIR.classList.add('is-crossfading');
+  setTimeout(() => {
+    applyMarquee(TUNER_SUB_AIR, text);
+    requestAnimationFrame(() => TUNER_SUB_AIR.classList.remove('is-crossfading'));
+  }, NOW_AIR_CROSSFADE_MS);
+}
+
+function updateNowAirPanel(title, sub, crossfade = false) {
+  const body = TUNER_NOWAIR?.querySelector('.tuner-nowair-body');
+  const write = () => {
+    applyMarquee(TUNER_NOWAIR_TITLE, title);
+    if (TUNER_NOWAIR_SUB) {
+      TUNER_NOWAIR_SUB.classList.toggle('hidden', !sub);
+      if (sub) applyMarquee(TUNER_NOWAIR_SUB, sub);
+      else TUNER_NOWAIR_SUB.replaceChildren();
+    }
+  };
+
+  if (crossfade && isTunerSubRotateMode() && body) {
+    body.classList.add('is-swapping');
+    setTimeout(() => {
+      write();
+      requestAnimationFrame(() => body.classList.remove('is-swapping'));
+    }, NOW_AIR_CROSSFADE_MS);
+  } else {
+    write();
+  }
+}
+
+function syncTunerSubRotate(title, sub, empty, crossfade = false) {
   if (!TUNER_SUB || !TUNER_SUB_AIR) return;
   tunerSubAirText = formatNowAirSubLine(title, sub, empty);
   const wrapper = TUNER_SUB.parentElement;
@@ -705,7 +741,7 @@ function syncTunerSubRotate(title, sub, empty) {
 
   wrapper?.classList.add('is-rotating');
   applyMarquee(TUNER_SUB, tunerSubMeta);
-  applyMarquee(TUNER_SUB_AIR, tunerSubAirText);
+  updateNowAirSubAirText(tunerSubAirText, crossfade);
 
   if (!tunerSubRotateTimer) {
     tunerSubRotateShowAir = false;
@@ -715,7 +751,7 @@ function syncTunerSubRotate(title, sub, empty) {
       setTunerSubRotateActive(tunerSubRotateShowAir);
     }, TUNER_SUB_ROTATE_MS);
   } else if (tunerSubRotateShowAir) {
-    applyMarquee(TUNER_SUB_AIR, tunerSubAirText);
+    updateNowAirSubAirText(tunerSubAirText, crossfade);
   } else {
     applyMarquee(TUNER_SUB, tunerSubMeta);
   }
@@ -767,17 +803,17 @@ function renderTunerNowAir() {
     else stopNowAirPreview();
     return;
   }
+  const crossfadePreview = previewing
+    && isTunerSubRotateMode()
+    && lastNowAir.previewId != null
+    && previewId !== lastNowAir.previewId;
+
   lastNowAir = { title, sub, empty, previewId };
 
   TUNER_NOWAIR.classList.remove('hidden');
   TUNER_NOWAIR.classList.toggle('is-empty', empty);
-  applyMarquee(TUNER_NOWAIR_TITLE, title);
-  if (TUNER_NOWAIR_SUB) {
-    TUNER_NOWAIR_SUB.classList.toggle('hidden', !sub);
-    if (sub) applyMarquee(TUNER_NOWAIR_SUB, sub);
-    else TUNER_NOWAIR_SUB.replaceChildren();
-  }
-  syncTunerSubRotate(title, sub, empty);
+  updateNowAirPanel(title, sub, crossfadePreview);
+  syncTunerSubRotate(title, sub, empty, crossfadePreview);
   if (currentStation && isPlaying()) {
     updateMediaSession(currentStation, empty ? {} : { title, sub });
   }
