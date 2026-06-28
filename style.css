@@ -611,41 +611,42 @@ a { color: inherit; }
   top: 0;
   white-space: nowrap;
 }
-.tuner-vol-label-min {
-  position: absolute;
-  top: 0;
-  left: var(--vol-x-min, 8px);
-  transform: translateX(-50%);
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  white-space: nowrap;
-}
+/* Mute dans la bulle volume — masqué au bureau (curseur en ligne). */
 .tuner-vol-mute-btn {
   display: none;
+  flex-shrink: 0;
   align-items: center;
   justify-content: center;
-  width: 18px;
-  height: 18px;
+  box-sizing: border-box;
+  width: 42px;
+  height: 42px;
   padding: 0;
   margin: 0;
-  border: 0;
-  border-radius: 4px;
-  background: transparent;
-  color: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.72);
   cursor: pointer;
-  flex-shrink: 0;
-  transition: color 120ms ease, background 120ms ease;
+  transition: background 120ms ease, border-color 120ms ease, color 120ms ease, transform 120ms ease;
 }
 .tuner-vol-mute-btn .ico-vol,
-.tuner-vol-mute-btn .ico-vol-mute { width: 14px; height: 14px; display: block; }
+.tuner-vol-mute-btn .ico-vol-mute { width: 20px; height: 20px; display: block; }
 .tuner-vol-mute-btn:hover {
-  color: rgba(255, 255, 255, 0.9);
-  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.28);
 }
-.tuner-vol-mute-btn:active { transform: scale(0.92); }
+.tuner-vol-mute-btn:active { transform: scale(0.93); }
+.tuner.is-boosted .tuner-vol-mute-btn {
+  color: #ff7d6e;
+  border-color: rgba(255, 125, 110, 0.35);
+}
 .tuner-vol.is-muted .tuner-vol-mute-btn { color: rgba(255, 255, 255, 0.38); }
 .tuner-vol.is-muted .tuner-vol-mute-btn[aria-pressed="true"] { color: #ff9a90; }
+.tuner-vol-labels > span:nth-child(1) {
+  left: var(--vol-x-min, 8px);
+  transform: translateX(0);
+}
 .tuner-vol-labels > span:nth-child(2) {
   left: var(--vol-x-mid, 50%);
   transform: translateX(-50%);
@@ -820,8 +821,10 @@ a { color: inherit; }
     right: -6px;
     z-index: 60;
     display: flex;
+    flex-direction: row;
     align-items: center;
-    padding: 11px 14px;
+    gap: 10px;
+    padding: 10px 14px 10px 12px;
     background: #22252c;
     border: 1px solid rgba(255,255,255,0.14);
     border-radius: 11px;
@@ -850,10 +853,14 @@ a { color: inherit; }
     transform: none;
     pointer-events: auto;
   }
-  .tuner-vol-slot .tuner-vol-track { width: 156px; }
+  .tuner-vol-slot .tuner-vol-mute-btn { display: flex; }
+  .tuner-vol-slot .tuner-vol-track {
+    flex: 1;
+    min-width: 0;
+    width: 156px;
+  }
   .tuner-vol-slot .tuner-vol-slider { min-height: 44px; }
-  .tuner-vol-labels { height: 18px; }
-  .tuner-vol-mute-btn { display: flex; }
+  .tuner-vol-slot .tuner-vol-labels { height: 18px; }
 
   .tuner-vol.is-open .tuner-vol-btn { color: rgba(255,255,255,0.95); }
 }
@@ -864,6 +871,13 @@ a { color: inherit; }
   .tuner-controls { gap: 6px; }
 
   .tuner-label { display: none; }
+
+  /* Bulle volume : marge gauche pour éviter le clipping du mute. */
+  .tuner-vol-slot {
+    right: 0;
+    padding-left: 14px;
+    max-width: min(248px, calc(100vw - 16px));
+  }
 
   .tuner.is-playing .tuner-now {
     border-color: rgba(255, 125, 110, 0.7);
