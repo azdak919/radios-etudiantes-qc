@@ -5,20 +5,24 @@ html[data-embed="tuner"] {
   --pad: 10px;
   --embed-bar-h: 58px;
   background: transparent;
-  overflow: visible;
+  overflow: hidden;
+  height: var(--embed-bar-h);
+  max-height: var(--embed-bar-h);
 }
 
 html[data-embed="tuner"] body {
   margin: 0;
   background: transparent;
-  overflow: visible;
+  overflow: hidden;
+  height: var(--embed-bar-h);
+  max-height: var(--embed-bar-h);
 }
 
 html[data-embed="tuner"] .tuner {
   position: static;
   box-shadow: none;
   border-radius: 12px;
-  overflow: visible;
+  overflow: hidden;
   height: var(--embed-bar-h);
   max-height: var(--embed-bar-h);
   min-height: var(--embed-bar-h);
@@ -32,6 +36,7 @@ html[data-embed="tuner"] .tuner-inner {
   gap: 8px;
   height: 100%;
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 html[data-embed="tuner"] .tuner-controls {
@@ -57,7 +62,7 @@ html[data-embed="tuner"] .tuner-vol {
   align-self: center;
   height: 42px;
   position: relative;
-  overflow: visible;
+  overflow: hidden;
 }
 
 html[data-embed="tuner"] .tuner-vol-btn {
@@ -99,7 +104,7 @@ html[data-embed="tuner"] .tuner-vol-slot {
   display: flex;
   align-items: center;
   height: 42px;
-  overflow: visible;
+  overflow: hidden;
   position: static;
   opacity: 1;
   transform: none;
@@ -138,7 +143,7 @@ html[data-embed="tuner"] .tuner-vol-track {
   justify-content: center;
   gap: 0;
   position: relative;
-  overflow: visible;
+  overflow: hidden;
 }
 
 html[data-embed="tuner"] .tuner-vol-slider {
@@ -147,12 +152,9 @@ html[data-embed="tuner"] .tuner-vol-slider {
   width: 100%;
 }
 
+/* Étiquettes 0/100/200 % : masquées (barre 58 px, pas de place). */
 html[data-embed="tuner"] .tuner-vol-labels {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  overflow: visible;
+  display: none !important;
 }
 
 html[data-embed="tuner"] .tuner-cast--bar,
@@ -182,7 +184,7 @@ html[data-embed="tuner"] .tuner.is-external .tuner-now {
 }
 
 html[data-embed="tuner"] .tuner-step {
-  box-shadow: 0 3px 10px -4px rgba(0, 0, 0, 0.4);
+  box-shadow: none;
 }
 
 html[data-embed="tuner"] .toast {
@@ -198,10 +200,6 @@ html[data-embed="tuner"] .toast {
 @media (max-width: 559.98px) {
   html[data-embed="tuner"] .tuner-vol-track {
     width: clamp(40px, 14cqw, 96px);
-  }
-
-  html[data-embed="tuner"] .tuner-vol-labels {
-    display: none;
   }
 
   html[data-embed="tuner"] .tuner-step {
