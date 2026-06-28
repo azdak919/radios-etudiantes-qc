@@ -625,6 +625,23 @@ function formatDialStationLine(radio) {
   return inst ? `${radio.name} · ${inst}` : radio.name;
 }
 
+/** Mobile / tablette (< 1100 px) : titre du dial = poste · établissement. */
+function isDialCompactLayout() {
+  return !!TUNER_SUB_ROTATE_MQ?.matches;
+}
+
+/** Ligne 2 du dial compact : fréquence ou « À l'antenne » (institution sur la ligne 1). */
+function formatDialCompactSubLine(radio, title, sub, empty) {
+  if (!radio) return tunerSubMeta || 'Radios étudiantes en direct';
+  const airLine = formatNowAirSubLine(title, sub, empty);
+  const genericListen = `Vous écoutez ${radio.name}`;
+  const freqLine = isExternalListen(radio) ? 'Site externe' : (radio.frequency || 'Web');
+  if (!empty && airLine && airLine !== genericListen && airLine !== freqLine) {
+    return airLine;
+  }
+  return freqLine;
+}
+
 function formatPreviewNowAir(radio, { omitStation = false } = {}) {
   const stationLine = formatStationNowAirLabel(radio);
   const { title, sub } = nowAirLines(radio);
@@ -837,8 +854,8 @@ function setTunerSubRotateActive(showAir) {
 }
 
 /**
- * Alterne doucement fréquence · institution et « À l'antenne » dans la ligne du bas.
- * Le module latéral reste visible sur ordinateur en complément.
+ * Compact (< 1100 px) + poste : ligne 1 = poste · institution, ligne 2 = fréquence ou antenne.
+ * Bureau : ligne 1 = poste, ligne 2 = fréquence · institution ; panneau latéral pour l'antenne.
  */
 function updateNowAirSubAirText(text, crossfade = false) {
   if (!TUNER_SUB_AIR) return;
@@ -888,6 +905,19 @@ function syncTunerSubRotate(title, sub, empty, crossfade = false) {
     TUNER_SUB.setAttribute('aria-hidden', 'false');
     TUNER_SUB_AIR.setAttribute('aria-hidden', 'true');
     applyDialTextCrossfade(TUNER_SUB, tunerSubAirText, crossfade);
+    return;
+  }
+
+  if (currentStation && isDialCompactLayout()) {
+    stopTunerSubRotate();
+    wrapper?.classList.remove('is-rotating');
+    TUNER_SUB.classList.add('is-active');
+    TUNER_SUB_AIR.classList.remove('is-active');
+    TUNER_SUB.setAttribute('aria-hidden', 'false');
+    TUNER_SUB_AIR.setAttribute('aria-hidden', 'true');
+    const subLine = formatDialCompactSubLine(currentStation, title, sub, empty);
+    applyDialTextCrossfade(TUNER_SUB, subLine, crossfade);
+    setTunerNameText(formatDialStationLine(currentStation), crossfade);
     return;
   }
 
@@ -1002,7 +1032,11 @@ function renderTunerNowAir() {
     nowAirPreviewRadio = null;
     lastNowAirPreviewId = null;
     lastDialCarouselText = '';
-    setTunerNameText(currentStation.name);
+    setTunerNameText(
+      isDialCompactLayout()
+        ? formatDialStationLine(currentStation)
+        : currentStation.name,
+    );
   } else if (previewing) {
     startNowAirPreview();
   } else {
@@ -1378,10 +1412,15 @@ function selectStation(id, { autoplay = false, openExternal = false } = {}) {
   const external = isExternalListen(radio);
 
   const inst = tunerInstitutionLabel(radio.institution);
-  setTunerNameText(radio.name);
-  setTunerSubText(external
-    ? `Site externe · ${inst}`
-    : `${radio.frequency} · ${inst}`);
+  if (isDialCompactLayout()) {
+    setTunerNameText(formatDialStationLine(radio));
+    setTunerSubText(external ? 'Site externe' : (radio.frequency || 'Web'));
+  } else {
+    setTunerNameText(radio.name);
+    setTunerSubText(external
+      ? `Site externe · ${inst}`
+      : `${radio.frequency} · ${inst}`);
+  }
 
   TUNER_PLAY.disabled = !playable && !external;
   TUNER_PLAY.title = playable
