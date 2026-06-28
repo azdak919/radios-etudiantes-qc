@@ -1,4 +1,4 @@
-// Hauteur dynamique de l'iframe embed (popover volume téléphone, etc.)
+// Iframe embed : hauteur dynamique vers le haut quand le popover volume est ouvert.
 (function () {
   if (document.documentElement.dataset.embed !== 'tuner') return;
 
@@ -12,20 +12,23 @@
     let height = baseH;
     const vol = document.getElementById('tuner-vol');
     const slot = document.getElementById('tuner-vol-slot');
-
-    if (
+    const popoverOpen = !!(
       EMBED_VOL_COMPACT_MQ?.matches
       && vol?.classList.contains('is-open')
       && slot
-    ) {
-      height = Math.max(height, Math.ceil(slot.getBoundingClientRect().bottom + 8));
+    );
+
+    if (popoverOpen) {
+      const tunerRect = tuner.getBoundingClientRect();
+      const slotRect = slot.getBoundingClientRect();
+      height = Math.ceil(tunerRect.bottom - Math.min(tunerRect.top, slotRect.top) + 8);
     }
 
     parent.postMessage({
       type: 'ataraxia-radar-embed',
       height,
       baseHeight: baseH,
-      popoverOpen: !!(vol?.classList.contains('is-open') && EMBED_VOL_COMPACT_MQ?.matches),
+      popoverOpen,
     }, '*');
   }
 
