@@ -386,12 +386,27 @@ async function init() {
 
 function registerServiceWorker() {
   if (!('serviceWorker' in navigator)) return;
-  navigator.serviceWorker.register('./sw.js').catch((e) => {
+  navigator.serviceWorker.register('./sw.js').then((reg) => {
+    reg.addEventListener('updatefound', () => {
+      const worker = reg.installing;
+      worker?.addEventListener('statechange', () => {
+        if (worker.state === 'activated' && navigator.serviceWorker.controller) {
+          window.location.reload();
+        }
+      });
+    });
+    if (reg.waiting && navigator.serviceWorker.controller) {
+      reg.waiting.postMessage({ type: 'SKIP_WAITING' });
+    }
+  }).catch((e) => {
     console.warn('Service worker registration failed', e);
   });
   navigator.serviceWorker.getRegistrations?.().then((regs) => {
     regs.forEach((reg) => reg.update());
   }).catch(() => {});
+  navigator.serviceWorker.addEventListener('controllerchange', () => {
+    window.location.reload();
+  });
 }
 
 // ─── Theme (clair / sombre) ────────────────────────────────────────────────────
