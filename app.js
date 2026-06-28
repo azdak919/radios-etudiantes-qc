@@ -351,7 +351,10 @@ const FILTER_MARQUEE_RESYNC_MS = 480;
 const FILTERS_COLLAPSED_ROWS = 3;
 const FILTERS_ROW_CAPACITY = 3;
 const FILTERS_COLS_NARROW = 420;
-const FILTERS_DESKTOP_DEFAULT_COLS = 5;
+/** Max colonnes bureau : 4 ≈ 270 px/pastille à 1180 px — noms complets sans défilement. */
+const FILTERS_DESKTOP_MAX_COLS = 4;
+const FILTERS_DESKTOP_WIDE_MIN = 960;
+const FILTERS_DESKTOP_DEFAULT_COLS = FILTERS_DESKTOP_MAX_COLS;
 
 const GENERIC_AUTHORS = /^(admin|administrator|administrateur|editor|éditeur|editeur|rédaction|redaction|staff|wordpress|webmaster|collectif|tribune|link|daily|exemplaire|quartier libre|zone campus|la pige|le délit|le delit|the link|the tribune|the mcgill daily)$/i;
 
@@ -2348,9 +2351,8 @@ function filtersColumnCount() {
     return w < FILTERS_COLS_NARROW ? 2 : 3;
   }
   if (w < 680) return 3;
-  if (w < 900) return 4;
-  if (w < 1080) return 5;
-  return 6;
+  if (w < FILTERS_DESKTOP_WIDE_MIN) return 3;
+  return FILTERS_DESKTOP_MAX_COLS;
 }
 
 function syncFiltersColumns() {
