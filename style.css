@@ -1406,6 +1406,8 @@ html.is-firefox .tuner-cast--bar.hidden { display: flex !important; }
   white-space: nowrap;
 }
 .filter-btn__inst {
+  display: block;
+  box-sizing: border-box;
   font-size: 10px;
   font-weight: 500;
   line-height: 1.2;
@@ -1413,6 +1415,8 @@ html.is-firefox .tuner-cast--bar.hidden { display: flex !important; }
   padding-left: 13px;
   text-align: left;
   width: 100%;
+  min-width: 0;
+  max-width: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;

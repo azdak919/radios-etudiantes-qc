@@ -342,8 +342,11 @@ let brandColors = { institutions: {}, fallback_palette: ['#003DA5', '#6C2163', '
 let filtersExpanded = false;
 let volSliderResizeObs = null;
 const marqueeTextByEl = new WeakMap();
+const marqueeObservedEls = new WeakSet();
 let marqueeResizeObs = null;
 let marqueeResizeScheduled = false;
+let filterMarqueeResyncTimer = null;
+const FILTER_MARQUEE_RESYNC_MS = 480;
 
 const FILTERS_COLLAPSED_ROWS = 3;
 const FILTERS_ROW_CAPACITY = 3;
@@ -1327,6 +1330,38 @@ function stepStation(dir) {
   selectStation(next.id, { autoplay: tunerShouldAutoplayNative(next) });
 }
 
+function getMarqueeAvailableWidth(el) {
+  if (!el) return 0;
+  const style = getComputedStyle(el);
+  const padL = parseFloat(style.paddingLeft) || 0;
+  const padR = parseFloat(style.paddingRight) || 0;
+  return Math.max(0, el.clientWidth - padL - padR);
+}
+
+function ensureMarqueeObserved(el) {
+  if (!marqueeResizeObs || !el || marqueeObservedEls.has(el)) return;
+  marqueeObservedEls.add(el);
+  marqueeResizeObs.observe(el);
+}
+
+function registerFilterMarqueeObservers() {
+  if (!NEWS_FILTERS) return;
+  NEWS_FILTERS.querySelectorAll('.filter-btn').forEach((btn) => {
+    ensureMarqueeObserved(btn);
+    const inst = btn.querySelector('.filter-btn__inst');
+    if (inst) ensureMarqueeObserved(inst);
+  });
+}
+
+function scheduleFilterMarqueeRefresh() {
+  scheduleMarqueeRefresh();
+  if (filterMarqueeResyncTimer) clearTimeout(filterMarqueeResyncTimer);
+  filterMarqueeResyncTimer = setTimeout(() => {
+    filterMarqueeResyncTimer = null;
+    scheduleMarqueeRefresh();
+  }, FILTER_MARQUEE_RESYNC_MS);
+}
+
 function getFilterInstMarqueeElements() {
   return NEWS_FILTERS
     ? [...NEWS_FILTERS.querySelectorAll('.filter-btn__inst')]
@@ -1367,11 +1402,11 @@ function measureMarquee(el) {
   const span = el.querySelector('.tuner-now-sub-text');
   if (!span) return;
 
-  const available = el.clientWidth;
+  const available = getMarqueeAvailableWidth(el);
   if (!available) return;
 
   const overflow = span.scrollWidth - available;
-  if (overflow <= 4) {
+  if (overflow <= 2) {
     el.classList.remove('is-marquee');
     el.style.removeProperty('--marquee-shift');
     el.style.removeProperty('--marquee-duration');
@@ -1393,7 +1428,7 @@ function scheduleMarqueeMeasure(el, attempt = 0) {
       const span = el.querySelector('.tuner-now-sub-text');
       if (!span || PREFERS_REDUCED_MOTION?.matches) return;
 
-      const available = el.clientWidth;
+      const available = getMarqueeAvailableWidth(el);
       if (!available) {
         scheduleMarqueeMeasure(el, attempt + 1);
         return;
@@ -1402,7 +1437,7 @@ function scheduleMarqueeMeasure(el, attempt = 0) {
       measureMarquee(el);
 
       const overflow = span.scrollWidth - available;
-      const shouldMarquee = overflow > 4;
+      const shouldMarquee = overflow > 2;
       const hasMarquee = el.classList.contains('is-marquee');
       if (attempt < 4 && shouldMarquee !== hasMarquee) {
         scheduleMarqueeMeasure(el, attempt + 1);
@@ -1421,7 +1456,7 @@ function refreshAllMarquees() {
       applyMarquee(el, text);
       return;
     }
-    measureMarquee(el);
+    scheduleMarqueeMeasure(el);
   });
 }
 
@@ -1433,6 +1468,8 @@ function scheduleMarqueeRefresh() {
 
 function initMarqueeResizeListeners() {
   if (marqueeResizeObs || typeof ResizeObserver === 'undefined') return;
+
+  marqueeResizeObs = new ResizeObserver(scheduleMarqueeRefresh);
 
   const observeTargets = new Set(getMarqueeElements());
   [
@@ -1446,8 +1483,19 @@ function initMarqueeResizeListeners() {
     FILTERS_PANEL,
   ].forEach((el) => { if (el) observeTargets.add(el); });
 
-  marqueeResizeObs = new ResizeObserver(scheduleMarqueeRefresh);
-  observeTargets.forEach((el) => marqueeResizeObs.observe(el));
+  observeTargets.forEach((el) => ensureMarqueeObserved(el));
+  registerFilterMarqueeObservers();
+
+  NEWS_FILTERS?.addEventListener('transitionend', (e) => {
+    const t = e.target;
+    if (t?.classList?.contains('filter-btn') && e.propertyName === 'flex-basis') {
+      scheduleFilterMarqueeRefresh();
+    }
+  });
+
+  FILTERS_PANEL?.addEventListener('transitionend', (e) => {
+    if (e.propertyName === 'max-height') scheduleFilterMarqueeRefresh();
+  });
 
   window.addEventListener('resize', scheduleMarqueeRefresh, { passive: true });
   PREFERS_REDUCED_MOTION?.addEventListener?.('change', () => {
@@ -2360,6 +2408,7 @@ function syncFiltersPanel() {
       FILTERS_TOGGLE?.setAttribute('hidden', '');
       FILTERS_COMPACT?.setAttribute('aria-expanded', 'false');
     }
+    scheduleFilterMarqueeRefresh();
     return;
   }
 
@@ -2379,7 +2428,7 @@ function syncFiltersPanel() {
     FILTERS_TOGGLE?.setAttribute('hidden', '');
   }
 
-  scheduleMarqueeRefresh();
+  scheduleFilterMarqueeRefresh();
 }
 
 function bindFiltersPanel() {
@@ -2397,10 +2446,16 @@ function bindFiltersPanel() {
     syncFiltersPanel();
   });
 
-  FILTERS_MOBILE.addEventListener('change', () => syncFiltersPanel());
+  FILTERS_MOBILE.addEventListener('change', () => {
+    syncFiltersPanel();
+    scheduleFilterMarqueeRefresh();
+  });
 
   if (NEWS_FILTERS && typeof ResizeObserver !== 'undefined') {
-    const filtersResize = new ResizeObserver(() => syncFiltersPanel());
+    const filtersResize = new ResizeObserver(() => {
+      syncFiltersPanel();
+      scheduleFilterMarqueeRefresh();
+    });
     filtersResize.observe(NEWS_FILTERS);
   }
 }
@@ -2444,8 +2499,10 @@ function renderNewsFilters() {
   NEWS_FILTERS.querySelectorAll('.filter-btn').forEach((b) =>
     b.classList.toggle('active', b.dataset.source === newsSourceFilter));
 
-  applyFilterInstMarquees();
   syncFiltersPanel();
+  registerFilterMarqueeObservers();
+  applyFilterInstMarquees();
+  scheduleFilterMarqueeRefresh();
 }
 
 function renderNews() {
