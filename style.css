@@ -136,11 +136,11 @@ a { color: inherit; }
   border-color: #c8102e;
   background: color-mix(in srgb, #c8102e 10%, transparent);
 }
-.masthead-ataraxia .masthead-tomato {
+.masthead-ataraxia .masthead-tomato,
+.masthead-solitaire .masthead-card {
   font-size: 15px;
   line-height: 1;
   display: block;
-  /* Rendu couleur natif de l'emoji tomate 🍅 */
   font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif;
 }
 .masthead-home.is-active,
