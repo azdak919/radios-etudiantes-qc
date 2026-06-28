@@ -364,7 +364,7 @@ const FILTERS_DESKTOP_MAX_COLS = 5;
 const FILTERS_DESKTOP_WIDE_MIN = 960;
 const FILTERS_DESKTOP_DEFAULT_COLS = FILTERS_DESKTOP_MAX_COLS;
 
-const GENERIC_AUTHORS = /^(admin|administrator|administrateur|editor|éditeur|editeur|rédaction|redaction|staff|wordpress|webmaster|collectif|tribune|link|daily|exemplaire|quartier libre|zone campus|la pige|le délit|le delit|the link|the tribune|the mcgill daily)$/i;
+const GENERIC_AUTHORS = /^(admin|administrator|administrateur|editor|éditeur|editeur|rédaction|redaction|staff|wordpress|webmaster|collectif|tribune|link|daily|coordinating|exemplaire|quartier libre|zone campus|la pige|le délit|le delit|the link|the tribune|the mcgill daily)$/i;
 
 // ─── Bootstrap ───────────────────────────────────────────────────────────────
 init().catch((e) => console.error('init failed', e));

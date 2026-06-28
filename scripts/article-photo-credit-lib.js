@@ -135,6 +135,22 @@ function parseMediaCreditPipe(text = '') {
 
 /** Plugin WordPress Media Credit (The McGill Daily, Le Délit, etc.). */
 function extractMediaCreditPlugin(html = '', imageUrl = '') {
+  if (imageUrl) {
+    const key = imageUrlKey(imageUrl).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    if (key.length > 8) {
+      const near = html.match(
+        new RegExp(`${key}[\\s\\S]{0,1200}?class=["'][^"']*media-credit[^"']*["'][^>]*>([\\s\\S]*?)<\\/span>`, 'i'),
+      );
+      if (near) {
+        const creator = parseMediaCreditPipe(near[1]);
+        if (creator) {
+          const parsed = creditFromPhrase(creator);
+          if (parsed) return { ...parsed, source: 'media-credit-near' };
+        }
+      }
+    }
+  }
+
   const entryIdx = html.search(/class=["'][^"']*\bentry-content\b/i);
   const header = entryIdx > 0 ? html.slice(0, entryIdx) : html.slice(0, 80000);
 
@@ -155,22 +171,6 @@ function extractMediaCreditPlugin(html = '', imageUrl = '') {
     if (creator) {
       const parsed = creditFromPhrase(creator);
       if (parsed) return { ...parsed, source: 'media-credit' };
-    }
-  }
-
-  if (imageUrl) {
-    const key = imageUrlKey(imageUrl).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-    if (key.length > 8) {
-      const near = html.match(
-        new RegExp(`${key}[\\s\\S]{0,1200}?class=["'][^"']*media-credit[^"']*["'][^>]*>([\\s\\S]*?)<\\/span>`, 'i'),
-      );
-      if (near) {
-        const creator = parseMediaCreditPipe(near[1]);
-        if (creator) {
-          const parsed = creditFromPhrase(creator);
-          if (parsed) return { ...parsed, source: 'media-credit-near' };
-        }
-      }
     }
   }
 
@@ -333,12 +333,19 @@ function extractBodyCredit(html = '', imageUrl = '') {
 function extractPhotoCreditFromHtml(html = '', imageUrl = '', lang = 'fr') {
   if (!html || html.length < 200) return null;
 
-  const extractors = [
-    () => extractMediaCreditPlugin(html, imageUrl),
-    () => extractJsonLdCredit(html, imageUrl),
-    () => extractFigureCredit(html, imageUrl, lang),
-    () => extractBodyCredit(html, imageUrl),
-  ];
+  const extractors = imageUrl
+    ? [
+      () => extractFigureCredit(html, imageUrl, lang),
+      () => extractMediaCreditPlugin(html, imageUrl),
+      () => extractJsonLdCredit(html, imageUrl),
+      () => extractBodyCredit(html, imageUrl),
+    ]
+    : [
+      () => extractMediaCreditPlugin(html, imageUrl),
+      () => extractJsonLdCredit(html, imageUrl),
+      () => extractFigureCredit(html, imageUrl, lang),
+      () => extractBodyCredit(html, imageUrl),
+    ];
 
   for (const fn of extractors) {
     const hit = fn();

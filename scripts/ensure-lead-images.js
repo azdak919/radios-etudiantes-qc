@@ -91,6 +91,7 @@ function imagePathKey(url = '') {
 function shouldValidateImageOnPage(item = {}, sourceMap = new Map()) {
   if (!item.image || !item.link) return false;
   const hints = getBotHints(sourceMap.get(item.source), 'images');
+  if (hints.trustSourceImage || hints.preferFirstContentImage) return false;
   if (hints.validateOnPage) return true;
   const slug = String(item.link).split('/').filter(Boolean).pop() || '';
   const img = imagePathKey(item.image);

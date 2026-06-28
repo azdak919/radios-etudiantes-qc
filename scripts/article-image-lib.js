@@ -404,31 +404,39 @@ function meetsFeatureDisplaySize(width = 0, height = 0) {
 }
 
 function imageFromArticleHtml(html = '', extraRejectPatterns = [], options = {}, baseUrl = '') {
-  const contentImages = collectContentImages(articleImageRegions(html), extraRejectPatterns, options, baseUrl);
+  const preferFirstContentImage = !!options.preferFirstContentImage;
+  const imageRegion = preferFirstContentImage
+    ? (articleBodyHtml(html) || articleImageRegions(html))
+    : articleImageRegions(html);
+  const contentImages = collectContentImages(imageRegion, extraRejectPatterns, options, baseUrl);
   if (!contentImages.length) return { url: '', w: 0, h: 0 };
 
   const candidates = [];
 
-  const ogImage = metaContent(html, 'og:image');
-  const ogW = parseInt(metaContent(html, 'og:image:width'), 10) || 0;
-  const ogH = parseInt(metaContent(html, 'og:image:height'), 10) || 0;
-  if (ogImage && contentImages.some((img) => imageUrlsMatch(img.url, ogImage))) {
-    candidates.push({ url: ogImage, score: 100 + Math.min(ogW, 2400) / 10, w: ogW, h: ogH });
-  }
+  if (!preferFirstContentImage) {
+    const ogImage = metaContent(html, 'og:image');
+    const ogW = parseInt(metaContent(html, 'og:image:width'), 10) || 0;
+    const ogH = parseInt(metaContent(html, 'og:image:height'), 10) || 0;
+    if (ogImage && contentImages.some((img) => imageUrlsMatch(img.url, ogImage))) {
+      candidates.push({ url: ogImage, score: 100 + Math.min(ogW, 2400) / 10, w: ogW, h: ogH });
+    }
 
-  for (const key of ['twitter:image', 'twitter:image:src']) {
-    const tw = metaContent(html, key);
-    if (tw && contentImages.some((img) => imageUrlsMatch(img.url, tw))) {
-      candidates.push({ url: tw, score: 90, w: 0, h: 0 });
+    for (const key of ['twitter:image', 'twitter:image:src']) {
+      const tw = metaContent(html, key);
+      if (tw && contentImages.some((img) => imageUrlsMatch(img.url, tw))) {
+        candidates.push({ url: tw, score: 90, w: 0, h: 0 });
+      }
     }
   }
 
-  for (const img of contentImages) {
+  for (let index = 0; index < contentImages.length; index += 1) {
+    const img = contentImages[index];
     const isFeatured = /\bwp-post-image\b/i.test(img.tag)
       || /\bwp-block-post-featured-image\b/i.test(img.tag)
       || img.isFull;
     const isThumb = img.isCropThumb;
     let score = (isFeatured ? 85 : 60) + img.w / 10 - (isThumb ? 25 : 0);
+    if (preferFirstContentImage && index === 0) score += 40;
     if (options.preferSizeFull && img.isFull) score += 20;
     if (options.preferSizeFull && isThumb) score -= 30;
     candidates.push({
@@ -448,6 +456,7 @@ function imageFromArticleHtml(html = '', extraRejectPatterns = [], options = {},
 function imageOptionsFromHints(hints = {}) {
   return {
     preferSizeFull: !!hints.preferSizeFull,
+    preferFirstContentImage: !!hints.preferFirstContentImage,
   };
 }
 

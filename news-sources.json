@@ -53,6 +53,20 @@
       "type": "universite",
       "lang": "en",
       "url": "https://www.mcgilldaily.com/feed/",
+      "botHints": {
+        "authors": {
+          "forcePageAuthor": true,
+          "ignoreRssAuthor": true
+        },
+        "images": {
+          "preferFirstContentImage": true,
+          "rejectPathPatterns": [
+            "Daily\\.png",
+            "Screenshot-\\d{4}-\\d{2}-\\d{2}"
+          ]
+        }
+      },
+      "_note": "Flux RSS : dc:creator « Coordinating » (compte WordPress) — auteur réel sur la page (rel=author). og:image = bannière Yoast, pas la 1re photo du corps.",
       "_lastChecked": "2026-06-27T16:04:37.845Z",
       "_failCount": 0,
       "_status": "ok",

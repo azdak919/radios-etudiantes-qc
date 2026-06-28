@@ -6,7 +6,7 @@
  * « La rédaction » / « The editorial team ».
  */
 
-const GENERIC_AUTHORS = /^(admin|administrator|administrateur|editor|éditeur|editeur|rédaction|redaction|staff|wordpress|webmaster|collectif|tribune|link|daily|exemplaire|quartier libre|zone campus|la pige|le délit|le delit|the link|the tribune|the mcgill daily|the campus)$/i;
+const GENERIC_AUTHORS = /^(admin|administrator|administrateur|editor|éditeur|editeur|rédaction|redaction|staff|wordpress|webmaster|collectif|tribune|link|daily|coordinating|exemplaire|quartier libre|zone campus|la pige|le délit|le delit|the link|the tribune|the mcgill daily|the campus)$/i;
 
 const EDITORIAL_BYLINE_RE = /^(?:Par|By)\s+(?:(?:La|L')\s*)?[Rr]édaction\b\.?/i;
 const EDITORIAL_BYLINE_EN_RE = /^(?:Par|By)\s+Editorial\s+(?:team|staff|board)\b\.?/i;
