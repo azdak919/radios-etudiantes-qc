@@ -266,7 +266,7 @@
     </div>
 
     <!-- Lecteur natif : requis pour la lecture en arrière-plan (écran verrouillé). -->
-    <audio id="radar-player" preload="none" playsinline webkit-playsinline x-webkit-airplay="allow" hidden></audio>
+    <audio id="radar-player" class="sr-only" preload="none" playsinline webkit-playsinline x-webkit-airplay="allow" aria-hidden="true"></audio>
 
     <script src="cast.js" defer></script>
     <script src="app.js" defer></script>

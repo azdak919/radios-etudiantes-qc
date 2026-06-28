@@ -286,6 +286,9 @@ const MOBILE_PLAYBACK = window.matchMedia('(hover: none) and (pointer: coarse)')
   || /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 let userPaused = false;
 let bgPlaybackWatch = null;
+let bgResumeTimer = null;
+let bgResumeAttempt = 0;
+const BG_WATCH_MS = MOBILE_PLAYBACK ? 2500 : 12000;
 const playerListenersAttached = new WeakSet();
 const DEFAULT_GAIN = 1;             // 100 % — centre du curseur 0–200 %
 let currentGain = DEFAULT_GAIN;
@@ -1540,12 +1543,16 @@ async function play(radio) {
   const wantBoost = wantsAudioBoost() && !boostUnavailable.has(radio.id);
   if (wantBoost !== boostWired) rebuildAudio(wantBoost);
   reconnectTries = 0;
-  // Plus de tampon pour les flux sujets aux coupures (ex. CFAK).
-  audio.preload = STATION_PLAYBACK[radio.id]?.resilient ? 'auto' : 'none';
+  bgResumeAttempt = 0;
+  // Mobile : tampon plus large + lecture native (Web Audio suspendu à l'écran verrouillé).
+  audio.preload = MOBILE_PLAYBACK || STATION_PLAYBACK[radio.id]?.resilient ? 'auto' : 'none';
   try {
     if (audioCtx && audioCtx.state === 'suspended') { try { await audioCtx.resume(); } catch {} }
     if (audio.src !== url) audio.src = url;
+    syncMediaSessionPlaybackState();
+    syncMediaSessionLivePosition();
     await audio.play();
+    syncMediaSessionPlaybackState();
     applyGain();
     updatePlayUI();
   } catch {
@@ -1600,7 +1607,8 @@ function getPlayerElement() {
     el.preload = 'none';
     el.setAttribute('playsinline', '');
     el.setAttribute('webkit-playsinline', '');
-    el.hidden = true;
+    el.classList.add('sr-only');
+    el.setAttribute('aria-hidden', 'true');
     document.body.appendChild(el);
   }
   return el;
@@ -1629,16 +1637,76 @@ function syncMediaSessionPlaybackState() {
   navigator.mediaSession.playbackState = isPlaying() ? 'playing' : 'paused';
 }
 
+function syncMediaSessionLivePosition() {
+  if (!('mediaSession' in navigator) || typeof navigator.mediaSession.setPositionState !== 'function') return;
+  try {
+    navigator.mediaSession.setPositionState({
+      duration: Number.POSITIVE_INFINITY,
+      playbackRate: 1,
+      position: 0,
+    });
+  } catch {}
+}
+
+function isBackgroundPlaybackContext() {
+  return MOBILE_PLAYBACK && document.visibilityState === 'hidden';
+}
+
+function shouldResilientReconnect() {
+  return !!currentTuning().resilient || isBackgroundPlaybackContext();
+}
+
+function maxReconnectTries() {
+  return isBackgroundPlaybackContext() ? 8 : 4;
+}
+
+function clearBackgroundResumeTimer() {
+  if (bgResumeTimer) {
+    clearTimeout(bgResumeTimer);
+    bgResumeTimer = null;
+  }
+}
+
+function scheduleBackgroundResume(delay = 150) {
+  if (userPaused || !currentStation || isExternalListen(currentStation)) return;
+  clearBackgroundResumeTimer();
+  bgResumeTimer = setTimeout(() => {
+    bgResumeTimer = null;
+    resumeBackgroundPlayback();
+    if (isBackgroundPlaybackContext() && !userPaused && !isPlaying()) {
+      bgResumeAttempt += 1;
+      scheduleBackgroundResume(Math.min(4000, Math.round(180 * Math.pow(1.55, bgResumeAttempt))));
+    } else {
+      bgResumeAttempt = 0;
+    }
+  }, delay);
+}
+
 function resumeBackgroundPlayback() {
   if (userPaused || !currentStation || isExternalListen(currentStation)) return;
+  if (MOBILE_PLAYBACK && boostWired) rebuildAudio(false);
   if (audioCtx?.state === 'suspended') {
     audioCtx.resume().catch(() => {});
   }
+  if (audio && !audio.paused && audio.src && audio.readyState < 2 && isBackgroundPlaybackContext()) {
+    reconnectResilient();
+    return;
+  }
   if (audio && audio.paused && audio.src) {
+    syncMediaSessionPlaybackState();
+    syncMediaSessionLivePosition();
     audio.play().catch(() => play(currentStation));
   } else if (!isPlaying()) {
     play(currentStation);
+  } else {
+    syncMediaSessionPlaybackState();
   }
+}
+
+function startBackgroundWatch() {
+  if (userPaused || !currentStation || isExternalListen(currentStation)) return;
+  clearBackgroundPlaybackWatch();
+  bgPlaybackWatch = setInterval(resumeBackgroundPlayback, BG_WATCH_MS);
 }
 
 function clearBackgroundPlaybackWatch() {
@@ -1656,20 +1724,33 @@ function setupBackgroundPlayback() {
         play(currentStation);
       }
       if (!userPaused && currentStation && !isExternalListen(currentStation)) {
-        clearBackgroundPlaybackWatch();
-        bgPlaybackWatch = setInterval(resumeBackgroundPlayback, 12000);
+        syncMediaSessionPlaybackState();
+        startBackgroundWatch();
       }
       return;
     }
     clearBackgroundPlaybackWatch();
+    clearBackgroundResumeTimer();
+    bgResumeAttempt = 0;
     resumeBackgroundPlayback();
+  });
+
+  window.addEventListener('pagehide', () => {
+    if (!userPaused && isPlaying()) startBackgroundWatch();
   });
 
   window.addEventListener('pageshow', (e) => {
     if (e.persisted) resumeBackgroundPlayback();
   });
 
-  document.addEventListener('resume', resumeBackgroundPlayback);
+  document.addEventListener('freeze', () => {
+    if (!userPaused && isPlaying()) syncMediaSessionPlaybackState();
+  });
+
+  document.addEventListener('resume', () => {
+    clearBackgroundPlaybackWatch();
+    resumeBackgroundPlayback();
+  });
 }
 
 // ─── Audio engine ──────────────────────────────────────────────────────────────
@@ -1679,14 +1760,24 @@ function attachAudioListeners(el) {
   el.addEventListener('play',    updatePlayUI);
   el.addEventListener('pause',   () => {
     updatePlayUI();
-    if (!userPaused && currentStation && document.hidden) {
-      setTimeout(resumeBackgroundPlayback, 120);
+    if (!userPaused && currentStation && isBackgroundPlaybackContext()) {
+      scheduleBackgroundResume(120);
     }
   });
   el.addEventListener('ended',   onAudioEnded);
   el.addEventListener('playing', onAudioPlaying);
   el.addEventListener('waiting', onAudioStall);
   el.addEventListener('stalled', onAudioStall);
+  el.addEventListener('suspend', () => {
+    if (!userPaused && currentStation && isBackgroundPlaybackContext()) {
+      scheduleBackgroundResume(250);
+    }
+  });
+  el.addEventListener('emptied', () => {
+    if (!userPaused && currentStation && isBackgroundPlaybackContext()) {
+      scheduleBackgroundResume(300);
+    }
+  });
   el.addEventListener('error',   onAudioError);
 }
 
@@ -1700,31 +1791,37 @@ function clearStallWatchdog() {
 
 function onAudioPlaying() {
   reconnectTries = 0;
+  bgResumeAttempt = 0;
   clearStallWatchdog();
+  syncMediaSessionPlaybackState();
   updatePlayUI();
 }
 
-// Flux décroché : pour un poste « résilient », on laisse le tampon se remplir
-// puis on reconnecte en douceur plutôt que de laisser une coupure s'installer.
+// Flux décroché : reconnexion douce (postes résilients ou mobile en arrière-plan).
 function onAudioStall() {
-  if (!currentTuning().resilient || stallWatchdog) return;
+  if (!shouldResilientReconnect() || stallWatchdog) return;
+  const delay = isBackgroundPlaybackContext() ? 1200 : 4000;
   stallWatchdog = setTimeout(() => {
     stallWatchdog = null;
     if (!audio || audio.paused) return;
     if (audio.readyState >= 3) return; // reparti tout seul
     reconnectResilient();
-  }, 4000);
+  }, delay);
 }
 
 function onAudioEnded() {
   // Un flux en direct ne devrait pas « finir » : on tente de reprendre.
-  if (currentTuning().resilient && reconnectTries < 4) reconnectResilient();
+  if (shouldResilientReconnect() && reconnectTries < maxReconnectTries()) reconnectResilient();
   else updatePlayUI();
 }
 
 function reconnectResilient() {
-  if (!currentStation || !currentTuning().resilient) return;
-  if (reconnectTries >= 4) { showToast('Flux instable — réessaie dans un instant.'); updatePlayUI(); return; }
+  if (!currentStation || !shouldResilientReconnect()) return;
+  if (reconnectTries >= maxReconnectTries()) {
+    if (!isBackgroundPlaybackContext()) showToast('Flux instable — réessaie dans un instant.');
+    updatePlayUI();
+    return;
+  }
   reconnectTries++;
   const url = getPlayableStream(currentStation);
   if (!url || !audio) return;
@@ -1737,9 +1834,9 @@ function reconnectResilient() {
 
 function onAudioError() {
   if (suppressAudioError) { updatePlayUI(); return; }
-  // Poste résilient qui jouait déjà : coupure réseau → reconnexion douce
-  // (currentTime > 0 distingue une vraie coupure d'un échec CORS au démarrage).
-  if (currentTuning().resilient && audio && audio.currentTime > 0 && reconnectTries < 4) {
+  // Coupure réseau en cours de lecture → reconnexion (mobile arrière-plan ou poste résilient).
+  const hadStarted = audio && (audio.currentTime > 0 || isBackgroundPlaybackContext());
+  if (shouldResilientReconnect() && hadStarted && reconnectTries < maxReconnectTries()) {
     reconnectResilient();
     return;
   }
