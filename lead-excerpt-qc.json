@@ -1,12 +1,12 @@
 {
-  "updated": "2026-06-28T20:49:50.270Z",
+  "updated": "2026-06-28T23:58:03.417Z",
   "total": 205,
   "pool": 58,
-  "incomplete": 10,
-  "withLeadExcerpt": 66,
-  "candidates": 10,
-  "enriched": 0,
-  "failed": 3,
+  "incomplete": 11,
+  "withLeadExcerpt": 67,
+  "candidates": 11,
+  "enriched": 1,
+  "failed": 0,
   "ok": true,
   "samples": [
     {
@@ -37,6 +37,33 @@
       "changed": false
     },
     {
+      "title": "CSU terminates council’s chief election officer",
+      "link": "https://thelinknewspaper.ca/article/16334",
+      "ok": true,
+      "score": 96,
+      "chars": 237,
+      "sample": "Elbakaye added that she has been attempting to contact Ellis for over three months, but he has not r",
+      "changed": true
+    },
+    {
+      "title": "Le PIF s’internationalise pour sa 49e édition",
+      "link": "https://lecollectif.ca/a-la-une/le-pif-sinternationalise-pour-sa-49e-edition/",
+      "ok": true,
+      "score": 100,
+      "chars": 591,
+      "sample": "Le plus grand tournoi de balle donnée en Amérique du Nord accueille cette année une vague de joueurs",
+      "changed": false
+    },
+    {
+      "title": "Une année de hockey remplie de succès au Québec",
+      "link": "https://lecollectif.ca/a-la-une/une-annee-de-hockey-remplie-de-succes-au-quebec/",
+      "ok": true,
+      "score": 100,
+      "chars": 459,
+      "sample": "Le hockey a encore pris beaucoup de place au Québec cette saison. Autant chez les professionnels que",
+      "changed": false
+    },
+    {
       "title": "Ask the Trib: How do I survive summer in my hometown?",
       "link": "https://www.thetribune.ca/student-life/ask-the-trib-how-do-i-survive-summer-in-my-hometown-26062026/?utm_source=rss&utm_medium=rss&utm_campaign=ask-the-trib-how-do-i-survive-summer-in-my-hometown-26062026",
       "ok": true,
@@ -52,24 +79,6 @@
       "score": 100,
       "chars": 426,
       "sample": "On April 22, the Superior Court of Quebec annulled the August 2025 arbitration Association des Resso",
-      "changed": false
-    },
-    {
-      "title": "Road to the 2026 FIFA World Cup",
-      "link": "https://thelinknewspaper.ca/article/16333",
-      "ok": true,
-      "score": 96,
-      "chars": 531,
-      "sample": "Canadian goalkeeper Maxime Crépeau, who hails from nearby Greenfield Park, appeared emotional during",
-      "changed": false
-    },
-    {
-      "title": "Rachat des armes à feu : le Québec est-il l’exception canadienne ?",
-      "link": "https://www.exemplaire.com.ulaval.ca/a-la-une/rachat-des-armes-a-feu-le-quebec-est-il-lexception-canadienne/?utm_source=rss&utm_medium=rss&utm_campaign=rachat-des-armes-a-feu-le-quebec-est-il-lexception-canadienne",
-      "ok": true,
-      "score": 100,
-      "chars": 455,
-      "sample": "Le programme fédéral de rachat des armes à feu suit son cours au Canada. Alors que les propriétaires",
       "changed": false
     }
   ]

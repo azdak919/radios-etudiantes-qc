@@ -1,15 +1,15 @@
 {
-  "updated": "2026-06-28T20:55:08.039Z",
+  "updated": "2026-06-29T00:03:21.387Z",
   "total": 205,
   "withPhoto": 164,
-  "withStock": 47,
+  "withStock": 43,
   "fullyCovered": 196,
-  "leadReadyPhotos": 149,
-  "pageScraped": 60,
-  "photosRecovered": 40,
+  "leadReadyPhotos": 165,
+  "pageScraped": 68,
+  "photosRecovered": 42,
   "imagesCleared": 3,
   "stockSearches": 60,
-  "stockFound": 43,
+  "stockFound": 40,
   "mainPageLeadReady": true,
   "gaps": [
     {
@@ -31,16 +31,22 @@
       "image": null
     },
     {
+      "title": "FAÉCUM : la démocratie universitaire critiquée",
+      "link": "https://quartierlibre.ca/faecum-la-democratie-universitaire-critiquee/",
+      "reason": "stock-too-small",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/a/ab/Universit%C3%A9_de_Montr%C3%A9al%2C_Pavillon_Roger-Gaudry.JPG"
+    },
+    {
       "title": "Résumé du G7 à Évian",
       "link": "https://lecollectif.ca/a-la-une/resume-du-g7-a-evian/",
       "reason": "no-stock-match",
       "image": "https://lecollectif.ca/wp-content/uploads/2026/06/SOCIETE_Resume-du-G7-a-Evian_Getty-Images.jpg"
     },
     {
-      "title": "Le mental, ça s’entraîne aussi",
-      "link": "https://lecollectif.ca/a-la-une/le-mental-ca-sentraine-aussi/",
-      "reason": "no-stock-match",
-      "image": "https://lecollectif.ca/wp-content/uploads/2026/06/SPORTS_Lementalcasentraine_SourceUniversiteDeSherbrooke-1024x584.jpeg"
+      "title": "Démission de Keir Starmer au Royaume-Uni",
+      "link": "https://lecollectif.ca/a-la-une/demission-de-keir-starmer-au-royaume-uni/",
+      "reason": "stock-too-small",
+      "image": "https://lecollectif.ca/wp-content/uploads/2026/06/SOCIETE_Demission-de-Keir-Starmer-au-Royaume-Uni_Getty-Images.jpg"
     },
     {
       "title": "La surconsommation textile : un phénomène aux lourdes conséquences",
@@ -53,12 +59,6 @@
       "link": "https://lapige.atmjonquiere.com/2026/06/22/se-preparer-et-vivre-sa-retraite-un-long-fleuve-pas-si-tranquille/?utm_source=rss&utm_medium=rss&utm_campaign=se-preparer-et-vivre-sa-retraite-un-long-fleuve-pas-si-tranquille",
       "reason": "no-stock-match",
       "image": "https://lapige.atmjonquiere.com/wp-content/uploads/sites/3/2026/06/Bruno-Cormier-retraite-benevole.png"
-    },
-    {
-      "title": "Les grands oubliés du handicap : les proches aidants",
-      "link": "https://lapige.atmjonquiere.com/2026/05/29/les-grands-oublies-du-handicap-les-proches-aidants/?utm_source=rss&utm_medium=rss&utm_campaign=les-grands-oublies-du-handicap-les-proches-aidants",
-      "reason": "no-stock-match",
-      "image": "https://lapige.atmjonquiere.com/wp-content/uploads/sites/3/2026/05/shared-image-5-scaled.jpg"
     },
     {
       "title": "Soutien technique à l’UdeM : entre attentes et frustrations",

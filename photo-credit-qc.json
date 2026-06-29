@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-28T20:55:56.451Z",
+  "updated": "2026-06-29T00:04:23.598Z",
   "total": 205,
   "withImage": 164,
   "withCredit": 164,
@@ -7,11 +7,18 @@
   "pending": 0,
   "missingHero": 0,
   "ok": true,
-  "checked": 51,
-  "updatedCount": 51,
+  "checked": 53,
+  "updatedCount": 53,
   "citedNew": 17,
-  "fallbackNew": 34,
+  "fallbackNew": 36,
   "samples": [
+    {
+      "title": "CSU terminates council’s chief election officer",
+      "source": "The Link",
+      "credit": "Photo credit: The Link",
+      "cited": false,
+      "method": null
+    },
     {
       "title": "Ask the Trib: How do I survive summer in my hometown?",
       "source": "The Tribune",
@@ -88,13 +95,6 @@
       "credit": "Photo : Ellen Lurie",
       "cited": true,
       "method": "figcaption-attribution"
-    },
-    {
-      "title": "L’alcool est-il vraiment le nouveau tabac ?",
-      "source": "L'Exemplaire",
-      "credit": "Crédit photo : L'Exemplaire",
-      "cited": false,
-      "method": null
     }
   ]
 }
