@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-28T22:35:55.718Z",
+  "updatedAt": "2026-06-29T00:11:55.436Z",
   "stations": {
     "chyz": {
       "id": "chyz",
@@ -7,7 +7,7 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-06-28T22:35:37.372Z"
+      "checkedAt": "2026-06-29T00:11:37.334Z"
     },
     "cism": {
       "id": "cism",
@@ -15,15 +15,15 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-06-28T22:35:38.372Z"
+      "checkedAt": "2026-06-29T00:11:38.134Z"
     },
     "ckut": {
       "id": "ckut",
       "name": "CKUT 90,3",
-      "showTitle": "Desi Beats (must be .mp3!!)",
+      "showTitle": "Country Classics",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-06-28T22:35:40.102Z"
+      "checkedAt": "2026-06-29T00:11:39.611Z"
     },
     "cjlo": {
       "id": "cjlo",
@@ -31,7 +31,7 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-06-28T22:35:53.678Z"
+      "checkedAt": "2026-06-29T00:11:53.102Z"
     },
     "cfak": {
       "id": "cfak",
@@ -39,15 +39,15 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-06-28T22:35:54.446Z"
+      "checkedAt": "2026-06-29T00:11:54.368Z"
     },
     "choq": {
       "id": "choq",
       "name": "CHOQ.ca",
-      "showTitle": "International Fly Shit",
-      "host": "Coolman Logan",
+      "showTitle": "Blonde a personne",
+      "host": "Alice Bro",
       "source": "api-live",
-      "checkedAt": "2026-06-28T22:35:55.317Z"
+      "checkedAt": "2026-06-29T00:11:55.035Z"
     }
   }
 }
