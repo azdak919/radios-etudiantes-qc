@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-29T05:13:03.983Z",
+  "updatedAt": "2026-06-29T10:09:35.388Z",
   "stations": {
     "chyz": {
       "id": "chyz",
@@ -7,7 +7,7 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-06-29T05:12:46.651Z"
+      "checkedAt": "2026-06-29T10:09:16.478Z"
     },
     "cism": {
       "id": "cism",
@@ -15,15 +15,15 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-06-29T05:12:47.538Z"
+      "checkedAt": "2026-06-29T10:09:17.532Z"
     },
     "ckut": {
       "id": "ckut",
       "name": "CKUT 90,3",
-      "showTitle": "Roots, Rock, Reggae",
+      "showTitle": "Adventures In Music",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-06-29T05:12:49.131Z"
+      "checkedAt": "2026-06-29T10:09:19.540Z"
     },
     "cjlo": {
       "id": "cjlo",
@@ -31,7 +31,7 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-06-29T05:13:02.206Z"
+      "checkedAt": "2026-06-29T10:09:33.279Z"
     },
     "cfak": {
       "id": "cfak",
@@ -39,15 +39,15 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-06-29T05:13:02.968Z"
+      "checkedAt": "2026-06-29T10:09:34.223Z"
     },
     "choq": {
       "id": "choq",
       "name": "CHOQ.ca",
-      "showTitle": "ABILIFY, MON AMOUR",
-      "host": "Dogo Suicide",
+      "showTitle": "Hollywood Forever",
+      "host": "underscores",
       "source": "api-live",
-      "checkedAt": "2026-06-29T05:13:03.582Z"
+      "checkedAt": "2026-06-29T10:09:34.987Z"
     }
   }
 }
