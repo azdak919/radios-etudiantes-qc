@@ -1,17 +1,24 @@
 {
-  "updated": "2026-06-29T05:32:34.516Z",
-  "total": 205,
-  "withImage": 164,
-  "withCredit": 164,
-  "cited": 57,
+  "updated": "2026-06-29T14:04:07.761Z",
+  "total": 192,
+  "withImage": 151,
+  "withCredit": 151,
+  "cited": 56,
   "pending": 0,
   "missingHero": 0,
   "ok": true,
-  "checked": 55,
-  "updatedCount": 55,
+  "checked": 56,
+  "updatedCount": 56,
   "citedNew": 19,
-  "fallbackNew": 36,
+  "fallbackNew": 37,
   "samples": [
+    {
+      "title": "Une première nouvelle candidature pour la CAQ dans Brome‑Missisquoi",
+      "source": "Le Collectif",
+      "credit": "Crédit photo : Le Collectif",
+      "cited": false,
+      "method": null
+    },
     {
       "title": "CSU terminates council’s chief election officer",
       "source": "The Link",
@@ -86,13 +93,6 @@
       "title": "A final note from the Editor-in-Chief of Volume 45, for the record",
       "source": "The Tribune",
       "credit": "Photo : Yusur Al-Sharqi",
-      "cited": true,
-      "method": "figcaption-attribution"
-    },
-    {
-      "title": "SPHR remembers Gaza Solidarity Encampment ahead of Nakba Anniversary Protest",
-      "source": "The Tribune",
-      "credit": "Photo : Ellen Lurie",
       "cited": true,
       "method": "figcaption-attribution"
     }

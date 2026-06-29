@@ -1,15 +1,15 @@
 {
-  "updated": "2026-06-29T05:31:31.953Z",
-  "total": 205,
-  "withPhoto": 164,
-  "withStock": 43,
-  "fullyCovered": 197,
-  "leadReadyPhotos": 133,
-  "pageScraped": 71,
+  "updated": "2026-06-29T14:03:05.742Z",
+  "total": 192,
+  "withPhoto": 151,
+  "withStock": 42,
+  "fullyCovered": 184,
+  "leadReadyPhotos": 125,
+  "pageScraped": 68,
   "photosRecovered": 42,
   "imagesCleared": 3,
   "stockSearches": 60,
-  "stockFound": 40,
+  "stockFound": 39,
   "mainPageLeadReady": true,
   "gaps": [
     {
@@ -23,12 +23,6 @@
       "link": "https://lapige.atmjonquiere.com/2026/05/21/une-page-se-tourne-au-salon-limage-de-jonquiere/?utm_source=rss&utm_medium=rss&utm_campaign=une-page-se-tourne-au-salon-limage-de-jonquiere",
       "reason": "no-stock-match",
       "image": null
-    },
-    {
-      "title": "Un investissement pour les jeunes « bienvenu » au Centre Mamik",
-      "link": "https://lapige.atmjonquiere.com/2026/05/21/un-investissement-pour-les-jeunes-bienvenu-au-centre-mamik/?utm_source=rss&utm_medium=rss&utm_campaign=un-investissement-pour-les-jeunes-bienvenu-au-centre-mamik",
-      "reason": "stock-too-small",
-      "image": "https://live.staticflickr.com/3095/3145515352_2c561381a0_b.jpg"
     },
     {
       "title": "L’ERD sauvée de la dissolution par quatre membres",
@@ -61,6 +55,12 @@
       "image": "https://live.staticflickr.com/2046/2138574759_7372bca412_b.jpg"
     },
     {
+      "title": "Une première nouvelle candidature pour la CAQ dans Brome‑Missisquoi",
+      "link": "https://lecollectif.ca/a-la-une/une-premiere-nouvelle-candidature-pour-la-caq-dans-brome%e2%80%91missisquoi/",
+      "reason": "no-stock-match",
+      "image": "https://lecollectif.ca/wp-content/uploads/2026/06/SOCIETE_UnePremiereNouvelleCandidaturePourLaCAQ_Source-Compte-X-de-Christine-Frechette-819x1024.jpeg"
+    },
+    {
       "title": "Résumé du G7 à Évian",
       "link": "https://lecollectif.ca/a-la-une/resume-du-g7-a-evian/",
       "reason": "no-stock-match",
@@ -79,10 +79,10 @@
       "image": "https://lecollectif.ca/wp-content/uploads/2026/06/SOCIETE_La-surproduction_-le-veritable-defi-de-l_industrie-de-la-mode-SourceFashionNetwork.png"
     },
     {
-      "title": "Des policiers du SPVM visés par une enquête",
-      "link": "https://lecollectif.ca/a-la-une/des-policiers-du-spvm-vises-par-une-enquete/",
-      "reason": "stock-too-small",
-      "image": "https://lecollectif.ca/wp-content/uploads/2026/06/SOCIETE_16-policiers-du-SPVM-vises-par-une-enquete_Getty-Images.jpg"
+      "title": "Se préparer et vivre sa retraite : un long fleuve, pas si tranquille",
+      "link": "https://lapige.atmjonquiere.com/2026/06/22/se-preparer-et-vivre-sa-retraite-un-long-fleuve-pas-si-tranquille/?utm_source=rss&utm_medium=rss&utm_campaign=se-preparer-et-vivre-sa-retraite-un-long-fleuve-pas-si-tranquille",
+      "reason": "no-stock-match",
+      "image": "https://lapige.atmjonquiere.com/wp-content/uploads/sites/3/2026/06/Bruno-Cormier-retraite-benevole.png"
     }
   ]
 }

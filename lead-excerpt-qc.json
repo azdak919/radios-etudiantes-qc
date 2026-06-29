@@ -1,12 +1,12 @@
 {
-  "updated": "2026-06-29T05:23:45.959Z",
-  "total": 205,
+  "updated": "2026-06-29T13:54:00.199Z",
+  "total": 192,
   "pool": 58,
   "incomplete": 11,
-  "withLeadExcerpt": 68,
+  "withLeadExcerpt": 67,
   "candidates": 11,
   "enriched": 2,
-  "failed": 0,
+  "failed": 1,
   "ok": true,
   "samples": [
     {
@@ -28,21 +28,21 @@
       "changed": false
     },
     {
-      "title": "Pourquoi le L est en premier dans LGBTQ+",
-      "link": "https://www.delitfrancais.com/2026/03/18/pourquoi-le-l-est-en-premier-dans-lgbtq/",
+      "title": "Les femmes MAGA au service du patriarcat",
+      "link": "https://www.delitfrancais.com/2026/03/18/les-femmes-maga-au-service-du-patriarcat/",
       "ok": true,
       "score": 96,
-      "chars": 664,
-      "sample": "On peut observer en ce moment une montée des tensions et des divisions au sein même de la communauté",
+      "chars": 572,
+      "sample": "L a montée en puissance de l’idéologie du mouvement politique Make America Great Again (MAGA) n’est ",
       "changed": true
     },
     {
-      "title": "Sois belle et tais-toi",
-      "link": "https://www.delitfrancais.com/2026/03/18/sois-belle-et-tais-toi-2/",
+      "title": "Une première nouvelle candidature pour la CAQ dans Brome‑Missisquoi",
+      "link": "https://lecollectif.ca/a-la-une/une-premiere-nouvelle-candidature-pour-la-caq-dans-brome%e2%80%91missisquoi/",
       "ok": true,
       "score": 100,
-      "chars": 698,
-      "sample": "Un complexe de supériorité. C’est tout ce qu’il a fallu pour qu’un beau jour, l’homme devienne le se",
+      "chars": 450,
+      "sample": "La Coalition Avenir Québec (CAQ) a présenté une première nouvelle candidature en vue des élections p",
       "changed": true
     },
     {
