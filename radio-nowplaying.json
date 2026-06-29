@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-29T11:23:39.052Z",
+  "updatedAt": "2026-06-29T14:34:54.907Z",
   "stations": {
     "chyz": {
       "id": "chyz",
@@ -7,7 +7,7 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-06-29T11:23:20.208Z"
+      "checkedAt": "2026-06-29T14:34:35.970Z"
     },
     "cism": {
       "id": "cism",
@@ -15,15 +15,15 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-06-29T11:23:21.058Z"
+      "checkedAt": "2026-06-29T14:34:37.177Z"
     },
     "ckut": {
       "id": "ckut",
       "name": "CKUT 90,3",
-      "showTitle": "Unmuted with Svetlana and Miss Trish",
+      "showTitle": "Latin Music Mondays",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-06-29T11:23:23.137Z"
+      "checkedAt": "2026-06-29T14:34:39.233Z"
     },
     "cjlo": {
       "id": "cjlo",
@@ -31,7 +31,7 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-06-29T11:23:37.281Z"
+      "checkedAt": "2026-06-29T14:34:53.165Z"
     },
     "cfak": {
       "id": "cfak",
@@ -39,15 +39,15 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-06-29T11:23:37.848Z"
+      "checkedAt": "2026-06-29T14:34:53.689Z"
     },
     "choq": {
       "id": "choq",
       "name": "CHOQ.ca",
-      "showTitle": "2 or 3",
-      "host": "The Lemon Twigs",
+      "showTitle": "Infinite",
+      "host": "Bibi Club",
       "source": "api-live",
-      "checkedAt": "2026-06-29T11:23:38.651Z"
+      "checkedAt": "2026-06-29T14:34:54.506Z"
     }
   }
 }
