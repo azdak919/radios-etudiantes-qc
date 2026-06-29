@@ -909,12 +909,22 @@
       <source url="https://www.thetribune.ca/">The Tribune</source>
       <description><![CDATA[The Tribune · Yusur Al-Sharqi · May 14]]></description>
       <content:encoded><![CDATA[<p style="margin:0 0 0.75em;font-size:0.9em;color:#555"><strong>The Tribune · Yusur Al-Sharqi · May 14</strong></p>
+<figure style="margin:0 0 1em">
+<img src="https://www.thetribune.ca/wp-content/uploads/2026/05/RenderedImage-1-1000x600.jpeg" alt="A final note from the Editor-in-Chief of Volume 45, for the record" style="max-width:100%;height:auto;display:block;border-radius:4px" />
+<figcaption style="font-size:0.85em;color:#666;margin-top:0.35em">Photo: Yusur Al-Sharqi</figcaption>
+</figure>
 <p style="margin:0 0 0.75em;line-height:1.5">One week before The Tribune ’s first production night, I found myself in Toronto in a black dress, black shoes, and sparkles on my eyelids. I was at the funeral of Fabienne de Cartier, a former News Editor.</p>]]></content:encoded>
       <category>The Tribune</category>
       <category>McGill</category>
       <category>Montréal</category>
       <category>université</category>
       <category>English</category>
+      <media:content url="https://www.thetribune.ca/wp-content/uploads/2026/05/RenderedImage-1-1000x600.jpeg" medium="image" type="image/jpeg">
+        <media:credit>Photo: Yusur Al-Sharqi</media:credit>
+        <media:title>A final note from the Editor-in-Chief of Volume 45, for the record</media:title>
+      </media:content>
+      <media:thumbnail url="https://www.thetribune.ca/wp-content/uploads/2026/05/RenderedImage-1-1000x600.jpeg" />
+      <enclosure url="https://www.thetribune.ca/wp-content/uploads/2026/05/RenderedImage-1-1000x600.jpeg" type="image/jpeg" length="1" />
     </item>
     <item>
       <title>SPHR remembers Gaza Solidarity Encampment ahead of Nakba Anniversary Protest</title>

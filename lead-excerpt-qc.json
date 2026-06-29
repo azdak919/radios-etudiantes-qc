@@ -1,11 +1,11 @@
 {
-  "updated": "2026-06-29T18:04:39.603Z",
+  "updated": "2026-06-29T19:24:11.770Z",
   "total": 192,
   "pool": 58,
   "incomplete": 10,
   "withLeadExcerpt": 66,
   "candidates": 10,
-  "enriched": 1,
+  "enriched": 0,
   "failed": 0,
   "ok": true,
   "samples": [
@@ -35,15 +35,6 @@
       "chars": 572,
       "sample": "L a montée en puissance de l’idéologie du mouvement politique Make America Great Again (MAGA) n’est ",
       "changed": false
-    },
-    {
-      "title": "CALAMINE : RAPPER AUTREMENT QUE LE « BOYS CLUB »",
-      "link": "https://quartierlibre.ca/calamine-rapper-autrement/",
-      "ok": true,
-      "score": 100,
-      "chars": 445,
-      "sample": "Le 13 mars dernier, la rappeuse Calamine a dévoilé son nouvel album , Rétrograde . Avec cette quatri",
-      "changed": true
     },
     {
       "title": "Une première nouvelle candidature pour la CAQ dans Brome‑Missisquoi",
@@ -79,6 +70,15 @@
       "score": 100,
       "chars": 426,
       "sample": "On April 22, the Superior Court of Quebec annulled the August 2025 arbitration Association des Resso",
+      "changed": false
+    },
+    {
+      "title": "Road to the 2026 FIFA World Cup",
+      "link": "https://thelinknewspaper.ca/article/16333",
+      "ok": true,
+      "score": 96,
+      "chars": 531,
+      "sample": "Canadian goalkeeper Maxime Crépeau, who hails from nearby Greenfield Park, appeared emotional during",
       "changed": false
     }
   ]
