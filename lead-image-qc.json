@@ -1,15 +1,15 @@
 {
-  "updated": "2026-06-29T21:22:48.915Z",
+  "updated": "2026-06-29T23:54:29.597Z",
   "total": 192,
   "withPhoto": 151,
-  "withStock": 47,
-  "fullyCovered": 184,
-  "leadReadyPhotos": 137,
-  "pageScraped": 59,
-  "photosRecovered": 40,
-  "imagesCleared": 3,
+  "withStock": 46,
+  "fullyCovered": 185,
+  "leadReadyPhotos": 123,
+  "pageScraped": 69,
+  "photosRecovered": 42,
+  "imagesCleared": 4,
   "stockSearches": 60,
-  "stockFound": 43,
+  "stockFound": 42,
   "mainPageLeadReady": true,
   "gaps": [
     {
@@ -25,64 +25,64 @@
       "image": null
     },
     {
+      "title": "Un investissement pour les jeunes « bienvenu » au Centre Mamik",
+      "link": "https://lapige.atmjonquiere.com/2026/05/21/un-investissement-pour-les-jeunes-bienvenu-au-centre-mamik/?utm_source=rss&utm_medium=rss&utm_campaign=un-investissement-pour-les-jeunes-bienvenu-au-centre-mamik",
+      "reason": "stock-too-small",
+      "image": "https://live.staticflickr.com/3095/3145515352_2c561381a0_b.jpg"
+    },
+    {
+      "title": "L’ERD sauvée de la dissolution par quatre membres",
+      "link": "https://lapige.atmjonquiere.com/2026/05/21/lerd-sauvee-de-la-dissolution-par-quatre-membres/?utm_source=rss&utm_medium=rss&utm_campaign=lerd-sauvee-de-la-dissolution-par-quatre-membres",
+      "reason": "stock-too-small",
+      "image": "https://live.staticflickr.com/7639/16904143862_9776b87f9f_b.jpg"
+    },
+    {
+      "title": "Jeunes auteurs, à vos crayons : le « pouvoir des mots » pour rejoindre les étudiants",
+      "link": "https://lapige.atmjonquiere.com/2026/05/21/jeunes-auteurs-a-vos-crayons-le-pouvoir-des-mots-pour-rejoindre-les-etudiants/?utm_source=rss&utm_medium=rss&utm_campaign=jeunes-auteurs-a-vos-crayons-le-pouvoir-des-mots-pour-rejoindre-les-etudiants",
+      "reason": "stock-too-small",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Peupl%C3%A9_jeunes_%C3%A9poux_la_terre_en_abondance._9%2C_G.14054%282%29.jpg"
+    },
+    {
+      "title": "Un pont entre l’art et le travail de rue",
+      "link": "https://lapige.atmjonquiere.com/2026/05/20/un-pont-entre-lart-et-le-travail-de-rue/?utm_source=rss&utm_medium=rss&utm_campaign=un-pont-entre-lart-et-le-travail-de-rue",
+      "reason": "stock-too-small",
+      "image": "https://live.staticflickr.com/4162/34368472056_546633d47c_b.jpg"
+    },
+    {
       "title": "El Niño s’approche du Québec",
       "link": "https://lapige.atmjonquiere.com/2026/05/20/el-nino-sapproche-du-quebec/?utm_source=rss&utm_medium=rss&utm_campaign=el-nino-sapproche-du-quebec",
       "reason": "no-stock-match",
       "image": null
     },
     {
-      "title": "La procrastination : quand remettre à plus tard devient un problème",
-      "link": "https://lecollectif.ca/a-la-une/la-procrastination-quand-remettre-a-plus-tard-devient-un-probleme/",
-      "reason": "no-stock-match",
-      "image": "https://lecollectif.ca/wp-content/uploads/2026/06/SOCIETE_Procrastination_SourcePixabay-1024x731.png"
+      "title": "Assistance technique en pharmacie : de premières portes ouvertes à Alma",
+      "link": "https://lapige.atmjonquiere.com/2026/05/20/assistance-technique-en-pharmacie-de-premieres-portes-ouvertes-a-alma/?utm_source=rss&utm_medium=rss&utm_campaign=assistance-technique-en-pharmacie-de-premieres-portes-ouvertes-a-alma",
+      "reason": "stock-too-small",
+      "image": "https://live.staticflickr.com/6082/6080290153_e6ba4a6502_b.jpg"
+    },
+    {
+      "title": "Un projet de loi rendrait obligatoire le statut d’étudiant·e proche aidant·e",
+      "link": "https://quartierlibre.ca/projet-loi-etudiant-proche-aidante/",
+      "reason": "stock-too-small",
+      "image": "https://live.staticflickr.com/2046/2138574759_7372bca412_b.jpg"
+    },
+    {
+      "title": "FAÉCUM : la démocratie universitaire critiquée",
+      "link": "https://quartierlibre.ca/faecum-la-democratie-universitaire-critiquee/",
+      "reason": "stock-too-small",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/a/ab/Universit%C3%A9_de_Montr%C3%A9al%2C_Pavillon_Roger-Gaudry.JPG"
+    },
+    {
+      "title": "François.e",
+      "link": "https://lecollectif.ca/culture/francois-e/",
+      "reason": "stock-too-small",
+      "image": "https://lecollectif.ca/wp-content/uploads/2026/06/CULTURE_Francoise_RebeccaGagne-1-709x1024.jpg"
     },
     {
       "title": "Une première nouvelle candidature pour la CAQ dans Brome‑Missisquoi",
       "link": "https://lecollectif.ca/a-la-une/une-premiere-nouvelle-candidature-pour-la-caq-dans-brome%e2%80%91missisquoi/",
       "reason": "no-stock-match",
       "image": "https://lecollectif.ca/wp-content/uploads/2026/06/SOCIETE_UnePremiereNouvelleCandidaturePourLaCAQ_Source-Compte-X-de-Christine-Frechette-819x1024.jpeg"
-    },
-    {
-      "title": "Résumé du G7 à Évian",
-      "link": "https://lecollectif.ca/a-la-une/resume-du-g7-a-evian/",
-      "reason": "no-stock-match",
-      "image": "https://lecollectif.ca/wp-content/uploads/2026/06/SOCIETE_Resume-du-G7-a-Evian_Getty-Images.jpg"
-    },
-    {
-      "title": "Le mental, ça s’entraîne aussi",
-      "link": "https://lecollectif.ca/a-la-une/le-mental-ca-sentraine-aussi/",
-      "reason": "stock-too-small",
-      "image": "https://lecollectif.ca/wp-content/uploads/2026/06/SPORTS_Lementalcasentraine_SourceUniversiteDeSherbrooke-1024x584.jpeg"
-    },
-    {
-      "title": "Se préparer et vivre sa retraite : un long fleuve, pas si tranquille",
-      "link": "https://lapige.atmjonquiere.com/2026/06/22/se-preparer-et-vivre-sa-retraite-un-long-fleuve-pas-si-tranquille/?utm_source=rss&utm_medium=rss&utm_campaign=se-preparer-et-vivre-sa-retraite-un-long-fleuve-pas-si-tranquille",
-      "reason": "no-stock-match",
-      "image": "https://lapige.atmjonquiere.com/wp-content/uploads/sites/3/2026/06/Bruno-Cormier-retraite-benevole.png"
-    },
-    {
-      "title": "Les grands oubliés du handicap : les proches aidants",
-      "link": "https://lapige.atmjonquiere.com/2026/05/29/les-grands-oublies-du-handicap-les-proches-aidants/?utm_source=rss&utm_medium=rss&utm_campaign=les-grands-oublies-du-handicap-les-proches-aidants",
-      "reason": "no-stock-match",
-      "image": "https://lapige.atmjonquiere.com/wp-content/uploads/sites/3/2026/05/shared-image-5-scaled.jpg"
-    },
-    {
-      "title": "CALAMINE : RAPPER AUTREMENT QUE LE « BOYS CLUB »",
-      "link": "https://quartierlibre.ca/calamine-rapper-autrement/",
-      "reason": "stock-too-small",
-      "image": "https://quartierlibre.ca/wp-content/uploads/2026/05/20_calamine-1.jpg"
-    },
-    {
-      "title": "Recettes musicales québécoises pour l’été",
-      "link": "https://quartierlibre.ca/ete-recettes-musicales-quebecoises/",
-      "reason": "stock-too-small",
-      "image": "https://quartierlibre.ca/wp-content/uploads/2026/05/20_florelaurentienne.jpg"
-    },
-    {
-      "title": "Soutien technique à l’UdeM : entre attentes et frustrations",
-      "link": "https://quartierlibre.ca/soutien-technique-a-ludem/",
-      "reason": "stock-too-small",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/a/ab/Universit%C3%A9_de_Montr%C3%A9al%2C_Pavillon_Roger-Gaudry.JPG"
     }
   ]
 }

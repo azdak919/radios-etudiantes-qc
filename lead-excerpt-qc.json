@@ -1,12 +1,12 @@
 {
-  "updated": "2026-06-29T21:16:38.439Z",
+  "updated": "2026-06-29T23:48:52.928Z",
   "total": 192,
   "pool": 58,
   "incomplete": 11,
-  "withLeadExcerpt": 67,
+  "withLeadExcerpt": 66,
   "candidates": 11,
-  "enriched": 2,
-  "failed": 3,
+  "enriched": 4,
+  "failed": 1,
   "ok": true,
   "samples": [
     {
@@ -28,21 +28,39 @@
       "changed": false
     },
     {
-      "title": "Sois belle et tais-toi",
-      "link": "https://www.delitfrancais.com/2026/03/18/sois-belle-et-tais-toi-2/",
+      "title": "Élections de l’exécutif de l’AÉUM",
+      "link": "https://www.delitfrancais.com/2026/03/18/elections-de-lexecutif-de-laeum/",
       "ok": true,
-      "score": 100,
-      "chars": 698,
-      "sample": "Un complexe de supériorité. C’est tout ce qu’il a fallu pour qu’un beau jour, l’homme devienne le se",
+      "score": 80,
+      "chars": 865,
+      "sample": "Contacté à plusieurs reprises, Hamza Abu-Alkhair n’a pas donné suite à nos demandes d’entrevue. Sa p",
       "changed": true
     },
     {
-      "title": "Qui sont les agents qui patrouillent notre campus ?",
-      "link": "https://www.delitfrancais.com/2026/03/18/qui-sont-les-agents-qui-patrouillent-notre-campus/",
+      "title": "Une première nouvelle candidature pour la CAQ dans Brome‑Missisquoi",
+      "link": "https://lecollectif.ca/a-la-une/une-premiere-nouvelle-candidature-pour-la-caq-dans-brome%e2%80%91missisquoi/",
       "ok": true,
       "score": 100,
-      "chars": 396,
-      "sample": "« L’Université McGill est à la recherche de patrouilleurs dynamiques et engagés pour assurer la sécu",
+      "chars": 450,
+      "sample": "La Coalition Avenir Québec (CAQ) a présenté une première nouvelle candidature en vue des élections p",
+      "changed": true
+    },
+    {
+      "title": "CALAMINE : RAPPER AUTREMENT QUE LE « BOYS CLUB »",
+      "link": "https://quartierlibre.ca/calamine-rapper-autrement/",
+      "ok": true,
+      "score": 100,
+      "chars": 445,
+      "sample": "Le 13 mars dernier, la rappeuse Calamine a dévoilé son nouvel album , Rétrograde . Avec cette quatri",
+      "changed": true
+    },
+    {
+      "title": "Le PIF s’internationalise pour sa 49e édition",
+      "link": "https://lecollectif.ca/a-la-une/le-pif-sinternationalise-pour-sa-49e-edition/",
+      "ok": true,
+      "score": 100,
+      "chars": 591,
+      "sample": "Le plus grand tournoi de balle donnée en Amérique du Nord accueille cette année une vague de joueurs",
       "changed": true
     },
     {
@@ -61,24 +79,6 @@
       "score": 100,
       "chars": 426,
       "sample": "On April 22, the Superior Court of Quebec annulled the August 2025 arbitration Association des Resso",
-      "changed": false
-    },
-    {
-      "title": "Road to the 2026 FIFA World Cup",
-      "link": "https://thelinknewspaper.ca/article/16333",
-      "ok": true,
-      "score": 96,
-      "chars": 531,
-      "sample": "Canadian goalkeeper Maxime Crépeau, who hails from nearby Greenfield Park, appeared emotional during",
-      "changed": false
-    },
-    {
-      "title": "Rachat des armes à feu : le Québec est-il l’exception canadienne ?",
-      "link": "https://www.exemplaire.com.ulaval.ca/a-la-une/rachat-des-armes-a-feu-le-quebec-est-il-lexception-canadienne/?utm_source=rss&utm_medium=rss&utm_campaign=rachat-des-armes-a-feu-le-quebec-est-il-lexception-canadienne",
-      "ok": true,
-      "score": 100,
-      "chars": 455,
-      "sample": "Le programme fédéral de rachat des armes à feu suit son cours au Canada. Alors que les propriétaires",
       "changed": false
     }
   ]
