@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-30T10:07:53.758Z",
+  "updatedAt": "2026-06-30T12:29:45.968Z",
   "stations": {
     "chyz": {
       "id": "chyz",
@@ -7,7 +7,7 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-06-30T10:07:35.465Z"
+      "checkedAt": "2026-06-30T12:29:28.643Z"
     },
     "cism": {
       "id": "cism",
@@ -15,15 +15,15 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-06-30T10:07:36.237Z"
+      "checkedAt": "2026-06-30T12:29:29.472Z"
     },
     "ckut": {
       "id": "ckut",
       "name": "CKUT 90,3",
-      "showTitle": "The Beat Power Hour",
+      "showTitle": "Tuesday Morning After Pt2",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-06-30T10:07:37.684Z"
+      "checkedAt": "2026-06-30T12:29:31.084Z"
     },
     "cjlo": {
       "id": "cjlo",
@@ -31,7 +31,7 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-06-30T10:07:51.041Z"
+      "checkedAt": "2026-06-30T12:29:44.490Z"
     },
     "cfak": {
       "id": "cfak",
@@ -39,15 +39,15 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-06-30T10:07:51.675Z"
+      "checkedAt": "2026-06-30T12:29:44.997Z"
     },
     "choq": {
       "id": "choq",
       "name": "CHOQ.ca",
-      "showTitle": "Smerz - You got time and I got money",
-      "host": "",
-      "source": "stream",
-      "checkedAt": "2026-06-30T10:07:53.358Z"
+      "showTitle": "Ma vie, mes reves et le temps",
+      "host": "Nous Deux",
+      "source": "api-live",
+      "checkedAt": "2026-06-30T12:29:45.568Z"
     }
   }
 }
