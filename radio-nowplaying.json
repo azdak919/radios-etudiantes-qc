@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-30T19:20:01.966Z",
+  "updatedAt": "2026-06-30T21:15:19.937Z",
   "stations": {
     "chyz": {
       "id": "chyz",
@@ -7,7 +7,7 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-06-30T19:19:42.974Z"
+      "checkedAt": "2026-06-30T21:15:01.111Z"
     },
     "cism": {
       "id": "cism",
@@ -15,15 +15,15 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-06-30T19:19:44.071Z"
+      "checkedAt": "2026-06-30T21:15:02.221Z"
     },
     "ckut": {
       "id": "ckut",
       "name": "CKUT 90,3",
-      "showTitle": "Montreal Sessions",
+      "showTitle": "Off The Hour: Local Journalism Stories",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-06-30T19:19:46.052Z"
+      "checkedAt": "2026-06-30T21:15:04.146Z"
     },
     "cjlo": {
       "id": "cjlo",
@@ -31,7 +31,7 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-06-30T19:19:59.883Z"
+      "checkedAt": "2026-06-30T21:15:17.914Z"
     },
     "cfak": {
       "id": "cfak",
@@ -39,15 +39,15 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-06-30T19:20:00.688Z"
+      "checkedAt": "2026-06-30T21:15:18.578Z"
     },
     "choq": {
       "id": "choq",
       "name": "CHOQ.ca",
-      "showTitle": "He Is With Me",
-      "host": "Glass Dolls",
+      "showTitle": "Never Give Up On Cephalopods",
+      "host": "Dolphin Hyperspace",
       "source": "api-live",
-      "checkedAt": "2026-06-30T19:20:01.565Z"
+      "checkedAt": "2026-06-30T21:15:19.536Z"
     }
   }
 }
