@@ -1,15 +1,15 @@
 {
-  "updated": "2026-06-30T05:06:51.209Z",
+  "updated": "2026-06-30T12:09:00.643Z",
   "total": 192,
   "withPhoto": 151,
-  "withStock": 47,
+  "withStock": 42,
   "fullyCovered": 183,
-  "leadReadyPhotos": 107,
-  "pageScraped": 61,
-  "photosRecovered": 40,
-  "imagesCleared": 4,
+  "leadReadyPhotos": 126,
+  "pageScraped": 68,
+  "photosRecovered": 42,
+  "imagesCleared": 3,
   "stockSearches": 60,
-  "stockFound": 42,
+  "stockFound": 40,
   "mainPageLeadReady": true,
   "gaps": [
     {
@@ -37,6 +37,12 @@
       "image": "https://live.staticflickr.com/7639/16904143862_9776b87f9f_b.jpg"
     },
     {
+      "title": "Jeunes auteurs, à vos crayons : le « pouvoir des mots » pour rejoindre les étudiants",
+      "link": "https://lapige.atmjonquiere.com/2026/05/21/jeunes-auteurs-a-vos-crayons-le-pouvoir-des-mots-pour-rejoindre-les-etudiants/?utm_source=rss&utm_medium=rss&utm_campaign=jeunes-auteurs-a-vos-crayons-le-pouvoir-des-mots-pour-rejoindre-les-etudiants",
+      "reason": "stock-too-small",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Peupl%C3%A9_jeunes_%C3%A9poux_la_terre_en_abondance._9%2C_G.14054%282%29.jpg"
+    },
+    {
       "title": "Un pont entre l’art et le travail de rue",
       "link": "https://lapige.atmjonquiere.com/2026/05/20/un-pont-entre-lart-et-le-travail-de-rue/?utm_source=rss&utm_medium=rss&utm_campaign=un-pont-entre-lart-et-le-travail-de-rue",
       "reason": "stock-too-small",
@@ -61,28 +67,22 @@
       "image": "https://live.staticflickr.com/2046/2138574759_7372bca412_b.jpg"
     },
     {
-      "title": "La procrastination : quand remettre à plus tard devient un problème",
-      "link": "https://lecollectif.ca/a-la-une/la-procrastination-quand-remettre-a-plus-tard-devient-un-probleme/",
-      "reason": "no-stock-match",
-      "image": "https://lecollectif.ca/wp-content/uploads/2026/06/SOCIETE_Procrastination_SourcePixabay-1024x731.png"
+      "title": "FAÉCUM : la démocratie universitaire critiquée",
+      "link": "https://quartierlibre.ca/faecum-la-democratie-universitaire-critiquee/",
+      "reason": "stock-too-small",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/a/ab/Universit%C3%A9_de_Montr%C3%A9al%2C_Pavillon_Roger-Gaudry.JPG"
+    },
+    {
+      "title": "François.e",
+      "link": "https://lecollectif.ca/culture/francois-e/",
+      "reason": "stock-too-small",
+      "image": "https://lecollectif.ca/wp-content/uploads/2026/06/CULTURE_Francoise_RebeccaGagne-1-709x1024.jpg"
     },
     {
       "title": "Une première nouvelle candidature pour la CAQ dans Brome‑Missisquoi",
       "link": "https://lecollectif.ca/a-la-une/une-premiere-nouvelle-candidature-pour-la-caq-dans-brome%e2%80%91missisquoi/",
       "reason": "no-stock-match",
       "image": "https://lecollectif.ca/wp-content/uploads/2026/06/SOCIETE_UnePremiereNouvelleCandidaturePourLaCAQ_Source-Compte-X-de-Christine-Frechette-819x1024.jpeg"
-    },
-    {
-      "title": "Résumé du G7 à Évian",
-      "link": "https://lecollectif.ca/a-la-une/resume-du-g7-a-evian/",
-      "reason": "no-stock-match",
-      "image": "https://lecollectif.ca/wp-content/uploads/2026/06/SOCIETE_Resume-du-G7-a-Evian_Getty-Images.jpg"
-    },
-    {
-      "title": "Le PIF s’internationalise pour sa 49e édition",
-      "link": "https://lecollectif.ca/a-la-une/le-pif-sinternationalise-pour-sa-49e-edition/",
-      "reason": "stock-too-small",
-      "image": "https://lecollectif.ca/wp-content/uploads/2026/06/SPORT_CLASSIQUEPIF_SourceTourismeCantons-de-lEst-1024x587.jpeg"
     }
   ]
 }
