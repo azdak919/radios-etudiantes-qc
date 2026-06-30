@@ -1,12 +1,12 @@
 {
-  "updated": "2026-06-29T23:48:52.928Z",
+  "updated": "2026-06-30T04:58:15.990Z",
   "total": 192,
   "pool": 58,
   "incomplete": 11,
-  "withLeadExcerpt": 66,
+  "withLeadExcerpt": 67,
   "candidates": 11,
-  "enriched": 4,
-  "failed": 1,
+  "enriched": 1,
+  "failed": 3,
   "ok": true,
   "samples": [
     {
@@ -34,33 +34,15 @@
       "score": 80,
       "chars": 865,
       "sample": "Contacté à plusieurs reprises, Hamza Abu-Alkhair n’a pas donné suite à nos demandes d’entrevue. Sa p",
-      "changed": true
+      "changed": false
     },
     {
-      "title": "Une première nouvelle candidature pour la CAQ dans Brome‑Missisquoi",
-      "link": "https://lecollectif.ca/a-la-une/une-premiere-nouvelle-candidature-pour-la-caq-dans-brome%e2%80%91missisquoi/",
+      "title": "Pourquoi le L est en premier dans LGBTQ+",
+      "link": "https://www.delitfrancais.com/2026/03/18/pourquoi-le-l-est-en-premier-dans-lgbtq/",
       "ok": true,
-      "score": 100,
-      "chars": 450,
-      "sample": "La Coalition Avenir Québec (CAQ) a présenté une première nouvelle candidature en vue des élections p",
-      "changed": true
-    },
-    {
-      "title": "CALAMINE : RAPPER AUTREMENT QUE LE « BOYS CLUB »",
-      "link": "https://quartierlibre.ca/calamine-rapper-autrement/",
-      "ok": true,
-      "score": 100,
-      "chars": 445,
-      "sample": "Le 13 mars dernier, la rappeuse Calamine a dévoilé son nouvel album , Rétrograde . Avec cette quatri",
-      "changed": true
-    },
-    {
-      "title": "Le PIF s’internationalise pour sa 49e édition",
-      "link": "https://lecollectif.ca/a-la-une/le-pif-sinternationalise-pour-sa-49e-edition/",
-      "ok": true,
-      "score": 100,
-      "chars": 591,
-      "sample": "Le plus grand tournoi de balle donnée en Amérique du Nord accueille cette année une vague de joueurs",
+      "score": 96,
+      "chars": 664,
+      "sample": "On peut observer en ce moment une montée des tensions et des divisions au sein même de la communauté",
       "changed": true
     },
     {
@@ -79,6 +61,24 @@
       "score": 100,
       "chars": 426,
       "sample": "On April 22, the Superior Court of Quebec annulled the August 2025 arbitration Association des Resso",
+      "changed": false
+    },
+    {
+      "title": "Road to the 2026 FIFA World Cup",
+      "link": "https://thelinknewspaper.ca/article/16333",
+      "ok": true,
+      "score": 96,
+      "chars": 531,
+      "sample": "Canadian goalkeeper Maxime Crépeau, who hails from nearby Greenfield Park, appeared emotional during",
+      "changed": false
+    },
+    {
+      "title": "Rachat des armes à feu : le Québec est-il l’exception canadienne ?",
+      "link": "https://www.exemplaire.com.ulaval.ca/a-la-une/rachat-des-armes-a-feu-le-quebec-est-il-lexception-canadienne/?utm_source=rss&utm_medium=rss&utm_campaign=rachat-des-armes-a-feu-le-quebec-est-il-lexception-canadienne",
+      "ok": true,
+      "score": 100,
+      "chars": 455,
+      "sample": "Le programme fédéral de rachat des armes à feu suit son cours au Canada. Alors que les propriétaires",
       "changed": false
     }
   ]

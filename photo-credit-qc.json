@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-29T23:55:22.147Z",
+  "updated": "2026-06-30T05:08:12.308Z",
   "total": 192,
   "withImage": 151,
   "withCredit": 151,
@@ -7,10 +7,10 @@
   "pending": 0,
   "missingHero": 0,
   "ok": true,
-  "checked": 55,
-  "updatedCount": 55,
+  "checked": 53,
+  "updatedCount": 53,
   "citedNew": 18,
-  "fallbackNew": 37,
+  "fallbackNew": 35,
   "samples": [
     {
       "title": "CSU terminates council’s chief election officer",
@@ -22,9 +22,9 @@
     {
       "title": "Ask the Trib: How do I survive summer in my hometown?",
       "source": "The Tribune",
-      "credit": "Photo : Zoe Lee",
-      "cited": true,
-      "method": "figcaption-attribution"
+      "credit": "Photo credit: The Tribune",
+      "cited": false,
+      "method": null
     },
     {
       "title": "Kanga I, II, III’ brings Projections: SANKOFA’s afrofuturist vision to Trottier",
