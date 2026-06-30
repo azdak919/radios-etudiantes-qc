@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-30T01:31:03.386Z",
+  "updatedAt": "2026-06-30T06:15:19.604Z",
   "stations": {
     "chyz": {
       "id": "chyz",
@@ -7,7 +7,7 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-06-30T01:30:45.226Z"
+      "checkedAt": "2026-06-30T06:15:00.713Z"
     },
     "cism": {
       "id": "cism",
@@ -15,15 +15,15 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-06-30T01:30:46.114Z"
+      "checkedAt": "2026-06-30T06:15:01.758Z"
     },
     "ckut": {
       "id": "ckut",
       "name": "CKUT 90,3",
-      "showTitle": "Underground Sounds",
+      "showTitle": "Pirate et Libres",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-06-30T01:30:47.788Z"
+      "checkedAt": "2026-06-30T06:15:03.794Z"
     },
     "cjlo": {
       "id": "cjlo",
@@ -31,7 +31,7 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-06-30T01:31:01.319Z"
+      "checkedAt": "2026-06-30T06:15:17.763Z"
     },
     "cfak": {
       "id": "cfak",
@@ -39,15 +39,15 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-06-30T01:31:02.031Z"
+      "checkedAt": "2026-06-30T06:15:18.211Z"
     },
     "choq": {
       "id": "choq",
       "name": "CHOQ.ca",
-      "showTitle": "Satre-torial",
-      "host": "Cola",
+      "showTitle": "Your name, It's walking",
+      "host": "Truck Violence",
       "source": "api-live",
-      "checkedAt": "2026-06-30T01:31:02.984Z"
+      "checkedAt": "2026-06-30T06:15:19.203Z"
     }
   }
 }
