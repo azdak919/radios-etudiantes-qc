@@ -1,11 +1,11 @@
 {
-  "updated": "2026-06-30T19:21:12.061Z",
+  "updated": "2026-06-30T21:22:58.425Z",
   "total": 192,
   "pool": 58,
-  "incomplete": 9,
-  "withLeadExcerpt": 66,
-  "candidates": 9,
-  "enriched": 0,
+  "incomplete": 11,
+  "withLeadExcerpt": 67,
+  "candidates": 11,
+  "enriched": 2,
   "failed": 0,
   "ok": true,
   "samples": [
@@ -26,6 +26,24 @@
       "chars": 577,
       "sample": "Dans son entrevue, M. Lander, un habitué de la télévision de langue anglaise (et économiste à ses he",
       "changed": false
+    },
+    {
+      "title": "Pourquoi le L est en premier dans LGBTQ+",
+      "link": "https://www.delitfrancais.com/2026/03/18/pourquoi-le-l-est-en-premier-dans-lgbtq/",
+      "ok": true,
+      "score": 96,
+      "chars": 664,
+      "sample": "On peut observer en ce moment une montée des tensions et des divisions au sein même de la communauté",
+      "changed": true
+    },
+    {
+      "title": "Sois belle et tais-toi",
+      "link": "https://www.delitfrancais.com/2026/03/18/sois-belle-et-tais-toi-2/",
+      "ok": true,
+      "score": 100,
+      "chars": 698,
+      "sample": "Un complexe de supériorité. C’est tout ce qu’il a fallu pour qu’un beau jour, l’homme devienne le se",
+      "changed": true
     },
     {
       "title": "Une première nouvelle candidature pour la CAQ dans Brome‑Missisquoi",
@@ -61,24 +79,6 @@
       "score": 100,
       "chars": 426,
       "sample": "On April 22, the Superior Court of Quebec annulled the August 2025 arbitration Association des Resso",
-      "changed": false
-    },
-    {
-      "title": "Road to the 2026 FIFA World Cup",
-      "link": "https://thelinknewspaper.ca/article/16333",
-      "ok": true,
-      "score": 96,
-      "chars": 531,
-      "sample": "Canadian goalkeeper Maxime Crépeau, who hails from nearby Greenfield Park, appeared emotional during",
-      "changed": false
-    },
-    {
-      "title": "CALAMINE : RAPPER AUTREMENT QUE LE « BOYS CLUB »",
-      "link": "https://quartierlibre.ca/calamine-rapper-autrement/",
-      "ok": true,
-      "score": 100,
-      "chars": 445,
-      "sample": "Le 13 mars dernier, la rappeuse Calamine a dévoilé son nouvel album , Rétrograde . Avec cette quatri",
       "changed": false
     }
   ]

@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-30T19:20:21.103Z",
+  "updated": "2026-06-30T21:21:59.053Z",
   "count": 192,
   "freshnessSessions": 3,
   "sources": {
@@ -9,7 +9,7 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-05-15T16:00:00.000Z",
-      "lastFetchOk": "2026-06-30T19:19:01.879Z"
+      "lastFetchOk": "2026-06-30T21:20:25.199Z"
     },
     "Montréal Campus": {
       "fetchOk": true,
@@ -17,7 +17,7 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-05-09T03:14:30.000Z",
-      "lastFetchOk": "2026-06-30T19:19:02.823Z"
+      "lastFetchOk": "2026-06-30T21:20:26.344Z"
     },
     "Le Délit": {
       "fetchOk": true,
@@ -25,7 +25,7 @@
       "articleCount": 20,
       "freshArticleCount": 20,
       "lastArticle": "2026-03-25T11:00:00.000Z",
-      "lastFetchOk": "2026-06-30T19:19:07.133Z"
+      "lastFetchOk": "2026-06-30T21:20:31.935Z"
     },
     "The McGill Daily": {
       "fetchOk": true,
@@ -33,7 +33,7 @@
       "articleCount": 15,
       "freshArticleCount": 15,
       "lastArticle": "2026-06-28T11:00:00.000Z",
-      "lastFetchOk": "2026-06-30T19:19:07.645Z"
+      "lastFetchOk": "2026-06-30T21:20:32.752Z"
     },
     "The Link": {
       "fetchOk": true,
@@ -41,7 +41,7 @@
       "articleCount": 20,
       "freshArticleCount": 20,
       "lastArticle": "2026-06-28T23:23:00.000Z",
-      "lastFetchOk": "2026-06-30T19:19:08.592Z"
+      "lastFetchOk": "2026-06-30T21:20:34.009Z"
     },
     "The Concordian": {
       "fetchOk": false,
@@ -57,7 +57,7 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-05-08T14:20:26.000Z",
-      "lastFetchOk": "2026-06-30T19:19:09.973Z"
+      "lastFetchOk": "2026-06-30T21:20:35.740Z"
     },
     "L'Exemplaire": {
       "fetchOk": true,
@@ -65,7 +65,7 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-05-15T16:31:24.000Z",
-      "lastFetchOk": "2026-06-30T19:19:11.223Z"
+      "lastFetchOk": "2026-06-30T21:20:37.212Z"
     },
     "Le Collectif": {
       "fetchOk": true,
@@ -73,7 +73,7 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-06-29T13:56:28.000Z",
-      "lastFetchOk": "2026-06-30T19:19:12.499Z"
+      "lastFetchOk": "2026-06-30T21:20:38.173Z"
     },
     "Exil": {
       "fetchOk": true,
@@ -81,7 +81,7 @@
       "articleCount": 7,
       "freshArticleCount": 7,
       "lastArticle": "2026-04-18T22:22:07.000Z",
-      "lastFetchOk": "2026-06-30T19:19:12.568Z"
+      "lastFetchOk": "2026-06-30T21:20:38.306Z"
     },
     "La Pige": {
       "fetchOk": true,
@@ -89,7 +89,7 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-06-22T14:36:10.000Z",
-      "lastFetchOk": "2026-06-30T19:19:13.127Z"
+      "lastFetchOk": "2026-06-30T21:20:39.072Z"
     },
     "The Tribune": {
       "fetchOk": true,
@@ -97,7 +97,7 @@
       "articleCount": 20,
       "freshArticleCount": 20,
       "lastArticle": "2026-06-26T15:24:28.000Z",
-      "lastFetchOk": "2026-06-30T19:19:13.261Z"
+      "lastFetchOk": "2026-06-30T21:20:39.243Z"
     },
     "The Campus": {
       "fetchOk": true,
@@ -105,7 +105,7 @@
       "articleCount": 30,
       "freshArticleCount": 30,
       "lastArticle": "2026-04-06T16:03:16.000Z",
-      "lastFetchOk": "2026-06-30T19:19:13.377Z"
+      "lastFetchOk": "2026-06-30T21:20:39.381Z"
     }
   },
   "items": [
@@ -127,7 +127,13 @@
       "sourceImageCreditCited": false,
       "sourceImageCreditImageKey": "culture_francoise_rebeccagagne-1.jpg",
       "leadImageReady": false,
-      "leadExcerpt": "Le 23 juin dernier avait lieu la première du film québécois François.e à la Maison du Cinéma de Sherbrooke. Pour l’occasion, des membres de la distribution de même que les deux scénaristes de l’œuvre ont partagé l’expérience avec l’audience."
+      "leadExcerpt": "Le 23 juin dernier avait lieu la première du film québécois François.e à la Maison du Cinéma de Sherbrooke. Pour l’occasion, des membres de la distribution de même que les deux scénaristes de l’œuvre ont partagé l’expérience avec l’audience.",
+      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/d/d4/Francois_Cevert_1973.jpg",
+      "imageCredit": "Photo : Raimund Kommer / CC BY-SA · Openverse",
+      "imageCreator": "Raimund Kommer",
+      "imageLicense": "by-sa",
+      "imageProvider": "openverse",
+      "imageSourceUrl": "https://commons.wikimedia.org/w/index.php?curid=9775871"
     },
     {
       "source": "Le Collectif",
@@ -249,7 +255,13 @@
       "sourceImageCreditCited": true,
       "sourceImageCreditImageKey": "societe_virage-a-droite-en-colombie_getty-images.jpg",
       "leadImageReady": false,
-      "leadExcerpt": "Après quatre années passées sous l’égide de Gustavo Petro, la Colombie change de cap et élit à sa tête Abelardo de la Espriella. Ce dernier promet une rupture avec les administrations précédentes, notamment en ce qui concerne le crime organisé. Personnalité similaire à celle du président Trump, il aura su naviguer à travers les promesses-phares tout au long de sa campagne électorale."
+      "leadExcerpt": "Après quatre années passées sous l’égide de Gustavo Petro, la Colombie change de cap et élit à sa tête Abelardo de la Espriella. Ce dernier promet une rupture avec les administrations précédentes, notamment en ce qui concerne le crime organisé. Personnalité similaire à celle du président Trump, il aura su naviguer à travers les promesses-phares tout au long de sa campagne électorale.",
+      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/1/18/Patrouille-de-france-virage-tricolore-a-8.jpg",
+      "imageCredit": "Photo : Tristan Nitot / CC BY-SA · Openverse",
+      "imageCreator": "Tristan Nitot",
+      "imageLicense": "by-sa",
+      "imageProvider": "openverse",
+      "imageSourceUrl": "https://commons.wikimedia.org/w/index.php?curid=241996"
     },
     {
       "source": "Le Collectif",
@@ -270,13 +282,7 @@
       "sourceImageCreditCited": true,
       "sourceImageCreditImageKey": "societe_demission-de-keir-starmer-au-royaume-uni_getty-images.jpg",
       "leadImageReady": false,
-      "leadExcerpt": "Croulant sous les pressions provenant de l’opposition et de son propre parti, le premier ministre britannique, Keir Starmer, démissionne finalement. Après des mois à se tenir de justesse au pouvoir, il cède ainsi sa place à Andy Burnham, alors que son parti chute aux sondages.",
-      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/a/a0/Beediging_%28nieuw%29_gekozen_leden_Tweede_Kamer_demission_premier_Lubbers_legt_ee%2C_Bestanddeelnr_933-6751.jpg",
-      "imageCredit": "Photo : Rob Croes for Anefo / CC0 · Openverse",
-      "imageCreator": "Rob Croes for Anefo",
-      "imageLicense": "cc0",
-      "imageProvider": "openverse",
-      "imageSourceUrl": "https://commons.wikimedia.org/w/index.php?curid=66556428"
+      "leadExcerpt": "Croulant sous les pressions provenant de l’opposition et de son propre parti, le premier ministre britannique, Keir Starmer, démissionne finalement. Après des mois à se tenir de justesse au pouvoir, il cède ainsi sa place à Andy Burnham, alors que son parti chute aux sondages."
     },
     {
       "source": "Le Collectif",
@@ -3733,22 +3739,22 @@
       "region": "Montréal",
       "type": "universite",
       "lang": "fr",
-      "title": "Qui sont les agents qui patrouillent notre campus ?",
-      "link": "https://www.delitfrancais.com/2026/03/18/qui-sont-les-agents-qui-patrouillent-notre-campus/",
-      "author": "Héloïse Durning",
+      "title": "Pourquoi le L est en premier dans LGBTQ+",
+      "link": "https://www.delitfrancais.com/2026/03/18/pourquoi-le-l-est-en-premier-dans-lgbtq/",
+      "author": "Sixtine Nicolaÿ",
       "date": "2026-03-18T07:00:00.000Z",
-      "excerpt": "Une enquête sur Garda à McGill.",
-      "image": "https://www.delitfrancais.com/wp-content/uploads/2026/03/garda.png",
+      "excerpt": "Le rôle des lesbiennes pendant l’épidémie du sida.",
+      "image": "https://www.delitfrancais.com/wp-content/uploads/2026/03/lesbians-against-sida-_-sixtine.png",
       "featured": true,
-      "_pageAuthor": "Héloïse Durning",
-      "sourceImageCredit": "Photo : Stu Doré/Félix Fournier",
-      "sourceImageCreator": "Stu Doré/Félix Fournier",
-      "sourceImageCreditUrl": "https://www.delitfrancais.com/2026/03/18/qui-sont-les-agents-qui-patrouillent-notre-campus/",
+      "_pageAuthor": "Sixtine Nicolaÿ",
+      "leadExcerpt": "On peut observer en ce moment une montée des tensions et des divisions au sein même de la communauté LGBTQ+. Des groupes de personnes s’identifient comme gais, remettent en question la légitimité de la présence du T (transgenre) dans l’acronyme LGBT, expliquant que, pour elles, la transidentité n’a pas de rapport avec leur sexualité. Ce genre de discours s’intègre dans un climat de plus en plus hostile aux personnes LGBTQ+, à la fois dans la société, mais également au sein de leur propre communauté. Avec l’avènement de tensions intracommunautaires, l’ordre actuel de l’acronyme LGBTQ+ nous renvoie à une période de solidarité entre les différentes identités.",
+      "leadImageReady": false,
+      "sourceImageCredit": "Photo : Stu Doré",
+      "sourceImageCreator": "Stu Doré",
+      "sourceImageCreditUrl": "https://www.delitfrancais.com/2026/03/18/pourquoi-le-l-est-en-premier-dans-lgbtq/",
       "sourceImageCreditFrom": "article",
       "sourceImageCreditCited": true,
-      "sourceImageCreditImageKey": "garda.png",
-      "leadImageReady": true,
-      "leadExcerpt": "« L’Université McGill est à la recherche de patrouilleurs dynamiques et engagés pour assurer la sécurité de sa communauté universitaire », selon une annonce publiée sur le site web du Groupe de sécurité Garda S.E.N.C. (Garda), mieux connu sous le nom de GardaWorld. Cette entreprise canadienne de sécurité privée est sous contrat avec McGill depuis le 26 août 2024, et ce, jusqu’au 30 avril 2027."
+      "sourceImageCreditImageKey": "lesbians-against-sida-_-sixtine.png"
     },
     {
       "source": "Le Délit",
@@ -3756,21 +3762,22 @@
       "region": "Montréal",
       "type": "universite",
       "lang": "fr",
-      "title": "Ce que nous devons aux femmes",
-      "link": "https://www.delitfrancais.com/2026/03/18/ce-que-nous-devons-aux-femmes/",
-      "author": "Eugénie St-Pierre",
+      "title": "Sois belle et tais-toi",
+      "link": "https://www.delitfrancais.com/2026/03/18/sois-belle-et-tais-toi-2/",
+      "author": "Rose Langlois",
       "date": "2026-03-18T07:00:00.000Z",
-      "excerpt": "Votre entourage, en tant qu’étudiantes et étudiants de l’Université McGill, est peut-être composé en majorité de personnes qui se revendiquent comme féministes. Certaines le sont, d’autres le prétendent, mais relativement rares sont les McGillois qui refusent ouvertement le féminisme.",
-      "image": "https://www.delitfrancais.com/wp-content/uploads/2026/03/Capture-decran-le-2026-03-22-a-17.22.07.png",
+      "excerpt": "Petit guide pratique pour écarter les femmes du canon littéraire.",
+      "image": "https://www.delitfrancais.com/wp-content/uploads/2026/03/canon-litteraire.jpg",
       "featured": true,
-      "_pageAuthor": "Eugénie St-Pierre",
+      "_pageAuthor": "Rose Langlois",
+      "leadExcerpt": "Un complexe de supériorité. C’est tout ce qu’il a fallu pour qu’un beau jour, l’homme devienne le sexe fort. Ce sexe fort auquel il faut obéir, devant lequel il faut baisser la tête. Le pouvoir masculin, en plus d’être considéré comme l’autorité suprême aux yeux de Dieu (mais quel misogyne, celui-là), se voit octroyer le droit exclusif d’écrire des chefs‑d’œuvre. La prose, les récits, les personnages de Balzac, Hugo, Tolstoï et Shakespeare ont bâti la littérature d’aujourd’hui. Nous sommes des nains perchés sur les épaules de géants, pour reprendre la métaphore de Bernard de Chartres. Heureusement pour nous, du haut de notre perchoir, nous pouvons corriger les erreurs de nos prédécesseurs.",
       "leadImageReady": true,
-      "sourceImageCredit": "Photo : Alexandre Gontier",
-      "sourceImageCreator": "Alexandre Gontier",
-      "sourceImageCreditUrl": "https://www.delitfrancais.com/2026/03/18/ce-que-nous-devons-aux-femmes/",
+      "sourceImageCredit": "Photo : Catvy Tran",
+      "sourceImageCreator": "Catvy Tran",
+      "sourceImageCreditUrl": "https://www.delitfrancais.com/2026/03/18/sois-belle-et-tais-toi-2/",
       "sourceImageCreditFrom": "article",
       "sourceImageCreditCited": true,
-      "sourceImageCreditImageKey": "capture-decran-le-2026-03-22-a-17.22.07.png"
+      "sourceImageCreditImageKey": "canon-litteraire.jpg"
     },
     {
       "source": "The McGill Daily",
