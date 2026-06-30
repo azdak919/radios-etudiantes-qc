@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-29T23:01:11.856Z",
+  "updatedAt": "2026-06-30T01:31:03.386Z",
   "stations": {
     "chyz": {
       "id": "chyz",
@@ -7,7 +7,7 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-06-29T23:00:53.043Z"
+      "checkedAt": "2026-06-30T01:30:45.226Z"
     },
     "cism": {
       "id": "cism",
@@ -15,15 +15,15 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-06-29T23:00:54.081Z"
+      "checkedAt": "2026-06-30T01:30:46.114Z"
     },
     "ckut": {
       "id": "ckut",
       "name": "CKUT 90,3",
-      "showTitle": "Dykes on Mykes",
+      "showTitle": "Underground Sounds",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-06-29T23:00:56.092Z"
+      "checkedAt": "2026-06-30T01:30:47.788Z"
     },
     "cjlo": {
       "id": "cjlo",
@@ -31,7 +31,7 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-06-29T23:01:09.906Z"
+      "checkedAt": "2026-06-30T01:31:01.319Z"
     },
     "cfak": {
       "id": "cfak",
@@ -39,15 +39,15 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-06-29T23:01:10.519Z"
+      "checkedAt": "2026-06-30T01:31:02.031Z"
     },
     "choq": {
       "id": "choq",
       "name": "CHOQ.ca",
-      "showTitle": "Peace Won't Keep : Liberation",
-      "host": "boutique feelings",
+      "showTitle": "Satre-torial",
+      "host": "Cola",
       "source": "api-live",
-      "checkedAt": "2026-06-29T23:01:11.455Z"
+      "checkedAt": "2026-06-30T01:31:02.984Z"
     }
   }
 }
