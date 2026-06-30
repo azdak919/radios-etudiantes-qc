@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-30T16:22:04.472Z",
+  "updated": "2026-06-30T19:28:06.860Z",
   "count": 19,
   "items": [
     {
@@ -19,7 +19,7 @@
           "type": "facebook",
           "url": "https://www.facebook.com/QuartierLibre.ca",
           "handle": "QuartierLibre.ca",
-          "stats": "6 568 mentions J'aime",
+          "stats": "",
           "label": "Facebook"
         },
         {
@@ -48,7 +48,7 @@
           "type": "facebook",
           "url": "https://www.facebook.com/montrealcampus",
           "handle": "montrealcampus",
-          "stats": "6 264 mentions J'aime",
+          "stats": "",
           "label": "Facebook"
         },
         {
@@ -84,7 +84,7 @@
           "type": "facebook",
           "url": "https://facebook.com/ledelitfrancais",
           "handle": "ledelitfrancais",
-          "stats": "4 695 mentions J'aime",
+          "stats": "",
           "label": "Facebook"
         },
         {
@@ -113,7 +113,7 @@
           "type": "facebook",
           "url": "https://www.facebook.com/themcgilldaily",
           "handle": "themcgilldaily",
-          "stats": "7 226 mentions J'aime",
+          "stats": "",
           "label": "Facebook"
         },
         {
@@ -142,7 +142,7 @@
           "type": "facebook",
           "url": "https://facebook.com/thelinknewspaper",
           "handle": "thelinknewspaper",
-          "stats": "4 752 mentions J'aime",
+          "stats": "",
           "label": "Facebook"
         },
         {
@@ -178,7 +178,7 @@
           "type": "facebook",
           "url": "https://www.facebook.com/zonecampus",
           "handle": "zonecampus",
-          "stats": "2 044 mentions J'aime",
+          "stats": "",
           "label": "Facebook"
         }
       ]
