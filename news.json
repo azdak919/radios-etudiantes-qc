@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-30T12:00:03.991Z",
+  "updated": "2026-06-30T13:02:00.833Z",
   "count": 192,
   "freshnessSessions": 3,
   "sources": {
@@ -9,7 +9,7 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-05-15T16:00:00.000Z",
-      "lastFetchOk": "2026-06-30T11:58:32.506Z"
+      "lastFetchOk": "2026-06-30T13:00:00.315Z"
     },
     "Montréal Campus": {
       "fetchOk": true,
@@ -17,7 +17,7 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-05-09T03:14:30.000Z",
-      "lastFetchOk": "2026-06-30T11:58:33.550Z"
+      "lastFetchOk": "2026-06-30T13:00:01.237Z"
     },
     "Le Délit": {
       "fetchOk": true,
@@ -25,7 +25,7 @@
       "articleCount": 20,
       "freshArticleCount": 20,
       "lastArticle": "2026-03-25T11:00:00.000Z",
-      "lastFetchOk": "2026-06-30T11:58:38.588Z"
+      "lastFetchOk": "2026-06-30T13:00:11.620Z"
     },
     "The McGill Daily": {
       "fetchOk": true,
@@ -33,7 +33,7 @@
       "articleCount": 15,
       "freshArticleCount": 15,
       "lastArticle": "2026-06-28T11:00:00.000Z",
-      "lastFetchOk": "2026-06-30T11:58:39.382Z"
+      "lastFetchOk": "2026-06-30T13:00:12.475Z"
     },
     "The Link": {
       "fetchOk": true,
@@ -41,7 +41,7 @@
       "articleCount": 20,
       "freshArticleCount": 20,
       "lastArticle": "2026-06-28T23:23:00.000Z",
-      "lastFetchOk": "2026-06-30T11:58:40.484Z"
+      "lastFetchOk": "2026-06-30T13:00:13.652Z"
     },
     "The Concordian": {
       "fetchOk": false,
@@ -57,7 +57,7 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-05-08T14:20:26.000Z",
-      "lastFetchOk": "2026-06-30T11:58:41.848Z"
+      "lastFetchOk": "2026-06-30T13:00:15.069Z"
     },
     "L'Exemplaire": {
       "fetchOk": true,
@@ -65,7 +65,7 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-05-15T16:31:24.000Z",
-      "lastFetchOk": "2026-06-30T11:58:43.334Z"
+      "lastFetchOk": "2026-06-30T13:00:17.058Z"
     },
     "Le Collectif": {
       "fetchOk": true,
@@ -73,7 +73,7 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-06-29T13:56:28.000Z",
-      "lastFetchOk": "2026-06-30T11:58:44.617Z"
+      "lastFetchOk": "2026-06-30T13:00:18.077Z"
     },
     "Exil": {
       "fetchOk": true,
@@ -81,7 +81,7 @@
       "articleCount": 7,
       "freshArticleCount": 7,
       "lastArticle": "2026-04-18T22:22:07.000Z",
-      "lastFetchOk": "2026-06-30T11:58:44.756Z"
+      "lastFetchOk": "2026-06-30T13:00:18.374Z"
     },
     "La Pige": {
       "fetchOk": true,
@@ -89,7 +89,7 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-06-22T14:36:10.000Z",
-      "lastFetchOk": "2026-06-30T11:58:45.484Z"
+      "lastFetchOk": "2026-06-30T13:00:19.116Z"
     },
     "The Tribune": {
       "fetchOk": true,
@@ -97,7 +97,7 @@
       "articleCount": 20,
       "freshArticleCount": 20,
       "lastArticle": "2026-06-26T15:24:28.000Z",
-      "lastFetchOk": "2026-06-30T11:58:45.657Z"
+      "lastFetchOk": "2026-06-30T13:00:19.415Z"
     },
     "The Campus": {
       "fetchOk": true,
@@ -105,7 +105,7 @@
       "articleCount": 30,
       "freshArticleCount": 30,
       "lastArticle": "2026-04-06T16:03:16.000Z",
-      "lastFetchOk": "2026-06-30T11:58:45.804Z"
+      "lastFetchOk": "2026-06-30T13:00:19.681Z"
     }
   },
   "items": [
@@ -127,13 +127,7 @@
       "sourceImageCreditCited": false,
       "sourceImageCreditImageKey": "culture_francoise_rebeccagagne-1.jpg",
       "leadImageReady": false,
-      "leadExcerpt": "Le 23 juin dernier avait lieu la première du film québécois François.e à la Maison du Cinéma de Sherbrooke. Pour l’occasion, des membres de la distribution de même que les deux scénaristes de l’œuvre ont partagé l’expérience avec l’audience.",
-      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/d/d4/Francois_Cevert_1973.jpg",
-      "imageCredit": "Photo : Raimund Kommer / CC BY-SA · Openverse",
-      "imageCreator": "Raimund Kommer",
-      "imageLicense": "by-sa",
-      "imageProvider": "openverse",
-      "imageSourceUrl": "https://commons.wikimedia.org/w/index.php?curid=9775871"
+      "leadExcerpt": "Le 23 juin dernier avait lieu la première du film québécois François.e à la Maison du Cinéma de Sherbrooke. Pour l’occasion, des membres de la distribution de même que les deux scénaristes de l’œuvre ont partagé l’expérience avec l’audience."
     },
     {
       "source": "Le Collectif",
@@ -255,13 +249,7 @@
       "sourceImageCreditCited": true,
       "sourceImageCreditImageKey": "societe_virage-a-droite-en-colombie_getty-images.jpg",
       "leadImageReady": false,
-      "leadExcerpt": "Après quatre années passées sous l’égide de Gustavo Petro, la Colombie change de cap et élit à sa tête Abelardo de la Espriella. Ce dernier promet une rupture avec les administrations précédentes, notamment en ce qui concerne le crime organisé. Personnalité similaire à celle du président Trump, il aura su naviguer à travers les promesses-phares tout au long de sa campagne électorale.",
-      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/1/18/Patrouille-de-france-virage-tricolore-a-8.jpg",
-      "imageCredit": "Photo : Tristan Nitot / CC BY-SA · Openverse",
-      "imageCreator": "Tristan Nitot",
-      "imageLicense": "by-sa",
-      "imageProvider": "openverse",
-      "imageSourceUrl": "https://commons.wikimedia.org/w/index.php?curid=241996"
+      "leadExcerpt": "Après quatre années passées sous l’égide de Gustavo Petro, la Colombie change de cap et élit à sa tête Abelardo de la Espriella. Ce dernier promet une rupture avec les administrations précédentes, notamment en ce qui concerne le crime organisé. Personnalité similaire à celle du président Trump, il aura su naviguer à travers les promesses-phares tout au long de sa campagne électorale."
     },
     {
       "source": "Le Collectif",
@@ -282,7 +270,13 @@
       "sourceImageCreditCited": true,
       "sourceImageCreditImageKey": "societe_demission-de-keir-starmer-au-royaume-uni_getty-images.jpg",
       "leadImageReady": false,
-      "leadExcerpt": "Croulant sous les pressions provenant de l’opposition et de son propre parti, le premier ministre britannique, Keir Starmer, démissionne finalement. Après des mois à se tenir de justesse au pouvoir, il cède ainsi sa place à Andy Burnham, alors que son parti chute aux sondages."
+      "leadExcerpt": "Croulant sous les pressions provenant de l’opposition et de son propre parti, le premier ministre britannique, Keir Starmer, démissionne finalement. Après des mois à se tenir de justesse au pouvoir, il cède ainsi sa place à Andy Burnham, alors que son parti chute aux sondages.",
+      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/a/a0/Beediging_%28nieuw%29_gekozen_leden_Tweede_Kamer_demission_premier_Lubbers_legt_ee%2C_Bestanddeelnr_933-6751.jpg",
+      "imageCredit": "Photo : Rob Croes for Anefo / CC0 · Openverse",
+      "imageCreator": "Rob Croes for Anefo",
+      "imageLicense": "cc0",
+      "imageProvider": "openverse",
+      "imageSourceUrl": "https://commons.wikimedia.org/w/index.php?curid=66556428"
     },
     {
       "source": "Le Collectif",
@@ -342,13 +336,13 @@
       "sourceImageCreditCited": false,
       "sourceImageCreditImageKey": "societe_boissonsenergisantes_sourceassociationpourlasantepubliqueduquebec.jpg",
       "leadImageReady": false,
+      "leadExcerpt": "En janvier 2024, Zachary Miron, 15 ans, perd la vie après avoir consommé une boisson énergisante lors d’une sortie scolaire de ski. Le rapport du coroner tiré de l’Institut universitaire de cardiologie et de pneumologie de Québec de l’Université Laval, stipule que « le décès est probablement attribuable à une arythmie cardiaque maligne, chez un adolescent au cœur morphologiquement normal, mais sous l’effet de caféine et du méthylphénidate ».",
       "stockImage": "https://live.staticflickr.com/6054/7003858477_8e56b67645_b.jpg",
       "imageCredit": "Photo : DVIDSHUB / CC BY · Openverse",
       "imageCreator": "DVIDSHUB",
       "imageLicense": "by",
       "imageProvider": "openverse",
-      "imageSourceUrl": "https://www.flickr.com/photos/28650594@N03/7003858477",
-      "leadExcerpt": "En janvier 2024, Zachary Miron, 15 ans, perd la vie après avoir consommé une boisson énergisante lors d’une sortie scolaire de ski. Le rapport du coroner tiré de l’Institut universitaire de cardiologie et de pneumologie de Québec de l’Université Laval, stipule que « le décès est probablement attribuable à une arythmie cardiaque maligne, chez un adolescent au cœur morphologiquement normal, mais sous l’effet de caféine et du méthylphénidate »."
+      "imageSourceUrl": "https://www.flickr.com/photos/28650594@N03/7003858477"
     },
     {
       "source": "Le Collectif",
@@ -868,7 +862,7 @@
       "lang": "en",
       "title": "SPHR remembers Gaza Solidarity Encampment ahead of Nakba Anniversary Protest",
       "link": "https://www.thetribune.ca/news/sphr-remembers-gaza-solidarity-encampment-ahead-of-nakba-anniversary-protest-13052026/?utm_source=rss&utm_medium=rss&utm_campaign=sphr-remembers-gaza-solidarity-encampment-ahead-of-nakba-anniversary-protest-13052026",
-      "author": "The editorial team",
+      "author": "Ellen Lurie",
       "date": "2026-05-14T03:18:18.000Z",
       "excerpt": "On May 9, Students for Palestine’s Honour and Resistance ( SPHR ) at McGill hosted a gathering to commemorate the two-year anniversary of Montreal community members establishing the Gaza Solidarity Encampment on McGill’s Lower Field. 743 days later, community members of all ages",
       "image": "https://www.thetribune.ca/wp-content/uploads/2026/05/RenderedImage-1000x600.jpeg",
@@ -1861,12 +1855,12 @@
       "excerpt": "The Chinatown studio brings together artists of all levels in a space designed for connection Located in Chinatown, Dragon Jam serves as a rehearsal space and venue for intimate performances. Courtesy Dragon Jam",
       "image": "https://thelinknewspaper.ca/images/made/images/articles/_resized/IMG_0291-2_900_1125_90.jpg",
       "leadImageReady": false,
-      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/e/e8/Komodo_dragon_%28Varanus_komodoensis%29.jpg",
-      "imageCredit": "Photo : Charles J. Sharp / CC BY-SA 4.0 · Wikimedia Commons",
-      "imageCreator": "Charles J. Sharp",
-      "imageLicense": "CC BY-SA 4.0",
-      "imageProvider": "wikimedia",
-      "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Komodo_dragon_(Varanus_komodoensis).jpg",
+      "stockImage": "https://live.staticflickr.com/6223/6218984449_a457d6bf46_b.jpg",
+      "imageCredit": "Photo : minicooper93402 / CC BY · Openverse",
+      "imageCreator": "minicooper93402",
+      "imageLicense": "by",
+      "imageProvider": "openverse",
+      "imageSourceUrl": "https://www.flickr.com/photos/21703936@N08/6218984449",
       "sourceImageCredit": "Photo credit: The Link",
       "sourceImageCreator": "",
       "sourceImageCreditUrl": "https://thelinknewspaper.ca/article/16324",
@@ -2246,13 +2240,13 @@
       "excerpt": "In episode 9 of Financing My Future , Christelle shares how her stable, supported reality contrasts sharply with the typical struggling student narrative. A 20-year-old journalism student at Concordia and The Concordian’ s Podcast Editor, she’s grown up with her needs fully",
       "image": "",
       "leadImageReady": false,
+      "_retainedFromCache": true,
       "stockImage": "https://live.staticflickr.com/65535/48138695012_127f39ea0f_b.jpg",
       "imageCredit": "Photo : jurvetson / CC BY · Openverse",
       "imageCreator": "jurvetson",
       "imageLicense": "by",
       "imageProvider": "openverse",
-      "imageSourceUrl": "https://www.flickr.com/photos/44124348109@N01/48138695012",
-      "_retainedFromCache": true
+      "imageSourceUrl": "https://www.flickr.com/photos/44124348109@N01/48138695012"
     },
     {
       "source": "The Tribune",
@@ -2266,7 +2260,13 @@
       "date": "2026-04-07T15:29:55.000Z",
       "excerpt": "The Tribune ‘s special issue for the Winter 2026 semester was centred around the theme of ‘ memory ,’ with our writers, staff, editors, and creative team discussing the role of institutional, collective, and personal memory in society, politics, educational institutions, and more.",
       "image": "",
-      "leadImageReady": false
+      "leadImageReady": false,
+      "stockImage": "https://live.staticflickr.com/2305/2143724448_5d95e7ac2b_b.jpg",
+      "imageCredit": "Photo : thompsoe / CC BY · Openverse",
+      "imageCreator": "thompsoe",
+      "imageLicense": "by",
+      "imageProvider": "openverse",
+      "imageSourceUrl": "https://www.flickr.com/photos/8158623@N05/2143724448"
     },
     {
       "source": "The Tribune",
@@ -2709,13 +2709,13 @@
       "excerpt": "Listen now | In this last episode of Read It Up, Assistant Arts and Culture Editor Kasi Peri talks about the novel The Castle of Otranto by Horace Walpole.",
       "image": "",
       "leadImageReady": false,
+      "_retainedFromCache": true,
       "stockImage": "https://live.staticflickr.com/806/26481757777_298e89f75d_b.jpg",
       "imageCredit": "Photo : USDAgov / Domaine public · Openverse",
       "imageCreator": "USDAgov",
       "imageLicense": "pdm",
       "imageProvider": "openverse",
-      "imageSourceUrl": "https://www.flickr.com/photos/41284017@N08/26481757777",
-      "_retainedFromCache": true
+      "imageSourceUrl": "https://www.flickr.com/photos/41284017@N08/26481757777"
     },
     {
       "source": "The Concordian",
@@ -3059,51 +3059,6 @@
       "region": "Montréal",
       "type": "universite",
       "lang": "fr",
-      "title": "L’épidémie de la nonchalance",
-      "link": "https://www.delitfrancais.com/2026/03/25/lepidemie-de-la-nonchalance/",
-      "author": "Elie Nguyen",
-      "date": "2026-03-25T07:00:00.000Z",
-      "excerpt": "Pour en finir avec l’insouciance de façade et embrasser pleinement l’authenticité.",
-      "image": "https://www.delitfrancais.com/wp-content/uploads/2026/03/Creation-sans-titre-2-768x1024.png",
-      "featured": true,
-      "_pageAuthor": "Elie Nguyen",
-      "sourceImageCredit": "Crédit photo : Le Délit",
-      "sourceImageCreditUrl": "https://www.delitfrancais.com/2026/03/25/lepidemie-de-la-nonchalance/",
-      "sourceImageCreditFrom": "media",
-      "sourceImageCreditCited": false,
-      "sourceImageCreditImageKey": "creation-sans-titre-2.png",
-      "leadImageReady": false,
-      "leadExcerpt": "L’un des travers de notre génération est la tendance à adopter une attitude indifférente face à la vie. La nonchalance est devenue une forme de protection, où on minimise tout ce que l’on ressent : on cache ce qui pourrait nous atteindre et on évite de trop s’exposer. En paraissant insouciant, on garde le contrôle, puisque personne ne peut utiliser contre nous ce dont il ne mesure pas l’importance."
-    },
-    {
-      "source": "Le Délit",
-      "institution": "Université McGill",
-      "region": "Montréal",
-      "type": "universite",
-      "lang": "fr",
-      "title": "Le retard et les bienfaits du temps long",
-      "link": "https://www.delitfrancais.com/2026/03/25/le-retard-et-les-bienfaits-du-temps-long/",
-      "author": "Dalia Djazouli",
-      "date": "2026-03-25T07:00:00.000Z",
-      "excerpt": "Imposer sa propre subjectivité temporelle.",
-      "image": "https://www.delitfrancais.com/wp-content/uploads/2026/03/retard-1-scaled.jpeg",
-      "featured": true,
-      "_pageAuthor": "Dalia Djazouli",
-      "sourceImageCredit": "Photo : Félix Fournier",
-      "sourceImageCreator": "Félix Fournier",
-      "sourceImageCreditUrl": "https://www.delitfrancais.com/2026/03/25/le-retard-et-les-bienfaits-du-temps-long/",
-      "sourceImageCreditFrom": "article",
-      "sourceImageCreditCited": true,
-      "sourceImageCreditImageKey": "retard-1.jpeg",
-      "leadImageReady": true,
-      "leadExcerpt": "L’imposition de la ponctualité comme norme suprême ne se cantonne pas à notre journal étudiant : elle est propre à nos sociétés industrialisées, dont la conception du temps est particulièrement rigoureuse et utilitariste. La temporalité est perçue comme un objet tangible, que l’on peut et doit rentabiliser autant que possible. Les journées sont compartimentées, et chaque heure doit être mise à profit."
-    },
-    {
-      "source": "Le Délit",
-      "institution": "Université McGill",
-      "region": "Montréal",
-      "type": "universite",
-      "lang": "fr",
       "title": "Rassembler pour mieux diviser",
       "link": "https://www.delitfrancais.com/2026/03/25/rassembler-pour-mieux-diviser/",
       "author": "Catherine Brunet Rodriguez",
@@ -3188,6 +3143,51 @@
       "sourceImageCreditImageKey": "coinqueer-1.jpeg",
       "leadImageReady": false,
       "leadExcerpt": "Deux hommes hétéros imitent une voix, se prennent par la taille, font semblant d’être en couple pour une photo, puis éclatent de rire. L’un ajoute « no homo » et tout rentre dans l’ordre. Pendant ce temps, un homme gai tient la main de son partenaire. Il surveille autour de lui, sonde le quartier, évalue le risque. Pour les uns, l’homosexualité est un prétexte pour rire. Pour les autres, c’est juste une vie."
+    },
+    {
+      "source": "Le Délit",
+      "institution": "Université McGill",
+      "region": "Montréal",
+      "type": "universite",
+      "lang": "fr",
+      "title": "L’épidémie de la nonchalance",
+      "link": "https://www.delitfrancais.com/2026/03/25/lepidemie-de-la-nonchalance/",
+      "author": "Elie Nguyen",
+      "date": "2026-03-25T07:00:00.000Z",
+      "excerpt": "Pour en finir avec l’insouciance de façade et embrasser pleinement l’authenticité.",
+      "image": "https://www.delitfrancais.com/wp-content/uploads/2026/03/Creation-sans-titre-2-768x1024.png",
+      "featured": true,
+      "_pageAuthor": "Elie Nguyen",
+      "sourceImageCredit": "Crédit photo : Le Délit",
+      "sourceImageCreditUrl": "https://www.delitfrancais.com/2026/03/25/lepidemie-de-la-nonchalance/",
+      "sourceImageCreditFrom": "media",
+      "sourceImageCreditCited": false,
+      "sourceImageCreditImageKey": "creation-sans-titre-2.png",
+      "leadImageReady": false,
+      "leadExcerpt": "L’un des travers de notre génération est la tendance à adopter une attitude indifférente face à la vie. La nonchalance est devenue une forme de protection, où on minimise tout ce que l’on ressent : on cache ce qui pourrait nous atteindre et on évite de trop s’exposer. En paraissant insouciant, on garde le contrôle, puisque personne ne peut utiliser contre nous ce dont il ne mesure pas l’importance."
+    },
+    {
+      "source": "Le Délit",
+      "institution": "Université McGill",
+      "region": "Montréal",
+      "type": "universite",
+      "lang": "fr",
+      "title": "Le retard et les bienfaits du temps long",
+      "link": "https://www.delitfrancais.com/2026/03/25/le-retard-et-les-bienfaits-du-temps-long/",
+      "author": "Dalia Djazouli",
+      "date": "2026-03-25T07:00:00.000Z",
+      "excerpt": "Imposer sa propre subjectivité temporelle.",
+      "image": "https://www.delitfrancais.com/wp-content/uploads/2026/03/retard-1-scaled.jpeg",
+      "featured": true,
+      "_pageAuthor": "Dalia Djazouli",
+      "sourceImageCredit": "Photo : Félix Fournier",
+      "sourceImageCreator": "Félix Fournier",
+      "sourceImageCreditUrl": "https://www.delitfrancais.com/2026/03/25/le-retard-et-les-bienfaits-du-temps-long/",
+      "sourceImageCreditFrom": "article",
+      "sourceImageCreditCited": true,
+      "sourceImageCreditImageKey": "retard-1.jpeg",
+      "leadImageReady": true,
+      "leadExcerpt": "L’imposition de la ponctualité comme norme suprême ne se cantonne pas à notre journal étudiant : elle est propre à nos sociétés industrialisées, dont la conception du temps est particulièrement rigoureuse et utilitariste. La temporalité est perçue comme un objet tangible, que l’on peut et doit rentabiliser autant que possible. Les journées sont compartimentées, et chaque heure doit être mise à profit."
     },
     {
       "source": "The McGill Daily",
@@ -3739,22 +3739,21 @@
       "region": "Montréal",
       "type": "universite",
       "lang": "fr",
-      "title": "Sois belle et tais-toi",
-      "link": "https://www.delitfrancais.com/2026/03/18/sois-belle-et-tais-toi-2/",
-      "author": "Rose Langlois",
+      "title": "Ce que nous devons aux femmes",
+      "link": "https://www.delitfrancais.com/2026/03/18/ce-que-nous-devons-aux-femmes/",
+      "author": "Eugénie St-Pierre",
       "date": "2026-03-18T07:00:00.000Z",
-      "excerpt": "Petit guide pratique pour écarter les femmes du canon littéraire.",
-      "image": "https://www.delitfrancais.com/wp-content/uploads/2026/03/canon-litteraire.jpg",
+      "excerpt": "Votre entourage, en tant qu’étudiantes et étudiants de l’Université McGill, est peut-être composé en majorité de personnes qui se revendiquent comme féministes. Certaines le sont, d’autres le prétendent, mais relativement rares sont les McGillois qui refusent ouvertement le féminisme.",
+      "image": "https://www.delitfrancais.com/wp-content/uploads/2026/03/Capture-decran-le-2026-03-22-a-17.22.07.png",
       "featured": true,
-      "_pageAuthor": "Rose Langlois",
-      "leadExcerpt": "Un complexe de supériorité. C’est tout ce qu’il a fallu pour qu’un beau jour, l’homme devienne le sexe fort. Ce sexe fort auquel il faut obéir, devant lequel il faut baisser la tête. Le pouvoir masculin, en plus d’être considéré comme l’autorité suprême aux yeux de Dieu (mais quel misogyne, celui-là), se voit octroyer le droit exclusif d’écrire des chefs‑d’œuvre. La prose, les récits, les personnages de Balzac, Hugo, Tolstoï et Shakespeare ont bâti la littérature d’aujourd’hui. Nous sommes des nains perchés sur les épaules de géants, pour reprendre la métaphore de Bernard de Chartres. Heureusement pour nous, du haut de notre perchoir, nous pouvons corriger les erreurs de nos prédécesseurs.",
+      "_pageAuthor": "Eugénie St-Pierre",
       "leadImageReady": true,
-      "sourceImageCredit": "Photo : Catvy Tran",
-      "sourceImageCreator": "Catvy Tran",
-      "sourceImageCreditUrl": "https://www.delitfrancais.com/2026/03/18/sois-belle-et-tais-toi-2/",
+      "sourceImageCredit": "Photo : Alexandre Gontier",
+      "sourceImageCreator": "Alexandre Gontier",
+      "sourceImageCreditUrl": "https://www.delitfrancais.com/2026/03/18/ce-que-nous-devons-aux-femmes/",
       "sourceImageCreditFrom": "article",
       "sourceImageCreditCited": true,
-      "sourceImageCreditImageKey": "canon-litteraire.jpg"
+      "sourceImageCreditImageKey": "capture-decran-le-2026-03-22-a-17.22.07.png"
     },
     {
       "source": "Le Délit",
@@ -3762,22 +3761,22 @@
       "region": "Montréal",
       "type": "universite",
       "lang": "fr",
-      "title": "Qui sont les agents qui patrouillent notre campus ?",
-      "link": "https://www.delitfrancais.com/2026/03/18/qui-sont-les-agents-qui-patrouillent-notre-campus/",
-      "author": "Héloïse Durning",
+      "title": "Les femmes MAGA au service du patriarcat",
+      "link": "https://www.delitfrancais.com/2026/03/18/les-femmes-maga-au-service-du-patriarcat/",
+      "author": "Anonyme",
       "date": "2026-03-18T07:00:00.000Z",
-      "excerpt": "Une enquête sur Garda à McGill.",
-      "image": "https://www.delitfrancais.com/wp-content/uploads/2026/03/garda.png",
+      "excerpt": "Kristi Noem et Erika Kirk comme figures de proue du néo-fascisme américain.",
+      "image": "https://www.delitfrancais.com/wp-content/uploads/2026/03/MAGA_marius.png",
       "featured": true,
-      "_pageAuthor": "Héloïse Durning",
-      "leadExcerpt": "« L’Université McGill est à la recherche de patrouilleurs dynamiques et engagés pour assurer la sécurité de sa communauté universitaire », selon une annonce publiée sur le site web du Groupe de sécurité Garda S.E.N.C. (Garda), mieux connu sous le nom de GardaWorld. Cette entreprise canadienne de sécurité privée est sous contrat avec McGill depuis le 26 août 2024, et ce, jusqu’au 30 avril 2027.",
-      "leadImageReady": true,
-      "sourceImageCredit": "Photo : Stu Doré/Félix Fournier",
-      "sourceImageCreator": "Stu Doré/Félix Fournier",
-      "sourceImageCreditUrl": "https://www.delitfrancais.com/2026/03/18/qui-sont-les-agents-qui-patrouillent-notre-campus/",
+      "_pageAuthor": "Anonyme",
+      "leadExcerpt": "L a montée en puissance de l’idéologie du mouvement politique Make America Great Again (MAGA) n’est pas qu’un accident ou qu’une simple parenthèse dans l’histoire américaine. Au contraire, ce fléau populiste est l’aboutissement rationnel d’un mariage longuement mijoté entre le conservatisme social, le néolibéralisme économique, et le sensationnalisme médiatique. Quoi qu’elle se vêtisse d’un nouvel habillage moderne et d’une esthétique grossière, cette fusion macabre porte en elle les caractéristiques héréditaires du fascisme, tel que le monde l’a vécu au 20e siècle.",
+      "leadImageReady": false,
+      "sourceImageCredit": "Photo : Stu Doré",
+      "sourceImageCreator": "Stu Doré",
+      "sourceImageCreditUrl": "https://www.delitfrancais.com/2026/03/18/les-femmes-maga-au-service-du-patriarcat/",
       "sourceImageCreditFrom": "article",
       "sourceImageCreditCited": true,
-      "sourceImageCreditImageKey": "garda.png"
+      "sourceImageCreditImageKey": "maga_marius.png"
     },
     {
       "source": "The McGill Daily",

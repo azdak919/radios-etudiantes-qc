@@ -1,11 +1,11 @@
 {
-  "updated": "2026-06-30T12:01:38.500Z",
+  "updated": "2026-06-30T13:02:54.889Z",
   "total": 192,
   "pool": 58,
-  "incomplete": 11,
-  "withLeadExcerpt": 67,
-  "candidates": 11,
-  "enriched": 5,
+  "incomplete": 10,
+  "withLeadExcerpt": 66,
+  "candidates": 10,
+  "enriched": 1,
   "failed": 0,
   "ok": true,
   "samples": [
@@ -28,21 +28,12 @@
       "changed": false
     },
     {
-      "title": "Sois belle et tais-toi",
-      "link": "https://www.delitfrancais.com/2026/03/18/sois-belle-et-tais-toi-2/",
+      "title": "Les femmes MAGA au service du patriarcat",
+      "link": "https://www.delitfrancais.com/2026/03/18/les-femmes-maga-au-service-du-patriarcat/",
       "ok": true,
-      "score": 100,
-      "chars": 698,
-      "sample": "Un complexe de supériorité. C’est tout ce qu’il a fallu pour qu’un beau jour, l’homme devienne le se",
-      "changed": true
-    },
-    {
-      "title": "Qui sont les agents qui patrouillent notre campus ?",
-      "link": "https://www.delitfrancais.com/2026/03/18/qui-sont-les-agents-qui-patrouillent-notre-campus/",
-      "ok": true,
-      "score": 100,
-      "chars": 396,
-      "sample": "« L’Université McGill est à la recherche de patrouilleurs dynamiques et engagés pour assurer la sécu",
+      "score": 96,
+      "chars": 572,
+      "sample": "L a montée en puissance de l’idéologie du mouvement politique Make America Great Again (MAGA) n’est ",
       "changed": true
     },
     {
@@ -52,16 +43,7 @@
       "score": 100,
       "chars": 450,
       "sample": "La Coalition Avenir Québec (CAQ) a présenté une première nouvelle candidature en vue des élections p",
-      "changed": true
-    },
-    {
-      "title": "CALAMINE : RAPPER AUTREMENT QUE LE « BOYS CLUB »",
-      "link": "https://quartierlibre.ca/calamine-rapper-autrement/",
-      "ok": true,
-      "score": 100,
-      "chars": 445,
-      "sample": "Le 13 mars dernier, la rappeuse Calamine a dévoilé son nouvel album , Rétrograde . Avec cette quatri",
-      "changed": true
+      "changed": false
     },
     {
       "title": "Le PIF s’internationalise pour sa 49e édition",
@@ -70,7 +52,7 @@
       "score": 100,
       "chars": 591,
       "sample": "Le plus grand tournoi de balle donnée en Amérique du Nord accueille cette année une vague de joueurs",
-      "changed": true
+      "changed": false
     },
     {
       "title": "Ask the Trib: How do I survive summer in my hometown?",
@@ -79,6 +61,24 @@
       "score": 96,
       "chars": 474,
       "sample": "Since returning to my hometown from McGill a little over a month ago, I’ve been so extremely bored. ",
+      "changed": false
+    },
+    {
+      "title": "AI’s use in legal decisions poses major risks to the Canadian judicial system’s integrity and neutrality",
+      "link": "https://www.thetribune.ca/opinion/ais-use-in-legal-decisions-poses-major-risks-to-the-canadian-judicial-systems-integrity-and-neutrality-11062026/?utm_source=rss&utm_medium=rss&utm_campaign=ais-use-in-legal-decisions-poses-major-risks-to-the-canadian-judicial-systems-integrity-and-neutrality-11062026",
+      "ok": true,
+      "score": 100,
+      "chars": 426,
+      "sample": "On April 22, the Superior Court of Quebec annulled the August 2025 arbitration Association des Resso",
+      "changed": false
+    },
+    {
+      "title": "Road to the 2026 FIFA World Cup",
+      "link": "https://thelinknewspaper.ca/article/16333",
+      "ok": true,
+      "score": 96,
+      "chars": 531,
+      "sample": "Canadian goalkeeper Maxime Crépeau, who hails from nearby Greenfield Park, appeared emotional during",
       "changed": false
     }
   ]

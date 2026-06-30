@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-30T12:12:16.328Z",
+  "updated": "2026-06-30T13:12:09.741Z",
   "count": 19,
   "items": [
     {
@@ -48,7 +48,7 @@
           "type": "facebook",
           "url": "https://www.facebook.com/montrealcampus",
           "handle": "montrealcampus",
-          "stats": "",
+          "stats": "6 264 mentions J'aime",
           "label": "Facebook"
         },
         {
@@ -193,7 +193,7 @@
           "type": "facebook",
           "url": "https://www.facebook.com/lexemplaire",
           "handle": "lexemplaire",
-          "stats": "852 mentions J'aime",
+          "stats": "",
           "label": "Facebook"
         },
         {
@@ -295,7 +295,7 @@
           "type": "x",
           "url": "https://twitter.com/Polyscope",
           "handle": "@Polyscope",
-          "stats": "",
+          "stats": "Journal étudiant de Polytechnique Montréal @PolyMTL − De toute façon, on est les meilleurs depuis 1967!",
           "label": "X"
         }
       ]
