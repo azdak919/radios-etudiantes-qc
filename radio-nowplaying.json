@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-01T21:07:38.452Z",
+  "updatedAt": "2026-07-01T22:48:20.917Z",
   "stations": {
     "chyz": {
       "id": "chyz",
@@ -7,7 +7,7 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-01T21:07:19.685Z"
+      "checkedAt": "2026-07-01T22:48:01.433Z"
     },
     "cism": {
       "id": "cism",
@@ -15,15 +15,15 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-01T21:07:20.496Z"
+      "checkedAt": "2026-07-01T22:48:02.487Z"
     },
     "ckut": {
       "id": "ckut",
       "name": "CKUT 90,3",
-      "showTitle": "Off the Hour/Sounds of Resistance",
+      "showTitle": "Hersay: Audio Smut/OWL/The Teachings/Metro Boulot Dodo",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-01T21:07:22.552Z"
+      "checkedAt": "2026-07-01T22:48:04.559Z"
     },
     "cjlo": {
       "id": "cjlo",
@@ -31,7 +31,7 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-01T21:07:36.556Z"
+      "checkedAt": "2026-07-01T22:48:18.423Z"
     },
     "cfak": {
       "id": "cfak",
@@ -39,15 +39,15 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-01T21:07:37.281Z"
+      "checkedAt": "2026-07-01T22:48:19.196Z"
     },
     "choq": {
       "id": "choq",
       "name": "CHOQ.ca",
-      "showTitle": "Si j'avais un clou",
-      "host": "Thierry Larose",
+      "showTitle": "Chambre noire",
+      "host": "Chaude Chaleur",
       "source": "api-live",
-      "checkedAt": "2026-07-01T21:07:38.051Z"
+      "checkedAt": "2026-07-01T22:48:20.515Z"
     }
   }
 }
