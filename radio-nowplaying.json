@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-30T22:50:52.965Z",
+  "updatedAt": "2026-07-01T00:07:45.374Z",
   "stations": {
     "chyz": {
       "id": "chyz",
@@ -7,7 +7,7 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-06-30T22:50:34.362Z"
+      "checkedAt": "2026-07-01T00:07:28.089Z"
     },
     "cism": {
       "id": "cism",
@@ -15,15 +15,15 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-06-30T22:50:35.261Z"
+      "checkedAt": "2026-07-01T00:07:29.041Z"
     },
     "ckut": {
       "id": "ckut",
       "name": "CKUT 90,3",
-      "showTitle": "Prison Radio",
+      "showTitle": "Soul Perspectives",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-06-30T22:50:36.882Z"
+      "checkedAt": "2026-07-01T00:07:30.580Z"
     },
     "cjlo": {
       "id": "cjlo",
@@ -31,7 +31,7 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-06-30T22:50:50.796Z"
+      "checkedAt": "2026-07-01T00:07:43.832Z"
     },
     "cfak": {
       "id": "cfak",
@@ -39,15 +39,15 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-06-30T22:50:51.331Z"
+      "checkedAt": "2026-07-01T00:07:44.350Z"
     },
     "choq": {
       "id": "choq",
       "name": "CHOQ.ca",
-      "showTitle": "L'heure bleue",
-      "host": "Duu",
+      "showTitle": "E-Motion",
+      "host": "Gia Margaret",
       "source": "api-live",
-      "checkedAt": "2026-06-30T22:50:52.564Z"
+      "checkedAt": "2026-07-01T00:07:44.974Z"
     }
   }
 }
