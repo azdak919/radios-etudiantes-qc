@@ -1,15 +1,15 @@
 {
-  "updated": "2026-07-01T19:28:55.857Z",
+  "updated": "2026-07-01T21:21:11.118Z",
   "total": 192,
   "withPhoto": 151,
-  "withStock": 43,
+  "withStock": 42,
   "fullyCovered": 184,
-  "leadReadyPhotos": 124,
-  "pageScraped": 71,
+  "leadReadyPhotos": 154,
+  "pageScraped": 70,
   "photosRecovered": 42,
-  "imagesCleared": 4,
+  "imagesCleared": 3,
   "stockSearches": 60,
-  "stockFound": 41,
+  "stockFound": 39,
   "mainPageLeadReady": true,
   "gaps": [
     {
@@ -25,24 +25,6 @@
       "image": null
     },
     {
-      "title": "Un investissement pour les jeunes « bienvenu » au Centre Mamik",
-      "link": "https://lapige.atmjonquiere.com/2026/05/21/un-investissement-pour-les-jeunes-bienvenu-au-centre-mamik/?utm_source=rss&utm_medium=rss&utm_campaign=un-investissement-pour-les-jeunes-bienvenu-au-centre-mamik",
-      "reason": "stock-too-small",
-      "image": "https://live.staticflickr.com/3095/3145515352_2c561381a0_b.jpg"
-    },
-    {
-      "title": "L’ERD sauvée de la dissolution par quatre membres",
-      "link": "https://lapige.atmjonquiere.com/2026/05/21/lerd-sauvee-de-la-dissolution-par-quatre-membres/?utm_source=rss&utm_medium=rss&utm_campaign=lerd-sauvee-de-la-dissolution-par-quatre-membres",
-      "reason": "stock-too-small",
-      "image": "https://live.staticflickr.com/7639/16904143862_9776b87f9f_b.jpg"
-    },
-    {
-      "title": "Un pont entre l’art et le travail de rue",
-      "link": "https://lapige.atmjonquiere.com/2026/05/20/un-pont-entre-lart-et-le-travail-de-rue/?utm_source=rss&utm_medium=rss&utm_campaign=un-pont-entre-lart-et-le-travail-de-rue",
-      "reason": "stock-too-small",
-      "image": "https://live.staticflickr.com/4162/34368472056_546633d47c_b.jpg"
-    },
-    {
       "title": "El Niño s’approche du Québec",
       "link": "https://lapige.atmjonquiere.com/2026/05/20/el-nino-sapproche-du-quebec/?utm_source=rss&utm_medium=rss&utm_campaign=el-nino-sapproche-du-quebec",
       "reason": "no-stock-match",
@@ -52,13 +34,7 @@
       "title": "Assistance technique en pharmacie : de premières portes ouvertes à Alma",
       "link": "https://lapige.atmjonquiere.com/2026/05/20/assistance-technique-en-pharmacie-de-premieres-portes-ouvertes-a-alma/?utm_source=rss&utm_medium=rss&utm_campaign=assistance-technique-en-pharmacie-de-premieres-portes-ouvertes-a-alma",
       "reason": "stock-too-small",
-      "image": "https://live.staticflickr.com/6082/6080290153_e6ba4a6502_b.jpg"
-    },
-    {
-      "title": "Un projet de loi rendrait obligatoire le statut d’étudiant·e proche aidant·e",
-      "link": "https://quartierlibre.ca/projet-loi-etudiant-proche-aidante/",
-      "reason": "stock-too-small",
-      "image": "https://live.staticflickr.com/2046/2138574759_7372bca412_b.jpg"
+      "image": "https://live.staticflickr.com/7040/6933759219_87c820c047_b.jpg"
     },
     {
       "title": "Une première nouvelle candidature pour la CAQ dans Brome‑Missisquoi",
@@ -73,16 +49,40 @@
       "image": "https://lecollectif.ca/wp-content/uploads/2026/06/SOCIETE_Resume-du-G7-a-Evian_Getty-Images.jpg"
     },
     {
-      "title": "Interdiction des boissons énergisantes pour les moins de 16 ans",
-      "link": "https://lecollectif.ca/a-la-une/interdiction-des-boissons-energisantes-pour-les-moins-de-16-ans/",
-      "reason": "stock-too-small",
-      "image": "https://lecollectif.ca/wp-content/uploads/2026/06/SOCIETE_BoissonsEnergisantes_SourceAssociationPourLaSantePubliqueDuQuebec.jpg"
-    },
-    {
       "title": "Se préparer et vivre sa retraite : un long fleuve, pas si tranquille",
       "link": "https://lapige.atmjonquiere.com/2026/06/22/se-preparer-et-vivre-sa-retraite-un-long-fleuve-pas-si-tranquille/?utm_source=rss&utm_medium=rss&utm_campaign=se-preparer-et-vivre-sa-retraite-un-long-fleuve-pas-si-tranquille",
       "reason": "no-stock-match",
       "image": "https://lapige.atmjonquiere.com/wp-content/uploads/sites/3/2026/06/Bruno-Cormier-retraite-benevole.png"
+    },
+    {
+      "title": "CALAMINE : RAPPER AUTREMENT QUE LE « BOYS CLUB »",
+      "link": "https://quartierlibre.ca/calamine-rapper-autrement/",
+      "reason": "no-stock-match",
+      "image": "https://quartierlibre.ca/wp-content/uploads/2026/05/20_calamine-1.jpg"
+    },
+    {
+      "title": "Recettes musicales québécoises pour l’été",
+      "link": "https://quartierlibre.ca/ete-recettes-musicales-quebecoises/",
+      "reason": "no-stock-match",
+      "image": "https://quartierlibre.ca/wp-content/uploads/2026/05/20_florelaurentienne.jpg"
+    },
+    {
+      "title": "McGill community members express concerns about McGill Athletics’ former partnership with InterRent REIT",
+      "link": "https://www.thetribune.ca/news/mcgill-community-members-express-concerns-about-mcgill-athletics-former-partnership-with-interrent-reit-26042026/?utm_source=rss&utm_medium=rss&utm_campaign=mcgill-community-members-express-concerns-about-mcgill-athletics-former-partnership-with-interrent-reit-26042026",
+      "reason": "no-stock-match",
+      "image": null
+    },
+    {
+      "title": "Apply to The Concordian Awards!",
+      "link": "https://theconcordian.substack.com/p/apply-to-the-concordian-awards",
+      "reason": "no-stock-match",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/7/78/Even_at_This_Price_You_Can_Maintain_Your_Pyrethrum_Insecticide_Volume_with_D.H.S._Activator_-_DPLA_-_ac96e4722d9866feb5171238b2353c23.jpg"
+    },
+    {
+      "title": "L’hypocrisie qui rampe à l’Assemblée nationale",
+      "link": "https://exilecvm.wordpress.com/2026/04/18/opinion-lhypocrisie-qui-rampe-a-lassemblee-nationale/",
+      "reason": "stock-too-small",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/4/47/Assembl%C3%A9e_nationale_du_Qu%C3%A9bec%2C_l%27H%C3%B4tel_du_Parlement%2C_fa%C3%A7ade_avec_ancien_entr%C3%A9_principal.jpg"
     }
   ]
 }

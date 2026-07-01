@@ -1,12 +1,12 @@
 {
-  "updated": "2026-07-01T19:20:39.299Z",
+  "updated": "2026-07-01T21:15:56.548Z",
   "total": 192,
   "pool": 58,
-  "incomplete": 11,
+  "incomplete": 10,
   "withLeadExcerpt": 66,
-  "candidates": 11,
+  "candidates": 10,
   "enriched": 1,
-  "failed": 1,
+  "failed": 0,
   "ok": true,
   "samples": [
     {
@@ -28,12 +28,12 @@
       "changed": false
     },
     {
-      "title": "Élections de l’exécutif de l’AÉUM",
-      "link": "https://www.delitfrancais.com/2026/03/18/elections-de-lexecutif-de-laeum/",
+      "title": "Les femmes MAGA au service du patriarcat",
+      "link": "https://www.delitfrancais.com/2026/03/18/les-femmes-maga-au-service-du-patriarcat/",
       "ok": true,
-      "score": 80,
-      "chars": 865,
-      "sample": "Contacté à plusieurs reprises, Hamza Abu-Alkhair n’a pas donné suite à nos demandes d’entrevue. Sa p",
+      "score": 96,
+      "chars": 572,
+      "sample": "L a montée en puissance de l’idéologie du mouvement politique Make America Great Again (MAGA) n’est ",
       "changed": true
     },
     {
