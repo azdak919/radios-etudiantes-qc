@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-01T15:20:16.700Z",
+  "updatedAt": "2026-07-01T17:29:29.502Z",
   "stations": {
     "chyz": {
       "id": "chyz",
@@ -7,7 +7,7 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-01T15:19:58.464Z"
+      "checkedAt": "2026-07-01T17:29:09.941Z"
     },
     "cism": {
       "id": "cism",
@@ -15,15 +15,15 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-01T15:19:59.256Z"
+      "checkedAt": "2026-07-01T17:29:11.051Z"
     },
     "ckut": {
       "id": "ckut",
       "name": "CKUT 90,3",
-      "showTitle": "Free City Radio",
+      "showTitle": "If You Got Ears",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-01T15:20:00.847Z"
+      "checkedAt": "2026-07-01T17:29:13.120Z"
     },
     "cjlo": {
       "id": "cjlo",
@@ -31,7 +31,7 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-01T15:20:14.432Z"
+      "checkedAt": "2026-07-01T17:29:26.954Z"
     },
     "cfak": {
       "id": "cfak",
@@ -39,15 +39,15 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-01T15:20:15.083Z"
+      "checkedAt": "2026-07-01T17:29:27.725Z"
     },
     "choq": {
       "id": "choq",
       "name": "CHOQ.ca",
-      "showTitle": "Tes traits",
-      "host": "Camille Yembe",
+      "showTitle": "Nizhooziibing",
+      "host": "Leanne Betasamosake Simpson",
       "source": "api-live",
-      "checkedAt": "2026-07-01T15:20:16.299Z"
+      "checkedAt": "2026-07-01T17:29:29.102Z"
     }
   }
 }
