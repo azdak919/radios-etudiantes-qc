@@ -1,15 +1,15 @@
 {
-  "updated": "2026-07-02T13:02:20.493Z",
+  "updated": "2026-07-02T16:09:00.805Z",
   "total": 192,
   "withPhoto": 151,
-  "withStock": 41,
-  "fullyCovered": 184,
-  "leadReadyPhotos": 125,
-  "pageScraped": 70,
-  "photosRecovered": 42,
-  "imagesCleared": 3,
+  "withStock": 49,
+  "fullyCovered": 185,
+  "leadReadyPhotos": 109,
+  "pageScraped": 60,
+  "photosRecovered": 40,
+  "imagesCleared": 4,
   "stockSearches": 60,
-  "stockFound": 38,
+  "stockFound": 45,
   "mainPageLeadReady": true,
   "gaps": [
     {
@@ -55,10 +55,16 @@
       "image": "https://live.staticflickr.com/7040/6933759219_87c820c047_b.jpg"
     },
     {
-      "title": "Un projet de loi rendrait obligatoire le statut d’étudiant·e proche aidant·e",
-      "link": "https://quartierlibre.ca/projet-loi-etudiant-proche-aidante/",
+      "title": "Alexandre Raymond repêché par l’Avalanche du Colorado",
+      "link": "https://lecollectif.ca/a-la-une/alexandre-raymond-repeche-par-lavalanche-du-colorado/",
       "reason": "stock-too-small",
-      "image": "https://live.staticflickr.com/2046/2138574759_7372bca412_b.jpg"
+      "image": "https://lecollectif.ca/wp-content/uploads/2026/07/SGSSPORTS_Raymon_Houle_Source_Huskies-Rouyn-Noranda-1024x496.jpeg"
+    },
+    {
+      "title": "La procrastination : quand remettre à plus tard devient un problème",
+      "link": "https://lecollectif.ca/a-la-une/la-procrastination-quand-remettre-a-plus-tard-devient-un-probleme/",
+      "reason": "no-stock-match",
+      "image": "https://lecollectif.ca/wp-content/uploads/2026/06/SOCIETE_Procrastination_SourcePixabay-1024x731.png"
     },
     {
       "title": "Une première nouvelle candidature pour la CAQ dans Brome‑Missisquoi",
@@ -77,12 +83,6 @@
       "link": "https://lecollectif.ca/a-la-une/interdiction-des-boissons-energisantes-pour-les-moins-de-16-ans/",
       "reason": "stock-too-small",
       "image": "https://lecollectif.ca/wp-content/uploads/2026/06/SOCIETE_BoissonsEnergisantes_SourceAssociationPourLaSantePubliqueDuQuebec.jpg"
-    },
-    {
-      "title": "Se préparer et vivre sa retraite : un long fleuve, pas si tranquille",
-      "link": "https://lapige.atmjonquiere.com/2026/06/22/se-preparer-et-vivre-sa-retraite-un-long-fleuve-pas-si-tranquille/?utm_source=rss&utm_medium=rss&utm_campaign=se-preparer-et-vivre-sa-retraite-un-long-fleuve-pas-si-tranquille",
-      "reason": "no-stock-match",
-      "image": "https://lapige.atmjonquiere.com/wp-content/uploads/sites/3/2026/06/Bruno-Cormier-retraite-benevole.png"
     }
   ]
 }
