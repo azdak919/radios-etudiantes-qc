@@ -1,15 +1,15 @@
 {
-  "updated": "2026-07-02T12:02:35.949Z",
+  "updated": "2026-07-02T13:02:20.493Z",
   "total": 192,
   "withPhoto": 151,
-  "withStock": 42,
-  "fullyCovered": 183,
-  "leadReadyPhotos": 130,
-  "pageScraped": 71,
+  "withStock": 41,
+  "fullyCovered": 184,
+  "leadReadyPhotos": 125,
+  "pageScraped": 70,
   "photosRecovered": 42,
   "imagesCleared": 3,
   "stockSearches": 60,
-  "stockFound": 39,
+  "stockFound": 38,
   "mainPageLeadReady": true,
   "gaps": [
     {
@@ -33,8 +33,8 @@
     {
       "title": "L’ERD sauvée de la dissolution par quatre membres",
       "link": "https://lapige.atmjonquiere.com/2026/05/21/lerd-sauvee-de-la-dissolution-par-quatre-membres/?utm_source=rss&utm_medium=rss&utm_campaign=lerd-sauvee-de-la-dissolution-par-quatre-membres",
-      "reason": "stock-too-small",
-      "image": "https://live.staticflickr.com/7639/16904143862_9776b87f9f_b.jpg"
+      "reason": "no-stock-match",
+      "image": null
     },
     {
       "title": "Un pont entre l’art et le travail de rue",
@@ -52,7 +52,7 @@
       "title": "Assistance technique en pharmacie : de premières portes ouvertes à Alma",
       "link": "https://lapige.atmjonquiere.com/2026/05/20/assistance-technique-en-pharmacie-de-premieres-portes-ouvertes-a-alma/?utm_source=rss&utm_medium=rss&utm_campaign=assistance-technique-en-pharmacie-de-premieres-portes-ouvertes-a-alma",
       "reason": "stock-too-small",
-      "image": "https://live.staticflickr.com/6082/6080290153_e6ba4a6502_b.jpg"
+      "image": "https://live.staticflickr.com/7040/6933759219_87c820c047_b.jpg"
     },
     {
       "title": "Un projet de loi rendrait obligatoire le statut d’étudiant·e proche aidant·e",

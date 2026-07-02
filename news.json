@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-02T11:54:21.592Z",
+  "updated": "2026-07-02T12:52:40.491Z",
   "count": 192,
   "freshnessSessions": 3,
   "sources": {
@@ -9,7 +9,7 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-05-15T16:00:00.000Z",
-      "lastFetchOk": "2026-07-02T11:52:51.546Z"
+      "lastFetchOk": "2026-07-02T12:51:15.043Z"
     },
     "Montréal Campus": {
       "fetchOk": true,
@@ -17,7 +17,7 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-05-09T03:14:30.000Z",
-      "lastFetchOk": "2026-07-02T11:52:52.599Z"
+      "lastFetchOk": "2026-07-02T12:51:16.054Z"
     },
     "Le Délit": {
       "fetchOk": true,
@@ -25,7 +25,7 @@
       "articleCount": 20,
       "freshArticleCount": 20,
       "lastArticle": "2026-03-25T11:00:00.000Z",
-      "lastFetchOk": "2026-07-02T11:52:57.671Z"
+      "lastFetchOk": "2026-07-02T12:51:21.312Z"
     },
     "The McGill Daily": {
       "fetchOk": true,
@@ -33,7 +33,7 @@
       "articleCount": 15,
       "freshArticleCount": 15,
       "lastArticle": "2026-06-28T11:00:00.000Z",
-      "lastFetchOk": "2026-07-02T11:52:58.617Z"
+      "lastFetchOk": "2026-07-02T12:51:22.023Z"
     },
     "The Link": {
       "fetchOk": true,
@@ -41,7 +41,7 @@
       "articleCount": 20,
       "freshArticleCount": 20,
       "lastArticle": "2026-06-28T23:23:00.000Z",
-      "lastFetchOk": "2026-07-02T11:53:00.084Z"
+      "lastFetchOk": "2026-07-02T12:51:22.591Z"
     },
     "The Concordian": {
       "fetchOk": false,
@@ -57,7 +57,7 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-05-08T14:20:26.000Z",
-      "lastFetchOk": "2026-07-02T11:53:01.412Z"
+      "lastFetchOk": "2026-07-02T12:51:24.020Z"
     },
     "L'Exemplaire": {
       "fetchOk": true,
@@ -65,7 +65,7 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-05-15T16:31:24.000Z",
-      "lastFetchOk": "2026-07-02T11:53:02.664Z"
+      "lastFetchOk": "2026-07-02T12:51:25.193Z"
     },
     "Le Collectif": {
       "fetchOk": true,
@@ -73,7 +73,7 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-07-01T23:29:45.000Z",
-      "lastFetchOk": "2026-07-02T11:53:04.716Z"
+      "lastFetchOk": "2026-07-02T12:51:26.284Z"
     },
     "Exil": {
       "fetchOk": true,
@@ -81,7 +81,7 @@
       "articleCount": 7,
       "freshArticleCount": 7,
       "lastArticle": "2026-04-18T22:22:07.000Z",
-      "lastFetchOk": "2026-07-02T11:53:04.838Z"
+      "lastFetchOk": "2026-07-02T12:51:26.652Z"
     },
     "La Pige": {
       "fetchOk": true,
@@ -89,7 +89,7 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-06-22T14:36:10.000Z",
-      "lastFetchOk": "2026-07-02T11:53:05.618Z"
+      "lastFetchOk": "2026-07-02T12:51:27.525Z"
     },
     "The Tribune": {
       "fetchOk": true,
@@ -97,7 +97,7 @@
       "articleCount": 20,
       "freshArticleCount": 20,
       "lastArticle": "2026-06-26T15:24:28.000Z",
-      "lastFetchOk": "2026-07-02T11:53:05.776Z"
+      "lastFetchOk": "2026-07-02T12:51:27.843Z"
     },
     "The Campus": {
       "fetchOk": true,
@@ -105,7 +105,7 @@
       "articleCount": 30,
       "freshArticleCount": 30,
       "lastArticle": "2026-04-06T16:03:16.000Z",
-      "lastFetchOk": "2026-07-02T11:53:05.922Z"
+      "lastFetchOk": "2026-07-02T12:51:28.146Z"
     }
   },
   "items": [
@@ -146,13 +146,7 @@
       "sourceImageCreditCited": false,
       "sourceImageCreditImageKey": "culture_francoise_rebeccagagne-1.jpg",
       "leadImageReady": false,
-      "leadExcerpt": "Le 23 juin dernier avait lieu la première du film québécois François.e à la Maison du Cinéma de Sherbrooke. Pour l’occasion, des membres de la distribution de même que les deux scénaristes de l’œuvre ont partagé l’expérience avec l’audience.",
-      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/d/d4/Francois_Cevert_1973.jpg",
-      "imageCredit": "Photo : Raimund Kommer / CC BY-SA · Openverse",
-      "imageCreator": "Raimund Kommer",
-      "imageLicense": "by-sa",
-      "imageProvider": "openverse",
-      "imageSourceUrl": "https://commons.wikimedia.org/w/index.php?curid=9775871"
+      "leadExcerpt": "Le 23 juin dernier avait lieu la première du film québécois François.e à la Maison du Cinéma de Sherbrooke. Pour l’occasion, des membres de la distribution de même que les deux scénaristes de l’œuvre ont partagé l’expérience avec l’audience."
     },
     {
       "source": "Le Collectif",
@@ -274,13 +268,7 @@
       "sourceImageCreditCited": true,
       "sourceImageCreditImageKey": "societe_virage-a-droite-en-colombie_getty-images.jpg",
       "leadImageReady": false,
-      "leadExcerpt": "Après quatre années passées sous l’égide de Gustavo Petro, la Colombie change de cap et élit à sa tête Abelardo de la Espriella. Ce dernier promet une rupture avec les administrations précédentes, notamment en ce qui concerne le crime organisé. Personnalité similaire à celle du président Trump, il aura su naviguer à travers les promesses-phares tout au long de sa campagne électorale.",
-      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/1/18/Patrouille-de-france-virage-tricolore-a-8.jpg",
-      "imageCredit": "Photo : Tristan Nitot / CC BY-SA · Openverse",
-      "imageCreator": "Tristan Nitot",
-      "imageLicense": "by-sa",
-      "imageProvider": "openverse",
-      "imageSourceUrl": "https://commons.wikimedia.org/w/index.php?curid=241996"
+      "leadExcerpt": "Après quatre années passées sous l’égide de Gustavo Petro, la Colombie change de cap et élit à sa tête Abelardo de la Espriella. Ce dernier promet une rupture avec les administrations précédentes, notamment en ce qui concerne le crime organisé. Personnalité similaire à celle du président Trump, il aura su naviguer à travers les promesses-phares tout au long de sa campagne électorale."
     },
     {
       "source": "Le Collectif",
@@ -301,7 +289,13 @@
       "sourceImageCreditCited": true,
       "sourceImageCreditImageKey": "societe_demission-de-keir-starmer-au-royaume-uni_getty-images.jpg",
       "leadImageReady": false,
-      "leadExcerpt": "Croulant sous les pressions provenant de l’opposition et de son propre parti, le premier ministre britannique, Keir Starmer, démissionne finalement. Après des mois à se tenir de justesse au pouvoir, il cède ainsi sa place à Andy Burnham, alors que son parti chute aux sondages."
+      "leadExcerpt": "Croulant sous les pressions provenant de l’opposition et de son propre parti, le premier ministre britannique, Keir Starmer, démissionne finalement. Après des mois à se tenir de justesse au pouvoir, il cède ainsi sa place à Andy Burnham, alors que son parti chute aux sondages.",
+      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/a/a0/Beediging_%28nieuw%29_gekozen_leden_Tweede_Kamer_demission_premier_Lubbers_legt_ee%2C_Bestanddeelnr_933-6751.jpg",
+      "imageCredit": "Photo : Rob Croes for Anefo / CC0 · Openverse",
+      "imageCreator": "Rob Croes for Anefo",
+      "imageLicense": "cc0",
+      "imageProvider": "openverse",
+      "imageSourceUrl": "https://commons.wikimedia.org/w/index.php?curid=66556428"
     },
     {
       "source": "Le Collectif",
@@ -643,13 +637,7 @@
       "excerpt": "Depuis 2011, l’Équipe du renouveau démocratique de Saguenay tente d’être plus à l’écoute des citoyens. Le départ de huit des onze membres du conseil d’administration a failli mener la dissolution de l’Équipe du renouveau démocratique de Saguenay (ERD), mercredi soir. In extrémis, quatre membres pourraient secourir le parti.",
       "image": "",
       "leadExcerpt": "Le départ de huit des onze membres du conseil d’administration a failli mener la dissolution de l’Équipe du renouveau démocratique de Saguenay (ERD), mercredi soir. In extrémis, quatre membres pourraient secourir le parti.",
-      "leadImageReady": false,
-      "stockImage": "https://live.staticflickr.com/7639/16904143862_9776b87f9f_b.jpg",
-      "imageCredit": "Photo : DLR_de / CC BY · Openverse",
-      "imageCreator": "DLR_de",
-      "imageLicense": "by",
-      "imageProvider": "openverse",
-      "imageSourceUrl": "https://www.flickr.com/photos/48213136@N06/16904143862"
+      "leadImageReady": false
     },
     {
       "source": "La Pige",
@@ -665,12 +653,12 @@
       "image": "",
       "leadExcerpt": "Le concours « Jeunes auteurs à vos crayons! » était dans la région mardi, en compagnie de sa marraine Frédérique Dufort, écrivaine et comédienne, pour distribuer des prix destinés aux élèves. La thématique cette année, « Le pouvoir des mots », orientera le travail de 2346 participants provenant de 160 écoles à travers le Québec et le Canada francophone.",
       "leadImageReady": false,
-      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Peupl%C3%A9_jeunes_%C3%A9poux_la_terre_en_abondance._9%2C_G.14054%282%29.jpg",
+      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/6/68/Peupl%C3%A9_jeunes_%C3%A9poux_la_terre_en_abondance._9%2C_G.14054.jpg",
       "imageCredit": "Photo : Guérard, Nicolas (vers 1648 - Paris, 1719), dessinateur / CC0 · Openverse",
       "imageCreator": "Guérard, Nicolas (vers 1648 - Paris, 1719), dessinateur",
       "imageLicense": "cc0",
       "imageProvider": "openverse",
-      "imageSourceUrl": "https://commons.wikimedia.org/w/index.php?curid=132253051"
+      "imageSourceUrl": "https://commons.wikimedia.org/w/index.php?curid=132253024"
     },
     {
       "source": "La Pige",
@@ -721,12 +709,12 @@
       "image": "",
       "leadExcerpt": "Mélissa Girard, Cindy Duchesne, Mireille Fortin, Claudia Boily et Julie Guay, du programme d’Assistance technique en pharmacie, étaient présentes pour la Journée portes ouvertes, mercredi. (Crédit : Étienne Harvey-Soucy)",
       "leadImageReady": false,
-      "stockImage": "https://live.staticflickr.com/6082/6080290153_e6ba4a6502_b.jpg",
-      "imageCredit": "Photo : DVIDSHUB / CC BY · Openverse",
-      "imageCreator": "DVIDSHUB",
+      "stockImage": "https://live.staticflickr.com/7040/6933759219_87c820c047_b.jpg",
+      "imageCredit": "Photo : USDAgov / CC BY · Openverse",
+      "imageCreator": "USDAgov",
       "imageLicense": "by",
       "imageProvider": "openverse",
-      "imageSourceUrl": "https://www.flickr.com/photos/28650594@N03/6080290153"
+      "imageSourceUrl": "https://www.flickr.com/photos/41284017@N08/6933759219"
     },
     {
       "source": "L'Exemplaire",
@@ -1926,12 +1914,6 @@
       "excerpt": "Canada’s prison system is predicated on rehabilitation and reintegration—yet, the country’s own correctional service is defunding the most integral program to realizing that aim. Correctional Service Canada (CSC) has announced the suspension of its federal prison education program in Quebec correctional facilities, effective June 30, 2026.",
       "image": "https://www.thetribune.ca/wp-content/uploads/2026/04/Design-sans-titre.png",
       "leadImageReady": false,
-      "stockImage": "https://live.staticflickr.com/5509/14244591721_5a94c2b42a_b.jpg",
-      "imageCredit": "Photo : Darron Birgenheier / CC BY-SA · Openverse",
-      "imageCreator": "Darron Birgenheier",
-      "imageLicense": "by-sa",
-      "imageProvider": "openverse",
-      "imageSourceUrl": "https://www.flickr.com/photos/28502132@N05/14244591721",
       "sourceImageCredit": "Photo credit: The Tribune",
       "sourceImageCreator": "",
       "sourceImageCreditUrl": "https://www.thetribune.ca/features/how-can-i-show-you-im-doing-better-if-theres-nothing-good-for-me-to-do/?utm_source=rss&utm_medium=rss&utm_campaign=how-can-i-show-you-im-doing-better-if-theres-nothing-good-for-me-to-do",
@@ -2265,7 +2247,13 @@
       "date": "2026-04-07T15:29:55.000Z",
       "excerpt": "The Tribune ‘s special issue for the Winter 2026 semester was centred around the theme of ‘ memory ,’ with our writers, staff, editors, and creative team discussing the role of institutional, collective, and personal memory in society, politics, educational institutions, and more.",
       "image": "",
-      "leadImageReady": false
+      "leadImageReady": false,
+      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/c/c5/Open_Letter_From_-_DPLA_-_0bd990c7165f1c2e81214199ccf462db.jpg",
+      "imageCredit": "Photo : U.S. Information Agency. Joint U.S. Public Affairs Office. Office of… / PUBLIC DOMAIN · Wikimedia Commons",
+      "imageCreator": "U.S. Information Agency. Joint U.S. Public Affairs Office. Office of…",
+      "imageLicense": "Public domain",
+      "imageProvider": "wikimedia",
+      "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Open_Letter_From_-_DPLA_-_0bd990c7165f1c2e81214199ccf462db.jpg"
     },
     {
       "source": "The Tribune",
@@ -2280,11 +2268,11 @@
       "excerpt": "Content warning: Mentions of racial violence After Black Sisterhood at McGill (BSISSY) began recruiting members to start an Alpha Kappa Alpha (AKA) sorority chapter at McGill, co-founders Lena Karis Moussio, U1 Arts, and Astou Badiane, U1 Arts, received racist comments and threats of violence through the organization’s Instagram account.",
       "image": "https://www.thetribune.ca/wp-content/uploads/2026/04/Untitled_Artwork-149-1000x600.png",
       "leadImageReady": true,
-      "sourceImageCredit": "Photo : Eliot Loose",
-      "sourceImageCreator": "Eliot Loose",
+      "sourceImageCredit": "Photo credit: The Tribune",
+      "sourceImageCreator": "",
       "sourceImageCreditUrl": "https://www.thetribune.ca/news/mcgill-news/black-sisterhood-at-mcgill-targeted-with-online-racist-harassment-07042026/?utm_source=rss&utm_medium=rss&utm_campaign=black-sisterhood-at-mcgill-targeted-with-online-racist-harassment-07042026",
-      "sourceImageCreditFrom": "article",
-      "sourceImageCreditCited": true,
+      "sourceImageCreditFrom": "media",
+      "sourceImageCreditCited": false,
       "sourceImageCreditImageKey": "untitled_artwork-149.png"
     },
     {
@@ -3416,7 +3404,13 @@
       "date": "2026-03-23T16:32:31.000Z",
       "excerpt": "Emilie Vadeboncoeur – Director of Marketing and Communications As the end of the semester and exams start to approach, the Williams School of Business is preparing to offer a chance for students to pause and reflect on the remarkable talent within the business community here at Bishop’s.",
       "image": "",
-      "leadImageReady": false
+      "leadImageReady": false,
+      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/0/02/Community_Wishlist_wishes_count_April_2026.png",
+      "imageCredit": "Photo : Sannita (WMF) / CC BY-SA · Openverse",
+      "imageCreator": "Sannita (WMF)",
+      "imageLicense": "by-sa",
+      "imageProvider": "openverse",
+      "imageSourceUrl": "https://commons.wikimedia.org/w/index.php?curid=191896626"
     },
     {
       "source": "The Campus",
