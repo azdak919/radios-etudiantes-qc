@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-02T20:43:36.802Z",
+  "updatedAt": "2026-07-02T22:09:35.582Z",
   "stations": {
     "chyz": {
       "id": "chyz",
@@ -7,7 +7,7 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-02T20:43:19.252Z"
+      "checkedAt": "2026-07-02T22:09:15.886Z"
     },
     "cism": {
       "id": "cism",
@@ -15,15 +15,15 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-02T20:43:20.085Z"
+      "checkedAt": "2026-07-02T22:09:17.036Z"
     },
     "ckut": {
       "id": "ckut",
       "name": "CKUT 90,3",
-      "showTitle": "Positive Vibes",
+      "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-02T20:43:21.773Z"
+      "checkedAt": "2026-07-02T22:09:19.019Z"
     },
     "cjlo": {
       "id": "cjlo",
@@ -31,7 +31,7 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-02T20:43:35.160Z"
+      "checkedAt": "2026-07-02T22:09:32.838Z"
     },
     "cfak": {
       "id": "cfak",
@@ -39,15 +39,15 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-02T20:43:35.804Z"
+      "checkedAt": "2026-07-02T22:09:33.311Z"
     },
     "choq": {
       "id": "choq",
       "name": "CHOQ.ca",
-      "showTitle": "Salade de fruits",
-      "host": "Loïc Lafrance",
-      "source": "api-live",
-      "checkedAt": "2026-07-02T20:43:36.401Z"
+      "showTitle": "Noé Lira - compas",
+      "host": "",
+      "source": "stream",
+      "checkedAt": "2026-07-02T22:09:35.181Z"
     }
   }
 }
