@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-02T08:13:07.727Z",
+  "updatedAt": "2026-07-02T09:35:36.760Z",
   "stations": {
     "chyz": {
       "id": "chyz",
@@ -7,7 +7,7 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-02T08:12:48.447Z"
+      "checkedAt": "2026-07-02T09:35:18.426Z"
     },
     "cism": {
       "id": "cism",
@@ -15,7 +15,7 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-02T08:12:49.560Z"
+      "checkedAt": "2026-07-02T09:35:19.529Z"
     },
     "ckut": {
       "id": "ckut",
@@ -23,7 +23,7 @@
       "showTitle": "William Shatner",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-02T08:12:51.539Z"
+      "checkedAt": "2026-07-02T09:35:21.451Z"
     },
     "cjlo": {
       "id": "cjlo",
@@ -31,7 +31,7 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-02T08:13:05.610Z"
+      "checkedAt": "2026-07-02T09:35:35.007Z"
     },
     "cfak": {
       "id": "cfak",
@@ -39,15 +39,15 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-02T08:13:06.337Z"
+      "checkedAt": "2026-07-02T09:35:35.435Z"
     },
     "choq": {
       "id": "choq",
       "name": "CHOQ.ca",
-      "showTitle": "EVERYDAY",
-      "host": "Jamaz",
+      "showTitle": "Wants For Everyone",
+      "host": "Slippers",
       "source": "api-live",
-      "checkedAt": "2026-07-02T08:13:07.327Z"
+      "checkedAt": "2026-07-02T09:35:36.359Z"
     }
   }
 }

@@ -22,7 +22,7 @@
     ],
     "popularity": 3,
     "_streamStatus": "working",
-    "_streamChecked": "2026-07-01T10:00:30.226Z",
+    "_streamChecked": "2026-07-02T09:22:53.560Z",
     "_streamIcyName": "No Name"
   },
   {
@@ -48,7 +48,7 @@
     ],
     "popularity": 1,
     "_streamStatus": "working",
-    "_streamChecked": "2026-07-01T10:02:47.809Z",
+    "_streamChecked": "2026-07-02T09:25:14.522Z",
     "_streamIcyName": "CISM high quality"
   },
   {
@@ -74,7 +74,7 @@
     ],
     "popularity": 2,
     "_streamStatus": "working",
-    "_streamChecked": "2026-07-01T10:03:04.076Z",
+    "_streamChecked": "2026-07-02T09:26:06.948Z",
     "_streamIcyName": "Airtime!"
   },
   {
@@ -100,7 +100,7 @@
     ],
     "popularity": 4,
     "_streamStatus": "working",
-    "_streamChecked": "2026-07-01T10:03:13.087Z",
+    "_streamChecked": "2026-07-02T09:26:13.108Z",
     "_streamIcyName": "CJLO 1690AM - Montreal"
   },
   {
@@ -114,7 +114,7 @@
     "frequency": "88,3 FM",
     "website": "https://www.cfak.ca/",
     "slogan": "Ça part ici — radio de l'Université de Sherbrooke",
-    "stream": "https://audio-edge-w4d68.yul.o.radiomast.io/a372c74f-6c78-48b9-9933-81a8fc50b54a",
+    "stream": "https://audio-edge-2a8hd.sfo.he.radiomast.io/a372c74f-6c78-48b9-9933-81a8fc50b54a",
     "logo": "assets/logos/cfak-logo.jpg",
     "description": "La radio officielle de l'Université de Sherbrooke depuis 2003. Musique et vie étudiante en Estrie.",
     "instagram": "https://www.instagram.com/cfak883/",
@@ -125,7 +125,7 @@
     ],
     "popularity": 5,
     "_streamStatus": "working",
-    "_streamChecked": "2026-07-01T10:05:11.621Z",
+    "_streamChecked": "2026-07-02T09:28:31.083Z",
     "_streamIcyName": "CFAK - ÇA PART ICI"
   },
   {
@@ -151,7 +151,7 @@
     ],
     "popularity": 6,
     "_streamStatus": "working",
-    "_streamChecked": "2026-07-01T10:05:21.115Z",
+    "_streamChecked": "2026-07-02T09:28:44.847Z",
     "_streamIcyName": "CHOQ.CA",
     "_nowPlayingApi": "https://www.choq.ca/"
   }
