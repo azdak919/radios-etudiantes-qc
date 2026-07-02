@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-02T17:51:06.983Z",
+  "updatedAt": "2026-07-02T19:27:45.569Z",
   "stations": {
     "chyz": {
       "id": "chyz",
@@ -7,7 +7,7 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-02T17:50:48.190Z"
+      "checkedAt": "2026-07-02T19:27:26.629Z"
     },
     "cism": {
       "id": "cism",
@@ -15,15 +15,15 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-02T17:50:49.257Z"
+      "checkedAt": "2026-07-02T19:27:27.811Z"
     },
     "ckut": {
       "id": "ckut",
       "name": "CKUT 90,3",
-      "showTitle": "Venus Radio",
+      "showTitle": "Positive Vibes",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-02T17:50:51.176Z"
+      "checkedAt": "2026-07-02T19:27:29.750Z"
     },
     "cjlo": {
       "id": "cjlo",
@@ -31,7 +31,7 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-02T17:51:04.992Z"
+      "checkedAt": "2026-07-02T19:27:43.763Z"
     },
     "cfak": {
       "id": "cfak",
@@ -39,15 +39,15 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-02T17:51:05.797Z"
+      "checkedAt": "2026-07-02T19:27:44.262Z"
     },
     "choq": {
       "id": "choq",
       "name": "CHOQ.ca",
-      "showTitle": "les arbres",
-      "host": "Clément",
+      "showTitle": "Jazzette",
+      "host": "",
       "source": "api-live",
-      "checkedAt": "2026-07-02T17:51:06.583Z"
+      "checkedAt": "2026-07-02T19:27:45.168Z"
     }
   }
 }
