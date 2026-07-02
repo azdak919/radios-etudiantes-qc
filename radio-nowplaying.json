@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-02T09:35:36.760Z",
+  "updatedAt": "2026-07-02T11:08:23.303Z",
   "stations": {
     "chyz": {
       "id": "chyz",
@@ -7,7 +7,7 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-02T09:35:18.426Z"
+      "checkedAt": "2026-07-02T11:08:05.334Z"
     },
     "cism": {
       "id": "cism",
@@ -15,15 +15,15 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-02T09:35:19.529Z"
+      "checkedAt": "2026-07-02T11:08:06.165Z"
     },
     "ckut": {
       "id": "ckut",
       "name": "CKUT 90,3",
-      "showTitle": "William Shatner",
+      "showTitle": "OFC Podcast Radio",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-02T09:35:21.451Z"
+      "checkedAt": "2026-07-02T11:08:07.706Z"
     },
     "cjlo": {
       "id": "cjlo",
@@ -31,7 +31,7 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-02T09:35:35.007Z"
+      "checkedAt": "2026-07-02T11:08:21.083Z"
     },
     "cfak": {
       "id": "cfak",
@@ -39,15 +39,15 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-02T09:35:35.435Z"
+      "checkedAt": "2026-07-02T11:08:22.158Z"
     },
     "choq": {
       "id": "choq",
       "name": "CHOQ.ca",
-      "showTitle": "Wants For Everyone",
-      "host": "Slippers",
+      "showTitle": "Bad Song feat. Cecile Believe",
+      "host": "CFCF",
       "source": "api-live",
-      "checkedAt": "2026-07-02T09:35:36.359Z"
+      "checkedAt": "2026-07-02T11:08:22.902Z"
     }
   }
 }
