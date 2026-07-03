@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-03T19:42:08.234Z",
+  "updatedAt": "2026-07-03T21:09:51.637Z",
   "stations": {
     "chyz": {
       "id": "chyz",
@@ -7,7 +7,7 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-03T19:41:50.139Z"
+      "checkedAt": "2026-07-03T21:09:32.535Z"
     },
     "cism": {
       "id": "cism",
@@ -15,15 +15,15 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-03T19:41:50.706Z"
+      "checkedAt": "2026-07-03T21:09:33.699Z"
     },
     "ckut": {
       "id": "ckut",
       "name": "CKUT 90,3",
-      "showTitle": "New Shit",
+      "showTitle": "Girls Meet World/STEMinism/Radio TET/Migrant Nation",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-03T19:41:52.233Z"
+      "checkedAt": "2026-07-03T21:09:35.605Z"
     },
     "cjlo": {
       "id": "cjlo",
@@ -31,7 +31,7 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-03T19:42:05.962Z"
+      "checkedAt": "2026-07-03T21:09:49.628Z"
     },
     "cfak": {
       "id": "cfak",
@@ -39,15 +39,15 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-03T19:42:06.507Z"
+      "checkedAt": "2026-07-03T21:09:50.327Z"
     },
     "choq": {
       "id": "choq",
       "name": "CHOQ.ca",
-      "showTitle": "nouveau grappin",
-      "host": "Chloé Jara-Buto",
+      "showTitle": "Bon Sang",
+      "host": "Meloire",
       "source": "api-live",
-      "checkedAt": "2026-07-03T19:42:07.833Z"
+      "checkedAt": "2026-07-03T21:09:51.236Z"
     }
   }
 }
