@@ -659,12 +659,22 @@
       <source url="https://lapige.atmjonquiere.com/">La Pige</source>
       <description><![CDATA[La Pige · Zachary Rivard · 21 mai]]></description>
       <content:encoded><![CDATA[<p style="margin:0 0 0.75em;font-size:0.9em;color:#555"><strong>La Pige · Zachary Rivard · 21 mai</strong></p>
+<figure style="margin:0 0 1em">
+<img src="https://live.staticflickr.com/7639/16904143862_9776b87f9f_b.jpg" alt="L’ERD sauvée de la dissolution par quatre membres" style="max-width:100%;height:auto;display:block;border-radius:4px" />
+<figcaption style="font-size:0.85em;color:#666;margin-top:0.35em">Photo : DLR_de / CC BY · Openverse</figcaption>
+</figure>
 <p style="margin:0 0 0.75em;line-height:1.5">Le départ de huit des onze membres du conseil d’administration a failli mener la dissolution de l’Équipe du renouveau démocratique de Saguenay (ERD), mercredi soir. In extrémis, quatre membres pourraient secourir le parti.</p>]]></content:encoded>
       <category>La Pige</category>
       <category>Cégep de Jonquière</category>
       <category>Saguenay–Lac-Saint-Jean</category>
       <category>cégep</category>
       <category>Français</category>
+      <media:content url="https://live.staticflickr.com/7639/16904143862_9776b87f9f_b.jpg" medium="image" type="image/jpeg">
+        <media:credit>Photo : DLR_de / CC BY · Openverse</media:credit>
+        <media:title>L’ERD sauvée de la dissolution par quatre membres</media:title>
+      </media:content>
+      <media:thumbnail url="https://live.staticflickr.com/7639/16904143862_9776b87f9f_b.jpg" />
+      <enclosure url="https://live.staticflickr.com/7639/16904143862_9776b87f9f_b.jpg" type="image/jpeg" length="1" />
     </item>
     <item>
       <title>Jeunes auteurs, à vos crayons : le « pouvoir des mots » pour rejoindre les étudiants</title>
