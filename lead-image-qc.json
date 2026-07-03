@@ -1,15 +1,15 @@
 {
-  "updated": "2026-07-03T17:17:58.410Z",
+  "updated": "2026-07-03T19:03:45.735Z",
   "total": 192,
   "withPhoto": 151,
-  "withStock": 47,
+  "withStock": 44,
   "fullyCovered": 185,
-  "leadReadyPhotos": 109,
-  "pageScraped": 60,
-  "photosRecovered": 40,
+  "leadReadyPhotos": 123,
+  "pageScraped": 68,
+  "photosRecovered": 42,
   "imagesCleared": 3,
-  "stockSearches": 59,
-  "stockFound": 43,
+  "stockSearches": 60,
+  "stockFound": 40,
   "mainPageLeadReady": true,
   "gaps": [
     {
@@ -61,16 +61,16 @@
       "image": "https://live.staticflickr.com/2046/2138574759_7372bca412_b.jpg"
     },
     {
-      "title": "Alexandre Raymond repêché par l’Avalanche du Colorado",
-      "link": "https://lecollectif.ca/a-la-une/alexandre-raymond-repeche-par-lavalanche-du-colorado/",
+      "title": "FAÉCUM : la démocratie universitaire critiquée",
+      "link": "https://quartierlibre.ca/faecum-la-democratie-universitaire-critiquee/",
       "reason": "stock-too-small",
-      "image": "https://lecollectif.ca/wp-content/uploads/2026/07/SGSSPORTS_Raymon_Houle_Source_Huskies-Rouyn-Noranda-1024x496.jpeg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/a/ab/Universit%C3%A9_de_Montr%C3%A9al%2C_Pavillon_Roger-Gaudry.JPG"
     },
     {
-      "title": "La procrastination : quand remettre à plus tard devient un problème",
-      "link": "https://lecollectif.ca/a-la-une/la-procrastination-quand-remettre-a-plus-tard-devient-un-probleme/",
-      "reason": "no-stock-match",
-      "image": "https://lecollectif.ca/wp-content/uploads/2026/06/SOCIETE_Procrastination_SourcePixabay-1024x731.png"
+      "title": "François.e",
+      "link": "https://lecollectif.ca/culture/francois-e/",
+      "reason": "stock-too-small",
+      "image": "https://lecollectif.ca/wp-content/uploads/2026/06/CULTURE_Francoise_RebeccaGagne-1-709x1024.jpg"
     },
     {
       "title": "Une première nouvelle candidature pour la CAQ dans Brome‑Missisquoi",

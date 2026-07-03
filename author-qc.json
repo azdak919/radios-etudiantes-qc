@@ -1,8 +1,8 @@
 {
-  "updated": "2026-07-03T17:09:10.711Z",
+  "updated": "2026-07-03T18:49:05.187Z",
   "total": 192,
   "withAuthor": 192,
-  "mismatches": 72,
+  "mismatches": 82,
   "ok": true,
   "samples": [
     {
@@ -54,6 +54,38 @@
       "reason": "page-byline"
     },
     {
+      "title": "Présences invisibles : écrire la ville sans permission",
+      "link": "https://quartierlibre.ca/presences-invisibles-ecrire-la-ville/",
+      "source": "Quartier Libre",
+      "fieldAuthor": "La rédaction",
+      "canonicalAuthor": "Emilie Rizkallah",
+      "reason": "page-byline"
+    },
+    {
+      "title": "CALAMINE : RAPPER AUTREMENT QUE LE « BOYS CLUB »",
+      "link": "https://quartierlibre.ca/calamine-rapper-autrement/",
+      "source": "Quartier Libre",
+      "fieldAuthor": "La rédaction",
+      "canonicalAuthor": "Samuel Roy",
+      "reason": "page-byline"
+    },
+    {
+      "title": "Forum RÉA : une alliance pour l’éducation en milieu défavorisé",
+      "link": "https://quartierlibre.ca/forum-rea-education-en-milieu-defavorise/",
+      "source": "Quartier Libre",
+      "fieldAuthor": "La rédaction",
+      "canonicalAuthor": "Ulysse Taillard-Hodez",
+      "reason": "page-byline"
+    },
+    {
+      "title": "Un projet de loi rendrait obligatoire le statut d’étudiant·e proche aidant·e",
+      "link": "https://quartierlibre.ca/projet-loi-etudiant-proche-aidante/",
+      "source": "Quartier Libre",
+      "fieldAuthor": "La rédaction",
+      "canonicalAuthor": "Mohammed Aziz Mestiri",
+      "reason": "page-byline"
+    },
+    {
       "title": "A final note from the Editor-in-Chief of Volume 45, for the record",
       "link": "https://www.thetribune.ca/opinion/op-off-the-board/a-final-note-from-the-editor-in-chief-of-volume-45-for-the-record-14052026/?utm_source=rss&utm_medium=rss&utm_campaign=a-final-note-from-the-editor-in-chief-of-volume-45-for-the-record-14052026",
       "source": "The Tribune",
@@ -67,6 +99,54 @@
       "source": "The Tribune",
       "fieldAuthor": "The editorial team",
       "canonicalAuthor": "Ellen Lurie",
+      "reason": "page-byline"
+    },
+    {
+      "title": "Recettes musicales québécoises pour l’été",
+      "link": "https://quartierlibre.ca/ete-recettes-musicales-quebecoises/",
+      "source": "Quartier Libre",
+      "fieldAuthor": "La rédaction",
+      "canonicalAuthor": "Bérénice Lemarié",
+      "reason": "page-byline"
+    },
+    {
+      "title": "FAÉCUM : la démocratie universitaire critiquée",
+      "link": "https://quartierlibre.ca/faecum-la-democratie-universitaire-critiquee/",
+      "source": "Quartier Libre",
+      "fieldAuthor": "La rédaction",
+      "canonicalAuthor": "Ulysse Taillard-Hodez",
+      "reason": "page-byline"
+    },
+    {
+      "title": "Montréal Mystère : le polar à l’honneur dans un festival bilingue",
+      "link": "https://quartierlibre.ca/montreal-mystere-festival-bilingue/",
+      "source": "Quartier Libre",
+      "fieldAuthor": "La rédaction",
+      "canonicalAuthor": "Carla Roche",
+      "reason": "page-byline"
+    },
+    {
+      "title": "Coupe du monde 2026 : l’empreinte de l’expansion",
+      "link": "https://quartierlibre.ca/coupe-du-monde-2026/",
+      "source": "Quartier Libre",
+      "fieldAuthor": "La rédaction",
+      "canonicalAuthor": "Gabriel Lapointe",
+      "reason": "page-byline"
+    },
+    {
+      "title": "Soutien technique à l’UdeM : entre attentes et frustrations",
+      "link": "https://quartierlibre.ca/soutien-technique-a-ludem/",
+      "source": "Quartier Libre",
+      "fieldAuthor": "La rédaction",
+      "canonicalAuthor": "Solène Gerber",
+      "reason": "page-byline"
+    },
+    {
+      "title": "Festival Jamais Lu : « Quand le monde devient dur à lire, on doit se raconter des histoires »",
+      "link": "https://quartierlibre.ca/festival-jamais-lu-2026/",
+      "source": "Quartier Libre",
+      "fieldAuthor": "La rédaction",
+      "canonicalAuthor": "Bérénice Lemarié",
       "reason": "page-byline"
     },
     {
@@ -84,87 +164,7 @@
       "fieldAuthor": "The editorial team",
       "canonicalAuthor": "Rebecca Hamilton",
       "reason": "page-byline"
-    },
-    {
-      "title": "Journalism After Gaza’ panel discusses media bias and the future of reporting in Palestine",
-      "link": "https://www.thetribune.ca/student-life/journalism-after-gaza-panel-discusses-media-bias-and-the-future-of-reporting-in-palestine-27042026/?utm_source=rss&utm_medium=rss&utm_campaign=journalism-after-gaza-panel-discusses-media-bias-and-the-future-of-reporting-in-palestine-27042026",
-      "source": "The Tribune",
-      "fieldAuthor": "The editorial team",
-      "canonicalAuthor": "Ellen Lurie",
-      "reason": "page-byline"
-    },
-    {
-      "title": "The Concordian is hiring!",
-      "link": "https://theconcordian.substack.com/p/the-concordian-is-hiring",
-      "source": "The Concordian",
-      "fieldAuthor": "The editorial team",
-      "canonicalAuthor": "The editorial team",
-      "reason": "no-author-source"
-    },
-    {
-      "title": "Apply to The Concordian Awards!",
-      "link": "https://theconcordian.substack.com/p/apply-to-the-concordian-awards",
-      "source": "The Concordian",
-      "fieldAuthor": "The editorial team",
-      "canonicalAuthor": "The editorial team",
-      "reason": "no-author-source"
-    },
-    {
-      "title": "The Honey Bank: ASFA, Austerity, and Student Mobilization",
-      "link": "https://theconcordian.substack.com/p/the-honey-bank-asfa-austerity-and",
-      "source": "The Concordian",
-      "fieldAuthor": "The editorial team",
-      "canonicalAuthor": "The editorial team",
-      "reason": "no-author-source"
-    },
-    {
-      "title": "Sad endings do not ruin a great story: Haliburton, Vanmoen, and Carlyle",
-      "link": "https://www.thetribune.ca/sports/sad-endings-do-not-ruin-a-great-story-haliburton-vanmoen-and-carlyle-18042026/?utm_source=rss&utm_medium=rss&utm_campaign=sad-endings-do-not-ruin-a-great-story-haliburton-vanmoen-and-carlyle-18042026",
-      "source": "The Tribune",
-      "fieldAuthor": "The editorial team",
-      "canonicalAuthor": "Will Kennedy",
-      "reason": "page-byline"
-    },
-    {
-      "title": "How can I show you I’m doing better if there’s nothing good for me to do?",
-      "link": "https://www.thetribune.ca/features/how-can-i-show-you-im-doing-better-if-theres-nothing-good-for-me-to-do/?utm_source=rss&utm_medium=rss&utm_campaign=how-can-i-show-you-im-doing-better-if-theres-nothing-good-for-me-to-do",
-      "source": "The Tribune",
-      "fieldAuthor": "The editorial team",
-      "canonicalAuthor": "Ellen Lurie",
-      "reason": "page-byline"
-    },
-    {
-      "title": "The Seagull: An Automorphic Play About Art and Humanity",
-      "link": "https://www.mcgilldaily.com/2026/04/the-seagull-an-automorphic-play-about-art-and-humanity/",
-      "source": "The McGill Daily",
-      "fieldAuthor": "The editorial team",
-      "canonicalAuthor": "Sonia Berman",
-      "reason": "page-byline"
-    },
-    {
-      "title": "This Week's Top Stories",
-      "link": "https://theconcordian.substack.com/p/this-weeks-top-stories-d67",
-      "source": "The Concordian",
-      "fieldAuthor": "The editorial team",
-      "canonicalAuthor": "The editorial team",
-      "reason": "no-author-source"
-    },
-    {
-      "title": "Your health, your problem",
-      "link": "https://www.thetribune.ca/features/your-health-your-problem/?utm_source=rss&utm_medium=rss&utm_campaign=your-health-your-problem",
-      "source": "The Tribune",
-      "fieldAuthor": "The editorial team",
-      "canonicalAuthor": "Leanne Cherry",
-      "reason": "page-byline"
-    },
-    {
-      "title": "Oh, the places I’ll go (but not stay)!",
-      "link": "https://www.thetribune.ca/opinion/oh-the-places-ill-go-but-not-stay-07042026/?utm_source=rss&utm_medium=rss&utm_campaign=oh-the-places-ill-go-but-not-stay-07042026",
-      "source": "The Tribune",
-      "fieldAuthor": "The editorial team",
-      "canonicalAuthor": "Rupneet Shahriar",
-      "reason": "page-byline"
     }
   ],
-  "fixed": 72
+  "fixed": 82
 }
