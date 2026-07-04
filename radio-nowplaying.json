@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-04T22:07:16.918Z",
+  "updatedAt": "2026-07-04T23:32:16.895Z",
   "stations": {
     "chyz": {
       "id": "chyz",
@@ -7,7 +7,7 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-04T22:06:59.298Z"
+      "checkedAt": "2026-07-04T23:31:58.365Z"
     },
     "cism": {
       "id": "cism",
@@ -15,15 +15,15 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-04T22:07:00.168Z"
+      "checkedAt": "2026-07-04T23:31:59.204Z"
     },
     "ckut": {
       "id": "ckut",
       "name": "CKUT 90,3",
-      "showTitle": "West Indian Rhythms",
+      "showTitle": "Masters At Work",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-04T22:07:01.734Z"
+      "checkedAt": "2026-07-04T23:32:00.797Z"
     },
     "cjlo": {
       "id": "cjlo",
@@ -31,7 +31,7 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-04T22:07:15.123Z"
+      "checkedAt": "2026-07-04T23:32:14.185Z"
     },
     "cfak": {
       "id": "cfak",
@@ -39,15 +39,15 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-04T22:07:15.659Z"
+      "checkedAt": "2026-07-04T23:32:14.719Z"
     },
     "choq": {
       "id": "choq",
       "name": "CHOQ.ca",
-      "showTitle": "Pity Party",
-      "host": "Makthaverskan",
-      "source": "api-live",
-      "checkedAt": "2026-07-04T22:07:16.517Z"
+      "showTitle": "Alabaster DePlume - Glass",
+      "host": "",
+      "source": "stream",
+      "checkedAt": "2026-07-04T23:32:16.495Z"
     }
   }
 }
