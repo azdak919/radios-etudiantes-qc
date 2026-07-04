@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-04T09:36:58.981Z",
+  "updatedAt": "2026-07-04T11:32:57.792Z",
   "stations": {
     "chyz": {
       "id": "chyz",
@@ -7,7 +7,7 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-04T09:36:39.886Z"
+      "checkedAt": "2026-07-04T11:32:38.002Z"
     },
     "cism": {
       "id": "cism",
@@ -15,15 +15,15 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-04T09:36:40.830Z"
+      "checkedAt": "2026-07-04T11:32:39.154Z"
     },
     "ckut": {
       "id": "ckut",
       "name": "CKUT 90,3",
-      "showTitle": "The Mash Time Show",
+      "showTitle": "Quebec Acadie",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-04T09:36:42.663Z"
+      "checkedAt": "2026-07-04T11:32:41.196Z"
     },
     "cjlo": {
       "id": "cjlo",
@@ -31,7 +31,7 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-04T09:36:56.583Z"
+      "checkedAt": "2026-07-04T11:32:55.203Z"
     },
     "cfak": {
       "id": "cfak",
@@ -39,15 +39,15 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-04T09:36:57.217Z"
+      "checkedAt": "2026-07-04T11:32:55.884Z"
     },
     "choq": {
       "id": "choq",
       "name": "CHOQ.ca",
-      "showTitle": "ÇA VA TOUTE PETER",
-      "host": "Calamine",
+      "showTitle": "Dopamine",
+      "host": "Robyn",
       "source": "api-live",
-      "checkedAt": "2026-07-04T09:36:58.581Z"
+      "checkedAt": "2026-07-04T11:32:57.392Z"
     }
   }
 }
