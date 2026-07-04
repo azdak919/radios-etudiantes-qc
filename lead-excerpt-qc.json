@@ -1,11 +1,11 @@
 {
-  "updated": "2026-07-03T20:51:03.874Z",
+  "updated": "2026-07-03T23:54:20.399Z",
   "total": 192,
   "pool": 58,
-  "incomplete": 11,
-  "withLeadExcerpt": 66,
-  "candidates": 11,
-  "enriched": 2,
+  "incomplete": 10,
+  "withLeadExcerpt": 65,
+  "candidates": 10,
+  "enriched": 1,
   "failed": 0,
   "ok": true,
   "samples": [
@@ -28,21 +28,12 @@
       "changed": false
     },
     {
-      "title": "Élections de l’exécutif de l’AÉUM",
-      "link": "https://www.delitfrancais.com/2026/03/18/elections-de-lexecutif-de-laeum/",
-      "ok": true,
-      "score": 80,
-      "chars": 865,
-      "sample": "Contacté à plusieurs reprises, Hamza Abu-Alkhair n’a pas donné suite à nos demandes d’entrevue. Sa p",
-      "changed": true
-    },
-    {
-      "title": "Pourquoi le L est en premier dans LGBTQ+",
-      "link": "https://www.delitfrancais.com/2026/03/18/pourquoi-le-l-est-en-premier-dans-lgbtq/",
+      "title": "Les femmes MAGA au service du patriarcat",
+      "link": "https://www.delitfrancais.com/2026/03/18/les-femmes-maga-au-service-du-patriarcat/",
       "ok": true,
       "score": 96,
-      "chars": 664,
-      "sample": "On peut observer en ce moment une montée des tensions et des divisions au sein même de la communauté",
+      "chars": 572,
+      "sample": "L a montée en puissance de l’idéologie du mouvement politique Make America Great Again (MAGA) n’est ",
       "changed": true
     },
     {
@@ -79,6 +70,15 @@
       "score": 100,
       "chars": 426,
       "sample": "On April 22, the Superior Court of Quebec annulled the August 2025 arbitration Association des Resso",
+      "changed": false
+    },
+    {
+      "title": "Road to the 2026 FIFA World Cup",
+      "link": "https://thelinknewspaper.ca/article/16333",
+      "ok": true,
+      "score": 96,
+      "chars": 531,
+      "sample": "Canadian goalkeeper Maxime Crépeau, who hails from nearby Greenfield Park, appeared emotional during",
       "changed": false
     }
   ]

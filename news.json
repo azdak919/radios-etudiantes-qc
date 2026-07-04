@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-03T20:50:15.595Z",
+  "updated": "2026-07-03T23:53:33.303Z",
   "count": 192,
   "freshnessSessions": 3,
   "sources": {
@@ -9,7 +9,7 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-05-15T16:00:00.000Z",
-      "lastFetchOk": "2026-07-03T20:49:04.569Z"
+      "lastFetchOk": "2026-07-03T23:52:13.902Z"
     },
     "Montréal Campus": {
       "fetchOk": true,
@@ -17,7 +17,7 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-05-09T03:14:30.000Z",
-      "lastFetchOk": "2026-07-03T20:49:05.650Z"
+      "lastFetchOk": "2026-07-03T23:52:14.811Z"
     },
     "Le Délit": {
       "fetchOk": true,
@@ -25,7 +25,7 @@
       "articleCount": 20,
       "freshArticleCount": 20,
       "lastArticle": "2026-03-25T11:00:00.000Z",
-      "lastFetchOk": "2026-07-03T20:49:09.206Z"
+      "lastFetchOk": "2026-07-03T23:52:18.477Z"
     },
     "The McGill Daily": {
       "fetchOk": true,
@@ -33,7 +33,7 @@
       "articleCount": 15,
       "freshArticleCount": 15,
       "lastArticle": "2026-06-28T11:00:00.000Z",
-      "lastFetchOk": "2026-07-03T20:49:09.785Z"
+      "lastFetchOk": "2026-07-03T23:52:19.083Z"
     },
     "The Link": {
       "fetchOk": true,
@@ -41,7 +41,7 @@
       "articleCount": 20,
       "freshArticleCount": 20,
       "lastArticle": "2026-06-28T23:23:00.000Z",
-      "lastFetchOk": "2026-07-03T20:49:10.262Z"
+      "lastFetchOk": "2026-07-03T23:52:20.062Z"
     },
     "The Concordian": {
       "fetchOk": false,
@@ -57,7 +57,7 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-05-08T14:20:26.000Z",
-      "lastFetchOk": "2026-07-03T20:49:11.281Z"
+      "lastFetchOk": "2026-07-03T23:52:21.137Z"
     },
     "L'Exemplaire": {
       "fetchOk": true,
@@ -65,7 +65,7 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-05-15T16:31:24.000Z",
-      "lastFetchOk": "2026-07-03T20:49:12.213Z"
+      "lastFetchOk": "2026-07-03T23:52:22.073Z"
     },
     "Le Collectif": {
       "fetchOk": true,
@@ -73,7 +73,7 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-07-01T23:29:45.000Z",
-      "lastFetchOk": "2026-07-03T20:49:13.342Z"
+      "lastFetchOk": "2026-07-03T23:52:22.941Z"
     },
     "Exil": {
       "fetchOk": true,
@@ -81,7 +81,7 @@
       "articleCount": 7,
       "freshArticleCount": 7,
       "lastArticle": "2026-04-18T22:22:07.000Z",
-      "lastFetchOk": "2026-07-03T20:49:13.481Z"
+      "lastFetchOk": "2026-07-03T23:52:23.070Z"
     },
     "La Pige": {
       "fetchOk": true,
@@ -89,7 +89,7 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-06-22T14:36:10.000Z",
-      "lastFetchOk": "2026-07-03T20:49:13.998Z"
+      "lastFetchOk": "2026-07-03T23:52:23.740Z"
     },
     "The Tribune": {
       "fetchOk": true,
@@ -97,7 +97,7 @@
       "articleCount": 20,
       "freshArticleCount": 20,
       "lastArticle": "2026-06-26T15:24:28.000Z",
-      "lastFetchOk": "2026-07-03T20:49:14.166Z"
+      "lastFetchOk": "2026-07-03T23:52:23.878Z"
     },
     "The Campus": {
       "fetchOk": true,
@@ -105,7 +105,7 @@
       "articleCount": 30,
       "freshArticleCount": 30,
       "lastArticle": "2026-04-06T16:03:16.000Z",
-      "lastFetchOk": "2026-07-03T20:49:14.329Z"
+      "lastFetchOk": "2026-07-03T23:52:24.031Z"
     }
   },
   "items": [
@@ -146,7 +146,13 @@
       "sourceImageCreditCited": false,
       "sourceImageCreditImageKey": "culture_francoise_rebeccagagne-1.jpg",
       "leadImageReady": false,
-      "leadExcerpt": "Le 23 juin dernier avait lieu la première du film québécois François.e à la Maison du Cinéma de Sherbrooke. Pour l’occasion, des membres de la distribution de même que les deux scénaristes de l’œuvre ont partagé l’expérience avec l’audience."
+      "leadExcerpt": "Le 23 juin dernier avait lieu la première du film québécois François.e à la Maison du Cinéma de Sherbrooke. Pour l’occasion, des membres de la distribution de même que les deux scénaristes de l’œuvre ont partagé l’expérience avec l’audience.",
+      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/d/d4/Francois_Cevert_1973.jpg",
+      "imageCredit": "Photo : Raimund Kommer / CC BY-SA · Openverse",
+      "imageCreator": "Raimund Kommer",
+      "imageLicense": "by-sa",
+      "imageProvider": "openverse",
+      "imageSourceUrl": "https://commons.wikimedia.org/w/index.php?curid=9775871"
     },
     {
       "source": "Le Collectif",
@@ -247,7 +253,13 @@
       "sourceImageCreditFrom": "article",
       "sourceImageCreditCited": true,
       "sourceImageCreditImageKey": "societe_resume-du-g7-a-evian_getty-images.jpg",
-      "leadImageReady": false
+      "leadImageReady": false,
+      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/1/1c/President_Donald_J._Trump_attends_G7_working_session_I%2C_on_Ukraine%2C_at_the_Hotel_Royal_Evian_%2855343644734%29.jpg",
+      "imageCredit": "Photo : The White House / PUBLIC DOMAIN · Wikimedia Commons",
+      "imageCreator": "The White House",
+      "imageLicense": "Public domain",
+      "imageProvider": "wikimedia",
+      "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:President_Donald_J._Trump_attends_G7_working_session_I,_on_Ukraine,_at_the_Hotel_Royal_Evian_(55343644734).jpg"
     },
     {
       "source": "Le Collectif",
@@ -268,7 +280,13 @@
       "sourceImageCreditCited": true,
       "sourceImageCreditImageKey": "societe_virage-a-droite-en-colombie_getty-images.jpg",
       "leadImageReady": false,
-      "leadExcerpt": "Après quatre années passées sous l’égide de Gustavo Petro, la Colombie change de cap et élit à sa tête Abelardo de la Espriella. Ce dernier promet une rupture avec les administrations précédentes, notamment en ce qui concerne le crime organisé. Personnalité similaire à celle du président Trump, il aura su naviguer à travers les promesses-phares tout au long de sa campagne électorale."
+      "leadExcerpt": "Après quatre années passées sous l’égide de Gustavo Petro, la Colombie change de cap et élit à sa tête Abelardo de la Espriella. Ce dernier promet une rupture avec les administrations précédentes, notamment en ce qui concerne le crime organisé. Personnalité similaire à celle du président Trump, il aura su naviguer à travers les promesses-phares tout au long de sa campagne électorale.",
+      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/6/67/2012_Aston_Martin_Virage_coup%C3%A9.jpg",
+      "imageCredit": "Photo : Mr.choppers / CC BY-SA · Openverse",
+      "imageCreator": "Mr.choppers",
+      "imageLicense": "by-sa",
+      "imageProvider": "openverse",
+      "imageSourceUrl": "https://commons.wikimedia.org/w/index.php?curid=20404485"
     },
     {
       "source": "Le Collectif",
@@ -289,13 +307,7 @@
       "sourceImageCreditCited": true,
       "sourceImageCreditImageKey": "societe_demission-de-keir-starmer-au-royaume-uni_getty-images.jpg",
       "leadImageReady": false,
-      "leadExcerpt": "Croulant sous les pressions provenant de l’opposition et de son propre parti, le premier ministre britannique, Keir Starmer, démissionne finalement. Après des mois à se tenir de justesse au pouvoir, il cède ainsi sa place à Andy Burnham, alors que son parti chute aux sondages.",
-      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/a/a0/Beediging_%28nieuw%29_gekozen_leden_Tweede_Kamer_demission_premier_Lubbers_legt_ee%2C_Bestanddeelnr_933-6751.jpg",
-      "imageCredit": "Photo : Rob Croes for Anefo / CC0 · Openverse",
-      "imageCreator": "Rob Croes for Anefo",
-      "imageLicense": "cc0",
-      "imageProvider": "openverse",
-      "imageSourceUrl": "https://commons.wikimedia.org/w/index.php?curid=66556428"
+      "leadExcerpt": "Croulant sous les pressions provenant de l’opposition et de son propre parti, le premier ministre britannique, Keir Starmer, démissionne finalement. Après des mois à se tenir de justesse au pouvoir, il cède ainsi sa place à Andy Burnham, alors que son parti chute aux sondages."
     },
     {
       "source": "Le Collectif",
@@ -1083,12 +1095,12 @@
       "_pageAuthor": "Carla Roche",
       "leadExcerpt": "Les 29 et 30 mai prochains, les adeptes d’ouvrages de suspense, à mystère et d’enquêtes auront rendez-vous au Centre culturel Georges-Vanier pour la troisième édition du festival du livre policier Montréal Mystère , un événement encore jeune, mais déjà bien installé dans le paysage littéraire montréalais.",
       "leadImageReady": false,
-      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/1/11/Berthelot_-_Les_myst%C3%A8res_de_Montr%C3%A9al%2C_1898_p77.jpg",
-      "imageCredit": "Photo : L'illustrateur est inconnu / PUBLIC DOMAIN · Wikimedia Commons",
-      "imageCreator": "L'illustrateur est inconnu",
-      "imageLicense": "Public domain",
-      "imageProvider": "wikimedia",
-      "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Berthelot_-_Les_myst%C3%A8res_de_Montr%C3%A9al,_1898_p77.jpg"
+      "stockImage": "https://live.staticflickr.com/3498/3735171010_90582fc99c_b.jpg",
+      "imageCredit": "Photo : Anirudh Koul / CC BY · Openverse",
+      "imageCreator": "Anirudh Koul",
+      "imageLicense": "by",
+      "imageProvider": "openverse",
+      "imageSourceUrl": "https://www.flickr.com/photos/84856173@N00/3735171010"
     },
     {
       "source": "Quartier Libre",
@@ -1126,12 +1138,12 @@
       "_pageAuthor": "Solène Gerber",
       "leadExcerpt": "Lors d’une assemblée universitaire tenue le 16 mars dernier, le professeur agrégé à l’École de psychoéducation de la Faculté des arts et des sciences de l’UdeM Jean-Sébastien Fallu a soulevé des préoccupations concernant le soutien informatique à l’Université. Il a partagé plusieurs difficultés que lui et ses collègues ont vécues, notamment liées aux délais, aux procédures et à la complexité de certains outils numériques.",
       "leadImageReady": false,
-      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/4/45/Lucie_Sauv%C3%A9_%28Professeure%2C_Universit%C3%A9_du_Qu%C3%A9bec_%C3%A0_Montr%C3%A9al%29.jpg",
-      "imageCredit": "Photo : Photos institutionnelle - Université du Québec à Montréal / CC BY-SA 4.0 · Wikimedia Commons",
-      "imageCreator": "Photos institutionnelle - Université du Québec à Montréal",
-      "imageLicense": "CC BY-SA 4.0",
-      "imageProvider": "wikimedia",
-      "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Lucie_Sauv%C3%A9_(Professeure,_Universit%C3%A9_du_Qu%C3%A9bec_%C3%A0_Montr%C3%A9al).jpg"
+      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/a/ab/Universit%C3%A9_de_Montr%C3%A9al%2C_Pavillon_Roger-Gaudry.JPG",
+      "imageCredit": "Photo : Laurent Bélanger / CC BY-SA · Openverse",
+      "imageCreator": "Laurent Bélanger",
+      "imageLicense": "by-sa",
+      "imageProvider": "openverse",
+      "imageSourceUrl": "https://commons.wikimedia.org/w/index.php?curid=44126404"
     },
     {
       "source": "The Link",
@@ -3046,6 +3058,28 @@
       "region": "Montréal",
       "type": "universite",
       "lang": "fr",
+      "title": "La performance de l’homosexualité : un privilège ?",
+      "link": "https://www.delitfrancais.com/2026/03/25/la-performance-de-lhomosexualite-un-privilege/",
+      "author": "Joséphine Miton",
+      "date": "2026-03-25T07:00:00.000Z",
+      "excerpt": "Blague innocente, signe d’ouverture ou nouveau costume ?",
+      "image": "https://www.delitfrancais.com/wp-content/uploads/2026/03/coinqueer-1.jpeg",
+      "featured": true,
+      "_pageAuthor": "Joséphine Miton",
+      "sourceImageCredit": "Crédit photo : Le Délit",
+      "sourceImageCreditUrl": "https://www.delitfrancais.com/2026/03/25/la-performance-de-lhomosexualite-un-privilege/",
+      "sourceImageCreditFrom": "media",
+      "sourceImageCreditCited": false,
+      "sourceImageCreditImageKey": "coinqueer-1.jpeg",
+      "leadImageReady": false,
+      "leadExcerpt": "Deux hommes hétéros imitent une voix, se prennent par la taille, font semblant d’être en couple pour une photo, puis éclatent de rire. L’un ajoute « no homo » et tout rentre dans l’ordre. Pendant ce temps, un homme gai tient la main de son partenaire. Il surveille autour de lui, sonde le quartier, évalue le risque. Pour les uns, l’homosexualité est un prétexte pour rire. Pour les autres, c’est juste une vie."
+    },
+    {
+      "source": "Le Délit",
+      "institution": "Université McGill",
+      "region": "Montréal",
+      "type": "universite",
+      "lang": "fr",
       "title": "L’épidémie de la nonchalance",
       "link": "https://www.delitfrancais.com/2026/03/25/lepidemie-de-la-nonchalance/",
       "author": "Elie Nguyen",
@@ -3153,28 +3187,6 @@
       "sourceImageCreditImageKey": "concordiareponsev2.jpeg",
       "leadImageReady": true,
       "leadExcerpt": "Dans son entrevue, M. Lander, un habitué de la télévision de langue anglaise (et économiste à ses heures), recopie plus ou moins habilement le modus operandi d’une infinité de « dépendantistes » avant lui. L’épouvantail de la peur d’un effondrement économique d’un Québec souverain qu’il dresse sera toujours le plus imposant dans l’imaginaire collectif des électeurs. Il inspire un niveau d’incertitude tellement étouffant que nous nous en remettons à de supposés experts pour nous prédire le futur de notre nation, sans penser à remettre leurs sordides mensonges en question."
-    },
-    {
-      "source": "Le Délit",
-      "institution": "Université McGill",
-      "region": "Montréal",
-      "type": "universite",
-      "lang": "fr",
-      "title": "La performance de l’homosexualité : un privilège ?",
-      "link": "https://www.delitfrancais.com/2026/03/25/la-performance-de-lhomosexualite-un-privilege/",
-      "author": "Joséphine Miton",
-      "date": "2026-03-25T07:00:00.000Z",
-      "excerpt": "Blague innocente, signe d’ouverture ou nouveau costume ?",
-      "image": "https://www.delitfrancais.com/wp-content/uploads/2026/03/coinqueer-1.jpeg",
-      "featured": true,
-      "_pageAuthor": "Joséphine Miton",
-      "sourceImageCredit": "Crédit photo : Le Délit",
-      "sourceImageCreditUrl": "https://www.delitfrancais.com/2026/03/25/la-performance-de-lhomosexualite-un-privilege/",
-      "sourceImageCreditFrom": "media",
-      "sourceImageCreditCited": false,
-      "sourceImageCreditImageKey": "coinqueer-1.jpeg",
-      "leadImageReady": false,
-      "leadExcerpt": "Deux hommes hétéros imitent une voix, se prennent par la taille, font semblant d’être en couple pour une photo, puis éclatent de rire. L’un ajoute « no homo » et tout rentre dans l’ordre. Pendant ce temps, un homme gai tient la main de son partenaire. Il surveille autour de lui, sonde le quartier, évalue le risque. Pour les uns, l’homosexualité est un prétexte pour rire. Pour les autres, c’est juste une vie."
     },
     {
       "source": "The McGill Daily",
@@ -3314,13 +3326,7 @@
       "sourceImageCreditFrom": "media",
       "sourceImageCreditCited": false,
       "sourceImageCreditImageKey": "sports_1_bu-club-hockey_credits_courteousy-of-bu-club-hockey-team.jpg",
-      "leadImageReady": false,
-      "stockImage": "https://live.staticflickr.com/2690/4397427381_ca3a0e7c13_b.jpg",
-      "imageCredit": "Photo : s.yume / CC BY · Openverse",
-      "imageCreator": "s.yume",
-      "imageLicense": "by",
-      "imageProvider": "openverse",
-      "imageSourceUrl": "https://www.flickr.com/photos/24503701@N02/4397427381"
+      "leadImageReady": false
     },
     {
       "source": "The Campus",
@@ -3738,22 +3744,21 @@
       "region": "Montréal",
       "type": "universite",
       "lang": "fr",
-      "title": "Élections de l’exécutif de l’AÉUM",
-      "link": "https://www.delitfrancais.com/2026/03/18/elections-de-lexecutif-de-laeum/",
-      "author": "Timotée Allouch-Chantepie, Héloïse Durning, Aurélien Quéméner et Eugénie St-Pierre",
+      "title": "Ce que nous devons aux femmes",
+      "link": "https://www.delitfrancais.com/2026/03/18/ce-que-nous-devons-aux-femmes/",
+      "author": "Eugénie St-Pierre",
       "date": "2026-03-18T07:00:00.000Z",
-      "excerpt": "Présentation des candidats à l’exécutif de l’AÉUM.",
-      "image": "https://www.delitfrancais.com/wp-content/uploads/2026/03/Mars-Gagawchuk-1334x2000.jpeg",
+      "excerpt": "Votre entourage, en tant qu’étudiantes et étudiants de l’Université McGill, est peut-être composé en majorité de personnes qui se revendiquent comme féministes. Certaines le sont, d’autres le prétendent, mais relativement rares sont les McGillois qui refusent ouvertement le féminisme.",
+      "image": "https://www.delitfrancais.com/wp-content/uploads/2026/03/Capture-decran-le-2026-03-22-a-17.22.07.png",
       "featured": true,
-      "_pageAuthor": "Timotée Allouch-Chantepie, Héloïse Durning, Aurélien Quéméner et Eugénie St-Pierre",
-      "leadExcerpt": "Contacté à plusieurs reprises, Hamza Abu-Alkhair n’a pas donné suite à nos demandes d’entrevue. Sa plateforme repose sur trois piliers : l’accessibilité, la communauté et la stabilité financière. L’accessibilité consiste en des mises à jour régulières de la part de l’AÉUM, mais aussi une meilleure communication lors de moments clés comme l’orientation des étudiants de première année, et les périodes de stress comme lors des examens. Le sens de communauté passe, selon Abu-Alkhair, par une visibilité accrue de l’AÉUM sur le campus, et par la création d’évènements de communauté basés sur des idées d’étudiants. Enfin, la stabilité financière passe par plus de confiance et de responsabilité, alors que l’AÉUM gère des millions de dollars, selon le candidat. L’association doit ainsi maximiser son efficacité et réduire les dépenses inutiles, ajoute Abu-Alkhair.",
-      "leadImageReady": false,
-      "sourceImageCredit": "Photo : Mars Gagawchuk",
-      "sourceImageCreator": "Mars Gagawchuk",
-      "sourceImageCreditUrl": "https://www.delitfrancais.com/2026/03/18/elections-de-lexecutif-de-laeum/",
+      "_pageAuthor": "Eugénie St-Pierre",
+      "leadImageReady": true,
+      "sourceImageCredit": "Photo : Alexandre Gontier",
+      "sourceImageCreator": "Alexandre Gontier",
+      "sourceImageCreditUrl": "https://www.delitfrancais.com/2026/03/18/ce-que-nous-devons-aux-femmes/",
       "sourceImageCreditFrom": "article",
       "sourceImageCreditCited": true,
-      "sourceImageCreditImageKey": "mars-gagawchuk.jpeg"
+      "sourceImageCreditImageKey": "capture-decran-le-2026-03-22-a-17.22.07.png"
     },
     {
       "source": "Le Délit",
@@ -3761,22 +3766,22 @@
       "region": "Montréal",
       "type": "universite",
       "lang": "fr",
-      "title": "Pourquoi le L est en premier dans LGBTQ+",
-      "link": "https://www.delitfrancais.com/2026/03/18/pourquoi-le-l-est-en-premier-dans-lgbtq/",
-      "author": "Sixtine Nicolaÿ",
+      "title": "Les femmes MAGA au service du patriarcat",
+      "link": "https://www.delitfrancais.com/2026/03/18/les-femmes-maga-au-service-du-patriarcat/",
+      "author": "Anonyme",
       "date": "2026-03-18T07:00:00.000Z",
-      "excerpt": "Le rôle des lesbiennes pendant l’épidémie du sida.",
-      "image": "https://www.delitfrancais.com/wp-content/uploads/2026/03/lesbians-against-sida-_-sixtine.png",
+      "excerpt": "Kristi Noem et Erika Kirk comme figures de proue du néo-fascisme américain.",
+      "image": "https://www.delitfrancais.com/wp-content/uploads/2026/03/MAGA_marius.png",
       "featured": true,
-      "_pageAuthor": "Sixtine Nicolaÿ",
-      "leadExcerpt": "On peut observer en ce moment une montée des tensions et des divisions au sein même de la communauté LGBTQ+. Des groupes de personnes s’identifient comme gais, remettent en question la légitimité de la présence du T (transgenre) dans l’acronyme LGBT, expliquant que, pour elles, la transidentité n’a pas de rapport avec leur sexualité. Ce genre de discours s’intègre dans un climat de plus en plus hostile aux personnes LGBTQ+, à la fois dans la société, mais également au sein de leur propre communauté. Avec l’avènement de tensions intracommunautaires, l’ordre actuel de l’acronyme LGBTQ+ nous renvoie à une période de solidarité entre les différentes identités.",
+      "_pageAuthor": "Anonyme",
+      "leadExcerpt": "L a montée en puissance de l’idéologie du mouvement politique Make America Great Again (MAGA) n’est pas qu’un accident ou qu’une simple parenthèse dans l’histoire américaine. Au contraire, ce fléau populiste est l’aboutissement rationnel d’un mariage longuement mijoté entre le conservatisme social, le néolibéralisme économique, et le sensationnalisme médiatique. Quoi qu’elle se vêtisse d’un nouvel habillage moderne et d’une esthétique grossière, cette fusion macabre porte en elle les caractéristiques héréditaires du fascisme, tel que le monde l’a vécu au 20e siècle.",
       "leadImageReady": false,
       "sourceImageCredit": "Photo : Stu Doré",
       "sourceImageCreator": "Stu Doré",
-      "sourceImageCreditUrl": "https://www.delitfrancais.com/2026/03/18/pourquoi-le-l-est-en-premier-dans-lgbtq/",
+      "sourceImageCreditUrl": "https://www.delitfrancais.com/2026/03/18/les-femmes-maga-au-service-du-patriarcat/",
       "sourceImageCreditFrom": "article",
       "sourceImageCreditCited": true,
-      "sourceImageCreditImageKey": "lesbians-against-sida-_-sixtine.png"
+      "sourceImageCreditImageKey": "maga_marius.png"
     },
     {
       "source": "The McGill Daily",

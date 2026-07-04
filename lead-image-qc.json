@@ -1,15 +1,15 @@
 {
-  "updated": "2026-07-03T20:56:27.132Z",
+  "updated": "2026-07-03T23:59:32.548Z",
   "total": 192,
   "withPhoto": 151,
-  "withStock": 42,
+  "withStock": 43,
   "fullyCovered": 184,
-  "leadReadyPhotos": 153,
+  "leadReadyPhotos": 156,
   "pageScraped": 71,
   "photosRecovered": 42,
-  "imagesCleared": 4,
+  "imagesCleared": 3,
   "stockSearches": 60,
-  "stockFound": 38,
+  "stockFound": 39,
   "mainPageLeadReady": true,
   "gaps": [
     {
@@ -35,12 +35,6 @@
       "link": "https://lecollectif.ca/a-la-une/une-premiere-nouvelle-candidature-pour-la-caq-dans-brome%e2%80%91missisquoi/",
       "reason": "no-stock-match",
       "image": "https://lecollectif.ca/wp-content/uploads/2026/06/SOCIETE_UnePremiereNouvelleCandidaturePourLaCAQ_Source-Compte-X-de-Christine-Frechette-819x1024.jpeg"
-    },
-    {
-      "title": "Résumé du G7 à Évian",
-      "link": "https://lecollectif.ca/a-la-une/resume-du-g7-a-evian/",
-      "reason": "no-stock-match",
-      "image": "https://lecollectif.ca/wp-content/uploads/2026/06/SOCIETE_Resume-du-G7-a-Evian_Getty-Images.jpg"
     },
     {
       "title": "Se préparer et vivre sa retraite : un long fleuve, pas si tranquille",
@@ -81,6 +75,12 @@
     {
       "title": "Open Letter: How can I show you I’m doing better if there’s nothing good for me to do?",
       "link": "https://www.thetribune.ca/opinion/letters-to-the-editor/open-letter-how-can-i-show-you-im-doing-better-if-theres-nothing-good-for-me-to-do-07042026/?utm_source=rss&utm_medium=rss&utm_campaign=open-letter-how-can-i-show-you-im-doing-better-if-theres-nothing-good-for-me-to-do-07042026",
+      "reason": "no-stock-match",
+      "image": null
+    },
+    {
+      "title": "THE NUMBERED? I HOPE THEY COUNTED CORRECTLY!",
+      "link": "https://thebucampus.ca/2026/04/06/the-numbered-i-hope-they-counted-correctly/",
       "reason": "no-stock-match",
       "image": null
     }

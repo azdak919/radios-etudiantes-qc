@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-03T20:58:18.010Z",
+  "updated": "2026-07-04T00:01:21.590Z",
   "count": 19,
   "items": [
     {
@@ -19,7 +19,7 @@
           "type": "facebook",
           "url": "https://www.facebook.com/QuartierLibre.ca",
           "handle": "QuartierLibre.ca",
-          "stats": "6 567 mentions J'aime",
+          "stats": "6 566 mentions J'aime",
           "label": "Facebook"
         },
         {
@@ -178,7 +178,7 @@
           "type": "facebook",
           "url": "https://www.facebook.com/zonecampus",
           "handle": "zonecampus",
-          "stats": "2 044 mentions J'aime",
+          "stats": "",
           "label": "Facebook"
         }
       ]
