@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-04T21:00:21.312Z",
+  "updatedAt": "2026-07-04T22:07:16.918Z",
   "stations": {
     "chyz": {
       "id": "chyz",
@@ -7,7 +7,7 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-04T21:00:04.290Z"
+      "checkedAt": "2026-07-04T22:06:59.298Z"
     },
     "cism": {
       "id": "cism",
@@ -15,7 +15,7 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-04T21:00:05.140Z"
+      "checkedAt": "2026-07-04T22:07:00.168Z"
     },
     "ckut": {
       "id": "ckut",
@@ -23,7 +23,7 @@
       "showTitle": "West Indian Rhythms",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-04T21:00:06.582Z"
+      "checkedAt": "2026-07-04T22:07:01.734Z"
     },
     "cjlo": {
       "id": "cjlo",
@@ -31,7 +31,7 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-04T21:00:19.658Z"
+      "checkedAt": "2026-07-04T22:07:15.123Z"
     },
     "cfak": {
       "id": "cfak",
@@ -39,15 +39,15 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-04T21:00:20.191Z"
+      "checkedAt": "2026-07-04T22:07:15.659Z"
     },
     "choq": {
       "id": "choq",
       "name": "CHOQ.ca",
-      "showTitle": "Bugs Don't Buzz",
-      "host": "Majical Cloudz",
+      "showTitle": "Pity Party",
+      "host": "Makthaverskan",
       "source": "api-live",
-      "checkedAt": "2026-07-04T21:00:20.910Z"
+      "checkedAt": "2026-07-04T22:07:16.517Z"
     }
   }
 }
