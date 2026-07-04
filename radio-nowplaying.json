@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-03T22:34:18.078Z",
+  "updatedAt": "2026-07-04T00:06:45.565Z",
   "stations": {
     "chyz": {
       "id": "chyz",
@@ -7,7 +7,7 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-03T22:33:58.265Z"
+      "checkedAt": "2026-07-04T00:06:27.838Z"
     },
     "cism": {
       "id": "cism",
@@ -15,15 +15,15 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-03T22:33:59.449Z"
+      "checkedAt": "2026-07-04T00:06:28.714Z"
     },
     "ckut": {
       "id": "ckut",
       "name": "CKUT 90,3",
-      "showTitle": "",
+      "showTitle": "LLA/Macondo",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-03T22:34:01.389Z"
+      "checkedAt": "2026-07-04T00:06:30.361Z"
     },
     "cjlo": {
       "id": "cjlo",
@@ -31,7 +31,7 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-03T22:34:15.458Z"
+      "checkedAt": "2026-07-04T00:06:43.427Z"
     },
     "cfak": {
       "id": "cfak",
@@ -39,15 +39,15 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-03T22:34:16.161Z"
+      "checkedAt": "2026-07-04T00:06:43.951Z"
     },
     "choq": {
       "id": "choq",
       "name": "CHOQ.ca",
-      "showTitle": "Walking By Flashlight",
-      "host": "Maria Schneider Jazz Orchestra",
+      "showTitle": "Life Illusion",
+      "host": "CFCF",
       "source": "api-live",
-      "checkedAt": "2026-07-03T22:34:17.677Z"
+      "checkedAt": "2026-07-04T00:06:45.164Z"
     }
   }
 }
