@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-05T15:14:48.373Z",
+  "updatedAt": "2026-07-05T16:35:05.542Z",
   "stations": {
     "chyz": {
       "id": "chyz",
@@ -7,7 +7,7 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-05T15:14:29.315Z"
+      "checkedAt": "2026-07-05T16:34:46.795Z"
     },
     "cism": {
       "id": "cism",
@@ -15,7 +15,7 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-05T15:14:30.350Z"
+      "checkedAt": "2026-07-05T16:34:47.736Z"
     },
     "ckut": {
       "id": "ckut",
@@ -23,7 +23,7 @@
       "showTitle": "Free Kick",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-05T15:14:32.249Z"
+      "checkedAt": "2026-07-05T16:34:49.540Z"
     },
     "cjlo": {
       "id": "cjlo",
@@ -31,7 +31,7 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-05T15:14:46.094Z"
+      "checkedAt": "2026-07-05T16:35:03.243Z"
     },
     "cfak": {
       "id": "cfak",
@@ -39,15 +39,15 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-05T15:14:46.654Z"
+      "checkedAt": "2026-07-05T16:35:03.870Z"
     },
     "choq": {
       "id": "choq",
       "name": "CHOQ.ca",
-      "showTitle": "Worry Angel",
-      "host": "Witch Post",
+      "showTitle": "Horoscope",
+      "host": "Ari Lennox",
       "source": "api-live",
-      "checkedAt": "2026-07-05T15:14:47.973Z"
+      "checkedAt": "2026-07-05T16:35:05.141Z"
     }
   }
 }
