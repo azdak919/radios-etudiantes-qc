@@ -1,23 +1,14 @@
 {
-  "updated": "2026-07-05T18:39:31.341Z",
+  "updated": "2026-07-05T20:45:08.024Z",
   "total": 192,
   "pool": 58,
   "incomplete": 9,
   "withLeadExcerpt": 64,
   "candidates": 9,
   "enriched": 0,
-  "failed": 0,
+  "failed": 3,
   "ok": true,
   "samples": [
-    {
-      "title": "Au revoir! - Le Délit",
-      "link": "https://www.delitfrancais.com/2026/03/25/au-revoir/",
-      "ok": true,
-      "score": 100,
-      "chars": 606,
-      "sample": "Cette semaine marque la dernière édition du semestre – déjà. Ça passe vite, huit éditions ! Cette an",
-      "changed": false
-    },
     {
       "title": "La cassette commence à être usée",
       "link": "https://www.delitfrancais.com/2026/03/25/la-cassette-commence-a-etre-usee/",
@@ -28,30 +19,21 @@
       "changed": false
     },
     {
+      "title": "Au revoir! - Le Délit",
+      "link": "https://www.delitfrancais.com/2026/03/25/au-revoir/",
+      "ok": true,
+      "score": 100,
+      "chars": 606,
+      "sample": "Cette semaine marque la dernière édition du semestre – déjà. Ça passe vite, huit éditions ! Cette an",
+      "changed": false
+    },
+    {
       "title": "Les femmes MAGA au service du patriarcat",
       "link": "https://www.delitfrancais.com/2026/03/18/les-femmes-maga-au-service-du-patriarcat/",
       "ok": true,
       "score": 96,
       "chars": 572,
       "sample": "L a montée en puissance de l’idéologie du mouvement politique Make America Great Again (MAGA) n’est ",
-      "changed": false
-    },
-    {
-      "title": "Une première nouvelle candidature pour la CAQ dans Brome‑Missisquoi",
-      "link": "https://lecollectif.ca/a-la-une/une-premiere-nouvelle-candidature-pour-la-caq-dans-brome%e2%80%91missisquoi/",
-      "ok": true,
-      "score": 100,
-      "chars": 450,
-      "sample": "La Coalition Avenir Québec (CAQ) a présenté une première nouvelle candidature en vue des élections p",
-      "changed": false
-    },
-    {
-      "title": "Le PIF s’internationalise pour sa 49e édition",
-      "link": "https://lecollectif.ca/a-la-une/le-pif-sinternationalise-pour-sa-49e-edition/",
-      "ok": true,
-      "score": 100,
-      "chars": 591,
-      "sample": "Le plus grand tournoi de balle donnée en Amérique du Nord accueille cette année une vague de joueurs",
       "changed": false
     },
     {
