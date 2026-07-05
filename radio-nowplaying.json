@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-05T16:35:05.542Z",
+  "updatedAt": "2026-07-05T18:05:39.684Z",
   "stations": {
     "chyz": {
       "id": "chyz",
@@ -7,7 +7,7 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-05T16:34:46.795Z"
+      "checkedAt": "2026-07-05T18:05:22.087Z"
     },
     "cism": {
       "id": "cism",
@@ -15,15 +15,15 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-05T16:34:47.736Z"
+      "checkedAt": "2026-07-05T18:05:22.859Z"
     },
     "ckut": {
       "id": "ckut",
       "name": "CKUT 90,3",
-      "showTitle": "Free Kick",
+      "showTitle": "The Magic Roundabout",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-05T16:34:49.540Z"
+      "checkedAt": "2026-07-05T18:05:24.513Z"
     },
     "cjlo": {
       "id": "cjlo",
@@ -31,7 +31,7 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-05T16:35:03.243Z"
+      "checkedAt": "2026-07-05T18:05:37.884Z"
     },
     "cfak": {
       "id": "cfak",
@@ -39,15 +39,15 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-05T16:35:03.870Z"
+      "checkedAt": "2026-07-05T18:05:38.576Z"
     },
     "choq": {
       "id": "choq",
       "name": "CHOQ.ca",
-      "showTitle": "Horoscope",
-      "host": "Ari Lennox",
+      "showTitle": "Perdre dans l'ecart",
+      "host": "Oktoplut",
       "source": "api-live",
-      "checkedAt": "2026-07-05T16:35:05.141Z"
+      "checkedAt": "2026-07-05T18:05:39.283Z"
     }
   }
 }
