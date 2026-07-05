@@ -12,8 +12,8 @@
       "logo": "assets/logos/cfou-logo.jpg",
       "_note": "Retiré du syntoniseur — écoute externe (radio.garden). Réintégrer quand un flux natif est validé.",
       "_pausedReason": "external-listen",
-      "_lastChecked": "2026-07-04T08:53:27.979Z",
-      "_failCount": 6
+      "_lastChecked": "2026-07-05T09:21:24.263Z",
+      "_failCount": 7
     },
     {
       "id": "cjep",
@@ -25,8 +25,8 @@
       "logo": "assets/logos/cjep-logo.jpg",
       "_note": "Retiré du syntoniseur — pas de flux direct.",
       "_pausedReason": "no-stream",
-      "_lastChecked": "2026-07-04T08:56:02.511Z",
-      "_failCount": 6
+      "_lastChecked": "2026-07-05T09:25:30.742Z",
+      "_failCount": 7
     },
     {
       "id": "crem",
@@ -38,10 +38,10 @@
       "logo": "assets/logos/crem-logo.jpg",
       "_note": "Retiré du syntoniseur — pas de flux direct.",
       "_pausedReason": "no-stream",
-      "_lastChecked": "2026-07-04T08:58:30.518Z",
-      "_failCount": 6
+      "_lastChecked": "2026-07-05T09:27:48.014Z",
+      "_failCount": 7
     }
   ],
   "_lastScan": "2026-06-27T02:45:42.157Z",
-  "_lastRun": "2026-07-04T08:58:30.518Z"
+  "_lastRun": "2026-07-05T09:27:48.014Z"
 }

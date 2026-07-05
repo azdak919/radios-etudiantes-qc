@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-05T07:29:08.186Z",
+  "updatedAt": "2026-07-05T09:28:18.891Z",
   "stations": {
     "chyz": {
       "id": "chyz",
@@ -7,7 +7,7 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-05T07:28:51.087Z"
+      "checkedAt": "2026-07-05T09:28:00.432Z"
     },
     "cism": {
       "id": "cism",
@@ -15,7 +15,7 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-05T07:28:51.833Z"
+      "checkedAt": "2026-07-05T09:28:01.545Z"
     },
     "ckut": {
       "id": "ckut",
@@ -23,7 +23,7 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-05T07:28:53.337Z"
+      "checkedAt": "2026-07-05T09:28:03.443Z"
     },
     "cjlo": {
       "id": "cjlo",
@@ -31,7 +31,7 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-05T07:29:06.692Z"
+      "checkedAt": "2026-07-05T09:28:17.263Z"
     },
     "cfak": {
       "id": "cfak",
@@ -39,15 +39,15 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-05T07:29:07.216Z"
+      "checkedAt": "2026-07-05T09:28:17.715Z"
     },
     "choq": {
       "id": "choq",
       "name": "CHOQ.ca",
-      "showTitle": "As the Sirens Sing",
-      "host": "The Blind Philosopher",
+      "showTitle": "Fainting Spells",
+      "host": "Cola",
       "source": "api-live",
-      "checkedAt": "2026-07-05T07:29:07.785Z"
+      "checkedAt": "2026-07-05T09:28:18.490Z"
     }
   }
 }
