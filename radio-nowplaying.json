@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-06T11:01:22.584Z",
+  "updatedAt": "2026-07-06T13:05:11.863Z",
   "stations": {
     "chyz": {
       "id": "chyz",
@@ -7,7 +7,7 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-06T11:01:04.122Z"
+      "checkedAt": "2026-07-06T13:04:53.298Z"
     },
     "cism": {
       "id": "cism",
@@ -15,15 +15,15 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-06T11:01:05.233Z"
+      "checkedAt": "2026-07-06T13:04:54.115Z"
     },
     "ckut": {
       "id": "ckut",
       "name": "CKUT 90,3",
-      "showTitle": "Adventures In Music",
+      "showTitle": "Le Lendemain de la veille",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-06T11:01:07.160Z"
+      "checkedAt": "2026-07-06T13:04:55.969Z"
     },
     "cjlo": {
       "id": "cjlo",
@@ -31,7 +31,7 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-06T11:01:20.973Z"
+      "checkedAt": "2026-07-06T13:05:09.599Z"
     },
     "cfak": {
       "id": "cfak",
@@ -39,7 +39,7 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-06T11:01:21.405Z"
+      "checkedAt": "2026-07-06T13:05:10.236Z"
     },
     "choq": {
       "id": "choq",
@@ -47,7 +47,7 @@
       "showTitle": "Compter les secondes",
       "host": "Bonne nuit, chérie",
       "source": "api-live",
-      "checkedAt": "2026-07-06T11:01:22.183Z"
+      "checkedAt": "2026-07-06T13:05:11.463Z"
     }
   }
 }
