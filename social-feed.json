@@ -1,6 +1,6 @@
 {
-  "updated": "2026-07-06T00:03:39.201Z",
-  "count": 19,
+  "updated": "2026-07-06T05:40:58.030Z",
+  "count": 18,
   "items": [
     {
       "name": "Quartier Libre",
@@ -48,7 +48,7 @@
           "type": "facebook",
           "url": "https://www.facebook.com/montrealcampus",
           "handle": "montrealcampus",
-          "stats": "",
+          "stats": "6 261 mentions J'aime",
           "label": "Facebook"
         },
         {
@@ -180,28 +180,6 @@
           "handle": "zonecampus",
           "stats": "2 044 mentions J'aime",
           "label": "Facebook"
-        }
-      ]
-    },
-    {
-      "name": "L'Exemplaire",
-      "institution": "Université Laval",
-      "type": "universite",
-      "kind": "journal",
-      "networks": [
-        {
-          "type": "facebook",
-          "url": "https://www.facebook.com/lexemplaire",
-          "handle": "lexemplaire",
-          "stats": "",
-          "label": "Facebook"
-        },
-        {
-          "type": "x",
-          "url": "https://twitter.com/lexemplaire",
-          "handle": "@lexemplaire",
-          "stats": "Le média-école des étudiant.e.s en journalisme de l'Université Laval, Québec.",
-          "label": "X"
         }
       ]
     },

@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-05T23:53:14.434Z",
+  "updated": "2026-07-06T05:02:39.304Z",
   "count": 192,
   "freshnessSessions": 3,
   "sources": {
@@ -9,7 +9,7 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-05-15T16:00:00.000Z",
-      "lastFetchOk": "2026-07-05T23:51:39.596Z"
+      "lastFetchOk": "2026-07-06T05:00:36.582Z"
     },
     "Montréal Campus": {
       "fetchOk": true,
@@ -17,7 +17,7 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-05-09T03:14:30.000Z",
-      "lastFetchOk": "2026-07-05T23:51:40.650Z"
+      "lastFetchOk": "2026-07-06T05:00:37.703Z"
     },
     "Le Délit": {
       "fetchOk": true,
@@ -25,7 +25,7 @@
       "articleCount": 20,
       "freshArticleCount": 20,
       "lastArticle": "2026-03-25T11:00:00.000Z",
-      "lastFetchOk": "2026-07-05T23:51:44.758Z"
+      "lastFetchOk": "2026-07-06T05:00:41.922Z"
     },
     "The McGill Daily": {
       "fetchOk": true,
@@ -33,7 +33,7 @@
       "articleCount": 15,
       "freshArticleCount": 15,
       "lastArticle": "2026-06-28T11:00:00.000Z",
-      "lastFetchOk": "2026-07-05T23:51:45.579Z"
+      "lastFetchOk": "2026-07-06T05:00:42.728Z"
     },
     "The Link": {
       "fetchOk": true,
@@ -41,7 +41,7 @@
       "articleCount": 20,
       "freshArticleCount": 20,
       "lastArticle": "2026-06-28T23:23:00.000Z",
-      "lastFetchOk": "2026-07-05T23:51:46.846Z"
+      "lastFetchOk": "2026-07-06T05:00:43.941Z"
     },
     "The Concordian": {
       "fetchOk": false,
@@ -57,15 +57,15 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-05-08T14:20:26.000Z",
-      "lastFetchOk": "2026-07-05T23:51:48.278Z"
+      "lastFetchOk": "2026-07-06T05:00:45.702Z"
     },
     "L'Exemplaire": {
-      "fetchOk": true,
-      "stale": false,
+      "fetchOk": false,
+      "stale": true,
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-05-15T16:31:24.000Z",
-      "lastFetchOk": "2026-07-05T23:51:50.067Z"
+      "lastFetchOk": null
     },
     "Le Collectif": {
       "fetchOk": true,
@@ -73,7 +73,7 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-07-01T23:29:45.000Z",
-      "lastFetchOk": "2026-07-05T23:51:51.155Z"
+      "lastFetchOk": "2026-07-06T05:01:16.737Z"
     },
     "Exil": {
       "fetchOk": true,
@@ -81,7 +81,7 @@
       "articleCount": 7,
       "freshArticleCount": 7,
       "lastArticle": "2026-04-18T22:22:07.000Z",
-      "lastFetchOk": "2026-07-05T23:51:51.289Z"
+      "lastFetchOk": "2026-07-06T05:01:16.860Z"
     },
     "La Pige": {
       "fetchOk": true,
@@ -89,7 +89,7 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-06-22T14:36:10.000Z",
-      "lastFetchOk": "2026-07-05T23:51:52.020Z"
+      "lastFetchOk": "2026-07-06T05:01:17.783Z"
     },
     "The Tribune": {
       "fetchOk": true,
@@ -97,7 +97,7 @@
       "articleCount": 20,
       "freshArticleCount": 20,
       "lastArticle": "2026-06-26T15:24:28.000Z",
-      "lastFetchOk": "2026-07-05T23:51:52.203Z"
+      "lastFetchOk": "2026-07-06T05:01:18.021Z"
     },
     "The Campus": {
       "fetchOk": true,
@@ -105,7 +105,7 @@
       "articleCount": 30,
       "freshArticleCount": 30,
       "lastArticle": "2026-04-06T16:03:16.000Z",
-      "lastFetchOk": "2026-07-05T23:51:52.334Z"
+      "lastFetchOk": "2026-07-06T05:01:18.170Z"
     }
   },
   "items": [
@@ -146,13 +146,7 @@
       "sourceImageCreditCited": false,
       "sourceImageCreditImageKey": "culture_francoise_rebeccagagne-1.jpg",
       "leadImageReady": false,
-      "leadExcerpt": "Le 23 juin dernier avait lieu la première du film québécois François.e à la Maison du Cinéma de Sherbrooke. Pour l’occasion, des membres de la distribution de même que les deux scénaristes de l’œuvre ont partagé l’expérience avec l’audience.",
-      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/d/d4/Francois_Cevert_1973.jpg",
-      "imageCredit": "Photo : Raimund Kommer / CC BY-SA · Openverse",
-      "imageCreator": "Raimund Kommer",
-      "imageLicense": "by-sa",
-      "imageProvider": "openverse",
-      "imageSourceUrl": "https://commons.wikimedia.org/w/index.php?curid=9775871"
+      "leadExcerpt": "Le 23 juin dernier avait lieu la première du film québécois François.e à la Maison du Cinéma de Sherbrooke. Pour l’occasion, des membres de la distribution de même que les deux scénaristes de l’œuvre ont partagé l’expérience avec l’audience."
     },
     {
       "source": "Le Collectif",
@@ -274,13 +268,7 @@
       "sourceImageCreditCited": true,
       "sourceImageCreditImageKey": "societe_virage-a-droite-en-colombie_getty-images.jpg",
       "leadImageReady": false,
-      "leadExcerpt": "Après quatre années passées sous l’égide de Gustavo Petro, la Colombie change de cap et élit à sa tête Abelardo de la Espriella. Ce dernier promet une rupture avec les administrations précédentes, notamment en ce qui concerne le crime organisé. Personnalité similaire à celle du président Trump, il aura su naviguer à travers les promesses-phares tout au long de sa campagne électorale.",
-      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/6/67/2012_Aston_Martin_Virage_coup%C3%A9.jpg",
-      "imageCredit": "Photo : Mr.choppers / CC BY-SA · Openverse",
-      "imageCreator": "Mr.choppers",
-      "imageLicense": "by-sa",
-      "imageProvider": "openverse",
-      "imageSourceUrl": "https://commons.wikimedia.org/w/index.php?curid=20404485"
+      "leadExcerpt": "Après quatre années passées sous l’égide de Gustavo Petro, la Colombie change de cap et élit à sa tête Abelardo de la Espriella. Ce dernier promet une rupture avec les administrations précédentes, notamment en ce qui concerne le crime organisé. Personnalité similaire à celle du président Trump, il aura su naviguer à travers les promesses-phares tout au long de sa campagne électorale."
     },
     {
       "source": "Le Collectif",
@@ -301,7 +289,13 @@
       "sourceImageCreditCited": true,
       "sourceImageCreditImageKey": "societe_demission-de-keir-starmer-au-royaume-uni_getty-images.jpg",
       "leadImageReady": false,
-      "leadExcerpt": "Croulant sous les pressions provenant de l’opposition et de son propre parti, le premier ministre britannique, Keir Starmer, démissionne finalement. Après des mois à se tenir de justesse au pouvoir, il cède ainsi sa place à Andy Burnham, alors que son parti chute aux sondages."
+      "leadExcerpt": "Croulant sous les pressions provenant de l’opposition et de son propre parti, le premier ministre britannique, Keir Starmer, démissionne finalement. Après des mois à se tenir de justesse au pouvoir, il cède ainsi sa place à Andy Burnham, alors que son parti chute aux sondages.",
+      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/a/a0/Beediging_%28nieuw%29_gekozen_leden_Tweede_Kamer_demission_premier_Lubbers_legt_ee%2C_Bestanddeelnr_933-6751.jpg",
+      "imageCredit": "Photo : Rob Croes for Anefo / CC0 · Openverse",
+      "imageCreator": "Rob Croes for Anefo",
+      "imageLicense": "cc0",
+      "imageProvider": "openverse",
+      "imageSourceUrl": "https://commons.wikimedia.org/w/index.php?curid=66556428"
     },
     {
       "source": "Le Collectif",
@@ -680,12 +674,12 @@
       "image": "",
       "leadExcerpt": "Le pont de Sainte-Anne ne se contente plus de relier deux rives ; il relie désormais les citoyens à une réalité souvent invisible. Jusqu’au 4 octobre prochain, l’exposition de photographie et de témoignages Ici on se rencontre met en lumière une vocation de l’ombre : celle des travailleurs de rue.",
       "leadImageReady": false,
-      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/c/c2/Chemin_de_Fer_de_l%27Est%2C_Ligne_de_contournement_de_Toul._Pont_%26_ouvriers_au_travail%2C_3_Mai_1933.jpg",
-      "imageCredit": "Photo : Unknown photographer / PUBLIC DOMAIN · Wikimedia Commons",
-      "imageCreator": "Unknown photographer",
-      "imageLicense": "Public domain",
-      "imageProvider": "wikimedia",
-      "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Chemin_de_Fer_de_l%27Est,_Ligne_de_contournement_de_Toul._Pont_%26_ouvriers_au_travail,_3_Mai_1933.jpg"
+      "stockImage": "https://live.staticflickr.com/4162/34368472056_546633d47c_b.jpg",
+      "imageCredit": "Photo : dalbera / CC BY · Openverse",
+      "imageCreator": "dalbera",
+      "imageLicense": "by",
+      "imageProvider": "openverse",
+      "imageSourceUrl": "https://www.flickr.com/photos/72746018@N00/34368472056"
     },
     {
       "source": "La Pige",
@@ -735,13 +729,14 @@
       "excerpt": "Salut, moi c’est Elora. Je suis étudiante en journalisme, passionnée de voyages, de cinéma et de récits humains. Mais aujourd’hui, si je me présente, c’est surtout pour te parler d’une relation toxique qui a occupé toute mon adolescence. Au début, ça ressemblait presque à un date.",
       "image": "https://www.exemplaire.com.ulaval.ca/wp-content/uploads/2026/05/Illustration-recadree-16.9-scaled-e1778861785132.png",
       "leadExcerpt": "À travers un balado intime et sans jugement, ces deux journalistes brisent le silence sur l’anorexie mentale et ouvrent la discussion sur les troubles du comportement alimentaire. Au fil de témoignages sensibles et éclairants.",
-      "leadImageReady": true,
+      "leadImageReady": false,
       "sourceImageCredit": "Crédit photo : L'Exemplaire",
       "sourceImageCreator": "",
       "sourceImageCreditUrl": "https://www.exemplaire.com.ulaval.ca/a-la-une/sans-fins-au-coeur-des-troubles-du-comportement-alimentaire/?utm_source=rss&utm_medium=rss&utm_campaign=sans-fins-au-coeur-des-troubles-du-comportement-alimentaire",
       "sourceImageCreditFrom": "media",
       "sourceImageCreditCited": false,
-      "sourceImageCreditImageKey": "illustration-recadree-16.9-scaled-e1778861785132.png"
+      "sourceImageCreditImageKey": "illustration-recadree-16.9-scaled-e1778861785132.png",
+      "_retainedFromCache": true
     },
     {
       "source": "Quartier Libre",
@@ -930,13 +925,14 @@
       "excerpt": "Selon une enquête récente par l’Institut de la statistique du Québec (ISQ), la consommation d’alcool chez les jeunes est en baisse depuis quelques années. Il s’agit d’un mouvement qui s’observe aussi, mais de manière moins prononcée, dans d’autres groupes d’âge. Cette",
       "image": "https://www.exemplaire.com.ulaval.ca/wp-content/uploads/2026/04/generated-image-2-e1777575466728.png",
       "leadExcerpt": "Il fut un temps où le tabac était partout, jusque dans les hôpitaux et les écoles. Aujourd’hui, son image a complètement changé. L’alcool, lui aussi, semble perdre du terrain chez les jeunes de 15 à 24 ans. Sa consommation baisse. Ne pas boire devient de plus en plus normal. Mais ce changement soulève une autre question : n’y a-t-il pas autre chose qui remplace l’alcool aujourd’hui dans la vie sociale des jeunes ?",
-      "leadImageReady": true,
+      "leadImageReady": false,
       "sourceImageCredit": "Crédit photo : L'Exemplaire",
       "sourceImageCreator": "",
       "sourceImageCreditUrl": "https://www.exemplaire.com.ulaval.ca/a-la-une/lalcool-est-il-vraiment-le-nouveau-tabac/?utm_source=rss&utm_medium=rss&utm_campaign=lalcool-est-il-vraiment-le-nouveau-tabac",
       "sourceImageCreditFrom": "media",
       "sourceImageCreditCited": false,
-      "sourceImageCreditImageKey": "generated-image-2-e1777575466728.png"
+      "sourceImageCreditImageKey": "generated-image-2-e1777575466728.png",
+      "_retainedFromCache": true
     },
     {
       "source": "L'Exemplaire",
@@ -951,13 +947,20 @@
       "excerpt": "Tout doucement, on les voit apparaître sur le bord des tablettes des épiceries. Des écrans miniatures qui indiquent le prix des produits alimentaires, comme chez Super C, par exemple — notre photo en une. Techniquement, ces nouvelles étiquettes peuvent faire varier les prix plusieurs fois par jour.",
       "image": "https://www.exemplaire.com.ulaval.ca/wp-content/uploads/2026/04/Photo-couverture-Super-C-scaled.jpg",
       "leadExcerpt": "Connue pour ses effets parfois délirants sur les prix des billets électroniques — évènements culturels, sportifs, transports, vente en ligne — la tarification dynamique s'attaque petit à petit aux produits alimentaires. Au Canada, ces nouvelles pratiques commerciales sont sources de nombreuses inquiétudes. Car si elles redéfinissent la concurrence, elles touchent surtout le consommateur.",
-      "leadImageReady": true,
+      "leadImageReady": false,
       "sourceImageCredit": "Photo : Thomas Harton",
       "sourceImageCreator": "Thomas Harton",
       "sourceImageCreditUrl": "https://www.exemplaire.com.ulaval.ca/a-la-une/derriere-les-etiquettes-electroniques-la-tarification-dynamique/?utm_source=rss&utm_medium=rss&utm_campaign=derriere-les-etiquettes-electroniques-la-tarification-dynamique",
       "sourceImageCreditFrom": "article",
       "sourceImageCreditCited": true,
-      "sourceImageCreditImageKey": "photo-couverture-super-c.jpg"
+      "sourceImageCreditImageKey": "photo-couverture-super-c.jpg",
+      "_retainedFromCache": true,
+      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/6/62/Marie_Le_Coteau_vue_derriere_2009.jpg",
+      "imageCredit": "Photo : Fryderyk / CC BY-SA · Openverse",
+      "imageCreator": "Fryderyk",
+      "imageLicense": "by-sa",
+      "imageProvider": "openverse",
+      "imageSourceUrl": "https://commons.wikimedia.org/w/index.php?curid=7303015"
     },
     {
       "source": "L'Exemplaire",
@@ -971,13 +974,20 @@
       "date": "2026-05-12T18:48:27.000Z",
       "excerpt": "Afin de lutter contre la violence armée, le gouvernement du Canada a interdit en mai 2020 plus de 2 500 marques d’armes d’assaut. Pour les citoyens ou les entreprises possédant les modèles concernés, le fédéral a mis sur pied le Programme d’indemnisation pour les armes à feu de style arme d’assaut (PIAFSAA)",
       "image": "https://www.exemplaire.com.ulaval.ca/wp-content/uploads/2026/05/ChatGPT-Image-7-mai-2026-11-h-02-min-08-s.png",
-      "leadImageReady": true,
+      "leadImageReady": false,
       "sourceImageCredit": "Crédit photo : L'Exemplaire",
       "sourceImageCreator": "",
       "sourceImageCreditUrl": "https://www.exemplaire.com.ulaval.ca/a-la-une/rachat-des-armes-a-feu-le-quebec-est-il-lexception-canadienne/?utm_source=rss&utm_medium=rss&utm_campaign=rachat-des-armes-a-feu-le-quebec-est-il-lexception-canadienne",
       "sourceImageCreditFrom": "media",
       "sourceImageCreditCited": false,
-      "sourceImageCreditImageKey": "chatgpt-image-7-mai-2026-11-h-02-min-08-s.png"
+      "sourceImageCreditImageKey": "chatgpt-image-7-mai-2026-11-h-02-min-08-s.png",
+      "_retainedFromCache": true,
+      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/3/3b/De_lossing_van_de_eerstgeborene%2C_ca._1720-1725_Le_Rachat%2C_du_Premier_n%C3%A9_%28titel_op_object%29%2C_RP-P-AO-24-37-1.jpg",
+      "imageCredit": "Photo : Rijksmuseum / CC0 · Openverse",
+      "imageCreator": "Rijksmuseum",
+      "imageLicense": "cc0",
+      "imageProvider": "openverse",
+      "imageSourceUrl": "https://commons.wikimedia.org/w/index.php?curid=85510310"
     },
     {
       "source": "L'Exemplaire",
@@ -992,13 +1002,14 @@
       "excerpt": "L’un des principaux reproches du public envers les médias traditionnels est la difficulté de faire la différence entre les genres journalistiques, par exemple, ce qui distingue un contenu informatif de l’opinion. Des propos qu’on retrouve chez les jeunes que nous avons rencontrés.",
       "image": "https://www.exemplaire.com.ulaval.ca/wp-content/uploads/2026/05/Image-de-une.jpg",
       "leadExcerpt": "La confiance des 18 à 34 ans envers les médias traditionnels est en recul constant depuis une dizaine d’années, d'après l'édition 2025 du Digital News Report (DNR). Cette évolution s'expliquerait notamment par l'évolution des formats numériques et l’influence de certains genres journalistiques. Dans ce brouhaha, les médias ajoutent-ils de la confusion à la confusion ?",
-      "leadImageReady": true,
+      "leadImageReady": false,
       "sourceImageCredit": "Crédit photo : L'Exemplaire",
       "sourceImageCreator": "",
       "sourceImageCreditUrl": "https://www.exemplaire.com.ulaval.ca/a-la-une/les-jeunes-et-les-medias-dactualite-une-confiance-de-plus-en-plus-erodee/?utm_source=rss&utm_medium=rss&utm_campaign=les-jeunes-et-les-medias-dactualite-une-confiance-de-plus-en-plus-erodee",
       "sourceImageCreditFrom": "media",
       "sourceImageCreditCited": false,
-      "sourceImageCreditImageKey": "image-de-une.jpg"
+      "sourceImageCreditImageKey": "image-de-une.jpg",
+      "_retainedFromCache": true
     },
     {
       "source": "L'Exemplaire",
@@ -1017,8 +1028,15 @@
       "sourceImageCreditFrom": "media",
       "sourceImageCreditCited": false,
       "sourceImageCreditImageKey": "achat-seconde-main-pistes-1.jpg",
-      "leadImageReady": true,
-      "leadExcerpt": "Les articles de seconde main ont le vent en poupe sur les réseaux sociaux. Les boutiques d'occasion bourgeonnent de plus en plus dans les secteurs commerçants. Certains adeptes de ces achats pensent même lutter contre la fast fashion . Mais cet intérêt pour les articles usagés reflète-t-il vraiment de meilleures habitudes de consommation ?"
+      "leadImageReady": false,
+      "leadExcerpt": "Les articles de seconde main ont le vent en poupe sur les réseaux sociaux. Les boutiques d'occasion bourgeonnent de plus en plus dans les secteurs commerçants. Certains adeptes de ces achats pensent même lutter contre la fast fashion . Mais cet intérêt pour les articles usagés reflète-t-il vraiment de meilleures habitudes de consommation ?",
+      "_retainedFromCache": true,
+      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/f/f3/Les_derniers_moments_de_Monseigneur_Affre_Monseigneur_Affre_sur_son_lit_de_mort._D.13692.jpg",
+      "imageCredit": "Photo : Compte-Calix, François Claudius (Lyon, 27–08–1813 - Chazay-d'Azergues,… / CC0 · Openverse",
+      "imageCreator": "Compte-Calix, François Claudius (Lyon, 27–08–1813 - Chazay-d'Azergues,…",
+      "imageLicense": "cc0",
+      "imageProvider": "openverse",
+      "imageSourceUrl": "https://commons.wikimedia.org/w/index.php?curid=139120666"
     },
     {
       "source": "L'Exemplaire",
@@ -1045,7 +1063,8 @@
       "sourceImageCreditUrl": "https://www.exemplaire.com.ulaval.ca/a-la-une/le-npd-soigne-t-il-sa-gauche-ou-se-radicalise-t-il/?utm_source=rss&utm_medium=rss&utm_campaign=le-npd-soigne-t-il-sa-gauche-ou-se-radicalise-t-il",
       "sourceImageCreditFrom": "article",
       "sourceImageCreditCited": true,
-      "sourceImageCreditImageKey": "tommy-douglas-and-david-lewis.jpg"
+      "sourceImageCreditImageKey": "tommy-douglas-and-david-lewis.jpg",
+      "_retainedFromCache": true
     },
     {
       "source": "L'Exemplaire",
@@ -1064,8 +1083,9 @@
       "sourceImageCreditFrom": "media",
       "sourceImageCreditCited": false,
       "sourceImageCreditImageKey": "skibidi-minia-2.png",
-      "leadImageReady": true,
-      "leadExcerpt": "Des fruits qui parlent, nouent des relations et suivent les codes de la téléréalité : c’est le concept derrière ces vidéos d’un nouveau genre. Entre humour, viralité et controverse, ces contenus explosent sur les réseaux sociaux. Mais, derrière ces visuels enfantins générés par intelligence artificielle, se dessinent des discours moins légers qui dépassent le simple divertissement."
+      "leadImageReady": false,
+      "leadExcerpt": "Des fruits qui parlent, nouent des relations et suivent les codes de la téléréalité : c’est le concept derrière ces vidéos d’un nouveau genre. Entre humour, viralité et controverse, ces contenus explosent sur les réseaux sociaux. Mais, derrière ces visuels enfantins générés par intelligence artificielle, se dessinent des discours moins légers qui dépassent le simple divertissement.",
+      "_retainedFromCache": true
     },
     {
       "source": "Quartier Libre",
@@ -1082,12 +1102,12 @@
       "_pageAuthor": "Carla Roche",
       "leadExcerpt": "Les 29 et 30 mai prochains, les adeptes d’ouvrages de suspense, à mystère et d’enquêtes auront rendez-vous au Centre culturel Georges-Vanier pour la troisième édition du festival du livre policier Montréal Mystère , un événement encore jeune, mais déjà bien installé dans le paysage littéraire montréalais.",
       "leadImageReady": false,
-      "stockImage": "https://live.staticflickr.com/3498/3735171010_90582fc99c_b.jpg",
-      "imageCredit": "Photo : Anirudh Koul / CC BY · Openverse",
-      "imageCreator": "Anirudh Koul",
-      "imageLicense": "by",
-      "imageProvider": "openverse",
-      "imageSourceUrl": "https://www.flickr.com/photos/84856173@N00/3735171010"
+      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/1/11/Berthelot_-_Les_myst%C3%A8res_de_Montr%C3%A9al%2C_1898_p77.jpg",
+      "imageCredit": "Photo : L'illustrateur est inconnu / PUBLIC DOMAIN · Wikimedia Commons",
+      "imageCreator": "L'illustrateur est inconnu",
+      "imageLicense": "Public domain",
+      "imageProvider": "wikimedia",
+      "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Berthelot_-_Les_myst%C3%A8res_de_Montr%C3%A9al,_1898_p77.jpg"
     },
     {
       "source": "Quartier Libre",
@@ -1125,12 +1145,12 @@
       "_pageAuthor": "Solène Gerber",
       "leadExcerpt": "Lors d’une assemblée universitaire tenue le 16 mars dernier, le professeur agrégé à l’École de psychoéducation de la Faculté des arts et des sciences de l’UdeM Jean-Sébastien Fallu a soulevé des préoccupations concernant le soutien informatique à l’Université. Il a partagé plusieurs difficultés que lui et ses collègues ont vécues, notamment liées aux délais, aux procédures et à la complexité de certains outils numériques.",
       "leadImageReady": false,
-      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/a/ab/Universit%C3%A9_de_Montr%C3%A9al%2C_Pavillon_Roger-Gaudry.JPG",
-      "imageCredit": "Photo : Laurent Bélanger / CC BY-SA · Openverse",
-      "imageCreator": "Laurent Bélanger",
-      "imageLicense": "by-sa",
-      "imageProvider": "openverse",
-      "imageSourceUrl": "https://commons.wikimedia.org/w/index.php?curid=44126404"
+      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/4/45/Lucie_Sauv%C3%A9_%28Professeure%2C_Universit%C3%A9_du_Qu%C3%A9bec_%C3%A0_Montr%C3%A9al%29.jpg",
+      "imageCredit": "Photo : Photos institutionnelle - Université du Québec à Montréal / CC BY-SA 4.0 · Wikimedia Commons",
+      "imageCreator": "Photos institutionnelle - Université du Québec à Montréal",
+      "imageLicense": "CC BY-SA 4.0",
+      "imageProvider": "wikimedia",
+      "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Lucie_Sauv%C3%A9_(Professeure,_Universit%C3%A9_du_Qu%C3%A9bec_%C3%A0_Montr%C3%A9al).jpg"
     },
     {
       "source": "The Link",
@@ -1228,6 +1248,7 @@
       "image": "",
       "leadExcerpt": "Si tous vos amis s’entrainent comme des athlètes à temps plein et vous parlent constamment de leur « split » sur Strava, c’est que vous êtes dans la course. Les sports d’endurance extrême sont plus populaires que jamais, particulièrement chez les jeunes adultes. Pour le meilleur et — parfois — pour le pire.",
       "leadImageReady": false,
+      "_retainedFromCache": true,
       "stockImage": "https://live.staticflickr.com/8573/16591688686_1ec8d98ba4_b.jpg",
       "imageCredit": "Photo : Play it Smart Centennial / CC BY · Openverse",
       "imageCreator": "Play it Smart Centennial",
@@ -1248,13 +1269,20 @@
       "excerpt": "Le restaurant Le Parlementaire est l’un des seuls restaurants au monde, situé dans un parlement, encore en activité (photo: Juliette Deshayes / L’Exemplaire). Écoutez « Quand la politique passe à table » et vous ne regarderez plus jamais une assiette de la même façon ! The post Quand la politique passe à table first appeared on L'exemplaire .",
       "image": "https://www.exemplaire.com.ulaval.ca/wp-content/uploads/2026/05/politiquetable.png",
       "leadExcerpt": "Discuter de contrats politiques, c’est bien. Mais, en se régalant autour d’un bon repas, on a vite compris que c’était mieux. Cette stratégie de négociation s’appelle la diplomatie culinaire . À l’aide de Sébastien Laframboise, chef exécutif du restaurant Le Parlementaire, à l’Assemblée Nationale de Québec, L’Exemplaire cherche à éclaircir ce concept, tout en faisant sourire ces auditeurs.",
-      "leadImageReady": true,
+      "leadImageReady": false,
       "sourceImageCredit": "Photo : Juliette Deshayes / L’Exemplaire",
       "sourceImageCreator": "Juliette Deshayes / L’Exemplaire",
       "sourceImageCreditUrl": "https://www.exemplaire.com.ulaval.ca/a-la-une/quand-la-politique-passe-a-table/?utm_source=rss&utm_medium=rss&utm_campaign=quand-la-politique-passe-a-table",
       "sourceImageCreditFrom": "article",
       "sourceImageCreditCited": true,
-      "sourceImageCreditImageKey": "politiquetable.png"
+      "sourceImageCreditImageKey": "politiquetable.png",
+      "_retainedFromCache": true,
+      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/4/47/Assembl%C3%A9e_nationale_du_Qu%C3%A9bec%2C_l%27H%C3%B4tel_du_Parlement%2C_fa%C3%A7ade_avec_ancien_entr%C3%A9_principal.jpg",
+      "imageCredit": "Photo : Marc-Lautenbacher / CC BY-SA · Openverse",
+      "imageCreator": "Marc-Lautenbacher",
+      "imageLicense": "by-sa",
+      "imageProvider": "openverse",
+      "imageSourceUrl": "https://commons.wikimedia.org/w/index.php?curid=73170675"
     },
     {
       "source": "Montréal Campus",
@@ -1581,7 +1609,13 @@
       "excerpt": "Across the 18 months she has lived in her Plateau apartment, Alice Lee, U3 Arts & Science, has had her water shut off 13 times. Most recently—in February 2026—she turned on her tap to find the water running yellow, as she recounted in an interview with The Tribune . Lee explained that her building’s maintenance worker was unequipped to deal with the problem.",
       "image": "",
       "leadExcerpt": "Across the 18 months she has lived in her Plateau apartment, Alice Lee, U3 Arts & Science, has had her water shut off 13 times. Most recently—in February 2026—she turned on her tap to find the water running yellow, as she recounted in an interview with The Tribune . Lee explained that her building’s maintenance worker was unequipped to deal with the problem.",
-      "leadImageReady": false
+      "leadImageReady": false,
+      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/0/04/Across_the_continent_by_the_Lincoln_Highway_%281915%29_%2814778582305%29.jpg",
+      "imageCredit": "Photo : Internet Archive Book Images / NO RESTRICTIONS · Wikimedia Commons",
+      "imageCreator": "Internet Archive Book Images",
+      "imageLicense": "No restrictions",
+      "imageProvider": "wikimedia",
+      "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Across_the_continent_by_the_Lincoln_Highway_(1915)_(14778582305).jpg"
     },
     {
       "source": "The Tribune",
@@ -2004,13 +2038,7 @@
       "sourceImageCreditFrom": "media",
       "sourceImageCreditCited": false,
       "sourceImageCreditImageKey": "screenshot_2026-04-11_17.01.52.png",
-      "leadImageReady": false,
-      "stockImage": "https://live.staticflickr.com/65/187427874_ed13130a85_b.jpg",
-      "imageCredit": "Photo : dave_mcmt / CC BY · Openverse",
-      "imageCreator": "dave_mcmt",
-      "imageLicense": "by",
-      "imageProvider": "openverse",
-      "imageSourceUrl": "https://www.flickr.com/photos/30512529@N00/187427874"
+      "leadImageReady": false
     },
     {
       "source": "The Link",
@@ -2186,12 +2214,6 @@
       "excerpt": "“I got in an accident that involved some sea urchins,” Natalie Joy Gale, a PhD student in McGill’s Department of History and Classical Studies, said in an interview with //The Tribune//. Gale recalls wiping out in an ‘urchin-y’ area of reef while surfing in Puerto Rico, resulting in several sea [Read More]",
       "image": "https://www.thetribune.ca/wp-content/uploads/2026/04/bottle.png",
       "leadImageReady": false,
-      "stockImage": "https://live.staticflickr.com/4532/38561519546_37d0d16ddd_b.jpg",
-      "imageCredit": "Photo : Marie-Baeten / CC BY · Openverse",
-      "imageCreator": "Marie-Baeten",
-      "imageLicense": "by",
-      "imageProvider": "openverse",
-      "imageSourceUrl": "https://www.flickr.com/photos/155423788@N03/38561519546",
       "sourceImageCredit": "Photo credit: The Tribune",
       "sourceImageCreator": "",
       "sourceImageCreditUrl": "https://www.thetribune.ca/features/your-health-your-problem/?utm_source=rss&utm_medium=rss&utm_campaign=your-health-your-problem",
@@ -2252,13 +2274,7 @@
       "date": "2026-04-07T15:29:55.000Z",
       "excerpt": "The Tribune ‘s special issue for the Winter 2026 semester was centred around the theme of ‘ memory ,’ with our writers, staff, editors, and creative team discussing the role of institutional, collective, and personal memory in society, politics, educational institutions, and more.",
       "image": "",
-      "leadImageReady": false,
-      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/5/50/Winter_Sports_-_DPLA_-_c6a5f8c6ae9bc957152bfb33e5b80727.jpg",
-      "imageCredit": "Photo : Abbot Academy / CC BY-SA 4.0 · Wikimedia Commons",
-      "imageCreator": "Abbot Academy",
-      "imageLicense": "CC BY-SA 4.0",
-      "imageProvider": "wikimedia",
-      "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Winter_Sports_-_DPLA_-_c6a5f8c6ae9bc957152bfb33e5b80727.jpg"
+      "leadImageReady": false
     },
     {
       "source": "The Tribune",
@@ -2436,13 +2452,7 @@
       "sourceImageCreditFrom": "media",
       "sourceImageCreditCited": false,
       "sourceImageCreditImageKey": "sports_3_testimony-of-a-graduating-athlete_credits_bu-club-hockey-team.jpeg",
-      "leadImageReady": false,
-      "stockImage": "https://live.staticflickr.com/2502/3886993263_bb94359eb2_b.jpg",
-      "imageCredit": "Photo : scazon / CC BY · Openverse",
-      "imageCreator": "scazon",
-      "imageLicense": "by",
-      "imageProvider": "openverse",
-      "imageSourceUrl": "https://www.flickr.com/photos/26416016@N02/3886993263"
+      "leadImageReady": false
     },
     {
       "source": "The Campus",
@@ -3319,13 +3329,7 @@
       "sourceImageCreditFrom": "media",
       "sourceImageCreditCited": false,
       "sourceImageCreditImageKey": "sports_1_bu-club-hockey_credits_courteousy-of-bu-club-hockey-team.jpg",
-      "leadImageReady": false,
-      "stockImage": "https://live.staticflickr.com/2690/4397427381_ca3a0e7c13_b.jpg",
-      "imageCredit": "Photo : s.yume / CC BY · Openverse",
-      "imageCreator": "s.yume",
-      "imageLicense": "by",
-      "imageProvider": "openverse",
-      "imageSourceUrl": "https://www.flickr.com/photos/24503701@N02/4397427381"
+      "leadImageReady": false
     },
     {
       "source": "The Campus",
