@@ -1,11 +1,11 @@
 {
-  "updated": "2026-07-06T05:03:30.842Z",
+  "updated": "2026-07-06T13:06:15.486Z",
   "total": 192,
   "pool": 58,
   "incomplete": 9,
   "withLeadExcerpt": 64,
   "candidates": 9,
-  "enriched": 0,
+  "enriched": 1,
   "failed": 0,
   "ok": true,
   "samples": [
@@ -34,7 +34,7 @@
       "score": 96,
       "chars": 572,
       "sample": "L a montée en puissance de l’idéologie du mouvement politique Make America Great Again (MAGA) n’est ",
-      "changed": false
+      "changed": true
     },
     {
       "title": "Une première nouvelle candidature pour la CAQ dans Brome‑Missisquoi",

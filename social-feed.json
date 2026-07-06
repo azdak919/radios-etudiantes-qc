@@ -1,6 +1,6 @@
 {
-  "updated": "2026-07-06T05:40:58.030Z",
-  "count": 18,
+  "updated": "2026-07-06T13:16:42.730Z",
+  "count": 19,
   "items": [
     {
       "name": "Quartier Libre",
@@ -180,6 +180,28 @@
           "handle": "zonecampus",
           "stats": "2 044 mentions J'aime",
           "label": "Facebook"
+        }
+      ]
+    },
+    {
+      "name": "L'Exemplaire",
+      "institution": "Université Laval",
+      "type": "universite",
+      "kind": "journal",
+      "networks": [
+        {
+          "type": "facebook",
+          "url": "https://www.facebook.com/lexemplaire",
+          "handle": "lexemplaire",
+          "stats": "",
+          "label": "Facebook"
+        },
+        {
+          "type": "x",
+          "url": "https://twitter.com/lexemplaire",
+          "handle": "@lexemplaire",
+          "stats": "Le média-école des étudiant.e.s en journalisme de l'Université Laval, Québec.",
+          "label": "X"
         }
       ]
     },
@@ -464,13 +486,6 @@
           "handle": "CFAK883",
           "stats": "",
           "label": "Facebook"
-        },
-        {
-          "type": "youtube",
-          "url": "https://www.youtube.com/@cfak88.3fm",
-          "handle": "@cfak88.3fm",
-          "stats": "",
-          "label": "YouTube"
         }
       ]
     },
@@ -486,13 +501,6 @@
           "handle": "@choq.ca",
           "stats": "",
           "label": "Instagram"
-        },
-        {
-          "type": "x",
-          "url": "https://twitter.com/choq_ca",
-          "handle": "@choq_ca",
-          "stats": "📻 Podcasts • Reportages • Musique",
-          "label": "X"
         }
       ]
     }

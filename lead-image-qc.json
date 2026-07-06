@@ -1,17 +1,23 @@
 {
-  "updated": "2026-07-06T05:39:12.022Z",
+  "updated": "2026-07-06T13:14:27.383Z",
   "total": 192,
-  "withPhoto": 151,
+  "withPhoto": 150,
   "withStock": 42,
-  "fullyCovered": 184,
-  "leadReadyPhotos": 119,
-  "pageScraped": 62,
-  "photosRecovered": 36,
+  "fullyCovered": 183,
+  "leadReadyPhotos": 126,
+  "pageScraped": 71,
+  "photosRecovered": 42,
   "imagesCleared": 3,
   "stockSearches": 60,
   "stockFound": 39,
   "mainPageLeadReady": true,
   "gaps": [
+    {
+      "title": "The Cruel Optimism of Summer",
+      "link": "https://www.mcgilldaily.com/2026/07/the-cruel-optimism-of-summer/",
+      "reason": "stock-too-small",
+      "image": "https://live.staticflickr.com/917/28627096297_a3e0756d47_b.jpg"
+    },
     {
       "title": "Un hommage aux cyclistes décédés sur les routes",
       "link": "https://lapige.atmjonquiere.com/2026/05/21/les-cyclistes-sont-honores-au-lac-saint-jean/?utm_source=rss&utm_medium=rss&utm_campaign=les-cyclistes-sont-honores-au-lac-saint-jean",
@@ -77,12 +83,6 @@
       "link": "https://lecollectif.ca/a-la-une/interdiction-des-boissons-energisantes-pour-les-moins-de-16-ans/",
       "reason": "stock-too-small",
       "image": "https://lecollectif.ca/wp-content/uploads/2026/06/SOCIETE_BoissonsEnergisantes_SourceAssociationPourLaSantePubliqueDuQuebec.jpg"
-    },
-    {
-      "title": "Se préparer et vivre sa retraite : un long fleuve, pas si tranquille",
-      "link": "https://lapige.atmjonquiere.com/2026/06/22/se-preparer-et-vivre-sa-retraite-un-long-fleuve-pas-si-tranquille/?utm_source=rss&utm_medium=rss&utm_campaign=se-preparer-et-vivre-sa-retraite-un-long-fleuve-pas-si-tranquille",
-      "reason": "no-stock-match",
-      "image": "https://lapige.atmjonquiere.com/wp-content/uploads/sites/3/2026/06/Bruno-Cormier-retraite-benevole.png"
     }
   ]
 }
