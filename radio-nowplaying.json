@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-06T20:55:01.457Z",
+  "updatedAt": "2026-07-06T22:15:19.186Z",
   "stations": {
     "chyz": {
       "id": "chyz",
@@ -7,7 +7,7 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-06T20:54:44.040Z"
+      "checkedAt": "2026-07-06T22:15:01.486Z"
     },
     "cism": {
       "id": "cism",
@@ -15,15 +15,15 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-06T20:54:44.812Z"
+      "checkedAt": "2026-07-06T22:15:02.251Z"
     },
     "ckut": {
       "id": "ckut",
       "name": "CKUT 90,3",
-      "showTitle": "Whose Vibe Is It Anyway",
+      "showTitle": "Queercorps",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-06T20:54:46.428Z"
+      "checkedAt": "2026-07-06T22:15:03.691Z"
     },
     "cjlo": {
       "id": "cjlo",
@@ -31,7 +31,7 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-06T20:54:59.797Z"
+      "checkedAt": "2026-07-06T22:15:16.953Z"
     },
     "cfak": {
       "id": "cfak",
@@ -39,15 +39,15 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-06T20:55:00.487Z"
+      "checkedAt": "2026-07-06T22:15:17.651Z"
     },
     "choq": {
       "id": "choq",
       "name": "CHOQ.ca",
-      "showTitle": "Ol’ Time African Gods",
-      "host": "Shabaka",
+      "showTitle": "STAMPEDE",
+      "host": "Genesis Owusu",
       "source": "api-live",
-      "checkedAt": "2026-07-06T20:55:01.056Z"
+      "checkedAt": "2026-07-06T22:15:18.785Z"
     }
   }
 }
