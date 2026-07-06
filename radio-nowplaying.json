@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-05T22:32:27.247Z",
+  "updatedAt": "2026-07-06T00:09:20.696Z",
   "stations": {
     "chyz": {
       "id": "chyz",
@@ -7,7 +7,7 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-05T22:32:08.878Z"
+      "checkedAt": "2026-07-06T00:08:58.782Z"
     },
     "cism": {
       "id": "cism",
@@ -15,15 +15,15 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-05T22:32:09.586Z"
+      "checkedAt": "2026-07-06T00:08:59.411Z"
     },
     "ckut": {
       "id": "ckut",
       "name": "CKUT 90,3",
-      "showTitle": "Desi Beats (must be .mp3!!)",
+      "showTitle": "Bluegrass Rambling",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-05T22:32:11.188Z"
+      "checkedAt": "2026-07-06T00:09:01.054Z"
     },
     "cjlo": {
       "id": "cjlo",
@@ -31,7 +31,7 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-05T22:32:24.554Z"
+      "checkedAt": "2026-07-06T00:09:14.748Z"
     },
     "cfak": {
       "id": "cfak",
@@ -39,15 +39,15 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-05T22:32:25.232Z"
+      "checkedAt": "2026-07-06T00:09:15.434Z"
     },
     "choq": {
       "id": "choq",
       "name": "CHOQ.ca",
-      "showTitle": "Slayyyter - CRANK",
-      "host": "",
-      "source": "stream",
-      "checkedAt": "2026-07-05T22:32:26.847Z"
+      "showTitle": "Le cowboy aux mains d'argent",
+      "host": "Lysandre",
+      "source": "api-live",
+      "checkedAt": "2026-07-06T00:09:20.296Z"
     }
   }
 }
