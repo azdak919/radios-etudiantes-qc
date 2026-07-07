@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-07T19:31:48.653Z",
+  "updated": "2026-07-07T21:22:29.991Z",
   "total": 192,
   "withImage": 150,
   "withCredit": 150,
@@ -7,9 +7,9 @@
   "pending": 0,
   "missingHero": 0,
   "ok": true,
-  "checked": 54,
-  "updatedCount": 54,
-  "citedNew": 18,
+  "checked": 53,
+  "updatedCount": 53,
+  "citedNew": 17,
   "fallbackNew": 36,
   "samples": [
     {

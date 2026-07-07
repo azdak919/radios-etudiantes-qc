@@ -1,15 +1,15 @@
 {
-  "updated": "2026-07-07T19:30:42.134Z",
+  "updated": "2026-07-07T21:21:34.670Z",
   "total": 192,
   "withPhoto": 150,
-  "withStock": 43,
-  "fullyCovered": 183,
-  "leadReadyPhotos": 126,
-  "pageScraped": 68,
+  "withStock": 42,
+  "fullyCovered": 184,
+  "leadReadyPhotos": 127,
+  "pageScraped": 69,
   "photosRecovered": 42,
   "imagesCleared": 3,
   "stockSearches": 60,
-  "stockFound": 39,
+  "stockFound": 38,
   "mainPageLeadReady": true,
   "gaps": [
     {
