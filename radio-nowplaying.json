@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-07T03:36:43.100Z",
+  "updatedAt": "2026-07-07T07:41:40.364Z",
   "stations": {
     "chyz": {
       "id": "chyz",
@@ -7,7 +7,7 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-07T03:36:24.933Z"
+      "checkedAt": "2026-07-07T07:41:20.624Z"
     },
     "cism": {
       "id": "cism",
@@ -15,15 +15,15 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-07T03:36:25.765Z"
+      "checkedAt": "2026-07-07T07:41:21.493Z"
     },
     "ckut": {
       "id": "ckut",
       "name": "CKUT 90,3",
-      "showTitle": "Drastic Plastic",
+      "showTitle": "Attik / Show For Children",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-07T03:36:27.283Z"
+      "checkedAt": "2026-07-07T07:41:23.025Z"
     },
     "cjlo": {
       "id": "cjlo",
@@ -31,7 +31,7 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-07T03:36:40.734Z"
+      "checkedAt": "2026-07-07T07:41:36.374Z"
     },
     "cfak": {
       "id": "cfak",
@@ -39,15 +39,15 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-07T03:36:41.442Z"
+      "checkedAt": "2026-07-07T07:41:37.994Z"
     },
     "choq": {
       "id": "choq",
       "name": "CHOQ.ca",
-      "showTitle": "White Tee",
-      "host": "Wesley Joseph",
-      "source": "api-live",
-      "checkedAt": "2026-07-07T03:36:42.698Z"
+      "showTitle": "Velvetine - Ecstasy",
+      "host": "",
+      "source": "stream",
+      "checkedAt": "2026-07-07T07:41:39.964Z"
     }
   }
 }
