@@ -1,10 +1,10 @@
 {
-  "updated": "2026-07-08T11:30:46.002Z",
+  "updated": "2026-07-08T12:19:17.040Z",
   "total": 192,
   "withPhoto": 150,
   "withStock": 41,
   "fullyCovered": 182,
-  "leadReadyPhotos": 155,
+  "leadReadyPhotos": 156,
   "pageScraped": 68,
   "photosRecovered": 42,
   "imagesCleared": 3,
@@ -43,10 +43,10 @@
       "image": null
     },
     {
-      "title": "François.e",
-      "link": "https://lecollectif.ca/culture/francois-e/",
+      "title": "Christine Labrie tourne la page sur huit ans comme députée de Sherbrooke",
+      "link": "https://lecollectif.ca/a-la-une/christine-labrie-tourne-la-page-sur-huit-ans-comme-deputee-de-sherbrooke/",
       "reason": "stock-too-small",
-      "image": "https://lecollectif.ca/wp-content/uploads/2026/06/CULTURE_Francoise_RebeccaGagne-1-709x1024.jpg"
+      "image": "https://lecollectif.ca/wp-content/uploads/2026/07/SOCIETE_ChristineLabrie_SourcePageFacebookDeRubaGhazal-819x1024.jpg"
     },
     {
       "title": "Une première nouvelle candidature pour la CAQ dans Brome‑Missisquoi",

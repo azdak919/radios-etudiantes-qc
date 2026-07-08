@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-08T11:24:19.980Z",
+  "updated": "2026-07-08T12:12:36.488Z",
   "count": 192,
   "freshnessSessions": 3,
   "sources": {
@@ -9,7 +9,7 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-05-15T16:00:00.000Z",
-      "lastFetchOk": "2026-07-08T11:22:53.309Z"
+      "lastFetchOk": "2026-07-08T12:10:03.312Z"
     },
     "Montréal Campus": {
       "fetchOk": true,
@@ -17,7 +17,7 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-05-09T03:14:30.000Z",
-      "lastFetchOk": "2026-07-08T11:22:54.124Z"
+      "lastFetchOk": "2026-07-08T12:10:05.848Z"
     },
     "Le Délit": {
       "fetchOk": true,
@@ -25,7 +25,7 @@
       "articleCount": 20,
       "freshArticleCount": 20,
       "lastArticle": "2026-03-25T11:00:00.000Z",
-      "lastFetchOk": "2026-07-08T11:22:58.298Z"
+      "lastFetchOk": "2026-07-08T12:10:09.579Z"
     },
     "The McGill Daily": {
       "fetchOk": true,
@@ -33,7 +33,7 @@
       "articleCount": 15,
       "freshArticleCount": 15,
       "lastArticle": "2026-07-06T12:00:00.000Z",
-      "lastFetchOk": "2026-07-08T11:22:58.670Z"
+      "lastFetchOk": "2026-07-08T12:10:09.945Z"
     },
     "The Link": {
       "fetchOk": true,
@@ -41,7 +41,7 @@
       "articleCount": 20,
       "freshArticleCount": 20,
       "lastArticle": "2026-06-28T23:23:00.000Z",
-      "lastFetchOk": "2026-07-08T11:22:59.603Z"
+      "lastFetchOk": "2026-07-08T12:10:10.976Z"
     },
     "The Concordian": {
       "fetchOk": false,
@@ -57,7 +57,7 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-05-08T14:20:26.000Z",
-      "lastFetchOk": "2026-07-08T11:23:00.574Z"
+      "lastFetchOk": "2026-07-08T12:10:11.981Z"
     },
     "L'Exemplaire": {
       "fetchOk": true,
@@ -65,7 +65,7 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-05-15T16:31:24.000Z",
-      "lastFetchOk": "2026-07-08T11:23:02.654Z"
+      "lastFetchOk": "2026-07-08T12:10:13.325Z"
     },
     "Le Collectif": {
       "fetchOk": true,
@@ -73,7 +73,7 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-07-08T00:45:45.000Z",
-      "lastFetchOk": "2026-07-08T11:23:06.234Z"
+      "lastFetchOk": "2026-07-08T12:10:14.532Z"
     },
     "Exil": {
       "fetchOk": true,
@@ -81,7 +81,7 @@
       "articleCount": 7,
       "freshArticleCount": 7,
       "lastArticle": "2026-04-18T22:22:07.000Z",
-      "lastFetchOk": "2026-07-08T11:23:06.336Z"
+      "lastFetchOk": "2026-07-08T12:10:14.647Z"
     },
     "La Pige": {
       "fetchOk": true,
@@ -89,7 +89,7 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-06-22T14:36:10.000Z",
-      "lastFetchOk": "2026-07-08T11:23:06.796Z"
+      "lastFetchOk": "2026-07-08T12:10:15.206Z"
     },
     "The Tribune": {
       "fetchOk": true,
@@ -97,7 +97,7 @@
       "articleCount": 20,
       "freshArticleCount": 20,
       "lastArticle": "2026-06-26T15:24:28.000Z",
-      "lastFetchOk": "2026-07-08T11:23:06.906Z"
+      "lastFetchOk": "2026-07-08T12:10:15.341Z"
     },
     "The Campus": {
       "fetchOk": true,
@@ -105,7 +105,7 @@
       "articleCount": 30,
       "freshArticleCount": 30,
       "lastArticle": "2026-04-06T16:03:16.000Z",
-      "lastFetchOk": "2026-07-08T11:23:06.997Z"
+      "lastFetchOk": "2026-07-08T12:10:15.485Z"
     }
   },
   "items": [
@@ -145,7 +145,13 @@
       "sourceImageCreditFrom": "media",
       "sourceImageCreditCited": false,
       "sourceImageCreditImageKey": "societe_christinelabrie_sourcepagefacebookderubaghazal.jpg",
-      "leadImageReady": false
+      "leadImageReady": false,
+      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/4/47/Assembl%C3%A9e_nationale_du_Qu%C3%A9bec%2C_l%27H%C3%B4tel_du_Parlement%2C_fa%C3%A7ade_avec_ancien_entr%C3%A9_principal.jpg",
+      "imageCredit": "Photo : Marc-Lautenbacher / CC BY-SA · Openverse",
+      "imageCreator": "Marc-Lautenbacher",
+      "imageLicense": "by-sa",
+      "imageProvider": "openverse",
+      "imageSourceUrl": "https://commons.wikimedia.org/w/index.php?curid=73170675"
     },
     {
       "source": "Le Collectif",
@@ -276,13 +282,7 @@
       "sourceImageCreditCited": false,
       "sourceImageCreditImageKey": "culture_francoise_rebeccagagne-1.jpg",
       "leadImageReady": false,
-      "leadExcerpt": "Le 23 juin dernier avait lieu la première du film québécois François.e à la Maison du Cinéma de Sherbrooke. Pour l’occasion, des membres de la distribution de même que les deux scénaristes de l’œuvre ont partagé l’expérience avec l’audience.",
-      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/d/d4/Francois_Cevert_1973.jpg",
-      "imageCredit": "Photo : Raimund Kommer / CC BY-SA · Openverse",
-      "imageCreator": "Raimund Kommer",
-      "imageLicense": "by-sa",
-      "imageProvider": "openverse",
-      "imageSourceUrl": "https://commons.wikimedia.org/w/index.php?curid=9775871"
+      "leadExcerpt": "Le 23 juin dernier avait lieu la première du film québécois François.e à la Maison du Cinéma de Sherbrooke. Pour l’occasion, des membres de la distribution de même que les deux scénaristes de l’œuvre ont partagé l’expérience avec l’audience."
     },
     {
       "source": "Le Collectif",
@@ -3039,6 +3039,28 @@
       "region": "Montréal",
       "type": "universite",
       "lang": "fr",
+      "title": "L’épidémie de la nonchalance",
+      "link": "https://www.delitfrancais.com/2026/03/25/lepidemie-de-la-nonchalance/",
+      "author": "Elie Nguyen",
+      "date": "2026-03-25T07:00:00.000Z",
+      "excerpt": "Pour en finir avec l’insouciance de façade et embrasser pleinement l’authenticité.",
+      "image": "https://www.delitfrancais.com/wp-content/uploads/2026/03/Creation-sans-titre-2-768x1024.png",
+      "featured": true,
+      "_pageAuthor": "Elie Nguyen",
+      "sourceImageCredit": "Crédit photo : Le Délit",
+      "sourceImageCreditUrl": "https://www.delitfrancais.com/2026/03/25/lepidemie-de-la-nonchalance/",
+      "sourceImageCreditFrom": "media",
+      "sourceImageCreditCited": false,
+      "sourceImageCreditImageKey": "creation-sans-titre-2.png",
+      "leadImageReady": false,
+      "leadExcerpt": "L’un des travers de notre génération est la tendance à adopter une attitude indifférente face à la vie. La nonchalance est devenue une forme de protection, où on minimise tout ce que l’on ressent : on cache ce qui pourrait nous atteindre et on évite de trop s’exposer. En paraissant insouciant, on garde le contrôle, puisque personne ne peut utiliser contre nous ce dont il ne mesure pas l’importance."
+    },
+    {
+      "source": "Le Délit",
+      "institution": "Université McGill",
+      "region": "Montréal",
+      "type": "universite",
+      "lang": "fr",
       "title": "Le retard et les bienfaits du temps long",
       "link": "https://www.delitfrancais.com/2026/03/25/le-retard-et-les-bienfaits-du-temps-long/",
       "author": "Dalia Djazouli",
@@ -3146,28 +3168,6 @@
       "sourceImageCreditImageKey": "coinqueer-1.jpeg",
       "leadImageReady": false,
       "leadExcerpt": "Deux hommes hétéros imitent une voix, se prennent par la taille, font semblant d’être en couple pour une photo, puis éclatent de rire. L’un ajoute « no homo » et tout rentre dans l’ordre. Pendant ce temps, un homme gai tient la main de son partenaire. Il surveille autour de lui, sonde le quartier, évalue le risque. Pour les uns, l’homosexualité est un prétexte pour rire. Pour les autres, c’est juste une vie."
-    },
-    {
-      "source": "Le Délit",
-      "institution": "Université McGill",
-      "region": "Montréal",
-      "type": "universite",
-      "lang": "fr",
-      "title": "L’épidémie de la nonchalance",
-      "link": "https://www.delitfrancais.com/2026/03/25/lepidemie-de-la-nonchalance/",
-      "author": "Elie Nguyen",
-      "date": "2026-03-25T07:00:00.000Z",
-      "excerpt": "Pour en finir avec l’insouciance de façade et embrasser pleinement l’authenticité.",
-      "image": "https://www.delitfrancais.com/wp-content/uploads/2026/03/Creation-sans-titre-2-768x1024.png",
-      "featured": true,
-      "_pageAuthor": "Elie Nguyen",
-      "sourceImageCredit": "Crédit photo : Le Délit",
-      "sourceImageCreditUrl": "https://www.delitfrancais.com/2026/03/25/lepidemie-de-la-nonchalance/",
-      "sourceImageCreditFrom": "media",
-      "sourceImageCreditCited": false,
-      "sourceImageCreditImageKey": "creation-sans-titre-2.png",
-      "leadImageReady": false,
-      "leadExcerpt": "L’un des travers de notre génération est la tendance à adopter une attitude indifférente face à la vie. La nonchalance est devenue une forme de protection, où on minimise tout ce que l’on ressent : on cache ce qui pourrait nous atteindre et on évite de trop s’exposer. En paraissant insouciant, on garde le contrôle, puisque personne ne peut utiliser contre nous ce dont il ne mesure pas l’importance."
     },
     {
       "source": "The McGill Daily",
@@ -3736,28 +3736,6 @@
       "region": "Montréal",
       "type": "universite",
       "lang": "fr",
-      "title": "Ce que nous devons aux femmes",
-      "link": "https://www.delitfrancais.com/2026/03/18/ce-que-nous-devons-aux-femmes/",
-      "author": "Eugénie St-Pierre",
-      "date": "2026-03-18T07:00:00.000Z",
-      "excerpt": "Votre entourage, en tant qu’étudiantes et étudiants de l’Université McGill, est peut-être composé en majorité de personnes qui se revendiquent comme féministes. Certaines le sont, d’autres le prétendent, mais relativement rares sont les McGillois qui refusent ouvertement le féminisme.",
-      "image": "https://www.delitfrancais.com/wp-content/uploads/2026/03/Capture-decran-le-2026-03-22-a-17.22.07.png",
-      "featured": true,
-      "_pageAuthor": "Eugénie St-Pierre",
-      "sourceImageCredit": "Photo : Alexandre Gontier",
-      "sourceImageCreator": "Alexandre Gontier",
-      "sourceImageCreditUrl": "https://www.delitfrancais.com/2026/03/18/ce-que-nous-devons-aux-femmes/",
-      "sourceImageCreditFrom": "article",
-      "sourceImageCreditCited": true,
-      "sourceImageCreditImageKey": "capture-decran-le-2026-03-22-a-17.22.07.png",
-      "leadImageReady": true
-    },
-    {
-      "source": "Le Délit",
-      "institution": "Université McGill",
-      "region": "Montréal",
-      "type": "universite",
-      "lang": "fr",
       "title": "Les femmes MAGA au service du patriarcat",
       "link": "https://www.delitfrancais.com/2026/03/18/les-femmes-maga-au-service-du-patriarcat/",
       "author": "Anonyme",
@@ -3774,6 +3752,28 @@
       "sourceImageCreditImageKey": "maga_marius.png",
       "leadImageReady": false,
       "leadExcerpt": "L a montée en puissance de l’idéologie du mouvement politique Make America Great Again (MAGA) n’est pas qu’un accident ou qu’une simple parenthèse dans l’histoire américaine. Au contraire, ce fléau populiste est l’aboutissement rationnel d’un mariage longuement mijoté entre le conservatisme social, le néolibéralisme économique, et le sensationnalisme médiatique. Quoi qu’elle se vêtisse d’un nouvel habillage moderne et d’une esthétique grossière, cette fusion macabre porte en elle les caractéristiques héréditaires du fascisme, tel que le monde l’a vécu au 20e siècle."
+    },
+    {
+      "source": "Le Délit",
+      "institution": "Université McGill",
+      "region": "Montréal",
+      "type": "universite",
+      "lang": "fr",
+      "title": "Des initiatives qui rassemblent",
+      "link": "https://www.delitfrancais.com/2026/03/18/des-initiatives-qui-rassemblent/",
+      "author": "Héloïse Durning et Elie Nguyen",
+      "date": "2026-03-18T07:00:00.000Z",
+      "excerpt": "À McGill, des projets pour célébrer et soutenir les femmes.",
+      "image": "https://www.delitfrancais.com/wp-content/uploads/2026/03/annonces.png",
+      "featured": true,
+      "_pageAuthor": "Héloïse Durning et Elie Nguyen",
+      "leadImageReady": true,
+      "sourceImageCredit": "Crédit photo : Le Délit",
+      "sourceImageCreator": "",
+      "sourceImageCreditUrl": "https://www.delitfrancais.com/2026/03/18/des-initiatives-qui-rassemblent/",
+      "sourceImageCreditFrom": "media",
+      "sourceImageCreditCited": false,
+      "sourceImageCreditImageKey": "annonces.png"
     },
     {
       "source": "The McGill Daily",
