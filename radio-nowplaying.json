@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-08T11:29:17.005Z",
+  "updatedAt": "2026-07-08T13:06:14.212Z",
   "stations": {
     "chyz": {
       "id": "chyz",
@@ -7,7 +7,7 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-08T11:23:11.434Z"
+      "checkedAt": "2026-07-08T13:05:56.002Z"
     },
     "cism": {
       "id": "cism",
@@ -15,15 +15,15 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-08T11:23:12.393Z"
+      "checkedAt": "2026-07-08T13:05:56.794Z"
     },
     "ckut": {
       "id": "ckut",
       "name": "CKUT 90,3",
-      "showTitle": "The Wednesday Morning After",
+      "showTitle": "The Sleepy King/Terminal 5",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-08T11:23:14.304Z"
+      "checkedAt": "2026-07-08T13:05:58.442Z"
     },
     "cjlo": {
       "id": "cjlo",
@@ -31,7 +31,7 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-08T11:23:28.074Z"
+      "checkedAt": "2026-07-08T13:06:11.808Z"
     },
     "cfak": {
       "id": "cfak",
@@ -39,15 +39,15 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-08T11:23:28.716Z"
+      "checkedAt": "2026-07-08T13:06:12.559Z"
     },
     "choq": {
       "id": "choq",
       "name": "CHOQ.ca",
-      "showTitle": "Melaina Kol - Lifeheart",
-      "host": "",
-      "source": "stream",
-      "checkedAt": "2026-07-08T11:29:16.604Z"
+      "showTitle": "Plague Dogz",
+      "host": "Boids",
+      "source": "api-live",
+      "checkedAt": "2026-07-08T13:06:13.812Z"
     }
   }
 }
