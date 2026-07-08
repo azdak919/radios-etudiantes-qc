@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-08T19:28:39.436Z",
+  "updatedAt": "2026-07-08T20:45:28.040Z",
   "stations": {
     "chyz": {
       "id": "chyz",
@@ -7,7 +7,7 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-08T19:28:20.912Z"
+      "checkedAt": "2026-07-08T20:45:20.239Z"
     },
     "cism": {
       "id": "cism",
@@ -15,7 +15,7 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-08T19:28:21.798Z"
+      "checkedAt": "2026-07-08T20:45:21.251Z"
     },
     "ckut": {
       "id": "ckut",
@@ -23,7 +23,7 @@
       "showTitle": "All Da Way Live",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-08T19:28:23.350Z"
+      "checkedAt": "2026-07-08T20:45:23.236Z"
     },
     "cjlo": {
       "id": "cjlo",
@@ -31,7 +31,7 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-08T19:28:36.747Z"
+      "checkedAt": "2026-07-08T20:45:25.177Z"
     },
     "cfak": {
       "id": "cfak",
@@ -39,15 +39,15 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-08T19:28:37.771Z"
+      "checkedAt": "2026-07-08T20:45:25.840Z"
     },
     "choq": {
       "id": "choq",
       "name": "CHOQ.ca",
-      "showTitle": "Générique Palmares",
+      "showTitle": "Dominique Fils-Aimé - Going Home",
       "host": "",
-      "source": "api-live",
-      "checkedAt": "2026-07-08T19:28:39.036Z"
+      "source": "stream",
+      "checkedAt": "2026-07-08T20:45:27.639Z"
     }
   }
 }
