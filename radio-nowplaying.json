@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-08T06:30:23.643Z",
+  "updatedAt": "2026-07-08T08:52:42.994Z",
   "stations": {
     "chyz": {
       "id": "chyz",
@@ -7,7 +7,7 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-08T06:30:05.074Z"
+      "checkedAt": "2026-07-08T08:52:24.502Z"
     },
     "cism": {
       "id": "cism",
@@ -15,15 +15,15 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-08T06:30:05.759Z"
+      "checkedAt": "2026-07-08T08:52:25.326Z"
     },
     "ckut": {
       "id": "ckut",
       "name": "CKUT 90,3",
-      "showTitle": "WarpCor / Out of the Void",
+      "showTitle": "Full Circle",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-08T06:30:07.781Z"
+      "checkedAt": "2026-07-08T08:52:26.988Z"
     },
     "cjlo": {
       "id": "cjlo",
@@ -31,7 +31,7 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-08T06:30:21.502Z"
+      "checkedAt": "2026-07-08T08:52:40.380Z"
     },
     "cfak": {
       "id": "cfak",
@@ -39,15 +39,15 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-08T06:30:22.228Z"
+      "checkedAt": "2026-07-08T08:52:41.158Z"
     },
     "choq": {
       "id": "choq",
       "name": "CHOQ.ca",
-      "showTitle": "Earth Mother Fucker - Happy Shopper",
-      "host": "Earth Mother Fucker / Pound Land",
+      "showTitle": "((AlioCha)) Bonus",
+      "host": "Komedza",
       "source": "api-live",
-      "checkedAt": "2026-07-08T06:30:23.243Z"
+      "checkedAt": "2026-07-08T08:52:42.594Z"
     }
   }
 }
