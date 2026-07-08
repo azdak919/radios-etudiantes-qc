@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-08T03:36:43.616Z",
+  "updatedAt": "2026-07-08T06:30:23.643Z",
   "stations": {
     "chyz": {
       "id": "chyz",
@@ -7,7 +7,7 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-08T03:36:25.488Z"
+      "checkedAt": "2026-07-08T06:30:05.074Z"
     },
     "cism": {
       "id": "cism",
@@ -15,15 +15,15 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-08T03:36:26.274Z"
+      "checkedAt": "2026-07-08T06:30:05.759Z"
     },
     "ckut": {
       "id": "ckut",
       "name": "CKUT 90,3",
-      "showTitle": "Easy Sonic Living/Zoe",
+      "showTitle": "WarpCor / Out of the Void",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-08T03:36:27.859Z"
+      "checkedAt": "2026-07-08T06:30:07.781Z"
     },
     "cjlo": {
       "id": "cjlo",
@@ -31,7 +31,7 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-08T03:36:41.348Z"
+      "checkedAt": "2026-07-08T06:30:21.502Z"
     },
     "cfak": {
       "id": "cfak",
@@ -39,15 +39,15 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-08T03:36:42.119Z"
+      "checkedAt": "2026-07-08T06:30:22.228Z"
     },
     "choq": {
       "id": "choq",
       "name": "CHOQ.ca",
-      "showTitle": "Aeroport",
-      "host": "blesse",
+      "showTitle": "Earth Mother Fucker - Happy Shopper",
+      "host": "Earth Mother Fucker / Pound Land",
       "source": "api-live",
-      "checkedAt": "2026-07-08T03:36:43.215Z"
+      "checkedAt": "2026-07-08T06:30:23.243Z"
     }
   }
 }
