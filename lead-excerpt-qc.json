@@ -1,11 +1,11 @@
 {
-  "updated": "2026-07-08T12:13:32.379Z",
+  "updated": "2026-07-08T15:58:13.378Z",
   "total": 192,
   "pool": 58,
-  "incomplete": 8,
-  "withLeadExcerpt": 58,
-  "candidates": 8,
-  "enriched": 0,
+  "incomplete": 9,
+  "withLeadExcerpt": 59,
+  "candidates": 9,
+  "enriched": 1,
   "failed": 1,
   "ok": true,
   "samples": [
@@ -35,6 +35,15 @@
       "chars": 572,
       "sample": "L a montée en puissance de l’idéologie du mouvement politique Make America Great Again (MAGA) n’est ",
       "changed": false
+    },
+    {
+      "title": "CSU fails to reach quorum at first special council meeting of new mandate",
+      "link": "https://thelinknewspaper.ca/article/16335",
+      "ok": true,
+      "score": 96,
+      "chars": 422,
+      "sample": "The agenda contained a request to excuse the CSU’s finance coordinator from the duty of submitting t",
+      "changed": true
     },
     {
       "title": "Le culte de la beauté",

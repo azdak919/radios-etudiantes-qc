@@ -9,7 +9,7 @@
     <link>https://azdak919.github.io/radios-etudiantes-qc/</link>
     <description>Fil agrégé des journaux étudiants des cégeps et universités du Québec (français et anglais). Titres, brèves, images et liens vers les articles originaux.</description>
     <language>fr-CA</language>
-    <lastBuildDate>Wed, 08 Jul 2026 00:45:45 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 08 Jul 2026 14:41:00 +0000</lastBuildDate>
     <generator>LE RADAR Student Media Aggregator</generator>
     <docs>https://azdak919.github.io/radios-etudiantes-qc/feeds.html</docs>
     <copyright>© publications étudiantes sources — fil agrégé par LE RADAR</copyright>
@@ -20,6 +20,32 @@
       <title>Le Radar</title>
       <link>https://azdak919.github.io/radios-etudiantes-qc/</link>
     </image>
+    <item>
+      <title>CSU fails to reach quorum at first special council meeting of new mandate</title>
+      <link>https://thelinknewspaper.ca/article/16335</link>
+      <guid isPermaLink="true">https://thelinknewspaper.ca/article/16335</guid>
+      <pubDate>Wed, 08 Jul 2026 14:41:00 +0000</pubDate>
+      <dc:creator>Samuel Kayll</dc:creator>
+      <source url="https://thelinknewspaper.ca/">The Link</source>
+      <description><![CDATA[The Link · Samuel Kayll · Jul 8]]></description>
+      <content:encoded><![CDATA[<p style="margin:0 0 0.75em;font-size:0.9em;color:#555"><strong>The Link · Samuel Kayll · Jul 8</strong></p>
+<figure style="margin:0 0 1em">
+<img src="https://thelinknewspaper.ca/images/made/images/articles/_resized/00.graphics.CSU.Naya_Hachwa_900_674_90.jpeg" alt="CSU fails to reach quorum at first special council meeting of new mandate" style="max-width:100%;height:auto;display:block;border-radius:4px" />
+<figcaption style="font-size:0.85em;color:#666;margin-top:0.35em">Photo: credit: The Link</figcaption>
+</figure>
+<p style="margin:0 0 0.75em;line-height:1.5">The agenda contained a request to excuse the CSU’s finance coordinator from the duty of submitting the Annual Operating Budget (AOB) to the council in June. It also included an amendment to a motion passed on May 13 regarding the closure of Mackay Street, the authorization to use the Office for Student Life and Engagement endowment fund and an amendment to the union’s bylaws regarding dates of regular council meetings.</p>]]></content:encoded>
+      <category>The Link</category>
+      <category>Concordia</category>
+      <category>Montréal</category>
+      <category>université</category>
+      <category>English</category>
+      <media:content url="https://thelinknewspaper.ca/images/made/images/articles/_resized/00.graphics.CSU.Naya_Hachwa_900_674_90.jpeg" medium="image" type="image/jpeg">
+        <media:credit>Photo: credit: The Link</media:credit>
+        <media:title>CSU fails to reach quorum at first special council meeting of new mandate</media:title>
+      </media:content>
+      <media:thumbnail url="https://thelinknewspaper.ca/images/made/images/articles/_resized/00.graphics.CSU.Naya_Hachwa_900_674_90.jpeg" />
+      <enclosure url="https://thelinknewspaper.ca/images/made/images/articles/_resized/00.graphics.CSU.Naya_Hachwa_900_674_90.jpeg" type="image/jpeg" length="1" />
+    </item>
     <item>
       <title>Un grand soir au Festival de jazz pour Angine de Poitrine</title>
       <link>https://lecollectif.ca/a-la-une/un-grand-soir-au-festival-de-jazz-pour-angine-de-poitrine/</link>
@@ -185,12 +211,22 @@
       <source url="https://www.mcgilldaily.com/">The McGill Daily</source>
       <description><![CDATA[The McGill Daily · Erandy Rogel · Jul 6]]></description>
       <content:encoded><![CDATA[<p style="margin:0 0 0.75em;font-size:0.9em;color:#555"><strong>The McGill Daily · Erandy Rogel · Jul 6</strong></p>
+<figure style="margin:0 0 1em">
+<img src="https://live.staticflickr.com/917/28627096297_a3e0756d47_b.jpg" alt="The Cruel Optimism of Summer" style="max-width:100%;height:auto;display:block;border-radius:4px" />
+<figcaption style="font-size:0.85em;color:#666;margin-top:0.35em">Photo: sjpowermac / CC0 · Openverse</figcaption>
+</figure>
 <p style="margin:0 0 0.75em;line-height:1.5">“20 degrees Celsius,” my weather app beams. My eyebrows knit with confusion. Twenty degrees? I opt to forgo my jacket, and, if I’m feeling bold, no sweater either. It’s the first truly warm evening in Montreal, and as the city defrosts, everyone is spilling onto sidewalks and terrasses.</p>]]></content:encoded>
       <category>The McGill Daily</category>
       <category>McGill</category>
       <category>Montréal</category>
       <category>université</category>
       <category>English</category>
+      <media:content url="https://live.staticflickr.com/917/28627096297_a3e0756d47_b.jpg" medium="image" type="image/jpeg">
+        <media:credit>Photo: sjpowermac / CC0 · Openverse</media:credit>
+        <media:title>The Cruel Optimism of Summer</media:title>
+      </media:content>
+      <media:thumbnail url="https://live.staticflickr.com/917/28627096297_a3e0756d47_b.jpg" />
+      <enclosure url="https://live.staticflickr.com/917/28627096297_a3e0756d47_b.jpg" type="image/jpeg" length="1" />
     </item>
     <item>
       <title>Alexandre Raymond repêché par l’Avalanche du Colorado</title>
@@ -306,7 +342,7 @@
       <description><![CDATA[The Link · Sean Richard · Jun 28]]></description>
       <content:encoded><![CDATA[<p style="margin:0 0 0.75em;font-size:0.9em;color:#555"><strong>The Link · Sean Richard · Jun 28</strong></p>
 <figure style="margin:0 0 1em">
-<img src="https://thelinknewspaper.ca/images/made/images/articles/_resized/00.graphics.CSU.Naya_Hachwa_900_674_90.jpeg" alt="CSU terminates council’s chief election officer" style="max-width:100%;height:auto;display:block;border-radius:4px" />
+<img src="https://thelinknewspaper.ca/images/made/images/articles/_resized/00.graphics.CSU.Naya_Hachwa_690_517_90.jpeg" alt="CSU terminates council’s chief election officer" style="max-width:100%;height:auto;display:block;border-radius:4px" />
 <figcaption style="font-size:0.85em;color:#666;margin-top:0.35em">Photo: credit: The Link</figcaption>
 </figure>
 <p style="margin:0 0 0.75em;line-height:1.5">Elbakaye added that she has been attempting to contact Ellis for over three months, but he has not responded. She also explained that she is working on a training guide for the next CEO alongside the council&apos;s administrative coordinator.</p>]]></content:encoded>
@@ -315,12 +351,12 @@
       <category>Montréal</category>
       <category>université</category>
       <category>English</category>
-      <media:content url="https://thelinknewspaper.ca/images/made/images/articles/_resized/00.graphics.CSU.Naya_Hachwa_900_674_90.jpeg" medium="image" type="image/jpeg">
+      <media:content url="https://thelinknewspaper.ca/images/made/images/articles/_resized/00.graphics.CSU.Naya_Hachwa_690_517_90.jpeg" medium="image" type="image/jpeg">
         <media:credit>Photo: credit: The Link</media:credit>
         <media:title>CSU terminates council’s chief election officer</media:title>
       </media:content>
-      <media:thumbnail url="https://thelinknewspaper.ca/images/made/images/articles/_resized/00.graphics.CSU.Naya_Hachwa_900_674_90.jpeg" />
-      <enclosure url="https://thelinknewspaper.ca/images/made/images/articles/_resized/00.graphics.CSU.Naya_Hachwa_900_674_90.jpeg" type="image/jpeg" length="1" />
+      <media:thumbnail url="https://thelinknewspaper.ca/images/made/images/articles/_resized/00.graphics.CSU.Naya_Hachwa_690_517_90.jpeg" />
+      <enclosure url="https://thelinknewspaper.ca/images/made/images/articles/_resized/00.graphics.CSU.Naya_Hachwa_690_517_90.jpeg" type="image/jpeg" length="1" />
     </item>
     <item>
       <title>The McGill Community takes on the Montreal International Jazz Festival</title>
@@ -566,7 +602,7 @@
       <description><![CDATA[The Link · Sean Richard · May 22]]></description>
       <content:encoded><![CDATA[<p style="margin:0 0 0.75em;font-size:0.9em;color:#555"><strong>The Link · Sean Richard · May 22</strong></p>
 <figure style="margin:0 0 1em">
-<img src="https://thelinknewspaper.ca/images/made/images/articles/_resized/00.graphics.CSU.Naya_Hachwa_900_674_90.jpeg" alt="CSU rejects motion for Israel and Jewish solidarity fund ad hoc committee" style="max-width:100%;height:auto;display:block;border-radius:4px" />
+<img src="https://thelinknewspaper.ca/images/made/images/articles/_resized/00.graphics.CSU.Naya_Hachwa_690_517_90.jpeg" alt="CSU rejects motion for Israel and Jewish solidarity fund ad hoc committee" style="max-width:100%;height:auto;display:block;border-radius:4px" />
 <figcaption style="font-size:0.85em;color:#666;margin-top:0.35em">Photo: credit: The Link</figcaption>
 </figure>
 <p style="margin:0 0 0.75em;line-height:1.5">Councillor Anastasia Zorchinsky proposed the motion, which served to grant 32 bursaries of $500 each to Israeli and Jewish undergraduate students with cultural ties to Israel based on financial need. The motion functioned similarly to the Palestine and Lebanese solidarity fund ad hoc committee that was approved during the last RCM in April.</p>]]></content:encoded>
@@ -575,12 +611,12 @@
       <category>Montréal</category>
       <category>université</category>
       <category>English</category>
-      <media:content url="https://thelinknewspaper.ca/images/made/images/articles/_resized/00.graphics.CSU.Naya_Hachwa_900_674_90.jpeg" medium="image" type="image/jpeg">
+      <media:content url="https://thelinknewspaper.ca/images/made/images/articles/_resized/00.graphics.CSU.Naya_Hachwa_690_517_90.jpeg" medium="image" type="image/jpeg">
         <media:credit>Photo: credit: The Link</media:credit>
         <media:title>CSU rejects motion for Israel and Jewish solidarity fund ad hoc committee</media:title>
       </media:content>
-      <media:thumbnail url="https://thelinknewspaper.ca/images/made/images/articles/_resized/00.graphics.CSU.Naya_Hachwa_900_674_90.jpeg" />
-      <enclosure url="https://thelinknewspaper.ca/images/made/images/articles/_resized/00.graphics.CSU.Naya_Hachwa_900_674_90.jpeg" type="image/jpeg" length="1" />
+      <media:thumbnail url="https://thelinknewspaper.ca/images/made/images/articles/_resized/00.graphics.CSU.Naya_Hachwa_690_517_90.jpeg" />
+      <enclosure url="https://thelinknewspaper.ca/images/made/images/articles/_resized/00.graphics.CSU.Naya_Hachwa_690_517_90.jpeg" type="image/jpeg" length="1" />
     </item>
     <item>
       <title>Montreal protestors commemorate the 78th anniversary of the Nakba</title>
@@ -1243,32 +1279,6 @@
       </media:content>
       <media:thumbnail url="https://live.staticflickr.com/1218/5106750628_9bf714abe9_b.jpg" />
       <enclosure url="https://live.staticflickr.com/1218/5106750628_9bf714abe9_b.jpg" type="image/jpeg" length="1" />
-    </item>
-    <item>
-      <title>Soutien technique à l’UdeM : entre attentes et frustrations</title>
-      <link>https://quartierlibre.ca/soutien-technique-a-ludem/</link>
-      <guid isPermaLink="true">https://quartierlibre.ca/soutien-technique-a-ludem/</guid>
-      <pubDate>Mon, 11 May 2026 15:57:40 +0000</pubDate>
-      <dc:creator>Solène Gerber</dc:creator>
-      <source url="https://quartierlibre.ca/">Quartier Libre</source>
-      <description><![CDATA[Quartier Libre · Solène Gerber · 11 mai]]></description>
-      <content:encoded><![CDATA[<p style="margin:0 0 0.75em;font-size:0.9em;color:#555"><strong>Quartier Libre · Solène Gerber · 11 mai</strong></p>
-<figure style="margin:0 0 1em">
-<img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Universit%C3%A9_de_Montr%C3%A9al%2C_Pavillon_Roger-Gaudry.JPG" alt="Soutien technique à l’UdeM : entre attentes et frustrations" style="max-width:100%;height:auto;display:block;border-radius:4px" />
-<figcaption style="font-size:0.85em;color:#666;margin-top:0.35em">Photo : Laurent Bélanger / CC BY-SA · Openverse</figcaption>
-</figure>
-<p style="margin:0 0 0.75em;line-height:1.5">Lors d’une assemblée universitaire tenue le 16 mars dernier, le professeur agrégé à l’École de psychoéducation de la Faculté des arts et des sciences de l’UdeM Jean-Sébastien Fallu a soulevé des préoccupations concernant le soutien informatique à l’Université. Il a partagé plusieurs difficultés que lui et ses collègues ont vécues, notamment liées aux délais, aux procédures et à la complexité de certains outils numériques.</p>]]></content:encoded>
-      <category>Quartier Libre</category>
-      <category>UdeM</category>
-      <category>Montréal</category>
-      <category>université</category>
-      <category>Français</category>
-      <media:content url="https://upload.wikimedia.org/wikipedia/commons/a/ab/Universit%C3%A9_de_Montr%C3%A9al%2C_Pavillon_Roger-Gaudry.JPG" medium="image" type="image/jpeg">
-        <media:credit>Photo : Laurent Bélanger / CC BY-SA · Openverse</media:credit>
-        <media:title>Soutien technique à l’UdeM : entre attentes et frustrations</media:title>
-      </media:content>
-      <media:thumbnail url="https://upload.wikimedia.org/wikipedia/commons/a/ab/Universit%C3%A9_de_Montr%C3%A9al%2C_Pavillon_Roger-Gaudry.JPG" />
-      <enclosure url="https://upload.wikimedia.org/wikipedia/commons/a/ab/Universit%C3%A9_de_Montr%C3%A9al%2C_Pavillon_Roger-Gaudry.JPG" type="image/jpeg" length="1" />
     </item>
   </channel>
 </rss>

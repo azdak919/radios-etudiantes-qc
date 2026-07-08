@@ -1,6 +1,6 @@
 {
-  "updated": "2026-07-08T11:33:07.045Z",
-  "count": 19,
+  "updated": "2026-07-08T16:07:32.223Z",
+  "count": 18,
   "items": [
     {
       "name": "Quartier Libre",
@@ -126,42 +126,6 @@
       ]
     },
     {
-      "name": "The Link",
-      "institution": "Concordia University",
-      "type": "universite",
-      "kind": "journal",
-      "networks": [
-        {
-          "type": "instagram",
-          "url": "https://www.instagram.com/linknewspaper/",
-          "handle": "@linknewspaper",
-          "stats": "",
-          "label": "Instagram"
-        },
-        {
-          "type": "facebook",
-          "url": "https://facebook.com/thelinknewspaper",
-          "handle": "thelinknewspaper",
-          "stats": "",
-          "label": "Facebook"
-        },
-        {
-          "type": "x",
-          "url": "https://twitter.com/linknewspaper",
-          "handle": "@linknewspaper",
-          "stats": "",
-          "label": "X"
-        },
-        {
-          "type": "tiktok",
-          "url": "https://www.tiktok.com/@thelinknewspaper",
-          "handle": "@thelinknewspaper",
-          "stats": "",
-          "label": "TikTok"
-        }
-      ]
-    },
-    {
       "name": "Zone Campus",
       "institution": "Université du Québec à Trois-Rivières",
       "type": "universite",
@@ -193,7 +157,7 @@
           "type": "facebook",
           "url": "https://www.facebook.com/lexemplaire",
           "handle": "lexemplaire",
-          "stats": "",
+          "stats": "851 mentions J'aime",
           "label": "Facebook"
         },
         {
@@ -222,7 +186,7 @@
           "type": "facebook",
           "url": "https://www.facebook.com/journallecollectif",
           "handle": "journallecollectif",
-          "stats": "",
+          "stats": "4 056 mentions J'aime",
           "label": "Facebook"
         }
       ]
@@ -508,6 +472,13 @@
           "handle": "@choq.ca",
           "stats": "",
           "label": "Instagram"
+        },
+        {
+          "type": "x",
+          "url": "https://twitter.com/choq_ca",
+          "handle": "@choq_ca",
+          "stats": "📻 Podcasts • Reportages • Musique",
+          "label": "X"
         }
       ]
     }

@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-08T12:12:36.488Z",
+  "updated": "2026-07-08T15:57:17.424Z",
   "count": 192,
   "freshnessSessions": 3,
   "sources": {
@@ -9,7 +9,7 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-05-15T16:00:00.000Z",
-      "lastFetchOk": "2026-07-08T12:10:03.312Z"
+      "lastFetchOk": "2026-07-08T15:55:37.906Z"
     },
     "Montréal Campus": {
       "fetchOk": true,
@@ -17,7 +17,7 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-05-09T03:14:30.000Z",
-      "lastFetchOk": "2026-07-08T12:10:05.848Z"
+      "lastFetchOk": "2026-07-08T15:55:39.786Z"
     },
     "Le Délit": {
       "fetchOk": true,
@@ -25,7 +25,7 @@
       "articleCount": 20,
       "freshArticleCount": 20,
       "lastArticle": "2026-03-25T11:00:00.000Z",
-      "lastFetchOk": "2026-07-08T12:10:09.579Z"
+      "lastFetchOk": "2026-07-08T15:55:45.014Z"
     },
     "The McGill Daily": {
       "fetchOk": true,
@@ -33,15 +33,15 @@
       "articleCount": 15,
       "freshArticleCount": 15,
       "lastArticle": "2026-07-06T12:00:00.000Z",
-      "lastFetchOk": "2026-07-08T12:10:09.945Z"
+      "lastFetchOk": "2026-07-08T15:55:45.946Z"
     },
     "The Link": {
       "fetchOk": true,
       "stale": false,
       "articleCount": 20,
       "freshArticleCount": 20,
-      "lastArticle": "2026-06-28T23:23:00.000Z",
-      "lastFetchOk": "2026-07-08T12:10:10.976Z"
+      "lastArticle": "2026-07-08T14:41:00.000Z",
+      "lastFetchOk": "2026-07-08T15:55:47.209Z"
     },
     "The Concordian": {
       "fetchOk": false,
@@ -57,7 +57,7 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-05-08T14:20:26.000Z",
-      "lastFetchOk": "2026-07-08T12:10:11.981Z"
+      "lastFetchOk": "2026-07-08T15:55:49.039Z"
     },
     "L'Exemplaire": {
       "fetchOk": true,
@@ -65,7 +65,7 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-05-15T16:31:24.000Z",
-      "lastFetchOk": "2026-07-08T12:10:13.325Z"
+      "lastFetchOk": "2026-07-08T15:55:51.268Z"
     },
     "Le Collectif": {
       "fetchOk": true,
@@ -73,7 +73,7 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-07-08T00:45:45.000Z",
-      "lastFetchOk": "2026-07-08T12:10:14.532Z"
+      "lastFetchOk": "2026-07-08T15:55:52.171Z"
     },
     "Exil": {
       "fetchOk": true,
@@ -81,7 +81,7 @@
       "articleCount": 7,
       "freshArticleCount": 7,
       "lastArticle": "2026-04-18T22:22:07.000Z",
-      "lastFetchOk": "2026-07-08T12:10:14.647Z"
+      "lastFetchOk": "2026-07-08T15:55:52.295Z"
     },
     "La Pige": {
       "fetchOk": true,
@@ -89,7 +89,7 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-06-22T14:36:10.000Z",
-      "lastFetchOk": "2026-07-08T12:10:15.206Z"
+      "lastFetchOk": "2026-07-08T15:55:53.088Z"
     },
     "The Tribune": {
       "fetchOk": true,
@@ -97,7 +97,7 @@
       "articleCount": 20,
       "freshArticleCount": 20,
       "lastArticle": "2026-06-26T15:24:28.000Z",
-      "lastFetchOk": "2026-07-08T12:10:15.341Z"
+      "lastFetchOk": "2026-07-08T15:55:53.421Z"
     },
     "The Campus": {
       "fetchOk": true,
@@ -105,10 +105,31 @@
       "articleCount": 30,
       "freshArticleCount": 30,
       "lastArticle": "2026-04-06T16:03:16.000Z",
-      "lastFetchOk": "2026-07-08T12:10:15.485Z"
+      "lastFetchOk": "2026-07-08T15:55:53.554Z"
     }
   },
   "items": [
+    {
+      "source": "The Link",
+      "institution": "Concordia University",
+      "region": "Montréal",
+      "type": "universite",
+      "lang": "en",
+      "title": "CSU fails to reach quorum at first special council meeting of new mandate",
+      "link": "https://thelinknewspaper.ca/article/16335",
+      "author": "Samuel Kayll",
+      "date": "2026-07-08T14:41:00.000Z",
+      "excerpt": "The council did not address any of the items on the meeting’s agenda The CSU did not reach quorum at its first SCM of the new mandate. Graphic Naya Hachwa",
+      "image": "https://thelinknewspaper.ca/images/made/images/articles/_resized/00.graphics.CSU.Naya_Hachwa_900_674_90.jpeg",
+      "leadExcerpt": "The agenda contained a request to excuse the CSU’s finance coordinator from the duty of submitting the Annual Operating Budget (AOB) to the council in June. It also included an amendment to a motion passed on May 13 regarding the closure of Mackay Street, the authorization to use the Office for Student Life and Engagement endowment fund and an amendment to the union’s bylaws regarding dates of regular council meetings.",
+      "leadImageReady": true,
+      "sourceImageCredit": "Photo credit: The Link",
+      "sourceImageCreator": "",
+      "sourceImageCreditUrl": "https://thelinknewspaper.ca/article/16335",
+      "sourceImageCreditFrom": "media",
+      "sourceImageCreditCited": false,
+      "sourceImageCreditImageKey": "00.graphics.csu.naya_hachwa_900_674_90.jpeg"
+    },
     {
       "source": "Le Collectif",
       "institution": "Université de Sherbrooke",
@@ -145,13 +166,7 @@
       "sourceImageCreditFrom": "media",
       "sourceImageCreditCited": false,
       "sourceImageCreditImageKey": "societe_christinelabrie_sourcepagefacebookderubaghazal.jpg",
-      "leadImageReady": false,
-      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/4/47/Assembl%C3%A9e_nationale_du_Qu%C3%A9bec%2C_l%27H%C3%B4tel_du_Parlement%2C_fa%C3%A7ade_avec_ancien_entr%C3%A9_principal.jpg",
-      "imageCredit": "Photo : Marc-Lautenbacher / CC BY-SA · Openverse",
-      "imageCreator": "Marc-Lautenbacher",
-      "imageLicense": "by-sa",
-      "imageProvider": "openverse",
-      "imageSourceUrl": "https://commons.wikimedia.org/w/index.php?curid=73170675"
+      "leadImageReady": false
     },
     {
       "source": "Le Collectif",
@@ -243,7 +258,13 @@
       "excerpt": "“20 degrees Celsius,” my weather app beams. My eyebrows knit with confusion. Twenty degrees? I opt to forgo my jacket, and, if I’m feeling bold, no sweater either. It’s the first truly warm evening in Montreal, and as the city defrosts, everyone is spilling onto sidewalks and terrasses.",
       "image": "",
       "_pageAuthor": "Erandy Rogel",
-      "leadImageReady": false
+      "leadImageReady": false,
+      "stockImage": "https://live.staticflickr.com/917/28627096297_a3e0756d47_b.jpg",
+      "imageCredit": "Photo : sjpowermac / CC0 · Openverse",
+      "imageCreator": "sjpowermac",
+      "imageLicense": "cc0",
+      "imageProvider": "openverse",
+      "imageSourceUrl": "https://www.flickr.com/photos/41890311@N06/28627096297"
     },
     {
       "source": "Le Collectif",
@@ -282,7 +303,13 @@
       "sourceImageCreditCited": false,
       "sourceImageCreditImageKey": "culture_francoise_rebeccagagne-1.jpg",
       "leadImageReady": false,
-      "leadExcerpt": "Le 23 juin dernier avait lieu la première du film québécois François.e à la Maison du Cinéma de Sherbrooke. Pour l’occasion, des membres de la distribution de même que les deux scénaristes de l’œuvre ont partagé l’expérience avec l’audience."
+      "leadExcerpt": "Le 23 juin dernier avait lieu la première du film québécois François.e à la Maison du Cinéma de Sherbrooke. Pour l’occasion, des membres de la distribution de même que les deux scénaristes de l’œuvre ont partagé l’expérience avec l’audience.",
+      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/d/d4/Francois_Cevert_1973.jpg",
+      "imageCredit": "Photo : Raimund Kommer / CC BY-SA · Openverse",
+      "imageCreator": "Raimund Kommer",
+      "imageLicense": "by-sa",
+      "imageProvider": "openverse",
+      "imageSourceUrl": "https://commons.wikimedia.org/w/index.php?curid=9775871"
     },
     {
       "source": "Le Collectif",
@@ -334,15 +361,15 @@
       "author": "Sean Richard",
       "date": "2026-06-28T23:23:00.000Z",
       "excerpt": "The union also elected various councillors to different committees and student body positions The CSU overhauled its staff at the recent council meeting. Graphic Naya Hachwa",
-      "image": "https://thelinknewspaper.ca/images/made/images/articles/_resized/00.graphics.CSU.Naya_Hachwa_900_674_90.jpeg",
+      "image": "https://thelinknewspaper.ca/images/made/images/articles/_resized/00.graphics.CSU.Naya_Hachwa_690_517_90.jpeg",
       "leadExcerpt": "Elbakaye added that she has been attempting to contact Ellis for over three months, but he has not responded. She also explained that she is working on a training guide for the next CEO alongside the council's administrative coordinator.",
-      "leadImageReady": true,
+      "leadImageReady": false,
       "sourceImageCredit": "Photo credit: The Link",
       "sourceImageCreator": "",
       "sourceImageCreditUrl": "https://thelinknewspaper.ca/article/16334",
       "sourceImageCreditFrom": "media",
       "sourceImageCreditCited": false,
-      "sourceImageCreditImageKey": "00.graphics.csu.naya_hachwa_900_674_90.jpeg"
+      "sourceImageCreditImageKey": "00.graphics.csu.naya_hachwa_690_517_90.jpeg"
     },
     {
       "source": "The McGill Daily",
@@ -542,15 +569,15 @@
       "author": "Sean Richard",
       "date": "2026-05-22T16:24:00.000Z",
       "excerpt": "The union also approved motions for the pedestrianization of Mackay St. and salary bonuses for CSU executives Graphic Naya Hachwa",
-      "image": "https://thelinknewspaper.ca/images/made/images/articles/_resized/00.graphics.CSU.Naya_Hachwa_900_674_90.jpeg",
+      "image": "https://thelinknewspaper.ca/images/made/images/articles/_resized/00.graphics.CSU.Naya_Hachwa_690_517_90.jpeg",
       "leadExcerpt": "Councillor Anastasia Zorchinsky proposed the motion, which served to grant 32 bursaries of $500 each to Israeli and Jewish undergraduate students with cultural ties to Israel based on financial need. The motion functioned similarly to the Palestine and Lebanese solidarity fund ad hoc committee that was approved during the last RCM in April.",
-      "leadImageReady": true,
+      "leadImageReady": false,
       "sourceImageCredit": "Photo credit: The Link",
       "sourceImageCreator": "",
       "sourceImageCreditUrl": "https://thelinknewspaper.ca/article/16329",
       "sourceImageCreditFrom": "media",
       "sourceImageCreditCited": false,
-      "sourceImageCreditImageKey": "00.graphics.csu.naya_hachwa_900_674_90.jpeg"
+      "sourceImageCreditImageKey": "00.graphics.csu.naya_hachwa_690_517_90.jpeg"
     },
     {
       "source": "The Tribune",
@@ -1514,15 +1541,15 @@
       "author": "Samuel Kayll",
       "date": "2026-04-29T21:25:00.000Z",
       "excerpt": "Council also reinstated four representatives, amended appointment rules The Concordia Student Union passed several motions in their final session before the annual general meeting. Graphic Naya Hachwa",
-      "image": "https://thelinknewspaper.ca/images/made/images/articles/_resized/00.graphics.CSU.Naya_Hachwa_900_674_90.jpeg",
+      "image": "https://thelinknewspaper.ca/images/made/images/articles/_resized/00.graphics.CSU.Naya_Hachwa_690_517_90.jpeg",
       "leadExcerpt": "Chairperson Asa Kohn called the SCM to order at 3:07 p.m. and called on the policy committee to present its report, which consisted of the meeting’s recommended motions.",
-      "leadImageReady": true,
+      "leadImageReady": false,
       "sourceImageCredit": "Photo credit: The Link",
       "sourceImageCreator": "",
       "sourceImageCreditUrl": "https://thelinknewspaper.ca/article/16326",
       "sourceImageCreditFrom": "media",
       "sourceImageCreditCited": false,
-      "sourceImageCreditImageKey": "00.graphics.csu.naya_hachwa_900_674_90.jpeg"
+      "sourceImageCreditImageKey": "00.graphics.csu.naya_hachwa_690_517_90.jpeg"
     },
     {
       "source": "Zone Campus",
@@ -1845,7 +1872,7 @@
       "author": "Kristina Stamkopoulos",
       "date": "2026-04-14T03:00:00.000Z",
       "excerpt": "The Chinatown studio brings together artists of all levels in a space designed for connection Located in Chinatown, Dragon Jam serves as a rehearsal space and venue for intimate performances. Courtesy Dragon Jam",
-      "image": "https://thelinknewspaper.ca/images/made/images/articles/_resized/IMG_0291-2_900_1125_90.jpg",
+      "image": "https://thelinknewspaper.ca/images/made/images/articles/_resized/IMG_0291-2_690_863_90.jpg",
       "leadImageReady": false,
       "stockImage": "https://live.staticflickr.com/6223/6218984449_a457d6bf46_b.jpg",
       "imageCredit": "Photo : minicooper93402 / CC BY · Openverse",
@@ -1858,7 +1885,7 @@
       "sourceImageCreditUrl": "https://thelinknewspaper.ca/article/16324",
       "sourceImageCreditFrom": "media",
       "sourceImageCreditCited": false,
-      "sourceImageCreditImageKey": "img_0291-2_900_1125_90.jpg"
+      "sourceImageCreditImageKey": "img_0291-2_690_863_90.jpg"
     },
     {
       "source": "The Link",
@@ -1931,14 +1958,14 @@
       "author": "Safa Hachi",
       "date": "2026-04-13T01:00:00.000Z",
       "excerpt": "Odie Harr’s ever-shifting collective turns their shows into something shared Members of Odie Harr. Courtesy Alice Hirsch",
-      "image": "https://thelinknewspaper.ca/images/made/images/articles/_resized/ODIE_HARR-2_900_1349_90.jpg",
+      "image": "https://thelinknewspaper.ca/images/made/images/articles/_resized/ODIE_HARR-2_690_1034_90.jpg",
       "leadImageReady": false,
       "sourceImageCredit": "Photo credit: The Link",
       "sourceImageCreator": "",
       "sourceImageCreditUrl": "https://thelinknewspaper.ca/article/16320",
       "sourceImageCreditFrom": "media",
       "sourceImageCreditCited": false,
-      "sourceImageCreditImageKey": "odie_harr-2_900_1349_90.jpg"
+      "sourceImageCreditImageKey": "odie_harr-2_690_1034_90.jpg"
     },
     {
       "source": "The Link",
@@ -1951,14 +1978,14 @@
       "author": "Sean Richard",
       "date": "2026-04-12T01:14:00.000Z",
       "excerpt": "Lebanon and Palestine solidarity fund, Students for Consent Culture and the Spinach Collective to benefit from funding The Concordia Student Union passed eight motions during their regular council meeting on April 8. Graphic Naya Hachwa",
-      "image": "https://thelinknewspaper.ca/images/made/images/articles/_resized/00.graphics.CSU.Naya_Hachwa_900_674_90.jpeg",
-      "leadImageReady": true,
+      "image": "https://thelinknewspaper.ca/images/made/images/articles/_resized/00.graphics.CSU.Naya_Hachwa_690_517_90.jpeg",
+      "leadImageReady": false,
       "sourceImageCredit": "Photo credit: The Link",
       "sourceImageCreator": "",
       "sourceImageCreditUrl": "https://thelinknewspaper.ca/article/16319",
       "sourceImageCreditFrom": "media",
       "sourceImageCreditCited": false,
-      "sourceImageCreditImageKey": "00.graphics.csu.naya_hachwa_900_674_90.jpeg"
+      "sourceImageCreditImageKey": "00.graphics.csu.naya_hachwa_690_517_90.jpeg"
     },
     {
       "source": "The McGill Daily",
@@ -2017,14 +2044,14 @@
       "author": "Anaïssa Dauphin",
       "date": "2026-04-09T21:04:00.000Z",
       "excerpt": "Canada has an impartiality problem Canada’s human rights image is sustained by a lack of accountability for its history of systemic harm. Graphic Naya Hachwa",
-      "image": "https://thelinknewspaper.ca/images/made/images/articles/_resized/12_OPS_SlaveTrade_NayaHachwa_900_494_90.jpg",
-      "leadImageReady": true,
+      "image": "https://thelinknewspaper.ca/images/made/images/articles/_resized/12_OPS_SlaveTrade_NayaHachwa_690_379_90.jpg",
+      "leadImageReady": false,
       "sourceImageCredit": "Photo credit: The Link",
       "sourceImageCreator": "",
       "sourceImageCreditUrl": "https://thelinknewspaper.ca/article/16316",
       "sourceImageCreditFrom": "media",
       "sourceImageCreditCited": false,
-      "sourceImageCreditImageKey": "12_ops_slavetrade_nayahachwa_900_494_90.jpg"
+      "sourceImageCreditImageKey": "12_ops_slavetrade_nayahachwa_690_379_90.jpg"
     },
     {
       "source": "The Link",
@@ -2037,14 +2064,14 @@
       "author": "Yoan Safar",
       "date": "2026-04-09T21:00:00.000Z",
       "excerpt": "A plan to preserve the façade while removing the interior is drawing mixed reactions The Empress has been left destitute since the fire that shut it down in 1992. Photo Yoan Safar",
-      "image": "https://thelinknewspaper.ca/images/made/images/articles/_resized/Empress_theater_900_675_90.JPG",
-      "leadImageReady": true,
+      "image": "https://thelinknewspaper.ca/images/made/images/articles/_resized/Empress_theater_690_518_90.JPG",
+      "leadImageReady": false,
       "sourceImageCredit": "Photo credit: The Link",
       "sourceImageCreator": "",
       "sourceImageCreditUrl": "https://thelinknewspaper.ca/article/16317",
       "sourceImageCreditFrom": "media",
       "sourceImageCreditCited": false,
-      "sourceImageCreditImageKey": "empress_theater_900_675_90.jpg"
+      "sourceImageCreditImageKey": "empress_theater_690_518_90.jpg"
     },
     {
       "source": "The Link",
@@ -2057,14 +2084,14 @@
       "author": "Mani Asadieraghi",
       "date": "2026-04-09T20:52:00.000Z",
       "excerpt": "Why student newspapers remain one of the last places people learn to speak publicly Public discourse does not survive automatically. It depends on people’s willingness to question institutions and place their ideas into shared space. Graphic Halle Keays",
-      "image": "https://thelinknewspaper.ca/images/made/images/articles/_resized/12_OPS_900_675.png",
-      "leadImageReady": true,
+      "image": "https://thelinknewspaper.ca/images/made/images/articles/_resized/12_OPS_690_518.png",
+      "leadImageReady": false,
       "sourceImageCredit": "Photo credit: The Link",
       "sourceImageCreator": "",
       "sourceImageCreditUrl": "https://thelinknewspaper.ca/article/16315",
       "sourceImageCreditFrom": "media",
       "sourceImageCreditCited": false,
-      "sourceImageCreditImageKey": "12_ops_900_675.png"
+      "sourceImageCreditImageKey": "12_ops_690_518.png"
     },
     {
       "source": "The Concordian",
@@ -2098,14 +2125,14 @@
       "author": "Sean Richard",
       "date": "2026-04-09T18:16:00.000Z",
       "excerpt": "The Concordia alumnus sits down with The Link to speak about his experiences as an activist for the Palestinian cause Courtesy Aaron Maté",
-      "image": "https://thelinknewspaper.ca/images/articles/_resized/12.news.AaronMate%CC%81.Sean.online.CourtesyAaronMate%CC%81.jpg",
+      "image": "https://thelinknewspaper.ca/images/made/images/articles/_resized/12.news.AaronMaté.Sean.online.CourtesyAaronMaté_690_1034_90.jpg",
       "leadImageReady": false,
       "sourceImageCredit": "Photo credit: The Link",
       "sourceImageCreator": "",
       "sourceImageCreditUrl": "https://thelinknewspaper.ca/article/16314",
       "sourceImageCreditFrom": "media",
       "sourceImageCreditCited": false,
-      "sourceImageCreditImageKey": "12.news.aaronmaté.sean.online.courtesyaaronmaté.jpg"
+      "sourceImageCreditImageKey": "12.news.aaronmaté.sean.online.courtesyaaronmaté_690_1034_90.jpg"
     },
     {
       "source": "The Link",
@@ -2118,14 +2145,14 @@
       "author": "Bryanna O’Brien",
       "date": "2026-04-08T22:05:00.000Z",
       "excerpt": "FIFA has the authority to relocate or cancel its Guadalajara games, but it is choosing not to The 2026 FIFA World Cup has the potential for incredible action, but also extensive controversy. Graphic Evelyn Ho Lee",
-      "image": "https://thelinknewspaper.ca/images/made/images/articles/_resized/12_SPORTS_WCHostCountries_EvelynHoLee_900_686_90.jpg",
-      "leadImageReady": true,
+      "image": "https://thelinknewspaper.ca/images/made/images/articles/_resized/12_SPORTS_WCHostCountries_EvelynHoLee_690_526_90.jpg",
+      "leadImageReady": false,
       "sourceImageCredit": "Photo credit: The Link",
       "sourceImageCreator": "",
       "sourceImageCreditUrl": "https://thelinknewspaper.ca/article/16313",
       "sourceImageCreditFrom": "media",
       "sourceImageCreditCited": false,
-      "sourceImageCreditImageKey": "12_sports_wchostcountries_evelynholee_900_686_90.jpg"
+      "sourceImageCreditImageKey": "12_sports_wchostcountries_evelynholee_690_526_90.jpg"
     },
     {
       "source": "The Link",
@@ -2138,34 +2165,14 @@
       "author": "Zoya Ramadan",
       "date": "2026-04-08T21:28:00.000Z",
       "excerpt": "A multi-million-dollar industry built on never being enough Self-improvement, a genre once intended for the passing down of generational wisdom, has turned into a toxic, capitalist machine. Graphic Naya Hachwa",
-      "image": "https://thelinknewspaper.ca/images/made/images/articles/_resized/12_OPS_SelfHelp_NayaHachwa_900_674_90.jpg",
-      "leadImageReady": true,
+      "image": "https://thelinknewspaper.ca/images/made/images/articles/_resized/12_OPS_SelfHelp_NayaHachwa_690_517_90.jpg",
+      "leadImageReady": false,
       "sourceImageCredit": "Photo credit: The Link",
       "sourceImageCreator": "",
       "sourceImageCreditUrl": "https://thelinknewspaper.ca/article/16312",
       "sourceImageCreditFrom": "media",
       "sourceImageCreditCited": false,
-      "sourceImageCreditImageKey": "12_ops_selfhelp_nayahachwa_900_674_90.jpg"
-    },
-    {
-      "source": "The Link",
-      "institution": "Concordia University",
-      "region": "Montréal",
-      "type": "universite",
-      "lang": "en",
-      "title": "Citadins 26, Stingers 25: Concordia flag football suffers another heartbreaking final loss",
-      "link": "https://thelinknewspaper.ca/article/16310",
-      "author": "Samuel Kayll",
-      "date": "2026-04-08T18:19:00.000Z",
-      "excerpt": "The Stingers fell just short after two early wins in the final tournament of the season Concordia wide receiver Alexandra Circé (24) manoeuvres around a defender in the Stingers’ first-round matchup with ÉTS. Photo Ines Talis",
-      "image": "https://thelinknewspaper.ca/images/articles/_resized/DSC03703.jpg",
-      "leadImageReady": true,
-      "sourceImageCredit": "Photo credit: The Link",
-      "sourceImageCreator": "",
-      "sourceImageCreditUrl": "https://thelinknewspaper.ca/article/16310",
-      "sourceImageCreditFrom": "media",
-      "sourceImageCreditCited": false,
-      "sourceImageCreditImageKey": "dsc03703.jpg"
+      "sourceImageCreditImageKey": "12_ops_selfhelp_nayahachwa_690_517_90.jpg"
     },
     {
       "source": "The Tribune",
@@ -2180,12 +2187,6 @@
       "excerpt": "“I got in an accident that involved some sea urchins,” Natalie Joy Gale, a PhD student in McGill’s Department of History and Classical Studies, said in an interview with //The Tribune//. Gale recalls wiping out in an ‘urchin-y’ area of reef while surfing in Puerto Rico, resulting in several sea [Read More]",
       "image": "https://www.thetribune.ca/wp-content/uploads/2026/04/bottle.png",
       "leadImageReady": false,
-      "stockImage": "https://live.staticflickr.com/4532/38561519546_37d0d16ddd_b.jpg",
-      "imageCredit": "Photo : Marie-Baeten / CC BY · Openverse",
-      "imageCreator": "Marie-Baeten",
-      "imageLicense": "by",
-      "imageProvider": "openverse",
-      "imageSourceUrl": "https://www.flickr.com/photos/155423788@N03/38561519546",
       "sourceImageCredit": "Photo credit: The Tribune",
       "sourceImageCreator": "",
       "sourceImageCreditUrl": "https://www.thetribune.ca/features/your-health-your-problem/?utm_source=rss&utm_medium=rss&utm_campaign=your-health-your-problem",
@@ -2424,13 +2425,7 @@
       "sourceImageCreditFrom": "media",
       "sourceImageCreditCited": false,
       "sourceImageCreditImageKey": "sports_3_testimony-of-a-graduating-athlete_credits_bu-club-hockey-team.jpeg",
-      "leadImageReady": false,
-      "stockImage": "https://live.staticflickr.com/2502/3886993263_bb94359eb2_b.jpg",
-      "imageCredit": "Photo : scazon / CC BY · Openverse",
-      "imageCreator": "scazon",
-      "imageLicense": "by",
-      "imageProvider": "openverse",
-      "imageSourceUrl": "https://www.flickr.com/photos/26416016@N02/3886993263"
+      "leadImageReady": false
     },
     {
       "source": "The Campus",
@@ -3306,13 +3301,7 @@
       "sourceImageCreditFrom": "media",
       "sourceImageCreditCited": false,
       "sourceImageCreditImageKey": "sports_1_bu-club-hockey_credits_courteousy-of-bu-club-hockey-team.jpg",
-      "leadImageReady": false,
-      "stockImage": "https://live.staticflickr.com/2690/4397427381_ca3a0e7c13_b.jpg",
-      "imageCredit": "Photo : s.yume / CC BY · Openverse",
-      "imageCreator": "s.yume",
-      "imageLicense": "by",
-      "imageProvider": "openverse",
-      "imageSourceUrl": "https://www.flickr.com/photos/24503701@N02/4397427381"
+      "leadImageReady": false
     },
     {
       "source": "The Campus",
@@ -3388,13 +3377,7 @@
       "sourceImageCreditFrom": "media",
       "sourceImageCreditCited": false,
       "sourceImageCreditImageKey": "opinions_2_histories-rhyming_cred-bu-snow-instagram.jpeg",
-      "leadImageReady": false,
-      "stockImage": "https://live.staticflickr.com/6008/5982053193_8dbf0e07b0_b.jpg",
-      "imageCredit": "Photo : Renodesertfoxstill / CC BY · Openverse",
-      "imageCreator": "Renodesertfoxstill",
-      "imageLicense": "by",
-      "imageProvider": "openverse",
-      "imageSourceUrl": "https://www.flickr.com/photos/65392060@N02/5982053193"
+      "leadImageReady": false
     },
     {
       "source": "The Campus",
@@ -3767,13 +3750,12 @@
       "image": "https://www.delitfrancais.com/wp-content/uploads/2026/03/annonces.png",
       "featured": true,
       "_pageAuthor": "Héloïse Durning et Elie Nguyen",
-      "leadImageReady": true,
       "sourceImageCredit": "Crédit photo : Le Délit",
-      "sourceImageCreator": "",
       "sourceImageCreditUrl": "https://www.delitfrancais.com/2026/03/18/des-initiatives-qui-rassemblent/",
       "sourceImageCreditFrom": "media",
       "sourceImageCreditCited": false,
-      "sourceImageCreditImageKey": "annonces.png"
+      "sourceImageCreditImageKey": "annonces.png",
+      "leadImageReady": true
     },
     {
       "source": "The McGill Daily",

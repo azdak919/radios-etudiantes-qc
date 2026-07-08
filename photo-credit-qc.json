@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-08T12:20:13.903Z",
+  "updated": "2026-07-08T16:06:22.498Z",
   "total": 192,
   "withImage": 150,
   "withCredit": 150,
@@ -7,11 +7,18 @@
   "pending": 0,
   "missingHero": 0,
   "ok": true,
-  "checked": 54,
-  "updatedCount": 54,
+  "checked": 53,
+  "updatedCount": 53,
   "citedNew": 17,
-  "fallbackNew": 37,
+  "fallbackNew": 36,
   "samples": [
+    {
+      "title": "CSU fails to reach quorum at first special council meeting of new mandate",
+      "source": "The Link",
+      "credit": "Photo credit: The Link",
+      "cited": false,
+      "method": null
+    },
     {
       "title": "CSU terminates council’s chief election officer",
       "source": "The Link",
@@ -86,13 +93,6 @@
       "title": "A final note from the Editor-in-Chief of Volume 45, for the record",
       "source": "The Tribune",
       "credit": "Photo : Yusur Al-Sharqi",
-      "cited": true,
-      "method": "figcaption-attribution"
-    },
-    {
-      "title": "SPHR remembers Gaza Solidarity Encampment ahead of Nakba Anniversary Protest",
-      "source": "The Tribune",
-      "credit": "Photo : Ellen Lurie",
       "cited": true,
       "method": "figcaption-attribution"
     }
