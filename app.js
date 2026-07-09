@@ -2925,10 +2925,12 @@ const CONTINGENCY_MAX_SESSIONS_BACK = FRESHNESS_SESSION_COUNT - 1;
  * dans la session en cours — on accepte leur dernier article des 2 sessions précédentes.
  */
 const AUTUMN_GRACE_END_MONTH = 10; /* novembre inclus */
-const BRIEF_LIMITS = { lead: 720, feature: 450, compact: 280, standard: 170 };
+/* feature / compact un peu plus longs : la vignette laisse de la hauteur
+   à côté de la photo — le CSS line-clamp complète le gabarit. */
+const BRIEF_LIMITS = { lead: 720, feature: 560, compact: 400, standard: 170 };
 const LEAD_BRIEF_MIN_CHARS = 160;
-const BRIEF_COMPACT_MIN_CHARS = 110;
-const FEATURE_BRIEF_MIN_CHARS = 170;
+const BRIEF_COMPACT_MIN_CHARS = 150;
+const FEATURE_BRIEF_MIN_CHARS = 220;
 
 function articleKey(item) {
   return item.link || `${item.source}::${item.date}::${item.title}`;

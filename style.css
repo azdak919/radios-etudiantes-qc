@@ -2081,6 +2081,11 @@ html[data-translate-busy="1"] .translate-toggle {
 .news-hero .article--feature .article-brief.is-truncated .article-brief-text {
   -webkit-line-clamp: 3;
 }
+/* Vedettes avec photo : combler la hauteur vignette + crédit */
+.news-hero .article--feature.article--thumb.has-image .article-brief-text,
+.news-hero .article--feature.article--thumb.has-image .article-brief.is-truncated .article-brief-text {
+  -webkit-line-clamp: 5;
+}
 
 .article--compact {
   padding: 14px 0;
@@ -2114,6 +2119,11 @@ html[data-translate-busy="1"] .translate-toggle {
 }
 .brief-rail .article--compact .article-brief.is-truncated .article-brief-text {
   -webkit-line-clamp: 2;
+}
+/* En bref avec photo : plus de lignes d'extrait à côté de la vignette */
+.brief-rail .article--compact.article--thumb.has-image .article-brief-text,
+.brief-rail .article--compact.article--thumb.has-image .article-brief.is-truncated .article-brief-text {
+  -webkit-line-clamp: 5;
 }
 
 /* En bref : date à droite sur la ligne source */
@@ -2807,14 +2817,12 @@ html[data-translate-busy="1"] .translate-toggle {
   .article--thumb.has-image .article-title {
     padding-right: 0;
   }
-  .brief-rail .article--compact.article--thumb.has-image .article-brief-text {
-    -webkit-line-clamp: 3;
-  }
-  .brief-rail .article--compact.article--thumb.has-image .article-brief.is-truncated .article-brief-text {
-    -webkit-line-clamp: 2;
-  }
-  .news-hero .article--feature.article--thumb.has-image .article-brief-text {
-    -webkit-line-clamp: 3;
+  /* Mobile : 4 lignes (vignette un peu plus petite) ; 5 dès 601px via règles de base */
+  .brief-rail .article--compact.article--thumb.has-image .article-brief-text,
+  .brief-rail .article--compact.article--thumb.has-image .article-brief.is-truncated .article-brief-text,
+  .news-hero .article--feature.article--thumb.has-image .article-brief-text,
+  .news-hero .article--feature.article--thumb.has-image .article-brief.is-truncated .article-brief-text {
+    -webkit-line-clamp: 4;
   }
 }
 
