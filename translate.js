@@ -908,8 +908,10 @@
 
   /**
    * Libellés d’établissements fiables par langue.
-   * Règle générale cégeps/collèges : nom officiel (pas de MT libre qui invente
-   * « Universidad … »). Cas spéciaux ci-dessous ; le reste est dérivé par motif.
+   *
+   * Cégeps : n’existent qu’au Québec — comme Dawson, on mappe le *type* vers
+   * College / Colegio / Colégio / Collège et on garde le toponyme (pas de MT
+   * libre qui invente « Universidad … »).
    */
   const INSTITUTION_LABELS = {
     'Dawson College': {
@@ -946,39 +948,100 @@
     return raw.split(/[-_]/)[0] || raw;
   }
 
-  /** Cégep = institution québécoise : le mot « Cégep » reste inchangé. */
   function isCegepInstitutionName(name = '') {
     return /^c[eé]gep\b/i.test(String(name).trim());
   }
 
-  /** Collège / College (cégep anglais ou collège privé QC). */
   function isCollegeInstitutionName(name = '') {
-    return /^(?:coll[eè]ge|college)\b/i.test(String(name).trim());
+    return /^(?:coll[eè]ge|college)\b/i.test(String(name).trim())
+      || /^dawson\s+college$/i.test(String(name).trim());
   }
 
   /**
-   * Cégep du Vieux Montréal, Cégep de Jonquière (ATM – journalisme)…
-   * On conserve le nom officiel ; seule une note entre parenthèses peut
-   * être légèrement adaptée en anglais.
+   * Sépare « Cégep de Jonquière (ATM – journalisme) »
+   * → particle « de », place « Jonquière », note « (ATM – journalisme) ».
    */
-  function formatCegepLabel(name = '', lang = 'fr') {
-    let label = String(name).replace(/\s+/g, ' ').trim()
+  function parseCegepParts(name = '') {
+    const raw = String(name).replace(/\s+/g, ' ').trim()
       .replace(/^c[eé]gep\b/i, 'Cégep');
+    const m = raw.match(
+      /^Cégep\s+(de|du|des|d')\s+(.+?)(?:\s*(\([^)]*\)))?\s*$/i,
+    );
+    if (!m) {
+      const loose = raw.match(/^Cégep\s+(.+?)(?:\s*(\([^)]*\)))?\s*$/i);
+      if (!loose) return null;
+      return { particle: '', place: loose[1].trim(), note: (loose[2] || '').trim() };
+    }
+    return {
+      particle: m[1].toLowerCase().replace(/^d'$/i, "d'"),
+      place: m[2].trim(),
+      note: (m[3] || '').trim(),
+    };
+  }
+
+  function localizeCegepNote(note = '', lang = 'fr') {
+    if (!note) return '';
     if (lang === 'en') {
-      label = label
+      return note
         .replace(/\bjournalisme\b/gi, 'journalism')
         .replace(/\barts?\s+et\s+lettres\b/gi, 'arts and letters');
     }
-    return label;
+    return note;
+  }
+
+  /**
+   * Cégep → équivalent « college » hors FR (comme Dawson College → Colegio Dawson).
+   * FR : on garde le mot officiel « Cégep ».
+   */
+  function formatCegepLabel(name = '', lang = 'fr') {
+    const parts = parseCegepParts(name);
+    if (!parts) {
+      return String(name).replace(/\s+/g, ' ').trim().replace(/^c[eé]gep\b/i, 'Cégep');
+    }
+    const { particle, place, note } = parts;
+    const noteLoc = localizeCegepNote(note, lang);
+    const noteSuffix = noteLoc ? ` ${noteLoc}` : '';
+
+    // Français : libellé institutionnel officiel
+    if (lang === 'fr') {
+      const p = particle === "d'" ? "d'" : (particle ? `${particle} ` : '');
+      return `Cégep ${p}${place}${noteSuffix}`.replace(/\s+/g, ' ').trim();
+    }
+
+    // Anglais : « Jonquière College », « Vieux Montréal College » (style Dawson)
+    if (lang === 'en') {
+      return `${place} College${noteSuffix}`.replace(/\s+/g, ' ').trim();
+    }
+
+    // Espagnol / portugais : Colegio/Colégio + particule adaptée
+    if (lang === 'es') {
+      let p = particle;
+      if (p === 'du') p = 'del';
+      else if (p === "d'") p = 'de';
+      else if (p === 'des') p = 'de';
+      else if (!p) p = 'de';
+      const join = p === 'de' || p === 'del' ? `${p} ` : `${p} `;
+      return `Colegio ${join}${place}${noteSuffix}`.replace(/\s+/g, ' ').trim();
+    }
+    if (lang === 'pt') {
+      let p = particle;
+      if (p === 'du') p = 'do';
+      else if (p === "d'") p = 'de';
+      else if (p === 'des') p = 'de';
+      else if (!p) p = 'de';
+      return `Colégio ${p} ${place}${noteSuffix}`.replace(/\s+/g, ' ').trim();
+    }
+
+    // Autres langues : même schéma qu’en anglais (toponyme + College)
+    return `${place} College${noteSuffix}`.replace(/\s+/g, ' ').trim();
   }
 
   /**
    * Collège Lionel-Groulx, Collège de Maisonneuve, Dawson College…
-   * Type d’établissement adapté à la langue ; toponyme / nom propre intact.
+   * Type adapté à la langue ; nom propre intact (modèle Dawson).
    */
   function formatCollegeLabel(name = '', lang = 'fr') {
     const raw = String(name).replace(/\s+/g, ' ').trim();
-    // Dawson : cas anglais explicite (pas un cégep francophone)
     if (/^dawson\s+college$/i.test(raw)) {
       const entry = INSTITUTION_LABELS['Dawson College'];
       return (entry && (entry[lang] || entry.default)) || 'Dawson College';
@@ -987,12 +1050,25 @@
       .replace(/^(?:coll[eè]ge|college)\b\s*/i, '')
       .trim();
     if (!rest) return raw;
-    if (lang === 'en') return `College ${rest}`;
-    if (lang === 'es') return `Colegio ${rest}`;
-    if (lang === 'pt') return `Colégio ${rest}`;
-    if (lang === 'de') return `College ${rest}`;
-    if (lang === 'it') return `College ${rest}`;
-    // fr et autres : orthographe québécoise
+    // EN : « Maisonneuve College » si « de Maisonneuve », sinon « Lionel-Groulx College »
+    if (lang === 'en') {
+      const place = rest.replace(/^(de|du|des|d')\s+/i, '').trim();
+      return `${place} College`;
+    }
+    if (lang === 'es') {
+      let r = rest.replace(/^du\s+/i, 'del ').replace(/^d'\s*/i, 'de ');
+      if (!/^(de|del)\s/i.test(r)) r = `de ${r}`;
+      return `Colegio ${r}`;
+    }
+    if (lang === 'pt') {
+      let r = rest.replace(/^du\s+/i, 'do ').replace(/^d'\s*/i, 'de ');
+      if (!/^(de|do)\s/i.test(r)) r = `de ${r}`;
+      return `Colégio ${r}`;
+    }
+    if (lang === 'de' || lang === 'it' || lang === 'pl') {
+      const place = rest.replace(/^(de|du|des|d')\s+/i, '').trim();
+      return `${place} College`;
+    }
     return `Collège ${rest}`;
   }
 
@@ -1008,12 +1084,12 @@
       )?.[1];
     if (entry) return entry[lang] || entry.default || null;
 
-    // 2) Tous les cégeps : nom officiel, jamais de MT libre
+    // 2) Cégeps → College / Colegio… (équivalent élégant hors Québec)
     if (isCegepInstitutionName(key)) {
       return formatCegepLabel(key, lang);
     }
 
-    // 3) Collèges / colleges (Maisonneuve, Lionel-Groulx, Dawson…)
+    // 3) Collèges / colleges
     if (isCollegeInstitutionName(key)) {
       return formatCollegeLabel(key, lang);
     }
