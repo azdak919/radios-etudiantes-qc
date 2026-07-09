@@ -314,6 +314,34 @@
       "_note": "WordPress — byline réelle en tête d'article (« Nom – Sports Editor »), pas le compte WP « The Campus ». Crédit photo souvent dans le nom de fichier (_cred-prenom-nom), pas dans data-image-title d'une autre image. Flux : fusion news/sports/opinions/arts-culture",
       "_lastItemDate": "2026-04-06T16:03:16.000Z",
       "_lastFetchOk": "2026-07-06T11:28:14.390Z"
+    },
+    {
+      "name": "The Plant",
+      "institution": "Dawson College",
+      "region": "Montréal",
+      "type": "cegep",
+      "lang": "en",
+      "url": "https://theplantnews.com/feed/",
+      "site": "https://theplantnews.com/",
+      "popularity": 9,
+      "botHints": {
+        "authors": {
+          "forcePageAuthor": true,
+          "ignoreRssAuthor": true
+        },
+        "images": {
+          "preferSizeFull": true,
+          "rejectPathPatterns": [
+            "theplant-logo",
+            "plantgif",
+            "different-indoor-plants"
+          ]
+        }
+      },
+      "_note": "Journal étudiant du Dawson College (cégep, anglais). WordPress — dc:creator souvent « theplantnews » ; forcer byline page. Rejeter logo/stock plant décoratif.",
+      "_status": "ok",
+      "_failCount": 0,
+      "_lastChecked": "2026-07-09T18:41:23.948Z"
     }
   ],
   "candidates": [

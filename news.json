@@ -1,7 +1,7 @@
 {
-  "updated": "2026-07-09T16:19:40.026Z",
+  "updated": "2026-07-09T19:08:05.617Z",
   "updatedSlot": "2026-07-09T16:00:00.000Z",
-  "count": 180,
+  "count": 182,
   "freshnessSessions": 3,
   "sources": {
     "Quartier Libre": {
@@ -99,6 +99,14 @@
       "freshArticleCount": 30,
       "lastArticle": "2026-04-06T16:03:16.000Z",
       "lastFetchOk": "2026-07-09T16:18:25.592Z"
+    },
+    "The Plant": {
+      "fetchOk": true,
+      "stale": false,
+      "articleCount": 10,
+      "freshArticleCount": 10,
+      "lastArticle": "2026-05-11T20:44:08.000Z",
+      "lastFetchOk": "2026-07-09T19:08:05.617Z"
     }
   },
   "items": [
@@ -1132,6 +1140,138 @@
       "_pageAuthor": "Carla Roche",
       "leadExcerpt": "Les 29 et 30 mai prochains, les adeptes d’ouvrages de suspense, à mystère et d’enquêtes auront rendez-vous au Centre culturel Georges-Vanier pour la troisième édition du festival du livre policier Montréal Mystère , un événement encore jeune, mais déjà bien installé dans le paysage littéraire montréalais.",
       "leadImageReady": true
+    },
+    {
+      "source": "The Plant",
+      "institution": "Dawson College",
+      "region": "Montréal",
+      "type": "cegep",
+      "lang": "en",
+      "title": "Letters from the Editors May 2026",
+      "link": "https://theplantnews.com/2026/05/11/letters-from-the-editors-may-2026/",
+      "author": "The editorial team",
+      "date": "2026-05-11T20:44:08.000Z",
+      "excerpt": "Dear readers, Class of 2026… We did it! As May’s doting weather and perfumed flowers lull us into the promise of summer, I try to turn my tears to crystals that will decorate my legacy at The Plant. I knew I’d cry when I’d have to greet “Goodbye.” In my heart, I will forever hold",
+      "image": ""
+    },
+    {
+      "source": "The Plant",
+      "institution": "Dawson College",
+      "region": "Montréal",
+      "type": "cegep",
+      "lang": "en",
+      "title": "Cuba @ Dawson",
+      "link": "https://theplantnews.com/2026/05/11/cuba-dawson/",
+      "author": "Atika Ume Fazal",
+      "date": "2026-05-11T20:44:05.000Z",
+      "excerpt": "The Social Change and Solidarity students visiting La Camorra Community Project in Puerto Esperanza. Via Maria Alejandra Acosta Ardila By Atika Ume Fazal News Editor Since January, the almost 11 million citizens of Cuba have received one singular shipment of oil, according to Al ",
+      "image": "https://i0.wp.com/theplantnews.com/wp-content/uploads/2026/05/image.jpeg?fit=1200%2C900&ssl=1",
+      "_pageAuthor": "Atika Ume Fazal"
+    },
+    {
+      "source": "The Plant",
+      "institution": "Dawson College",
+      "region": "Montréal",
+      "type": "cegep",
+      "lang": "en",
+      "title": "What’s Next for Books at Dawson?",
+      "link": "https://theplantnews.com/2026/05/11/whats-next-for-books-at-dawson/",
+      "author": "Jacqueline Graif",
+      "date": "2026-05-11T20:44:03.000Z",
+      "excerpt": "Via Dawson College Jacqueline Graif Editor-in-Chief In November of last year, Dawson’s former Director General, Diane Gauvin, announced that the school’s bookstore would be closing its doors permanently. Not long after this announcement, a petition spearheaded by the Dawson Stude",
+      "image": "https://theplantnews.com/wp-content/uploads/2026/05/image.png",
+      "_pageAuthor": "Jacqueline Graif"
+    },
+    {
+      "source": "The Plant",
+      "institution": "Dawson College",
+      "region": "Montréal",
+      "type": "cegep",
+      "lang": "en",
+      "title": "No Way Home: Female Migrant Workers Caught in Iraq’s Crossfire",
+      "link": "https://theplantnews.com/2026/05/11/no-way-home-female-migrant-workers-caught-in-iraqs-crossfire/",
+      "author": "The editorial team",
+      "date": "2026-05-11T20:44:01.000Z",
+      "excerpt": "Via the Business and Human Rights Centre Chloe Bercovitz Managing Editor Any name in this article is a pseudonym. The stories of Moira, Priya, and Amara are drawn from reporting by freelance foreign correspondent Rachel Hagan of More To Her Story. Once the bombing rattles her dim",
+      "image": "https://theplantnews.com/wp-content/uploads/2026/05/image-1.png"
+    },
+    {
+      "source": "The Plant",
+      "institution": "Dawson College",
+      "region": "Montréal",
+      "type": "cegep",
+      "lang": "en",
+      "title": "It’s Festival Summer!",
+      "link": "https://theplantnews.com/2026/05/11/its-festival-summer/",
+      "author": "The editorial team",
+      "date": "2026-05-11T20:43:58.000Z",
+      "excerpt": "A Correspondent’s Guide to Must-Attend Events this Summer in Montreal Joséphine Savard Arts & Culture Correspondent It is finally the month of May: birds are humming, terraces are open, ice cream coolers are buzzing, and summer is upon us. For some, this means escaping the city: ",
+      "image": "https://theplantnews.com/wp-content/uploads/2026/05/image-1-1.jpeg"
+    },
+    {
+      "source": "The Plant",
+      "institution": "Dawson College",
+      "region": "Montréal",
+      "type": "cegep",
+      "lang": "en",
+      "title": "Re-Play the Games from your Childhood",
+      "link": "https://theplantnews.com/2026/05/11/re-play-the-games-from-your-childhood/",
+      "author": "The editorial team",
+      "date": "2026-05-11T20:43:55.000Z",
+      "excerpt": "Sabrina Coccimiglio Copy Editor The winter 2026 semester is coming to an end. Slowly, though it may not feel like it right now, the academic stress will cease, and summer will be just around the corner. Think of the fresh sun on your skin, and the light breeze passing by you. Alt",
+      "image": "https://theplantnews.com/wp-content/uploads/2026/05/image-3.png"
+    },
+    {
+      "source": "The Plant",
+      "institution": "Dawson College",
+      "region": "Montréal",
+      "type": "cegep",
+      "lang": "en",
+      "title": "Gothic Cinema Rises from the Grave",
+      "link": "https://theplantnews.com/2026/05/11/gothic-cinema-rises-from-the-grave/",
+      "author": "The editorial team",
+      "date": "2026-05-11T20:43:53.000Z",
+      "excerpt": "Via Searchlight Pictures Tessa H. Chabot Contributor I find myself sitting in the cinema every couple of months when the newest Gothic movie arrives from Poor things (2024) to Lisa Frankenstein (2024). The audience and I keep our eyes fixed on the screen as the monster comes on s",
+      "image": "https://i0.wp.com/theplantnews.com/wp-content/uploads/2026/05/image-4.png?fit=1003%2C1200&ssl=1"
+    },
+    {
+      "source": "The Plant",
+      "institution": "Dawson College",
+      "region": "Montréal",
+      "type": "cegep",
+      "lang": "en",
+      "title": "Elephant: What Invisibly Shapes a Room",
+      "link": "https://theplantnews.com/2026/05/11/elephant-what-invisibly-shapes-a-room/",
+      "author": "The editorial team",
+      "date": "2026-05-11T20:43:50.000Z",
+      "excerpt": "Via Valeria Yenlin Ponce Flores Bethany D’souza, Pohanna Pyne Feinberg, and Ana Luiza Strazzi Nogueira Contributors Elephant is the current exhibition at Warren G. Flowers Gallery at Dawson College (running until May 1, 2026). The exhibition brings together works by Joshua Vettiv",
+      "image": "https://i0.wp.com/theplantnews.com/wp-content/uploads/2026/05/image-3.jpeg?fit=1200%2C800&ssl=1"
+    },
+    {
+      "source": "The Plant",
+      "institution": "Dawson College",
+      "region": "Montréal",
+      "type": "cegep",
+      "lang": "en",
+      "title": "Leave the Children Out of This",
+      "link": "https://theplantnews.com/2026/05/11/leave-the-children-out-of-this/",
+      "author": "The editorial team",
+      "date": "2026-05-11T20:43:48.000Z",
+      "excerpt": "Via My Little Princess (2011) Minola Grent Editor-in-Chief Every story has the right to be told. Even difficult stories of abuse and manipulation do. So, with an asterisk: leave the children out of this. In the midst of the 1970s cultural confusion, Franco-Romanian photographer I",
+      "image": "https://theplantnews.com/wp-content/uploads/2026/05/image-5.png"
+    },
+    {
+      "source": "The Plant",
+      "institution": "Dawson College",
+      "region": "Montréal",
+      "type": "cegep",
+      "lang": "en",
+      "title": "On Manon from KATSEYE: How K-Pop Takes Its Roots from Black Culture",
+      "link": "https://theplantnews.com/2026/05/11/on-manon-from-katseye-how-k-pop-takes-its-roots-from-black-culture/",
+      "author": "The editorial team",
+      "date": "2026-05-11T20:43:45.000Z",
+      "excerpt": "Via Pinterest Alaa Ettaouth Staff Writer In February 2026, Manon Bannerman, member of the global girl group KATSEYE, halted her activities to “focus on her health and wellbeing,” according to a joint statement from labels HYBE and Geffen. This announcement sparked a visceral reac",
+      "image": "https://theplantnews.com/wp-content/uploads/2026/05/image-5.jpeg"
     },
     {
       "source": "Quartier Libre",

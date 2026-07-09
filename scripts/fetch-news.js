@@ -91,7 +91,7 @@ const WP_FEATURED_SLUGS = ['slider', 'a-la-une', 'featured'];
 const MAX_ENRICH = 45;      // cap article-page fetches per run
 const MAX_AUTHOR_PAGES = 80; // vérification auteurs page (séparé de l'enrichissement)
 
-const GENERIC_AUTHORS = /^(admin|administrator|administrateur|editor|éditeur|editeur|rédaction|redaction|staff|wordpress|webmaster|collectif|le collectif|tribune|link|daily|coordinating|exemplaire|quartier libre|zone campus|la pige|le délit|le delit|the link|the concordian|the tribune|the mcgill daily|the campus)$/i;
+const GENERIC_AUTHORS = /^(admin|administrator|administrateur|editor|éditeur|editeur|rédaction|redaction|staff|wordpress|webmaster|collectif|le collectif|tribune|link|daily|coordinating|exemplaire|quartier libre|zone campus|la pige|le délit|le delit|the link|the concordian|the tribune|the mcgill daily|the campus|the plant|theplantnews)$/i;
 
 // Active feeds come from the registry (news-sources.json), maintained by
 // scripts/discover-news-sources.js. Feeds flagged "_status": "dead" are skipped.

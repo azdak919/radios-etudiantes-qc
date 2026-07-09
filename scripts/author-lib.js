@@ -6,7 +6,7 @@
  * « La rédaction » / « The editorial team ».
  */
 
-const GENERIC_AUTHORS = /^(admin|administrator|administrateur|editor|éditeur|editeur|rédaction|redaction|staff|wordpress|webmaster|collectif|tribune|link|daily|coordinating|exemplaire|quartier libre|zone campus|la pige|le délit|le delit|the link|the tribune|the mcgill daily|the campus)$/i;
+const GENERIC_AUTHORS = /^(admin|administrator|administrateur|editor|éditeur|editeur|rédaction|redaction|staff|wordpress|webmaster|collectif|tribune|link|daily|coordinating|exemplaire|quartier libre|zone campus|la pige|le délit|le delit|the link|the tribune|the mcgill daily|the campus|the plant|theplantnews)$/i;
 
 const EDITORIAL_BYLINE_RE = /^(?:Par|By)\s+(?:(?:La|L')\s*)?[Rr]édaction\b\.?/i;
 const EDITORIAL_BYLINE_EN_RE = /^(?:Par|By)\s+Editorial\s+(?:team|staff|board)\b\.?/i;
@@ -188,6 +188,44 @@ function authorsFromTdPostAuthor(html = '') {
   )) {
     const n = expandAuthorName(m[1]);
     if (n) names.push(n);
+  }
+  return [...new Set(names)];
+}
+
+/**
+ * The Plant (et thèmes WP block) : byline seule dans un paragraphe
+ *   <p class="wp-block-paragraph">By Atika Ume Fazal</p>
+ *   <p>… News Editor …</p>
+ * ou nom + rôle sur deux lignes :
+ *   <p>Jacqueline Graif<br>Editor-in-Chief</p>
+ * sans lien rel=author ni tiret de rôle. On limite aux 1ers paragraphes du corps.
+ */
+function authorsFromStandaloneByParagraph(html = '') {
+  if (!html) return [];
+  const bodyMatch = html.match(
+    /class=["'][^"']*(?:entry-content|wp-block-post-content|post-content|article-content)[^"']*["'][^>]*>([\s\S]{0,6000})/i,
+  );
+  const region = bodyMatch ? bodyMatch[1] : html.slice(0, 12000);
+  const names = [];
+  let count = 0;
+  for (const m of region.matchAll(
+    /<p\b[^>]*>\s*(?:By|Par)\s+([\p{Lu}][\p{L}'’.\-]+(?:\s+[\p{Lu}][\p{L}'’.\-]+){0,4})\s*<\/p>/giu,
+  )) {
+    count += 1;
+    if (count > 4) break;
+    const n = expandAuthorName(m[1]);
+    if (n && !isJunkAuthorName(n) && !isEditorialPlaceholder(n, 'en')) names.push(n);
+  }
+  // « Prénom Nom<br>Editor-in-Chief » (The Plant) — rôles courts seulement,
+  // sans le CONTRIBUTOR_ROLE imbriqué (backtracking pathologique sur gros HTML).
+  if (!names.length) {
+    const roleRe =
+      /<p\b[^>]*>\s*([\p{Lu}][\p{L}'’.\-]+(?:\s+[\p{Lu}][\p{L}'’.\-]+){0,3})\s*(?:<br\s*\/?>|\n)\s*(?:Editor(?:-in-Chief)?|News Editor|Sports Editor|Arts Editor|Managing Editor|Staff Writer|Contributor|Reporter)\b[^<]{0,40}<\/p>/giu;
+    for (const m of region.matchAll(roleRe)) {
+      const n = expandAuthorName(m[1]);
+      if (n && !isJunkAuthorName(n) && !isEditorialPlaceholder(n, 'en')) names.push(n);
+      if (names.length) break;
+    }
   }
   return [...new Set(names)];
 }
@@ -466,6 +504,12 @@ function authorFromArticleHtml(html = '', lang = 'fr', hints = {}, sourceName = 
   const linkByline = authorsFromLinkByline(html);
   if (linkByline.length) {
     candidates.push({ author: joinAuthorNames(linkByline, l), trust: 107 });
+  }
+
+  // The Plant — paragraphe « By Name » isolé dans le corps WP.
+  const standaloneBy = authorsFromStandaloneByParagraph(html);
+  if (standaloneBy.length) {
+    candidates.push({ author: joinAuthorNames(standaloneBy, l), trust: 105 });
   }
 
   const tribuneAuthors = authorsFromTribuneAuthor(html);
