@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-09T07:03:49.455Z",
+  "updatedAt": "2026-07-09T10:37:55.007Z",
   "stations": {
     "chyz": {
       "id": "chyz",
@@ -7,7 +7,7 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-09T07:03:42.182Z"
+      "checkedAt": "2026-07-09T10:37:49.291Z"
     },
     "cism": {
       "id": "cism",
@@ -15,15 +15,15 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-09T07:03:43.257Z"
+      "checkedAt": "2026-07-09T10:37:50.177Z"
     },
     "ckut": {
       "id": "ckut",
       "name": "CKUT 90,3",
-      "showTitle": "Freeform Air",
+      "showTitle": "Total €clipse of The ☾harts",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-09T07:03:45.328Z"
+      "checkedAt": "2026-07-09T10:37:52.000Z"
     },
     "cjlo": {
       "id": "cjlo",
@@ -31,7 +31,7 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-09T07:03:47.246Z"
+      "checkedAt": "2026-07-09T10:37:53.291Z"
     },
     "cfak": {
       "id": "cfak",
@@ -39,15 +39,15 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-09T07:03:48.145Z"
+      "checkedAt": "2026-07-09T10:37:54.001Z"
     },
     "choq": {
       "id": "choq",
       "name": "CHOQ.ca",
-      "showTitle": "No Reprieve",
-      "host": "GOREWORM",
+      "showTitle": "hung up on u",
+      "host": "LØLØ",
       "source": "api-live",
-      "checkedAt": "2026-07-09T07:03:49.054Z"
+      "checkedAt": "2026-07-09T10:37:54.607Z"
     }
   }
 }
