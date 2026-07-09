@@ -13,6 +13,8 @@ concurrency:
 jobs:
   maintain:
     runs-on: ubuntu-latest
+    # Le pipeline complet prend ~27 min ; borne contre les exécutions zombies.
+    timeout-minutes: 50
     permissions:
       contents: write
       issues: write
@@ -35,7 +37,9 @@ jobs:
         run: |
           CHANGED=false
           for f in institutions.json news-sources.json news.json radios.json radios-candidates.json radio-nowplaying.json bot-status.json feed.xml; do
-            if ! git diff --quiet "$f" 2>/dev/null; then
+            # git status voit aussi les fichiers pas encore suivis (bot-status.json
+            # à sa première écriture), contrairement à git diff.
+            if [ -n "$(git status --porcelain -- "$f")" ]; then
               CHANGED=true
               echo "changed: $f"
             fi
@@ -47,10 +51,20 @@ jobs:
         run: |
           git config user.name "RADAR Maintenance Bot"
           git config user.email "actions@users.noreply.github.com"
-          git add institutions.json news-sources.json news.json radios.json radios-candidates.json radio-nowplaying.json bot-status.json feed.xml
+          # N'ajouter que les fichiers présents : si le pipeline a échoué avant
+          # d'écrire bot-status.json, git add sur un chemin absent est fatal et
+          # les données déjà produites ne sont jamais poussées.
+          for f in institutions.json news-sources.json news.json radios.json radios-candidates.json radio-nowplaying.json bot-status.json feed.xml; do
+            [ -f "$f" ] && git add "$f"
+          done
           git commit -m "bot: weekly maintenance run (auto)"
+          # Fichiers générés : en cas de conflit avec un commit concurrent,
+          # -X theirs garde la version fraîchement produite par ce bot, et un
+          # rebase interrompu est abandonné avant la tentative suivante —
+          # sinon les retries échouent tous sur « unmerged files ».
           for i in 1 2 3; do
-            git pull --rebase --autostash origin "${GITHUB_REF_NAME}" && git push && exit 0
+            git pull --rebase -X theirs --autostash origin "${GITHUB_REF_NAME}" && git push && exit 0
+            git rebase --abort 2>/dev/null || true
             echo "push attempt $i failed, retrying…"
             sleep $((i * 3))
           done
@@ -62,6 +76,11 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
+          # bot-status.json peut manquer si le pipeline a planté avant de
+          # l'écrire — ouvrir quand même une issue minimale plutôt qu'échouer.
+          if [ ! -f bot-status.json ]; then
+            BODY="Le bot de maintenance hebdomadaire a échoué avant d'écrire bot-status.json — consulter les logs du run."
+          else
           BODY=$(node -e "
             const s = require('./bot-status.json');
             const alerts = (s.alerts || []).map(a => '- [' + a.level + '] ' + a.message).join('\n');
@@ -72,6 +91,7 @@ jobs:
               + '- Couverture journaux (univ.) : ' + s.summary.coverage.universitiesWithNews + '/' + s.summary.coverage.universitiesTotal + '\n\n'
               + '**Alertes**\n' + (alerts || '_aucune_'));
           ")
+          fi
           gh issue list --repo "${{ github.repository }}" --search "in:title RADAR maintenance alert" --state open --json number --jq 'length' | {
             read OPEN
             if [ "$OPEN" -gt 0 ]; then

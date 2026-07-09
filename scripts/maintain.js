@@ -78,6 +78,11 @@ function buildStatus(steps) {
   const gapsNews = insts.filter((i) => i.type === 'universite' && !isNewsCovered(i)).map((i) => i.name);
   const gapsRadios = insts.filter((i) => !isRadioCovered(i)).map((i) => i.name);
 
+  const items = news.items || news;
+  const staleCacheSources = Object.entries(news.sources || {})
+    .filter(([, meta]) => meta && meta.stale)
+    .map(([name]) => name);
+
   const alerts = [];
 
   for (const s of deadNews) {
@@ -115,10 +120,6 @@ function buildStatus(steps) {
     });
   }
 
-  const items = news.items || news;
-  const staleCacheSources = Object.entries(news.sources || {})
-    .filter(([, meta]) => meta && meta.stale)
-    .map(([name]) => name);
   const withAuthor = items.filter((i) => i.author && String(i.author).trim()).length;
   const withExcerpt = items.filter((i) => i.excerpt && String(i.excerpt).trim().length > 20).length;
   const authorQc = readJson('author-qc.json', {});
