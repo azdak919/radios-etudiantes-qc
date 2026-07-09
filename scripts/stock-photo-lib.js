@@ -62,14 +62,23 @@ const WINTER_TOPIC_RE = /\b(?:winter|hiver|hivernal|snow|neige|blizzard|temp[eê
 const WINTER_PHOTO_RE = /\b(?:snow|neige|winter|hiver|blizzard|frost|gel|glacial|january|janvier|february|f[eé]vrier|december|d[eé]cembre|ice[- ]cover|covered in snow)\b/i;
 const SUMMER_PHOTO_RE = /\b(?:summer|été|ete|july|juillet|june|juin|august|ao[uû]t|green lawn|leafy|foliage|sunny|ensoleill)\b/i;
 
-/** Pays/régions à pénaliser quand l'article parle de l'Assemblée nationale du Québec. */
+/** Pays/régions/lieux à pénaliser quand l'article parle de l'Assemblée nationale du Québec. */
 const FOREIGN_ASSEMBLY_MARKERS = [
-  'burkina', 'faso', 'afrique', 'africa', 'senegal', 'sénégal', 'mali', 'niger', 'benin', 'bénin',
-  'togo', 'cameroun', 'cameroon', 'rwanda', 'madagascar', 'gabon', 'congo', 'ouganda', 'uganda',
-  'nigeria', 'ghana', 'kenya', 'tanzania', 'zambia', 'zimbabwe', 'mozambique', 'angola', 'tunisia',
-  'tunisie', 'algeria', 'algérie', 'morocco', 'maroc', 'egypt', 'égypte', 'ivory coast',
-  'cote d ivoire', 'côte d ivoire', 'haiti', 'haïti', 'guinea', 'guinée', 'liberia', 'libéria',
+  // France (Assemblée nationale française = Palais Bourbon, à Paris).
+  'france', 'french', 'francaise', 'française', 'paris', 'palais bourbon', 'bourbon',
+  // Afrique francophone (« Assemblée nationale » y désigne un autre parlement).
+  'burkina', 'faso', 'afrique', 'africa', 'senegal', 'sénégal', 'dakar', 'mali', 'niger',
+  'benin', 'bénin', 'togo', 'cameroun', 'cameroon', 'rwanda', 'madagascar', 'gabon', 'congo',
+  'ouganda', 'uganda', 'nigeria', 'ghana', 'kenya', 'tanzania', 'zambia', 'zimbabwe',
+  'mozambique', 'angola', 'tunisia', 'tunisie', 'algeria', 'algérie', 'morocco', 'maroc',
+  'egypt', 'égypte', 'ivory coast', 'cote d ivoire', 'côte d ivoire', 'haiti', 'haïti',
+  'guinea', 'guinée', 'liberia', 'libéria',
+  // Autres parlements homonymes croisés dans les résultats de recherche.
+  'lisbon', 'lisbonne', 'lisboa', 'sao bento', 'portugal', 'chili', 'chile',
 ];
+
+/** Repère générique « c'est bien une assemblée / un parlement » (peu importe le pays). */
+const ASSEMBLY_SUBJECT_RE = /\b(?:assemblee|assemblée|national assembly|parliament|parlement|legislative|legislature|hemicycle|hémicycle|palais bourbon)\b/i;
 
 const QC_ASSEMBLY_MARKERS = [
   'quebec', 'québec', 'quebec city', 'ville de quebec', 'ville de québec',
@@ -281,14 +290,17 @@ function applyContextScoring(hit, context = {}) {
   let delta = 0;
 
   if (context.provincialParliament || (context.assemblyTopic && context.quebec)) {
+    let qcMatch = false;
     for (const marker of QC_ASSEMBLY_MARKERS) {
-      if (hay.includes(normalizeText(marker))) delta += 90;
+      if (hay.includes(normalizeText(marker))) { delta += 90; qcMatch = true; }
     }
-    for (const marker of FOREIGN_ASSEMBLY_MARKERS) {
-      if (hay.includes(normalizeText(marker))) delta -= 150;
-    }
-    if (!context.franceAsSubject && /\bfrance\b/.test(hay) && /assemblee|assemblée|national assembly|parliament/i.test(hay)) {
-      delta -= 60;
+    const foreignMatch = FOREIGN_ASSEMBLY_MARKERS.some((m) => hay.includes(normalizeText(m)));
+    // Une photo d'assemblée / de parlement clairement identifiable, mais SANS
+    // ancrage québécois (ou marquée France / Sénégal / Paris…), est la mauvaise
+    // assemblée : rejet net. On ne veut jamais l'Assemblée nationale française
+    // (Palais Bourbon) ni une assemblée africaine pour un sujet québécois.
+    if (!qcMatch && !context.franceAsSubject && (foreignMatch || ASSEMBLY_SUBJECT_RE.test(hay))) {
+      delta -= 400;
     }
   }
 

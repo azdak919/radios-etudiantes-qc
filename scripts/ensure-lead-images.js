@@ -427,6 +427,31 @@ async function main() {
     }
   }
 
+  // Filet campus (local, sans réseau) : tout article encore sans visuel — y
+  // compris ceux situés au-delà du plafond de recherche libre — rattaché à un
+  // établissement de la banque reçoit une photo de campus. Garantit la règle
+  // « mots-clés sans photo acceptable → photo du campus » pour l'ensemble
+  // affiché, pas seulement les STOCK_SEARCH_LIMIT premiers.
+  if (doUpdate) {
+    let campusBackfill = 0;
+    for (const item of items) {
+      if (hasSourcePhoto(item, sourceMap)) continue;
+      if (item.stockImage && isCandidateImageUrl(item.stockImage)) continue;
+      const hints = imageHintsFor(item, sourceMap);
+      if (hints.disableCampusBank === true || isSubstackItem(item)) continue;
+      if (!hasCampusBank(item.institution)) continue;
+      const campus = pickCampusPhoto(item, { avoidUrls: usedCampusUrls });
+      if (!campus?.stockImage) continue;
+      applyPhotoFields(item, campus);
+      item.leadImageReady = false;
+      usedCampusUrls.add(campus.stockImage);
+      campusBankFound += 1;
+      stockFound += 1;
+      campusBackfill += 1;
+    }
+    if (campusBackfill) console.log(`↻ ${campusBackfill} photo(s) campus en repli (au-delà du plafond)`);
+  }
+
   // Répartir les photos campus déjà en place (lot entier) pour éviter
   // la même entrée sur À la une et En bref d'un même établissement.
   if (doUpdate) {
