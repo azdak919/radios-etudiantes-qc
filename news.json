@@ -1438,13 +1438,14 @@
       "date": "2026-05-01T13:49:38.000Z",
       "excerpt": "Le 28 avril dernier, les personnes étudiantes à l’Université du Québec à Trois-Rivières (UQTR) se sont réunies au local 1012 du pavillon étudiant. Elles étaient toutes présentes afin de célébrer la fin d’une session chargée lors du traditionnel party de fin de session. Cette",
       "image": "https://zonecampus.ca/wp-content/uploads/2026/04/17c4541a-839d-48b8-b5aa-2cc81e91e3c8-1024x768.jpeg",
-      "sourceImageCredit": "Photo : Journaliste",
-      "sourceImageCreator": "Journaliste",
+      "sourceImageCredit": "Crédit photo : Zone Campus",
+      "sourceImageCreator": "",
       "sourceImageCreditUrl": "https://zonecampus.ca/beach-party-a-luqtr-une-fin-de-session-sous-les-palmiers/",
-      "sourceImageCreditFrom": "article",
-      "sourceImageCreditCited": true,
+      "sourceImageCreditFrom": "media",
+      "sourceImageCreditCited": false,
       "sourceImageCreditImageKey": "17c4541a-839d-48b8-b5aa-2cc81e91e3c8.jpeg",
-      "leadImageReady": true
+      "leadImageReady": true,
+      "sourceImageCreditRev": 5
     },
     {
       "source": "Montréal Campus",

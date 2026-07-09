@@ -18,7 +18,21 @@ const PHOTO_CREDIT_FIELDS = [
 
 // Version des extracteurs de crédit : l'incrémenter force une re-vérification
 // (repli média + crédits cités issus d'anciens extracteurs buggés).
-const CREDIT_EXTRACTOR_REV = 4;
+const CREDIT_EXTRACTOR_REV = 5;
+
+/** Placeholders WP / comptes génériques (Zone Campus : « Crédit : Journaliste »). */
+const PLACEHOLDER_CREDIT_RE = /^(?:journaliste|journalist|photographe|photographer|staff|rédaction|redaction|la\s+rédaction|the\s+editorial\s+team|unknown|inconnu|n\/?a|none|anonyme|anonymous|auteur|author|admin)$/i;
+
+function isPlaceholderPhotoCredit(name = '') {
+  const n = String(name || '')
+    .replace(/^(?:Photo|Crédit(?:\s+photo)?|Credit(?:\s+photo)?|Illustration)\s*[:]\s*/i, '')
+    .replace(/\s+/g, ' ')
+    .trim();
+  // Chaîne vide = pas de crédit cité (pas un placeholder « Journaliste »).
+  if (!n) return false;
+  if (n.length < 2) return true;
+  return PLACEHOLDER_CREDIT_RE.test(n);
+}
 
 const LEAD_IMAGE_FIELDS = [
   'leadImageReady',
@@ -220,6 +234,9 @@ function creditFromPhrase(text = '') {
   const via = phrase.match(/^(.+?)\s+via\s+(.+)$/i);
   const creator = via ? via[1].trim() : phrase;
   const agency = via ? via[2].trim() : '';
+  // « Journaliste » / « Staff » : pas un·e photographe identifiable.
+  if (isPlaceholderPhotoCredit(creator)) return null;
+  if (agency && isPlaceholderPhotoCredit(agency) && isPlaceholderPhotoCredit(creator)) return null;
   const label = agency ? `${creator} via ${agency}` : creator;
   return {
     creditLine: `Photo : ${label}`,
@@ -647,6 +664,10 @@ function resolveSourcePhotoCredit(item = {}, html = '') {
   if (!imageUrl) return null;
 
   const cited = extractPhotoCreditFromHtml(html, imageUrl, item.lang === 'en' ? 'en' : 'fr');
+  // Si l'extracteur a quand même collé un placeholder, traiter comme absent.
+  if (cited && isPlaceholderPhotoCredit(cited.creator || cited.creditLine)) {
+    return formatMediaFallbackCredit(item);
+  }
   if (cited) {
     return {
       cited: true,
@@ -713,6 +734,11 @@ function needsSourceCreditCheck(item) {
   const key = imageUrlKey(item.image);
   if (!key) return false;
   const rev = item.sourceImageCreditRev || 0;
+  // Placeholders (« Journaliste », « Staff »…) → repli média (ex. Zone Campus).
+  if (isPlaceholderPhotoCredit(item.sourceImageCreator)
+    || isPlaceholderPhotoCredit(item.sourceImageCredit)) {
+    return true;
+  }
   // Repli média : re-passer les extracteurs une fois par version.
   if (!item.sourceImageCreditCited && rev < CREDIT_EXTRACTOR_REV) {
     return true;
@@ -797,6 +823,7 @@ module.exports = {
   sanitizeCreditText,
   creditLooksCorrupt,
   looksLikePhotoCredit,
+  isPlaceholderPhotoCredit,
   extractMediaCreditPlugin,
   parseFigcaptionAttribution,
   extractPhotoCreditFromHtml,
