@@ -309,8 +309,9 @@ function stripEmbeddedCss(title = '') {
   return t;
 }
 
+/** Retire puces / symboles en tête, mais garde chiffres et lettres (« 14 bourses… »). */
 function stripLeadingNonLetters(title = '') {
-  return String(title).replace(/^[^\p{L}]+/u, '').trim();
+  return String(title).replace(/^[^\p{L}\p{N}]+/u, '').trim();
 }
 
 /** « pucesIncursion » / « pucesIncursion » après CSS → espace avant majuscule. */
