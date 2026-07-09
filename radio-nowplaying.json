@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-09T03:29:47.750Z",
+  "updatedAt": "2026-07-09T07:03:49.455Z",
   "stations": {
     "chyz": {
       "id": "chyz",
@@ -7,7 +7,7 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-09T03:29:41.043Z"
+      "checkedAt": "2026-07-09T07:03:42.182Z"
     },
     "cism": {
       "id": "cism",
@@ -15,15 +15,15 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-09T03:29:41.903Z"
+      "checkedAt": "2026-07-09T07:03:43.257Z"
     },
     "ckut": {
       "id": "ckut",
       "name": "CKUT 90,3",
-      "showTitle": "Rhizomatic Hour 2",
+      "showTitle": "Freeform Air",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-09T03:29:43.556Z"
+      "checkedAt": "2026-07-09T07:03:45.328Z"
     },
     "cjlo": {
       "id": "cjlo",
@@ -31,7 +31,7 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-09T03:29:45.043Z"
+      "checkedAt": "2026-07-09T07:03:47.246Z"
     },
     "cfak": {
       "id": "cfak",
@@ -39,15 +39,15 @@
       "showTitle": "",
       "host": "",
       "source": "stream",
-      "checkedAt": "2026-07-09T03:29:45.814Z"
+      "checkedAt": "2026-07-09T07:03:48.145Z"
     },
     "choq": {
       "id": "choq",
       "name": "CHOQ.ca",
-      "showTitle": "Wesley Joseph - Blinded",
-      "host": "",
-      "source": "stream",
-      "checkedAt": "2026-07-09T03:29:47.349Z"
+      "showTitle": "No Reprieve",
+      "host": "GOREWORM",
+      "source": "api-live",
+      "checkedAt": "2026-07-09T07:03:49.054Z"
     }
   }
 }
