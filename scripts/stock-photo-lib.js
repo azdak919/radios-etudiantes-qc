@@ -54,6 +54,13 @@ const ARCHIVAL_YEAR_RE = /(?<!x)\b1[89]\d{2}\b(?!x)/;
 const HISTORICAL_TOPIC_RE = /\b(?:histoire|historiques?|historical|history|heritage|patrimoine|archives?|anniversaires?|centenaires?|centennial|comm[eé]moration\w*|commemorat\w*|fondation|founding|r[eé]trospectives?|retrospectives?)\b/i;
 const UNKNOWN_CREATOR_RE = /^(?:unknown|inconnu|anonym)/i;
 
+/* Saisons / météo : une photo d'hiver pour un billet d'été (et inversement)
+   est le type même d'image « hors-sujet » que l'on refuse. */
+const SUMMER_TOPIC_RE = /\b(?:summer|summertime|été|ete|estival|warm|chaleur|chaud|hot weather|canicule|heat\s?wave|vague de chaleur|terrasse|patio|defrost|d[eé]gele|d[eé]gele|first warm|soir[eé]e chaude|20 degrees|vingt degr[eé]s|july|juillet|june|juin|august|ao[uû]t)\b/i;
+const WINTER_TOPIC_RE = /\b(?:winter|hiver|hivernal|snow|neige|blizzard|temp[eê]te de neige|glacial|freezing|sub[- ]zero|moins \d+|patinoire|ice storm|verglas|froid extr[eê]me)\b/i;
+const WINTER_PHOTO_RE = /\b(?:snow|neige|winter|hiver|blizzard|frost|gel|glacial|january|janvier|february|f[eé]vrier|december|d[eé]cembre|ice[- ]cover|covered in snow)\b/i;
+const SUMMER_PHOTO_RE = /\b(?:summer|été|ete|july|juillet|june|juin|august|ao[uû]t|green lawn|leafy|foliage|sunny|ensoleill)\b/i;
+
 /** Pays/régions à pénaliser quand l'article parle de l'Assemblée nationale du Québec. */
 const FOREIGN_ASSEMBLY_MARKERS = [
   'burkina', 'faso', 'afrique', 'africa', 'senegal', 'sénégal', 'mali', 'niger', 'benin', 'bénin',
@@ -138,6 +145,9 @@ function detectEditorialContext(item = {}) {
 
   const titleNorm = normalizeText(title);
 
+  const summerTopic = SUMMER_TOPIC_RE.test(full) || SUMMER_TOPIC_RE.test(title);
+  const winterTopic = WINTER_TOPIC_RE.test(full) || WINTER_TOPIC_RE.test(title);
+
   return {
     quebec,
     quebecPolitics: quebecPolitics || (quebec && assemblyTopic),
@@ -148,6 +158,8 @@ function detectEditorialContext(item = {}) {
     montreal: /montréal|montreal/i.test(norm) || /montréal|montreal/i.test(item.region || ''),
     /* Sujet historique : seul cas où une photo d'archive est appropriée. */
     historicalTopic: HISTORICAL_TOPIC_RE.test(norm) || ARCHIVAL_YEAR_RE.test(titleNorm),
+    summerTopic,
+    winterTopic,
     institutionPhrases: institutionPhrases(item),
     norm,
     titleNorm,
@@ -211,6 +223,24 @@ function extractContextualQueries(item, context = detectEditorialContext(item)) 
       queries.push('university athlete sport Canada');
     }
     queries.push('college sports Canada');
+  }
+
+  // Sujets visuels tirés du résumé / titre (pas seulement le campus).
+  if (context.summerTopic) {
+    if (context.montreal) {
+      queries.push('Montreal summer terrasse patio outdoor');
+      queries.push('Montréal été terrasse rue');
+      queries.push('warm summer evening Montreal sidewalk');
+    } else if (context.quebec) {
+      queries.push('Québec été ville terrasse');
+      queries.push('summer outdoor cafe Canada');
+    }
+    queries.push('summer city street warm evening');
+  }
+  if (context.winterTopic) {
+    if (context.montreal) queries.push('Montreal winter snow street');
+    else if (context.quebec) queries.push('Québec hiver neige ville');
+    queries.push('winter city snow Canada');
   }
 
   return [...new Set(queries.filter((q) => q && q.length > 2))];
@@ -313,13 +343,9 @@ function extractSearchQueries(item, context = detectEditorialContext(item)) {
   if (titleTokens.length >= 2) queries.push(titleTokens.slice(0, 3).join(' '));
   if (titleProper.length >= 1) queries.push(titleProper[0]);
 
-  // Dernier recours : le campus de l'établissement — toujours dans le
-  // contexte d'un média étudiant, plutôt qu'une image hors-sujet.
-  const instName = String(item.institution || '').replace(/\s*\([^)]*\)/g, '').trim();
-  if (instName.length > 4) {
-    queries.push(`${instName} campus`);
-    queries.push(instName);
-  }
+  // Le campus de l'établissement n'est plus une requête de recherche libre :
+  // un match « McGill » seul ramenait des photos d'hiver hors-sujet.
+  // Le repli campus est géré par campus-photo-bank.js (vues curatées).
 
   return [...new Set(queries.filter((q) => q && q.length > 2))];
 }
@@ -452,15 +478,13 @@ function scoreCandidate(hit, matchTokens, context = null) {
   const matches = countSubstantiveMatches(hay, matchTokens);
   const { contentMatched, titleMatched, importantMatched, acronymOnly } = matches;
 
-  // Photo du campus / de l'établissement de l'article : le nom complet (ou
-  // l'acronyme) de l'établissement dans le titre ou le nom de fichier vaut
-  // comme correspondance substantielle — visuel toujours pertinent pour un
-  // média étudiant, et repli honnête quand le sujet n'a pas d'image propre.
+  // Établissement : bonus seulement s'il y a déjà un ancrage thématique.
+  // Un match « McGill » seul ne suffit plus (photo campus hiver pour un
+  // billet d'été) — le repli campus curaté est une autre étape.
   let institutionMatched = 0;
   for (const phrase of context?.institutionPhrases || []) {
     if (hay.includes(phrase)) {
       institutionMatched += 1;
-      score += 80;
     }
   }
 
@@ -477,12 +501,21 @@ function scoreCandidate(hit, matchTokens, context = null) {
     if (hay.includes(tok)) score += 8;
   }
 
-  const substantiveTotal = contentMatched + titleMatched + importantMatched + institutionMatched;
-  const needContentMatch = content.filter((t) => t.length >= 4 && !FALSE_FRIENDS.has(t) && !isShortAcronymToken(t));
-  if (needContentMatch.length >= 2 && substantiveTotal === 0) return -1;
-  if (important.length >= 2 && substantiveTotal === 0) return -1;
-  if (acronymOnly > 0 && substantiveTotal === 0) return -1;
-  if (substantiveTotal === 0 && acronymOnly === 0) return -1;
+  // Saison / météo : refus net d'une photo d'hiver pour un sujet d'été, etc.
+  const photoWinter = WINTER_PHOTO_RE.test(hay);
+  const photoSummer = SUMMER_PHOTO_RE.test(hay);
+  if (context?.summerTopic && photoWinter) return -1;
+  if (context?.winterTopic && photoSummer && !photoWinter) return -1;
+  if (context?.summerTopic && photoSummer) score += 35;
+  if (context?.winterTopic && photoWinter) score += 35;
+
+  const topicMatched = contentMatched + titleMatched + importantMatched;
+  // Exiger un ancrage dans le titre ou le résumé — pas seulement le campus.
+  if (topicMatched === 0) return -1;
+  if (important.length >= 2 && topicMatched === 0) return -1;
+  if (acronymOnly > 0 && topicMatched === 0) return -1;
+
+  if (institutionMatched > 0 && topicMatched > 0) score += 40;
 
   if (STUDENT_MOBILIZATION_RE.test(context?.norm || '')) {
     if (!/\b(student|university|campus|college|protest|demonstration|mobilization|mobilisation|strike|gr[eè]ve|manifestation|rally|march)\b/.test(hay)) {
@@ -508,7 +541,9 @@ function scoreCandidate(hit, matchTokens, context = null) {
   return score > 0 ? score : -1;
 }
 
-const STOCK_MIN_RETAIN_SCORE = 95;
+// Seuil un peu plus haut : on préfère aucune banque libre qu'un match fragile
+// (le repli campus curaté prend le relais ensuite).
+const STOCK_MIN_RETAIN_SCORE = 110;
 
 function stockHitFromItem(item, stockUrl = '', meta = {}) {
   const filename = decodeURIComponent(String(stockUrl).split('/').pop() || '')
@@ -536,6 +571,22 @@ function scoreStockFit(item, stockUrl = '', meta = {}) {
 
 function stockStillFits(item, meta = {}) {
   if (!item?.stockImage) return true;
+
+  // Banque campus curatée : on ne re-score pas comme une photo libre.
+  // On vérifie seulement les conflits de saison évidents.
+  if (item.imageProvider === 'campus-bank') {
+    const context = detectEditorialContext(item);
+    const hay = normalizeText([
+      item.imageTitle || '',
+      item.imageCredit || '',
+      meta.title || '',
+      item.stockImage || '',
+    ].join(' '));
+    if (context.summerTopic && WINTER_PHOTO_RE.test(hay)) return false;
+    if (context.winterTopic && SUMMER_PHOTO_RE.test(hay) && !WINTER_PHOTO_RE.test(hay)) return false;
+    return true;
+  }
+
   return scoreStockFit(item, item.stockImage, {
     // Le titre original de la photo (imageTitle) est bien plus fidèle que la
     // ligne de crédit pour juger si elle colle toujours au sujet.
@@ -695,4 +746,7 @@ module.exports = {
   STOCK_MIN_RETAIN_SCORE,
   searchOpenverse,
   searchWikimedia,
+  SUMMER_TOPIC_RE,
+  WINTER_TOPIC_RE,
+  WINTER_PHOTO_RE,
 };

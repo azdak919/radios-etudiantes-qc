@@ -264,7 +264,14 @@
       "sourceImageCreditCited": true,
       "sourceImageCreditImageKey": "societe_christinelabrie_sourcepagefacebookderubaghazal.jpg",
       "sourceImageCreditRev": 2,
-      "leadImageReady": false
+      "leadImageReady": false,
+      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/4/47/Assembl%C3%A9e_nationale_du_Qu%C3%A9bec%2C_l%27H%C3%B4tel_du_Parlement%2C_fa%C3%A7ade_avec_ancien_entr%C3%A9_principal.jpg",
+      "imageTitle": "Assemblée nationale du Québec, l'Hôtel du Parlement, façade avec ancien entré principal",
+      "imageCredit": "Photo : Marc-Lautenbacher / CC BY-SA · Openverse",
+      "imageCreator": "Marc-Lautenbacher",
+      "imageLicense": "by-sa",
+      "imageProvider": "openverse",
+      "imageSourceUrl": "https://commons.wikimedia.org/w/index.php?curid=73170675"
     },
     {
       "source": "Le Collectif",
@@ -365,13 +372,13 @@
       "image": "",
       "_pageAuthor": "Erandy Rogel",
       "leadImageReady": false,
-      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/1/15/McGill_University_downtown_campus_14.JPG",
-      "imageTitle": "File:McGill University downtown campus 14.JPG",
-      "imageCredit": "Photo : Jeangagnon / CC BY-SA 3.0 · Wikimedia Commons",
-      "imageCreator": "Jeangagnon",
-      "imageLicense": "CC BY-SA 3.0",
-      "imageProvider": "wikimedia",
-      "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:McGill_University_downtown_campus_14.JPG"
+      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/6/62/Roddick_Gates_closed%2C_McGill_University%2C_July_17%2C_2024.jpg",
+      "imageTitle": "Roddick Gates closed, McGill University, July 17, 2024",
+      "imageCredit": "Photo : Gen. Quon / CC BY-SA 4.0 · Wikimedia Commons",
+      "imageCreator": "Gen. Quon",
+      "imageLicense": "CC BY-SA 4.0",
+      "imageProvider": "campus-bank",
+      "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Roddick_Gates_closed,_McGill_University,_July_17,_2024.jpg"
     },
     {
       "source": "The Link",
@@ -478,7 +485,14 @@
       "sourceImageCreditCited": true,
       "sourceImageCreditImageKey": "bruno-cormier-retraite-benevole.png",
       "leadImageReady": false,
-      "leadExcerpt": "« Les gens ont tendance à frapper un mur au moment de la retraite par manque de préparation », estime Le directeur général de la Fédération de l’âge d’or du Québec (Fadoq) pour la région Saguenay-Lac-Saint-Jean – Ungava, Patrice Saint-Pierre. (Photo : Léa Morin-Letort)"
+      "leadExcerpt": "« Les gens ont tendance à frapper un mur au moment de la retraite par manque de préparation », estime Le directeur général de la Fédération de l’âge d’or du Québec (Fadoq) pour la région Saguenay-Lac-Saint-Jean – Ungava, Patrice Saint-Pierre. (Photo : Léa Morin-Letort)",
+      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Pavillon_principal_du_C%C3%A9gep_de_Jonqui%C3%A8re.jpg",
+      "imageTitle": "Pavillon principal du Cégep de Jonquière",
+      "imageCredit": "Photo : Jeangagnon / CC BY-SA 4.0 · Wikimedia Commons",
+      "imageCreator": "Jeangagnon",
+      "imageLicense": "CC BY-SA 4.0",
+      "imageProvider": "campus-bank",
+      "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Pavillon_principal_du_C%C3%A9gep_de_Jonqui%C3%A8re.jpg"
     },
     {
       "source": "The Tribune",
@@ -646,11 +660,11 @@
       "leadImageReady": false,
       "stockImage": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Pavillon_principal_du_C%C3%A9gep_de_Jonqui%C3%A8re.jpg",
       "imageTitle": "Pavillon principal du Cégep de Jonquière",
-      "imageCredit": "Photo : Cegep jonquiere / CC BY-SA · Openverse",
-      "imageCreator": "Cegep jonquiere",
-      "imageLicense": "by-sa",
-      "imageProvider": "openverse",
-      "imageSourceUrl": "https://commons.wikimedia.org/w/index.php?curid=76366932"
+      "imageCredit": "Photo : Jeangagnon / CC BY-SA 4.0 · Wikimedia Commons",
+      "imageCreator": "Jeangagnon",
+      "imageLicense": "CC BY-SA 4.0",
+      "imageProvider": "campus-bank",
+      "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Pavillon_principal_du_C%C3%A9gep_de_Jonqui%C3%A8re.jpg"
     },
     {
       "source": "La Pige",
@@ -665,7 +679,14 @@
       "excerpt": "Les coiffeuses Kathy Blackburn et Manon Tremblay en sont à une semaine et un jour de la fermeture de leur commerce. (Crédit : Julianne Pilon) Après 40 ans, les coiffeuses Kathy Blackburn et Manon Tremblay accrochent leur paire de ciseaux. Le Salon L’image, situé à Place Centre-Ville Jonquière, fermera définitivement ses portes le 29 mai prochain.",
       "image": "",
       "leadExcerpt": "Après 40 ans, les coiffeuses Kathy Blackburn et Manon Tremblay accrochent leur paire de ciseaux. Le Salon L’image, situé à Place Centre-Ville Jonquière, fermera définitivement ses portes le 29 mai prochain.",
-      "leadImageReady": false
+      "leadImageReady": false,
+      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Pavillon_principal_du_C%C3%A9gep_de_Jonqui%C3%A8re.jpg",
+      "imageTitle": "Pavillon principal du Cégep de Jonquière",
+      "imageCredit": "Photo : Jeangagnon / CC BY-SA 4.0 · Wikimedia Commons",
+      "imageCreator": "Jeangagnon",
+      "imageLicense": "CC BY-SA 4.0",
+      "imageProvider": "campus-bank",
+      "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Pavillon_principal_du_C%C3%A9gep_de_Jonqui%C3%A8re.jpg"
     },
     {
       "source": "La Pige",
@@ -680,7 +701,14 @@
       "excerpt": "Le Centre Mamik a déposé une demande de projet pilote pour donner accès à des services de halte garderie, spécifiquement pour les parents qui sont étudiants. (Crédit : Tirée de Facebook / Centre Mamik) Le gouvernement du Québec a annoncé un investissement de près de cinq millions de dollars pour soutenir 28 projets d’infrastructures destinées aux jeunes de 12 à 35 ans, jeudi.",
       "image": "",
       "leadExcerpt": "Le Centre Mamik a déposé une demande de projet pilote pour donner accès à des services de halte garderie, spécifiquement pour les parents qui sont étudiants. (Crédit : Tirée de Facebook / Centre Mamik)",
-      "leadImageReady": false
+      "leadImageReady": false,
+      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Pavillon_principal_du_C%C3%A9gep_de_Jonqui%C3%A8re.jpg",
+      "imageTitle": "Pavillon principal du Cégep de Jonquière",
+      "imageCredit": "Photo : Jeangagnon / CC BY-SA 4.0 · Wikimedia Commons",
+      "imageCreator": "Jeangagnon",
+      "imageLicense": "CC BY-SA 4.0",
+      "imageProvider": "campus-bank",
+      "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Pavillon_principal_du_C%C3%A9gep_de_Jonqui%C3%A8re.jpg"
     },
     {
       "source": "La Pige",
@@ -718,13 +746,13 @@
       "image": "",
       "leadExcerpt": "Le concours « Jeunes auteurs à vos crayons! » était dans la région mardi, en compagnie de sa marraine Frédérique Dufort, écrivaine et comédienne, pour distribuer des prix destinés aux élèves. La thématique cette année, « Le pouvoir des mots », orientera le travail de 2346 participants provenant de 160 écoles à travers le Québec et le Canada francophone.",
       "leadImageReady": false,
-      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/6/68/Peupl%C3%A9_jeunes_%C3%A9poux_la_terre_en_abondance._9%2C_G.14054.jpg",
-      "imageTitle": "Peuplé jeunes époux la terre en abondance. 9, G.14054",
+      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Peupl%C3%A9_jeunes_%C3%A9poux_la_terre_en_abondance._9%2C_G.14054%282%29.jpg",
+      "imageTitle": "Peuplé jeunes époux la terre en abondance. 9, G.14054(2)",
       "imageCredit": "Photo : Guérard, Nicolas (vers 1648 - Paris, 1719), dessinateur / CC0 · Openverse",
       "imageCreator": "Guérard, Nicolas (vers 1648 - Paris, 1719), dessinateur",
       "imageLicense": "cc0",
       "imageProvider": "openverse",
-      "imageSourceUrl": "https://commons.wikimedia.org/w/index.php?curid=132253024"
+      "imageSourceUrl": "https://commons.wikimedia.org/w/index.php?curid=132253051"
     },
     {
       "source": "La Pige",
@@ -742,11 +770,11 @@
       "leadImageReady": false,
       "stockImage": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Pavillon_principal_du_C%C3%A9gep_de_Jonqui%C3%A8re.jpg",
       "imageTitle": "Pavillon principal du Cégep de Jonquière",
-      "imageCredit": "Photo : Cegep jonquiere / CC BY-SA · Openverse",
-      "imageCreator": "Cegep jonquiere",
-      "imageLicense": "by-sa",
-      "imageProvider": "openverse",
-      "imageSourceUrl": "https://commons.wikimedia.org/w/index.php?curid=76366932"
+      "imageCredit": "Photo : Jeangagnon / CC BY-SA 4.0 · Wikimedia Commons",
+      "imageCreator": "Jeangagnon",
+      "imageLicense": "CC BY-SA 4.0",
+      "imageProvider": "campus-bank",
+      "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Pavillon_principal_du_C%C3%A9gep_de_Jonqui%C3%A8re.jpg"
     },
     {
       "source": "La Pige",
@@ -760,7 +788,14 @@
       "date": "2026-05-20T21:15:57.000Z",
       "excerpt": "Le phénomène climatique influence surtout les températures de la côte Ouest de l’Amérique. (Crédit photo : Fatih Turan, Pexels). Le phénomène météorologique El Niño devrait s’amorcer dans le mois de juin. Un été plus frais et un hiver plus doux sont prévus cette année au Québec. Le météorologue d’Environnement Canada, Julien Pellerin, estime qu’El Niño a 82 % de chance de se concrétiser.",
       "image": "",
-      "leadImageReady": false
+      "leadImageReady": false,
+      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Pavillon_principal_du_C%C3%A9gep_de_Jonqui%C3%A8re.jpg",
+      "imageTitle": "Pavillon principal du Cégep de Jonquière",
+      "imageCredit": "Photo : Jeangagnon / CC BY-SA 4.0 · Wikimedia Commons",
+      "imageCreator": "Jeangagnon",
+      "imageLicense": "CC BY-SA 4.0",
+      "imageProvider": "campus-bank",
+      "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Pavillon_principal_du_C%C3%A9gep_de_Jonqui%C3%A8re.jpg"
     },
     {
       "source": "La Pige",
@@ -1111,20 +1146,20 @@
       "image": "https://www.exemplaire.com.ulaval.ca/wp-content/uploads/2026/05/Tommy-Douglas-and-David-Lewis-e1778479875681.jpg",
       "leadExcerpt": "Le 29 mars dernier, Avi Lewis a été élu chef du Nouveau Parti démocratique (NPD) avec l'appui de 56 % des 71 000 membres qui ont voté. Il succède ainsi à Jagmeet Singh, qui a mené le parti fédéral à une défaite historique l’an dernier. Ouvertement anticapitaliste et populiste, Avi Lewis mise sur un retour assumé à gauche pour relancer le NPD. Pour d’autres militants, le parti est en train de se radicaliser.",
       "leadImageReady": false,
-      "stockImage": "https://live.staticflickr.com/7389/13906464179_52dff0de73_b.jpg",
-      "imageTitle": "Campus de l'Université Laval",
-      "imageCredit": "Photo : abdallahh / CC BY · Openverse",
-      "imageCreator": "abdallahh",
-      "imageLicense": "by",
-      "imageProvider": "openverse",
-      "imageSourceUrl": "https://www.flickr.com/photos/22168167@N00/13906464179",
       "sourceImageCredit": "Crédit photo : L'Exemplaire",
       "sourceImageCreator": "",
       "sourceImageCreditUrl": "https://www.exemplaire.com.ulaval.ca/a-la-une/le-npd-soigne-t-il-sa-gauche-ou-se-radicalise-t-il/?utm_source=rss&utm_medium=rss&utm_campaign=le-npd-soigne-t-il-sa-gauche-ou-se-radicalise-t-il",
       "sourceImageCreditFrom": "media",
       "sourceImageCreditCited": false,
       "sourceImageCreditImageKey": "tommy-douglas-and-david-lewis-e1778479875681.jpg",
-      "sourceImageCreditRev": 2
+      "sourceImageCreditRev": 2,
+      "stockImage": "https://live.staticflickr.com/2269/1810668659_b1ecdf2c36_b.jpg",
+      "imageTitle": "NPD-Demo-in-Ffm",
+      "imageCredit": "Photo : tetedelacourse / CC BY-SA · Openverse",
+      "imageCreator": "tetedelacourse",
+      "imageLicense": "by-sa",
+      "imageProvider": "openverse",
+      "imageSourceUrl": "https://www.flickr.com/photos/66535111@N00/1810668659"
     },
     {
       "source": "L'Exemplaire",
@@ -1428,15 +1463,15 @@
       "sourceImageCreditCited": false,
       "sourceImageCreditImageKey": "184d4fb9-9e4f-42a0-a517-480fdbd94c4f_1280x1280.png",
       "leadImageReady": false,
-      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/4/44/Huron_River_from_Concordia_University_campus%2C_4090_Geddes_Road%2C_Ann_Arbor%2C_Michigan_-_panoramio.jpg",
-      "imageTitle": "Huron River from Concordia University campus, 4090 Geddes Road, Ann Arbor, Michigan - panoramio",
-      "imageCredit": "Photo : Dwight Burdette / CC BY · Openverse",
-      "imageCreator": "Dwight Burdette",
-      "imageLicense": "by",
-      "imageProvider": "openverse",
-      "imageSourceUrl": "https://commons.wikimedia.org/w/index.php?curid=54730039",
       "sourceImageCreditRev": 2,
-      "_retainedFromCache": true
+      "_retainedFromCache": true,
+      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/1/16/CJ_Building%2C_Loyola_Campus%2C_Communication_Studies%2C_Concordia_University.jpg",
+      "imageTitle": "CJ Building, Loyola Campus, Concordia University",
+      "imageCredit": "Photo : Gen. Quon / CC BY-SA 4.0 · Wikimedia Commons",
+      "imageCreator": "Gen. Quon",
+      "imageLicense": "CC BY-SA 4.0",
+      "imageProvider": "campus-bank",
+      "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:CJ_Building,_Loyola_Campus,_Communication_Studies,_Concordia_University.jpg"
     },
     {
       "source": "Montréal Campus",
@@ -1689,7 +1724,14 @@
       "excerpt": "Across the 18 months she has lived in her Plateau apartment, Alice Lee, U3 Arts & Science, has had her water shut off 13 times. Most recently—in February 2026—she turned on her tap to find the water running yellow, as she recounted in an interview with The Tribune . Lee explained that her building’s maintenance worker was unequipped to deal with the problem.",
       "image": "",
       "leadExcerpt": "Across the 18 months she has lived in her Plateau apartment, Alice Lee, U3 Arts & Science, has had her water shut off 13 times. Most recently—in February 2026—she turned on her tap to find the water running yellow, as she recounted in an interview with The Tribune . Lee explained that her building’s maintenance worker was unequipped to deal with the problem.",
-      "leadImageReady": false
+      "leadImageReady": false,
+      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/e/e8/Roddick_Gates_%28McGill_University%29_2005-09-02.jpg",
+      "imageTitle": "Roddick Gates, McGill University",
+      "imageCredit": "Photo : Acarpentier / CC BY 2.5 · Wikimedia Commons",
+      "imageCreator": "Acarpentier",
+      "imageLicense": "CC BY 2.5",
+      "imageProvider": "campus-bank",
+      "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Roddick_Gates_(McGill_University)_2005-09-02.jpg"
     },
     {
       "source": "The Tribune",
@@ -1841,14 +1883,14 @@
       "sourceImageCreditCited": false,
       "sourceImageCreditImageKey": "184d4fb9-9e4f-42a0-a517-480fdbd94c4f_1280x1280.png",
       "leadImageReady": false,
-      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/4/44/Huron_River_from_Concordia_University_campus%2C_4090_Geddes_Road%2C_Ann_Arbor%2C_Michigan_-_panoramio.jpg",
-      "imageCredit": "Photo : Dwight Burdette / CC BY · Openverse",
-      "imageCreator": "Dwight Burdette",
-      "imageLicense": "by",
-      "imageProvider": "openverse",
-      "imageSourceUrl": "https://commons.wikimedia.org/w/index.php?curid=54730039",
-      "imageTitle": "Huron River from Concordia University campus, 4090 Geddes Road, Ann Arbor, Michigan - panoramio",
-      "_retainedFromCache": true
+      "_retainedFromCache": true,
+      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/1/16/CJ_Building%2C_Loyola_Campus%2C_Communication_Studies%2C_Concordia_University.jpg",
+      "imageTitle": "CJ Building, Loyola Campus, Concordia University",
+      "imageCredit": "Photo : Gen. Quon / CC BY-SA 4.0 · Wikimedia Commons",
+      "imageCreator": "Gen. Quon",
+      "imageLicense": "CC BY-SA 4.0",
+      "imageProvider": "campus-bank",
+      "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:CJ_Building,_Loyola_Campus,_Communication_Studies,_Concordia_University.jpg"
     },
     {
       "source": "Zone Campus",
@@ -1974,7 +2016,14 @@
       "sourceImageCreditCited": false,
       "sourceImageCreditImageKey": "img_0291-2.jpg",
       "sourceImageCreditRev": 2,
-      "leadImageReady": false
+      "leadImageReady": false,
+      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/e/e8/Komodo_dragon_%28Varanus_komodoensis%29.jpg",
+      "imageTitle": "File:Komodo dragon (Varanus komodoensis).jpg",
+      "imageCredit": "Photo : Charles J. Sharp / CC BY-SA 4.0 · Wikimedia Commons",
+      "imageCreator": "Charles J. Sharp",
+      "imageLicense": "CC BY-SA 4.0",
+      "imageProvider": "wikimedia",
+      "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Komodo_dragon_(Varanus_komodoensis).jpg"
     },
     {
       "source": "The Link",
@@ -2029,20 +2078,20 @@
       "excerpt": "Canada’s prison system is predicated on rehabilitation and reintegration—yet, the country’s own correctional service is defunding the most integral program to realizing that aim. Correctional Service Canada (CSC) has announced the suspension of its federal prison education program in Quebec correctional facilities, effective June 30, 2026.",
       "image": "https://www.thetribune.ca/wp-content/uploads/2026/04/Design-sans-titre.png",
       "leadImageReady": false,
-      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/4/4f/Redpath_Museum_at_McGill_University_campus_-_20251005_-_02.jpg",
-      "imageTitle": "Redpath Museum at McGill University campus - 20251005 - 02",
-      "imageCredit": "Photo : Sikander / CC BY-SA · Openverse",
-      "imageCreator": "Sikander",
-      "imageLicense": "by-sa",
-      "imageProvider": "openverse",
-      "imageSourceUrl": "https://commons.wikimedia.org/w/index.php?curid=176615695",
       "sourceImageCredit": "Photo credit: The Tribune",
       "sourceImageCreator": "",
       "sourceImageCreditUrl": "https://www.thetribune.ca/features/how-can-i-show-you-im-doing-better-if-theres-nothing-good-for-me-to-do/?utm_source=rss&utm_medium=rss&utm_campaign=how-can-i-show-you-im-doing-better-if-theres-nothing-good-for-me-to-do",
       "sourceImageCreditFrom": "media",
       "sourceImageCreditCited": false,
       "sourceImageCreditImageKey": "design-sans-titre.png",
-      "sourceImageCreditRev": 2
+      "sourceImageCreditRev": 2,
+      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/e/e8/Roddick_Gates_%28McGill_University%29_2005-09-02.jpg",
+      "imageTitle": "Roddick Gates, McGill University",
+      "imageCredit": "Photo : Acarpentier / CC BY 2.5 · Wikimedia Commons",
+      "imageCreator": "Acarpentier",
+      "imageLicense": "CC BY 2.5",
+      "imageProvider": "campus-bank",
+      "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Roddick_Gates_(McGill_University)_2005-09-02.jpg"
     },
     {
       "source": "The Link",
@@ -2062,7 +2111,14 @@
       "sourceImageCreditCited": false,
       "sourceImageCreditImageKey": "odie_harr-2.jpg",
       "sourceImageCreditRev": 2,
-      "leadImageReady": false
+      "leadImageReady": false,
+      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/1/16/CJ_Building%2C_Loyola_Campus%2C_Communication_Studies%2C_Concordia_University.jpg",
+      "imageTitle": "CJ Building, Loyola Campus, Concordia University",
+      "imageCredit": "Photo : Gen. Quon / CC BY-SA 4.0 · Wikimedia Commons",
+      "imageCreator": "Gen. Quon",
+      "imageLicense": "CC BY-SA 4.0",
+      "imageProvider": "campus-bank",
+      "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:CJ_Building,_Loyola_Campus,_Communication_Studies,_Concordia_University.jpg"
     },
     {
       "source": "The Link",
@@ -2075,8 +2131,8 @@
       "author": "Sean Richard",
       "date": "2026-04-12T01:14:00.000Z",
       "excerpt": "Lebanon and Palestine solidarity fund, Students for Consent Culture and the Spinach Collective to benefit from funding The Concordia Student Union passed eight motions during their regular council meeting on April 8. Graphic Naya Hachwa",
-      "image": "",
-      "leadImageReady": false
+      "image": "https://thelinknewspaper.ca/images/made/images/articles/_resized/00.graphics.CSU.Naya_Hachwa_900_674_90.jpeg",
+      "leadImageReady": true
     },
     {
       "source": "The McGill Daily",
@@ -2117,7 +2173,14 @@
       "sourceImageCreditCited": false,
       "sourceImageCreditImageKey": "screenshot_2026-04-11_17.01.52.png",
       "sourceImageCreditRev": 2,
-      "leadImageReady": false
+      "leadImageReady": false,
+      "stockImage": "https://live.staticflickr.com/65/187427874_ed13130a85_b.jpg",
+      "imageTitle": "Custer County District High School, Miles City",
+      "imageCredit": "Photo : dave_mcmt / CC BY · Openverse",
+      "imageCreator": "dave_mcmt",
+      "imageLicense": "by",
+      "imageProvider": "openverse",
+      "imageSourceUrl": "https://www.flickr.com/photos/30512529@N00/187427874"
     },
     {
       "source": "The Link",
@@ -2219,7 +2282,14 @@
       "sourceImageCreditCited": false,
       "sourceImageCreditImageKey": "12.news.aaronmaté.sean.online.courtesyaaronmaté.jpg",
       "sourceImageCreditRev": 2,
-      "leadImageReady": false
+      "leadImageReady": false,
+      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/1/16/CJ_Building%2C_Loyola_Campus%2C_Communication_Studies%2C_Concordia_University.jpg",
+      "imageTitle": "CJ Building, Loyola Campus, Concordia University",
+      "imageCredit": "Photo : Gen. Quon / CC BY-SA 4.0 · Wikimedia Commons",
+      "imageCreator": "Gen. Quon",
+      "imageLicense": "CC BY-SA 4.0",
+      "imageProvider": "campus-bank",
+      "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:CJ_Building,_Loyola_Campus,_Communication_Studies,_Concordia_University.jpg"
     },
     {
       "source": "The Link",
@@ -2274,20 +2344,20 @@
       "excerpt": "“I got in an accident that involved some sea urchins,” Natalie Joy Gale, a PhD student in McGill’s Department of History and Classical Studies, said in an interview with //The Tribune//. Gale recalls wiping out in an ‘urchin-y’ area of reef while surfing in Puerto Rico, resulting in several sea [Read More]",
       "image": "https://www.thetribune.ca/wp-content/uploads/2026/04/bottle.png",
       "leadImageReady": false,
-      "stockImage": "https://live.staticflickr.com/4532/38561519546_37d0d16ddd_b.jpg",
-      "imageTitle": "Everything ends, even a life",
-      "imageCredit": "Photo : Marie-Baeten / CC BY · Openverse",
-      "imageCreator": "Marie-Baeten",
-      "imageLicense": "by",
-      "imageProvider": "openverse",
-      "imageSourceUrl": "https://www.flickr.com/photos/155423788@N03/38561519546",
       "sourceImageCredit": "Photo credit: The Tribune",
       "sourceImageCreator": "",
       "sourceImageCreditUrl": "https://www.thetribune.ca/features/your-health-your-problem/?utm_source=rss&utm_medium=rss&utm_campaign=your-health-your-problem",
       "sourceImageCreditFrom": "media",
       "sourceImageCreditCited": false,
       "sourceImageCreditImageKey": "bottle.png",
-      "sourceImageCreditRev": 2
+      "sourceImageCreditRev": 2,
+      "stockImage": "https://live.staticflickr.com/4532/38561519546_37d0d16ddd_b.jpg",
+      "imageTitle": "Everything ends, even a life",
+      "imageCredit": "Photo : Marie-Baeten / CC BY · Openverse",
+      "imageCreator": "Marie-Baeten",
+      "imageLicense": "by",
+      "imageProvider": "openverse",
+      "imageSourceUrl": "https://www.flickr.com/photos/155423788@N03/38561519546"
     },
     {
       "source": "The Tribune",
@@ -2323,13 +2393,14 @@
       "excerpt": "In episode 9 of Financing My Future , Christelle shares how her stable, supported reality contrasts sharply with the typical struggling student narrative. A 20-year-old journalism student at Concordia and The Concordian’ s Podcast Editor, she’s grown up with her needs fully",
       "image": "",
       "leadImageReady": false,
-      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/d/d8/Don%27t_Fuck_up_our_future_-_Melbourne_climate_march_for_our_future_-_-stopAdani_-_IMG_3834_%2845316168585%29.jpg",
-      "imageCredit": "Photo : John Englart from Fawkner, Australia / CC BY-SA 2.0 · Wikimedia Commons",
-      "imageCreator": "John Englart from Fawkner, Australia",
-      "imageLicense": "CC BY-SA 2.0",
-      "imageProvider": "wikimedia",
-      "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Don%27t_Fuck_up_our_future_-_Melbourne_climate_march_for_our_future_-_-stopAdani_-_IMG_3834_(45316168585).jpg",
-      "_retainedFromCache": true
+      "stockImage": "https://live.staticflickr.com/65535/48138695012_127f39ea0f_b.jpg",
+      "imageCredit": "Photo : jurvetson / CC BY · Openverse",
+      "imageCreator": "jurvetson",
+      "imageLicense": "by",
+      "imageProvider": "openverse",
+      "imageSourceUrl": "https://www.flickr.com/photos/44124348109@N01/48138695012",
+      "_retainedFromCache": true,
+      "imageTitle": "CONGRATS to Commonwealth Fusion Systems (CFS) on closing their $115M Series A round"
     },
     {
       "source": "The Tribune",
@@ -2344,13 +2415,13 @@
       "excerpt": "The Tribune ‘s special issue for the Winter 2026 semester was centred around the theme of ‘ memory ,’ with our writers, staff, editors, and creative team discussing the role of institutional, collective, and personal memory in society, politics, educational institutions, and more.",
       "image": "",
       "leadImageReady": false,
-      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/4/4f/Redpath_Museum_at_McGill_University_campus_-_20251005_-_02.jpg",
-      "imageTitle": "Redpath Museum at McGill University campus - 20251005 - 02",
-      "imageCredit": "Photo : Sikander / CC BY-SA · Openverse",
-      "imageCreator": "Sikander",
-      "imageLicense": "by-sa",
-      "imageProvider": "openverse",
-      "imageSourceUrl": "https://commons.wikimedia.org/w/index.php?curid=176615695"
+      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/6/63/Conrad_Poirier_Winter_Montreal.JPG",
+      "imageTitle": "File:Conrad Poirier Winter Montreal.JPG",
+      "imageCredit": "Photo : Conrad Poirier / PUBLIC DOMAIN · Wikimedia Commons",
+      "imageCreator": "Conrad Poirier",
+      "imageLicense": "Public domain",
+      "imageProvider": "wikimedia",
+      "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Conrad_Poirier_Winter_Montreal.JPG"
     },
     {
       "source": "The Tribune",
@@ -2652,13 +2723,13 @@
       "sourceImageCreditImageKey": "opinions_1_step-outside_cred-piper-howell.jpg",
       "sourceImageCreditRev": 2,
       "leadImageReady": false,
-      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/b/b0/Bishop%27s_University_campus_2011_03.jpg",
-      "imageTitle": "Bishop's University campus 2011 03",
-      "imageCredit": "Photo : JasonParis / CC BY · Openverse",
-      "imageCreator": "JasonParis",
-      "imageLicense": "by",
-      "imageProvider": "openverse",
-      "imageSourceUrl": "https://commons.wikimedia.org/w/index.php?curid=28810621"
+      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/e/ea/Bishop%27s_University_McGreer_Hall.jpg",
+      "imageTitle": "Bishop's University McGreer Hall",
+      "imageCredit": "Photo : Balcer / CC BY 3.0 · Wikimedia Commons",
+      "imageCreator": "Balcer",
+      "imageLicense": "CC BY 3.0",
+      "imageProvider": "campus-bank",
+      "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Bishop%27s_University_McGreer_Hall.jpg"
     },
     {
       "source": "The Campus",
@@ -2701,13 +2772,13 @@
       "sourceImageCreditImageKey": "opinions_3_graduationcatchingup_credlatoyasimms.png",
       "sourceImageCreditRev": 2,
       "leadImageReady": false,
-      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/b/b0/Bishop%27s_University_campus_2011_03.jpg",
-      "imageTitle": "Bishop's University campus 2011 03",
-      "imageCredit": "Photo : JasonParis / CC BY · Openverse",
-      "imageCreator": "JasonParis",
-      "imageLicense": "by",
-      "imageProvider": "openverse",
-      "imageSourceUrl": "https://commons.wikimedia.org/w/index.php?curid=28810621"
+      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/b/b3/Bishop%27s_University_campus_2011.jpg",
+      "imageTitle": "Bishop's University campus 2011",
+      "imageCredit": "Photo : Balcer / CC BY 3.0 · Wikimedia Commons",
+      "imageCreator": "Balcer",
+      "imageLicense": "CC BY 3.0",
+      "imageProvider": "campus-bank",
+      "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Bishop%27s_University_campus_2011.jpg"
     },
     {
       "source": "The Campus",
@@ -2791,7 +2862,14 @@
       "date": "2026-04-06T12:14:21.000Z",
       "excerpt": "Abigail Epstein – Layout Editor While Mars in Aries imparts action, Apr. 9, the last quarter moon cautions transition as the tune of its emotional tide, Apr. 10. Aries: You may feel conflicted, chasing the close of a cycle with sudden inspirations. Try to direct your drive",
       "image": "",
-      "leadImageReady": false
+      "leadImageReady": false,
+      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/b/b3/Bishop%27s_University_campus_2011.jpg",
+      "imageTitle": "Bishop's University campus 2011",
+      "imageCredit": "Photo : Balcer / CC BY 3.0 · Wikimedia Commons",
+      "imageCreator": "Balcer",
+      "imageLicense": "CC BY 3.0",
+      "imageProvider": "campus-bank",
+      "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Bishop%27s_University_campus_2011.jpg"
     },
     {
       "source": "The Campus",
@@ -2848,13 +2926,13 @@
       "excerpt": "Listen now | In this last episode of Read It Up, Assistant Arts and Culture Editor Kasi Peri talks about the novel The Castle of Otranto by Horace Walpole.",
       "image": "",
       "leadImageReady": false,
-      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/8/80/Assistant_SecDef_visits_1ID_in_Poland_%284592025%29.jpg",
-      "imageCredit": "Photo : U.S. Army CAB-1ID by Master Sgt. Nathan Hoskins / PUBLIC DOMAIN · Wikimedia Commons",
-      "imageCreator": "U.S. Army CAB-1ID by Master Sgt. Nathan Hoskins",
-      "imageLicense": "Public domain",
-      "imageProvider": "wikimedia",
-      "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Assistant_SecDef_visits_1ID_in_Poland_(4592025).jpg",
-      "imageTitle": "File:Assistant SecDef visits 1ID in Poland (4592025).jpg",
+      "stockImage": "https://live.staticflickr.com/3676/13430312945_c3166853ff_b.jpg",
+      "imageCredit": "Photo : Roger Blackwell / CC BY · Openverse",
+      "imageCreator": "Roger Blackwell",
+      "imageLicense": "by",
+      "imageProvider": "openverse",
+      "imageSourceUrl": "https://www.flickr.com/photos/10630857@N04/13430312945",
+      "imageTitle": "Teachers listening carefully to a speaker at their strike rally in front of the Forum, Norwich this lunchtime",
       "_retainedFromCache": true
     },
     {
@@ -3342,13 +3420,6 @@
       "sourceImageCreditImageKey": "coinqueer-1.jpeg",
       "sourceImageCreditRev": 2,
       "leadImageReady": false,
-      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/b/be/Universit%C3%A9_McGill%2C_Biology_Building%2C_845%2C_rue_Sherbrooke_Ouest%2C_Montr%C3%A9al_face_lat%C3%A9rale_gauche_11-d.na.civile-91-889.jpg",
-      "imageTitle": "Université McGill, Biology Building, 845, rue Sherbrooke Ouest, Montréal face latérale gauche 11-d.na.civile-91-889",
-      "imageCredit": "Photo : Groupe de recherche en art du Québec / CC BY-SA · Openverse",
-      "imageCreator": "Groupe de recherche en art du Québec",
-      "imageLicense": "by-sa",
-      "imageProvider": "openverse",
-      "imageSourceUrl": "https://commons.wikimedia.org/w/index.php?curid=104663467",
       "leadExcerpt": "Deux hommes hétéros imitent une voix, se prennent par la taille, font semblant d’être en couple pour une photo, puis éclatent de rire. L’un ajoute « no homo » et tout rentre dans l’ordre. Pendant ce temps, un homme gai tient la main de son partenaire. Il surveille autour de lui, sonde le quartier, évalue le risque. Pour les uns, l’homosexualité est un prétexte pour rire. Pour les autres, c’est juste une vie."
     },
     {
@@ -3495,14 +3566,7 @@
       "sourceImageCreditCited": true,
       "sourceImageCreditImageKey": "sports_1_bu-club-hockey_credits_courteousy-of-bu-club-hockey-team.jpg",
       "sourceImageCreditRev": 2,
-      "leadImageReady": false,
-      "stockImage": "https://live.staticflickr.com/2690/4397427381_ca3a0e7c13_b.jpg",
-      "imageTitle": "Men's Gold Medal: Canada vs. USA",
-      "imageCredit": "Photo : s.yume / CC BY · Openverse",
-      "imageCreator": "s.yume",
-      "imageLicense": "by",
-      "imageProvider": "openverse",
-      "imageSourceUrl": "https://www.flickr.com/photos/24503701@N02/4397427381"
+      "leadImageReady": false
     },
     {
       "source": "The Campus",
@@ -3586,14 +3650,7 @@
       "sourceImageCreditCited": true,
       "sourceImageCreditImageKey": "opinions_2_histories-rhyming_cred-bu-snow-instagram.jpeg",
       "sourceImageCreditRev": 2,
-      "leadImageReady": false,
-      "stockImage": "https://live.staticflickr.com/6008/5982053193_8dbf0e07b0_b.jpg",
-      "imageTitle": "Territorial Enterprise & Grants General Store",
-      "imageCredit": "Photo : Renodesertfoxstill / CC BY · Openverse",
-      "imageCreator": "Renodesertfoxstill",
-      "imageLicense": "by",
-      "imageProvider": "openverse",
-      "imageSourceUrl": "https://www.flickr.com/photos/65392060@N02/5982053193"
+      "leadImageReady": false
     },
     {
       "source": "The Campus",
@@ -3629,13 +3686,13 @@
       "excerpt": "Evan Chartrand – Contributor A student-run initiative has begun offering affordable vehicle maintenance services to peers, aiming to reduce the financial burden of car ownership while building practical automotive experience within the campus community. Image courtesy of Evan",
       "image": "",
       "leadImageReady": false,
-      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/b/b0/Bishop%27s_University_campus_2011_03.jpg",
-      "imageTitle": "Bishop's University campus 2011 03",
-      "imageCredit": "Photo : JasonParis / CC BY · Openverse",
-      "imageCreator": "JasonParis",
-      "imageLicense": "by",
-      "imageProvider": "openverse",
-      "imageSourceUrl": "https://commons.wikimedia.org/w/index.php?curid=28810621"
+      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/e/ea/Bishop%27s_University_McGreer_Hall.jpg",
+      "imageTitle": "Bishop's University McGreer Hall",
+      "imageCredit": "Photo : Balcer / CC BY 3.0 · Wikimedia Commons",
+      "imageCreator": "Balcer",
+      "imageLicense": "CC BY 3.0",
+      "imageProvider": "campus-bank",
+      "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Bishop%27s_University_McGreer_Hall.jpg"
     },
     {
       "source": "The Campus",
@@ -3776,13 +3833,13 @@
       "excerpt": "Every year, March 8 serves as a benchmark to gauge the causes that women are fighting for, a moment to reflect on the progress of last year’s concerns, and on the wave of new ones that have since emerged. This year, indignation towards legislative amendments in the province",
       "image": "",
       "leadImageReady": false,
-      "stockImage": "https://live.staticflickr.com/65535/50059063661_3c02e2a47f_b.jpg",
-      "imageTitle": "Petty Officer Second Class, USNA PAO LPO",
-      "imageCredit": "Photo : United States Naval Academy Photo Archive / Domaine public · Openverse",
-      "imageCreator": "United States Naval Academy Photo Archive",
-      "imageLicense": "pdm",
-      "imageProvider": "openverse",
-      "imageSourceUrl": "https://www.flickr.com/photos/49251707@N07/50059063661"
+      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/e/e8/Roddick_Gates_%28McGill_University%29_2005-09-02.jpg",
+      "imageTitle": "Roddick Gates, McGill University",
+      "imageCredit": "Photo : Acarpentier / CC BY 2.5 · Wikimedia Commons",
+      "imageCreator": "Acarpentier",
+      "imageLicense": "CC BY 2.5",
+      "imageProvider": "campus-bank",
+      "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Roddick_Gates_(McGill_University)_2005-09-02.jpg"
     },
     {
       "source": "The McGill Daily",
@@ -3946,14 +4003,14 @@
       "excerpt": "In this episode of Read It Up, Assistant Arts and Culture Editor Kasi Peri delves into the vampiric world of Joseph Sheridan Le Fanu 1872 novel Carmilla. She covers the sapphic aspects of the novel and the author’s family life. It is considered to be one of the first vampire",
       "image": "",
       "leadImageReady": false,
-      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/4/44/Huron_River_from_Concordia_University_campus%2C_4090_Geddes_Road%2C_Ann_Arbor%2C_Michigan_-_panoramio.jpg",
-      "imageCredit": "Photo : Dwight Burdette / CC BY · Openverse",
-      "imageCreator": "Dwight Burdette",
-      "imageLicense": "by",
-      "imageProvider": "openverse",
-      "imageSourceUrl": "https://commons.wikimedia.org/w/index.php?curid=54730039",
-      "imageTitle": "Huron River from Concordia University campus, 4090 Geddes Road, Ann Arbor, Michigan - panoramio",
-      "_retainedFromCache": true
+      "_retainedFromCache": true,
+      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/1/16/CJ_Building%2C_Loyola_Campus%2C_Communication_Studies%2C_Concordia_University.jpg",
+      "imageTitle": "CJ Building, Loyola Campus, Concordia University",
+      "imageCredit": "Photo : Gen. Quon / CC BY-SA 4.0 · Wikimedia Commons",
+      "imageCreator": "Gen. Quon",
+      "imageLicense": "CC BY-SA 4.0",
+      "imageProvider": "campus-bank",
+      "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:CJ_Building,_Loyola_Campus,_Communication_Studies,_Concordia_University.jpg"
     },
     {
       "source": "Le Délit",
@@ -3998,13 +4055,6 @@
       "sourceImageCreditCited": true,
       "sourceImageCreditImageKey": "maga_marius.png",
       "leadImageReady": false,
-      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/b/be/Universit%C3%A9_McGill%2C_Biology_Building%2C_845%2C_rue_Sherbrooke_Ouest%2C_Montr%C3%A9al_face_lat%C3%A9rale_gauche_11-d.na.civile-91-889.jpg",
-      "imageTitle": "Université McGill, Biology Building, 845, rue Sherbrooke Ouest, Montréal face latérale gauche 11-d.na.civile-91-889",
-      "imageCredit": "Photo : Groupe de recherche en art du Québec / CC BY-SA · Openverse",
-      "imageCreator": "Groupe de recherche en art du Québec",
-      "imageLicense": "by-sa",
-      "imageProvider": "openverse",
-      "imageSourceUrl": "https://commons.wikimedia.org/w/index.php?curid=104663467",
       "leadExcerpt": "L a montée en puissance de l’idéologie du mouvement politique Make America Great Again (MAGA) n’est pas qu’un accident ou qu’une simple parenthèse dans l’histoire américaine. Au contraire, ce fléau populiste est l’aboutissement rationnel d’un mariage longuement mijoté entre le conservatisme social, le néolibéralisme économique, et le sensationnalisme médiatique. Quoi qu’elle se vêtisse d’un nouvel habillage moderne et d’une esthétique grossière, cette fusion macabre porte en elle les caractéristiques héréditaires du fascisme, tel que le monde l’a vécu au 20e siècle."
     },
     {
@@ -4112,13 +4162,6 @@
       "sourceImageCreditImageKey": "7277bbff-865b-4f02-9806-7460993c06d7_2556x502.png",
       "leadImageReady": false,
       "sourceImageCreditRev": 2,
-      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/4/44/Huron_River_from_Concordia_University_campus%2C_4090_Geddes_Road%2C_Ann_Arbor%2C_Michigan_-_panoramio.jpg",
-      "imageTitle": "Huron River from Concordia University campus, 4090 Geddes Road, Ann Arbor, Michigan - panoramio",
-      "imageCredit": "Photo : Dwight Burdette / CC BY · Openverse",
-      "imageCreator": "Dwight Burdette",
-      "imageLicense": "by",
-      "imageProvider": "openverse",
-      "imageSourceUrl": "https://commons.wikimedia.org/w/index.php?curid=54730039",
       "_retainedFromCache": true
     },
     {
@@ -4202,11 +4245,11 @@
       "leadImageReady": false,
       "stockImage": "https://upload.wikimedia.org/wikipedia/commons/6/6c/C%C3%A9gep_du_Vieux_Montr%C3%A9al%2C_Nov_03_2022.jpg",
       "imageTitle": "Cégep du Vieux Montréal, Nov 03 2022",
-      "imageCredit": "Photo : D. Benjamin Miller / CC0 · Openverse",
-      "imageCreator": "D. Benjamin Miller",
-      "imageLicense": "cc0",
-      "imageProvider": "openverse",
-      "imageSourceUrl": "https://commons.wikimedia.org/w/index.php?curid=124989149"
+      "imageCredit": "Photo : Gen. Quon / CC BY-SA 4.0 · Wikimedia Commons",
+      "imageCreator": "Gen. Quon",
+      "imageLicense": "CC BY-SA 4.0",
+      "imageProvider": "campus-bank",
+      "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:C%C3%A9gep_du_Vieux_Montr%C3%A9al,_Nov_03_2022.jpg"
     },
     {
       "source": "Exil",

@@ -1,58 +1,60 @@
 {
-  "updated": "2026-07-09T16:26:57.141Z",
+  "updated": "2026-07-09T16:44:18.016Z",
   "total": 192,
-  "withPhoto": 150,
-  "withStock": 52,
-  "fullyCovered": 186,
-  "leadReadyPhotos": 122,
-  "pageScraped": 57,
-  "photosRecovered": 37,
-  "imagesCleared": 3,
+  "withPhoto": 151,
+  "withStock": 58,
+  "withCampusBank": 20,
+  "fullyCovered": 192,
+  "leadReadyPhotos": 128,
+  "pageScraped": 23,
+  "photosRecovered": 1,
+  "imagesCleared": 0,
   "stockSearches": 60,
-  "stockFound": 46,
+  "stockFound": 53,
+  "campusBankFound": 20,
   "mainPageLeadReady": true,
   "gaps": [
     {
       "title": "The Cruel Optimism of Summer",
       "link": "https://www.mcgilldaily.com/2026/07/the-cruel-optimism-of-summer/",
-      "reason": "stock-too-small",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/1/15/McGill_University_downtown_campus_14.JPG"
+      "reason": "campus-bank",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/6/62/Roddick_Gates_closed%2C_McGill_University%2C_July_17%2C_2024.jpg"
     },
     {
       "title": "Un hommage aux cyclistes décédés sur les routes",
       "link": "https://lapige.atmjonquiere.com/2026/05/21/les-cyclistes-sont-honores-au-lac-saint-jean/?utm_source=rss&utm_medium=rss&utm_campaign=les-cyclistes-sont-honores-au-lac-saint-jean",
-      "reason": "stock-too-small",
+      "reason": "campus-bank",
       "image": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Pavillon_principal_du_C%C3%A9gep_de_Jonqui%C3%A8re.jpg"
     },
     {
       "title": "Une page se tourne au Salon L’image de Jonquière",
       "link": "https://lapige.atmjonquiere.com/2026/05/21/une-page-se-tourne-au-salon-limage-de-jonquiere/?utm_source=rss&utm_medium=rss&utm_campaign=une-page-se-tourne-au-salon-limage-de-jonquiere",
-      "reason": "no-stock-match",
-      "image": null
+      "reason": "campus-bank",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Pavillon_principal_du_C%C3%A9gep_de_Jonqui%C3%A8re.jpg"
     },
     {
       "title": "Un investissement pour les jeunes « bienvenu » au Centre Mamik",
       "link": "https://lapige.atmjonquiere.com/2026/05/21/un-investissement-pour-les-jeunes-bienvenu-au-centre-mamik/?utm_source=rss&utm_medium=rss&utm_campaign=un-investissement-pour-les-jeunes-bienvenu-au-centre-mamik",
-      "reason": "no-stock-match",
-      "image": null
+      "reason": "campus-bank",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Pavillon_principal_du_C%C3%A9gep_de_Jonqui%C3%A8re.jpg"
     },
     {
       "title": "Jeunes auteurs, à vos crayons : le « pouvoir des mots » pour rejoindre les étudiants",
       "link": "https://lapige.atmjonquiere.com/2026/05/21/jeunes-auteurs-a-vos-crayons-le-pouvoir-des-mots-pour-rejoindre-les-etudiants/?utm_source=rss&utm_medium=rss&utm_campaign=jeunes-auteurs-a-vos-crayons-le-pouvoir-des-mots-pour-rejoindre-les-etudiants",
       "reason": "stock-too-small",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/6/68/Peupl%C3%A9_jeunes_%C3%A9poux_la_terre_en_abondance._9%2C_G.14054.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Peupl%C3%A9_jeunes_%C3%A9poux_la_terre_en_abondance._9%2C_G.14054%282%29.jpg"
     },
     {
       "title": "Un pont entre l’art et le travail de rue",
       "link": "https://lapige.atmjonquiere.com/2026/05/20/un-pont-entre-lart-et-le-travail-de-rue/?utm_source=rss&utm_medium=rss&utm_campaign=un-pont-entre-lart-et-le-travail-de-rue",
-      "reason": "stock-too-small",
+      "reason": "campus-bank",
       "image": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Pavillon_principal_du_C%C3%A9gep_de_Jonqui%C3%A8re.jpg"
     },
     {
       "title": "El Niño s’approche du Québec",
       "link": "https://lapige.atmjonquiere.com/2026/05/20/el-nino-sapproche-du-quebec/?utm_source=rss&utm_medium=rss&utm_campaign=el-nino-sapproche-du-quebec",
-      "reason": "no-stock-match",
-      "image": null
+      "reason": "campus-bank",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Pavillon_principal_du_C%C3%A9gep_de_Jonqui%C3%A8re.jpg"
     },
     {
       "title": "Assistance technique en pharmacie : de premières portes ouvertes à Alma",
@@ -79,10 +81,10 @@
       "image": "https://lecollectif.ca/wp-content/uploads/2026/07/OBSESSIONS_CLUBSDESPORTS_ClubPleinAirAltitude_SourceFacebookClubPleinAirAltitude-1-768x1024.jpg"
     },
     {
-      "title": "CALAMINE : RAPPER AUTREMENT QUE LE « BOYS CLUB »",
-      "link": "https://quartierlibre.ca/calamine-rapper-autrement/",
-      "reason": "no-stock-match",
-      "image": "https://quartierlibre.ca/wp-content/uploads/2026/05/20_calamine-1.jpg"
+      "title": "Christine Labrie tourne la page sur huit ans comme députée de Sherbrooke",
+      "link": "https://lecollectif.ca/a-la-une/christine-labrie-tourne-la-page-sur-huit-ans-comme-deputee-de-sherbrooke/",
+      "reason": "stock-too-small",
+      "image": "https://lecollectif.ca/wp-content/uploads/2026/07/SOCIETE_ChristineLabrie_SourcePageFacebookDeRubaGhazal-819x1024.jpg"
     }
   ]
 }

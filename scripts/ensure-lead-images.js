@@ -29,6 +29,7 @@ const {
   sleep,
 } = require('./article-image-lib');
 const { findStockPhoto, cleanCreatorName, stockStillFits } = require('./stock-photo-lib');
+const { pickCampusPhoto, hasCampusBank } = require('./campus-photo-bank');
 const { pruneToFreshWindow, loadSourceRegistryMap, getBotHints } = require('./source-retention-lib');
 
 
@@ -138,6 +139,21 @@ async function tryUpgradeExistingImage(item, sourceMap = new Map()) {
   return false;
 }
 
+function applyPhotoFields(item, stock) {
+  item.stockImage = stock.stockImage;
+  item.imageTitle = stock.imageTitle || '';
+  item.imageCredit = stock.imageCredit;
+  item.imageCreator = stock.imageCreator || '';
+  item.imageLicense = stock.imageLicense;
+  item.imageProvider = stock.imageProvider;
+  item.imageSourceUrl = stock.imageSourceUrl;
+  clearLegacyFallback(item);
+}
+
+/**
+ * Photo libre thématique (Openverse / Commons) si le score est solide.
+ * Sinon banque campus curatée de l'établissement (dernier recours honnête).
+ */
 async function applyStockPhoto(item, sourceMap = new Map()) {
   if (await photoIsLeadReady(item)) return false;
   if (item.image && hasSourcePhoto(item, sourceMap)) {
@@ -146,19 +162,24 @@ async function applyStockPhoto(item, sourceMap = new Map()) {
       if (dims && meetsFeatureDisplaySize(dims.width, dims.height)) return false;
     }
   }
+
   const stock = await findStockPhoto(item);
-  if (!stock?.stockImage) return false;
+  if (stock?.stockImage) {
+    if (doUpdate) {
+      applyPhotoFields(item, stock);
+      const sourceReady = await markSourceLeadQuality(item);
+      if (!sourceReady) item.leadImageReady = false;
+    }
+    return true;
+  }
+
+  // Repli campus : pavillon / campus distinctif, pas une image « inventée »
+  // pour le sujet. Mieux qu'une photo hors-sujet ou un vide total.
+  const campus = pickCampusPhoto(item);
+  if (!campus?.stockImage) return false;
   if (doUpdate) {
-    item.stockImage = stock.stockImage;
-    item.imageTitle = stock.imageTitle || '';
-    item.imageCredit = stock.imageCredit;
-    item.imageCreator = stock.imageCreator || '';
-    item.imageLicense = stock.imageLicense;
-    item.imageProvider = stock.imageProvider;
-    item.imageSourceUrl = stock.imageSourceUrl;
-    const sourceReady = await markSourceLeadQuality(item);
-    if (!sourceReady) item.leadImageReady = false;
-    clearLegacyFallback(item);
+    applyPhotoFields(item, campus);
+    item.leadImageReady = false;
   }
   return true;
 }
@@ -183,6 +204,7 @@ async function main() {
   let pageScraped = 0;
   let photosRecovered = 0;
   let stockFound = 0;
+  let campusBankFound = 0;
   let stockSearches = 0;
   let imagesCleared = 0;
   const gaps = [];
@@ -301,14 +323,23 @@ async function main() {
     }
 
     stockSearches += 1;
+    const beforeProvider = item.imageProvider;
     const found = await applyStockPhoto(item, sourceMap);
-    if (found) stockFound += 1;
+    if (found) {
+      stockFound += 1;
+      if (doUpdate && item.imageProvider === 'campus-bank') campusBankFound += 1;
+      else if (!doUpdate && hasCampusBank(item.institution) && !beforeProvider) {
+        // dry-run : comptage approximatif via pick
+      }
+    }
     if (await photoIsLeadReady(item)) continue;
 
     gaps.push({
       title: item.title,
       link: item.link,
-      reason: found ? 'stock-too-small' : 'no-stock-match',
+      reason: found
+        ? (item.imageProvider === 'campus-bank' ? 'campus-bank' : 'stock-too-small')
+        : 'no-stock-match',
       image: item.image || item.stockImage || null,
     });
     await sleep(300);
@@ -316,6 +347,7 @@ async function main() {
 
   const withPhoto = items.filter((i) => i.image && isCandidateImageUrl(i.image)).length;
   const withStock = items.filter((i) => i.stockImage && isCandidateImageUrl(i.stockImage)).length;
+  const withCampus = items.filter((i) => i.imageProvider === 'campus-bank' && i.stockImage).length;
   const fullyCovered = items.filter((i) => hasUsableImage(i)).length;
   const leadReadyCount = (await Promise.all(items.map((i) => photoIsLeadReady(i)))).filter(Boolean).length;
 
@@ -324,6 +356,7 @@ async function main() {
     total: items.length,
     withPhoto,
     withStock,
+    withCampusBank: withCampus,
     fullyCovered,
     leadReadyPhotos: leadReadyCount,
     pageScraped,
@@ -331,6 +364,7 @@ async function main() {
     imagesCleared,
     stockSearches,
     stockFound,
+    campusBankFound,
     mainPageLeadReady: leadReadyCount >= Math.min(HERO_MIN_POOL, items.length),
     gaps: gaps.slice(0, 12),
   };
@@ -339,12 +373,12 @@ async function main() {
   console.log('==============');
   console.log(`Articles          : ${qc.total}`);
   console.log(`Photos source     : ${qc.withPhoto}`);
-  console.log(`Photos banque     : ${qc.withStock}`);
+  console.log(`Photos banque     : ${qc.withStock} (dont campus curaté : ${withCampus})`);
   console.log(`Photos vedette OK : ${qc.leadReadyPhotos}`);
   console.log(`Pages scrapées    : ${qc.pageScraped}`);
   if (qc.imagesCleared) console.log(`Photos invalides  : ${qc.imagesCleared} retirée(s)`);
   console.log(`Banques consultées: ${qc.stockSearches}`);
-  console.log(`Photos libres     : ${qc.stockFound}`);
+  console.log(`Photos libres     : ${qc.stockFound - campusBankFound} + campus ${campusBankFound}`);
   console.log(`Couverture totale : ${qc.fullyCovered}/${qc.total}`);
   console.log('Crédits photo     : voir scripts/verify-photo-credits.js');
 

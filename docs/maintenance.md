@@ -27,6 +27,7 @@ dans l'idéal, et ce qui reste volontairement manuel.
 | `radio-schedules.seed.json` | Config sources + grilles manuelles | humain + `discover-schedule-sources.js` |
 | `radio-schedules.json` | Grilles colligées « à l'antenne » (lu par le site) | `fetch-radio-schedules.js` |
 | `radio-nowplaying.json` | En cours + à venir (API live / grille / ICY) | `fetch-radio-nowplaying.js` (+ re-poll navigateur si `clientPoll`) |
+| Photos vedette | Source → scrape page → banque libre thématique → **campus curaté** | `ensure-lead-images.js` + `stock-photo-lib.js` + `campus-photo-bank.js` |
 | `bot-status.json` | Tableau de bord santé des bots | `maintain.js` |
 
 ---
