@@ -84,13 +84,19 @@ function scheduledSlotFor(now = new Date()) {
   if (!best || now - best > SCHEDULE_TOLERANCE_MS) return null;
   return best.toISOString();
 }
+const IS_CI = process.env.CI === 'true' || process.env.GITHUB_ACTIONS === 'true';
 const TIMEOUT = 15000;
-const ENRICH_TIMEOUT = 12000;
+/** En CI : timeouts plus courts — verify-authors / ensure-lead-images sont des steps séparés. */
+const ENRICH_TIMEOUT = IS_CI ? 8_000 : 12_000;
 const MAX_PER_SOURCE = 20;  // archive par journal (certains flux RSS en ont 18+)
 const MAX_WP_FEATURED = 8;  // vedettes WordPress (catégorie slider, etc.)
 const WP_FEATURED_SLUGS = ['slider', 'a-la-une', 'featured'];
-const MAX_ENRICH = 45;      // cap article-page fetches per run
-const MAX_AUTHOR_PAGES = 80; // vérification auteurs page (séparé de l'enrichissement)
+const MAX_ENRICH = IS_CI ? 12 : 45;      // cap article-page fetches per run
+/** 0 en CI : scripts/verify-authors.js s'en charge (évite double scrape + hang). */
+const MAX_AUTHOR_PAGES = IS_CI ? 0 : 40;
+/** Budget wall-clock phase enrich (async) — un item lent ne doit pas manger les 12 min. */
+const ENRICH_PHASE_BUDGET_MS = IS_CI ? 90_000 : 240_000;
+const ENRICH_HTML_CAP = IS_CI ? 80_000 : 200_000;
 
 const GENERIC_AUTHORS = /^(admin|administrator|administrateur|editor|éditeur|editeur|rédaction|redaction|staff|wordpress|webmaster|collectif|le collectif|tribune|link|daily|coordinating|exemplaire|quartier libre|zone campus|la pige|le délit|le delit|the link|the concordian|the tribune|the mcgill daily|the campus|the plant|theplantnews)$/i;
 
@@ -688,7 +694,7 @@ async function enrichItem(item, sourceByName = new Map()) {
   const html = await fetchText(item.link, 3, ENRICH_TIMEOUT);
   if (!html || html.length < 200) return item;
   // HTML tronqué pour parsers regex (évite hangs pathologiques WP)
-  const slim = html.length > 450_000 ? html.slice(0, 450_000) : html;
+  const slim = html.length > ENRICH_HTML_CAP ? html.slice(0, ENRICH_HTML_CAP) : html;
 
   const src = sourceByName.get(item.source);
   const imageHints = getBotHints(src, 'images');
@@ -700,33 +706,25 @@ async function enrichItem(item, sourceByName = new Map()) {
   const body = articleBodyHtml(slim);
 
   if (needsImageEnrichment(next, rejectPatterns, imageOptions)) {
-    const found = await withTimeout(
-      Promise.resolve().then(() => imageFromArticleHtml(slim, rejectPatterns, imageOptions)),
-      2000,
-      null,
-    );
-    if (found?.url && isCandidateImageUrl(found.url, rejectPatterns)) next.image = found.url;
-    else if (next.image && !isCandidateImageUrl(next.image, rejectPatterns)) next.image = '';
-  } else if (next.image) {
-    const found = await withTimeout(
-      Promise.resolve().then(() => imageFromArticleHtml(slim, rejectPatterns, imageOptions)),
-      2000,
-      null,
-    );
-    if (!found?.url && next.image) next.image = '';
-    else if (next.image && !isCandidateImageUrl(next.image, rejectPatterns)) next.image = '';
+    try {
+      const found = imageFromArticleHtml(slim, rejectPatterns, imageOptions);
+      if (found?.url && isCandidateImageUrl(found.url, rejectPatterns)) next.image = found.url;
+      else if (next.image && !isCandidateImageUrl(next.image, rejectPatterns)) next.image = '';
+    } catch { /* parse image fail-safe */ }
+  } else if (next.image && !isCandidateImageUrl(next.image, rejectPatterns)) {
+    next.image = '';
   }
 
-  const pageAuthor = await withTimeout(
-    Promise.resolve().then(() => authorFromArticleHtml(
+  // Auteur page : toujours sur HTML plafonné (author-lib).
+  let pageAuthor = '';
+  try {
+    pageAuthor = authorFromArticleHtml(
       slim,
       item.lang === 'en' ? 'en' : 'fr',
       authorHints,
       item.source,
-    )),
-    2500,
-    '',
-  );
+    ) || '';
+  } catch { /* parse author fail-safe */ }
   if (pageAuthor) {
     next._pageAuthor = pageAuthor;
   } else if (!next.author || isGenericAuthor(next.author)) {
@@ -781,9 +779,14 @@ async function enrichItems(items, feedDefaults = new Map(), sourceByName = new M
   const seen = new Set();
   let enriched = 0;
   let imagesAdded = 0;
+  const phaseStart = Date.now();
 
   for (const item of queue) {
     if (enriched >= MAX_ENRICH) break;
+    if (Date.now() - phaseStart > ENRICH_PHASE_BUDGET_MS) {
+      console.log(`↻ Enrich budget ${ENRICH_PHASE_BUDGET_MS / 1000}s atteint — suite du run sans enrich restant`);
+      break;
+    }
     if (!item.link || seen.has(item.link)) continue;
     seen.add(item.link);
 
@@ -791,14 +794,21 @@ async function enrichItems(items, feedDefaults = new Map(), sourceByName = new M
     const reject = imageRejectPatternsFromHints(hints);
     const opts = imageOptionsFromHints(hints);
     const hadImage = item.image && isCandidateImageUrl(item.image, reject) && !isWeakImageUrl(item.image, opts);
-    const updated = await enrichItem(item, sourceByName);
-    Object.assign(item, updated);
+    try {
+      const updated = await enrichItem(item, sourceByName);
+      Object.assign(item, updated);
+    } catch (err) {
+      console.log(`  ⚠ enrich skip ${item.source}: ${(err && err.message) || err}`);
+    }
     enriched += 1;
+    if (IS_CI && enriched % 3 === 0) {
+      console.log(`  … enrich ${enriched}/${MAX_ENRICH}`);
+    }
 
     const hasImage = item.image && isCandidateImageUrl(item.image, reject) && !isWeakImageUrl(item.image, opts);
     if (!hadImage && hasImage) imagesAdded += 1;
 
-    await sleep(250);
+    await sleep(IS_CI ? 80 : 250);
   }
 
   if (enriched) {
@@ -814,6 +824,10 @@ function authorPagePriority(item = {}, sourceByName = new Map()) {
 
 async function fetchPageAuthors(items, feedDefaults, existing = new Map(), sourceByName = new Map()) {
   const pageAuthors = new Map(existing);
+  if (MAX_AUTHOR_PAGES <= 0) {
+    console.log('↻ Auteurs page : reporté (verify-authors.js / MAX_AUTHOR_PAGES=0)');
+    return pageAuthors;
+  }
   const toFetch = items
     .filter(
       (item) => {
@@ -825,28 +839,30 @@ async function fetchPageAuthors(items, feedDefaults, existing = new Map(), sourc
     .sort((a, b) => authorPagePriority(a, sourceByName) - authorPagePriority(b, sourceByName));
 
   let fetched = 0;
+  const phaseStart = Date.now();
   for (const item of toFetch) {
     if (fetched >= MAX_AUTHOR_PAGES) break;
+    if (Date.now() - phaseStart > ENRICH_PHASE_BUDGET_MS) {
+      console.log('↻ Auteurs page : budget temps atteint — arrêt anticipé');
+      break;
+    }
     const key = normalizeArticleUrl(item.link);
     if (!key || pageAuthors.has(key)) continue;
 
     const html = await fetchText(item.link, 3, ENRICH_TIMEOUT);
     const authorHints = getBotHints(sourceByName.get(item.source), 'authors');
-    // authorFromArticleHtml peut pathologuer (regex) sur certains HTML WP —
-    // plafonner pour ne pas bloquer le job CI 40 min.
-    const author = await withTimeout(
-      Promise.resolve().then(() => authorFromArticleHtml(
-        html.length > 400_000 ? html.slice(0, 400_000) : html,
+    let author = '';
+    try {
+      author = authorFromArticleHtml(
+        (html || '').slice(0, ENRICH_HTML_CAP),
         item.lang === 'en' ? 'en' : 'fr',
         authorHints,
         item.source,
-      )),
-      2500,
-      '',
-    );
+      ) || '';
+    } catch { /* fail-safe */ }
     if (author) pageAuthors.set(key, author);
     fetched += 1;
-    await sleep(250);
+    await sleep(IS_CI ? 80 : 250);
   }
 
   if (fetched) {
@@ -998,6 +1014,7 @@ async function main() {
     }
   }
 
+  console.log('\nPhase enrichissement (images / extraits manquants)…');
   await enrichItems(all, feedDefaults, sourceByName);
 
   const pageAuthors = new Map();
@@ -1008,6 +1025,7 @@ async function main() {
       delete item._pageAuthorKey;
     }
   }
+  console.log('Phase auteurs page…');
   await fetchPageAuthors(all, feedDefaults, pageAuthors, sourceByName);
 
   for (let i = 0; i < all.length; i += 1) {

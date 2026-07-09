@@ -42,11 +42,15 @@ function canonicalizeEditorialAuthor(name = '') {
 }
 
 const CONTRIBUTOR_DASH = '(?:[–—\\-]|&#8211;|&ndash;|&mdash;)';
-/** Rôles de byline : Staff Writer, Sports Editor, Director of …, etc. */
+/**
+ * Rôles de byline : Staff Writer, Sports Editor, Director of …, etc.
+ * IMPORTANT : ne jamais utiliser * non borné sur [A-Za-z]+… — backtracking
+ * catastrophique sur des extraits sans tiret/rôle (hang CI 12+ min).
+ */
 const CONTRIBUTOR_ROLE = '(?:'
   + 'Contributor|Staff Writer|Staff|Reporter|Columnist|Correspondent'
   // « Sports Editor », « Arts & Culture Editor », « Managing Editor », …
-  + '|(?:[A-Za-z]+(?:\\s+|&amp;|&|\\s+and\\s+|\\s+&\\s+)?)*(?:Editor(?:-in-Chief)?|Writer)'
+  + '|(?:[A-Za-z]+(?:\\s+|&amp;|&|\\s+and\\s+|\\s+&\\s+)?){0,6}(?:Editor(?:-in-Chief)?|Writer)'
   + '|Director of [A-Za-z\\s&\'’.-]{2,40}'
   + '|Photographer|Illustrator|Photo Editor'
   + ')';
@@ -403,7 +407,8 @@ function trimMangledAuthor(name = '') {
 }
 
 function extractBylineFromText(text = '') {
-  const plain = stripHtml(text);
+  // Tête seulement : bylines en début d'extrait ; évite regex lourdes sur le corps.
+  const plain = stripHtml(text).slice(0, 400);
   if (EDITORIAL_BYLINE_RE.test(plain)) {
     return {
       author: 'La rédaction',
@@ -417,11 +422,14 @@ function extractBylineFromText(text = '') {
     };
   }
 
-  const contributor = plain.match(CONTRIBUTOR_BYLINE_RE);
-  if (contributor) {
-    const author = normalizeAuthor(contributor[1]);
-    const body = plain.slice(contributor[0].length).trim();
-    if (author && body.length >= 8) return { author, body };
+  // Contributor/role : uniquement si la tête ressemble à « Name – Role »
+  if (/[–—\-]/.test(plain.slice(0, 80))) {
+    const contributor = plain.match(CONTRIBUTOR_BYLINE_RE);
+    if (contributor) {
+      const author = normalizeAuthor(contributor[1]);
+      const body = plain.slice(contributor[0].length).trim();
+      if (author && body.length >= 8) return { author, body };
+    }
   }
 
   if (!/^(?:Par|By)\s+/i.test(plain)) return { author: '', body: plain };
@@ -558,6 +566,10 @@ function metaContent(html = '', key = '') {
  */
 function authorFromArticleHtml(html = '', lang = 'fr', hints = {}, sourceName = '') {
   if (!html || html.length < 200) return '';
+  // Plafond strict : sur un shell WP complet, les matchAll /[\s\S]*?/ figent
+  // l'event loop (job CI bloqué 12+ min après le fetch des sources).
+  const MAX_HTML = 80_000;
+  if (html.length > MAX_HTML) html = html.slice(0, MAX_HTML);
 
   const candidates = [];
   const l = lang === 'en' ? 'en' : 'fr';

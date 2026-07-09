@@ -549,6 +549,8 @@ function meetsFeatureDisplaySize(width = 0, height = 0) {
 }
 
 function imageFromArticleHtml(html = '', extraRejectPatterns = [], options = {}, baseUrl = '') {
+  // Plafond : parsers HTML WP sur pages monstrueuses (hang CPU / CI).
+  if (html && html.length > 150_000) html = html.slice(0, 150_000);
   const preferFirstContentImage = !!options.preferFirstContentImage;
   const imageRegion = preferFirstContentImage
     ? (articleBodyHtml(html) || articleImageRegions(html))

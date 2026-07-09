@@ -36,7 +36,8 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          # Node 20 déprécié sur les runners GitHub Actions (forçage vers 24).
+          node-version: '24'
 
       # github.event.schedule = expression cron exacte qui a déclenché le run.
       # Filet :20 — skip si un refresh a déjà eu lieu récemment.
@@ -73,7 +74,9 @@ jobs:
       - name: Fetch news feeds
         id: fetch
         if: steps.gate.outputs.skip != 'true'
-        timeout-minutes: 12
+        # Sources ~15s + enrich plafonné ~90s ; 12 min laissait un hang regex
+        # tuer tout le job. Filet 10 min suffisant avec plafonds CI.
+        timeout-minutes: 10
         run: node scripts/fetch-news.js --update
         env:
           CI: true
