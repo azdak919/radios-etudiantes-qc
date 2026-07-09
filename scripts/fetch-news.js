@@ -180,7 +180,12 @@ function truncateExcerpt(text = '', max = 280) {
   return cut.replace(/[,;:\s]+$/u, '').trimEnd();
 }
 
-const MC_CATEGORY_PREFIX = /^(?:Photoreportage|Marché aux puces|Cobaye|Incursion|Reportage|Opinion|Entrevue|Critique|Chronique)/;
+/**
+ * Rubriques Montréal Campus collées au titre (souvent après une fuite CSS).
+ * On les GARDE sous la forme « Rubrique : titre », on ne les jette plus
+ * (ex. « Marché aux puces : Incursion chez un bastion… »).
+ */
+const MC_SERIES_LABEL = /^(Photoreportage|Marché aux puces|Cobaye|Reportage photo)(?:\s*[:：–—-]\s*|\s+)(.+)$/iu;
 
 function stripEmbeddedCss(title = '') {
   let t = String(title).trim();
@@ -202,11 +207,25 @@ function stripLeadingNonLetters(title = '') {
   return String(title).replace(/^[^\p{L}]+/u, '').trim();
 }
 
+/** « pucesIncursion » / « pucesIncursion » après CSS → espace avant majuscule. */
+function fixCamelGlue(title = '') {
+  return String(title).replace(
+    /([\p{Ll}éèêëàâäùûüôöîïç])([\p{Lu}ÀÂÄÉÈÊËÎÏÔÖÙÛÜ])/gu,
+    '$1 $2',
+  );
+}
+
 function sanitizeTitle(title = '') {
   let t = stripHtml(stripEmbeddedCss(title));
-  t = t.replace(/\s+/g, ' ').trim();
-  const prefix = t.match(MC_CATEGORY_PREFIX);
-  if (prefix) t = t.slice(prefix[0].length).trim();
+  t = fixCamelGlue(t).replace(/\s+/g, ' ').trim();
+  // Retirer le suffixe « - Montréal Campus » des og:title
+  t = t.replace(/\s*[–—|-]\s*Montréal\s+Campus\s*$/i, '').trim();
+  const series = t.match(MC_SERIES_LABEL);
+  if (series) {
+    const label = series[1].trim();
+    const rest = series[2].trim();
+    if (rest) return stripLeadingNonLetters(`${label} : ${rest}`);
+  }
   return stripLeadingNonLetters(t);
 }
 
@@ -574,9 +593,21 @@ async function enrichItem(item, sourceByName = new Map()) {
     if (fromBody.author) next._pageAuthor = fromBody.author;
   }
 
-  const pageTitle = sanitizeTitle(metaContent(html, 'og:title') || metaContent(html, 'twitter:title'));
-  if (pageTitle && (next.title.length < 12 || /\.[a-z][\w-]*\s*\{/.test(next.title))) {
-    next.title = pageTitle;
+  // Titre page : préférer h1 nettoyé (séries MC + fuite CSS) puis og:title.
+  const h1Raw = (() => {
+    const m = html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/i);
+    return m ? stripHtml(m[1]) : '';
+  })();
+  const pageTitle = sanitizeTitle(h1Raw)
+    || sanitizeTitle(metaContent(html, 'og:title') || metaContent(html, 'twitter:title'));
+  if (pageTitle) {
+    const current = String(next.title || '').trim();
+    const needsUpgrade = !current
+      || current.length < 12
+      || /\.[a-z][\w-]*\s*\{/.test(current)
+      || pageTitle.length > current.length + 8
+      || (/^Marché aux puces\b/i.test(pageTitle) && !/^Marché aux puces\b/i.test(current));
+    if (needsUpgrade) next.title = pageTitle;
   }
 
   if (!next.excerpt || isJunkExcerpt(next.excerpt)) {
