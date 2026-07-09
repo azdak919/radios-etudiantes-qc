@@ -467,11 +467,17 @@
   let translating = false;
   let mutateTimer = 0;
   let mutateObserver = null;
+  /** Noms de médias étudiants (propres) — ne jamais traduire. */
+  const protectedMediaNames = new Set(['Le Radar', 'LE RADAR', 'Le radar']);
+  let mediaNamesReady = false;
 
   const SKIP_TAGS = new Set([
     'SCRIPT', 'STYLE', 'NOSCRIPT', 'TEXTAREA', 'INPUT', 'SELECT', 'OPTION',
     'CODE', 'PRE', 'KBD', 'SAMP', 'SVG', 'PATH', 'MATH', 'IFRAME',
   ]);
+
+  /** Classes / zones où les noms de médias (et établissements) restent intacts. */
+  const SKIP_CLASS_RE = /\b(?:notranslate|article-source|article-inst|filter-btn__name|article-media-credit__creator)\b/;
 
   function hasUserPreference() {
     try {
@@ -711,13 +717,47 @@
     return parts;
   }
 
+  function loadProtectedMediaNames() {
+    if (mediaNamesReady) return Promise.resolve();
+    return fetch('./news-sources.json', { cache: 'no-store' })
+      .then((r) => (r.ok ? r.json() : null))
+      .then((data) => {
+        for (const s of data?.active || []) {
+          if (s?.name) {
+            protectedMediaNames.add(String(s.name).trim());
+            // Variantes fréquentes de casse
+            protectedMediaNames.add(String(s.name).trim().toLowerCase());
+          }
+        }
+        mediaNamesReady = true;
+      })
+      .catch(() => {
+        mediaNamesReady = true;
+      });
+  }
+
+  function isProtectedMediaName(text = '') {
+    const t = String(text || '').replace(/\s+/g, ' ').trim();
+    if (!t) return false;
+    if (protectedMediaNames.has(t) || protectedMediaNames.has(t.toLowerCase())) return true;
+    // « The Plant · Dawson » / pastilles compactes
+    for (const name of protectedMediaNames) {
+      if (!name || name.length < 3) continue;
+      if (t === name || t.toLowerCase() === String(name).toLowerCase()) return true;
+    }
+    return false;
+  }
+
   function shouldSkipElement(el) {
     if (!el || el.nodeType !== 1) return true;
     if (SKIP_TAGS.has(el.tagName)) return true;
     if (el.translate === false) return true;
     if (el.classList?.contains('notranslate')) return true;
     if (el.getAttribute?.('translate') === 'no') return true;
-    if (el.closest?.('.notranslate, [translate="no"], .translate-control, .sr-only')) return true;
+    if (SKIP_CLASS_RE.test(el.className || '')) return true;
+    if (el.closest?.('.notranslate, [translate="no"], .translate-control, .sr-only, .article-source, .filter-btn__name, .article-inst')) {
+      return true;
+    }
     return false;
   }
 
@@ -730,6 +770,8 @@
         if (!val || !val.trim()) return NodeFilter.FILTER_REJECT;
         // Ignorer purement numérique / ponctuation
         if (!/[\p{L}]/u.test(val)) return NodeFilter.FILTER_REJECT;
+        // Noms de médias (The Plant, Le Délit…) = noms propres
+        if (isProtectedMediaName(val)) return NodeFilter.FILTER_REJECT;
         let p = node.parentElement;
         while (p) {
           if (shouldSkipElement(p)) return NodeFilter.FILTER_REJECT;
@@ -922,6 +964,7 @@
       return;
     }
 
+    await loadProtectedMediaNames();
     // Toujours repartir des originaux avant de re-traduire
     restoreOriginals();
     await translateDom(target, { quiet: !fromUserClick && !hasUserPreference() });
@@ -1058,18 +1101,20 @@
     activeMode = mode;
     updateUi(mode);
 
-    if (mode === DEFAULT_MODE) return;
-
-    // Laisser le fil d'articles se peupler, puis traduire
-    const run = () => applyMode(mode, {
-      persist: hasUserPreference(),
-      fromUserClick: false,
-    });
-    if (document.readyState === 'complete') {
-      window.setTimeout(run, 200);
-    } else {
-      window.addEventListener('load', () => window.setTimeout(run, 200), { once: true });
-    }
+    // Charger les noms de médias avant toute traduction auto
+    const afterMedia = () => {
+      if (mode === DEFAULT_MODE) return;
+      const run = () => applyMode(mode, {
+        persist: hasUserPreference(),
+        fromUserClick: false,
+      });
+      if (document.readyState === 'complete') {
+        window.setTimeout(run, 200);
+      } else {
+        window.addEventListener('load', () => window.setTimeout(run, 200), { once: true });
+      }
+    };
+    loadProtectedMediaNames().then(afterMedia);
   }
 
   if (document.readyState === 'loading') {

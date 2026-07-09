@@ -2776,7 +2776,7 @@ function renderNewsFilters() {
     btn.innerHTML = `
       <span class="filter-btn__row">
         <span class="filter-btn__dot" aria-hidden="true"></span>
-        <span class="filter-btn__name">${escapeHtml(src)}</span>
+        <span class="filter-btn__name notranslate" translate="no">${escapeHtml(src)}</span>
       </span>
       ${instLabel ? '<span class="filter-btn__inst"></span>' : ''}
     `;
@@ -3318,8 +3318,8 @@ function createArticle(item, role = 'standard') {
     : '';
   const metaLead = (item.source || item.institution)
     ? `<span class="article-meta__lead">
-        ${item.source ? `<span class="article-source">${escapeHtml(item.source)}</span>` : ''}
-        ${item.institution ? `<span class="article-inst">${escapeHtml(instMetaLabel)}</span>` : ''}
+        ${item.source ? `<span class="article-source notranslate" translate="no">${escapeHtml(item.source)}</span>` : ''}
+        ${item.institution ? `<span class="article-inst notranslate" translate="no">${escapeHtml(instMetaLabel)}</span>` : ''}
       </span>`
     : '';
   const metaHtml = (metaLead || timeHtml)
@@ -3701,8 +3701,25 @@ function buildSourcePhotoCreditElement(item = {}) {
   const fromMedia = item.sourceImageCreditFrom === 'media';
 
   if (fromMedia) {
-    if (url) cap.appendChild(creditLink(url, credit));
-    else cap.textContent = credit;
+    // « Crédit photo : The Plant » — le nom du média ne se traduit pas.
+    const mediaName = String(item.source || '').trim();
+    const prefixMatch = credit.match(/^(Photo credit|Crédit photo|Photo)\s*:\s*(.+)$/i);
+    const name = (prefixMatch ? prefixMatch[2] : credit).trim() || mediaName || credit;
+    const prefix = prefixMatch
+      ? `${prefixMatch[1].replace(/:$/, '')}: `
+      : (en ? 'Photo credit: ' : 'Crédit photo : ');
+    cap.appendChild(document.createTextNode(prefix));
+    if (url) {
+      const a = creditLink(url, name, 'article-media-credit__creator notranslate');
+      a.setAttribute('translate', 'no');
+      cap.appendChild(a);
+    } else {
+      const span = document.createElement('span');
+      span.className = 'notranslate';
+      span.setAttribute('translate', 'no');
+      span.textContent = name;
+      cap.appendChild(span);
+    }
     return cap;
   }
 
