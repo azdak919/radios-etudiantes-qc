@@ -119,76 +119,396 @@
       group: 'indigenous',
       unavailable: true,
     },
+    /* —— Population étudiante internationale au Québec / Canada ——
+       Priorité : Inde, Chine, Nigeria, Philippines, Iran, Vietnam, Corée,
+       Maghreb, Amérique latine, Europe de l’Est, etc. (IRCC / campus QC). */
     es: {
       id: 'es',
       label: 'Español',
       short: 'ES',
       title: 'Traducir toda la página al español',
-      hint: 'Página completa',
+      hint: 'América latina · España',
       goog: 'es',
-      group: 'other',
+      group: 'americas',
     },
     pt: {
       id: 'pt',
       label: 'Português',
       short: 'PT',
       title: 'Traduzir a página inteira para português',
-      hint: 'Página inteira',
+      hint: 'Brasil · Portugal',
       goog: 'pt',
-      group: 'other',
-    },
-    ar: {
-      id: 'ar',
-      label: 'العربية',
-      short: 'AR',
-      title: 'ترجمة الصفحة كاملة إلى العربية',
-      hint: 'الصفحة كاملة',
-      goog: 'ar',
-      group: 'other',
-    },
-    zh: {
-      id: 'zh',
-      label: '中文',
-      short: '中文',
-      title: '将整页翻译成中文',
-      hint: '整页',
-      goog: 'zh-CN',
-      group: 'other',
-    },
-    de: {
-      id: 'de',
-      label: 'Deutsch',
-      short: 'DE',
-      title: 'Ganze Seite auf Deutsch übersetzen',
-      hint: 'Ganze Seite',
-      goog: 'de',
-      group: 'other',
-    },
-    it: {
-      id: 'it',
-      label: 'Italiano',
-      short: 'IT',
-      title: 'Traduci l’intera pagina in italiano',
-      hint: 'Tutta la pagina',
-      goog: 'it',
-      group: 'other',
+      group: 'americas',
     },
     ht: {
       id: 'ht',
       label: 'Kreyòl',
       short: 'HT',
       title: 'Tradui tout paj la an kreyòl ayisyen',
-      hint: 'Tout paj la',
+      hint: 'Haïti · diaspora',
       goog: 'ht',
-      group: 'other',
+      group: 'americas',
+    },
+    zh: {
+      id: 'zh',
+      label: '中文',
+      short: '中文',
+      title: '将整页翻译成中文（简体）',
+      hint: 'Chine · simplifié',
+      goog: 'zh-CN',
+      group: 'asia',
+    },
+    'zh-tw': {
+      id: 'zh-tw',
+      label: '繁體中文',
+      short: '繁中',
+      title: '將整頁翻譯成繁體中文',
+      hint: 'Taïwan · Hong Kong',
+      goog: 'zh-TW',
+      group: 'asia',
+    },
+    hi: {
+      id: 'hi',
+      label: 'हिन्दी',
+      short: 'HI',
+      title: 'पूरे पृष्ठ का हिंदी में अनुवाद करें',
+      hint: 'Inde · Hindi',
+      goog: 'hi',
+      group: 'asia',
+    },
+    pa: {
+      id: 'pa',
+      label: 'ਪੰਜਾਬੀ',
+      short: 'PA',
+      title: 'ਸਾਰੇ ਸਫ਼ੇ ਦਾ ਪੰਜਾਬੀ ਵਿੱਚ ਅਨੁਵਾਦ',
+      hint: 'Inde · Pendjab',
+      goog: 'pa',
+      group: 'asia',
+    },
+    ur: {
+      id: 'ur',
+      label: 'اردو',
+      short: 'UR',
+      title: 'پورے صفحے کا اردو ترجمہ',
+      hint: 'Pakistan · Inde',
+      goog: 'ur',
+      group: 'asia',
+    },
+    bn: {
+      id: 'bn',
+      label: 'বাংলা',
+      short: 'BN',
+      title: 'সম্পূর্ণ পৃষ্ঠা বাংলায় অনুবাদ করুন',
+      hint: 'Bangladesh · Inde',
+      goog: 'bn',
+      group: 'asia',
+    },
+    ta: {
+      id: 'ta',
+      label: 'தமிழ்',
+      short: 'TA',
+      title: 'முழு பக்கத்தையும் தமிழில் மொழிபெயர்க்கவும்',
+      hint: 'Inde · Sri Lanka',
+      goog: 'ta',
+      group: 'asia',
+    },
+    te: {
+      id: 'te',
+      label: 'తెలుగు',
+      short: 'TE',
+      title: 'మొత్తం పేజీని తెలుగులోకి అనువదించండి',
+      hint: 'Inde · Telugu',
+      goog: 'te',
+      group: 'asia',
+    },
+    mr: {
+      id: 'mr',
+      label: 'मराठी',
+      short: 'MR',
+      title: 'संपूर्ण पृष्ठ मराठीत भाषांतरित करा',
+      hint: 'Inde · Marathi',
+      goog: 'mr',
+      group: 'asia',
+    },
+    gu: {
+      id: 'gu',
+      label: 'ગુજરાતી',
+      short: 'GU',
+      title: 'સમગ્ર પૃષ્ઠનું ગુજરાતીમાં ભાષાંતર',
+      hint: 'Inde · Gujarati',
+      goog: 'gu',
+      group: 'asia',
+    },
+    kn: {
+      id: 'kn',
+      label: 'ಕನ್ನಡ',
+      short: 'KN',
+      title: 'ಸಂಪೂರ್ಣ ಪುಟವನ್ನು ಕನ್ನಡಕ್ಕೆ ಅನುವಾದಿಸಿ',
+      hint: 'Inde · Kannada',
+      goog: 'kn',
+      group: 'asia',
+    },
+    ml: {
+      id: 'ml',
+      label: 'മലയാളം',
+      short: 'ML',
+      title: 'മുഴുവൻ പേജും മലയാളത്തിലേക്ക് വിവർത്തനം ചെയ്യുക',
+      hint: 'Inde · Malayalam',
+      goog: 'ml',
+      group: 'asia',
+    },
+    vi: {
+      id: 'vi',
+      label: 'Tiếng Việt',
+      short: 'VI',
+      title: 'Dịch toàn bộ trang sang tiếng Việt',
+      hint: 'Vietnam',
+      goog: 'vi',
+      group: 'asia',
+    },
+    tl: {
+      id: 'tl',
+      label: 'Tagalog',
+      short: 'TL',
+      title: 'Isalin ang buong pahina sa Tagalog',
+      hint: 'Philippines',
+      goog: 'tl',
+      group: 'asia',
+    },
+    ko: {
+      id: 'ko',
+      label: '한국어',
+      short: 'KO',
+      title: '전체 페이지를 한국어로 번역',
+      hint: 'Corée',
+      goog: 'ko',
+      group: 'asia',
+    },
+    ja: {
+      id: 'ja',
+      label: '日本語',
+      short: 'JA',
+      title: 'ページ全体を日本語に翻訳',
+      hint: 'Japon',
+      goog: 'ja',
+      group: 'asia',
+    },
+    th: {
+      id: 'th',
+      label: 'ไทย',
+      short: 'TH',
+      title: 'แปลทั้งหน้าเป็นภาษาไทย',
+      hint: 'Thaïlande',
+      goog: 'th',
+      group: 'asia',
+    },
+    id: {
+      id: 'id',
+      label: 'Bahasa Indonesia',
+      short: 'ID',
+      title: 'Terjemahkan seluruh halaman ke bahasa Indonesia',
+      hint: 'Indonésie',
+      goog: 'id',
+      group: 'asia',
+    },
+    ms: {
+      id: 'ms',
+      label: 'Bahasa Melayu',
+      short: 'MS',
+      title: 'Terjemah seluruh halaman ke Bahasa Melayu',
+      hint: 'Malaisie',
+      goog: 'ms',
+      group: 'asia',
+    },
+    ar: {
+      id: 'ar',
+      label: 'العربية',
+      short: 'AR',
+      title: 'ترجمة الصفحة كاملة إلى العربية',
+      hint: 'Maghreb · Moyen-Orient',
+      goog: 'ar',
+      group: 'mena',
+    },
+    fa: {
+      id: 'fa',
+      label: 'فارسی',
+      short: 'FA',
+      title: 'ترجمهٔ کل صفحه به فارسی',
+      hint: 'Iran · Afghanistan',
+      goog: 'fa',
+      group: 'mena',
+    },
+    tr: {
+      id: 'tr',
+      label: 'Türkçe',
+      short: 'TR',
+      title: 'Tüm sayfayı Türkçeye çevir',
+      hint: 'Turquie',
+      goog: 'tr',
+      group: 'mena',
+    },
+    he: {
+      id: 'he',
+      label: 'עברית',
+      short: 'HE',
+      title: 'תרגם את כל העמוד לעברית',
+      hint: 'Israël',
+      goog: 'iw',
+      group: 'mena',
+    },
+    sw: {
+      id: 'sw',
+      label: 'Kiswahili',
+      short: 'SW',
+      title: 'Tafsiri ukurasa mzima kwa Kiswahili',
+      hint: 'Afrique de l’Est',
+      goog: 'sw',
+      group: 'africa',
+    },
+    yo: {
+      id: 'yo',
+      label: 'Yorùbá',
+      short: 'YO',
+      title: 'Túmọ̀ gbogbo ojú-ìwé sí èdè Yorùbá',
+      hint: 'Nigeria · Bénin',
+      goog: 'yo',
+      group: 'africa',
+    },
+    ig: {
+      id: 'ig',
+      label: 'Igbo',
+      short: 'IG',
+      title: 'Tụgharịa ibe dum gaa n’Igbo',
+      hint: 'Nigeria',
+      goog: 'ig',
+      group: 'africa',
+    },
+    ha: {
+      id: 'ha',
+      label: 'Hausa',
+      short: 'HA',
+      title: 'Fassara dukkan shafin zuwa Hausa',
+      hint: 'Nigeria · Sahel',
+      goog: 'ha',
+      group: 'africa',
+    },
+    am: {
+      id: 'am',
+      label: 'አማርኛ',
+      short: 'AM',
+      title: 'ሙሉ ገጹን ወደ አማርኛ ተርጉም',
+      hint: 'Éthiopie',
+      goog: 'am',
+      group: 'africa',
+    },
+    de: {
+      id: 'de',
+      label: 'Deutsch',
+      short: 'DE',
+      title: 'Ganze Seite auf Deutsch übersetzen',
+      hint: 'Allemagne · Suisse · Autriche',
+      goog: 'de',
+      group: 'europe',
+    },
+    it: {
+      id: 'it',
+      label: 'Italiano',
+      short: 'IT',
+      title: 'Traduci l’intera pagina in italiano',
+      hint: 'Italie',
+      goog: 'it',
+      group: 'europe',
+    },
+    ru: {
+      id: 'ru',
+      label: 'Русский',
+      short: 'RU',
+      title: 'Перевести всю страницу на русский',
+      hint: 'Russie · CEI',
+      goog: 'ru',
+      group: 'europe',
+    },
+    uk: {
+      id: 'uk',
+      label: 'Українська',
+      short: 'UK',
+      title: 'Перекласти всю сторінку українською',
+      hint: 'Ukraine · diaspora',
+      goog: 'uk',
+      group: 'europe',
+    },
+    pl: {
+      id: 'pl',
+      label: 'Polski',
+      short: 'PL',
+      title: 'Przetłumacz całą stronę na polski',
+      hint: 'Pologne',
+      goog: 'pl',
+      group: 'europe',
+    },
+    ro: {
+      id: 'ro',
+      label: 'Română',
+      short: 'RO',
+      title: 'Traduce întreaga pagină în română',
+      hint: 'Roumanie · Moldova',
+      goog: 'ro',
+      group: 'europe',
+    },
+    nl: {
+      id: 'nl',
+      label: 'Nederlands',
+      short: 'NL',
+      title: 'Vertaal de hele pagina naar het Nederlands',
+      hint: 'Pays-Bas · Belgique',
+      goog: 'nl',
+      group: 'europe',
+    },
+    el: {
+      id: 'el',
+      label: 'Ελληνικά',
+      short: 'EL',
+      title: 'Μετάφραση ολόκληρης της σελίδας στα ελληνικά',
+      hint: 'Grèce · Chypre',
+      goog: 'el',
+      group: 'europe',
+    },
+    sv: {
+      id: 'sv',
+      label: 'Svenska',
+      short: 'SV',
+      title: 'Översätt hela sidan till svenska',
+      hint: 'Suède',
+      goog: 'sv',
+      group: 'europe',
     },
   };
 
+  /** Ordre d’affichage : Original/FR/EN → autochtones QC → régions d’origine étudiantes. */
   const MENU_ORDER = [
     'original', 'fr', 'en',
     'iu', 'iu-latn', 'cr', 'moe', 'atj', 'alq', 'moh', 'mic',
-    'es', 'pt', 'ht', 'ar', 'zh', 'de', 'it',
+    // Amériques
+    'es', 'pt', 'ht',
+    // Asie (Inde en tête des permis d’études au Canada)
+    'zh', 'zh-tw', 'hi', 'pa', 'ur', 'bn', 'ta', 'te', 'mr', 'gu', 'kn', 'ml',
+    'vi', 'tl', 'ko', 'ja', 'th', 'id', 'ms',
+    // Maghreb / Moyen-Orient
+    'ar', 'fa', 'tr', 'he',
+    // Afrique subsaharienne (Nigeria, etc.)
+    'yo', 'ig', 'ha', 'sw', 'am',
+    // Europe
+    'de', 'it', 'ru', 'uk', 'pl', 'ro', 'nl', 'el', 'sv',
   ];
+
+  const GROUP_LABELS = {
+    indigenous: 'Langues autochtones du Québec',
+    americas: 'Amériques',
+    asia: 'Asie',
+    mena: 'Maghreb & Moyen-Orient',
+    africa: 'Afrique',
+    europe: 'Europe',
+  };
 
   /** textNode → original string (avant toute traduction) */
   const originalByNode = new WeakMap();
@@ -219,7 +539,11 @@
   function normalizeBrowserLang(tag) {
     const raw = String(tag || '').trim().toLowerCase();
     if (!raw) return '';
+    if (raw === 'zh-tw' || raw === 'zh-hk' || raw === 'zh-hant' || raw.startsWith('zh-hant')) return 'zh-tw';
     if (raw.startsWith('zh')) return 'zh';
+    if (raw === 'fil' || raw === 'fil-ph') return 'tl';
+    if (raw === 'iw') return 'he';
+    if (raw === 'nb' || raw === 'nn') return 'no';
     return raw.split('-')[0] || '';
   }
 
@@ -228,13 +552,23 @@
     if (MODES[mode]?.unavailable) return null;
     if (MODES[mode]?.goog) return MODES[mode].goog;
     if (mode === 'zh') return 'zh-CN';
+    if (mode === 'zh-tw') return 'zh-TW';
+    if (mode === 'he') return 'iw';
     if (mode === 'iu-latn') return 'iu';
+    if (mode === 'fil') return 'tl';
     if (isValidLangCode(mode)) return mode;
     return null;
   }
 
   function gtxLang(code) {
-    const map = { zh: 'zh-CN', he: 'iw', 'iu-latn': 'iu' };
+    const map = {
+      zh: 'zh-CN',
+      'zh-tw': 'zh-TW',
+      he: 'iw',
+      'iu-latn': 'iu',
+      tl: 'tl', // Tagalog / Filipino
+      fil: 'tl',
+    };
     return map[code] || code;
   }
 
@@ -297,8 +631,10 @@
       try {
         const raw = (localStorage.getItem(STORAGE_KEY) || '').toLowerCase().trim();
         if (raw === DEFAULT_MODE) return DEFAULT_MODE;
-        if (raw === 'iu-latn') return 'iu-latn';
+        if (raw === 'iu-latn' || raw === 'zh-tw') return raw;
         if (MODES[raw] && !MODES[raw].unavailable) return raw;
+        if (raw === 'fil') return 'tl';
+        if (raw === 'iw') return 'he';
         if (isValidLangCode(raw) && raw !== 'fr' && raw !== 'en') return raw;
         // fr/en stockés manuellement restent valides
         if (raw === 'fr' || raw === 'en') return raw;
@@ -559,13 +895,34 @@
       });
     }
     document.documentElement.dataset.translate = mode;
-    if (mode === 'en') document.documentElement.lang = 'en-CA';
-    else if (mode === 'fr') document.documentElement.lang = 'fr-CA';
-    else if (mode === 'ar') document.documentElement.lang = 'ar';
-    else if (mode === 'zh') document.documentElement.lang = 'zh-Hans';
-    else if (mode === 'iu' || mode === 'iu-latn') document.documentElement.lang = 'iu';
-    else if (mode === DEFAULT_MODE) document.documentElement.lang = 'fr-CA';
-    else document.documentElement.lang = googCodeForMode(mode) || 'fr-CA';
+    const rtl = new Set(['ar', 'fa', 'he', 'ur']);
+    if (mode === DEFAULT_MODE) {
+      document.documentElement.lang = 'fr-CA';
+      document.documentElement.removeAttribute('dir');
+    } else if (mode === 'en') {
+      document.documentElement.lang = 'en-CA';
+      document.documentElement.removeAttribute('dir');
+    } else if (mode === 'fr') {
+      document.documentElement.lang = 'fr-CA';
+      document.documentElement.removeAttribute('dir');
+    } else if (mode === 'zh') {
+      document.documentElement.lang = 'zh-Hans';
+      document.documentElement.removeAttribute('dir');
+    } else if (mode === 'zh-tw') {
+      document.documentElement.lang = 'zh-Hant';
+      document.documentElement.removeAttribute('dir');
+    } else if (mode === 'iu' || mode === 'iu-latn') {
+      document.documentElement.lang = 'iu';
+      document.documentElement.removeAttribute('dir');
+    } else if (mode === 'he') {
+      document.documentElement.lang = 'he';
+      document.documentElement.dir = 'rtl';
+    } else {
+      const code = googCodeForMode(mode) || mode;
+      document.documentElement.lang = code === 'iw' ? 'he' : code;
+      if (rtl.has(mode)) document.documentElement.dir = 'rtl';
+      else document.documentElement.removeAttribute('dir');
+    }
   }
 
   function closeMenu() {
@@ -675,17 +1032,12 @@
       const group = m.group || 'other';
 
       if (group !== lastGroup) {
-        if (group === 'indigenous') {
+        const groupLabel = GROUP_LABELS[group];
+        if (groupLabel) {
           const sep = document.createElement('div');
           sep.className = 'translate-menu__sep';
           sep.setAttribute('role', 'presentation');
-          sep.innerHTML = '<span class="translate-menu__sep-label">Langues autochtones du Québec</span>';
-          frag.appendChild(sep);
-        } else if (group === 'other' && lastGroup === 'indigenous') {
-          const sep = document.createElement('div');
-          sep.className = 'translate-menu__sep';
-          sep.setAttribute('role', 'presentation');
-          sep.innerHTML = '<span class="translate-menu__sep-label">Autres langues</span>';
+          sep.innerHTML = `<span class="translate-menu__sep-label">${escapeHtml(groupLabel)}</span>`;
           frag.appendChild(sep);
         }
         lastGroup = group;

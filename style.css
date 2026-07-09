@@ -1090,8 +1090,9 @@ html.is-firefox .tuner-cast--bar[hidden] { display: flex !important; }
   html.is-firefox .tuner-cast--mobile[hidden] { display: flex !important; }
 }
 
-/* Téléphone étroit : pastille EN ONDES masquée, synthétiseur signale l'état live.
-   Seuil bas pour ne pas traiter une demi-fenêtre laptop comme un téléphone. */
+/* Téléphone étroit : pastille EN ONDES masquée (le synthétiseur rouge global
+   signale déjà le live). Seuil bas pour ne pas traiter une demi-fenêtre laptop
+   comme un téléphone. */
 @media (max-width: 599.98px) {
   .tuner-inner { padding: 8px var(--pad); gap: 8px; }
   .tuner-controls { gap: 6px; }
@@ -1099,16 +1100,6 @@ html.is-firefox .tuner-cast--bar[hidden] { display: flex !important; }
 
   .tuner-vol-slot {
     width: min(292px, calc(100vw - 16px));
-  }
-
-  .tuner.is-playing .tuner-now {
-    border-color: rgba(255, 125, 110, 0.7);
-    background: rgba(200, 16, 46, 0.1);
-    box-shadow: 0 0 0 1px rgba(200, 16, 46, 0.22);
-  }
-  .tuner.is-external .tuner-now {
-    border-color: rgba(93, 155, 224, 0.55);
-    background: rgba(0, 61, 165, 0.1);
   }
 
   .tuner-step {
@@ -1368,8 +1359,9 @@ html.is-firefox .tuner-cast--bar[hidden] { display: flex !important; }
   top: calc(100% + 6px);
   left: 0;
   z-index: 40;
-  min-width: 220px;
-  max-height: min(70vh, 420px);
+  min-width: 240px;
+  max-width: min(320px, calc(100vw - 24px));
+  max-height: min(75vh, 560px);
   overflow-y: auto;
   padding: 6px;
   border: 1px solid var(--rule);
