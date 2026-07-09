@@ -2412,12 +2412,6 @@ function sourcePopularityRank(name = '') {
   return 100;
 }
 
-/** Concordia toujours en fin de liste de pastilles (après les autres établissements). */
-function isConcordiaSource(name = '') {
-  const { institution } = sourceInfo(name);
-  return /concordia/i.test(institution || '') || /^(the\s+)?link$/i.test(String(name).trim());
-}
-
 /** FR d'abord, puis EN, puis le reste (lang depuis news-sources.json). */
 function sourceLangRank(name = '') {
   const lang = String(newsSourcesByName[name]?.lang || '').toLowerCase();
@@ -2428,15 +2422,11 @@ function sourceLangRank(name = '') {
 
 /**
  * Tri pastilles sources :
- *  1. Concordia (The Link) en tout dernier
- *  2. Français, puis anglais, puis autres
- *  3. Popularité croissante (1 = plus haut)
+ *  1. Français, puis anglais, puis autres
+ *  2. Popularité croissante (1 = plus haut) — y compris The Link
  */
 function sortSourcesByPopularity(sources) {
   return [...sources].sort((a, b) => {
-    const aCon = isConcordiaSource(a) ? 1 : 0;
-    const bCon = isConcordiaSource(b) ? 1 : 0;
-    if (aCon !== bCon) return aCon - bCon;
     const langDiff = sourceLangRank(a) - sourceLangRank(b);
     if (langDiff !== 0) return langDiff;
     const diff = sourcePopularityRank(a) - sourcePopularityRank(b);
@@ -2453,9 +2443,8 @@ function filterInstitutionKey(sourceName = '') {
 }
 
 /**
- * Tri filtres sources : FR par popularité, puis EN par popularité,
- * The Link (Concordia) en dernier. Plus de regroupement « secondaire »
- * qui plaçait des anglophones au milieu des francophones.
+ * Tri filtres sources : FR par popularité, puis EN par popularité
+ * (The Link inclus normalement selon son rang popularity).
  */
 function sortSourcesForFilters(sources) {
   return sortSourcesByPopularity(sources);
