@@ -2412,8 +2412,17 @@ function sourcePopularityRank(name = '') {
   return 100;
 }
 
+/** Concordia toujours en fin de liste de pastilles (après les autres établissements). */
+function isConcordiaSource(name = '') {
+  const { institution } = sourceInfo(name);
+  return /concordia/i.test(institution || '') || /^(the\s+)?link$/i.test(String(name).trim());
+}
+
 function sortSourcesByPopularity(sources) {
   return [...sources].sort((a, b) => {
+    const aCon = isConcordiaSource(a) ? 1 : 0;
+    const bCon = isConcordiaSource(b) ? 1 : 0;
+    if (aCon !== bCon) return aCon - bCon;
     const diff = sourcePopularityRank(a) - sourcePopularityRank(b);
     return diff !== 0 ? diff : a.localeCompare(b, 'fr');
   });
