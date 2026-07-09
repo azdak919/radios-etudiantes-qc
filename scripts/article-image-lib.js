@@ -26,13 +26,19 @@ function isPathRejected(path = '', extraRejectPatterns = []) {
 
 const { decodeEntities } = require('./html-entities-lib');
 
-function fetchText(url, redirects = 3, timeout = DEFAULT_TIMEOUT) {
+const BOT_USER_AGENT = 'Mozilla/5.0 (compatible; REQ-NewsBot/1.0)';
+// Certains journaux (Wordfence, Elementor…) bloquent les UA « bot » : on
+// retente une fois avec une signature navigateur avant d'abandonner —
+// sans byline ni crédit lisibles, ces articles retombaient au repli générique.
+const BROWSER_USER_AGENT = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36';
+
+function fetchTextWithAgent(url, redirects, timeout, userAgent) {
   return new Promise((resolve) => {
     const req = https.get(
       url,
       {
         headers: {
-          'User-Agent': 'Mozilla/5.0 (compatible; REQ-NewsBot/1.0)',
+          'User-Agent': userAgent,
           Accept: 'application/rss+xml, application/xml, text/xml, text/html, image/*, */*',
         },
         timeout,
@@ -41,7 +47,7 @@ function fetchText(url, redirects = 3, timeout = DEFAULT_TIMEOUT) {
         if (res.statusCode >= 300 && res.statusCode < 400 && res.headers.location && redirects > 0) {
           res.resume();
           const next = new URL(res.headers.location, url).toString();
-          return resolve(fetchText(next, redirects - 1, timeout));
+          return resolve(fetchTextWithAgent(next, redirects - 1, timeout, userAgent));
         }
         if (res.statusCode >= 400) {
           res.resume();
@@ -59,6 +65,14 @@ function fetchText(url, redirects = 3, timeout = DEFAULT_TIMEOUT) {
       resolve('');
     });
   });
+}
+
+async function fetchText(url, redirects = 3, timeout = DEFAULT_TIMEOUT) {
+  const first = await fetchTextWithAgent(url, redirects, timeout, BOT_USER_AGENT);
+  // Réponse vide ou page d'interstitiel minuscule : probable blocage d'UA.
+  if (first && first.length >= 2048) return first;
+  const second = await fetchTextWithAgent(url, redirects, timeout, BROWSER_USER_AGENT);
+  return second && second.length > (first || '').length ? second : first;
 }
 
 function fetchBinaryPrefix(url, maxBytes = 65536, redirects = 3, timeout = DEFAULT_TIMEOUT) {
@@ -275,18 +289,51 @@ function upgradeCmsImageUrl(raw = '') {
   return [...new Set(out)];
 }
 
+/** src réel d'une balise <img>, y compris chargement paresseux (Elementor, etc.). */
+function imgTagSrc(tag = '') {
+  for (const attr of ['data-lazy-src', 'data-src', 'data-orig-file', 'src']) {
+    const m = tag.match(new RegExp(`${attr}=["']([^"']+)["']`, 'i'));
+    if (!m) continue;
+    const val = m[1].trim();
+    // Placeholder inline des thèmes lazy-load : passer à l'attribut suivant.
+    if (attr === 'src' && /^data:image\//i.test(val)) continue;
+    if (val) return val;
+  }
+  return '';
+}
+
+/** URLs (normalisées) des images placées dans une <figure> avec légende réelle. */
+function captionedFigureImageKeys(content = '') {
+  const keys = new Set();
+  for (const fig of content.match(/<figure[^>]*>[\s\S]*?<\/figure>/gi) || []) {
+    const cap = fig.match(/<figcaption[^>]*>([\s\S]*?)<\/figcaption>/i);
+    if (!cap) continue;
+    const text = cap[1].replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+    if (text.length < 12) continue;
+    for (const img of fig.match(/<img[^>]*>/gi) || []) {
+      const key = normalizeImagePath(imgTagSrc(img));
+      if (key) keys.add(key);
+    }
+  }
+  return keys;
+}
+
 function collectContentImages(content = '', extraRejectPatterns = [], options = {}, baseUrl = '') {
   const urls = [];
   const preferSizeFull = !!options.preferSizeFull;
-  for (const m of content.matchAll(/<img[^>]+src=["']([^"']+)["'][^>]*>/gi)) {
+  const captionedKeys = captionedFigureImageKeys(content);
+  for (const m of content.matchAll(/<img[^>]*>/gi)) {
     const tag = m[0];
-    const src = toAbsoluteImageUrl(m[1], baseUrl);
+    const rawSrc = imgTagSrc(tag);
+    if (!rawSrc) continue;
+    const src = toAbsoluteImageUrl(rawSrc, baseUrl);
     const w = parseInt((tag.match(/width=["'](\d+)["']/i) || [])[1], 10) || 0;
     if (!isCandidateImageUrl(src, extraRejectPatterns) || isWeakImageUrl(src, options)) continue;
     if (w > 0 && w < 400) continue;
     const isFull = /\bsize-full\b/i.test(tag);
     const isCropThumb = /-\d{3}x\d{2,3}\./i.test(src);
-    urls.push({ url: src, tag, w, isFull, isCropThumb });
+    const hasCaption = captionedKeys.has(normalizeImagePath(src));
+    urls.push({ url: src, tag, w, isFull, isCropThumb, hasCaption });
   }
   if (preferSizeFull) {
     const fullOnly = urls.filter((img) => img.isFull || !img.isCropThumb);
@@ -436,6 +483,9 @@ function imageFromArticleHtml(html = '', extraRejectPatterns = [], options = {},
       || img.isFull;
     const isThumb = img.isCropThumb;
     let score = (isFeatured ? 85 : 60) + img.w / 10 - (isThumb ? 25 : 0);
+    // Image dans une <figure> légendée : placée et décrite par la rédaction,
+    // c'est la photo éditorialement pertinente de l'article.
+    if (img.hasCaption) score += 15;
     if (preferFirstContentImage && index === 0) score += 40;
     if (options.preferSizeFull && img.isFull) score += 20;
     if (options.preferSizeFull && isThumb) score -= 30;

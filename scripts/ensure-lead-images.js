@@ -51,6 +51,7 @@ function clearLegacyFallback(item) {
 
 function clearStockPhoto(item) {
   delete item.stockImage;
+  delete item.imageTitle;
   delete item.imageCredit;
   delete item.imageCreator;
   delete item.imageLicense;
@@ -149,6 +150,7 @@ async function applyStockPhoto(item, sourceMap = new Map()) {
   if (!stock?.stockImage) return false;
   if (doUpdate) {
     item.stockImage = stock.stockImage;
+    item.imageTitle = stock.imageTitle || '';
     item.imageCredit = stock.imageCredit;
     item.imageCreator = stock.imageCreator || '';
     item.imageLicense = stock.imageLicense;

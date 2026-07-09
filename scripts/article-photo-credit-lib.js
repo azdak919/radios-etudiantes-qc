@@ -13,11 +13,18 @@ const PHOTO_CREDIT_FIELDS = [
   'sourceImageCreditFrom',
   'sourceImageCreditCited',
   'sourceImageCreditImageKey',
+  'sourceImageCreditRev',
 ];
+
+// Version des extracteurs de crédit : l'incrémenter force une re-vérification
+// unique des articles restés au repli « Crédit photo : [média] », pour que les
+// nouveaux extracteurs puissent retrouver le photographe rétroactivement.
+const CREDIT_EXTRACTOR_REV = 2;
 
 const LEAD_IMAGE_FIELDS = [
   'leadImageReady',
   'stockImage',
+  'imageTitle',
   'imageCredit',
   'imageCreator',
   'imageLicense',
@@ -49,12 +56,16 @@ function sanitizeCreditText(text = '') {
 
 function imageUrlKey(url = '') {
   try {
-    const path = decodeURIComponent(new URL(url).pathname).toLowerCase();
+    // Base factice : accepte aussi les src relatifs (« /images/made/… »).
+    const path = decodeURIComponent(new URL(url, 'https://relative.invalid').pathname).toLowerCase();
     return path
       .split('/')
       .pop()
       .replace(/-\d+x\d+(?=\.[a-z]+$)/, '')
-      .replace(/-scaled(?=\.[a-z]+$)/, '');
+      .replace(/-scaled(?=\.[a-z]+$)/, '')
+      // Suffixe de redimensionnement CE Image / ExpressionEngine (The Link) :
+      // photo_900_674_90.jpeg et photo_600_375_90_s_c1.jpeg → même clé.
+      .replace(/_\d{2,4}_\d{2,4}_\d{1,3}(?:_s_c\d+)?(?=\.[a-z]+$)/, '');
   } catch {
     return '';
   }
@@ -221,13 +232,44 @@ function creditFromPhrase(text = '') {
 /** Légendes WordPress « Nom / Média » ou « Illustration by … » (The Tribune, etc.). */
 function parseFigcaptionAttribution(text = '', lang = 'fr') {
   const t = sanitizeCreditText(text);
-  if (!t || t.length < 4 || t.length > 120) return null;
+  if (!t || t.length < 4) return null;
+  if (t.length > 120) {
+    // Légende descriptive longue : seule la signature en fin de texte compte.
+    return t.length <= 300 ? parseTrailingCaptionCredit(t, lang) : null;
+  }
 
   const slash = t.match(/^([\p{L}][\p{L}\s'.-]{1,48})\s*\/\s*([\p{L}][\p{L}\s'.&-]{1,48})$/u);
   if (slash) {
     const creator = slash[1].trim();
     const parsed = creditFromPhrase(creator);
     if (parsed) return { ...parsed, source: 'figcaption-attribution' };
+  }
+
+  // « Mention photo : X » / « Mention illustration : X » (Montréal Campus).
+  const mention = t.match(/^Mention\s+(photo|illustration|graphique?)\s*:\s*(.+)$/iu);
+  if (mention) {
+    const parsed = creditFromPhrase(mention[2]);
+    if (parsed) {
+      const en = lang === 'en';
+      const isIllustration = /^(illustration|graphique?)$/i.test(mention[1]);
+      const label = isIllustration
+        ? (en ? 'Illustration: ' : 'Illustration : ')
+        : (en ? 'Photo: ' : 'Photo : ');
+      return { ...parsed, creditLine: `${label}${parsed.creator}`, source: 'figcaption-mention' };
+    }
+  }
+
+  // Légende-signature nue en casse de titre (The Tribune) :
+  // « McGill Visual Arts Collection » — 2 à 5 mots capitalisés, sans ponctuation
+  // finale : c'est une attribution, pas une phrase descriptive.
+  if (t.length <= 60 && !/[.!?…:;,]$/.test(t)) {
+    const words = t.split(/\s+/);
+    const connective = /^(?:of|the|and|de|du|des|la|le|les|et|d'|l'|&)$/i;
+    const capitalized = words.every((w) => connective.test(w) || /^[\p{Lu}]/u.test(w));
+    if (words.length >= 2 && words.length <= 5 && capitalized) {
+      const parsed = creditFromPhrase(t);
+      if (parsed) return { ...parsed, source: 'figcaption-bare' };
+    }
   }
 
   const illustrated = t.match(/^(?:Illustration|Artwork|Art|Drawing|Cartoon|Graphic|Design)\s+by\s+(.+)$/i);
@@ -243,7 +285,32 @@ function parseFigcaptionAttribution(text = '', lang = 'fr') {
     }
   }
 
-  return null;
+  return parseTrailingCaptionCredit(t, lang);
+}
+
+/**
+ * Crédit en fin de légende sans deux-points ni « by » (The Link) :
+ * « The CSU did not reach quorum. Graphic Naya Hachwa » / « … Photo Zachary Fortier »
+ * / « … Courtesy Naya Hachwa ».
+ */
+function parseTrailingCaptionCredit(t = '', lang = 'fr') {
+  const trailing = t.match(
+    /(?:^|[.!?…»]\s+)(Photos?|Graphics?|Illustrations?|File photo|Courtesy(?:\s+of)?)\s+([\p{Lu}][\p{L}'’.-]*(?:\s+[\p{Lu}&][\p{L}'’.&-]*){1,4})\s*$/u,
+  );
+  if (!trailing) return null;
+  const kind = trailing[1].toLowerCase();
+  const parsed = creditFromPhrase(trailing[2]);
+  if (!parsed) return null;
+  const en = lang === 'en';
+  let creditLine = en ? `Photo: ${parsed.creator}` : `Photo : ${parsed.creator}`;
+  if (kind.startsWith('graphic') || kind.startsWith('illustration')) {
+    creditLine = en ? `Illustration: ${parsed.creator}` : `Illustration : ${parsed.creator}`;
+  } else if (kind.startsWith('courtesy')) {
+    creditLine = en
+      ? `Photo: Courtesy of ${parsed.creator}`
+      : `Photo : avec l'aimable autorisation de ${parsed.creator}`;
+  }
+  return { ...parsed, creditLine, source: 'figcaption-trailing' };
 }
 
 function extractJsonLdCredit(html = '', imageUrl = '') {
@@ -314,6 +381,17 @@ function extractBodyCredit(html = '', imageUrl = '') {
     if (parsed) return { ...parsed, source: 'body-line' };
   }
 
+  // Ligne de crédit en fin d'article (Le Collectif) :
+  // « Source : Festival international de jazz de Montréal ».
+  for (const p of paragraphs.slice(-6)) {
+    const text = stripHtml(p);
+    if (text.length < 8 || text.length > 110) continue;
+    const m = text.match(/^(?:Source|Crédit(?:\s+photo)?|Photo|Credit)\s*:\s*(.+)$/i);
+    if (!m) continue;
+    const parsed = creditFromPhrase(m[1]);
+    if (parsed) return { ...parsed, source: 'body-tail' };
+  }
+
   if (imageUrl) {
     const key = imageUrlKey(imageUrl).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
     if (key.length > 8) {
@@ -330,7 +408,68 @@ function extractBodyCredit(html = '', imageUrl = '') {
   return null;
 }
 
+function titleCaseName(raw = '') {
+  return String(raw)
+    .split(/\s+/)
+    .map((w) => (w ? w[0].toUpperCase() + w.slice(1) : w))
+    .join(' ')
+    .trim();
+}
+
+/**
+ * Photographe encodé dans le nom de fichier ou les attributs WordPress :
+ *   - The Campus : sports_1_athletic-awards_credits_browyn-chenard.webp
+ *     et data-image-title="…_Credits_Browyn Chenard"
+ *   - The Link : 00.graphics.CSU.Naya_Hachwa_900_674_90.jpeg (segment
+ *     Prénom_Nom en fin de fichier, limité aux URLs CE Image /images/made/).
+ */
+function extractFilenameCredit(html = '', imageUrl = '', lang = 'fr') {
+  const en = lang === 'en';
+  const makeCredit = (name, source) => {
+    const parsed = creditFromPhrase(name);
+    if (!parsed) return null;
+    return {
+      ...parsed,
+      creditLine: en ? `Photo: ${parsed.creator}` : `Photo : ${parsed.creator}`,
+      source,
+    };
+  };
+
+  const fileM = String(imageUrl).match(/_cr[ée]dits?[_-]([a-z0-9-]{5,60})\.(?:jpe?g|png|webp|gif|avif)(?:$|\?)/i);
+  if (fileM) {
+    const name = titleCaseName(fileM[1].replace(/[-_]+/g, ' '));
+    if (/\s/.test(name)) {
+      const credit = makeCredit(name, 'filename-credit');
+      if (credit) return credit;
+    }
+  }
+
+  if (html) {
+    const attrM = html.match(/data-image-title=["'][^"']*cr[ée]dits?[_\s:-]+([^"'_]{4,60})["']/i);
+    if (attrM) {
+      const name = attrM[1].replace(/[-_]+/g, ' ').trim();
+      if (/^\p{Lu}[\p{L}'’.-]+(?:\s+\p{Lu}[\p{L}'’.-]+){1,3}$/u.test(name)) {
+        const credit = makeCredit(name, 'image-title-credit');
+        if (credit) return credit;
+      }
+    }
+  }
+
+  if (/\/images\/made\/|_resized\//i.test(String(imageUrl))) {
+    const linkM = String(imageUrl).match(
+      /([A-Z][a-zà-öø-ÿ'’-]+_[A-Z][a-zà-öø-ÿ'’-]+)(?:_\d{2,4}_\d{2,4}_\d{1,3}(?:_s_c\d+)?)?\.(?:jpe?g|png|webp)(?:$|\?)/,
+    );
+    if (linkM) {
+      const credit = makeCredit(linkM[1].replace(/_/g, ' '), 'filename-byline');
+      if (credit) return credit;
+    }
+  }
+
+  return null;
+}
+
 function extractPhotoCreditFromHtml(html = '', imageUrl = '', lang = 'fr') {
+  if (!html && imageUrl) return extractFilenameCredit(html, imageUrl, lang);
   if (!html || html.length < 200) return null;
 
   const extractors = imageUrl
@@ -339,6 +478,7 @@ function extractPhotoCreditFromHtml(html = '', imageUrl = '', lang = 'fr') {
       () => extractMediaCreditPlugin(html, imageUrl),
       () => extractJsonLdCredit(html, imageUrl),
       () => extractBodyCredit(html, imageUrl),
+      () => extractFilenameCredit(html, imageUrl, lang),
     ]
     : [
       () => extractMediaCreditPlugin(html, imageUrl),
@@ -406,10 +546,12 @@ function applySourcePhotoCredit(item, resolved, { doUpdate = false } = {}) {
   const imageKey = imageUrlKey(item.image);
   const storedKey = item.sourceImageCreditImageKey || '';
   const keyChanged = imageKey && storedKey !== imageKey;
+  const revChanged = (item.sourceImageCreditRev || 0) !== CREDIT_EXTRACTOR_REV;
   const changed = prev.line !== next.line
     || prev.creator !== next.creator
     || prev.from !== next.from
-    || keyChanged;
+    || keyChanged
+    || revChanged;
 
   if (doUpdate && changed) {
     item.sourceImageCredit = next.line;
@@ -418,6 +560,9 @@ function applySourcePhotoCredit(item, resolved, { doUpdate = false } = {}) {
     item.sourceImageCreditFrom = next.from;
     item.sourceImageCreditCited = !!resolved.cited;
     item.sourceImageCreditImageKey = imageKey;
+    // Marque la version des extracteurs pour ne re-vérifier les replis média
+    // qu'une seule fois par amélioration du code.
+    item.sourceImageCreditRev = CREDIT_EXTRACTOR_REV;
   }
 
   return { changed, cited: resolved.cited, method: resolved.method || null };
@@ -431,6 +576,12 @@ function needsSourceCreditCheck(item) {
   if (!item?.link || !item?.image) return false;
   const key = imageUrlKey(item.image);
   if (!key) return false;
+  // Repli média jamais re-passé dans les extracteurs actuels : re-vérifier une
+  // fois — les crédits cités, eux, restent acquis.
+  if (!item.sourceImageCreditCited
+    && (item.sourceImageCreditRev || 0) < CREDIT_EXTRACTOR_REV) {
+    return true;
+  }
   if (item.sourceImageCredit && !creditLooksCorrupt(item.sourceImageCredit)
     && !creditLooksCorrupt(item.sourceImageCreator)) {
     const storedKey = item.sourceImageCreditImageKey || key;
@@ -496,6 +647,9 @@ function auditPhotoCredits(items = []) {
 }
 
 module.exports = {
+  CREDIT_EXTRACTOR_REV,
+  extractFilenameCredit,
+  parseTrailingCaptionCredit,
   imageUrlKey,
   urlsMatch,
   sanitizeCreditText,

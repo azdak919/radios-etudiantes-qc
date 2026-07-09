@@ -1788,6 +1788,7 @@ function initMobilePlayback() {
     isUserPaused: () => userPaused,
     isPlaying,
     isExternalListen,
+    isCasting,
     isStationResilient: () => !!currentTuning().resilient,
     playStation: play,
     getStreamUrl: getPlayableStream,
@@ -2146,7 +2147,9 @@ async function loadNews() {
     news.sort((a, b) => new Date(b.date || 0) - new Date(a.date || 0));
     assignSourceColors();
     if (data.updated) {
-      const d = new Date(data.updated);
+      // updatedSlot = heure de passe planifiée du bot (horaire publié) ;
+      // repli sur l'heure réelle pour les exécutions hors horaire.
+      const d = new Date(data.updatedSlot || data.updated);
       NEWS_UPDATED.textContent = `mis à jour ${formatStamp(d)}`;
     }
   } catch (e) {

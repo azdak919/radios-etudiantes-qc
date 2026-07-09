@@ -64,7 +64,7 @@ async function fetchPageAuthors(items, feedDefaults, sourceMap = new Map()) {
 
     const html = await fetchText(item.link, 3, PAGE_FETCH_TIMEOUT);
     const hints = getBotHints(sourceMap.get(item.source), 'authors');
-    const author = authorFromArticleHtml(html, item.lang === 'en' ? 'en' : 'fr', hints);
+    const author = authorFromArticleHtml(html, item.lang === 'en' ? 'en' : 'fr', hints, item.source);
     if (author) pageAuthors.set(key, author);
     fetched += 1;
 

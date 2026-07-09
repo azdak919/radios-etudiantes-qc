@@ -87,6 +87,24 @@ function extractProperNouns(text = '') {
     .filter((w) => w.length > 1 && !STOP_WORDS.has(w) && !FALSE_FRIENDS.has(w)))];
 }
 
+/**
+ * Nom complet (et acronyme entre parenthèses) de l'établissement, normalisés.
+ * Une photo dont le titre/nom de fichier contient ce nom (pavillon, campus…)
+ * est contextuellement sûre pour un article de média étudiant.
+ */
+function institutionPhrases(item = {}) {
+  const raw = String(item.institution || '');
+  const phrases = [];
+  const base = normalizeText(raw.replace(/\s*\([^)]*\)/g, ''));
+  if (base.length >= 5) phrases.push(base);
+  const paren = raw.match(/\(([^)]+)\)/);
+  if (paren) {
+    const acro = normalizeText(paren[1]);
+    if (acro.length >= 3) phrases.push(acro);
+  }
+  return phrases;
+}
+
 function detectEditorialContext(item = {}) {
   const content = extractArticleContent(item);
   const title = item.title || '';
@@ -115,6 +133,7 @@ function detectEditorialContext(item = {}) {
     provincialParliament,
     assemblyTopic,
     montreal: /montréal|montreal/i.test(norm) || /montréal|montreal/i.test(item.region || ''),
+    institutionPhrases: institutionPhrases(item),
     norm,
     titleNorm: normalizeText(title),
   };
@@ -279,6 +298,14 @@ function extractSearchQueries(item, context = detectEditorialContext(item)) {
   if (titleTokens.length >= 2) queries.push(titleTokens.slice(0, 3).join(' '));
   if (titleProper.length >= 1) queries.push(titleProper[0]);
 
+  // Dernier recours : le campus de l'établissement — toujours dans le
+  // contexte d'un média étudiant, plutôt qu'une image hors-sujet.
+  const instName = String(item.institution || '').replace(/\s*\([^)]*\)/g, '').trim();
+  if (instName.length > 4) {
+    queries.push(`${instName} campus`);
+    queries.push(instName);
+  }
+
   return [...new Set(queries.filter((q) => q && q.length > 2))];
 }
 
@@ -400,6 +427,18 @@ function scoreCandidate(hit, matchTokens, context = null) {
   const matches = countSubstantiveMatches(hay, matchTokens);
   const { contentMatched, titleMatched, importantMatched, acronymOnly } = matches;
 
+  // Photo du campus / de l'établissement de l'article : le nom complet (ou
+  // l'acronyme) de l'établissement dans le titre ou le nom de fichier vaut
+  // comme correspondance substantielle — visuel toujours pertinent pour un
+  // média étudiant, et repli honnête quand le sujet n'a pas d'image propre.
+  let institutionMatched = 0;
+  for (const phrase of context?.institutionPhrases || []) {
+    if (hay.includes(phrase)) {
+      institutionMatched += 1;
+      score += 80;
+    }
+  }
+
   for (const tok of content) {
     if (tok.length < 3 || FALSE_FRIENDS.has(tok) || isShortAcronymToken(tok)) continue;
     if (hay.includes(tok)) score += tok.length >= 5 ? 22 : 14;
@@ -413,7 +452,7 @@ function scoreCandidate(hit, matchTokens, context = null) {
     if (hay.includes(tok)) score += 8;
   }
 
-  const substantiveTotal = contentMatched + titleMatched + importantMatched;
+  const substantiveTotal = contentMatched + titleMatched + importantMatched + institutionMatched;
   const needContentMatch = content.filter((t) => t.length >= 4 && !FALSE_FRIENDS.has(t) && !isShortAcronymToken(t));
   if (needContentMatch.length >= 2 && substantiveTotal === 0) return -1;
   if (important.length >= 2 && substantiveTotal === 0) return -1;
@@ -467,7 +506,9 @@ function scoreStockFit(item, stockUrl = '', meta = {}) {
 function stockStillFits(item, meta = {}) {
   if (!item?.stockImage) return true;
   return scoreStockFit(item, item.stockImage, {
-    title: item.imageCredit || '',
+    // Le titre original de la photo (imageTitle) est bien plus fidèle que la
+    // ligne de crédit pour juger si elle colle toujours au sujet.
+    title: [item.imageTitle || '', item.imageCredit || ''].filter(Boolean).join(' '),
     license: item.imageLicense || '',
     ...meta,
   }) >= STOCK_MIN_RETAIN_SCORE;
@@ -550,6 +591,12 @@ async function validateCandidate(hit) {
   return meetsLeadDisplaySize(dims.width, dims.height) ? enriched : null;
 }
 
+// Nombre maximal de requêtes interrogées et score au-delà duquel on cesse
+// d'en lancer de nouvelles : on cherche le meilleur candidat global plutôt
+// que le premier venu de la première requête.
+const STOCK_QUERY_LIMIT = 8;
+const STOCK_STRONG_SCORE = 170;
+
 async function findStockPhoto(item) {
   const context = detectEditorialContext(item);
   const queries = extractSearchQueries(item, context);
@@ -557,30 +604,43 @@ async function findStockPhoto(item) {
 
   const matchTokens = buildMatchTokens(item);
   const seen = new Set();
+  const pool = [];
 
-  for (const query of queries) {
+  for (const query of queries.slice(0, STOCK_QUERY_LIMIT)) {
     const batches = await Promise.all([
       searchOpenverse(query, matchTokens, context),
       searchWikimedia(query, matchTokens, context),
     ]);
-    const candidates = batches.flat().sort((a, b) => b.score - a.score);
-
-    for (const cand of candidates) {
+    for (const cand of batches.flat()) {
       if (seen.has(cand.url)) continue;
       seen.add(cand.url);
-      const valid = await validateCandidate(cand);
-      if (!valid) continue;
-      const creator = cleanCreatorName(valid.creator || valid.artist || '');
-      return {
-        stockImage: valid.url,
-        imageCredit: formatAttribution(valid),
-        imageCreator: creator,
-        imageLicense: valid.license || '',
-        imageProvider: valid.provider,
-        imageSourceUrl: valid.foreignLandingUrl || valid.url,
-      };
+      pool.push(cand);
     }
+    if (pool.some((c) => c.score >= STOCK_STRONG_SCORE)) break;
     await sleep(250);
+  }
+
+  pool.sort((a, b) => b.score - a.score);
+
+  for (const cand of pool) {
+    // Trié par score décroissant : sous le seuil de rétention, tout ce qui
+    // suit est plus faible — mieux vaut aucune photo qu'une photo hors-sujet
+    // (qui serait de toute façon retirée à la passe suivante).
+    if (cand.score < STOCK_MIN_RETAIN_SCORE) break;
+    const valid = await validateCandidate(cand);
+    if (!valid) continue;
+    // Les dimensions réelles peuvent différer de celles annoncées : re-scorer.
+    if (scoreCandidate(valid, matchTokens, context) < STOCK_MIN_RETAIN_SCORE) continue;
+    const creator = cleanCreatorName(valid.creator || valid.artist || '');
+    return {
+      stockImage: valid.url,
+      imageTitle: valid.title || '',
+      imageCredit: formatAttribution(valid),
+      imageCreator: creator,
+      imageLicense: valid.license || '',
+      imageProvider: valid.provider,
+      imageSourceUrl: valid.foreignLandingUrl || valid.url,
+    };
   }
 
   return null;

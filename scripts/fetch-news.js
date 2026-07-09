@@ -55,6 +55,30 @@ const {
 
 const NEWS_PATH = path.join(__dirname, '..', 'news.json');
 const SOURCES_PATH = path.join(__dirname, '..', 'news-sources.json');
+
+// Passes quotidiennes planifiées du bot d'actualités, en UTC — doit refléter
+// les crons de .github/workflows/update-news.yml.
+const SCHEDULED_PASSES_UTC = [
+  [1, 0], [9, 30], [11, 0], [14, 0], [16, 0], [17, 30], [20, 0], [23, 0],
+];
+// Le cron GitHub part souvent en retard (jamais en avance) ; au-delà de cette
+// marge, la passe est considérée hors horaire (déclenchement manuel, etc.).
+const SCHEDULE_TOLERANCE_MS = 75 * 60 * 1000;
+
+/** ISO de la passe planifiée correspondant à cette exécution, ou null si hors horaire. */
+function scheduledSlotFor(now = new Date()) {
+  let best = null;
+  for (const dayOffset of [0, -1]) {
+    for (const [h, m] of SCHEDULED_PASSES_UTC) {
+      const slot = new Date(Date.UTC(
+        now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate() + dayOffset, h, m,
+      ));
+      if (slot <= now && (!best || slot > best)) best = slot;
+    }
+  }
+  if (!best || now - best > SCHEDULE_TOLERANCE_MS) return null;
+  return best.toISOString();
+}
 const TIMEOUT = 15000;
 const ENRICH_TIMEOUT = 12000;
 const MAX_PER_SOURCE = 20;  // archive par journal (certains flux RSS en ont 18+)
@@ -486,7 +510,7 @@ async function enrichItem(item, sourceByName = new Map()) {
     else if (next.image && !isCandidateImageUrl(next.image, rejectPatterns)) next.image = '';
   }
 
-  const pageAuthor = authorFromArticleHtml(html, item.lang === 'en' ? 'en' : 'fr', authorHints);
+  const pageAuthor = authorFromArticleHtml(html, item.lang === 'en' ? 'en' : 'fr', authorHints, item.source);
   if (pageAuthor) {
     next._pageAuthor = pageAuthor;
   } else if (!next.author || isGenericAuthor(next.author)) {
@@ -580,7 +604,7 @@ async function fetchPageAuthors(items, feedDefaults, existing = new Map(), sourc
 
     const html = await fetchText(item.link, 3, ENRICH_TIMEOUT);
     const authorHints = getBotHints(sourceByName.get(item.source), 'authors');
-    const author = authorFromArticleHtml(html, item.lang === 'en' ? 'en' : 'fr', authorHints);
+    const author = authorFromArticleHtml(html, item.lang === 'en' ? 'en' : 'fr', authorHints, item.source);
     if (author) pageAuthors.set(key, author);
     fetched += 1;
     await sleep(250);
@@ -799,8 +823,13 @@ async function main() {
     .filter(([, meta]) => meta.stale)
     .map(([name]) => name);
 
+  const runDate = new Date();
   const news = {
-    updated: new Date().toISOString(),
+    updated: runDate.toISOString(),
+    // Heure de passe planifiée (update-news.yml) la plus proche : c'est elle
+    // que le site affiche, pour que « mis à jour » colle à l'horaire annoncé
+    // malgré les retards du cron GitHub Actions.
+    updatedSlot: scheduledSlotFor(runDate),
     count: prunedAll.length,
     freshnessSessions: 3,
     sources: sourceRuns,

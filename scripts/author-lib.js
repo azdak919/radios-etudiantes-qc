@@ -328,17 +328,22 @@ function metaContent(html = '', key = '') {
   const esc = key.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
   const re = new RegExp(`<meta[^>]+(?:name|property)=["']${esc}["'][^>]+content=["']([^"']+)["']`, 'i');
   const m = html.match(re);
-  if (m) return stripHtml(m[1]);
+  // Décoder les entités (&nbsp;…) sinon « Par Nicolas Mathieu&nbsp;Le… »
+  // casse l'extraction de la byline au premier mot.
+  if (m) return decodeBasicEntities(stripHtml(m[1]));
   const re2 = new RegExp(`<meta[^>]+content=["']([^"']+)["'][^>]+(?:name|property)=["']${esc}["']`, 'i');
   const m2 = html.match(re2);
-  return m2 ? stripHtml(m2[1]) : '';
+  return m2 ? decodeBasicEntities(stripHtml(m2[1])) : '';
 }
 
 /**
  * Auteur depuis la page source — priorité à la byline visible « Par … » (rel=author),
  * pas au JSON-LD / dc:creator WordPress (souvent rédacteur·rice technique).
+ * `sourceName` : nom du média — un « auteur » identique au nom de la
+ * publication (compte technique, ex. rel=author « Le Collectif ») est écarté
+ * pour laisser la vraie byline (og:description, etc.) remonter.
  */
-function authorFromArticleHtml(html = '', lang = 'fr', hints = {}) {
+function authorFromArticleHtml(html = '', lang = 'fr', hints = {}, sourceName = '') {
   if (!html || html.length < 200) return '';
 
   const candidates = [];
@@ -440,12 +445,15 @@ function authorFromArticleHtml(html = '', lang = 'fr', hints = {}) {
     if (meta) candidates.push({ author: meta, trust: 40 });
   }
 
+  const sourceKey = normAuthorKey(String(sourceName || ''));
   for (const { author } of candidates.sort((a, b) => b.trust - a.trust)) {
     const parts = splitMultiAuthorLabel(author);
     const name = parts.length > 1
       ? joinAuthorNames(parts.map((p) => expandAuthorName(p)).filter(Boolean), l)
       : expandAuthorName(author, l);
-    if (name && !isEditorialPlaceholder(name, l)) return name;
+    if (!name || isEditorialPlaceholder(name, l)) continue;
+    if (sourceKey && normAuthorKey(name) === sourceKey) continue;
+    return name;
   }
   return '';
 }
@@ -538,9 +546,12 @@ function resolveAuthorCandidate(item, allItems, feedDefaults, pageAuthor) {
     ? fromExcerpt.author
     : '';
   const lang = item.lang === 'en' ? 'en' : 'fr';
-  const page = normalizeAuthor(pageAuthor);
+  let page = normalizeAuthor(pageAuthor);
+  // « Auteur » identique au nom du média = compte technique, pas une byline.
+  if (page && normAuthorKey(page) === normAuthorKey(item.source || '')) page = '';
   let rss = normalizeAuthor(trimMangledAuthor(item.author));
   if (isEditorialPlaceholder(rss, lang)) rss = '';
+  if (rss && normAuthorKey(rss) === normAuthorKey(item.source || '')) rss = '';
   const rssIsDefault = rss && isFeedDefaultAuthor(item, feedDefaults);
 
   if (rssIsDefault) rss = '';
