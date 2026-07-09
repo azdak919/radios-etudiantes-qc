@@ -2139,50 +2139,83 @@ html[data-translate-busy="1"] .translate-toggle {
   display: none;
 }
 
-/* ── Vignette photo à droite — En bref + vedettes ──
-   Le texte garde son gabarit ; la photo se glisse en colonne droite et se
-   redimensionne avec la carte. Crédit photo en petit sous la vignette.
-   Tablette et bureau seulement — pas de vignettes sur téléphone.
+/* ── Vignette photo à droite — En bref + vedettes (tous écrans) ──
+   Le texte garde minmax(0,1fr) ; la photo est une colonne fixe à droite.
+   Crédit photo en petit sous la vignette. Tailles progressives mobile → bureau.
    (« Suite du fil » reste sans photo : le rôle standard n'a pas de média.) */
+.article--thumb.has-image {
+  display: grid;
+  /* Mobile d'abord : vignette modeste pour ne pas squish le titre / extrait */
+  grid-template-columns: minmax(0, 1fr) clamp(64px, 22vw, 88px);
+  column-gap: 10px;
+  align-items: start;
+}
+.article--thumb.has-image > .article-meta {
+  grid-column: 1 / -1;
+}
+.article--thumb.has-image > .article-title,
+.article--thumb.has-image > .article-byline,
+.article--thumb.has-image > .article-brief {
+  grid-column: 1;
+  min-width: 0; /* évite le débordement horizontal du texte long */
+}
+.article--thumb.has-image > .article-media {
+  grid-column: 2;
+  grid-row: 2 / span 3;
+  margin: 2px 0 0;
+  aspect-ratio: auto;
+  overflow: visible;
+  background: transparent;
+  min-width: 0;
+}
+.article--thumb.has-image .article-media img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 6px;
+  background: var(--bg-soft);
+}
+.article--thumb.has-image .article-media-credit {
+  margin: 3px 0 0;
+  font-size: 0.55rem;
+  line-height: 1.25;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+/* Vedettes (2 extras à la une) : un cran plus large que En bref sur mobile */
+.news-hero .article--feature.article--thumb.has-image {
+  grid-template-columns: minmax(0, 1fr) clamp(72px, 24vw, 100px);
+  column-gap: 12px;
+}
+.news-hero .article--feature.article--thumb.has-image .article-media-credit {
+  -webkit-line-clamp: 3;
+  font-size: 0.58rem;
+}
+
 @media (min-width: 601px) {
   .article--thumb.has-image {
-    display: grid;
     grid-template-columns: minmax(0, 1fr) clamp(72px, 26%, 116px);
     column-gap: 14px;
-    align-items: start;
-  }
-  .article--thumb.has-image > .article-meta {
-    grid-column: 1 / -1;
-  }
-  .article--thumb.has-image > .article-title,
-  .article--thumb.has-image > .article-byline,
-  .article--thumb.has-image > .article-brief {
-    grid-column: 1;
   }
   .article--thumb.has-image > .article-media {
-    grid-column: 2;
-    grid-row: 2 / span 3;
     margin: 3px 0 0;
-    aspect-ratio: auto;
-    overflow: visible;
-    background: transparent;
-  }
-  .article--thumb.has-image .article-media img {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-    border-radius: 6px;
-    background: var(--bg-soft);
   }
   .article--thumb.has-image .article-media-credit {
-    margin: 3px 0 0;
     font-size: 0.6rem;
     line-height: 1.3;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
     -webkit-line-clamp: 3;
-    overflow: hidden;
+  }
+  .news-hero .article--feature.article--thumb.has-image {
+    grid-template-columns: minmax(0, 1fr) clamp(72px, 26%, 116px);
+    column-gap: 14px;
+  }
+  .news-hero .article--feature.article--thumb.has-image .article-media-credit {
+    font-size: 0.6rem;
   }
 }
 
@@ -2761,8 +2794,28 @@ html[data-translate-busy="1"] .translate-toggle {
 @media (max-width: 600px) {
   :root { --pad: 18px; }
   .article::before { left: -10px; }
-  /* Pas de vignettes photo sur téléphone */
-  .article--thumb.has-image .article-media { display: none; }
+
+  /* Cartes avec vignette : un peu moins de padding vertical pour compenser
+     la hauteur crédit photo, sans écraser le bloc texte. */
+  .brief-rail .article--compact.article--thumb.has-image,
+  .news-hero .article--feature.article--thumb.has-image {
+    padding-top: 11px;
+    padding-bottom: 11px;
+  }
+
+  /* Titre / extrait : laisser de l'air à côté de la vignette */
+  .article--thumb.has-image .article-title {
+    padding-right: 0;
+  }
+  .brief-rail .article--compact.article--thumb.has-image .article-brief-text {
+    -webkit-line-clamp: 3;
+  }
+  .brief-rail .article--compact.article--thumb.has-image .article-brief.is-truncated .article-brief-text {
+    -webkit-line-clamp: 2;
+  }
+  .news-hero .article--feature.article--thumb.has-image .article-brief-text {
+    -webkit-line-clamp: 3;
+  }
 }
 
 /*

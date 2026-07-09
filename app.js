@@ -3363,22 +3363,9 @@ function createArticle(item, role = 'standard') {
   }
 
   if (hasImageCandidate) {
-    if (!isThumbRole) {
-      attachArticleImage(a, item, role);
-    } else {
-      /* Pas de vignettes sur téléphone : on ne télécharge la photo qu'à
-         partir de 601px (rattrapage si la fenêtre s'élargit ensuite). */
-      const mq = window.matchMedia('(min-width: 601px)');
-      if (mq.matches) {
-        attachArticleImage(a, item, role);
-      } else {
-        mq.addEventListener('change', (e) => {
-          if (e.matches && a.isConnected && !a.classList.contains('has-image')) {
-            attachArticleImage(a, item, role);
-          }
-        }, { once: true });
-      }
-    }
+    /* Vignettes (vedettes + En bref) aussi sur mobile, avec crédit photo —
+       le CSS adapte la largeur pour éviter l'écrasement du texte. */
+    attachArticleImage(a, item, role);
   }
   return a;
 }
