@@ -1,47 +1,53 @@
 {
-  "updatedAt": "2026-07-09T18:20:24.453Z",
+  "updatedAt": "2026-07-09T20:20:41.417Z",
   "timezone": "America/Toronto",
   "stations": {
     "chyz": {
       "id": "chyz",
       "name": "CHYZ 94,3",
-      "current": null,
-      "next": {
+      "current": {
         "title": "Chéri.e, j’arrive!",
         "source": "schedule",
         "start": "16:00",
         "end": "17:30",
         "url": "https://chyz.ca/emission/cheri-e-jarrive/"
       },
+      "next": {
+        "title": "Les Arshitechs du Son",
+        "source": "schedule",
+        "start": "17:30",
+        "end": "18:30",
+        "url": "https://chyz.ca/emission/les-arshitechs-du-son/"
+      },
       "track": "",
-      "showTitle": "",
+      "showTitle": "Chéri.e, j’arrive!",
       "host": "",
       "source": "schedule",
       "sources": [
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-09T18:20:16.205Z"
+      "checkedAt": "2026-07-09T20:20:31.420Z"
     },
     "cism": {
       "id": "cism",
       "name": "CISM 89,3",
       "current": {
-        "title": "La collation",
+        "title": "La grande ludothèque",
         "source": "api-live",
-        "start": "09:00",
+        "start": "12:00",
         "url": "https://stream03.ustream.ca/cism128.mp3",
-        "slug": "mix-collation"
+        "slug": "la-grande-ludotheque"
       },
       "next": {
-        "title": "Une fenêtre sur le monde",
+        "title": "Le palmarès",
         "source": "api-live",
-        "start": "11:00",
-        "url": "https://podcast.cism893.ca/podcast/download_mp3/363614.mp3",
-        "slug": "une-fenetre-sur-le-monde"
+        "start": "14:00",
+        "url": "https://podcast.cism893.ca/podcast/download_mp3/364007.mp3",
+        "slug": "palmares-de-cism"
       },
       "track": "",
-      "showTitle": "La collation",
+      "showTitle": "La grande ludothèque",
       "host": "",
       "source": "api-live",
       "sources": [
@@ -51,25 +57,25 @@
         "type": "cism-v1",
         "url": "https://admin.cism893.ca/api/v1/live"
       },
-      "checkedAt": "2026-07-09T18:20:17.833Z"
+      "checkedAt": "2026-07-09T20:20:33.271Z"
     },
     "ckut": {
       "id": "ckut",
       "name": "CKUT 90,3",
       "current": {
-        "title": "Voices of Montreal: New Voices/Tranzister Radio/Radio Moon/Panacea",
-        "source": "api-live",
-        "start": "14:00",
-        "end": "15:00"
-      },
-      "next": {
         "title": "Positive Vibes",
         "source": "api-live",
         "start": "15:00",
         "end": "17:00"
       },
+      "next": {
+        "title": "Off The Hour: La Voix des Immigrants",
+        "source": "api-live",
+        "start": "17:00",
+        "end": "18:00"
+      },
       "track": "",
-      "showTitle": "Voices of Montreal: New Voices/Tranzister Radio/Radio Moon/Panacea",
+      "showTitle": "Positive Vibes",
       "host": "",
       "source": "api-live",
       "sources": [
@@ -77,34 +83,34 @@
         "stream"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-09T18:20:20.183Z"
+      "checkedAt": "2026-07-09T20:20:36.420Z"
     },
     "cjlo": {
       "id": "cjlo",
       "name": "CJLO 1690AM",
       "current": {
-        "title": "The 514",
+        "title": "Hooked On Sonics",
         "source": "schedule",
-        "start": "14:00",
-        "end": "15:00",
-        "url": "http://www.cjlo.com/shows/the-514"
+        "start": "16:00",
+        "end": "18:00",
+        "url": "http://www.cjlo.com/shows/hooked-on-sonics"
       },
       "next": {
-        "title": "Secondhand Sounds",
+        "title": "CJLO's Alternative Mega Mix",
         "source": "schedule",
-        "start": "15:00",
-        "end": "16:00",
-        "url": "http://www.cjlo.com/shows/secondhand-sounds"
+        "start": "18:00",
+        "end": "19:00",
+        "url": "http://www.cjlo.com/shows/cjlos-alternative-mega-mix"
       },
       "track": "",
-      "showTitle": "The 514",
+      "showTitle": "Hooked On Sonics",
       "host": "",
       "source": "schedule",
       "sources": [
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-09T18:20:21.491Z"
+      "checkedAt": "2026-07-09T20:20:38.217Z"
     },
     "cfak": {
       "id": "cfak",
@@ -129,28 +135,27 @@
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-09T18:20:22.222Z"
+      "checkedAt": "2026-07-09T20:20:38.736Z"
     },
     "choq": {
       "id": "choq",
       "name": "CHOQ.ca",
       "current": {
-        "title": "Take My Life",
+        "title": "Atlas",
         "source": "api-live",
-        "host": "Spell",
-        "url": "https://www.choq.ca/assets/playlist/internationale.jpg"
+        "host": "Battles"
       },
       "next": null,
-      "track": "Spell - Take My Life",
-      "showTitle": "Take My Life",
-      "host": "Spell",
+      "track": "Battles - Atlas",
+      "showTitle": "Atlas",
+      "host": "Battles",
       "source": "api-live",
       "sources": [
         "api-live",
         "stream"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-09T18:20:24.102Z"
+      "checkedAt": "2026-07-09T20:20:41.067Z"
     }
   }
 }
