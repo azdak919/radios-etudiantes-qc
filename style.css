@@ -1861,16 +1861,16 @@ html[data-translate-busy="1"] .translate-toggle {
   padding: 22px 0;
   border-bottom: 1px solid var(--rule);
   transition: transform 160ms cubic-bezier(0.22,1,0.36,1);
-  /* Contient le filet ::before (left négatif) — évite overflow-x iPad */
-  overflow-x: clip;
   max-width: 100%;
   min-width: 0;
 }
 .article::before {
   content: "";
   position: absolute;
-  /* Dans le padding, pas hors flux (left:-14px élargissait le scroll iPad) */
-  left: 0;
+  /* Dans la gouttière (padding de .wire), à gauche du contenu et de la
+     vignette — jamais par-dessus l'image. Le débordement à gauche reste
+     contenu par .wire { overflow-x: clip } (pas de pan horizontal iPad). */
+  left: -14px;
   top: 22px; bottom: 22px;
   width: 3px;
   border-radius: 3px;
