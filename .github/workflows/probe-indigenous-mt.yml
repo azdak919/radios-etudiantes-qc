@@ -1,0 +1,56 @@
+name: Probe Indigenous MT engines
+
+on:
+  schedule:
+    # 1er du mois à 14:00 UTC ≈ 10:00 EDT / 09:00 EST
+    - cron: '0 14 1 * *'
+  workflow_dispatch: {}
+
+concurrency:
+  group: probe-indigenous-mt-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Probe public MT engines for Québec Indigenous languages
+        id: probe
+        run: node scripts/probe-indigenous-mt.js
+        env:
+          CI: true
+
+      - name: Commit registry if languages newly enabled
+        if: steps.probe.outputs.changed == 'true'
+        run: |
+          git config user.name "RÉQ Indigenous MT Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add indigenous-mt.json
+          MSG="bot: indigenous MT probe"
+          if [ -n "${{ steps.probe.outputs.newly_enabled }}" ]; then
+            MSG="bot: enable indigenous MT — ${{ steps.probe.outputs.newly_enabled }}"
+          else
+            MSG="bot: refresh indigenous-mt.json probe results"
+          fi
+          git commit -m "$MSG" || exit 0
+          for i in 1 2 3; do
+            git pull --rebase -X theirs --autostash origin "${GITHUB_REF_NAME}" && git push && exit 0
+            git rebase --abort 2>/dev/null || true
+            echo "push attempt $i failed, retrying…"
+            sleep $((i * 3))
+          done
+          echo "::error::could not push indigenous-mt update after retries"
+          exit 1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

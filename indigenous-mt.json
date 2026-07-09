@@ -1,0 +1,257 @@
+{
+  "version": 1,
+  "updated": "2026-07-09T19:36:28.803Z",
+  "probedAt": "2026-07-09T19:36:28.803Z",
+  "note": "Catalogue des langues autochtones du Québec pour LE RADAR. Le bot scripts/probe-indigenous-mt.js (cron mensuel) sonde les moteurs publics et active automatiquement une langue dès qu'un code gtx/libretranslate répond de façon fiable.",
+  "engines": {
+    "gtx": {
+      "name": "Google Translate (gtx, sans clé)",
+      "probeUrl": "https://translate.googleapis.com/translate_a/single",
+      "lastCheck": "2026-07-09T19:36:28.803Z",
+      "ok": true
+    },
+    "microsoft_list": {
+      "name": "Microsoft Translator — liste des langues",
+      "probeUrl": "https://api.cognitive.microsofttranslator.com/languages?api-version=3.0",
+      "lastCheck": "2026-07-09T19:36:28.803Z",
+      "ok": true,
+      "count": 138
+    },
+    "libretranslate": {
+      "name": "LibreTranslate public",
+      "probeUrl": "https://libretranslate.com/languages",
+      "lastCheck": "2026-07-09T19:36:28.803Z",
+      "ok": true,
+      "count": 51
+    }
+  },
+  "languages": [
+    {
+      "id": "iu",
+      "label": "ᐃᓄᒃᑎᑐᑦ",
+      "short": "IU",
+      "title": "Inuktitut (syllabiques) — Inuktut, Nunavik et Inuit du Canada",
+      "hint": "Inuktitut · syllabiques",
+      "probeCodes": {
+        "gtx": [
+          "iu",
+          "ike"
+        ],
+        "microsoft": [
+          "iu"
+        ]
+      },
+      "enabled": true,
+      "unavailable": false,
+      "engine": "gtx",
+      "goog": "iu",
+      "lastProbe": {
+        "at": "2026-07-09T19:36:19.775Z",
+        "gtx": true,
+        "gtxCode": "iu",
+        "microsoft": true,
+        "libretranslate": false,
+        "sample": "ᕼᐊᓘ ᐃᓕᓐᓂᐊᖅᑏᑦ. ᑐᙵᓱᒋᑦ ᐃᓕᓐᓂᐊᖅᑏᑦ ᑐᓴᒐᒃᓴᖁᑎᖏᓐᓄᑦ ᑯᐸᐃᒃ ᓯᓚᑦᑐᖅᓴᕐᕕᒡᔪᐊᖏᓐᓂᑦ ᐊᒻᒪ ᓯᓚᑦᑐᖅᓴᕐᕕᖕᓂᑦ."
+      }
+    },
+    {
+      "id": "iu-latn",
+      "label": "Inuktut",
+      "short": "IU",
+      "title": "Inuktut (alphabet latin) — Inuit du Canada",
+      "hint": "Inuktitut · latin",
+      "probeCodes": {
+        "gtx": [
+          "iu",
+          "ike",
+          "iu-Latn",
+          "ike-Latn"
+        ],
+        "microsoft": [
+          "iu-Latn",
+          "iu"
+        ]
+      },
+      "enabled": true,
+      "unavailable": false,
+      "engine": "gtx",
+      "goog": "iu",
+      "lastProbe": {
+        "at": "2026-07-09T19:36:21.535Z",
+        "gtx": true,
+        "gtxCode": "iu",
+        "microsoft": true,
+        "libretranslate": false,
+        "sample": "ᕼᐊᓘ ᐃᓕᓐᓂᐊᖅᑏᑦ. ᑐᙵᓱᒋᑦ ᐃᓕᓐᓂᐊᖅᑏᑦ ᑐᓴᒐᒃᓴᖁᑎᖏᓐᓄᑦ ᑯᐸᐃᒃ ᓯᓚᑦᑐᖅᓴᕐᕕᒡᔪᐊᖏᓐᓂᑦ ᐊᒻᒪ ᓯᓚᑦᑐᖅᓴᕐᕕᖕᓂᑦ."
+      }
+    },
+    {
+      "id": "cr",
+      "label": "Cree",
+      "short": "CR",
+      "title": "Eeyou / Cree — en attente d'un moteur de traduction publique fiable",
+      "hint": "Eeyou Istchee · bientôt",
+      "probeCodes": {
+        "gtx": [
+          "cr",
+          "crk",
+          "cwd",
+          "crd",
+          "csw"
+        ],
+        "microsoft": []
+      },
+      "enabled": false,
+      "unavailable": true,
+      "engine": null,
+      "goog": null,
+      "lastProbe": {
+        "at": "2026-07-09T19:36:21.948Z",
+        "gtx": false,
+        "gtxCode": null,
+        "microsoft": false,
+        "libretranslate": false
+      }
+    },
+    {
+      "id": "moe",
+      "label": "Innu-aimun",
+      "short": "INN",
+      "title": "Innu-aimun — en attente d'un moteur de traduction publique fiable",
+      "hint": "Innu · bientôt",
+      "probeCodes": {
+        "gtx": [
+          "moe",
+          "crk"
+        ],
+        "microsoft": []
+      },
+      "enabled": false,
+      "unavailable": true,
+      "engine": null,
+      "goog": null,
+      "lastProbe": {
+        "at": "2026-07-09T19:36:24.301Z",
+        "gtx": false,
+        "gtxCode": null,
+        "microsoft": false,
+        "libretranslate": false
+      }
+    },
+    {
+      "id": "atj",
+      "label": "Atikamekw",
+      "short": "ATJ",
+      "title": "Atikamekw Nehiromowin — en attente d'un moteur de traduction publique fiable",
+      "hint": "Atikamekw · bientôt",
+      "probeCodes": {
+        "gtx": [
+          "atj"
+        ],
+        "microsoft": []
+      },
+      "enabled": false,
+      "unavailable": true,
+      "engine": null,
+      "goog": null,
+      "lastProbe": {
+        "at": "2026-07-09T19:36:25.220Z",
+        "gtx": false,
+        "gtxCode": null,
+        "microsoft": false,
+        "libretranslate": false
+      }
+    },
+    {
+      "id": "alq",
+      "label": "Anishinaabemowin",
+      "short": "ALG",
+      "title": "Anishinaabemowin (Algonquin) — en attente d'un moteur de traduction publique fiable",
+      "hint": "Algonquin · bientôt",
+      "probeCodes": {
+        "gtx": [
+          "alq",
+          "oji",
+          "ojg",
+          "ojc"
+        ],
+        "microsoft": []
+      },
+      "enabled": false,
+      "unavailable": true,
+      "engine": null,
+      "goog": null,
+      "lastProbe": {
+        "at": "2026-07-09T19:36:25.731Z",
+        "gtx": false,
+        "gtxCode": null,
+        "microsoft": false,
+        "libretranslate": false
+      }
+    },
+    {
+      "id": "moh",
+      "label": "Kanienʼkéha",
+      "short": "MOH",
+      "title": "Kanienʼkéha (Mohawk) — en attente d'un moteur de traduction publique fiable",
+      "hint": "Mohawk · bientôt",
+      "probeCodes": {
+        "gtx": [
+          "moh"
+        ],
+        "microsoft": []
+      },
+      "enabled": false,
+      "unavailable": true,
+      "engine": null,
+      "goog": null,
+      "lastProbe": {
+        "at": "2026-07-09T19:36:27.779Z",
+        "gtx": false,
+        "gtxCode": null,
+        "microsoft": false,
+        "libretranslate": false
+      }
+    },
+    {
+      "id": "mic",
+      "label": "Mi'kmaq",
+      "short": "MIC",
+      "title": "Mi'kmaq — en attente d'un moteur de traduction publique fiable",
+      "hint": "Mi'kmaq · bientôt",
+      "probeCodes": {
+        "gtx": [
+          "mic"
+        ],
+        "microsoft": []
+      },
+      "enabled": false,
+      "unavailable": true,
+      "engine": null,
+      "goog": null,
+      "lastProbe": {
+        "at": "2026-07-09T19:36:28.291Z",
+        "gtx": false,
+        "gtxCode": null,
+        "microsoft": false,
+        "libretranslate": false
+      }
+    }
+  ],
+  "history": [
+    {
+      "at": "2026-07-09T19:36:28.803Z",
+      "newlyEnabled": [],
+      "stillWaiting": [
+        "cr",
+        "moe",
+        "atj",
+        "alq",
+        "moh",
+        "mic"
+      ],
+      "microsoftOk": true,
+      "libreOk": true
+    }
+  ]
+}

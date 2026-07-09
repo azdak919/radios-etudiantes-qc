@@ -47,6 +47,8 @@
       goog: 'en',
       group: 'core',
     },
+    /* Langues autochtones : catalogue dynamique dans indigenous-mt.json
+       (sondage mensuel scripts/probe-indigenous-mt.js). Repli statique : */
     iu: {
       id: 'iu',
       label: 'ᐃᓄᒃᑎᑐᑦ',
@@ -65,9 +67,6 @@
       goog: 'iu',
       group: 'indigenous',
     },
-    /* Cree, Innu, Atikamekw, Anishinaabemowin, Mohawk, Mi'kmaq : absents des
-       API de traduction utilisées (gtx / MyMemory) — non listés tant qu'aucun
-       moteur fiable n'est disponible. Seul l'inuktitut est offert. */
     /* —— Population étudiante internationale au Québec / Canada ——
        Priorité : Inde, Chine, Nigeria, Philippines, Iran, Vietnam, Corée,
        Maghreb, Amérique latine, Europe de l’Est, etc. (IRCC / campus QC). */
@@ -433,10 +432,10 @@
     },
   };
 
-  /** Ordre d’affichage : Original/FR/EN → autochtones QC → régions d’origine étudiantes. */
-  const MENU_ORDER = [
-    'original', 'fr', 'en',
-    'iu', 'iu-latn',
+  /** Ordre d’affichage : Original/FR/EN → autochtones QC → régions d’origine étudiantes.
+   *  Les IDs autochtones sont injectés depuis indigenous-mt.json (voir applyIndigenousRegistry). */
+  const MENU_ORDER_CORE = ['original', 'fr', 'en'];
+  const MENU_ORDER_TAIL = [
     // Amériques
     'es', 'pt', 'ht',
     // Asie (Inde en tête des permis d’études au Canada)
@@ -449,15 +448,55 @@
     // Europe
     'de', 'it', 'ru', 'uk', 'pl', 'ro', 'nl', 'el', 'sv',
   ];
+  let MENU_ORDER = [...MENU_ORDER_CORE, 'iu', 'iu-latn', ...MENU_ORDER_TAIL];
 
   const GROUP_LABELS = {
-    indigenous: 'Inuktut · Nunavik',
+    indigenous: 'Langues autochtones du Québec',
     americas: 'Amériques',
     asia: 'Asie',
     mena: 'Maghreb & Moyen-Orient',
     africa: 'Afrique',
     europe: 'Europe',
   };
+
+  let indigenousRegistryReady = false;
+
+  /** Fusionne indigenous-mt.json → MODES + MENU_ORDER (active + bientôt). */
+  function applyIndigenousRegistry(reg) {
+    if (!reg || !Array.isArray(reg.languages)) return;
+    const indigenousIds = [];
+    for (const lang of reg.languages) {
+      if (!lang?.id) continue;
+      const enabled = !!lang.enabled && !lang.unavailable && lang.goog;
+      MODES[lang.id] = {
+        id: lang.id,
+        label: lang.label || lang.id,
+        short: lang.short || String(lang.id).toUpperCase(),
+        title: lang.title || lang.label || lang.id,
+        hint: lang.hint || (enabled ? 'Auto' : 'bientôt'),
+        group: 'indigenous',
+        goog: enabled ? lang.goog : undefined,
+        unavailable: !enabled,
+      };
+      indigenousIds.push(lang.id);
+    }
+    if (indigenousIds.length) {
+      MENU_ORDER = [...MENU_ORDER_CORE, ...indigenousIds, ...MENU_ORDER_TAIL];
+    }
+  }
+
+  function loadIndigenousRegistry() {
+    if (indigenousRegistryReady) return Promise.resolve();
+    return fetch('./indigenous-mt.json', { cache: 'no-store' })
+      .then((r) => (r.ok ? r.json() : null))
+      .then((data) => {
+        if (data) applyIndigenousRegistry(data);
+        indigenousRegistryReady = true;
+      })
+      .catch(() => {
+        indigenousRegistryReady = true;
+      });
+  }
 
   /** textNode → original string (avant toute traduction) */
   const originalByNode = new WeakMap();
@@ -1094,15 +1133,16 @@
 
   function init() {
     loadCache();
-    bindUi();
     startObserver();
 
-    const mode = getMode();
-    activeMode = mode;
-    updateUi(mode);
+    // Catalogue autochtones + noms de médias, puis UI (menu à jour) + auto-traduction
+    Promise.all([loadIndigenousRegistry(), loadProtectedMediaNames()]).then(() => {
+      bindUi();
 
-    // Charger les noms de médias avant toute traduction auto
-    const afterMedia = () => {
+      const mode = getMode();
+      activeMode = mode;
+      updateUi(mode);
+
       if (mode === DEFAULT_MODE) return;
       const run = () => applyMode(mode, {
         persist: hasUserPreference(),
@@ -1113,8 +1153,7 @@
       } else {
         window.addEventListener('load', () => window.setTimeout(run, 200), { once: true });
       }
-    };
-    loadProtectedMediaNames().then(afterMedia);
+    });
   }
 
   if (document.readyState === 'loading') {
