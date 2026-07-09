@@ -3055,9 +3055,13 @@ html[data-translate-busy="1"] .translate-toggle {
     overflow: hidden;
   }
 
-  .brief-rail .article--compact .article-brief.is-truncated .article-brief-text,
-  .news-tail .article--standard .article-brief.is-truncated .article-brief-text {
+  .brief-rail .article--compact .article-brief.is-truncated .article-brief-text {
     -webkit-line-clamp: 2;
+  }
+
+  /* Suite du fil : 3 lignes d'extrait (y compris avec « Lire la suite ») */
+  .news-tail .article--standard .article-brief.is-truncated .article-brief-text {
+    -webkit-line-clamp: 3;
   }
 }
 

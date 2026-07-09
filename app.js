@@ -2926,7 +2926,7 @@ const CONTINGENCY_MAX_SESSIONS_BACK = FRESHNESS_SESSION_COUNT - 1;
  */
 const AUTUMN_GRACE_END_MONTH = 10; /* novembre inclus */
 /* Vedettes (feature) = même budget / sources d'extrait que « À la une ». */
-const BRIEF_LIMITS = { lead: 720, feature: 720, compact: 400, standard: 170 };
+const BRIEF_LIMITS = { lead: 720, feature: 720, compact: 400, standard: 260 };
 const LEAD_BRIEF_MIN_CHARS = 160;
 const BRIEF_COMPACT_MIN_CHARS = 150;
 const FEATURE_BRIEF_MIN_CHARS = LEAD_BRIEF_MIN_CHARS;
