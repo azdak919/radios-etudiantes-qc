@@ -1975,6 +1975,16 @@ html[data-translate-busy="1"] .translate-toggle {
   margin: 0 0 6px;
   font-weight: 500;
 }
+.article-byline__label {
+  /* Libellé « Par » / « By » (traduisible) */
+}
+/* Espace stable entre libellé et auteur — survit aux traductions qui
+   retirent le blanc final de « Par » / « By » / « Por »… */
+.article-byline .article-author {
+  color: var(--ink);
+  font-weight: 600;
+  margin-inline-start: 0.35em;
+}
 .article-byline strong {
   color: var(--ink);
   font-weight: 600;

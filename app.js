@@ -3338,7 +3338,9 @@ function createArticle(item, role = 'standard') {
   const briefHtml = item.link || brief
     ? `<p class="article-brief${briefTruncated ? ' is-truncated' : ''}"><span class="article-brief-text">${escapeHtml(brief || '')}</span>${briefTruncated ? `<span class="article-more" style="color: ${color}">${readMore}</span>` : ''}</p>`
     : '';
-  const bylineHtml = `<p class="article-byline">${byLabel} <strong class="article-author notranslate" translate="no">${escapeHtml(displayAuthor)}</strong></p>`;
+  // Espace garanti en CSS (.article-author) : la traduction du libellé « Par »/« By »
+  // mange souvent l'espace final du nœud texte.
+  const bylineHtml = `<p class="article-byline"><span class="article-byline__label">${escapeHtml(byLabel)}</span><strong class="article-author notranslate" translate="no">${escapeHtml(displayAuthor)}</strong></p>`;
   const titleHtml = `<h3 class="article-title">${escapeHtml(cleanTitle(item.title))}</h3>`;
   const mediaHtml = hasImageCandidate ? '<figure class="article-media"></figure>' : '';
   if (role === 'lead') {
