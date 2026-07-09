@@ -1,17 +1,11 @@
 {
-  "updatedAt": "2026-07-09T21:59:24.078Z",
+  "updatedAt": "2026-07-09T23:21:21.291Z",
   "timezone": "America/Toronto",
   "stations": {
     "chyz": {
       "id": "chyz",
       "name": "CHYZ 94,3",
-      "current": {
-        "title": "Les Arshitechs du Son",
-        "source": "schedule",
-        "start": "17:30",
-        "end": "18:30",
-        "url": "https://chyz.ca/emission/les-arshitechs-du-son/"
-      },
+      "current": null,
       "next": {
         "title": "Vendredi Nostalgie",
         "source": "schedule",
@@ -20,34 +14,34 @@
         "url": "https://chyz.ca/emission/vendredi-nostalgie/"
       },
       "track": "",
-      "showTitle": "Les Arshitechs du Son",
+      "showTitle": "",
       "host": "",
       "source": "schedule",
       "sources": [
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-09T21:59:15.914Z"
+      "checkedAt": "2026-07-09T23:21:12.043Z"
     },
     "cism": {
       "id": "cism",
       "name": "CISM 89,3",
       "current": {
-        "title": "La grande ludothèque",
+        "title": "La boussole culturelle",
         "source": "api-live",
-        "start": "12:00",
+        "start": "15:00",
         "url": "https://stream03.ustream.ca/cism128.mp3",
-        "slug": "la-grande-ludotheque"
+        "slug": "la-boussole-culturelle"
       },
       "next": {
-        "title": "Le palmarès",
+        "title": "Rythmologie",
         "source": "api-live",
-        "start": "14:00",
-        "url": "https://podcast.cism893.ca/podcast/download_mp3/364007.mp3",
-        "slug": "palmares-de-cism"
+        "start": "16:00",
+        "url": "https://podcast.cism893.ca/podcast/download_mp3/363630.mp3",
+        "slug": "rythmologie"
       },
       "track": "",
-      "showTitle": "La grande ludothèque",
+      "showTitle": "La boussole culturelle",
       "host": "",
       "source": "api-live",
       "sources": [
@@ -57,25 +51,25 @@
         "type": "cism-v1",
         "url": "https://admin.cism893.ca/api/v1/live"
       },
-      "checkedAt": "2026-07-09T21:59:17.403Z"
+      "checkedAt": "2026-07-09T23:21:13.703Z"
     },
     "ckut": {
       "id": "ckut",
       "name": "CKUT 90,3",
       "current": {
-        "title": "Off The Hour: La Voix des Immigrants",
+        "title": "Grey Matters",
         "source": "api-live",
-        "start": "17:00",
-        "end": "18:00"
+        "start": "19:00",
+        "end": "20:00"
       },
       "next": {
-        "title": "Upstage",
+        "title": "Other Worlds on Earth/Dromostexte",
         "source": "api-live",
-        "start": "18:00",
-        "end": "19:00"
+        "start": "20:00",
+        "end": "21:00"
       },
       "track": "",
-      "showTitle": "Off The Hour: La Voix des Immigrants",
+      "showTitle": "Grey Matters",
       "host": "",
       "source": "api-live",
       "sources": [
@@ -83,34 +77,34 @@
         "stream"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-09T21:59:19.493Z"
+      "checkedAt": "2026-07-09T23:21:16.623Z"
     },
     "cjlo": {
       "id": "cjlo",
       "name": "CJLO 1690AM",
       "current": {
-        "title": "Hooked On Sonics",
+        "title": "Teen Radio",
         "source": "schedule",
-        "start": "16:00",
-        "end": "18:00",
-        "url": "http://www.cjlo.com/shows/hooked-on-sonics"
+        "start": "19:00",
+        "end": "20:00",
+        "url": "http://www.cjlo.com/shows/teen-radio"
       },
       "next": {
-        "title": "CJLO's Alternative Mega Mix",
+        "title": "Maiden Voyage",
         "source": "schedule",
-        "start": "18:00",
-        "end": "19:00",
-        "url": "http://www.cjlo.com/shows/cjlos-alternative-mega-mix"
+        "start": "20:00",
+        "end": "21:00",
+        "url": "http://www.cjlo.com/shows/maiden-voyage"
       },
       "track": "",
-      "showTitle": "Hooked On Sonics",
+      "showTitle": "Teen Radio",
       "host": "",
       "source": "schedule",
       "sources": [
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-09T21:59:20.950Z"
+      "checkedAt": "2026-07-09T23:21:18.570Z"
     },
     "cfak": {
       "id": "cfak",
@@ -135,27 +129,28 @@
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-09T21:59:21.671Z"
+      "checkedAt": "2026-07-09T23:21:19.230Z"
     },
     "choq": {
       "id": "choq",
       "name": "CHOQ.ca",
       "current": {
-        "title": "Take Time",
+        "title": "Tema Em Harmônicos (No Strings)",
         "source": "api-live",
-        "host": "The Books"
+        "host": "Fabiano Do Nascimento & Vittor Santos Orchestra",
+        "url": "https://www.choq.ca/assets/playlist/internationale.jpg"
       },
       "next": null,
-      "track": "The Books - Take Time",
-      "showTitle": "Take Time",
-      "host": "The Books",
+      "track": "Fabiano Do Nascimento & Vittor Santos Orchestra - Tema Em Harmônicos (No Strings)",
+      "showTitle": "Tema Em Harmônicos (No Strings)",
+      "host": "Fabiano Do Nascimento & Vittor Santos Orchestra",
       "source": "api-live",
       "sources": [
         "api-live",
         "stream"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-09T21:59:23.727Z"
+      "checkedAt": "2026-07-09T23:21:20.939Z"
     }
   }
 }
