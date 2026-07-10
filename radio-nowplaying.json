@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-10T19:02:16.054Z",
+  "updatedAt": "2026-07-10T20:50:33.434Z",
   "timezone": "America/Toronto",
   "stations": {
     "chyz": {
@@ -21,27 +21,27 @@
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-10T19:01:56.240Z"
+      "checkedAt": "2026-07-10T20:50:12.952Z"
     },
     "cism": {
       "id": "cism",
       "name": "CISM 89,3",
       "current": {
-        "title": "Accents ouverts",
-        "source": "api-live",
-        "start": "11:00",
-        "url": "https://stream03.ustream.ca/cism128.mp3",
-        "slug": "accents-ouverts"
-      },
-      "next": {
         "title": "Rebelles soniques",
         "source": "api-live",
         "start": "12:00",
-        "url": "https://podcast.cism893.ca/podcast/download_mp3/363686.mp3",
+        "url": "https://stream03.ustream.ca/cism128.mp3",
         "slug": "rebelles-soniques"
       },
+      "next": {
+        "title": "Le palmarès",
+        "source": "api-live",
+        "start": "14:00",
+        "url": "https://podcast.cism893.ca/podcast/download_mp3/364079.mp3",
+        "slug": "palmares-de-cism"
+      },
       "track": "",
-      "showTitle": "Accents ouverts",
+      "showTitle": "Rebelles soniques",
       "host": "",
       "source": "api-live",
       "sources": [
@@ -51,7 +51,7 @@
         "type": "cism-v1",
         "url": "https://admin.cism893.ca/api/v1/live"
       },
-      "checkedAt": "2026-07-10T19:01:57.803Z"
+      "checkedAt": "2026-07-10T20:50:14.636Z"
     },
     "ckut": {
       "id": "ckut",
@@ -77,34 +77,34 @@
         "stream"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-10T19:02:00.139Z"
+      "checkedAt": "2026-07-10T20:50:17.147Z"
     },
     "cjlo": {
       "id": "cjlo",
       "name": "CJLO 1690AM",
       "current": {
-        "title": "Dead Beats",
-        "source": "schedule",
-        "start": "15:00",
-        "end": "16:00",
-        "url": "http://www.cjlo.com/shows/dead-beats"
-      },
-      "next": {
         "title": "Tapeworms",
         "source": "schedule",
         "start": "16:00",
         "end": "17:00",
         "url": "http://www.cjlo.com/shows/tapeworms"
       },
+      "next": {
+        "title": "The Groove Master's Hour",
+        "source": "schedule",
+        "start": "17:00",
+        "end": "18:00",
+        "url": "http://www.cjlo.com/shows/the-groove-masters-hour"
+      },
       "track": "",
-      "showTitle": "Dead Beats",
+      "showTitle": "Tapeworms",
       "host": "",
       "source": "schedule",
       "sources": [
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-10T19:02:13.584Z"
+      "checkedAt": "2026-07-10T20:50:30.579Z"
     },
     "cfak": {
       "id": "cfak",
@@ -129,27 +129,27 @@
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-10T19:02:14.310Z"
+      "checkedAt": "2026-07-10T20:50:31.210Z"
     },
     "choq": {
       "id": "choq",
       "name": "CHOQ.ca",
       "current": {
-        "title": "B0YG1RL & NOVAGANG feat. Isabella Lovestory & Isabella Lovestory - Soleil",
+        "title": "Fold ft. CFCF & Helena Deland",
         "source": "api-live",
-        "host": "B0YG1RL & NOVAGANG"
+        "host": "Jump Source"
       },
       "next": null,
-      "track": "B0YG1RL & NOVAGANG - B0YG1RL & NOVAGANG feat. Isabella Lovestory & Isabella Lovestory - Soleil",
-      "showTitle": "B0YG1RL & NOVAGANG feat. Isabella Lovestory & Isabella Lovestory - Soleil",
-      "host": "B0YG1RL & NOVAGANG",
+      "track": "Jump Source - Fold ft. CFCF & Helena Deland",
+      "showTitle": "Fold ft. CFCF & Helena Deland",
+      "host": "Jump Source",
       "source": "api-live",
       "sources": [
         "api-live",
         "stream"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-10T19:02:15.704Z"
+      "checkedAt": "2026-07-10T20:50:33.084Z"
     }
   }
 }
