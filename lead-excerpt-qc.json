@@ -1,11 +1,11 @@
 {
-  "updated": "2026-07-10T20:47:54.512Z",
+  "updated": "2026-07-10T20:59:22.402Z",
   "total": 185,
   "pool": 58,
-  "incomplete": 4,
+  "incomplete": 3,
   "withLeadExcerpt": 64,
-  "candidates": 4,
-  "enriched": 1,
+  "candidates": 3,
+  "enriched": 0,
   "failed": 1,
   "ok": true,
   "samples": [
@@ -26,15 +26,6 @@
       "chars": 400,
       "sample": "Dear readers, Class of 2026 We did it! As May’s doting weather and perfumed flowers lull us into the",
       "changed": false
-    },
-    {
-      "title": "Dévoilement du Livre bleu",
-      "link": "https://lecollectif.ca/a-la-une/devoilement-du-livre-bleu/",
-      "ok": true,
-      "score": 100,
-      "chars": 371,
-      "sample": "Le Parti québécois (PQ) a lancé, le 23 juin dernier, son fameux Livre bleu, visant à exposer sa visi",
-      "changed": true
     }
   ]
 }
