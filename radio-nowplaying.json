@@ -1,17 +1,11 @@
 {
-  "updatedAt": "2026-07-10T17:19:35.469Z",
+  "updatedAt": "2026-07-10T19:02:16.054Z",
   "timezone": "America/Toronto",
   "stations": {
     "chyz": {
       "id": "chyz",
       "name": "CHYZ 94,3",
-      "current": {
-        "title": "Détour",
-        "source": "schedule",
-        "start": "13:00",
-        "end": "14:00",
-        "url": "https://chyz.ca/emission/detour/"
-      },
+      "current": null,
       "next": {
         "title": "Les Arshitechs du Son",
         "source": "schedule",
@@ -20,34 +14,34 @@
         "url": "https://chyz.ca/emission/les-arshitechs-du-son/"
       },
       "track": "",
-      "showTitle": "Détour",
+      "showTitle": "",
       "host": "",
       "source": "schedule",
       "sources": [
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-10T17:19:03.072Z"
+      "checkedAt": "2026-07-10T19:01:56.240Z"
     },
     "cism": {
       "id": "cism",
       "name": "CISM 89,3",
       "current": {
-        "title": "La collation",
-        "source": "api-live",
-        "start": "09:00",
-        "url": "https://stream03.ustream.ca/cism128.mp3",
-        "slug": "mix-collation"
-      },
-      "next": {
         "title": "Accents ouverts",
         "source": "api-live",
         "start": "11:00",
-        "url": "https://podcast.cism893.ca/podcast/download_mp3/363684.mp3",
+        "url": "https://stream03.ustream.ca/cism128.mp3",
         "slug": "accents-ouverts"
       },
+      "next": {
+        "title": "Rebelles soniques",
+        "source": "api-live",
+        "start": "12:00",
+        "url": "https://podcast.cism893.ca/podcast/download_mp3/363686.mp3",
+        "slug": "rebelles-soniques"
+      },
       "track": "",
-      "showTitle": "La collation",
+      "showTitle": "Accents ouverts",
       "host": "",
       "source": "api-live",
       "sources": [
@@ -57,25 +51,25 @@
         "type": "cism-v1",
         "url": "https://admin.cism893.ca/api/v1/live"
       },
-      "checkedAt": "2026-07-10T17:19:04.670Z"
+      "checkedAt": "2026-07-10T19:01:57.803Z"
     },
     "ckut": {
       "id": "ckut",
       "name": "CKUT 90,3",
       "current": {
-        "title": "Butcher T&#039;s Noontime Cuts",
+        "title": "New Shit",
         "source": "api-live",
-        "start": "12:00",
-        "end": "14:00"
+        "start": "15:00",
+        "end": "17:00"
       },
       "next": {
-        "title": "NNB/Jewish Heretics/QPIRG/Mi Chante",
+        "title": "Girls Meet World/STEMinism/Radio TET/Migrant Nation",
         "source": "api-live",
-        "start": "14:00",
-        "end": "15:00"
+        "start": "17:00",
+        "end": "18:00"
       },
-      "track": "Butcher T",
-      "showTitle": "Butcher T&#039;s Noontime Cuts",
+      "track": "",
+      "showTitle": "New Shit",
       "host": "",
       "source": "api-live",
       "sources": [
@@ -83,80 +77,79 @@
         "stream"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-10T17:19:06.991Z"
+      "checkedAt": "2026-07-10T19:02:00.139Z"
     },
     "cjlo": {
       "id": "cjlo",
       "name": "CJLO 1690AM",
       "current": {
-        "title": "the castle",
+        "title": "Dead Beats",
         "source": "schedule",
-        "start": "13:00",
-        "end": "14:00",
-        "url": "http://www.cjlo.com/shows/the-castle"
+        "start": "15:00",
+        "end": "16:00",
+        "url": "http://www.cjlo.com/shows/dead-beats"
       },
       "next": {
-        "title": "Whatever She Wants",
+        "title": "Tapeworms",
         "source": "schedule",
-        "start": "14:00",
-        "end": "15:00",
-        "url": "http://www.cjlo.com/shows/whatever-she-wants"
+        "start": "16:00",
+        "end": "17:00",
+        "url": "http://www.cjlo.com/shows/tapeworms"
       },
       "track": "",
-      "showTitle": "the castle",
+      "showTitle": "Dead Beats",
       "host": "",
       "source": "schedule",
       "sources": [
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-10T17:19:20.569Z"
+      "checkedAt": "2026-07-10T19:02:13.584Z"
     },
     "cfak": {
       "id": "cfak",
       "name": "CFAK 88,3",
       "current": {
-        "title": "Ciné-Histoire",
-        "source": "schedule",
-        "start": "12:00",
-        "end": "15:00"
-      },
-      "next": {
         "title": "Nouveautés Franco",
         "source": "schedule",
         "start": "15:00",
         "end": "19:00"
       },
+      "next": {
+        "title": "Enfin vendredi",
+        "source": "schedule",
+        "start": "19:00",
+        "end": "21:00"
+      },
       "track": "",
-      "showTitle": "Ciné-Histoire",
+      "showTitle": "Nouveautés Franco",
       "host": "",
       "source": "schedule",
       "sources": [
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-10T17:19:32.953Z"
+      "checkedAt": "2026-07-10T19:02:14.310Z"
     },
     "choq": {
       "id": "choq",
       "name": "CHOQ.ca",
       "current": {
-        "title": "DESAPEGO (feat. Tremendo)",
+        "title": "B0YG1RL & NOVAGANG feat. Isabella Lovestory & Isabella Lovestory - Soleil",
         "source": "api-live",
-        "host": "Ana Tijoux",
-        "url": "https://www.choq.ca/assets/playlist/internationale.jpg"
+        "host": "B0YG1RL & NOVAGANG"
       },
       "next": null,
-      "track": "Ana Tijoux - DESAPEGO (feat. Tremendo)",
-      "showTitle": "DESAPEGO (feat. Tremendo)",
-      "host": "Ana Tijoux",
+      "track": "B0YG1RL & NOVAGANG - B0YG1RL & NOVAGANG feat. Isabella Lovestory & Isabella Lovestory - Soleil",
+      "showTitle": "B0YG1RL & NOVAGANG feat. Isabella Lovestory & Isabella Lovestory - Soleil",
+      "host": "B0YG1RL & NOVAGANG",
       "source": "api-live",
       "sources": [
         "api-live",
         "stream"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-10T17:19:35.119Z"
+      "checkedAt": "2026-07-10T19:02:15.704Z"
     }
   }
 }
