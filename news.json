@@ -1,6 +1,6 @@
 {
-  "updated": "2026-07-10T16:10:36.464Z",
-  "updatedSlot": "2026-07-10T16:00:00.000Z",
+  "updated": "2026-07-10T18:49:07.250Z",
+  "updatedSlot": null,
   "count": 185,
   "freshnessSessions": 3,
   "sources": {
@@ -10,7 +10,7 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-05-15T16:00:00.000Z",
-      "lastFetchOk": "2026-07-10T16:09:53.012Z"
+      "lastFetchOk": "2026-07-10T18:48:25.409Z"
     },
     "Montréal Campus": {
       "fetchOk": true,
@@ -18,7 +18,7 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-05-09T03:14:30.000Z",
-      "lastFetchOk": "2026-07-10T16:09:54.042Z"
+      "lastFetchOk": "2026-07-10T18:48:26.483Z"
     },
     "Le Délit": {
       "fetchOk": true,
@@ -26,7 +26,7 @@
       "articleCount": 20,
       "freshArticleCount": 20,
       "lastArticle": "2026-03-25T11:00:00.000Z",
-      "lastFetchOk": "2026-07-10T16:09:58.804Z"
+      "lastFetchOk": "2026-07-10T18:48:30.841Z"
     },
     "The McGill Daily": {
       "fetchOk": true,
@@ -34,7 +34,7 @@
       "articleCount": 15,
       "freshArticleCount": 15,
       "lastArticle": "2026-07-06T12:00:00.000Z",
-      "lastFetchOk": "2026-07-10T16:09:59.426Z"
+      "lastFetchOk": "2026-07-10T18:48:31.395Z"
     },
     "The Link": {
       "fetchOk": true,
@@ -42,7 +42,7 @@
       "articleCount": 20,
       "freshArticleCount": 20,
       "lastArticle": "2026-07-08T14:41:00.000Z",
-      "lastFetchOk": "2026-07-10T16:09:59.898Z"
+      "lastFetchOk": "2026-07-10T18:48:31.883Z"
     },
     "Zone Campus": {
       "fetchOk": true,
@@ -50,7 +50,7 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-05-08T14:20:26.000Z",
-      "lastFetchOk": "2026-07-10T16:10:00.814Z"
+      "lastFetchOk": "2026-07-10T18:48:32.662Z"
     },
     "L'Exemplaire": {
       "fetchOk": true,
@@ -58,7 +58,7 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-05-15T16:31:24.000Z",
-      "lastFetchOk": "2026-07-10T16:10:01.967Z"
+      "lastFetchOk": "2026-07-10T18:48:33.624Z"
     },
     "Le Collectif": {
       "fetchOk": true,
@@ -66,7 +66,7 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-07-08T22:24:23.000Z",
-      "lastFetchOk": "2026-07-10T16:10:03.664Z"
+      "lastFetchOk": "2026-07-10T18:48:34.905Z"
     },
     "Exil": {
       "fetchOk": true,
@@ -74,7 +74,7 @@
       "articleCount": 7,
       "freshArticleCount": 7,
       "lastArticle": "2026-04-18T22:22:07.000Z",
-      "lastFetchOk": "2026-07-10T16:10:03.837Z"
+      "lastFetchOk": "2026-07-10T18:48:35.081Z"
     },
     "La Pige": {
       "fetchOk": true,
@@ -82,7 +82,7 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-06-22T14:36:10.000Z",
-      "lastFetchOk": "2026-07-10T16:10:04.485Z"
+      "lastFetchOk": "2026-07-10T18:48:35.682Z"
     },
     "Le Polyscope": {
       "fetchOk": true,
@@ -90,7 +90,7 @@
       "articleCount": 13,
       "freshArticleCount": 13,
       "lastArticle": "2026-02-25T14:38:32.764Z",
-      "lastFetchOk": "2026-07-10T16:10:05.846Z"
+      "lastFetchOk": "2026-07-10T18:48:37.646Z"
     },
     "The Tribune": {
       "fetchOk": true,
@@ -98,7 +98,7 @@
       "articleCount": 20,
       "freshArticleCount": 20,
       "lastArticle": "2026-06-26T15:24:28.000Z",
-      "lastFetchOk": "2026-07-10T16:10:09.797Z"
+      "lastFetchOk": "2026-07-10T18:48:37.836Z"
     },
     "The Campus": {
       "fetchOk": true,
@@ -106,7 +106,7 @@
       "articleCount": 20,
       "freshArticleCount": 20,
       "lastArticle": "2026-04-06T16:03:16.000Z",
-      "lastFetchOk": "2026-07-10T16:10:09.942Z"
+      "lastFetchOk": "2026-07-10T18:48:38.009Z"
     },
     "The Plant": {
       "fetchOk": true,
@@ -114,7 +114,7 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-05-11T20:44:08.000Z",
-      "lastFetchOk": "2026-07-10T16:10:10.071Z"
+      "lastFetchOk": "2026-07-10T18:48:38.203Z"
     }
   },
   "items": [
@@ -267,7 +267,14 @@
       "sourceImageCreditCited": true,
       "sourceImageCreditImageKey": "societe_christinelabrie_sourcepagefacebookderubaghazal.jpg",
       "sourceImageCreditRev": 2,
-      "leadImageReady": false
+      "leadImageReady": false,
+      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/4/47/Assembl%C3%A9e_nationale_du_Qu%C3%A9bec%2C_l%27H%C3%B4tel_du_Parlement%2C_fa%C3%A7ade_avec_ancien_entr%C3%A9_principal.jpg",
+      "imageTitle": "Assemblée nationale du Québec, l'Hôtel du Parlement, façade avec ancien entré principal",
+      "imageCredit": "Photo : Marc-Lautenbacher / CC BY-SA · Openverse",
+      "imageCreator": "Marc-Lautenbacher",
+      "imageLicense": "by-sa",
+      "imageProvider": "openverse",
+      "imageSourceUrl": "https://commons.wikimedia.org/w/index.php?curid=73170675"
     },
     {
       "source": "Le Collectif",
@@ -476,15 +483,15 @@
       "date": "2026-06-22T14:36:10.000Z",
       "excerpt": "« Les gens ont tendance à frapper un mur au moment de la retraite par manque de préparation », estime Le directeur général de la Fédération de l’âge d’or du Québec (Fadoq) pour la région Saguenay-Lac-Saint-Jean – Ungava, Patrice Saint-Pierre. (Photo : Léa Morin-Letort) L’heure",
       "image": "https://lapige.atmjonquiere.com/wp-content/uploads/sites/3/2026/06/Joanne-Normandin_retraite-benevole-scaled.jpg",
+      "leadExcerpt": "« Les gens ont tendance à frapper un mur au moment de la retraite par manque de préparation », estime Le directeur général de la Fédération de l’âge d’or du Québec (Fadoq) pour la région Saguenay-Lac-Saint-Jean – Ungava, Patrice Saint-Pierre. (Photo : Léa Morin-Letort)",
+      "leadImageReady": true,
       "sourceImageCredit": "Photo : Léa Morin-Letort",
       "sourceImageCreator": "Léa Morin-Letort",
       "sourceImageCreditUrl": "https://lapige.atmjonquiere.com/2026/06/22/se-preparer-et-vivre-sa-retraite-un-long-fleuve-pas-si-tranquille/?utm_source=rss&utm_medium=rss&utm_campaign=se-preparer-et-vivre-sa-retraite-un-long-fleuve-pas-si-tranquille",
       "sourceImageCreditFrom": "article",
       "sourceImageCreditCited": true,
       "sourceImageCreditImageKey": "joanne-normandin_retraite-benevole.jpg",
-      "sourceImageCreditRev": 7,
-      "leadExcerpt": "« Les gens ont tendance à frapper un mur au moment de la retraite par manque de préparation », estime Le directeur général de la Fédération de l’âge d’or du Québec (Fadoq) pour la région Saguenay-Lac-Saint-Jean – Ungava, Patrice Saint-Pierre. (Photo : Léa Morin-Letort)",
-      "leadImageReady": true
+      "sourceImageCreditRev": 7
     },
     {
       "source": "The Tribune",
@@ -741,13 +748,13 @@
       "image": "",
       "leadExcerpt": "Le concours « Jeunes auteurs à vos crayons! » était dans la région mardi, en compagnie de sa marraine Frédérique Dufort, écrivaine et comédienne, pour distribuer des prix destinés aux élèves. La thématique cette année, « Le pouvoir des mots », orientera le travail de 2346 participants provenant de 160 écoles à travers le Québec et le Canada francophone.",
       "leadImageReady": false,
-      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/6/68/Peupl%C3%A9_jeunes_%C3%A9poux_la_terre_en_abondance._9%2C_G.14054.jpg",
-      "imageTitle": "Peuplé jeunes époux la terre en abondance. 9, G.14054",
-      "imageCredit": "Photo : Guérard, Nicolas (vers 1648 - Paris, 1719), dessinateur / CC0 · Openverse",
-      "imageCreator": "Guérard, Nicolas (vers 1648 - Paris, 1719), dessinateur",
-      "imageLicense": "cc0",
-      "imageProvider": "openverse",
-      "imageSourceUrl": "https://commons.wikimedia.org/w/index.php?curid=132253024"
+      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Pavillon_principal_du_C%C3%A9gep_de_Jonqui%C3%A8re.jpg",
+      "imageTitle": "Pavillon principal du Cégep de Jonquière",
+      "imageCredit": "Photo : Jeangagnon / CC BY-SA 4.0 · Wikimedia Commons",
+      "imageCreator": "Jeangagnon",
+      "imageLicense": "CC BY-SA 4.0",
+      "imageProvider": "campus-bank",
+      "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Pavillon_principal_du_C%C3%A9gep_de_Jonqui%C3%A8re.jpg"
     },
     {
       "source": "La Pige",
@@ -763,13 +770,13 @@
       "image": "",
       "leadExcerpt": "Le pont de Sainte-Anne ne se contente plus de relier deux rives ; il relie désormais les citoyens à une réalité souvent invisible. Jusqu’au 4 octobre prochain, l’exposition de photographie et de témoignages Ici on se rencontre met en lumière une vocation de l’ombre : celle des travailleurs de rue.",
       "leadImageReady": false,
-      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Pavillon_principal_du_C%C3%A9gep_de_Jonqui%C3%A8re.jpg",
-      "imageTitle": "Pavillon principal du Cégep de Jonquière",
-      "imageCredit": "Photo : Jeangagnon / CC BY-SA 4.0 · Wikimedia Commons",
-      "imageCreator": "Jeangagnon",
-      "imageLicense": "CC BY-SA 4.0",
-      "imageProvider": "campus-bank",
-      "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Pavillon_principal_du_C%C3%A9gep_de_Jonqui%C3%A8re.jpg"
+      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/c/c5/Travail_sur_le_pont_d%27un_bateau%2C_marin_-_btv1b10577978h.jpg",
+      "imageTitle": "File:Travail sur le pont d'un bateau, marin - btv1b10577978h.jpg",
+      "imageCredit": "Photo : Trutat, Eugène (1840-1910). Photographe / PUBLIC DOMAIN · Wikimedia Commons",
+      "imageCreator": "Trutat, Eugène (1840-1910). Photographe",
+      "imageLicense": "Public domain",
+      "imageProvider": "wikimedia",
+      "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Travail_sur_le_pont_d%27un_bateau,_marin_-_btv1b10577978h.jpg"
     },
     {
       "source": "La Pige",
@@ -784,13 +791,13 @@
       "excerpt": "Le phénomène climatique influence surtout les températures de la côte Ouest de l’Amérique. (Crédit photo : Fatih Turan, Pexels). Le phénomène météorologique El Niño devrait s’amorcer dans le mois de juin. Un été plus frais et un hiver plus doux sont prévus cette année au Québec.",
       "image": "",
       "leadImageReady": false,
-      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Pavillon_principal_du_C%C3%A9gep_de_Jonqui%C3%A8re.jpg",
-      "imageTitle": "Pavillon principal du Cégep de Jonquière",
-      "imageCredit": "Photo : Jeangagnon / CC BY-SA 4.0 · Wikimedia Commons",
-      "imageCreator": "Jeangagnon",
+      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/5/50/Maison%2C_130-152%2C_Grande_All%C3%A9e_Ouest%2C_Qu%C3%A9bec_c%C3%B4t%C3%A9_ouest%2C_les_fa%C3%A7ades_11-d.na.civile-87-2608.jpg",
+      "imageTitle": "File:Maison, 130-152, Grande Allée Ouest, Québec côté ouest, les façades 11-d.na.civile-87-2608.jpg",
+      "imageCredit": "Photo : Groupe de recherche en art du Québec / CC BY-SA 4.0 · Wikimedia Commons",
+      "imageCreator": "Groupe de recherche en art du Québec",
       "imageLicense": "CC BY-SA 4.0",
-      "imageProvider": "campus-bank",
-      "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Pavillon_principal_du_C%C3%A9gep_de_Jonqui%C3%A8re.jpg"
+      "imageProvider": "wikimedia",
+      "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Maison,_130-152,_Grande_All%C3%A9e_Ouest,_Qu%C3%A9bec_c%C3%B4t%C3%A9_ouest,_les_fa%C3%A7ades_11-d.na.civile-87-2608.jpg"
     },
     {
       "source": "La Pige",
@@ -870,15 +877,15 @@
       "excerpt": "Le 13 mars dernier, la rappeuse Calamine a dévoilé son nouvel album, Rétrograde. Avec cette quatrième sortie depuis 2020, l’artiste gravit les échelons et devient une voix importante du hip-hop québécois. Composé de 18 titres d’ambiance estivale tels que « CHOP CHOP », « POLY »",
       "image": "https://quartierlibre.ca/wp-content/uploads/2026/05/18-19_calamine-1024x1024.jpg",
       "_pageAuthor": "Samuel Roy",
+      "leadExcerpt": "Le concept même de Rétrograde , c’est cette sensation d’un recul sociétal, le fait qu’on est en train de retourner en arrière, politiquement parlant. Même après des avancées dans le féminisme, on est quand même en train de reculer avec la montée du masculinisme. En nommant l’album Rétrograde , ça me permettait donc de relier à la fois le queer dating et le recul général de la société.",
+      "leadImageReady": true,
       "sourceImageCredit": "Crédit photo : Quartier Libre",
+      "sourceImageCreator": "",
       "sourceImageCreditUrl": "https://quartierlibre.ca/calamine-rapper-autrement/",
       "sourceImageCreditFrom": "media",
       "sourceImageCreditCited": false,
       "sourceImageCreditImageKey": "18-19_calamine.jpg",
-      "sourceImageCreditRev": 7,
-      "leadExcerpt": "Le concept même de Rétrograde , c’est cette sensation d’un recul sociétal, le fait qu’on est en train de retourner en arrière, politiquement parlant. Même après des avancées dans le féminisme, on est quand même en train de reculer avec la montée du masculinisme. En nommant l’album Rétrograde , ça me permettait donc de relier à la fois le queer dating et le recul général de la société.",
-      "leadImageReady": true,
-      "sourceImageCreator": ""
+      "sourceImageCreditRev": 7
     },
     {
       "source": "Quartier Libre",
@@ -893,15 +900,15 @@
       "excerpt": "Le 5 mai dernier, le pavillon Roger-Gaudry a accueilli le premier forum du Réseau des écoles associées (RÉA). Ce projet ambitieux de la Faculté des sciences de l’éducation (FSÉ) transforme des écoles primaires et secondaires en véritables « hôpitaux universitaires » de la",
       "image": "https://quartierlibre.ca/wp-content/uploads/2026/05/PXL_20260505_174149744-1024x768.jpg",
       "_pageAuthor": "Ulysse Taillard-Hodez",
+      "leadExcerpt": "Mme Fournier Dubé a insisté sur le fait que les enseignant·e·s sont les véritables « agents de changement ». Son rôle n’est pas d’imposer un cadre scientifique rigide, mais de vulgariser la recherche pour l’adapter aux besoins du terrain.",
+      "leadImageReady": true,
       "sourceImageCredit": "Crédit photo : Quartier Libre",
+      "sourceImageCreator": "",
       "sourceImageCreditUrl": "https://quartierlibre.ca/forum-rea-education-en-milieu-defavorise/",
       "sourceImageCreditFrom": "media",
       "sourceImageCreditCited": false,
       "sourceImageCreditImageKey": "pxl_20260505_174149744.jpg",
-      "sourceImageCreditRev": 7,
-      "leadExcerpt": "Mme Fournier Dubé a insisté sur le fait que les enseignant·e·s sont les véritables « agents de changement ». Son rôle n’est pas d’imposer un cadre scientifique rigide, mais de vulgariser la recherche pour l’adapter aux besoins du terrain.",
-      "leadImageReady": true,
-      "sourceImageCreator": ""
+      "sourceImageCreditRev": 7
     },
     {
       "source": "Quartier Libre",
@@ -1291,7 +1298,14 @@
       "sourceImageCreditCited": false,
       "sourceImageCreditImageKey": "image-1-1.jpeg",
       "sourceImageCreditRev": 7,
-      "leadImageReady": false
+      "leadImageReady": false,
+      "stockImage": "https://live.staticflickr.com/7388/8950004861_99baea3bbb_b.jpg",
+      "imageTitle": "Craftsman_5",
+      "imageCredit": "Photo : Liga_Eglite / CC BY · Openverse",
+      "imageCreator": "Liga_Eglite",
+      "imageLicense": "by",
+      "imageProvider": "openverse",
+      "imageSourceUrl": "https://www.flickr.com/photos/90673730@N04/8950004861"
     },
     {
       "source": "The Plant",
@@ -1375,14 +1389,14 @@
       "date": "2026-05-11T20:43:48.000Z",
       "excerpt": "Via My Little Princess (2011) Minola GrentEditor-in-Chief Every story has the right to be told. Even difficult stories of abuse and manipulation do. So, with an asterisk: leave the children out of this. In the midst of the 1970s cultural confusion, Franco-Romanian photographer",
       "image": "https://theplantnews.com/wp-content/uploads/2026/05/image-5.png",
+      "leadImageReady": true,
       "sourceImageCredit": "Photo: My Little Princess (2011)",
       "sourceImageCreator": "My Little Princess (2011)",
       "sourceImageCreditUrl": "https://theplantnews.com/2026/05/11/leave-the-children-out-of-this/",
       "sourceImageCreditFrom": "article",
       "sourceImageCreditCited": true,
       "sourceImageCreditImageKey": "image-5.png",
-      "sourceImageCreditRev": 7,
-      "leadImageReady": true
+      "sourceImageCreditRev": 7
     },
     {
       "source": "The Plant",
@@ -1403,14 +1417,7 @@
       "sourceImageCreditCited": true,
       "sourceImageCreditImageKey": "image-5.jpeg",
       "sourceImageCreditRev": 7,
-      "leadImageReady": false,
-      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/1/13/Katseye_at_Wango_Tango_2025_%28cropped%29.jpg",
-      "imageTitle": "Katseye at Wango Tango 2025 (cropped)",
-      "imageCredit": "Photo : Warmtoned / CC BY · Openverse",
-      "imageCreator": "Warmtoned",
-      "imageLicense": "by",
-      "imageProvider": "openverse",
-      "imageSourceUrl": "https://commons.wikimedia.org/w/index.php?curid=170993044"
+      "leadImageReady": false
     },
     {
       "source": "Quartier Libre",
@@ -1889,7 +1896,7 @@
       "lang": "en",
       "title": "Mc Gill community members express concerns about Mc Gill Athletics’ former partnership with Inter Rent REIT",
       "link": "https://www.thetribune.ca/news/mcgill-community-members-express-concerns-about-mcgill-athletics-former-partnership-with-interrent-reit-26042026/?utm_source=rss&utm_medium=rss&utm_campaign=mcgill-community-members-express-concerns-about-mcgill-athletics-former-partnership-with-interrent-reit-26042026",
-      "author": "The editorial team",
+      "author": "Rebecca Hamilton",
       "date": "2026-04-26T23:32:27.000Z",
       "excerpt": "Across the 18 months she has lived in her Plateau apartment, Alice Lee, U3 Arts & Science, has had her water shut off 13 times. Most recently—in February 2026—she turned on her tap to find the water running yellow, as she recounted in an interview with The Tribune. Lee explained",
       "image": "",
@@ -1912,7 +1919,7 @@
       "lang": "en",
       "title": "Journalism After Gaza’ panel discusses media bias and the future of reporting in Palestine",
       "link": "https://www.thetribune.ca/student-life/journalism-after-gaza-panel-discusses-media-bias-and-the-future-of-reporting-in-palestine-27042026/?utm_source=rss&utm_medium=rss&utm_campaign=journalism-after-gaza-panel-discusses-media-bias-and-the-future-of-reporting-in-palestine-27042026",
-      "author": "The editorial team",
+      "author": "Ellen Lurie",
       "date": "2026-04-26T23:02:59.000Z",
       "excerpt": "On April 9, the McGill Institute of Islamic Studies hosted a panel event titled “Journalism After Gaza: A Roundtable Discussion on the Present & Future of the Media,” featuring Saman Malik, Sana Saeed, and Kareem Shaheen. The panel was led by Pasha M. Khan, associate professor",
       "image": "https://www.thetribune.ca/wp-content/uploads/2026/04/Untitled-11-scaled.jpeg",
@@ -2057,7 +2064,7 @@
       "lang": "en",
       "title": "Sad endings do not ruin a great story: Haliburton, Vanmoen, and Carlyle",
       "link": "https://www.thetribune.ca/sports/sad-endings-do-not-ruin-a-great-story-haliburton-vanmoen-and-carlyle-18042026/?utm_source=rss&utm_medium=rss&utm_campaign=sad-endings-do-not-ruin-a-great-story-haliburton-vanmoen-and-carlyle-18042026",
-      "author": "The editorial team",
+      "author": "Will Kennedy",
       "date": "2026-04-18T13:13:18.000Z",
       "excerpt": "Sad endings are unfortunately part of life, but they do not have to ruin our greatest stories. The most popular romance movie on Letterboxd is La La Land, a movie with a horribly unsatisfying ending to an otherwise lovely story. That summary is one so often befitting in sports.",
       "image": "",
@@ -2111,7 +2118,14 @@
       "sourceImageCreditCited": true,
       "sourceImageCreditImageKey": "img_0291-2.jpg",
       "sourceImageCreditRev": 4,
-      "leadImageReady": false
+      "leadImageReady": false,
+      "stockImage": "https://live.staticflickr.com/3860/14703738680_4423564c64_b.jpg",
+      "imageTitle": "Dragon",
+      "imageCredit": "Photo : Artur Rydzewski / CC BY-SA · Openverse",
+      "imageCreator": "Artur Rydzewski",
+      "imageLicense": "by-sa",
+      "imageProvider": "openverse",
+      "imageSourceUrl": "https://www.flickr.com/photos/119200904@N07/14703738680"
     },
     {
       "source": "The Link",
@@ -2366,7 +2380,7 @@
       "lang": "en",
       "title": "The World Cup is a disaster waiting to happen",
       "link": "https://thelinknewspaper.ca/article/16313",
-      "author": "Bryanna O’Brien",
+      "author": "The editorial team",
       "date": "2026-04-08T22:05:00.000Z",
       "excerpt": "FIFA has the authority to relocate or cancel its Guadalajara games, but it is choosing not to The 2026 FIFA World Cup has the potential for incredible action, but also extensive controversy. Graphic Evelyn Ho Lee",
       "image": "https://thelinknewspaper.ca/images/made/images/articles/_resized/12_SPORTS_WCHostCountries_EvelynHoLee_690_526_90.jpg",
@@ -2856,7 +2870,14 @@
       "sourceImageCreditCited": true,
       "sourceImageCreditImageKey": "news_purplecircle_creds_bualumnirelations.jpg",
       "sourceImageCreditRev": 7,
-      "leadImageReady": false
+      "leadImageReady": false,
+      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/6/65/University_of_Windsor%2C_Windsor%2C_Ontario_%2821585933119%29.jpg",
+      "imageTitle": "University of Windsor, Windsor, Ontario (21585933119)",
+      "imageCredit": "Photo : Ken Lund from Reno, Nevada, USA / CC BY-SA · Openverse",
+      "imageCreator": "Ken Lund from Reno, Nevada, USA",
+      "imageLicense": "by-sa",
+      "imageProvider": "openverse",
+      "imageSourceUrl": "https://commons.wikimedia.org/w/index.php?curid=54268103"
     },
     {
       "source": "The Campus",
@@ -3657,21 +3678,22 @@
       "region": "Montréal",
       "type": "universite",
       "lang": "fr",
-      "title": "Ce que nous devons aux femmes - Le Délit",
-      "link": "https://www.delitfrancais.com/2026/03/18/ce-que-nous-devons-aux-femmes/",
-      "author": "La rédaction",
+      "title": "Des initiatives qui rassemblent - Le Délit",
+      "link": "https://www.delitfrancais.com/2026/03/18/des-initiatives-qui-rassemblent/",
+      "author": "Héloïse Durning et Elie Nguyen",
       "date": "2026-03-18T07:00:00.000Z",
-      "excerpt": "Votre entourage, en tant qu’étudiantes et étudiants de l’Université McGill, est peut-être composé en majorité de personnes qui se revendiquent comme féministes. Certaines le sont, d’autres le prétendent, mais relativement rares sont les McGillois qui refusent ouvertement le féminisme.",
-      "image": "https://www.delitfrancais.com/wp-content/uploads/2026/03/Capture-decran-le-2026-03-22-a-17.22.07.png",
+      "excerpt": "À McGill, des projets pour célébrer et soutenir les femmes.",
+      "image": "https://www.delitfrancais.com/wp-content/uploads/2026/03/annonces.png",
       "featured": true,
-      "sourceImageCredit": "Photo : Alexandre Gontier",
-      "sourceImageCreator": "Alexandre Gontier",
-      "sourceImageCreditUrl": "https://www.delitfrancais.com/2026/03/18/ce-que-nous-devons-aux-femmes/",
-      "sourceImageCreditFrom": "article",
-      "sourceImageCreditCited": true,
-      "sourceImageCreditImageKey": "capture-decran-le-2026-03-22-a-17.22.07.png",
-      "sourceImageCreditRev": 7,
-      "leadImageReady": true
+      "_pageAuthor": "Héloïse Durning et Elie Nguyen",
+      "leadImageReady": true,
+      "sourceImageCredit": "Crédit photo : Le Délit",
+      "sourceImageCreator": "",
+      "sourceImageCreditUrl": "https://www.delitfrancais.com/2026/03/18/des-initiatives-qui-rassemblent/",
+      "sourceImageCreditFrom": "media",
+      "sourceImageCreditCited": false,
+      "sourceImageCreditImageKey": "annonces.png",
+      "sourceImageCreditRev": 7
     },
     {
       "source": "Le Délit",
@@ -3679,22 +3701,23 @@
       "region": "Montréal",
       "type": "universite",
       "lang": "fr",
-      "title": "Les femmes MAGA au service du patriarcat - Le Délit",
-      "link": "https://www.delitfrancais.com/2026/03/18/les-femmes-maga-au-service-du-patriarcat/",
-      "author": "La rédaction",
+      "title": "Élections de l’exécutif de l’AÉUM - Le Délit",
+      "link": "https://www.delitfrancais.com/2026/03/18/elections-de-lexecutif-de-laeum/",
+      "author": "Timotée Allouch-Chantepie, Héloïse Durning, Aurélien Quéméner et Eugénie St-Pierre",
       "date": "2026-03-18T07:00:00.000Z",
-      "excerpt": "Kristi Noem et Erika Kirk comme figures de proue du néo-fascisme américain.",
-      "image": "https://www.delitfrancais.com/wp-content/uploads/2026/03/MAGA_marius.png",
+      "excerpt": "Présentation des candidats à l’exécutif de l’AÉUM.",
+      "image": "https://www.delitfrancais.com/wp-content/uploads/2025/11/P1160269-scaled.jpeg",
       "featured": true,
-      "sourceImageCredit": "Photo : Stu Doré",
-      "sourceImageCreator": "Stu Doré",
-      "sourceImageCreditUrl": "https://www.delitfrancais.com/2026/03/18/les-femmes-maga-au-service-du-patriarcat/",
+      "_pageAuthor": "Timotée Allouch-Chantepie, Héloïse Durning, Aurélien Quéméner et Eugénie St-Pierre",
+      "leadExcerpt": "Desjardins, candidate à la présidence, issue de la coalition S.T.A.N.D., promet de rendre l’AÉUM « plus politique ». L’étudiante de deuxième année en études sur le genre explique qu’elle ne se sentait pas représentée par les élus de l’AÉUM et que c’est ce qui a motivé sa décision de se présenter. « On [les candidats du S.T.A.N.D.] est là depuis deux, trois, quatre ans et on voit comment l’AÉUM n’e",
+      "leadImageReady": true,
+      "sourceImageCredit": "Photo : Toscane Ralaimongo",
+      "sourceImageCreator": "Toscane Ralaimongo",
+      "sourceImageCreditUrl": "https://www.delitfrancais.com/2026/03/18/elections-de-lexecutif-de-laeum/",
       "sourceImageCreditFrom": "article",
       "sourceImageCreditCited": true,
-      "sourceImageCreditImageKey": "maga_marius.png",
-      "sourceImageCreditRev": 7,
-      "leadExcerpt": "Une des capacités distinctives de ce système patriarcal est son habileté remarquable à se perpétuer en instrumentalisant certaines femmes pour reproduire les structures qui les subordonnent. C’est à travers ce mécanisme d’opacité que sa présence se resserre sur la société, et que ses contradictions se dissimulent sous le couvert de liberté individuelle, de traditions ou de choix personnels.",
-      "leadImageReady": false
+      "sourceImageCreditImageKey": "p1160269.jpeg",
+      "sourceImageCreditRev": 7
     },
     {
       "source": "The McGill Daily",
@@ -3829,13 +3852,13 @@
       "excerpt": "Compte rendu de l’assemblée générale étudiante H26 L’assemblée générale (AG) de l’association étudiante du Cégep du Vieux-Montréal s’est déroulée dans l’après-midi du 4 février dernier à l’Exode. Le refus d’une grève cet hiver, l’intronisation du programme FIL, les nouveautés du",
       "image": "",
       "leadImageReady": false,
-      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/e/e5/Formation_condens%C3%A9e_%C3%A0_Wikip%C3%A9dia_lors_du_cours_IPMSH_du_C%C3%A9gep_du_Vieux_Montr%C3%A9al.jpg",
-      "imageTitle": "File:Formation condensée à Wikipédia lors du cours IPMSH du Cégep du Vieux Montréal.jpg",
-      "imageCredit": "Photo : JBouchez / CC BY-SA 4.0 · Wikimedia Commons",
-      "imageCreator": "JBouchez",
-      "imageLicense": "CC BY-SA 4.0",
-      "imageProvider": "wikimedia",
-      "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Formation_condens%C3%A9e_%C3%A0_Wikip%C3%A9dia_lors_du_cours_IPMSH_du_C%C3%A9gep_du_Vieux_Montr%C3%A9al.jpg"
+      "stockImage": "https://live.staticflickr.com/65535/49801033093_ec6e66c084_b.jpg",
+      "imageTitle": "Module de survie, Daniel Corbeil, 2014-2018.",
+      "imageCredit": "Photo : art_inthecity / CC BY · Openverse",
+      "imageCreator": "art_inthecity",
+      "imageLicense": "by",
+      "imageProvider": "openverse",
+      "imageSourceUrl": "https://www.flickr.com/photos/57286185@N04/49801033093"
     },
     {
       "source": "Le Polyscope",
@@ -3854,14 +3877,7 @@
       "sourceImageCreditFrom": "article",
       "sourceImageCreditCited": true,
       "sourceImageCreditUrl": "https://www.polyscope.qc.ca/blog/post/lZU7aZPFn4T8eG8oO1hX",
-      "leadImageReady": false,
-      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/8/8b/Dr_Daniel_Borsuk_and_Prime_Minister_Francois_Legault.jpg",
-      "imageTitle": "Dr Daniel Borsuk and Prime Minister Francois Legault",
-      "imageCredit": "Photo : Productionmartin / CC BY-SA · Openverse",
-      "imageCreator": "Productionmartin",
-      "imageLicense": "by-sa",
-      "imageProvider": "openverse",
-      "imageSourceUrl": "https://commons.wikimedia.org/w/index.php?curid=123638671"
+      "leadImageReady": false
     },
     {
       "source": "Le Polyscope",

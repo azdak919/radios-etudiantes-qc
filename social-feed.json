@@ -1,6 +1,6 @@
 {
-  "updated": "2026-07-10T16:21:03.278Z",
-  "count": 20,
+  "updated": "2026-07-10T18:59:02.359Z",
+  "count": 19,
   "items": [
     {
       "name": "Quartier Libre",
@@ -126,42 +126,6 @@
       ]
     },
     {
-      "name": "The Link",
-      "institution": "Concordia University",
-      "type": "universite",
-      "kind": "journal",
-      "networks": [
-        {
-          "type": "instagram",
-          "url": "https://www.instagram.com/linknewspaper/",
-          "handle": "@linknewspaper",
-          "stats": "",
-          "label": "Instagram"
-        },
-        {
-          "type": "facebook",
-          "url": "https://facebook.com/thelinknewspaper",
-          "handle": "thelinknewspaper",
-          "stats": "4 749 mentions J'aime",
-          "label": "Facebook"
-        },
-        {
-          "type": "x",
-          "url": "https://twitter.com/linknewspaper",
-          "handle": "@linknewspaper",
-          "stats": "",
-          "label": "X"
-        },
-        {
-          "type": "tiktok",
-          "url": "https://www.tiktok.com/@thelinknewspaper",
-          "handle": "@thelinknewspaper",
-          "stats": "",
-          "label": "TikTok"
-        }
-      ]
-    },
-    {
       "name": "Zone Campus",
       "institution": "Université du Québec à Trois-Rivières",
       "type": "universite",
@@ -222,7 +186,7 @@
           "type": "facebook",
           "url": "https://www.facebook.com/journallecollectif",
           "handle": "journallecollectif",
-          "stats": "",
+          "stats": "4 057 mentions J'aime",
           "label": "Facebook"
         }
       ]

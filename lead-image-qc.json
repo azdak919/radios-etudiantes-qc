@@ -1,17 +1,17 @@
 {
-  "updated": "2026-07-10T16:19:26.281Z",
+  "updated": "2026-07-10T18:57:26.748Z",
   "total": 185,
   "withPhoto": 157,
-  "withStock": 37,
-  "withCampusBank": 14,
+  "withStock": 39,
+  "withCampusBank": 13,
   "fullyCovered": 185,
-  "leadReadyPhotos": 139,
-  "pageScraped": 84,
-  "photosRecovered": 54,
-  "imagesCleared": 2,
+  "leadReadyPhotos": 125,
+  "pageScraped": 85,
+  "photosRecovered": 55,
+  "imagesCleared": 3,
   "stockSearches": 58,
-  "stockFound": 37,
-  "campusBankFound": 14,
+  "stockFound": 39,
+  "campusBankFound": 13,
   "mainPageLeadReady": true,
   "gaps": [
     {
@@ -35,14 +35,20 @@
     {
       "title": "Un pont entre l’art et le travail de rue",
       "link": "https://lapige.atmjonquiere.com/2026/05/20/un-pont-entre-lart-et-le-travail-de-rue/?utm_source=rss&utm_medium=rss&utm_campaign=un-pont-entre-lart-et-le-travail-de-rue",
-      "reason": "campus-bank",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Pavillon_principal_du_C%C3%A9gep_de_Jonqui%C3%A8re.jpg"
+      "reason": "stock-too-small",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/c/c5/Travail_sur_le_pont_d%27un_bateau%2C_marin_-_btv1b10577978h.jpg"
     },
     {
       "title": "El Niño s’approche du Québec",
       "link": "https://lapige.atmjonquiere.com/2026/05/20/el-nino-sapproche-du-quebec/?utm_source=rss&utm_medium=rss&utm_campaign=el-nino-sapproche-du-quebec",
-      "reason": "campus-bank",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Pavillon_principal_du_C%C3%A9gep_de_Jonqui%C3%A8re.jpg"
+      "reason": "stock-too-small",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/5/50/Maison%2C_130-152%2C_Grande_All%C3%A9e_Ouest%2C_Qu%C3%A9bec_c%C3%B4t%C3%A9_ouest%2C_les_fa%C3%A7ades_11-d.na.civile-87-2608.jpg"
+    },
+    {
+      "title": "Assistance technique en pharmacie : de premières portes ouvertes à Alma",
+      "link": "https://lapige.atmjonquiere.com/2026/05/20/assistance-technique-en-pharmacie-de-premieres-portes-ouvertes-a-alma/?utm_source=rss&utm_medium=rss&utm_campaign=assistance-technique-en-pharmacie-de-premieres-portes-ouvertes-a-alma",
+      "reason": "stock-too-small",
+      "image": "https://live.staticflickr.com/7040/6933759219_87c820c047_b.jpg"
     },
     {
       "title": "La popularité des clubs et événements sportifs",
@@ -51,40 +57,34 @@
       "image": "https://lecollectif.ca/wp-content/uploads/2026/07/OBSESSIONS_CLUBSDESPORTS_ClubPleinAirAltitude_SourceFacebookClubPleinAirAltitude-1-768x1024.jpg"
     },
     {
+      "title": "Christine Labrie tourne la page sur huit ans comme députée de Sherbrooke",
+      "link": "https://lecollectif.ca/a-la-une/christine-labrie-tourne-la-page-sur-huit-ans-comme-deputee-de-sherbrooke/",
+      "reason": "stock-too-small",
+      "image": "https://lecollectif.ca/wp-content/uploads/2026/07/SOCIETE_ChristineLabrie_SourcePageFacebookDeRubaGhazal-819x1024.jpg"
+    },
+    {
       "title": "Recettes musicales québécoises pour l’été - Quartier Libre",
       "link": "https://quartierlibre.ca/ete-recettes-musicales-quebecoises/",
       "reason": "no-stock-match",
       "image": "https://quartierlibre.ca/wp-content/uploads/2026/05/20_florelaurentienne.jpg"
     },
     {
+      "title": "Letters from the Editors May 2026",
+      "link": "https://theplantnews.com/2026/05/11/letters-from-the-editors-may-2026/",
+      "reason": "stock-too-small",
+      "image": "https://live.staticflickr.com/2295/2462847853_5a214f2dab_b.jpg"
+    },
+    {
+      "title": "CSU approves affinity group policy, club rules update and councillor pay increase at special meeting",
+      "link": "https://thelinknewspaper.ca/article/16326",
+      "reason": "stock-too-small",
+      "image": "https://live.staticflickr.com/7089/7290404684_2750bb385f_b.jpg"
+    },
+    {
       "title": "Mc Gill community members express concerns about Mc Gill Athletics’ former partnership with Inter Rent REIT",
       "link": "https://www.thetribune.ca/news/mcgill-community-members-express-concerns-about-mcgill-athletics-former-partnership-with-interrent-reit-26042026/?utm_source=rss&utm_medium=rss&utm_campaign=mcgill-community-members-express-concerns-about-mcgill-athletics-former-partnership-with-interrent-reit-26042026",
       "reason": "campus-bank",
       "image": "https://upload.wikimedia.org/wikipedia/commons/e/e8/Roddick_Gates_%28McGill_University%29_2005-09-02.jpg"
-    },
-    {
-      "title": "Opinion – L’hypocrisie qui rampe à l’Assemblée nationale",
-      "link": "https://exilecvm.wordpress.com/2026/04/18/opinion-lhypocrisie-qui-rampe-a-lassemblee-nationale/",
-      "reason": "stock-too-small",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/4/47/Assembl%C3%A9e_nationale_du_Qu%C3%A9bec%2C_l%27H%C3%B4tel_du_Parlement%2C_fa%C3%A7ade_avec_ancien_entr%C3%A9_principal.jpg"
-    },
-    {
-      "title": "CSU approves $36,000 in funding for student-led initiatives",
-      "link": "https://thelinknewspaper.ca/article/16319",
-      "reason": "campus-bank",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/1/16/CJ_Building%2C_Loyola_Campus%2C_Communication_Studies%2C_Concordia_University.jpg"
-    },
-    {
-      "title": "Mars enters Aries",
-      "link": "https://thebucampus.ca/2026/04/06/mars-enters-aries/",
-      "reason": "campus-bank",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/b/b3/Bishop%27s_University_campus_2011.jpg"
-    },
-    {
-      "title": "Spotlighting Powerful Mc Gill Alumnae",
-      "link": "https://www.mcgilldaily.com/2026/03/spotlighting-powerful-mcgill-alumnae/",
-      "reason": "stock-too-small",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/e/e2/McGill_University_downtown_campus_12.JPG"
     }
   ]
 }
