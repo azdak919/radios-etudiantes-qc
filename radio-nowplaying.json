@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-10T01:10:34.087Z",
+  "updatedAt": "2026-07-10T05:37:31.365Z",
   "timezone": "America/Toronto",
   "stations": {
     "chyz": {
@@ -21,27 +21,27 @@
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-10T01:10:24.369Z"
+      "checkedAt": "2026-07-10T05:37:22.962Z"
     },
     "cism": {
       "id": "cism",
       "name": "CISM 89,3",
       "current": {
-        "title": "Rythmologie",
+        "title": "La courbe 2.0",
         "source": "api-live",
-        "start": "16:00",
+        "start": "20:00",
         "url": "https://stream03.ustream.ca/cism128.mp3",
-        "slug": "rythmologie"
+        "slug": "la-courbe-2-0"
       },
       "next": {
-        "title": "Entropie",
+        "title": "Mix anglo",
         "source": "api-live",
-        "start": "18:00",
-        "url": "https://podcast.cism893.ca/podcast/download_mp3/363637.mp3",
-        "slug": "entropie"
+        "start": "22:00",
+        "url": "https://podcast.cism893.ca/podcast/download_mp3/364024.mp3",
+        "slug": "mix-anglo"
       },
       "track": "",
-      "showTitle": "Rythmologie",
+      "showTitle": "La courbe 2.0",
       "host": "",
       "source": "api-live",
       "sources": [
@@ -51,25 +51,25 @@
         "type": "cism-v1",
         "url": "https://admin.cism893.ca/api/v1/live"
       },
-      "checkedAt": "2026-07-10T01:10:26.285Z"
+      "checkedAt": "2026-07-10T05:37:24.349Z"
     },
     "ckut": {
       "id": "ckut",
       "name": "CKUT 90,3",
       "current": {
-        "title": "Chaud Pour/Francis",
+        "title": "Listen! You Smell Something?",
         "source": "api-live",
-        "start": "21:00",
-        "end": "23:00"
+        "start": "01:00",
+        "end": "04:00"
       },
       "next": {
-        "title": "You Need A Heart To Live 2",
+        "title": "G-Flex Survivor&#039;s Corner",
         "source": "api-live",
-        "start": "23:00",
-        "end": "01:00"
+        "start": "04:00",
+        "end": "07:00"
       },
       "track": "",
-      "showTitle": "Chaud Pour/Francis",
+      "showTitle": "Listen! You Smell Something?",
       "host": "",
       "source": "api-live",
       "sources": [
@@ -77,80 +77,79 @@
         "stream"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-10T01:10:29.348Z"
+      "checkedAt": "2026-07-10T05:37:27.215Z"
     },
     "cjlo": {
       "id": "cjlo",
       "name": "CJLO 1690AM",
       "current": {
-        "title": "Mo' Ritmo Radio",
+        "title": "Finally Midnight",
         "source": "schedule",
-        "start": "21:00",
-        "end": "22:00",
-        "url": "http://www.cjlo.com/shows/mo-ritmo-radio"
+        "start": "00:00",
+        "end": "02:00",
+        "url": "http://www.cjlo.com/shows/finally-midnight"
       },
       "next": {
-        "title": "CJLO's Alternative Mega Mix",
+        "title": "Wake up Folks!",
         "source": "schedule",
-        "start": "22:00",
-        "end": "23:00",
-        "url": "http://www.cjlo.com/shows/cjlos-alternative-mega-mix"
+        "start": "06:00",
+        "end": "09:00",
+        "url": "http://www.cjlo.com/shows/wake-up-folks"
       },
       "track": "",
-      "showTitle": "Mo' Ritmo Radio",
+      "showTitle": "Finally Midnight",
       "host": "",
       "source": "schedule",
       "sources": [
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-10T01:10:31.168Z"
+      "checkedAt": "2026-07-10T05:37:28.449Z"
     },
     "cfak": {
       "id": "cfak",
       "name": "CFAK 88,3",
       "current": {
-        "title": "After 5@8",
-        "source": "schedule",
-        "start": "20:00",
-        "end": "00:00"
-      },
-      "next": {
         "title": "Les nuits CFAK",
         "source": "schedule",
         "start": "00:00",
         "end": "07:00"
       },
+      "next": {
+        "title": "Folkswagen",
+        "source": "schedule",
+        "start": "07:00",
+        "end": "08:00"
+      },
       "track": "",
-      "showTitle": "After 5@8",
+      "showTitle": "Les nuits CFAK",
       "host": "",
       "source": "schedule",
       "sources": [
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-10T01:10:31.555Z"
+      "checkedAt": "2026-07-10T05:37:29.119Z"
     },
     "choq": {
       "id": "choq",
       "name": "CHOQ.ca",
       "current": {
-        "title": "Faible",
+        "title": "YO Y YA (feat. Gabriella Olivo)",
         "source": "api-live",
-        "host": "Surprise",
-        "url": "https://www.choq.ca/assets/playlist/palmares-site-web.jpg"
+        "host": "Maze",
+        "url": "https://www.choq.ca/assets/playlist/les-nuits-brutales.png"
       },
       "next": null,
-      "track": "Surprise - Faible",
-      "showTitle": "Faible",
-      "host": "Surprise",
+      "track": "",
+      "showTitle": "YO Y YA (feat. Gabriella Olivo)",
+      "host": "Maze",
       "source": "api-live",
       "sources": [
-        "api-live",
-        "stream"
+        "api-live"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-10T01:10:33.736Z"
+      "checkedAt": "2026-07-10T05:37:31.015Z"
     }
   }
 }
