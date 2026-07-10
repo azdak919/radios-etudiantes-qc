@@ -1,100 +1,23 @@
 {
-  "updated": "2026-07-10T21:06:05.662Z",
+  "updated": "2026-07-10T22:28:06.351Z",
   "total": 185,
-  "withImage": 157,
-  "withCredit": 157,
-  "cited": 107,
+  "withImage": 109,
+  "withCredit": 109,
+  "cited": 73,
   "pending": 0,
   "missingHero": 0,
   "ok": true,
-  "checked": 57,
-  "updatedCount": 57,
-  "citedNew": 35,
-  "fallbackNew": 22,
+  "checked": 1,
+  "updatedCount": 1,
+  "citedNew": 1,
+  "fallbackNew": 0,
   "samples": [
     {
-      "title": "La vie sans alcool : les habitudes des jeunes redéfinies",
-      "source": "Le Collectif",
-      "credit": "Crédit photo : Le Collectif",
-      "cited": false,
-      "method": null
-    },
-    {
-      "title": "Dévoilement du Livre bleu",
-      "source": "Le Collectif",
-      "credit": "Crédit photo : Le Collectif",
-      "cited": false,
-      "method": null
-    },
-    {
-      "title": "De Broue à l’Ordre du Canada, Marc Messier, l’artisan d’un théâtre et d’une télé populaires",
-      "source": "Le Collectif",
-      "credit": "Crédit photo : Le Collectif",
-      "cited": false,
-      "method": null
-    },
-    {
-      "title": "Ask the Trib: How do I survive summer in my hometown?",
-      "source": "The Tribune",
-      "credit": "Photo : Zoe Lee",
+      "title": "Leave the Children Out of This",
+      "source": "The Plant",
+      "credit": "Photo: My Little Princess (2011)",
       "cited": true,
-      "method": "figcaption-attribution"
-    },
-    {
-      "title": "Kanga I, II, III’ brings Projections: SANKOFA’s afrofuturist vision to Trottier",
-      "source": "The Tribune",
-      "credit": "Photo : McGill Visual Arts Collection",
-      "cited": true,
-      "method": "figcaption-bare"
-    },
-    {
-      "title": "Se préparer et vivre sa retraite : un long fleuve, pas si tranquille",
-      "source": "La Pige",
-      "credit": "Crédit photo : La Pige",
-      "cited": false,
-      "method": null
-    },
-    {
-      "title": "AI’s use in legal decisions poses major risks to the Canadian judicial system’s integrity and neutrality",
-      "source": "The Tribune",
-      "credit": "Photo : Zoe Lee",
-      "cited": true,
-      "method": "figcaption-attribution"
-    },
-    {
-      "title": "Know Your Artist: Theodore A. Harris",
-      "source": "The Tribune",
-      "credit": "Photo : Theodore A. Harris",
-      "cited": true,
-      "method": "figcaption-bare"
-    },
-    {
-      "title": "Montreal protestors commemorate the 78th anniversary of the Nakba",
-      "source": "The Tribune",
-      "credit": "Photo : Ellen Lurie",
-      "cited": true,
-      "method": "figcaption-attribution"
-    },
-    {
-      "title": "Sans fin(s): au cœur des troubles du comportement alimentaire",
-      "source": "L'Exemplaire",
-      "credit": "Crédit photo : L'Exemplaire",
-      "cited": false,
-      "method": null
-    },
-    {
-      "title": "CALAMINE : RAPPER AUTREMENT QUE LE « BOYS CLUB » - Quartier Libre",
-      "source": "Quartier Libre",
-      "credit": "Crédit photo : Quartier Libre",
-      "cited": false,
-      "method": null
-    },
-    {
-      "title": "Forum RÉA : une alliance pour l’éducation en milieu défavorisé - Quartier Libre",
-      "source": "Quartier Libre",
-      "credit": "Crédit photo : Quartier Libre",
-      "cited": false,
-      "method": null
+      "method": "via-attribution"
     }
   ]
 }
