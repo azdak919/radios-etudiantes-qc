@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-11T10:42:25.248Z",
+  "updatedAt": "2026-07-11T11:54:50.885Z",
   "timezone": "America/Toronto",
   "stations": {
     "chyz": {
@@ -21,7 +21,7 @@
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-11T10:42:17.179Z"
+      "checkedAt": "2026-07-11T11:54:42.207Z"
     },
     "cism": {
       "id": "cism",
@@ -51,7 +51,7 @@
         "type": "cism-v1",
         "url": "https://admin.cism893.ca/api/v1/live"
       },
-      "checkedAt": "2026-07-11T10:42:18.737Z"
+      "checkedAt": "2026-07-11T11:54:43.734Z"
     },
     "ckut": {
       "id": "ckut",
@@ -77,7 +77,7 @@
         "stream"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-11T10:42:21.774Z"
+      "checkedAt": "2026-07-11T11:54:46.238Z"
     },
     "cjlo": {
       "id": "cjlo",
@@ -104,47 +104,47 @@
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-11T10:42:22.983Z"
+      "checkedAt": "2026-07-11T11:54:47.850Z"
     },
     "cfak": {
       "id": "cfak",
       "name": "CFAK 88,3",
-      "current": {
+      "current": null,
+      "next": {
         "title": "Les nuits CFAK",
         "source": "schedule",
         "start": "00:00",
-        "end": "07:00"
+        "end": "21:00"
       },
-      "next": null,
       "track": "",
-      "showTitle": "Les nuits CFAK",
+      "showTitle": "",
       "host": "",
       "source": "schedule",
       "sources": [
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-11T10:42:23.528Z"
+      "checkedAt": "2026-07-11T11:54:48.369Z"
     },
     "choq": {
       "id": "choq",
       "name": "CHOQ.ca",
       "current": {
-        "title": "Reverse Uno",
+        "title": "Naive",
         "source": "api-live",
-        "host": "Miro Belzil"
+        "host": "Softcult"
       },
       "next": null,
-      "track": "Miro Belzil - Reverse Uno",
-      "showTitle": "Reverse Uno",
-      "host": "Miro Belzil",
+      "track": "Softcult - Naive",
+      "showTitle": "Naive",
+      "host": "Softcult",
       "source": "api-live",
       "sources": [
         "api-live",
         "stream"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-11T10:42:24.897Z"
+      "checkedAt": "2026-07-11T11:54:50.535Z"
     }
   }
 }
