@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-11T22:52:04.929Z",
+  "updatedAt": "2026-07-11T23:57:23.704Z",
   "timezone": "America/Toronto",
   "stations": {
     "chyz": {
@@ -21,7 +21,7 @@
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-11T22:51:54.861Z"
+      "checkedAt": "2026-07-11T23:57:13.305Z"
     },
     "cism": {
       "id": "cism",
@@ -51,25 +51,25 @@
         "type": "cism-v1",
         "url": "https://admin.cism893.ca/api/v1/live"
       },
-      "checkedAt": "2026-07-11T22:51:56.696Z"
+      "checkedAt": "2026-07-11T23:57:15.176Z"
     },
     "ckut": {
       "id": "ckut",
       "name": "CKUT 90,3",
       "current": {
-        "title": "West Indian Rhythms",
-        "source": "api-live",
-        "start": "16:00",
-        "end": "19:00"
-      },
-      "next": {
         "title": "Masters At Work",
         "source": "api-live",
         "start": "19:00",
         "end": "21:00"
       },
+      "next": {
+        "title": "Howls From Hell/Too Loud For The Crowd",
+        "source": "api-live",
+        "start": "21:00",
+        "end": "23:00"
+      },
       "track": "",
-      "showTitle": "West Indian Rhythms",
+      "showTitle": "Masters At Work",
       "host": "",
       "source": "api-live",
       "sources": [
@@ -77,34 +77,34 @@
         "stream"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-11T22:51:59.701Z"
+      "checkedAt": "2026-07-11T23:57:18.334Z"
     },
     "cjlo": {
       "id": "cjlo",
       "name": "CJLO 1690AM",
       "current": {
-        "title": "The Limelight",
-        "source": "schedule",
-        "start": "18:00",
-        "end": "19:00",
-        "url": "http://www.cjlo.com/shows/the-limelight"
-      },
-      "next": {
         "title": "Screamers",
         "source": "schedule",
         "start": "19:00",
         "end": "20:00",
         "url": "http://www.cjlo.com/shows/screamers"
       },
+      "next": {
+        "title": "CJLO's Alternative Mega Mix",
+        "source": "schedule",
+        "start": "20:00",
+        "end": "21:00",
+        "url": "http://www.cjlo.com/shows/cjlos-alternative-mega-mix"
+      },
       "track": "",
-      "showTitle": "The Limelight",
+      "showTitle": "Screamers",
       "host": "",
       "source": "schedule",
       "sources": [
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-11T22:52:01.422Z"
+      "checkedAt": "2026-07-11T23:57:20.312Z"
     },
     "cfak": {
       "id": "cfak",
@@ -124,27 +124,28 @@
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-11T22:52:02.116Z"
+      "checkedAt": "2026-07-11T23:57:20.932Z"
     },
     "choq": {
       "id": "choq",
       "name": "CHOQ.ca",
       "current": {
-        "title": "Cavalier Seul",
+        "title": "Murder of Crows",
         "source": "api-live",
-        "host": "Bleu Reine"
+        "host": "Leanne Betasamosake Simpson",
+        "url": "https://www.choq.ca/assets/playlist/internationale.jpg"
       },
       "next": null,
-      "track": "Bleu Reine - Cavalier Seul",
-      "showTitle": "Cavalier Seul",
-      "host": "Bleu Reine",
+      "track": "Leanne Betasamosake Simpson - Murder of Crows",
+      "showTitle": "Murder of Crows",
+      "host": "Leanne Betasamosake Simpson",
       "source": "api-live",
       "sources": [
         "api-live",
         "stream"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-11T22:52:04.579Z"
+      "checkedAt": "2026-07-11T23:57:23.353Z"
     }
   }
 }
