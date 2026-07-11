@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-11T04:42:49.460Z",
+  "updatedAt": "2026-07-11T07:12:07.773Z",
   "timezone": "America/Toronto",
   "stations": {
     "chyz": {
@@ -21,27 +21,27 @@
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-11T04:42:39.644Z"
+      "checkedAt": "2026-07-11T07:11:59.684Z"
     },
     "cism": {
       "id": "cism",
       "name": "CISM 89,3",
       "current": {
-        "title": "Rave de nuit",
+        "title": "Mix anglo",
         "source": "api-live",
-        "start": "20:00",
+        "start": "22:00",
         "url": "https://stream03.ustream.ca/cism128.mp3",
-        "slug": "rave-de-nuit"
+        "slug": "mix-anglo"
       },
       "next": {
-        "title": "Le 120e parallèle (reprise)",
+        "title": "Rebelles soniques (reprise)",
         "source": "api-live",
-        "start": "21:00",
-        "url": "https://podcast.cism893.ca/podcast/download_mp3/363790.mp3",
-        "slug": "le-120e-parallele"
+        "start": "00:00",
+        "url": "https://podcast.cism893.ca/podcast/download_mp3/364137.mp3",
+        "slug": "rebelles-soniques"
       },
       "track": "",
-      "showTitle": "Rave de nuit",
+      "showTitle": "Mix anglo",
       "host": "",
       "source": "api-live",
       "sources": [
@@ -51,42 +51,43 @@
         "type": "cism-v1",
         "url": "https://admin.cism893.ca/api/v1/live"
       },
-      "checkedAt": "2026-07-11T04:42:41.517Z"
+      "checkedAt": "2026-07-11T07:12:01.141Z"
     },
     "ckut": {
       "id": "ckut",
       "name": "CKUT 90,3",
       "current": {
-        "title": "WEFUNK",
-        "source": "api-live",
-        "start": "00:00",
-        "end": "02:00"
-      },
-      "next": {
         "title": "Soca Sessions",
         "source": "api-live",
         "start": "02:00",
         "end": "04:00"
       },
+      "next": {
+        "title": "The Mash Time Show",
+        "source": "api-live",
+        "start": "04:00",
+        "end": "06:00"
+      },
       "track": "",
-      "showTitle": "WEFUNK",
+      "showTitle": "Soca Sessions",
       "host": "",
       "source": "api-live",
       "sources": [
-        "api-live"
+        "api-live",
+        "stream"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-11T04:42:44.531Z"
+      "checkedAt": "2026-07-11T07:12:03.571Z"
     },
     "cjlo": {
       "id": "cjlo",
       "name": "CJLO 1690AM",
       "current": {
-        "title": "Jazz Boulevard",
+        "title": "CJLO Late Night",
         "source": "schedule",
         "start": "00:00",
-        "end": "02:00",
-        "url": "http://www.cjlo.com/shows/jazz-boulevard"
+        "end": "06:00",
+        "url": "http://www.cjlo.com/shows/cjlo-late-night"
       },
       "next": {
         "title": "World-Up'",
@@ -96,14 +97,14 @@
         "url": "http://www.cjlo.com/shows/world-up"
       },
       "track": "",
-      "showTitle": "Jazz Boulevard",
+      "showTitle": "CJLO Late Night",
       "host": "",
       "source": "schedule",
       "sources": [
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-11T04:42:46.556Z"
+      "checkedAt": "2026-07-11T07:12:04.783Z"
     },
     "cfak": {
       "id": "cfak",
@@ -123,28 +124,28 @@
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-11T04:42:47.072Z"
+      "checkedAt": "2026-07-11T07:12:05.738Z"
     },
     "choq": {
       "id": "choq",
       "name": "CHOQ.ca",
       "current": {
-        "title": "Stormspell",
+        "title": "Burn",
         "source": "api-live",
-        "host": "ZØRZA",
+        "host": "The Blind Philosopher",
         "url": "https://www.choq.ca/assets/playlist/les-nuits-brutales.png"
       },
       "next": null,
-      "track": "ZØRZA - Stormspell",
-      "showTitle": "Stormspell",
-      "host": "ZØRZA",
+      "track": "The Blind Philosopher - Burn",
+      "showTitle": "Burn",
+      "host": "The Blind Philosopher",
       "source": "api-live",
       "sources": [
         "api-live",
         "stream"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-11T04:42:49.109Z"
+      "checkedAt": "2026-07-11T07:12:07.422Z"
     }
   }
 }
