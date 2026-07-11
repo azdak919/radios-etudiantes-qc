@@ -1,23 +1,23 @@
 {
-  "updated": "2026-07-11T22:19:36.133Z",
+  "updated": "2026-07-11T23:48:33.276Z",
   "total": 185,
   "withImage": 107,
   "withCredit": 107,
-  "cited": 74,
+  "cited": 73,
   "pending": 0,
   "missingHero": 0,
   "ok": true,
   "checked": 1,
   "updatedCount": 1,
-  "citedNew": 1,
-  "fallbackNew": 0,
+  "citedNew": 0,
+  "fallbackNew": 1,
   "samples": [
     {
-      "title": "Ce que nous devons aux femmes - Le Délit",
+      "title": "Des initiatives qui rassemblent - Le Délit",
       "source": "Le Délit",
-      "credit": "Photo : Alexandre Gontier",
-      "cited": true,
-      "method": "media-credit-near"
+      "credit": "Crédit photo : Le Délit",
+      "cited": false,
+      "method": null
     }
   ]
 }
