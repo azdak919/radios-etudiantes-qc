@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-11T01:03:05.850Z",
+  "updatedAt": "2026-07-11T04:42:49.460Z",
   "timezone": "America/Toronto",
   "stations": {
     "chyz": {
@@ -21,27 +21,27 @@
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-11T01:02:54.990Z"
+      "checkedAt": "2026-07-11T04:42:39.644Z"
     },
     "cism": {
       "id": "cism",
       "name": "CISM 89,3",
       "current": {
-        "title": "Ok Doomer",
+        "title": "Rave de nuit",
         "source": "api-live",
-        "start": "17:00",
+        "start": "20:00",
         "url": "https://stream03.ustream.ca/cism128.mp3",
-        "slug": "ok-doomer"
+        "slug": "rave-de-nuit"
       },
       "next": {
-        "title": "Mix électro",
+        "title": "Le 120e parallèle (reprise)",
         "source": "api-live",
-        "start": "19:00",
-        "url": "https://podcast.cism893.ca/podcast/download_mp3/363712.mp3",
-        "slug": "mix-electro"
+        "start": "21:00",
+        "url": "https://podcast.cism893.ca/podcast/download_mp3/363790.mp3",
+        "slug": "le-120e-parallele"
       },
       "track": "",
-      "showTitle": "Ok Doomer",
+      "showTitle": "Rave de nuit",
       "host": "",
       "source": "api-live",
       "sources": [
@@ -51,105 +51,100 @@
         "type": "cism-v1",
         "url": "https://admin.cism893.ca/api/v1/live"
       },
-      "checkedAt": "2026-07-11T01:02:56.990Z"
+      "checkedAt": "2026-07-11T04:42:41.517Z"
     },
     "ckut": {
       "id": "ckut",
       "name": "CKUT 90,3",
       "current": {
-        "title": "Macondo",
+        "title": "WEFUNK",
         "source": "api-live",
-        "start": "20:00",
-        "end": "22:00"
+        "start": "00:00",
+        "end": "02:00"
       },
       "next": {
-        "title": "Weekend Groove",
+        "title": "Soca Sessions",
         "source": "api-live",
-        "start": "22:00",
-        "end": "00:00"
+        "start": "02:00",
+        "end": "04:00"
       },
       "track": "",
-      "showTitle": "Macondo",
+      "showTitle": "WEFUNK",
       "host": "",
       "source": "api-live",
       "sources": [
         "api-live"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-11T01:03:00.253Z"
+      "checkedAt": "2026-07-11T04:42:44.531Z"
     },
     "cjlo": {
       "id": "cjlo",
       "name": "CJLO 1690AM",
       "current": {
-        "title": "Stereo Field Trip",
+        "title": "Jazz Boulevard",
         "source": "schedule",
-        "start": "21:00",
-        "end": "22:00",
-        "url": "http://www.cjlo.com/shows/stereo-field-trip"
+        "start": "00:00",
+        "end": "02:00",
+        "url": "http://www.cjlo.com/shows/jazz-boulevard"
       },
       "next": {
-        "title": "The Come Up",
+        "title": "World-Up'",
         "source": "schedule",
-        "start": "22:00",
-        "end": "23:00",
-        "url": "http://www.cjlo.com/shows/the-come-up"
+        "start": "06:00",
+        "end": "09:00",
+        "url": "http://www.cjlo.com/shows/world-up"
       },
       "track": "",
-      "showTitle": "Stereo Field Trip",
+      "showTitle": "Jazz Boulevard",
       "host": "",
       "source": "schedule",
       "sources": [
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-11T01:03:02.493Z"
+      "checkedAt": "2026-07-11T04:42:46.556Z"
     },
     "cfak": {
       "id": "cfak",
       "name": "CFAK 88,3",
       "current": {
-        "title": "Mangue, Goyave et Reggae",
+        "title": "Les nuits CFAK",
         "source": "schedule",
-        "start": "21:00",
-        "end": "22:00"
+        "start": "00:00",
+        "end": "07:00"
       },
-      "next": {
-        "title": "Mix Anglo",
-        "source": "schedule",
-        "start": "22:00",
-        "end": "00:00"
-      },
+      "next": null,
       "track": "",
-      "showTitle": "Mangue, Goyave et Reggae",
+      "showTitle": "Les nuits CFAK",
       "host": "",
       "source": "schedule",
       "sources": [
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-11T01:03:03.069Z"
+      "checkedAt": "2026-07-11T04:42:47.072Z"
     },
     "choq": {
       "id": "choq",
       "name": "CHOQ.ca",
       "current": {
-        "title": "Pretense",
+        "title": "Stormspell",
         "source": "api-live",
-        "host": "Atsuko Chiba",
-        "url": "https://www.choq.ca/assets/playlist/palmares-site-web.jpg"
+        "host": "ZØRZA",
+        "url": "https://www.choq.ca/assets/playlist/les-nuits-brutales.png"
       },
       "next": null,
-      "track": "Atsuko Chiba - Pretense",
-      "showTitle": "Pretense",
-      "host": "Atsuko Chiba",
+      "track": "ZØRZA - Stormspell",
+      "showTitle": "Stormspell",
+      "host": "ZØRZA",
       "source": "api-live",
       "sources": [
         "api-live",
         "stream"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-11T01:03:05.500Z"
+      "checkedAt": "2026-07-11T04:42:49.109Z"
     }
   }
 }
