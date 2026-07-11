@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-11T17:07:55.506Z",
+  "updatedAt": "2026-07-11T18:27:10.926Z",
   "timezone": "America/Toronto",
   "stations": {
     "chyz": {
@@ -27,7 +27,7 @@
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-11T17:07:41.789Z"
+      "checkedAt": "2026-07-11T18:27:03.045Z"
     },
     "cism": {
       "id": "cism",
@@ -57,25 +57,25 @@
         "type": "cism-v1",
         "url": "https://admin.cism893.ca/api/v1/live"
       },
-      "checkedAt": "2026-07-11T17:07:43.357Z"
+      "checkedAt": "2026-07-11T18:27:04.602Z"
     },
     "ckut": {
       "id": "ckut",
       "name": "CKUT 90,3",
       "current": {
-        "title": "Samedi Midi",
-        "source": "api-live",
-        "start": "10:30",
-        "end": "14:00"
-      },
-      "next": {
         "title": "Funky Revolutions",
         "source": "api-live",
         "start": "14:00",
         "end": "16:00"
       },
+      "next": {
+        "title": "West Indian Rhythms",
+        "source": "api-live",
+        "start": "16:00",
+        "end": "19:00"
+      },
       "track": "",
-      "showTitle": "Samedi Midi",
+      "showTitle": "Funky Revolutions",
       "host": "",
       "source": "api-live",
       "sources": [
@@ -83,34 +83,34 @@
         "stream"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-11T17:07:46.105Z"
+      "checkedAt": "2026-07-11T18:27:06.872Z"
     },
     "cjlo": {
       "id": "cjlo",
       "name": "CJLO 1690AM",
       "current": {
-        "title": "Anatomy of Caribbean Music",
-        "source": "schedule",
-        "start": "12:00",
-        "end": "14:00",
-        "url": "http://www.cjlo.com/shows/anatomy-of-caribbean-music"
-      },
-      "next": {
         "title": "Caribbean Callaloo",
         "source": "schedule",
         "start": "14:00",
         "end": "16:00",
         "url": "http://www.cjlo.com/shows/caribbean-callaloo"
       },
+      "next": {
+        "title": "Mi Dun Talk",
+        "source": "schedule",
+        "start": "16:00",
+        "end": "17:00",
+        "url": "http://www.cjlo.com/shows/mi-dun-talk"
+      },
       "track": "",
-      "showTitle": "Anatomy of Caribbean Music",
+      "showTitle": "Caribbean Callaloo",
       "host": "",
       "source": "schedule",
       "sources": [
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-11T17:07:47.406Z"
+      "checkedAt": "2026-07-11T18:27:08.576Z"
     },
     "cfak": {
       "id": "cfak",
@@ -130,27 +130,27 @@
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-11T17:07:47.863Z"
+      "checkedAt": "2026-07-11T18:27:09.115Z"
     },
     "choq": {
       "id": "choq",
       "name": "CHOQ.ca",
       "current": {
-        "title": "Cold Hard Morning Light",
+        "title": "Genius of Evil",
         "source": "api-live",
-        "host": "Heat"
+        "host": "Empath"
       },
       "next": null,
-      "track": "Heat - Cold Hard Morning Light",
-      "showTitle": "Cold Hard Morning Light",
-      "host": "Heat",
+      "track": "Empath - Genius of Evil",
+      "showTitle": "Genius of Evil",
+      "host": "Empath",
       "source": "api-live",
       "sources": [
         "api-live",
         "stream"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-11T17:07:55.155Z"
+      "checkedAt": "2026-07-11T18:27:10.576Z"
     }
   }
 }
