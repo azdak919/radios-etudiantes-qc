@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-10T23:30:15.266Z",
+  "updatedAt": "2026-07-11T01:03:05.850Z",
   "timezone": "America/Toronto",
   "stations": {
     "chyz": {
@@ -21,27 +21,27 @@
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-10T23:30:06.921Z"
+      "checkedAt": "2026-07-11T01:02:54.990Z"
     },
     "cism": {
       "id": "cism",
       "name": "CISM 89,3",
       "current": {
-        "title": "Salsa & Bembê",
+        "title": "Ok Doomer",
         "source": "api-live",
-        "start": "15:00",
+        "start": "17:00",
         "url": "https://stream03.ustream.ca/cism128.mp3",
-        "slug": "salsa-et-bembe"
+        "slug": "ok-doomer"
       },
       "next": {
-        "title": "Turbo tannant",
+        "title": "Mix électro",
         "source": "api-live",
-        "start": "16:00",
-        "url": "https://podcast.cism893.ca/podcast/download_mp3/363706.mp3",
-        "slug": "turbo-tannant"
+        "start": "19:00",
+        "url": "https://podcast.cism893.ca/podcast/download_mp3/363712.mp3",
+        "slug": "mix-electro"
       },
       "track": "",
-      "showTitle": "Salsa & Bembê",
+      "showTitle": "Ok Doomer",
       "host": "",
       "source": "api-live",
       "sources": [
@@ -51,105 +51,105 @@
         "type": "cism-v1",
         "url": "https://admin.cism893.ca/api/v1/live"
       },
-      "checkedAt": "2026-07-10T23:30:08.756Z"
+      "checkedAt": "2026-07-11T01:02:56.990Z"
     },
     "ckut": {
       "id": "ckut",
       "name": "CKUT 90,3",
       "current": {
-        "title": "Listening to Latin America: Blanca-Victoria",
-        "source": "api-live",
-        "start": "19:00",
-        "end": "20:00"
-      },
-      "next": {
         "title": "Macondo",
         "source": "api-live",
         "start": "20:00",
         "end": "22:00"
       },
+      "next": {
+        "title": "Weekend Groove",
+        "source": "api-live",
+        "start": "22:00",
+        "end": "00:00"
+      },
       "track": "",
-      "showTitle": "Listening to Latin America: Blanca-Victoria",
+      "showTitle": "Macondo",
       "host": "",
       "source": "api-live",
       "sources": [
-        "api-live",
-        "stream"
+        "api-live"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-10T23:30:11.563Z"
+      "checkedAt": "2026-07-11T01:03:00.253Z"
     },
     "cjlo": {
       "id": "cjlo",
       "name": "CJLO 1690AM",
       "current": {
-        "title": "The Go-Go Radio Magic Show",
+        "title": "Stereo Field Trip",
         "source": "schedule",
-        "start": "18:00",
-        "end": "20:00",
-        "url": "http://www.cjlo.com/shows/the-go-go-radio-magic-show"
+        "start": "21:00",
+        "end": "22:00",
+        "url": "http://www.cjlo.com/shows/stereo-field-trip"
       },
       "next": {
-        "title": "El Encuentro Latino",
+        "title": "The Come Up",
         "source": "schedule",
-        "start": "20:00",
-        "end": "21:00",
-        "url": "http://www.cjlo.com/shows/el-encuentro-latino"
+        "start": "22:00",
+        "end": "23:00",
+        "url": "http://www.cjlo.com/shows/the-come-up"
       },
       "track": "",
-      "showTitle": "The Go-Go Radio Magic Show",
+      "showTitle": "Stereo Field Trip",
       "host": "",
       "source": "schedule",
       "sources": [
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-10T23:30:13.123Z"
+      "checkedAt": "2026-07-11T01:03:02.493Z"
     },
     "cfak": {
       "id": "cfak",
       "name": "CFAK 88,3",
       "current": {
-        "title": "Enfin vendredi",
-        "source": "schedule",
-        "start": "19:00",
-        "end": "21:00"
-      },
-      "next": {
         "title": "Mangue, Goyave et Reggae",
         "source": "schedule",
         "start": "21:00",
         "end": "22:00"
       },
+      "next": {
+        "title": "Mix Anglo",
+        "source": "schedule",
+        "start": "22:00",
+        "end": "00:00"
+      },
       "track": "",
-      "showTitle": "Enfin vendredi",
+      "showTitle": "Mangue, Goyave et Reggae",
       "host": "",
       "source": "schedule",
       "sources": [
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-10T23:30:13.703Z"
+      "checkedAt": "2026-07-11T01:03:03.069Z"
     },
     "choq": {
       "id": "choq",
       "name": "CHOQ.ca",
       "current": {
-        "title": "Septembre",
+        "title": "Pretense",
         "source": "api-live",
-        "host": "Mantisse"
+        "host": "Atsuko Chiba",
+        "url": "https://www.choq.ca/assets/playlist/palmares-site-web.jpg"
       },
       "next": null,
-      "track": "Mantisse - Septembre",
-      "showTitle": "Septembre",
-      "host": "Mantisse",
+      "track": "Atsuko Chiba - Pretense",
+      "showTitle": "Pretense",
+      "host": "Atsuko Chiba",
       "source": "api-live",
       "sources": [
         "api-live",
         "stream"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-10T23:30:14.916Z"
+      "checkedAt": "2026-07-11T01:03:05.500Z"
     }
   }
 }
