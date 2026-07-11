@@ -1,51 +1,23 @@
 {
-  "updated": "2026-07-11T20:44:30.799Z",
+  "updated": "2026-07-11T22:19:36.133Z",
   "total": 185,
   "withImage": 107,
   "withCredit": 107,
-  "cited": 73,
+  "cited": 74,
   "pending": 0,
   "missingHero": 0,
   "ok": true,
-  "checked": 5,
-  "updatedCount": 5,
-  "citedNew": 2,
-  "fallbackNew": 3,
+  "checked": 1,
+  "updatedCount": 1,
+  "citedNew": 1,
+  "fallbackNew": 0,
   "samples": [
     {
-      "title": "Se préparer et vivre sa retraite : un long fleuve, pas si tranquille",
-      "source": "La Pige",
-      "credit": "Photo : Léa Morin-Letort",
-      "cited": true,
-      "method": "wp-caption"
-    },
-    {
-      "title": "CALAMINE : RAPPER AUTREMENT QUE LE « BOYS CLUB » - Quartier Libre",
-      "source": "Quartier Libre",
-      "credit": "Crédit photo : Quartier Libre",
-      "cited": false,
-      "method": null
-    },
-    {
-      "title": "Forum RÉA : une alliance pour l’éducation en milieu défavorisé - Quartier Libre",
-      "source": "Quartier Libre",
-      "credit": "Crédit photo : Quartier Libre",
-      "cited": false,
-      "method": null
-    },
-    {
-      "title": "Des initiatives qui rassemblent - Le Délit",
+      "title": "Ce que nous devons aux femmes - Le Délit",
       "source": "Le Délit",
-      "credit": "Crédit photo : Le Délit",
-      "cited": false,
-      "method": null
-    },
-    {
-      "title": "Leave the Children Out of This",
-      "source": "The Plant",
-      "credit": "Photo: My Little Princess (2011)",
+      "credit": "Photo : Alexandre Gontier",
       "cited": true,
-      "method": "via-attribution"
+      "method": "media-credit-near"
     }
   ]
 }
