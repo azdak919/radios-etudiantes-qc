@@ -23,8 +23,8 @@
         }
       },
       "_note": "WordPress + Elementor — photos dans theme-post-featured-image / widgets image, pas toujours en RSS. Ne pas laisser Openverse écraser les vraies photos d'article (ex. Coupe du monde 16-17_CDM).",
-      "_lastChecked": "2026-07-11T11:39:44.573Z",
-      "_failCount": 0,
+      "_lastChecked": "2026-07-11T13:57:18.980Z",
+      "_failCount": 1,
       "_status": "stale",
       "_lastItemDate": "2026-05-15T16:00:00.000Z",
       "popularity": 1,
@@ -37,12 +37,12 @@
       "type": "universite",
       "lang": "fr",
       "url": "https://montrealcampus.ca/feed/",
-      "_lastChecked": "2026-07-11T11:39:45.532Z",
+      "_lastChecked": "2026-07-11T13:57:19.959Z",
       "_failCount": 0,
       "_status": "ok",
       "_lastItemDate": "2026-05-09T03:14:30.000Z",
       "popularity": 3,
-      "_lastFetchOk": "2026-07-11T11:39:45.532Z"
+      "_lastFetchOk": "2026-07-11T13:57:19.959Z"
     },
     {
       "name": "Le Délit",
@@ -54,12 +54,12 @@
       "wpFeaturedCategories": [
         "slider"
       ],
-      "_lastChecked": "2026-07-11T11:39:49.665Z",
+      "_lastChecked": "2026-07-11T13:57:24.420Z",
       "_failCount": 0,
       "_status": "ok",
       "_lastItemDate": "2026-03-25T11:00:00.000Z",
       "popularity": 2,
-      "_lastFetchOk": "2026-07-11T11:39:49.665Z"
+      "_lastFetchOk": "2026-07-11T13:57:24.420Z"
     },
     {
       "name": "The McGill Daily",
@@ -87,12 +87,12 @@
         }
       },
       "_note": "Flux RSS : dc:creator « Coordinating » (compte WP) — auteur réel sur la page. og:image / featured souvent logo Daily.png ou bannière editorial_* (numéro spécial) sans photo dans le corps — rejeter et basculer banque/campus. preferFirstContentImage : vraie photo du corps, pas la meta Yoast.",
-      "_lastChecked": "2026-07-11T11:39:50.062Z",
+      "_lastChecked": "2026-07-11T13:57:24.913Z",
       "_failCount": 0,
       "_status": "ok",
       "_lastItemDate": "2026-07-06T12:00:00.000Z",
       "popularity": 4,
-      "_lastFetchOk": "2026-07-11T11:39:50.062Z"
+      "_lastFetchOk": "2026-07-11T13:57:24.913Z"
     },
     {
       "name": "The Link",
@@ -115,13 +115,13 @@
           ]
         }
       },
-      "_lastChecked": "2026-07-11T11:39:51.108Z",
+      "_lastChecked": "2026-07-11T13:57:25.892Z",
       "_failCount": 0,
       "_status": "ok",
       "_lastItemDate": "2026-07-08T14:41:00.000Z",
       "popularity": 7,
       "_note": "Journal indépendant de Concordia (EE). Byline : .byline a[href*=/author/]. Graphique générique CSU (abeille/nid d'abeilles Naya Hachwa) réutilisé sur plusieurs articles — à rejeter. Légendes « Photo Prénom Nom » / « Graphic … » en fin de figcaption.",
-      "_lastFetchOk": "2026-07-11T11:39:51.108Z"
+      "_lastFetchOk": "2026-07-11T13:57:25.892Z"
     },
     {
       "name": "Zone Campus",
@@ -130,8 +130,8 @@
       "type": "universite",
       "lang": "fr",
       "url": "https://www.zonecampus.ca/feed/",
-      "_lastChecked": "2026-07-11T11:39:52.063Z",
-      "_failCount": 0,
+      "_lastChecked": "2026-07-11T13:57:26.148Z",
+      "_failCount": 1,
       "_status": "stale",
       "_lastItemDate": "2026-05-08T14:20:26.000Z",
       "popularity": 9,
@@ -157,12 +157,12 @@
           "preferSizeFull": true
         }
       },
-      "_lastChecked": "2026-07-11T11:39:53.434Z",
+      "_lastChecked": "2026-07-11T13:57:27.651Z",
       "_failCount": 0,
       "_status": "stale",
       "_lastItemDate": "2026-05-15T16:31:24.000Z",
       "popularity": 5,
-      "_lastFetchOk": "2026-07-11T11:39:53.434Z"
+      "_lastFetchOk": "2026-07-11T13:57:27.651Z"
     },
     {
       "name": "Le Collectif",
@@ -171,8 +171,8 @@
       "type": "universite",
       "lang": "fr",
       "url": "https://lecollectif.ca/feed/",
-      "_lastChecked": "2026-07-11T11:39:54.743Z",
-      "_failCount": 0,
+      "_lastChecked": "2026-07-11T13:57:28.424Z",
+      "_failCount": 1,
       "_status": "stale",
       "_lastItemDate": "2026-07-10T20:35:05.000Z",
       "popularity": 6,
@@ -185,12 +185,12 @@
       "type": "cegep",
       "lang": "fr",
       "url": "https://exilecvm.ca/feed/",
-      "_lastChecked": "2026-07-11T11:39:54.870Z",
+      "_lastChecked": "2026-07-11T13:57:28.538Z",
       "_failCount": 0,
       "_status": "ok",
       "_lastItemDate": "2026-04-18T22:22:07.000Z",
       "popularity": 10,
-      "_lastFetchOk": "2026-07-11T11:39:54.870Z"
+      "_lastFetchOk": "2026-07-11T13:57:28.538Z"
     },
     {
       "name": "La Pige",
@@ -214,8 +214,8 @@
           "articleBodySelector": "itemprop=articleBody"
         }
       },
-      "_lastChecked": "2026-07-11T11:39:55.460Z",
-      "_failCount": 0,
+      "_lastChecked": "2026-07-11T13:57:28.742Z",
+      "_failCount": 1,
       "_status": "stale",
       "_lastItemDate": "2026-06-22T14:36:10.000Z",
       "popularity": 11,
@@ -259,10 +259,10 @@
       },
       "_status": "ok",
       "_failCount": 0,
-      "_lastChecked": "2026-07-11T11:39:56.939Z",
+      "_lastChecked": "2026-07-11T13:57:30.259Z",
       "_lastItemDate": "2026-02-25T14:38:32.764Z",
       "_note": "SPA React + Firestore public. Extrait = description ou début de body HTML. Lecture REST publique ou clé FIREBASE_POLYSCOPE_API_KEY.",
-      "_lastFetchOk": "2026-07-11T11:39:56.939Z"
+      "_lastFetchOk": "2026-07-11T13:57:30.259Z"
     },
     {
       "name": "The Tribune",
@@ -284,10 +284,10 @@
       "_note": "Flux RSS : dc:creator « Admin » — auteur réel dans entry-author / ?tribune_author= sur la page.",
       "_status": "ok",
       "_lastItemDate": "2026-06-26T15:24:28.000Z",
-      "_lastChecked": "2026-07-11T11:39:57.061Z",
+      "_lastChecked": "2026-07-11T13:57:30.380Z",
       "_failCount": 0,
       "popularity": 8,
-      "_lastFetchOk": "2026-07-11T11:39:57.061Z"
+      "_lastFetchOk": "2026-07-11T13:57:30.380Z"
     },
     {
       "name": "The Campus",
@@ -325,11 +325,11 @@
       },
       "_status": "ok",
       "_failCount": 0,
-      "_lastChecked": "2026-07-11T11:39:57.223Z",
+      "_lastChecked": "2026-07-11T13:57:30.522Z",
       "site": "https://thebucampus.ca/",
       "_note": "WordPress — byline réelle en tête d'article (« Nom – Sports Editor »), pas le compte WP « The Campus ». Crédit photo souvent dans le nom de fichier (_cred-prenom-nom), pas dans data-image-title d'une autre image. Flux : fusion news/sports/opinions/arts-culture",
       "_lastItemDate": "2026-04-06T16:03:16.000Z",
-      "_lastFetchOk": "2026-07-11T11:39:57.223Z"
+      "_lastFetchOk": "2026-07-11T13:57:30.522Z"
     },
     {
       "name": "The Plant",
@@ -357,9 +357,9 @@
       "_note": "Journal étudiant du Dawson College (cégep, anglais). WordPress — dc:creator souvent « theplantnews » ; byline = paragraphe « By Name » ou « Name » + rôle (News Editor, Managing Editor…). Rejeter logo/stock plant. Repli images : banque campus Dawson (Wikimedia).",
       "_status": "ok",
       "_failCount": 0,
-      "_lastChecked": "2026-07-11T11:39:57.379Z",
+      "_lastChecked": "2026-07-11T13:57:30.603Z",
       "_lastItemDate": "2026-05-11T20:44:08.000Z",
-      "_lastFetchOk": "2026-07-11T11:39:57.379Z"
+      "_lastFetchOk": "2026-07-11T13:57:30.603Z"
     }
   ],
   "candidates": [
@@ -426,5 +426,5 @@
     }
   ],
   "_lastRun": "2026-07-06T11:27:58.004Z",
-  "_lastFetchRun": "2026-07-11T11:40:26.210Z"
+  "_lastFetchRun": "2026-07-11T13:57:51.213Z"
 }

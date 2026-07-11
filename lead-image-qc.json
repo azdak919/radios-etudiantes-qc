@@ -1,19 +1,31 @@
 {
-  "updated": "2026-07-11T11:48:42.991Z",
+  "updated": "2026-07-11T14:06:24.773Z",
   "total": 185,
   "withPhoto": 157,
-  "withStock": 39,
-  "withCampusBank": 15,
+  "withStock": 45,
+  "withCampusBank": 14,
   "fullyCovered": 185,
-  "leadReadyPhotos": 139,
-  "pageScraped": 86,
-  "photosRecovered": 54,
+  "leadReadyPhotos": 113,
+  "pageScraped": 78,
+  "photosRecovered": 49,
   "imagesCleared": 2,
-  "stockSearches": 60,
-  "stockFound": 39,
-  "campusBankFound": 15,
+  "stockSearches": 55,
+  "stockFound": 42,
+  "campusBankFound": 12,
   "mainPageLeadReady": true,
   "gaps": [
+    {
+      "title": "CSU fails to reach quorum at first special council meeting of new mandate",
+      "link": "https://thelinknewspaper.ca/article/16335",
+      "reason": "campus-bank",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/d/d1/Henry_F._Hall_Building_07.JPG"
+    },
+    {
+      "title": "The Cruel Optimism of Summer",
+      "link": "https://www.mcgilldaily.com/2026/07/the-cruel-optimism-of-summer/",
+      "reason": "campus-bank",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/1/18/Wilson_Hall%2C_McGill_University.jpg"
+    },
     {
       "title": "CSU terminates council’s chief election officer",
       "link": "https://thelinknewspaper.ca/article/16334",
@@ -21,14 +33,20 @@
       "image": "https://upload.wikimedia.org/wikipedia/commons/1/15/2135-2149_Mackay_Street%2C_Montreal.JPG"
     },
     {
-      "title": "Un hommage aux cyclistes décédés sur les routes",
-      "link": "https://lapige.atmjonquiere.com/2026/05/21/les-cyclistes-sont-honores-au-lac-saint-jean/?utm_source=rss&utm_medium=rss&utm_campaign=les-cyclistes-sont-honores-au-lac-saint-jean",
+      "title": "CSU rejects motion for Israel and Jewish solidarity fund ad hoc committee",
+      "link": "https://thelinknewspaper.ca/article/16329",
       "reason": "campus-bank",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Pavillon_principal_du_C%C3%A9gep_de_Jonqui%C3%A8re.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/9/99/Henry_F._Hall_Building_01.JPG"
     },
     {
       "title": "Un investissement pour les jeunes « bienvenu » au Centre Mamik",
       "link": "https://lapige.atmjonquiere.com/2026/05/21/un-investissement-pour-les-jeunes-bienvenu-au-centre-mamik/?utm_source=rss&utm_medium=rss&utm_campaign=un-investissement-pour-les-jeunes-bienvenu-au-centre-mamik",
+      "reason": "campus-bank",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Pavillon_principal_du_C%C3%A9gep_de_Jonqui%C3%A8re.jpg"
+    },
+    {
+      "title": "L’ERD sauvée de la dissolution par quatre membres",
+      "link": "https://lapige.atmjonquiere.com/2026/05/21/lerd-sauvee-de-la-dissolution-par-quatre-membres/?utm_source=rss&utm_medium=rss&utm_campaign=lerd-sauvee-de-la-dissolution-par-quatre-membres",
       "reason": "campus-bank",
       "image": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Pavillon_principal_du_C%C3%A9gep_de_Jonqui%C3%A8re.jpg"
     },
@@ -63,28 +81,10 @@
       "image": "https://lecollectif.ca/wp-content/uploads/2026/07/CULTURE_MarcMessier_SourceFacebook-819x1024.jpeg"
     },
     {
-      "title": "La popularité des clubs et événements sportifs",
-      "link": "https://lecollectif.ca/societe/la-popularite-des-clubs-et-evenements-sportifs/",
+      "title": "Pourquoi notre génération passe d’une obsession à l’autre?",
+      "link": "https://lecollectif.ca/edition-papier/pourquoi-notre-generation-passe-dune-obsession-a-lautre/",
       "reason": "no-stock-match",
-      "image": "https://lecollectif.ca/wp-content/uploads/2026/07/OBSESSIONS_CLUBSDESPORTS_ClubPleinAirAltitude_SourceFacebookClubPleinAirAltitude-1-768x1024.jpg"
-    },
-    {
-      "title": "Recettes musicales québécoises pour l’été - Quartier Libre",
-      "link": "https://quartierlibre.ca/ete-recettes-musicales-quebecoises/",
-      "reason": "no-stock-match",
-      "image": "https://quartierlibre.ca/wp-content/uploads/2026/05/20_florelaurentienne.jpg"
-    },
-    {
-      "title": "Mc Gill community members express concerns about Mc Gill Athletics’ former partnership with Inter Rent REIT",
-      "link": "https://www.thetribune.ca/news/mcgill-community-members-express-concerns-about-mcgill-athletics-former-partnership-with-interrent-reit-26042026/?utm_source=rss&utm_medium=rss&utm_campaign=mcgill-community-members-express-concerns-about-mcgill-athletics-former-partnership-with-interrent-reit-26042026",
-      "reason": "campus-bank",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/e/e8/Roddick_Gates_%28McGill_University%29_2005-09-02.jpg"
-    },
-    {
-      "title": "Opinion – L’hypocrisie qui rampe à l’Assemblée nationale",
-      "link": "https://exilecvm.wordpress.com/2026/04/18/opinion-lhypocrisie-qui-rampe-a-lassemblee-nationale/",
-      "reason": "stock-too-small",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/4/47/Assembl%C3%A9e_nationale_du_Qu%C3%A9bec%2C_l%27H%C3%B4tel_du_Parlement%2C_fa%C3%A7ade_avec_ancien_entr%C3%A9_principal.jpg"
+      "image": "https://lecollectif.ca/wp-content/uploads/2026/07/OBSESSIONS_HYPERFIXATIONS_Les-hyperfixations_SourceBlogZencare-1.png"
     }
   ]
 }

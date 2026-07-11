@@ -1,100 +1,30 @@
 {
-  "updated": "2026-07-11T11:49:15.088Z",
+  "updated": "2026-07-11T14:06:09.397Z",
   "total": 185,
-  "withImage": 157,
-  "withCredit": 157,
-  "cited": 108,
+  "withImage": 109,
+  "withCredit": 109,
+  "cited": 74,
   "pending": 0,
   "missingHero": 0,
   "ok": true,
-  "checked": 55,
-  "updatedCount": 55,
-  "citedNew": 37,
-  "fallbackNew": 18,
+  "checked": 2,
+  "updatedCount": 2,
+  "citedNew": 2,
+  "fallbackNew": 0,
   "samples": [
     {
-      "title": "Ask the Trib: How do I survive summer in my hometown?",
-      "source": "The Tribune",
-      "credit": "Photo : Zoe Lee",
+      "title": "Qui sont les agents qui patrouillent notre campus? - Le Délit",
+      "source": "Le Délit",
+      "credit": "Photo : Stu Doré/Félix Fournier",
       "cited": true,
-      "method": "figcaption-attribution"
+      "method": "media-credit-featured"
     },
     {
-      "title": "Kanga I, II, III’ brings Projections: SANKOFA’s afrofuturist vision to Trottier",
-      "source": "The Tribune",
-      "credit": "Photo : McGill Visual Arts Collection",
+      "title": "Leave the Children Out of This",
+      "source": "The Plant",
+      "credit": "Photo: My Little Princess (2011)",
       "cited": true,
-      "method": "figcaption-bare"
-    },
-    {
-      "title": "Se préparer et vivre sa retraite : un long fleuve, pas si tranquille",
-      "source": "La Pige",
-      "credit": "Photo : Léa Morin-Letort",
-      "cited": true,
-      "method": "wp-caption"
-    },
-    {
-      "title": "AI’s use in legal decisions poses major risks to the Canadian judicial system’s integrity and neutrality",
-      "source": "The Tribune",
-      "credit": "Photo : Zoe Lee",
-      "cited": true,
-      "method": "figcaption-attribution"
-    },
-    {
-      "title": "Know Your Artist: Theodore A. Harris",
-      "source": "The Tribune",
-      "credit": "Photo : Theodore A. Harris",
-      "cited": true,
-      "method": "figcaption-bare"
-    },
-    {
-      "title": "Montreal protestors commemorate the 78th anniversary of the Nakba",
-      "source": "The Tribune",
-      "credit": "Photo : Ellen Lurie",
-      "cited": true,
-      "method": "figcaption-attribution"
-    },
-    {
-      "title": "Sans fin(s): au cœur des troubles du comportement alimentaire",
-      "source": "L'Exemplaire",
-      "credit": "Crédit photo : L'Exemplaire",
-      "cited": false,
-      "method": null
-    },
-    {
-      "title": "CALAMINE : RAPPER AUTREMENT QUE LE « BOYS CLUB » - Quartier Libre",
-      "source": "Quartier Libre",
-      "credit": "Crédit photo : Quartier Libre",
-      "cited": false,
-      "method": null
-    },
-    {
-      "title": "Forum RÉA : une alliance pour l’éducation en milieu défavorisé - Quartier Libre",
-      "source": "Quartier Libre",
-      "credit": "Crédit photo : Quartier Libre",
-      "cited": false,
-      "method": null
-    },
-    {
-      "title": "A final note from the Editor-in-Chief of Volume 45, for the record",
-      "source": "The Tribune",
-      "credit": "Photo : Yusur Al-Sharqi",
-      "cited": true,
-      "method": "figcaption-attribution"
-    },
-    {
-      "title": "SPHR remembers Gaza Solidarity Encampment ahead of Nakba Anniversary Protest",
-      "source": "The Tribune",
-      "credit": "Photo : Ellen Lurie",
-      "cited": true,
-      "method": "figcaption-attribution"
-    },
-    {
-      "title": "L’alcool est-il vraiment le nouveau tabac ?",
-      "source": "L'Exemplaire",
-      "credit": "Crédit photo : L'Exemplaire",
-      "cited": false,
-      "method": null
+      "method": "via-attribution"
     }
   ]
 }
