@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-11T20:51:33.273Z",
+  "updatedAt": "2026-07-11T21:52:19.264Z",
   "timezone": "America/Toronto",
   "stations": {
     "chyz": {
@@ -21,27 +21,27 @@
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-11T20:51:24.888Z"
+      "checkedAt": "2026-07-11T21:52:11.854Z"
     },
     "cism": {
       "id": "cism",
       "name": "CISM 89,3",
       "current": {
-        "title": "Elkin Polo El Show",
-        "source": "api-live",
-        "start": "09:00",
-        "url": "https://stream03.ustream.ca/cism128.mp3",
-        "slug": "elkin-polo-el-show"
-      },
-      "next": {
         "title": "Change le beat",
         "source": "api-live",
         "start": "13:00",
-        "url": "https://podcast.cism893.ca/podcast/download_mp3/363744.mp3",
+        "url": "https://stream03.ustream.ca/cism128.mp3",
         "slug": "change-le-beat"
       },
+      "next": {
+        "title": "Faites entrer un DJ",
+        "source": "api-live",
+        "start": "14:00",
+        "url": "https://podcast.cism893.ca/podcast/download_mp3/363749.mp3",
+        "slug": "faites-entrer-un-dj"
+      },
       "track": "",
-      "showTitle": "Elkin Polo El Show",
+      "showTitle": "Change le beat",
       "host": "",
       "source": "api-live",
       "sources": [
@@ -51,7 +51,7 @@
         "type": "cism-v1",
         "url": "https://admin.cism893.ca/api/v1/live"
       },
-      "checkedAt": "2026-07-11T20:51:26.518Z"
+      "checkedAt": "2026-07-11T21:52:13.435Z"
     },
     "ckut": {
       "id": "ckut",
@@ -77,34 +77,34 @@
         "stream"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-11T20:51:29.120Z"
+      "checkedAt": "2026-07-11T21:52:15.887Z"
     },
     "cjlo": {
       "id": "cjlo",
       "name": "CJLO 1690AM",
       "current": {
-        "title": "Mi Dun Talk",
-        "source": "schedule",
-        "start": "16:00",
-        "end": "17:00",
-        "url": "http://www.cjlo.com/shows/mi-dun-talk"
-      },
-      "next": {
         "title": "Mo' Ritmo Radio",
         "source": "schedule",
         "start": "17:00",
         "end": "18:00",
         "url": "http://www.cjlo.com/shows/mo-ritmo-radio"
       },
+      "next": {
+        "title": "The Limelight",
+        "source": "schedule",
+        "start": "18:00",
+        "end": "19:00",
+        "url": "http://www.cjlo.com/shows/the-limelight"
+      },
       "track": "",
-      "showTitle": "Mi Dun Talk",
+      "showTitle": "Mo' Ritmo Radio",
       "host": "",
       "source": "schedule",
       "sources": [
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-11T20:51:30.424Z"
+      "checkedAt": "2026-07-11T21:52:17.187Z"
     },
     "cfak": {
       "id": "cfak",
@@ -124,27 +124,27 @@
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-11T20:51:30.888Z"
+      "checkedAt": "2026-07-11T21:52:17.672Z"
     },
     "choq": {
       "id": "choq",
       "name": "CHOQ.ca",
       "current": {
-        "title": "Territoire Hostile",
+        "title": "Afrique Victime",
         "source": "api-live",
-        "host": "Sans Pression"
+        "host": "Mdou Moctar"
       },
       "next": null,
-      "track": "Sans Pression - Territoire Hostile",
-      "showTitle": "Territoire Hostile",
-      "host": "Sans Pression",
+      "track": "Mdou Moctar - Afrique Victime",
+      "showTitle": "Afrique Victime",
+      "host": "Mdou Moctar",
       "source": "api-live",
       "sources": [
         "api-live",
         "stream"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-11T20:51:32.923Z"
+      "checkedAt": "2026-07-11T21:52:18.914Z"
     }
   }
 }
