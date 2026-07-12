@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-11T23:57:23.704Z",
+  "updatedAt": "2026-07-12T03:37:32.159Z",
   "timezone": "America/Toronto",
   "stations": {
     "chyz": {
@@ -21,27 +21,27 @@
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-11T23:57:13.305Z"
+      "checkedAt": "2026-07-12T03:37:22.984Z"
     },
     "cism": {
       "id": "cism",
       "name": "CISM 89,3",
       "current": {
-        "title": "Faites entrer un DJ",
+        "title": "Solénoïde",
         "source": "api-live",
-        "start": "14:00",
+        "start": "19:00",
         "url": "https://stream03.ustream.ca/cism128.mp3",
-        "slug": "faites-entrer-un-dj"
+        "slug": "solenoide"
       },
       "next": {
-        "title": "Contenu explicite",
+        "title": "Les criquets crinqués (reprise)",
         "source": "api-live",
-        "start": "16:00",
-        "url": "https://podcast.cism893.ca/podcast/download_mp3/363754.mp3",
-        "slug": "contenu-explicite"
+        "start": "20:00",
+        "url": "https://podcast.cism893.ca/podcast/download_mp3/363883.mp3",
+        "slug": "les-criquets-crinques"
       },
       "track": "",
-      "showTitle": "Faites entrer un DJ",
+      "showTitle": "Solénoïde",
       "host": "",
       "source": "api-live",
       "sources": [
@@ -51,25 +51,25 @@
         "type": "cism-v1",
         "url": "https://admin.cism893.ca/api/v1/live"
       },
-      "checkedAt": "2026-07-11T23:57:15.176Z"
+      "checkedAt": "2026-07-12T03:37:24.607Z"
     },
     "ckut": {
       "id": "ckut",
       "name": "CKUT 90,3",
       "current": {
-        "title": "Masters At Work",
+        "title": "SKEwInGTheWaBeS$$",
         "source": "api-live",
-        "start": "19:00",
-        "end": "21:00"
+        "start": "23:00",
+        "end": "00:00"
       },
       "next": {
-        "title": "Howls From Hell/Too Loud For The Crowd",
+        "title": "stereOphobic",
         "source": "api-live",
-        "start": "21:00",
-        "end": "23:00"
+        "start": "00:00",
+        "end": "02:00"
       },
       "track": "",
-      "showTitle": "Masters At Work",
+      "showTitle": "SKEwInGTheWaBeS$$",
       "host": "",
       "source": "api-live",
       "sources": [
@@ -77,34 +77,34 @@
         "stream"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-11T23:57:18.334Z"
+      "checkedAt": "2026-07-12T03:37:27.364Z"
     },
     "cjlo": {
       "id": "cjlo",
       "name": "CJLO 1690AM",
       "current": {
-        "title": "Screamers",
+        "title": "Brave New Jams",
         "source": "schedule",
-        "start": "19:00",
-        "end": "20:00",
-        "url": "http://www.cjlo.com/shows/screamers"
+        "start": "22:00",
+        "end": "00:00",
+        "url": "http://www.cjlo.com/shows/brave-new-jams"
       },
       "next": {
-        "title": "CJLO's Alternative Mega Mix",
+        "title": "CJLO Late Night",
         "source": "schedule",
-        "start": "20:00",
-        "end": "21:00",
-        "url": "http://www.cjlo.com/shows/cjlos-alternative-mega-mix"
+        "start": "00:00",
+        "end": "06:00",
+        "url": "http://www.cjlo.com/shows/cjlo-late-night"
       },
       "track": "",
-      "showTitle": "Screamers",
+      "showTitle": "Brave New Jams",
       "host": "",
       "source": "schedule",
       "sources": [
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-11T23:57:20.312Z"
+      "checkedAt": "2026-07-12T03:37:29.183Z"
     },
     "cfak": {
       "id": "cfak",
@@ -124,28 +124,28 @@
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-11T23:57:20.932Z"
+      "checkedAt": "2026-07-12T03:37:29.813Z"
     },
     "choq": {
       "id": "choq",
       "name": "CHOQ.ca",
       "current": {
-        "title": "Murder of Crows",
+        "title": "Dogue version Lydia Kepinski et Blaise Borboen-Leonard",
         "source": "api-live",
-        "host": "Leanne Betasamosake Simpson",
-        "url": "https://www.choq.ca/assets/playlist/internationale.jpg"
+        "host": "Ariane Roy",
+        "url": "https://www.choq.ca/assets/playlist/palmares-site-web.jpg"
       },
       "next": null,
-      "track": "Leanne Betasamosake Simpson - Murder of Crows",
-      "showTitle": "Murder of Crows",
-      "host": "Leanne Betasamosake Simpson",
+      "track": "Ariane Roy - Dogue version Lydia Kepinski et Blaise Borboen-Leonard",
+      "showTitle": "Dogue version Lydia Kepinski et Blaise Borboen-Leonard",
+      "host": "Ariane Roy",
       "source": "api-live",
       "sources": [
         "api-live",
         "stream"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-11T23:57:23.353Z"
+      "checkedAt": "2026-07-12T03:37:31.808Z"
     }
   }
 }
