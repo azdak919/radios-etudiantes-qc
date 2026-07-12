@@ -1,16 +1,16 @@
 {
-  "updated": "2026-07-12T04:19:47.596Z",
+  "updated": "2026-07-12T06:49:05.203Z",
   "updatedSlot": null,
   "count": 185,
   "freshnessSessions": 3,
   "sources": {
     "Quartier Libre": {
-      "fetchOk": true,
-      "stale": false,
+      "fetchOk": false,
+      "stale": true,
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-05-15T16:00:00.000Z",
-      "lastFetchOk": "2026-07-12T04:18:53.338Z"
+      "lastFetchOk": null
     },
     "Montréal Campus": {
       "fetchOk": true,
@@ -18,7 +18,7 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-05-09T03:14:30.000Z",
-      "lastFetchOk": "2026-07-12T04:18:54.252Z"
+      "lastFetchOk": "2026-07-12T06:48:12.359Z"
     },
     "Le Délit": {
       "fetchOk": true,
@@ -26,7 +26,7 @@
       "articleCount": 20,
       "freshArticleCount": 20,
       "lastArticle": "2026-03-25T11:00:00.000Z",
-      "lastFetchOk": "2026-07-12T04:18:59.332Z"
+      "lastFetchOk": "2026-07-12T06:48:18.508Z"
     },
     "The McGill Daily": {
       "fetchOk": true,
@@ -34,7 +34,7 @@
       "articleCount": 15,
       "freshArticleCount": 15,
       "lastArticle": "2026-07-06T12:00:00.000Z",
-      "lastFetchOk": "2026-07-12T04:18:59.841Z"
+      "lastFetchOk": "2026-07-12T06:48:19.406Z"
     },
     "The Link": {
       "fetchOk": true,
@@ -42,15 +42,15 @@
       "articleCount": 20,
       "freshArticleCount": 20,
       "lastArticle": "2026-07-08T14:41:00.000Z",
-      "lastFetchOk": "2026-07-12T04:19:00.863Z"
+      "lastFetchOk": "2026-07-12T06:48:20.725Z"
     },
     "Zone Campus": {
-      "fetchOk": true,
-      "stale": false,
+      "fetchOk": false,
+      "stale": true,
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-05-08T14:20:26.000Z",
-      "lastFetchOk": "2026-07-12T04:19:01.673Z"
+      "lastFetchOk": null
     },
     "L'Exemplaire": {
       "fetchOk": false,
@@ -61,12 +61,12 @@
       "lastFetchOk": null
     },
     "Le Collectif": {
-      "fetchOk": true,
-      "stale": false,
+      "fetchOk": false,
+      "stale": true,
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-07-11T16:34:55.000Z",
-      "lastFetchOk": "2026-07-12T04:19:16.191Z"
+      "lastFetchOk": null
     },
     "Exil": {
       "fetchOk": true,
@@ -74,15 +74,15 @@
       "articleCount": 7,
       "freshArticleCount": 7,
       "lastArticle": "2026-04-18T22:22:07.000Z",
-      "lastFetchOk": "2026-07-12T04:19:16.308Z"
+      "lastFetchOk": "2026-07-12T06:48:35.711Z"
     },
     "La Pige": {
-      "fetchOk": true,
-      "stale": false,
+      "fetchOk": false,
+      "stale": true,
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-06-22T14:36:10.000Z",
-      "lastFetchOk": "2026-07-12T04:19:17.020Z"
+      "lastFetchOk": null
     },
     "Le Polyscope": {
       "fetchOk": true,
@@ -90,7 +90,7 @@
       "articleCount": 13,
       "freshArticleCount": 13,
       "lastArticle": "2026-02-25T14:38:32.764Z",
-      "lastFetchOk": "2026-07-12T04:19:18.443Z"
+      "lastFetchOk": "2026-07-12T06:48:39.713Z"
     },
     "The Tribune": {
       "fetchOk": true,
@@ -98,7 +98,7 @@
       "articleCount": 20,
       "freshArticleCount": 20,
       "lastArticle": "2026-06-26T15:24:28.000Z",
-      "lastFetchOk": "2026-07-12T04:19:18.573Z"
+      "lastFetchOk": "2026-07-12T06:48:40.049Z"
     },
     "The Campus": {
       "fetchOk": true,
@@ -106,7 +106,7 @@
       "articleCount": 20,
       "freshArticleCount": 20,
       "lastArticle": "2026-04-06T16:03:16.000Z",
-      "lastFetchOk": "2026-07-12T04:19:18.743Z"
+      "lastFetchOk": "2026-07-12T06:48:40.241Z"
     },
     "The Plant": {
       "fetchOk": true,
@@ -114,7 +114,7 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-05-11T20:44:08.000Z",
-      "lastFetchOk": "2026-07-12T04:19:18.932Z"
+      "lastFetchOk": "2026-07-12T06:48:40.362Z"
     }
   },
   "items": [
@@ -137,7 +137,8 @@
       "sourceImageCreditCited": true,
       "sourceImageCreditImageKey": "obsessions_voyages_voyagersansarretpassionouobsession_sourcepixabay-1.jpg",
       "sourceImageCreditRev": 7,
-      "leadImageReady": true
+      "leadImageReady": true,
+      "_retainedFromCache": true
     },
     {
       "source": "Le Collectif",
@@ -157,7 +158,8 @@
       "sourceImageCreditCited": false,
       "sourceImageCreditImageKey": "obsessions_boissonsenergisantes_matcha_sourcecamelliasinensis-1.png",
       "sourceImageCreditRev": 7,
-      "leadImageReady": true
+      "leadImageReady": true,
+      "_retainedFromCache": true
     },
     {
       "source": "Le Collectif",
@@ -178,7 +180,8 @@
       "sourceImageCreditImageKey": "societe_devoilement-du-livre-bleu_sourcesite-internet-du-parti-quebecois.png",
       "sourceImageCreditRev": 7,
       "leadImageReady": false,
-      "leadExcerpt": "Le Parti québécois (PQ) a lancé, le 23 juin dernier, son fameux Livre bleu, visant à exposer sa vision d’un Québec indépendant, mais aussi à critiquer le palier fédéral en élaborant les principales priorités à prendre en compte lors du prochain référendum pour le camp du Oui. Lumière sur les différents chapitres, ainsi que sur certaines solutions avancées par le parti."
+      "leadExcerpt": "Le Parti québécois (PQ) a lancé, le 23 juin dernier, son fameux Livre bleu, visant à exposer sa vision d’un Québec indépendant, mais aussi à critiquer le palier fédéral en élaborant les principales priorités à prendre en compte lors du prochain référendum pour le camp du Oui. Lumière sur les différents chapitres, ainsi que sur certaines solutions avancées par le parti.",
+      "_retainedFromCache": true
     },
     {
       "source": "Le Collectif",
@@ -198,7 +201,8 @@
       "sourceImageCreditCited": false,
       "sourceImageCreditImageKey": "culture_marcmessier_sourcefacebook.jpeg",
       "sourceImageCreditRev": 7,
-      "leadImageReady": false
+      "leadImageReady": false,
+      "_retainedFromCache": true
     },
     {
       "source": "Le Collectif",
@@ -219,7 +223,8 @@
       "sourceImageCreditCited": true,
       "sourceImageCreditImageKey": "obsessions_hyperfixations_les-hyperfixations_sourceblogzencare-1.png",
       "sourceImageCreditRev": 2,
-      "leadImageReady": true
+      "leadImageReady": true,
+      "_retainedFromCache": true
     },
     {
       "source": "Le Collectif",
@@ -241,7 +246,8 @@
       "sourceImageCreditImageKey": "obsessions_quityourjob-photo2_sourcegettyimages-1.png",
       "sourceImageCreditRev": 2,
       "leadImageReady": true,
-      "leadExcerpt": "Sur les réseaux sociaux, le message revient sans cesse : quitte ton emploi, deviens travailleur autonome, vis de tes passions. Une vie sans patron, sans horaires fixes, sans routine imposée. Pour une génération qui a grandi avec TikTok et Instagram, le rêve est clair : être libre."
+      "leadExcerpt": "Sur les réseaux sociaux, le message revient sans cesse : quitte ton emploi, deviens travailleur autonome, vis de tes passions. Une vie sans patron, sans horaires fixes, sans routine imposée. Pour une génération qui a grandi avec TikTok et Instagram, le rêve est clair : être libre.",
+      "_retainedFromCache": true
     },
     {
       "source": "Le Collectif",
@@ -262,7 +268,8 @@
       "sourceImageCreditCited": true,
       "sourceImageCreditImageKey": "obsession_strava_lesadeptesdestravanecessentdaugmenter_sourcerunna-1.png",
       "sourceImageCreditRev": 2,
-      "leadImageReady": true
+      "leadImageReady": true,
+      "_retainedFromCache": true
     },
     {
       "source": "Le Collectif",
@@ -284,7 +291,8 @@
       "sourceImageCreditImageKey": "obsessions_clubsdesports_clubpleinairaltitude_sourcefacebookclubpleinairaltitude-1.jpg",
       "sourceImageCreditRev": 2,
       "leadImageReady": false,
-      "leadExcerpt": "Si vous êtes adeptes de course, de vélo ou encore de plein air, vous avez remarqué que, depuis quelques années déjà, les clubs et événements sportifs se sont multipliés. Si ces sports étaient déjà aimés avant, leur popularité a explosé depuis la pandémie."
+      "leadExcerpt": "Si vous êtes adeptes de course, de vélo ou encore de plein air, vous avez remarqué que, depuis quelques années déjà, les clubs et événements sportifs se sont multipliés. Si ces sports étaient déjà aimés avant, leur popularité a explosé depuis la pandémie.",
+      "_retainedFromCache": true
     },
     {
       "source": "The Link",
@@ -319,7 +327,8 @@
       "sourceImageCreditCited": true,
       "sourceImageCreditImageKey": "culture_angine_de_poitrine_sourcefestivalinternationaldejazzdemontreal.jpg",
       "sourceImageCreditRev": 2,
-      "leadImageReady": true
+      "leadImageReady": true,
+      "_retainedFromCache": true
     },
     {
       "source": "Le Collectif",
@@ -347,7 +356,8 @@
       "imageCreator": "Marc-Lautenbacher",
       "imageLicense": "by-sa",
       "imageProvider": "openverse",
-      "imageSourceUrl": "https://commons.wikimedia.org/w/index.php?curid=73170675"
+      "imageSourceUrl": "https://commons.wikimedia.org/w/index.php?curid=73170675",
+      "_retainedFromCache": true
     },
     {
       "source": "The McGill Daily",
@@ -444,7 +454,8 @@
       "sourceImageCreditCited": true,
       "sourceImageCreditImageKey": "bruno-cormier-retraite-benevole.png",
       "sourceImageCreditRev": 7,
-      "leadExcerpt": "« Les gens ont tendance à frapper un mur au moment de la retraite par manque de préparation », estime Le directeur général de la Fédération de l’âge d’or du Québec (Fadoq) pour la région Saguenay-Lac-Saint-Jean – Ungava, Patrice Saint-Pierre. (Photo : Léa Morin-Letort)"
+      "leadExcerpt": "« Les gens ont tendance à frapper un mur au moment de la retraite par manque de préparation », estime Le directeur général de la Fédération de l’âge d’or du Québec (Fadoq) pour la région Saguenay-Lac-Saint-Jean – Ungava, Patrice Saint-Pierre. (Photo : Léa Morin-Letort)",
+      "_retainedFromCache": true
     },
     {
       "source": "The Tribune",
@@ -500,7 +511,8 @@
       "sourceImageCreditCited": true,
       "sourceImageCreditImageKey": "shared-image-5.jpg",
       "leadImageReady": true,
-      "leadExcerpt": "Mylène Sasseville est la proche aidante de ses deux fils, Maïk et Travis, tous les deux atteints du syndrome rare Allan Herndon Dudley causant une déficience physique et intellectuelle. Son conjoint, l’accompagne également dans son parcours de proche aidante. (Photo : Mathilde Bellon)"
+      "leadExcerpt": "Mylène Sasseville est la proche aidante de ses deux fils, Maïk et Travis, tous les deux atteints du syndrome rare Allan Herndon Dudley causant une déficience physique et intellectuelle. Son conjoint, l’accompagne également dans son parcours de proche aidante. (Photo : Mathilde Bellon)",
+      "_retainedFromCache": true
     },
     {
       "source": "The Tribune",
@@ -578,7 +590,8 @@
       "date": "2026-05-21T21:08:43.000Z",
       "excerpt": "La présidente du groupe Accro-Vélo Alma, Anne Lafrance, et Sylvie Beaumont, la mairesse d’Alma, étaient sur place pour le départ des cyclistes. (Crédit : Colin Perron) Quatre commémorations pour les cyclistes décédés ont eu lieu mercredi soir au Saguenay-Lac-Saint-Jean, dont une",
       "image": "",
-      "leadExcerpt": "La présidente du groupe Accro-Vélo Alma, Anne Lafrance, et Sylvie Beaumont, la mairesse d’Alma, étaient sur place pour le départ des cyclistes. (Crédit : Colin Perron) Quatre commémorations pour les cyclistes décédés ont eu lieu mercredi soir au Saguenay-Lac-Saint-Jean, dont une à Alma. C’était la 3e édition du Tour du Silence, qui débutait à l’hôtel de ville."
+      "leadExcerpt": "La présidente du groupe Accro-Vélo Alma, Anne Lafrance, et Sylvie Beaumont, la mairesse d’Alma, étaient sur place pour le départ des cyclistes. (Crédit : Colin Perron) Quatre commémorations pour les cyclistes décédés ont eu lieu mercredi soir au Saguenay-Lac-Saint-Jean, dont une à Alma. C’était la 3e édition du Tour du Silence, qui débutait à l’hôtel de ville.",
+      "_retainedFromCache": true
     },
     {
       "source": "La Pige",
@@ -592,7 +605,8 @@
       "date": "2026-05-21T20:44:08.000Z",
       "excerpt": "Les coiffeuses Kathy Blackburn et Manon Tremblay en sont à une semaine et un jour de la fermeture de leur commerce. (Crédit : Julianne Pilon) Après 40 ans, les coiffeuses Kathy Blackburn et Manon Tremblay accrochent leur paire de ciseaux. Le Salon L’image, situé à Place",
       "image": "",
-      "leadExcerpt": "Après 40 ans, les coiffeuses Kathy Blackburn et Manon Tremblay accrochent leur paire de ciseaux. Le Salon L’image, situé à Place Centre-Ville Jonquière, fermera définitivement ses portes le 29 mai prochain."
+      "leadExcerpt": "Après 40 ans, les coiffeuses Kathy Blackburn et Manon Tremblay accrochent leur paire de ciseaux. Le Salon L’image, situé à Place Centre-Ville Jonquière, fermera définitivement ses portes le 29 mai prochain.",
+      "_retainedFromCache": true
     },
     {
       "source": "La Pige",
@@ -606,7 +620,8 @@
       "date": "2026-05-21T20:25:53.000Z",
       "excerpt": "Le Centre Mamik a déposé une demande de projet pilote pour donner accès à des services de halte garderie, spécifiquement pour les parents qui sont étudiants. (Crédit : Tirée de Facebook / Centre Mamik) Le gouvernement du Québec a annoncé un investissement de près de cinq",
       "image": "",
-      "leadExcerpt": "Le Centre Mamik a déposé une demande de projet pilote pour donner accès à des services de halte garderie, spécifiquement pour les parents qui sont étudiants. (Crédit : Tirée de Facebook / Centre Mamik)"
+      "leadExcerpt": "Le Centre Mamik a déposé une demande de projet pilote pour donner accès à des services de halte garderie, spécifiquement pour les parents qui sont étudiants. (Crédit : Tirée de Facebook / Centre Mamik)",
+      "_retainedFromCache": true
     },
     {
       "source": "La Pige",
@@ -620,7 +635,8 @@
       "date": "2026-05-21T20:13:17.000Z",
       "excerpt": "Depuis 2011, l’Équipe du renouveau démocratique de Saguenay tente d’être plus à l’écoute des citoyens. Le départ de huit des onze membres du conseil d’administration a failli mener la dissolution de l’Équipe du renouveau démocratique de Saguenay (ERD), mercredi soir. In",
       "image": "",
-      "leadExcerpt": "Le départ de huit des onze membres du conseil d’administration a failli mener la dissolution de l’Équipe du renouveau démocratique de Saguenay (ERD), mercredi soir. In extrémis, quatre membres pourraient secourir le parti."
+      "leadExcerpt": "Le départ de huit des onze membres du conseil d’administration a failli mener la dissolution de l’Équipe du renouveau démocratique de Saguenay (ERD), mercredi soir. In extrémis, quatre membres pourraient secourir le parti.",
+      "_retainedFromCache": true
     },
     {
       "source": "La Pige",
@@ -634,7 +650,8 @@
       "date": "2026-05-21T20:12:36.000Z",
       "excerpt": "Plusieurs prix ont été remis à des jeunes, mardi. (Crédit : Marc-André Houde) Le concours « Jeunes auteurs à vos crayons! » était dans la région mardi, en compagnie de sa marraine Frédérique Dufort, écrivaine et comédienne, pour distribuer des prix destinés aux élèves. La",
       "image": "",
-      "leadExcerpt": "Le concours « Jeunes auteurs à vos crayons! » était dans la région mardi, en compagnie de sa marraine Frédérique Dufort, écrivaine et comédienne, pour distribuer des prix destinés aux élèves. La thématique cette année, « Le pouvoir des mots », orientera le travail de 2346 participants provenant de 160 écoles à travers le Québec et le Canada francophone."
+      "leadExcerpt": "Le concours « Jeunes auteurs à vos crayons! » était dans la région mardi, en compagnie de sa marraine Frédérique Dufort, écrivaine et comédienne, pour distribuer des prix destinés aux élèves. La thématique cette année, « Le pouvoir des mots », orientera le travail de 2346 participants provenant de 160 écoles à travers le Québec et le Canada francophone.",
+      "_retainedFromCache": true
     },
     {
       "source": "La Pige",
@@ -648,7 +665,8 @@
       "date": "2026-05-20T21:35:27.000Z",
       "excerpt": "La date de lancement officiel de l’exposition sera annoncée sur les médias sociaux. (Crédit photo: Émilie Frère-Lefèvre) Le pont de Sainte-Anne ne se contente plus de relier deux rives ; il relie désormais les citoyens à une réalité souvent invisible. Jusqu’au 4 octobre",
       "image": "",
-      "leadExcerpt": "Le pont de Sainte-Anne ne se contente plus de relier deux rives ; il relie désormais les citoyens à une réalité souvent invisible. Jusqu’au 4 octobre prochain, l’exposition de photographie et de témoignages Ici on se rencontre met en lumière une vocation de l’ombre : celle des travailleurs de rue."
+      "leadExcerpt": "Le pont de Sainte-Anne ne se contente plus de relier deux rives ; il relie désormais les citoyens à une réalité souvent invisible. Jusqu’au 4 octobre prochain, l’exposition de photographie et de témoignages Ici on se rencontre met en lumière une vocation de l’ombre : celle des travailleurs de rue.",
+      "_retainedFromCache": true
     },
     {
       "source": "La Pige",
@@ -661,7 +679,8 @@
       "author": "Dominic Delude",
       "date": "2026-05-20T21:15:57.000Z",
       "excerpt": "Le phénomène climatique influence surtout les températures de la côte Ouest de l’Amérique. (Crédit photo : Fatih Turan, Pexels). Le phénomène météorologique El Niño devrait s’amorcer dans le mois de juin. Un été plus frais et un hiver plus doux sont prévus cette année au Québec.",
-      "image": ""
+      "image": "",
+      "_retainedFromCache": true
     },
     {
       "source": "La Pige",
@@ -675,7 +694,8 @@
       "date": "2026-05-20T20:48:26.000Z",
       "excerpt": "Mélissa Girard, Cindy Duchesne, Mireille Fortin, Claudia Boily et Julie Guay, du programme d’Assistance technique en pharmacie, étaient présentes pour la Journée portes ouvertes, mercredi. (Crédit : Étienne Harvey-Soucy) Le Pavillon de la santé Marie-Hélène Côté, à Alma, a",
       "image": "",
-      "leadExcerpt": "Mélissa Girard, Cindy Duchesne, Mireille Fortin, Claudia Boily et Julie Guay, du programme d’Assistance technique en pharmacie, étaient présentes pour la Journée portes ouvertes, mercredi. (Crédit : Étienne Harvey-Soucy)"
+      "leadExcerpt": "Mélissa Girard, Cindy Duchesne, Mireille Fortin, Claudia Boily et Julie Guay, du programme d’Assistance technique en pharmacie, étaient présentes pour la Journée portes ouvertes, mercredi. (Crédit : Étienne Harvey-Soucy)",
+      "_retainedFromCache": true
     },
     {
       "source": "L'Exemplaire",
@@ -704,14 +724,14 @@
       "date": "2026-05-15T16:00:00.000Z",
       "excerpt": "À Montréal, les murs parlent, sans jamais révéler celles et ceux qui les écrivent. Sous les couches de peinture et les signatures superposées, une présence discrète s’impose : celle d’une génération, souvent étudiante, qui investit l’espace urbain en marge des cadres établis.",
       "image": "https://quartierlibre.ca/wp-content/uploads/2026/05/Photo-5_IMG_3586-1024x768.jpg",
-      "_pageAuthor": "Emilie Rizkallah",
       "sourceImageCredit": "Crédit photo : Quartier Libre",
       "sourceImageCreditUrl": "https://quartierlibre.ca/presences-invisibles-ecrire-la-ville/",
       "sourceImageCreditFrom": "media",
       "sourceImageCreditCited": false,
       "sourceImageCreditImageKey": "photo-5_img_3586.jpg",
       "sourceImageCreditRev": 7,
-      "leadImageReady": true
+      "leadImageReady": true,
+      "_retainedFromCache": true
     },
     {
       "source": "Quartier Libre",
@@ -725,14 +745,14 @@
       "date": "2026-05-14T21:00:00.000Z",
       "excerpt": "Le 13 mars dernier, la rappeuse Calamine a dévoilé son nouvel album, Rétrograde. Avec cette quatrième sortie depuis 2020, l’artiste gravit les échelons et devient une voix importante du hip-hop québécois. Composé de 18 titres d’ambiance estivale tels que « CHOP CHOP », « POLY »",
       "image": "https://quartierlibre.ca/wp-content/uploads/2026/05/20_calamine-1.jpg",
-      "_pageAuthor": "Samuel Roy",
       "sourceImageCredit": "Crédit photo : Quartier Libre",
       "sourceImageCreditUrl": "https://quartierlibre.ca/calamine-rapper-autrement/",
       "sourceImageCreditFrom": "media",
       "sourceImageCreditCited": false,
       "sourceImageCreditImageKey": "20_calamine-1.jpg",
       "sourceImageCreditRev": 7,
-      "leadExcerpt": "Le concept même de Rétrograde , c’est cette sensation d’un recul sociétal, le fait qu’on est en train de retourner en arrière, politiquement parlant. Même après des avancées dans le féminisme, on est quand même en train de reculer avec la montée du masculinisme. En nommant l’album Rétrograde , ça me permettait donc de relier à la fois le queer dating et le recul général de la société."
+      "leadExcerpt": "Le concept même de Rétrograde , c’est cette sensation d’un recul sociétal, le fait qu’on est en train de retourner en arrière, politiquement parlant. Même après des avancées dans le féminisme, on est quand même en train de reculer avec la montée du masculinisme. En nommant l’album Rétrograde , ça me permettait donc de relier à la fois le queer dating et le recul général de la société.",
+      "_retainedFromCache": true
     },
     {
       "source": "Quartier Libre",
@@ -746,14 +766,14 @@
       "date": "2026-05-14T19:09:17.000Z",
       "excerpt": "Le 5 mai dernier, le pavillon Roger-Gaudry a accueilli le premier forum du Réseau des écoles associées (RÉA). Ce projet ambitieux de la Faculté des sciences de l’éducation (FSÉ) transforme des écoles primaires et secondaires en véritables « hôpitaux universitaires » de la",
       "image": "https://quartierlibre.ca/wp-content/uploads/2026/05/image-2-768x1024.jpeg",
-      "_pageAuthor": "Ulysse Taillard-Hodez",
       "sourceImageCredit": "Crédit photo : Quartier Libre",
       "sourceImageCreditUrl": "https://quartierlibre.ca/forum-rea-education-en-milieu-defavorise/",
       "sourceImageCreditFrom": "media",
       "sourceImageCreditCited": false,
       "sourceImageCreditImageKey": "image-2.jpeg",
       "sourceImageCreditRev": 7,
-      "leadExcerpt": "Mme Fournier Dubé a insisté sur le fait que les enseignant·e·s sont les véritables « agents de changement ». Son rôle n’est pas d’imposer un cadre scientifique rigide, mais de vulgariser la recherche pour l’adapter aux besoins du terrain."
+      "leadExcerpt": "Mme Fournier Dubé a insisté sur le fait que les enseignant·e·s sont les véritables « agents de changement ». Son rôle n’est pas d’imposer un cadre scientifique rigide, mais de vulgariser la recherche pour l’adapter aux besoins du terrain.",
+      "_retainedFromCache": true
     },
     {
       "source": "Quartier Libre",
@@ -767,7 +787,6 @@
       "date": "2026-05-14T16:00:00.000Z",
       "excerpt": "Depuis mars 2024, l’Université de Montréal (UdeM) dispose d’une politique de soutien aux parents aux études. Le projet de loi 394 (PL394) de Québec solidaire lui imposerait, en cas d’adoption, d’en créer une destinée également aux proches aidant·e·s. Le député",
       "image": "https://quartierlibre.ca/wp-content/uploads/2026/05/12-13_Statuts-Politique-Parents-Proche-Aidants-1024x768.jpg",
-      "_pageAuthor": "Mohammed Aziz Mestiri",
       "sourceImageCredit": "Crédit photo : Quartier Libre",
       "sourceImageCreditUrl": "https://quartierlibre.ca/projet-loi-etudiant-proche-aidante/",
       "sourceImageCreditFrom": "media",
@@ -775,7 +794,8 @@
       "sourceImageCreditImageKey": "12-13_statuts-politique-parents-proche-aidants.jpg",
       "sourceImageCreditRev": 7,
       "leadImageReady": true,
-      "leadExcerpt": "Depuis mars 2024, l’Université de Montréal (UdeM) dispose d’une politique de soutien aux parents aux études. Le projet de loi 394 ( PL394 ) de Québec solidaire lui imposerait, en cas d’adoption, d’en créer une destinée également aux proches aidant·e·s."
+      "leadExcerpt": "Depuis mars 2024, l’Université de Montréal (UdeM) dispose d’une politique de soutien aux parents aux études. Le projet de loi 394 ( PL394 ) de Québec solidaire lui imposerait, en cas d’adoption, d’en créer une destinée également aux proches aidant·e·s.",
+      "_retainedFromCache": true
     },
     {
       "source": "The Tribune",
@@ -817,7 +837,6 @@
       "date": "2026-05-13T16:00:00.000Z",
       "excerpt": "Cette année marque une période chargée pour la musique au Québec, en raison d’un bon nombre de beaux projets émergents. À l’approche de la saison estivale, quelles sont les nouveautés qui feront danser les mélomanes cet été ? Quartier Libre présente quelques recommandations",
       "image": "https://quartierlibre.ca/wp-content/uploads/2026/05/20_florelaurentienne.jpg",
-      "_pageAuthor": "Bérénice Lemarié",
       "sourceImageCredit": "Crédit photo : Quartier Libre",
       "sourceImageCreditUrl": "https://quartierlibre.ca/ete-recettes-musicales-quebecoises/",
       "sourceImageCreditFrom": "media",
@@ -825,7 +844,8 @@
       "sourceImageCreditImageKey": "20_florelaurentienne.jpg",
       "sourceImageCreditRev": 7,
       "leadImageReady": false,
-      "leadExcerpt": "Cette année marque une période chargée pour la musique au Québec, en raison d’un bon nombre de beaux projets émergents. À l’approche de la saison estivale, quelles sont les nouveautés qui feront danser les mélomanes cet été ? Quartier Libre présente quelques recommandations d’albums 100 % québécois récemment sortis ."
+      "leadExcerpt": "Cette année marque une période chargée pour la musique au Québec, en raison d’un bon nombre de beaux projets émergents. À l’approche de la saison estivale, quelles sont les nouveautés qui feront danser les mélomanes cet été ? Quartier Libre présente quelques recommandations d’albums 100 % québécois récemment sortis .",
+      "_retainedFromCache": true
     },
     {
       "source": "Quartier Libre",
@@ -839,7 +859,6 @@
       "date": "2026-05-12T20:00:00.000Z",
       "excerpt": "Entre absence de quorum, élections houleuses et accusations de « campagnes de salissage », la Fédération des associations du campus de l’Université de Montréal (FAÉCUM) traverse une zone de turbulences. Du fonctionnement des associations étudiantes aux congrès mouvementés, récit",
       "image": "https://quartierlibre.ca/wp-content/uploads/2026/05/10-11_FAECUM_photo-assemblee-1024x768.jpg",
-      "_pageAuthor": "Ulysse Taillard-Hodez",
       "sourceImageCredit": "Crédit photo : Quartier Libre",
       "sourceImageCreditUrl": "https://quartierlibre.ca/faecum-la-democratie-universitaire-critiquee/",
       "sourceImageCreditFrom": "media",
@@ -847,7 +866,8 @@
       "sourceImageCreditImageKey": "10-11_faecum_photo-assemblee.jpg",
       "sourceImageCreditRev": 7,
       "leadImageReady": true,
-      "leadExcerpt": "Entre absence de quorum, élections houleuses et accusations de « campagnes de salissage », la Fédération des associations du campus de l’Université de Montréal (FAÉCUM) traverse une zone de turbulences. Du fonctionnement des associations étudiantes aux congrès mouvementés, récit d’une démocratie en difficulté."
+      "leadExcerpt": "Entre absence de quorum, élections houleuses et accusations de « campagnes de salissage », la Fédération des associations du campus de l’Université de Montréal (FAÉCUM) traverse une zone de turbulences. Du fonctionnement des associations étudiantes aux congrès mouvementés, récit d’une démocratie en difficulté.",
+      "_retainedFromCache": true
     },
     {
       "source": "L'Exemplaire",
@@ -973,7 +993,6 @@
       "date": "2026-05-12T18:39:17.000Z",
       "excerpt": "Les 29 et 30 mai prochains, les adeptes d’ouvrages de suspense, à mystère et d’enquêtes auront rendez-vous au Centre culturel Georges-Vanier pour la troisième édition du festival du livre policier Montréal Mystère, un événement encore jeune, mais déjà bien installé dans le",
       "image": "https://quartierlibre.ca/wp-content/uploads/2026/05/21_Montreal-Mystere-1024x768.jpg",
-      "_pageAuthor": "Carla Roche",
       "sourceImageCredit": "Crédit photo : Quartier Libre",
       "sourceImageCreditUrl": "https://quartierlibre.ca/montreal-mystere-festival-bilingue/",
       "sourceImageCreditFrom": "media",
@@ -981,7 +1000,8 @@
       "sourceImageCreditImageKey": "21_montreal-mystere.jpg",
       "sourceImageCreditRev": 7,
       "leadImageReady": true,
-      "leadExcerpt": "Les 29 et 30 mai prochains, les adeptes d’ouvrages de suspense, à mystère et d’enquêtes auront rendez-vous au Centre culturel Georges-Vanier pour la troisième édition du festival du livre policier Montréal Mystère , un événement encore jeune, mais déjà bien installé dans le paysage littéraire montréalais."
+      "leadExcerpt": "Les 29 et 30 mai prochains, les adeptes d’ouvrages de suspense, à mystère et d’enquêtes auront rendez-vous au Centre culturel Georges-Vanier pour la troisième édition du festival du livre policier Montréal Mystère , un événement encore jeune, mais déjà bien installé dans le paysage littéraire montréalais.",
+      "_retainedFromCache": true
     },
     {
       "source": "The Plant",
@@ -1202,14 +1222,14 @@
       "date": "2026-05-11T19:00:00.000Z",
       "excerpt": "La Coupe du monde 2026 (CM26), qui aura lieu du 11 juin au 19 juillet prochains, s’annonce comme le plus grand événement de soccer jamais organisé. La compétition se déroulera simultanément dans trois pays, les États-Unis, le Canada et le Mexique, et comptera un nombre record",
       "image": "https://quartierlibre.ca/wp-content/uploads/2026/05/16-17_CDM-1-1024x574.jpg",
-      "_pageAuthor": "Gabriel Lapointe",
       "sourceImageCredit": "Crédit photo : Quartier Libre",
       "sourceImageCreditUrl": "https://quartierlibre.ca/coupe-du-monde-2026/",
       "sourceImageCreditFrom": "media",
       "sourceImageCreditCited": false,
       "sourceImageCreditImageKey": "16-17_cdm-1.jpg",
       "sourceImageCreditRev": 7,
-      "leadImageReady": true
+      "leadImageReady": true,
+      "_retainedFromCache": true
     },
     {
       "source": "Quartier Libre",
@@ -1223,7 +1243,6 @@
       "date": "2026-05-11T15:57:40.000Z",
       "excerpt": "Lors d’une assemblée universitaire tenue le 16 mars dernier, le professeur agrégé à l’École de psychoéducation de la Faculté des arts et des sciences de l’UdeM Jean-Sébastien Fallu a soulevé des préoccupations concernant le soutien informatique à l’Université. Il a partagé",
       "image": "https://quartierlibre.ca/wp-content/uploads/2026/05/6-7_soutien-technique-1024x683.jpg",
-      "_pageAuthor": "Solène Gerber",
       "sourceImageCredit": "Crédit photo : Quartier Libre",
       "sourceImageCreditUrl": "https://quartierlibre.ca/soutien-technique-a-ludem/",
       "sourceImageCreditFrom": "media",
@@ -1231,7 +1250,8 @@
       "sourceImageCreditImageKey": "6-7_soutien-technique.jpg",
       "sourceImageCreditRev": 7,
       "leadImageReady": true,
-      "leadExcerpt": "Lors d’une assemblée universitaire tenue le 16 mars dernier, le professeur agrégé à l’École de psychoéducation de la Faculté des arts et des sciences de l’UdeM Jean-Sébastien Fallu a soulevé des préoccupations concernant le soutien informatique à l’Université. Il a partagé plusieurs difficultés que lui et ses collègues ont vécues, notamment liées aux délais, aux procédures et à la complexité de certains outils numériques."
+      "leadExcerpt": "Lors d’une assemblée universitaire tenue le 16 mars dernier, le professeur agrégé à l’École de psychoéducation de la Faculté des arts et des sciences de l’UdeM Jean-Sébastien Fallu a soulevé des préoccupations concernant le soutien informatique à l’Université. Il a partagé plusieurs difficultés que lui et ses collègues ont vécues, notamment liées aux délais, aux procédures et à la complexité de certains outils numériques.",
+      "_retainedFromCache": true
     },
     {
       "source": "The Link",
@@ -1288,14 +1308,14 @@
       "date": "2026-05-08T19:30:03.000Z",
       "excerpt": "Du 1er au 9 mai, le festival Jamais Lu s’installe au théâtre Aux Écuries de Montréal, avec pour thème « Réparer nos Transmissions ». Le nouveau directeur artistique et cogénéral du festival, Éric Noël, partage son envie de mettre au cœur de cette édition la place des",
       "image": "https://quartierlibre.ca/wp-content/uploads/2026/05/image-1-1024x677.jpeg",
-      "_pageAuthor": "Bérénice Lemarié",
       "sourceImageCredit": "Crédit photo : Quartier Libre",
       "sourceImageCreditUrl": "https://quartierlibre.ca/festival-jamais-lu-2026/",
       "sourceImageCreditFrom": "media",
       "sourceImageCreditCited": false,
       "sourceImageCreditImageKey": "image-1.jpeg",
       "sourceImageCreditRev": 7,
-      "leadImageReady": true
+      "leadImageReady": true,
+      "_retainedFromCache": true
     },
     {
       "source": "Zone Campus",
@@ -1315,7 +1335,8 @@
       "sourceImageCreditCited": false,
       "sourceImageCreditImageKey": "1.jpg",
       "sourceImageCreditRev": 7,
-      "leadImageReady": true
+      "leadImageReady": true,
+      "_retainedFromCache": true
     },
     {
       "source": "L'Exemplaire",
@@ -1401,7 +1422,8 @@
       "author": "Chiara Guillon",
       "date": "2026-05-04T13:12:21.000Z",
       "excerpt": "On écoute de la musique tous les jours, souvent sans vraiment se demander la raison pour laquelle on tombe sur tel ou tel son. Entre les playlists, TikTok et les recommandations automatiques, une question se pose : est-ce que nos goûts musicaux sont encore vraiment les nôtres,",
-      "image": ""
+      "image": "",
+      "_retainedFromCache": true
     },
     {
       "source": "Montréal Campus",
@@ -1487,7 +1509,8 @@
       "sourceImageCreditCited": false,
       "sourceImageCreditImageKey": "17c4541a-839d-48b8-b5aa-2cc81e91e3c8.jpeg",
       "sourceImageCreditRev": 7,
-      "leadImageReady": true
+      "leadImageReady": true,
+      "_retainedFromCache": true
     },
     {
       "source": "Montréal Campus",
@@ -1607,7 +1630,8 @@
       "sourceImageCreditCited": false,
       "sourceImageCreditImageKey": "img_3939.jpg",
       "sourceImageCreditRev": 7,
-      "leadImageReady": true
+      "leadImageReady": true,
+      "_retainedFromCache": true
     },
     {
       "source": "Zone Campus",
@@ -1627,7 +1651,8 @@
       "sourceImageCreditCited": false,
       "sourceImageCreditImageKey": "img_9786.jpeg",
       "sourceImageCreditRev": 7,
-      "leadImageReady": true
+      "leadImageReady": true,
+      "_retainedFromCache": true
     },
     {
       "source": "The Tribune",
@@ -1668,7 +1693,8 @@
       "author": "Chiara Guillon",
       "date": "2026-04-24T20:00:50.000Z",
       "excerpt": "Le grand retour : Orelsan revient sur le devant de la scène après le succès majeur de Civilisation, confirmant son statut de figure incontournable du rap français contemporain. Après s’être illustré dans le cinéma et enchaîné plusieurs projets marquants, l’artiste crée la",
-      "image": ""
+      "image": "",
+      "_retainedFromCache": true
     },
     {
       "source": "Zone Campus",
@@ -1688,7 +1714,8 @@
       "sourceImageCreditCited": false,
       "sourceImageCreditImageKey": "img_3405.jpeg",
       "sourceImageCreditRev": 7,
-      "leadImageReady": true
+      "leadImageReady": true,
+      "_retainedFromCache": true
     },
     {
       "source": "Zone Campus",
@@ -1708,7 +1735,8 @@
       "sourceImageCreditFrom": "article",
       "sourceImageCreditCited": true,
       "sourceImageCreditImageKey": "dany_portrait_vignette_zc-copie-1068x641-3-2.jpg",
-      "leadImageReady": true
+      "leadImageReady": true,
+      "_retainedFromCache": true
     },
     {
       "source": "Zone Campus",
@@ -1728,7 +1756,8 @@
       "sourceImageCreditFrom": "article",
       "sourceImageCreditCited": true,
       "sourceImageCreditImageKey": "604823445_853711280773514_928679255052921821_n.jpg",
-      "leadImageReady": true
+      "leadImageReady": true,
+      "_retainedFromCache": true
     },
     {
       "source": "Zone Campus",
@@ -1748,7 +1777,8 @@
       "sourceImageCreditFrom": "article",
       "sourceImageCreditCited": true,
       "sourceImageCreditImageKey": "672687004_1331193022389249_583407324812045529_n.jpg",
-      "leadImageReady": true
+      "leadImageReady": true,
+      "_retainedFromCache": true
     },
     {
       "source": "Exil",
@@ -3059,20 +3089,19 @@
       "region": "Montréal",
       "type": "universite",
       "lang": "fr",
-      "title": "Sois belle et tais-toi - Le Délit",
-      "link": "https://www.delitfrancais.com/2026/03/18/sois-belle-et-tais-toi-2/",
+      "title": "Ce que nous devons aux femmes - Le Délit",
+      "link": "https://www.delitfrancais.com/2026/03/18/ce-que-nous-devons-aux-femmes/",
       "author": "La rédaction",
       "date": "2026-03-18T07:00:00.000Z",
-      "excerpt": "Petit guide pratique pour écarter les femmes du canon littéraire.",
-      "image": "https://www.delitfrancais.com/wp-content/uploads/2026/03/canon-litteraire.jpg",
+      "excerpt": "Votre entourage, en tant qu’étudiantes et étudiants de l’Université McGill, est peut-être composé en majorité de personnes qui se revendiquent comme féministes. Certaines le sont, d’autres le prétendent, mais relativement rares sont les McGillois qui refusent ouvertement le féminisme.",
+      "image": "https://www.delitfrancais.com/wp-content/uploads/2026/03/Capture-decran-le-2026-03-22-a-17.22.07.png",
       "featured": true,
-      "leadExcerpt": "C’est la sécheresse totale dans le cerveau de bien des gens. Le vôtre, peut-être. Mais ne craignez rien, ce n’est pas de votre faute. Cette absence de figures féminines dans le canon littéraire tient à une multitude de facteurs qui se résument à l’oubli. Un oubli collectif. Un oubli volontaire.",
-      "sourceImageCredit": "Photo : Catvy Tran",
-      "sourceImageCreator": "Catvy Tran",
-      "sourceImageCreditUrl": "https://www.delitfrancais.com/2026/03/18/sois-belle-et-tais-toi-2/",
+      "sourceImageCredit": "Photo : Alexandre Gontier",
+      "sourceImageCreator": "Alexandre Gontier",
+      "sourceImageCreditUrl": "https://www.delitfrancais.com/2026/03/18/ce-que-nous-devons-aux-femmes/",
       "sourceImageCreditFrom": "article",
       "sourceImageCreditCited": true,
-      "sourceImageCreditImageKey": "canon-litteraire.jpg",
+      "sourceImageCreditImageKey": "capture-decran-le-2026-03-22-a-17.22.07.png",
       "sourceImageCreditRev": 7
     },
     {
@@ -3081,20 +3110,20 @@
       "region": "Montréal",
       "type": "universite",
       "lang": "fr",
-      "title": "Qui sont les agents qui patrouillent notre campus? - Le Délit",
-      "link": "https://www.delitfrancais.com/2026/03/18/qui-sont-les-agents-qui-patrouillent-notre-campus/",
+      "title": "Les femmes MAGA au service du patriarcat - Le Délit",
+      "link": "https://www.delitfrancais.com/2026/03/18/les-femmes-maga-au-service-du-patriarcat/",
       "author": "La rédaction",
       "date": "2026-03-18T07:00:00.000Z",
-      "excerpt": "Une enquête sur Garda à McGill.",
-      "image": "https://www.delitfrancais.com/wp-content/uploads/2026/03/garda.png",
+      "excerpt": "Kristi Noem et Erika Kirk comme figures de proue du néo-fascisme américain.",
+      "image": "https://www.delitfrancais.com/wp-content/uploads/2026/03/MAGA_marius.png",
       "featured": true,
-      "leadExcerpt": "« L’Université McGill est à la recherche de patrouilleurs dynamiques et engagés pour assurer la sécurité de sa communauté universitaire », selon une annonce publiée sur le site web du Groupe de sécurité Garda S.E.N.C. (Garda), mieux connu sous le nom de GardaWorld. Cette entreprise canadienne de sécurité privée est sous contrat avec McGill depuis le 26 août 2024, et ce, jusqu’au 30 avril 2027.",
-      "sourceImageCredit": "Photo : Stu Doré/Félix Fournier",
-      "sourceImageCreator": "Stu Doré/Félix Fournier",
-      "sourceImageCreditUrl": "https://www.delitfrancais.com/2026/03/18/qui-sont-les-agents-qui-patrouillent-notre-campus/",
+      "leadExcerpt": "Une des capacités distinctives de ce système patriarcal est son habileté remarquable à se perpétuer en instrumentalisant certaines femmes pour reproduire les structures qui les subordonnent. C’est à travers ce mécanisme d’opacité que sa présence se resserre sur la société, et que ses contradictions se dissimulent sous le couvert de liberté individuelle, de traditions ou de choix personnels.",
+      "sourceImageCredit": "Photo : Stu Doré",
+      "sourceImageCreator": "Stu Doré",
+      "sourceImageCreditUrl": "https://www.delitfrancais.com/2026/03/18/les-femmes-maga-au-service-du-patriarcat/",
       "sourceImageCreditFrom": "article",
       "sourceImageCreditCited": true,
-      "sourceImageCreditImageKey": "garda.png",
+      "sourceImageCreditImageKey": "maga_marius.png",
       "sourceImageCreditRev": 7
     },
     {
