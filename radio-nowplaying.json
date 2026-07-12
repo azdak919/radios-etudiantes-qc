@@ -1,27 +1,33 @@
 {
-  "updatedAt": "2026-07-12T12:02:47.538Z",
+  "updatedAt": "2026-07-12T14:04:36.005Z",
   "timezone": "America/Toronto",
   "stations": {
     "chyz": {
       "id": "chyz",
       "name": "CHYZ 94,3",
-      "current": null,
-      "next": {
+      "current": {
         "title": "Palmarès CHYZ",
         "source": "schedule",
         "start": "10:00",
         "end": "10:30",
         "url": "https://chyz.ca/emission/palmares-chyz/"
       },
+      "next": {
+        "title": "Le Ré-Show : Deuxième Service",
+        "source": "schedule",
+        "start": "11:00",
+        "end": "12:00",
+        "url": "https://chyz.ca/emission/le-re-show-deuxieme-service/"
+      },
       "track": "",
-      "showTitle": "",
+      "showTitle": "Palmarès CHYZ",
       "host": "",
       "source": "schedule",
       "sources": [
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-12T12:02:39.426Z"
+      "checkedAt": "2026-07-12T14:04:28.618Z"
     },
     "cism": {
       "id": "cism",
@@ -51,25 +57,25 @@
         "type": "cism-v1",
         "url": "https://admin.cism893.ca/api/v1/live"
       },
-      "checkedAt": "2026-07-12T12:02:40.989Z"
+      "checkedAt": "2026-07-12T14:04:30.108Z"
     },
     "ckut": {
       "id": "ckut",
       "name": "CKUT 90,3",
       "current": {
-        "title": "Mind, Soul, &amp; Spirit",
-        "source": "api-live",
-        "start": "06:00",
-        "end": "09:00"
-      },
-      "next": {
         "title": "Latin Time",
         "source": "api-live",
         "start": "09:00",
         "end": "10:30"
       },
-      "track": "Mind, Soul, & Spirit",
-      "showTitle": "Mind, Soul, &amp; Spirit",
+      "next": {
+        "title": "International Radio Report",
+        "source": "api-live",
+        "start": "10:30",
+        "end": "11:00"
+      },
+      "track": "",
+      "showTitle": "Latin Time",
       "host": "",
       "source": "api-live",
       "sources": [
@@ -77,34 +83,34 @@
         "stream"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-12T12:02:43.253Z"
+      "checkedAt": "2026-07-12T14:04:32.602Z"
     },
     "cjlo": {
       "id": "cjlo",
       "name": "CJLO 1690AM",
       "current": {
-        "title": "The Gigi Brown Experience",
+        "title": "Rigged Sessions",
         "source": "schedule",
-        "start": "08:00",
-        "end": "09:00",
-        "url": "http://www.cjlo.com/shows/the-gigi-brown-experience"
+        "start": "10:00",
+        "end": "12:00",
+        "url": "http://www.cjlo.com/shows/rigged-sessions"
       },
       "next": {
-        "title": "REVC",
+        "title": "Brave Little Emo Girl",
         "source": "schedule",
-        "start": "09:00",
-        "end": "10:00",
-        "url": "http://www.cjlo.com/shows/revc"
+        "start": "12:00",
+        "end": "13:00",
+        "url": "http://www.cjlo.com/shows/brave-little-emo-girl"
       },
       "track": "",
-      "showTitle": "The Gigi Brown Experience",
+      "showTitle": "Rigged Sessions",
       "host": "",
       "source": "schedule",
       "sources": [
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-12T12:02:44.737Z"
+      "checkedAt": "2026-07-12T14:04:33.911Z"
     },
     "cfak": {
       "id": "cfak",
@@ -129,27 +135,27 @@
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-12T12:02:45.228Z"
+      "checkedAt": "2026-07-12T14:04:34.447Z"
     },
     "choq": {
       "id": "choq",
       "name": "CHOQ.ca",
       "current": {
-        "title": "3AM in San Francisco",
+        "title": "Can i Be Electric?",
         "source": "api-live",
-        "host": "Lolo Zouaï"
+        "host": "MaSHeNKa"
       },
       "next": null,
-      "track": "Lolo Zouaï - 3AM in San Francisco",
-      "showTitle": "3AM in San Francisco",
-      "host": "Lolo Zouaï",
+      "track": "MaSHeNKa - Can i Be Electric?",
+      "showTitle": "Can i Be Electric?",
+      "host": "MaSHeNKa",
       "source": "api-live",
       "sources": [
         "api-live",
         "stream"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-12T12:02:47.187Z"
+      "checkedAt": "2026-07-12T14:04:35.654Z"
     }
   }
 }
