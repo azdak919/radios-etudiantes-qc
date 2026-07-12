@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-12T10:54:11.594Z",
+  "updatedAt": "2026-07-12T12:02:47.538Z",
   "timezone": "America/Toronto",
   "stations": {
     "chyz": {
@@ -21,7 +21,7 @@
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-12T10:54:03.348Z"
+      "checkedAt": "2026-07-12T12:02:39.426Z"
     },
     "cism": {
       "id": "cism",
@@ -51,7 +51,7 @@
         "type": "cism-v1",
         "url": "https://admin.cism893.ca/api/v1/live"
       },
-      "checkedAt": "2026-07-12T10:54:04.859Z"
+      "checkedAt": "2026-07-12T12:02:40.989Z"
     },
     "ckut": {
       "id": "ckut",
@@ -77,34 +77,34 @@
         "stream"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-12T10:54:07.123Z"
+      "checkedAt": "2026-07-12T12:02:43.253Z"
     },
     "cjlo": {
       "id": "cjlo",
       "name": "CJLO 1690AM",
       "current": {
-        "title": "Sun Ra, Sun Rise",
-        "source": "schedule",
-        "start": "06:00",
-        "end": "08:00",
-        "url": "http://www.cjlo.com/shows/sun-ra-sun-rise"
-      },
-      "next": {
         "title": "The Gigi Brown Experience",
         "source": "schedule",
         "start": "08:00",
         "end": "09:00",
         "url": "http://www.cjlo.com/shows/the-gigi-brown-experience"
       },
+      "next": {
+        "title": "REVC",
+        "source": "schedule",
+        "start": "09:00",
+        "end": "10:00",
+        "url": "http://www.cjlo.com/shows/revc"
+      },
       "track": "",
-      "showTitle": "Sun Ra, Sun Rise",
+      "showTitle": "The Gigi Brown Experience",
       "host": "",
       "source": "schedule",
       "sources": [
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-12T10:54:08.640Z"
+      "checkedAt": "2026-07-12T12:02:44.737Z"
     },
     "cfak": {
       "id": "cfak",
@@ -129,27 +129,27 @@
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-12T10:54:09.125Z"
+      "checkedAt": "2026-07-12T12:02:45.228Z"
     },
     "choq": {
       "id": "choq",
       "name": "CHOQ.ca",
       "current": {
-        "title": "skinfolk",
+        "title": "3AM in San Francisco",
         "source": "api-live",
-        "host": "aja monet"
+        "host": "Lolo Zouaï"
       },
       "next": null,
-      "track": "aja monet - skinfolk",
-      "showTitle": "skinfolk",
-      "host": "aja monet",
+      "track": "Lolo Zouaï - 3AM in San Francisco",
+      "showTitle": "3AM in San Francisco",
+      "host": "Lolo Zouaï",
       "source": "api-live",
       "sources": [
         "api-live",
         "stream"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-12T10:54:11.244Z"
+      "checkedAt": "2026-07-12T12:02:47.187Z"
     }
   }
 }
