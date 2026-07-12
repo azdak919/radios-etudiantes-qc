@@ -1,6 +1,6 @@
 {
-  "updated": "2026-07-12T16:40:56.249Z",
-  "updatedSlot": "2026-07-12T16:00:00.000Z",
+  "updated": "2026-07-12T18:27:51.664Z",
+  "updatedSlot": "2026-07-12T17:30:00.000Z",
   "count": 185,
   "freshnessSessions": 3,
   "sources": {
@@ -10,7 +10,7 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-05-15T16:00:00.000Z",
-      "lastFetchOk": "2026-07-12T16:40:13.951Z"
+      "lastFetchOk": "2026-07-12T18:27:10.032Z"
     },
     "Montréal Campus": {
       "fetchOk": true,
@@ -18,7 +18,7 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-05-09T03:14:30.000Z",
-      "lastFetchOk": "2026-07-12T16:40:14.822Z"
+      "lastFetchOk": "2026-07-12T18:27:11.137Z"
     },
     "Le Délit": {
       "fetchOk": true,
@@ -26,7 +26,7 @@
       "articleCount": 20,
       "freshArticleCount": 20,
       "lastArticle": "2026-03-25T11:00:00.000Z",
-      "lastFetchOk": "2026-07-12T16:40:19.406Z"
+      "lastFetchOk": "2026-07-12T18:27:15.909Z"
     },
     "The McGill Daily": {
       "fetchOk": true,
@@ -34,7 +34,7 @@
       "articleCount": 15,
       "freshArticleCount": 15,
       "lastArticle": "2026-07-06T12:00:00.000Z",
-      "lastFetchOk": "2026-07-12T16:40:20.015Z"
+      "lastFetchOk": "2026-07-12T18:27:16.567Z"
     },
     "The Link": {
       "fetchOk": true,
@@ -42,7 +42,7 @@
       "articleCount": 20,
       "freshArticleCount": 20,
       "lastArticle": "2026-07-08T14:41:00.000Z",
-      "lastFetchOk": "2026-07-12T16:40:20.495Z"
+      "lastFetchOk": "2026-07-12T18:27:17.161Z"
     },
     "Zone Campus": {
       "fetchOk": true,
@@ -50,7 +50,7 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-05-08T14:20:26.000Z",
-      "lastFetchOk": "2026-07-12T16:40:21.402Z"
+      "lastFetchOk": "2026-07-12T18:27:18.208Z"
     },
     "L'Exemplaire": {
       "fetchOk": true,
@@ -58,7 +58,7 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-05-15T16:31:24.000Z",
-      "lastFetchOk": "2026-07-12T16:40:23.146Z"
+      "lastFetchOk": "2026-07-12T18:27:20.098Z"
     },
     "Le Collectif": {
       "fetchOk": true,
@@ -66,7 +66,7 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-07-11T16:34:55.000Z",
-      "lastFetchOk": "2026-07-12T16:40:28.926Z"
+      "lastFetchOk": "2026-07-12T18:27:20.994Z"
     },
     "Exil": {
       "fetchOk": true,
@@ -74,7 +74,7 @@
       "articleCount": 7,
       "freshArticleCount": 7,
       "lastArticle": "2026-04-18T22:22:07.000Z",
-      "lastFetchOk": "2026-07-12T16:40:29.061Z"
+      "lastFetchOk": "2026-07-12T18:27:21.311Z"
     },
     "La Pige": {
       "fetchOk": true,
@@ -82,7 +82,7 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-06-22T14:36:10.000Z",
-      "lastFetchOk": "2026-07-12T16:40:29.701Z"
+      "lastFetchOk": "2026-07-12T18:27:22.113Z"
     },
     "Le Polyscope": {
       "fetchOk": true,
@@ -90,7 +90,7 @@
       "articleCount": 13,
       "freshArticleCount": 13,
       "lastArticle": "2026-02-25T14:38:32.764Z",
-      "lastFetchOk": "2026-07-12T16:40:31.085Z"
+      "lastFetchOk": "2026-07-12T18:27:24.152Z"
     },
     "The Tribune": {
       "fetchOk": true,
@@ -98,7 +98,7 @@
       "articleCount": 20,
       "freshArticleCount": 20,
       "lastArticle": "2026-06-26T15:24:28.000Z",
-      "lastFetchOk": "2026-07-12T16:40:31.248Z"
+      "lastFetchOk": "2026-07-12T18:27:24.415Z"
     },
     "The Campus": {
       "fetchOk": true,
@@ -106,7 +106,7 @@
       "articleCount": 20,
       "freshArticleCount": 20,
       "lastArticle": "2026-04-06T16:03:16.000Z",
-      "lastFetchOk": "2026-07-12T16:40:31.429Z"
+      "lastFetchOk": "2026-07-12T18:27:24.797Z"
     },
     "The Plant": {
       "fetchOk": true,
@@ -114,7 +114,7 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-05-11T20:44:08.000Z",
-      "lastFetchOk": "2026-07-12T16:40:31.547Z"
+      "lastFetchOk": "2026-07-12T18:27:25.075Z"
     }
   },
   "items": [
@@ -349,14 +349,7 @@
       "sourceImageCreditCited": true,
       "sourceImageCreditImageKey": "societe_christinelabrie_sourcepagefacebookderubaghazal.jpg",
       "sourceImageCreditRev": 2,
-      "leadImageReady": false,
-      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/4/47/Assembl%C3%A9e_nationale_du_Qu%C3%A9bec%2C_l%27H%C3%B4tel_du_Parlement%2C_fa%C3%A7ade_avec_ancien_entr%C3%A9_principal.jpg",
-      "imageTitle": "Assemblée nationale du Québec, l'Hôtel du Parlement, façade avec ancien entré principal",
-      "imageCredit": "Photo : Marc-Lautenbacher / CC BY-SA · Openverse",
-      "imageCreator": "Marc-Lautenbacher",
-      "imageLicense": "by-sa",
-      "imageProvider": "openverse",
-      "imageSourceUrl": "https://commons.wikimedia.org/w/index.php?curid=73170675"
+      "leadImageReady": false
     },
     {
       "source": "The McGill Daily",
@@ -436,14 +429,7 @@
       "date": "2026-06-26T15:24:28.000Z",
       "excerpt": "Dear Tribune, Since returning to my hometown from McGill a little over a month ago, I’ve been so extremely bored. I’m out of errands to run—other than bumping into someone from my high school every time I leave my house. If I have to have the, “How was your year?” [Read More]",
       "image": "https://www.thetribune.ca/wp-content/uploads/2026/06/Screen-Shot-2026-06-26-at-11.23.19-AM.png",
-      "leadImageReady": true,
-      "sourceImageCredit": "Photo : Zoe Lee",
-      "sourceImageCreator": "Zoe Lee",
-      "sourceImageCreditUrl": "https://www.thetribune.ca/student-life/ask-the-trib-how-do-i-survive-summer-in-my-hometown-26062026/?utm_source=rss&utm_medium=rss&utm_campaign=ask-the-trib-how-do-i-survive-summer-in-my-hometown-26062026",
-      "sourceImageCreditFrom": "article",
-      "sourceImageCreditCited": true,
-      "sourceImageCreditImageKey": "screen-shot-2026-06-26-at-11.23.19-am.png",
-      "sourceImageCreditRev": 7
+      "leadImageReady": true
     },
     {
       "source": "The Tribune",
@@ -458,14 +444,7 @@
       "excerpt": "Tanzanian-American-Canadian artist Shanna Strauss’s screenprint triad Kanga I, II, III joined the student-led digital art exhibition Projections: SANKOFA on Feb. 23. Displayed in the Lorne M. Trottier Building mezzanine, the Kanga series combines negative space with vibrant",
       "image": "https://www.thetribune.ca/wp-content/uploads/2026/06/Screen-Shot-2026-06-23-at-1.21.20-PM.png",
       "leadExcerpt": "Tanzanian-American-Canadian artist Shanna Strauss ’s screenprint triad Kanga I, II, III joined the student-led digital art exhibition Projections: SANKOFA on Feb. 23. Displayed in the Lorne M. Trottier Building mezzanine, the Kanga series combines negative space with vibrant colour to assert the unifying power of shared cultural identity.",
-      "leadImageReady": true,
-      "sourceImageCredit": "Photo : McGill Visual Arts Collection",
-      "sourceImageCreator": "McGill Visual Arts Collection",
-      "sourceImageCreditUrl": "https://www.thetribune.ca/a-e/kanga-i-ii-iii-brings-projections-sankofas-afrofuturist-vision-to-trottier-23062026/?utm_source=rss&utm_medium=rss&utm_campaign=kanga-i-ii-iii-brings-projections-sankofas-afrofuturist-vision-to-trottier-23062026",
-      "sourceImageCreditFrom": "article",
-      "sourceImageCreditCited": true,
-      "sourceImageCreditImageKey": "screen-shot-2026-06-23-at-1.21.20-pm.png",
-      "sourceImageCreditRev": 7
+      "leadImageReady": true
     },
     {
       "source": "La Pige",
@@ -479,13 +458,6 @@
       "date": "2026-06-22T14:36:10.000Z",
       "excerpt": "« Les gens ont tendance à frapper un mur au moment de la retraite par manque de préparation », estime Le directeur général de la Fédération de l’âge d’or du Québec (Fadoq) pour la région Saguenay-Lac-Saint-Jean – Ungava, Patrice Saint-Pierre. (Photo : Léa Morin-Letort) L’heure",
       "image": "https://lapige.atmjonquiere.com/wp-content/uploads/sites/3/2026/06/Joanne-Normandin_retraite-benevole-scaled.jpg",
-      "sourceImageCredit": "Photo : Léa Morin-Letort",
-      "sourceImageCreator": "Léa Morin-Letort",
-      "sourceImageCreditUrl": "https://lapige.atmjonquiere.com/2026/06/22/se-preparer-et-vivre-sa-retraite-un-long-fleuve-pas-si-tranquille/?utm_source=rss&utm_medium=rss&utm_campaign=se-preparer-et-vivre-sa-retraite-un-long-fleuve-pas-si-tranquille",
-      "sourceImageCreditFrom": "article",
-      "sourceImageCreditCited": true,
-      "sourceImageCreditImageKey": "joanne-normandin_retraite-benevole.jpg",
-      "sourceImageCreditRev": 7,
       "leadExcerpt": "« Les gens ont tendance à frapper un mur au moment de la retraite par manque de préparation », estime Le directeur général de la Fédération de l’âge d’or du Québec (Fadoq) pour la région Saguenay-Lac-Saint-Jean – Ungava, Patrice Saint-Pierre. (Photo : Léa Morin-Letort)",
       "leadImageReady": true
     },
@@ -502,14 +474,7 @@
       "excerpt": "On April 22, the Superior Court of Quebec annulled the August 2025 arbitration Association des Ressources Intermédiaires D’Hébergement du Québec (ARIHQ) v. Santé Québec, as the ruling was based on nonexistent, likely artificial intelligence (AI)-generated legal doctrine and",
       "image": "https://www.thetribune.ca/wp-content/uploads/2026/06/Untitled_Artwork-scaled.jpeg",
       "leadExcerpt": "Growing adoption of AI systems, which frequently hallucinate and possess ingrained biases against racialized groups , both negatively impacts litigants, and violates the Canadian justice system’s tenets of fairness and impartiality. Thus, AI safety —the outlining of AI risks and formation of computational and governance frameworks to address these risks—is a legal necessity.",
-      "leadImageReady": true,
-      "sourceImageCredit": "Photo : Zoe Lee",
-      "sourceImageCreator": "Zoe Lee",
-      "sourceImageCreditUrl": "https://www.thetribune.ca/opinion/ais-use-in-legal-decisions-poses-major-risks-to-the-canadian-judicial-systems-integrity-and-neutrality-11062026/?utm_source=rss&utm_medium=rss&utm_campaign=ais-use-in-legal-decisions-poses-major-risks-to-the-canadian-judicial-systems-integrity-and-neutrality-11062026",
-      "sourceImageCreditFrom": "article",
-      "sourceImageCreditCited": true,
-      "sourceImageCreditImageKey": "untitled_artwork.jpeg",
-      "sourceImageCreditRev": 7
+      "leadImageReady": true
     },
     {
       "source": "The Link",
@@ -566,14 +531,7 @@
       "excerpt": "American artist and poet Theodore A. Harris is a genius of the political collage. Born in Manhattan, New York and raised in Philadelphia, Pennsylvania, Harris brings an autobiographical focus to the subversive, polysemous medium of the collage, one shaped by his upbringing,",
       "image": "https://www.thetribune.ca/wp-content/uploads/2026/05/Screen-Shot-2026-05-28-at-8.32.20-AM.png",
       "leadExcerpt": "American artist and poet Theodore A. Harris is a genius of the political collage . Born in Manhattan, New York and raised in Philadelphia, Pennsylvania, Harris brings an autobiographical focus to the subversive , polysemous medium of the collage, one shaped by his upbringing, mentors, and personal experiences with anti-Black discrimination and American capitalism’s exploitative nature.",
-      "leadImageReady": true,
-      "sourceImageCredit": "Photo : Theodore A. Harris",
-      "sourceImageCreator": "Theodore A. Harris",
-      "sourceImageCreditUrl": "https://www.thetribune.ca/a-e/know-your-artist-theodore-a-harris-27052026/?utm_source=rss&utm_medium=rss&utm_campaign=know-your-artist-theodore-a-harris-27052026",
-      "sourceImageCreditFrom": "article",
-      "sourceImageCreditCited": true,
-      "sourceImageCreditImageKey": "screen-shot-2026-05-28-at-8.32.20-am.png",
-      "sourceImageCreditRev": 7
+      "leadImageReady": true
     },
     {
       "source": "The Link",
@@ -633,14 +591,7 @@
       "excerpt": "On May 16, hundreds of protestors gathered in front of the Consulate General of Israel in Montreal to commemorate the 78th anniversary of the Nakba (Nakba Day). Demonstrators waved Palestinian, Rotisken’rakéhte (Mohawk Warrior Society), and post-1979 revolution Iranian flags",
       "image": "https://www.thetribune.ca/wp-content/uploads/2026/05/Screen-Shot-2026-05-22-at-7.42.52-AM.png",
       "leadExcerpt": "On May 16, hundreds of protestors gathered in front of the Consulate General of Israel in Montreal to commemorate the 78th anniversary of the Nakba ( Nakba Day ). Demonstrators waved Palestinian, Rotisken’rakéhte ( Mohawk Warrior Society ), and post-1979 revolution Iranian flags amidst the music of live drummers.",
-      "leadImageReady": true,
-      "sourceImageCredit": "Photo : Ellen Lurie",
-      "sourceImageCreator": "Ellen Lurie",
-      "sourceImageCreditUrl": "https://www.thetribune.ca/news/montreal-protestors-commemorate-the-78th-anniversary-of-the-nakba-21052026/?utm_source=rss&utm_medium=rss&utm_campaign=montreal-protestors-commemorate-the-78th-anniversary-of-the-nakba-21052026",
-      "sourceImageCreditFrom": "article",
-      "sourceImageCreditCited": true,
-      "sourceImageCreditImageKey": "screen-shot-2026-05-22-at-7.42.52-am.png",
-      "sourceImageCreditRev": 7
+      "leadImageReady": true
     },
     {
       "source": "La Pige",
@@ -830,14 +781,7 @@
       "excerpt": "Salut, moi c’est Elora. Je suis étudiante en journalisme, passionnée de voyages, de cinéma et de récits humains. Mais aujourd’hui, si je me présente, c’est surtout pour te parler d’une relation toxique qui a occupé toute mon adolescence. Au début, ça ressemblait presque à un",
       "image": "https://www.exemplaire.com.ulaval.ca/wp-content/uploads/2026/05/Illustration-recadree-16.9-scaled-e1778861785132.png",
       "leadExcerpt": "À travers un balado intime et sans jugement, ces deux journalistes brisent le silence sur l’anorexie mentale et ouvrent la discussion sur les troubles du comportement alimentaire. Au fil de témoignages sensibles et éclairants.",
-      "leadImageReady": true,
-      "sourceImageCredit": "Crédit photo : L'Exemplaire",
-      "sourceImageCreator": "",
-      "sourceImageCreditUrl": "https://www.exemplaire.com.ulaval.ca/a-la-une/sans-fins-au-coeur-des-troubles-du-comportement-alimentaire/?utm_source=rss&utm_medium=rss&utm_campaign=sans-fins-au-coeur-des-troubles-du-comportement-alimentaire",
-      "sourceImageCreditFrom": "media",
-      "sourceImageCreditCited": false,
-      "sourceImageCreditImageKey": "illustration-recadree-16.9-scaled-e1778861785132.png",
-      "sourceImageCreditRev": 7
+      "leadImageReady": true
     },
     {
       "source": "Quartier Libre",
@@ -873,15 +817,8 @@
       "excerpt": "Le 13 mars dernier, la rappeuse Calamine a dévoilé son nouvel album, Rétrograde. Avec cette quatrième sortie depuis 2020, l’artiste gravit les échelons et devient une voix importante du hip-hop québécois. Composé de 18 titres d’ambiance estivale tels que « CHOP CHOP », « POLY »",
       "image": "https://quartierlibre.ca/wp-content/uploads/2026/05/18-19_calamine-1024x1024.jpg",
       "_pageAuthor": "Samuel Roy",
-      "sourceImageCredit": "Crédit photo : Quartier Libre",
-      "sourceImageCreditUrl": "https://quartierlibre.ca/calamine-rapper-autrement/",
-      "sourceImageCreditFrom": "media",
-      "sourceImageCreditCited": false,
-      "sourceImageCreditImageKey": "18-19_calamine.jpg",
-      "sourceImageCreditRev": 7,
       "leadExcerpt": "Le concept même de Rétrograde , c’est cette sensation d’un recul sociétal, le fait qu’on est en train de retourner en arrière, politiquement parlant. Même après des avancées dans le féminisme, on est quand même en train de reculer avec la montée du masculinisme. En nommant l’album Rétrograde , ça me permettait donc de relier à la fois le queer dating et le recul général de la société.",
-      "leadImageReady": true,
-      "sourceImageCreator": ""
+      "leadImageReady": true
     },
     {
       "source": "Quartier Libre",
@@ -896,15 +833,8 @@
       "excerpt": "Le 5 mai dernier, le pavillon Roger-Gaudry a accueilli le premier forum du Réseau des écoles associées (RÉA). Ce projet ambitieux de la Faculté des sciences de l’éducation (FSÉ) transforme des écoles primaires et secondaires en véritables « hôpitaux universitaires » de la",
       "image": "https://quartierlibre.ca/wp-content/uploads/2026/05/PXL_20260505_174149744-1024x768.jpg",
       "_pageAuthor": "Ulysse Taillard-Hodez",
-      "sourceImageCredit": "Crédit photo : Quartier Libre",
-      "sourceImageCreditUrl": "https://quartierlibre.ca/forum-rea-education-en-milieu-defavorise/",
-      "sourceImageCreditFrom": "media",
-      "sourceImageCreditCited": false,
-      "sourceImageCreditImageKey": "pxl_20260505_174149744.jpg",
-      "sourceImageCreditRev": 7,
       "leadExcerpt": "Mme Fournier Dubé a insisté sur le fait que les enseignant·e·s sont les véritables « agents de changement ». Son rôle n’est pas d’imposer un cadre scientifique rigide, mais de vulgariser la recherche pour l’adapter aux besoins du terrain.",
-      "leadImageReady": true,
-      "sourceImageCreator": ""
+      "leadImageReady": true
     },
     {
       "source": "Quartier Libre",
@@ -941,14 +871,7 @@
       "excerpt": "One week before The Tribune’s first production night, I found myself in Toronto in a black dress, black shoes, and sparkles on my eyelids. I was at the funeral of Fabienne de Cartier, a former News Editor. We dedicated Volume 45 to Fabienne, an unforgettable force of nature who",
       "image": "https://www.thetribune.ca/wp-content/uploads/2026/05/RenderedImage-1-scaled.jpeg",
       "leadExcerpt": "One week before The Tribune ’s first production night, I found myself in Toronto in a black dress, black shoes, and sparkles on my eyelids. I was at the funeral of Fabienne de Cartier, a former News Editor.",
-      "leadImageReady": true,
-      "sourceImageCredit": "Photo : Yusur Al-Sharqi",
-      "sourceImageCreator": "Yusur Al-Sharqi",
-      "sourceImageCreditUrl": "https://www.thetribune.ca/opinion/op-off-the-board/a-final-note-from-the-editor-in-chief-of-volume-45-for-the-record-14052026/?utm_source=rss&utm_medium=rss&utm_campaign=a-final-note-from-the-editor-in-chief-of-volume-45-for-the-record-14052026",
-      "sourceImageCreditFrom": "article",
-      "sourceImageCreditCited": true,
-      "sourceImageCreditImageKey": "renderedimage-1.jpeg",
-      "sourceImageCreditRev": 7
+      "leadImageReady": true
     },
     {
       "source": "The Tribune",
@@ -963,14 +886,7 @@
       "excerpt": "On May 9, Students for Palestine’s Honour and Resistance (SPHR) at McGill hosted a gathering to commemorate the two-year anniversary of Montreal community members establishing the Gaza Solidarity Encampment on McGill’s Lower Field. 743 days later, community members of all ages",
       "image": "https://www.thetribune.ca/wp-content/uploads/2026/05/RenderedImage-1000x600.jpeg",
       "leadExcerpt": "On May 9, Students for Palestine’s Honour and Resistance ( SPHR ) at McGill hosted a gathering to commemorate the two-year anniversary of Montreal community members establishing the Gaza Solidarity Encampment on McGill’s Lower Field. 743 days later, community members of all ages met for a potluck, arts-and-crafts, and a letter-writing campaign for Palestinian political prisoners, intended to raise awareness of, and inspire solidarity against, Israel’s prison conditions.",
-      "leadImageReady": true,
-      "sourceImageCredit": "Photo : Ellen Lurie",
-      "sourceImageCreator": "Ellen Lurie",
-      "sourceImageCreditUrl": "https://www.thetribune.ca/news/sphr-remembers-gaza-solidarity-encampment-ahead-of-nakba-anniversary-protest-13052026/?utm_source=rss&utm_medium=rss&utm_campaign=sphr-remembers-gaza-solidarity-encampment-ahead-of-nakba-anniversary-protest-13052026",
-      "sourceImageCreditFrom": "article",
-      "sourceImageCreditCited": true,
-      "sourceImageCreditImageKey": "renderedimage.jpeg",
-      "sourceImageCreditRev": 7
+      "leadImageReady": true
     },
     {
       "source": "Quartier Libre",
@@ -1029,14 +945,7 @@
       "excerpt": "Selon une enquête récente par l’Institut de la statistique du Québec (ISQ), la consommation d’alcool chez les jeunes est en baisse depuis quelques années. Il s’agit d’un mouvement qui s’observe aussi, mais de manière moins prononcée, dans d’autres groupes d’âge. Cette",
       "image": "https://www.exemplaire.com.ulaval.ca/wp-content/uploads/2026/04/generated-image-2-e1777575466728.png",
       "leadExcerpt": "Il fut un temps où le tabac était partout, jusque dans les hôpitaux et les écoles. Aujourd’hui, son image a complètement changé. L’alcool, lui aussi, semble perdre du terrain chez les jeunes de 15 à 24 ans. Sa consommation baisse. Ne pas boire devient de plus en plus normal. Mais ce changement soulève une autre question : n’y a-t-il pas autre chose qui remplace l’alcool aujourd’hui dans la vie sociale des jeunes ?",
-      "leadImageReady": true,
-      "sourceImageCredit": "Crédit photo : L'Exemplaire",
-      "sourceImageCreator": "",
-      "sourceImageCreditUrl": "https://www.exemplaire.com.ulaval.ca/a-la-une/lalcool-est-il-vraiment-le-nouveau-tabac/?utm_source=rss&utm_medium=rss&utm_campaign=lalcool-est-il-vraiment-le-nouveau-tabac",
-      "sourceImageCreditFrom": "media",
-      "sourceImageCreditCited": false,
-      "sourceImageCreditImageKey": "generated-image-2-e1777575466728.png",
-      "sourceImageCreditRev": 7
+      "leadImageReady": true
     },
     {
       "source": "L'Exemplaire",
@@ -1051,14 +960,7 @@
       "excerpt": "Tout doucement, on les voit apparaître sur le bord des tablettes des épiceries. Des écrans miniatures qui indiquent le prix des produits alimentaires, comme chez Super C, par exemple — notre photo en une. Techniquement, ces nouvelles étiquettes peuvent faire varier les prix",
       "image": "https://www.exemplaire.com.ulaval.ca/wp-content/uploads/2026/04/Photo-couverture-Super-C-scaled.jpg",
       "leadExcerpt": "Connue pour ses effets parfois délirants sur les prix des billets électroniques — évènements culturels, sportifs, transports, vente en ligne — la tarification dynamique s'attaque petit à petit aux produits alimentaires. Au Canada, ces nouvelles pratiques commerciales sont sources de nombreuses inquiétudes. Car si elles redéfinissent la concurrence, elles touchent surtout le consommateur.",
-      "leadImageReady": true,
-      "sourceImageCredit": "Photo : Thomas Harton",
-      "sourceImageCreator": "Thomas Harton",
-      "sourceImageCreditUrl": "https://www.exemplaire.com.ulaval.ca/a-la-une/derriere-les-etiquettes-electroniques-la-tarification-dynamique/?utm_source=rss&utm_medium=rss&utm_campaign=derriere-les-etiquettes-electroniques-la-tarification-dynamique",
-      "sourceImageCreditFrom": "article",
-      "sourceImageCreditCited": true,
-      "sourceImageCreditImageKey": "photo-couverture-super-c.jpg",
-      "sourceImageCreditRev": 7
+      "leadImageReady": true
     },
     {
       "source": "L'Exemplaire",
@@ -1073,14 +975,7 @@
       "excerpt": "Afin de lutter contre la violence armée, le gouvernement du Canada a interdit en mai 2020 plus de 2 500 marques d’armes d’assaut. Pour les citoyens ou les entreprises possédant les modèles concernés, le fédéral a mis sur pied le Programme d’indemnisation pour les armes à feu de",
       "image": "https://www.exemplaire.com.ulaval.ca/wp-content/uploads/2026/05/ChatGPT-Image-7-mai-2026-11-h-02-min-08-s.png",
       "leadExcerpt": "Illustration générée par ChatGPT à partir du prompt d’Olivier Verreault pour L’Exemplaire. Ce prompt vise à illustrer avec humour les différences entre les protestations québécoises et albertaines au sujet du rachat des armes à feu.",
-      "leadImageReady": true,
-      "sourceImageCredit": "Crédit photo : L'Exemplaire",
-      "sourceImageCreator": "",
-      "sourceImageCreditUrl": "https://www.exemplaire.com.ulaval.ca/a-la-une/rachat-des-armes-a-feu-le-quebec-est-il-lexception-canadienne/?utm_source=rss&utm_medium=rss&utm_campaign=rachat-des-armes-a-feu-le-quebec-est-il-lexception-canadienne",
-      "sourceImageCreditFrom": "media",
-      "sourceImageCreditCited": false,
-      "sourceImageCreditImageKey": "chatgpt-image-7-mai-2026-11-h-02-min-08-s.png",
-      "sourceImageCreditRev": 7
+      "leadImageReady": true
     },
     {
       "source": "L'Exemplaire",
@@ -1095,14 +990,7 @@
       "excerpt": "L’un des principaux reproches du public envers les médias traditionnels est la difficulté de faire la différence entre les genres journalistiques, par exemple, ce qui distingue un contenu informatif de l’opinion. Des propos qu’on retrouve chez les jeunes que nous avons",
       "image": "https://www.exemplaire.com.ulaval.ca/wp-content/uploads/2026/05/Image-de-une.jpg",
       "leadExcerpt": "La confiance des 18 à 34 ans envers les médias traditionnels est en recul constant depuis une dizaine d’années, d'après l'édition 2025 du Digital News Report (DNR). Cette évolution s'expliquerait notamment par l'évolution des formats numériques et l’influence de certains genres journalistiques. Dans ce brouhaha, les médias ajoutent-ils de la confusion à la confusion ?",
-      "leadImageReady": true,
-      "sourceImageCredit": "Crédit photo : L'Exemplaire",
-      "sourceImageCreator": "",
-      "sourceImageCreditUrl": "https://www.exemplaire.com.ulaval.ca/a-la-une/les-jeunes-et-les-medias-dactualite-une-confiance-de-plus-en-plus-erodee/?utm_source=rss&utm_medium=rss&utm_campaign=les-jeunes-et-les-medias-dactualite-une-confiance-de-plus-en-plus-erodee",
-      "sourceImageCreditFrom": "media",
-      "sourceImageCreditCited": false,
-      "sourceImageCreditImageKey": "image-de-une.jpg",
-      "sourceImageCreditRev": 7
+      "leadImageReady": true
     },
     {
       "source": "L'Exemplaire",
@@ -1117,14 +1005,7 @@
       "excerpt": "Une boutique de plus ! En mars dernier, Renaissance, une chaîne de friperies québécoise, ouvre une succursale de 18 000 pieds au centre commercial Laurier Québec. Signe, sans doute, d’une évolution dans les habitudes de consommation dans le commerce de détail. L’engouement pour",
       "image": "https://www.exemplaire.com.ulaval.ca/wp-content/uploads/2026/04/Marcelle-Friperie-nomade.jpg",
       "leadExcerpt": "Les articles de seconde main ont le vent en poupe sur les réseaux sociaux. Les boutiques d'occasion bourgeonnent de plus en plus dans les secteurs commerçants. Certains adeptes de ces achats pensent même lutter contre la fast fashion . Mais cet intérêt pour les articles usagés reflète-t-il vraiment de meilleures habitudes de consommation ?",
-      "leadImageReady": true,
-      "sourceImageCredit": "Photo : Mélissa Bouchard",
-      "sourceImageCreator": "Mélissa Bouchard",
-      "sourceImageCreditUrl": "https://www.exemplaire.com.ulaval.ca/a-la-une/achat-de-seconde-main-une-mode-dans-la-mode/?utm_source=rss&utm_medium=rss&utm_campaign=achat-de-seconde-main-une-mode-dans-la-mode",
-      "sourceImageCreditFrom": "article",
-      "sourceImageCreditCited": true,
-      "sourceImageCreditImageKey": "marcelle-friperie-nomade.jpg",
-      "sourceImageCreditRev": 7
+      "leadImageReady": true
     },
     {
       "source": "L'Exemplaire",
@@ -1139,14 +1020,7 @@
       "excerpt": "Les militants du NPD auraient pu choisir de poursuivre une approche plus pragmatique avec Heather McPherson, la seule députée élue du NPD qui s’est lancée dans la course à la chefferie. Principale rivale d’Avi Lewis, elle a terminé deuxième à l’issue du scrutin, avec un score 29",
       "image": "https://www.exemplaire.com.ulaval.ca/wp-content/uploads/2026/05/Avi-Lewis-3-e1778471976855.jpg",
       "leadExcerpt": "Le 29 mars dernier, Avi Lewis a été élu chef du Nouveau Parti démocratique (NPD) avec l'appui de 56 % des 71 000 membres qui ont voté. Il succède ainsi à Jagmeet Singh, qui a mené le parti fédéral à une défaite historique l’an dernier. Ouvertement anticapitaliste et populiste, Avi Lewis mise sur un retour assumé à gauche pour relancer le NPD. Pour d’autres militants, le parti est en train de se radicaliser.",
-      "leadImageReady": true,
-      "sourceImageCredit": "Photo : John Woods / La Presse canadienne",
-      "sourceImageCreator": "John Woods / La Presse canadienne",
-      "sourceImageCreditUrl": "https://www.exemplaire.com.ulaval.ca/a-la-une/le-npd-soigne-t-il-sa-gauche-ou-se-radicalise-t-il/?utm_source=rss&utm_medium=rss&utm_campaign=le-npd-soigne-t-il-sa-gauche-ou-se-radicalise-t-il",
-      "sourceImageCreditFrom": "article",
-      "sourceImageCreditCited": true,
-      "sourceImageCreditImageKey": "avi-lewis-3-e1778471976855.jpg",
-      "sourceImageCreditRev": 7
+      "leadImageReady": true
     },
     {
       "source": "L'Exemplaire",
@@ -1315,14 +1189,7 @@
       "date": "2026-05-11T20:43:55.000Z",
       "excerpt": "Sabrina Coccimiglio Copy Editor The winter 2026 semester is coming to an end. Slowly, though it may not feel like it right now, the academic stress will cease, and summer will be just around the corner. Think of the fresh sun on your skin, and the light breeze passing by you.",
       "image": "https://theplantnews.com/wp-content/uploads/2026/05/image-2-1.jpeg",
-      "leadImageReady": true,
-      "sourceImageCredit": "Photo credit: The Plant",
-      "sourceImageCreator": "",
-      "sourceImageCreditUrl": "https://theplantnews.com/2026/05/11/re-play-the-games-from-your-childhood/",
-      "sourceImageCreditFrom": "media",
-      "sourceImageCreditCited": false,
-      "sourceImageCreditImageKey": "image-2-1.jpeg",
-      "sourceImageCreditRev": 7
+      "leadImageReady": true
     },
     {
       "source": "The Plant",
@@ -1385,13 +1252,6 @@
       "date": "2026-05-11T20:43:48.000Z",
       "excerpt": "Via My Little Princess (2011) Minola GrentEditor-in-Chief Every story has the right to be told. Even difficult stories of abuse and manipulation do. So, with an asterisk: leave the children out of this. In the midst of the 1970s cultural confusion, Franco-Romanian photographer",
       "image": "https://theplantnews.com/wp-content/uploads/2026/05/image-5.png",
-      "sourceImageCredit": "Photo: My Little Princess (2011)",
-      "sourceImageCreator": "My Little Princess (2011)",
-      "sourceImageCreditUrl": "https://theplantnews.com/2026/05/11/leave-the-children-out-of-this/",
-      "sourceImageCreditFrom": "article",
-      "sourceImageCreditCited": true,
-      "sourceImageCreditImageKey": "image-5.png",
-      "sourceImageCreditRev": 7,
       "leadImageReady": true
     },
     {
@@ -1413,7 +1273,14 @@
       "sourceImageCreditCited": true,
       "sourceImageCreditImageKey": "image-5.jpeg",
       "sourceImageCreditRev": 7,
-      "leadImageReady": false
+      "leadImageReady": false,
+      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/1/13/Katseye_at_Wango_Tango_2025_%28cropped%29.jpg",
+      "imageTitle": "Katseye at Wango Tango 2025 (cropped)",
+      "imageCredit": "Photo : Warmtoned / CC BY · Openverse",
+      "imageCreator": "Warmtoned",
+      "imageLicense": "by",
+      "imageProvider": "openverse",
+      "imageSourceUrl": "https://commons.wikimedia.org/w/index.php?curid=170993044"
     },
     {
       "source": "Quartier Libre",
@@ -1555,14 +1422,7 @@
       "excerpt": "Pendant longtemps, ces athlètes amateurs qui participaient à des épreuves de longues distances comme le marathon ou le triathlon étaient dans la marge. Depuis la pandémie de COVID-19, les sportifs de sports organisés se sont retrouvés devant un dilemme : s’assoir sur le sofa ou",
       "image": "https://www.exemplaire.com.ulaval.ca/wp-content/uploads/2026/05/IMG_2365-scaled.jpeg",
       "leadExcerpt": "Si tous vos amis s’entrainent comme des athlètes à temps plein et vous parlent constamment de leur « split » sur Strava, c’est que vous êtes dans la course. Les sports d’endurance extrême sont plus populaires que jamais, particulièrement chez les jeunes adultes. Pour le meilleur et — parfois — pour le pire.",
-      "leadImageReady": true,
-      "sourceImageCredit": "Photo : L'exemplaire / Charles Leblanc",
-      "sourceImageCreator": "L'exemplaire / Charles Leblanc",
-      "sourceImageCreditUrl": "https://www.exemplaire.com.ulaval.ca/a-la-une/sports-dendurance-quand-est-ce-le-temps-de-arreter/?utm_source=rss&utm_medium=rss&utm_campaign=sports-dendurance-quand-est-ce-le-temps-de-arreter",
-      "sourceImageCreditFrom": "article",
-      "sourceImageCreditCited": true,
-      "sourceImageCreditImageKey": "img_2365.jpeg",
-      "sourceImageCreditRev": 7
+      "leadImageReady": true
     },
     {
       "source": "L'Exemplaire",
@@ -1577,14 +1437,7 @@
       "excerpt": "Le restaurant Le Parlementaire est l’un des seuls restaurants au monde, situé dans un parlement, encore en activité (photo: Juliette Deshayes / L’Exemplaire). Écoutez « Quand la politique passe à table » et vous ne regarderez plus jamais une assiette de la même façon ! The post",
       "image": "https://www.exemplaire.com.ulaval.ca/wp-content/uploads/2026/05/politiquetable.png",
       "leadExcerpt": "Discuter de contrats politiques, c’est bien. Mais, en se régalant autour d’un bon repas, on a vite compris que c’était mieux. Cette stratégie de négociation s’appelle la diplomatie culinaire . À l’aide de Sébastien Laframboise, chef exécutif du restaurant Le Parlementaire, à l’Assemblée Nationale de Québec, L’Exemplaire cherche à éclaircir ce concept, tout en faisant sourire ces auditeurs.",
-      "leadImageReady": true,
-      "sourceImageCredit": "Photo : Juliette Deshayes / L’Exemplaire",
-      "sourceImageCreator": "Juliette Deshayes / L’Exemplaire",
-      "sourceImageCreditUrl": "https://www.exemplaire.com.ulaval.ca/a-la-une/quand-la-politique-passe-a-table/?utm_source=rss&utm_medium=rss&utm_campaign=quand-la-politique-passe-a-table",
-      "sourceImageCreditFrom": "article",
-      "sourceImageCreditCited": true,
-      "sourceImageCreditImageKey": "politiquetable.png",
-      "sourceImageCreditRev": 7
+      "leadImageReady": true
     },
     {
       "source": "Montréal Campus",
@@ -1641,14 +1494,7 @@
       "date": "2026-05-04T13:12:21.000Z",
       "excerpt": "On écoute de la musique tous les jours, souvent sans vraiment se demander la raison pour laquelle on tombe sur tel ou tel son. Entre les playlists, TikTok et les recommandations automatiques, une question se pose : est-ce que nos goûts musicaux sont encore vraiment les nôtres,",
       "image": "https://zonecampus.ca/wp-content/uploads/2026/04/IMG_3417.jpeg",
-      "leadImageReady": true,
-      "sourceImageCredit": "Crédit photo : Zone Campus",
-      "sourceImageCreator": "",
-      "sourceImageCreditUrl": "https://zonecampus.ca/le-beat-critique-est-ce-que-lalgorithme-controle-vraiment-nos-gouts-musicaux/",
-      "sourceImageCreditFrom": "media",
-      "sourceImageCreditCited": false,
-      "sourceImageCreditImageKey": "img_3417.jpeg",
-      "sourceImageCreditRev": 7
+      "leadImageReady": true
     },
     {
       "source": "Montréal Campus",
@@ -1920,14 +1766,7 @@
       "excerpt": "On April 9, the McGill Institute of Islamic Studies hosted a panel event titled “Journalism After Gaza: A Roundtable Discussion on the Present & Future of the Media,” featuring Saman Malik, Sana Saeed, and Kareem Shaheen. The panel was led by Pasha M. Khan, associate professor",
       "image": "https://www.thetribune.ca/wp-content/uploads/2026/04/Untitled-11-scaled.jpeg",
       "leadExcerpt": "The panelists next reflected on how, in the past decade, journalists across Canada have repeatedly communicated their discontent with mainstream media’s vague coverage of Palestine through open letters . However, as Malik—director, writer, and former CBC producer for the fifth estate , Big News , and For the Culture —noted, these letters were often met with minimal institutional accountability—if not backlash and aggression.",
-      "leadImageReady": true,
-      "sourceImageCredit": "Photo : Reya Khanna",
-      "sourceImageCreator": "Reya Khanna",
-      "sourceImageCreditUrl": "https://www.thetribune.ca/student-life/journalism-after-gaza-panel-discusses-media-bias-and-the-future-of-reporting-in-palestine-27042026/?utm_source=rss&utm_medium=rss&utm_campaign=journalism-after-gaza-panel-discusses-media-bias-and-the-future-of-reporting-in-palestine-27042026",
-      "sourceImageCreditFrom": "article",
-      "sourceImageCreditCited": true,
-      "sourceImageCreditImageKey": "untitled-11.jpeg",
-      "sourceImageCreditRev": 7
+      "leadImageReady": true
     },
     {
       "source": "Zone Campus",
@@ -1941,14 +1780,7 @@
       "date": "2026-04-24T20:00:50.000Z",
       "excerpt": "Le grand retour : Orelsan revient sur le devant de la scène après le succès majeur de Civilisation, confirmant son statut de figure incontournable du rap français contemporain. Après s’être illustré dans le cinéma et enchaîné plusieurs projets marquants, l’artiste crée la",
       "image": "https://zonecampus.ca/wp-content/uploads/2026/04/IMG_3397-1.jpeg",
-      "leadImageReady": true,
-      "sourceImageCredit": "Crédit photo : Zone Campus",
-      "sourceImageCreator": "",
-      "sourceImageCreditUrl": "https://zonecampus.ca/le-beat-critique-la-fuite-en-avant-le-grand-retour-d-orelsan/",
-      "sourceImageCreditFrom": "media",
-      "sourceImageCreditCited": false,
-      "sourceImageCreditImageKey": "img_3397-1.jpeg",
-      "sourceImageCreditRev": 7
+      "leadImageReady": true
     },
     {
       "source": "Zone Campus",
@@ -2114,7 +1946,14 @@
       "sourceImageCreditCited": true,
       "sourceImageCreditImageKey": "img_0291-2.jpg",
       "sourceImageCreditRev": 4,
-      "leadImageReady": false
+      "leadImageReady": false,
+      "stockImage": "https://live.staticflickr.com/3860/14703738680_4423564c64_b.jpg",
+      "imageTitle": "Dragon",
+      "imageCredit": "Photo : Artur Rydzewski / CC BY-SA · Openverse",
+      "imageCreator": "Artur Rydzewski",
+      "imageLicense": "by-sa",
+      "imageProvider": "openverse",
+      "imageSourceUrl": "https://www.flickr.com/photos/119200904@N07/14703738680"
     },
     {
       "source": "The Link",
@@ -2177,14 +2016,7 @@
       "imageCreator": "Ken Lund",
       "imageLicense": "by-sa",
       "imageProvider": "openverse",
-      "imageSourceUrl": "https://www.flickr.com/photos/75683070@N00/29773256350",
-      "sourceImageCredit": "Photo credit: The Tribune",
-      "sourceImageCreator": "",
-      "sourceImageCreditUrl": "https://www.thetribune.ca/features/how-can-i-show-you-im-doing-better-if-theres-nothing-good-for-me-to-do/?utm_source=rss&utm_medium=rss&utm_campaign=how-can-i-show-you-im-doing-better-if-theres-nothing-good-for-me-to-do",
-      "sourceImageCreditFrom": "media",
-      "sourceImageCreditCited": false,
-      "sourceImageCreditImageKey": "design-sans-titre.png",
-      "sourceImageCreditRev": 7
+      "imageSourceUrl": "https://www.flickr.com/photos/75683070@N00/29773256350"
     },
     {
       "source": "The Link",
@@ -2241,14 +2073,7 @@
       "date": "2026-04-11T23:32:01.000Z",
       "excerpt": "A review of the Strand of the Night Theatre’s production at Moyse Hall with director and cast interviews The post The Seagull: An Automorphic Play About Art and Humanity appeared first on The McGill Daily .",
       "image": "https://www.mcgilldaily.com/wp-content/uploads/2026/04/Mar17_seagull-102.jpg",
-      "leadImageReady": true,
-      "sourceImageCredit": "Photo : Janna Toubal",
-      "sourceImageCreator": "Janna Toubal",
-      "sourceImageCreditUrl": "https://www.mcgilldaily.com/2026/04/the-seagull-an-automorphic-play-about-art-and-humanity/",
-      "sourceImageCreditFrom": "article",
-      "sourceImageCreditCited": true,
-      "sourceImageCreditImageKey": "mar17_seagull-102.jpg",
-      "sourceImageCreditRev": 7
+      "leadImageReady": true
     },
     {
       "source": "The Link",
@@ -2422,14 +2247,7 @@
       "imageCreator": "Jeangagnon",
       "imageLicense": "by-sa",
       "imageProvider": "openverse",
-      "imageSourceUrl": "https://commons.wikimedia.org/w/index.php?curid=29711741",
-      "sourceImageCredit": "Photo credit: The Tribune",
-      "sourceImageCreator": "",
-      "sourceImageCreditUrl": "https://www.thetribune.ca/features/your-health-your-problem/?utm_source=rss&utm_medium=rss&utm_campaign=your-health-your-problem",
-      "sourceImageCreditFrom": "media",
-      "sourceImageCreditCited": false,
-      "sourceImageCreditImageKey": "bottle.png",
-      "sourceImageCreditRev": 7
+      "imageSourceUrl": "https://commons.wikimedia.org/w/index.php?curid=29711741"
     },
     {
       "source": "The Tribune",
@@ -2443,14 +2261,7 @@
       "date": "2026-04-07T22:00:00.000Z",
       "excerpt": "At the airport, I learned to expect the pauses, the extra questions, the glances at my passport that lingered a second too long. I did everything right—got into McGill, applied for my visa, and carried proof that I would leave once my degree was over. Even in places I call [Read",
       "image": "https://www.thetribune.ca/wp-content/uploads/2026/04/Rup_OTB.jpg",
-      "leadImageReady": true,
-      "sourceImageCredit": "Photo credit: The Tribune",
-      "sourceImageCreator": "",
-      "sourceImageCreditUrl": "https://www.thetribune.ca/opinion/oh-the-places-ill-go-but-not-stay-07042026/?utm_source=rss&utm_medium=rss&utm_campaign=oh-the-places-ill-go-but-not-stay-07042026",
-      "sourceImageCreditFrom": "media",
-      "sourceImageCreditCited": false,
-      "sourceImageCreditImageKey": "rup_otb.jpg",
-      "sourceImageCreditRev": 7
+      "leadImageReady": true
     },
     {
       "source": "The Tribune",
@@ -2485,14 +2296,7 @@
       "date": "2026-04-07T10:05:00.000Z",
       "excerpt": "Content warning: Mentions of racial violence After Black Sisterhood at McGill (BSISSY) began recruiting members to start an Alpha Kappa Alpha (AKA) sorority chapter at McGill, co-founders Lena Karis Moussio, U1 Arts, and Astou Badiane, U1 Arts, received racist comments and",
       "image": "https://www.thetribune.ca/wp-content/uploads/2026/04/Untitled_Artwork-149-scaled.png",
-      "leadImageReady": true,
-      "sourceImageCredit": "Photo : Eliot Loose",
-      "sourceImageCreator": "Eliot Loose",
-      "sourceImageCreditUrl": "https://www.thetribune.ca/news/mcgill-news/black-sisterhood-at-mcgill-targeted-with-online-racist-harassment-07042026/?utm_source=rss&utm_medium=rss&utm_campaign=black-sisterhood-at-mcgill-targeted-with-online-racist-harassment-07042026",
-      "sourceImageCreditFrom": "article",
-      "sourceImageCreditCited": true,
-      "sourceImageCreditImageKey": "untitled_artwork-149.png",
-      "sourceImageCreditRev": 7
+      "leadImageReady": true
     },
     {
       "source": "The Tribune",
@@ -2506,14 +2310,7 @@
       "date": "2026-04-07T10:05:00.000Z",
       "excerpt": "On March 19, voting for the Referendum Regarding the Academic and Cultural Boycott of Israel to Preserve Academic Freedom (PACBI) opened to all members of the Law Students’ Association (LSA). The motion, put forward by Law Students for Palestine at McGill (LS4PM) and McGill",
       "image": "https://www.thetribune.ca/wp-content/uploads/2026/04/IMG_2550-scaled.png",
-      "leadImageReady": true,
-      "sourceImageCredit": "Photo credit: The Tribune",
-      "sourceImageCreator": "",
-      "sourceImageCreditUrl": "https://www.thetribune.ca/news/referendum-to-boycott-israeli-institutions-passes-with-the-highest-voting-turnout-in-recent-lsa-history-07042026/?utm_source=rss&utm_medium=rss&utm_campaign=referendum-to-boycott-israeli-institutions-passes-with-the-highest-voting-turnout-in-recent-lsa-history-07042026",
-      "sourceImageCreditFrom": "media",
-      "sourceImageCreditCited": false,
-      "sourceImageCreditImageKey": "img_2550.png",
-      "sourceImageCreditRev": 7
+      "leadImageReady": true
     },
     {
       "source": "The Tribune",
@@ -2527,14 +2324,7 @@
       "date": "2026-04-07T10:05:00.000Z",
       "excerpt": "Before the price of coffee skyrocketed and the death of third spaces; before the tyrannical reign of Ticketmaster and the monopolization of the music industry; before we slipped into antisocial seclusion and let blue light mollify our beautiful brains, there was once an",
       "image": "https://www.thetribune.ca/wp-content/uploads/2026/04/AE1_ANNA-SEGER-AND-KATYA-LOIDAP.jpg",
-      "leadImageReady": true,
-      "sourceImageCredit": "Photo credit: The Tribune",
-      "sourceImageCreator": "",
-      "sourceImageCreditUrl": "https://www.thetribune.ca/a-e/culture/the-forgotten-history-of-the-montreal-coffeehouse-07042026/?utm_source=rss&utm_medium=rss&utm_campaign=the-forgotten-history-of-the-montreal-coffeehouse-07042026",
-      "sourceImageCreditFrom": "media",
-      "sourceImageCreditCited": false,
-      "sourceImageCreditImageKey": "ae1_anna-seger-and-katya-loidap.jpg",
-      "sourceImageCreditRev": 7
+      "leadImageReady": true
     },
     {
       "source": "The Tribune",
@@ -2548,14 +2338,7 @@
       "date": "2026-04-07T10:05:00.000Z",
       "excerpt": "Antoine – BSc, Honours Biology Dear Bio, If you’re into bio, you’d better learn to love DNA. Breathe it. Dream about it. Because everything comes back to DNA. What’s the reason behind ‘phenomenon X?’ A gene. ‘Phenomenon Y?’ Another gene. Are you curious about the composition of",
       "image": "https://www.thetribune.ca/wp-content/uploads/2026/04/scitech1_annaseger-scaled.jpg",
-      "leadImageReady": true,
-      "sourceImageCredit": "Photo credit: The Tribune",
-      "sourceImageCreator": "",
-      "sourceImageCreditUrl": "https://www.thetribune.ca/sci-tech/a-reflection-on-mcgills-science-programs-from-graduating-scitech-staff-writers-07042026/?utm_source=rss&utm_medium=rss&utm_campaign=a-reflection-on-mcgills-science-programs-from-graduating-scitech-staff-writers-07042026",
-      "sourceImageCreditFrom": "media",
-      "sourceImageCreditCited": false,
-      "sourceImageCreditImageKey": "scitech1_annaseger.jpg",
-      "sourceImageCreditRev": 7
+      "leadImageReady": true
     },
     {
       "source": "The Tribune",
@@ -2569,14 +2352,7 @@
       "date": "2026-04-07T10:05:00.000Z",
       "excerpt": "Content warning: Antisemitism and violent threats A recent act of antisemitic vandalism at McGill is raising renewed concerns about campus safety for Jewish students. The graffiti, found in a bathroom stall in the Faculty of Medicine, read “Kill all Jews” and “Jews out of McGill",
       "image": "https://www.thetribune.ca/wp-content/uploads/2026/04/HAWqjMPXsAABxB4.webp",
-      "leadImageReady": true,
-      "sourceImageCredit": "Photo credit: The Tribune",
-      "sourceImageCreator": "",
-      "sourceImageCreditUrl": "https://www.thetribune.ca/news/mcgill-investigating-antisemitic-vandalism-in-faculty-of-medicine-07042026/?utm_source=rss&utm_medium=rss&utm_campaign=mcgill-investigating-antisemitic-vandalism-in-faculty-of-medicine-07042026",
-      "sourceImageCreditFrom": "media",
-      "sourceImageCreditCited": false,
-      "sourceImageCreditImageKey": "hawqjmpxsaabxb4.webp",
-      "sourceImageCreditRev": 7
+      "leadImageReady": true
     },
     {
       "source": "The Tribune",
@@ -2590,14 +2366,7 @@
       "date": "2026-04-07T10:05:00.000Z",
       "excerpt": "Sophie Courville Sophie Courville, a physiology senior and Cross Country runner, was voted Réseau du sport étudiant du Québec (RSEQ) Women’s Cross Country Athlete of the Year, led the team with a fifth-place finish at the U SPORTS National Championships, and earned all-star",
       "image": "https://www.thetribune.ca/wp-content/uploads/2026/04/abbey-locker-sports-1.jpg",
-      "leadImageReady": true,
-      "sourceImageCredit": "Photo credit: The Tribune",
-      "sourceImageCreator": "",
-      "sourceImageCreditUrl": "https://www.thetribune.ca/sports/senior-spotlight-sophie-courville-ayoub-sabri-and-erik-linseisen-07042026/?utm_source=rss&utm_medium=rss&utm_campaign=senior-spotlight-sophie-courville-ayoub-sabri-and-erik-linseisen-07042026",
-      "sourceImageCreditFrom": "media",
-      "sourceImageCreditCited": false,
-      "sourceImageCreditImageKey": "abbey-locker-sports-1.jpg",
-      "sourceImageCreditRev": 7
+      "leadImageReady": true
     },
     {
       "source": "The Campus",
@@ -2769,7 +2538,14 @@
       "sourceImageCreditCited": true,
       "sourceImageCreditImageKey": "opinions_1_step-outside_cred-piper-howell.jpg",
       "sourceImageCreditRev": 7,
-      "leadImageReady": false
+      "leadImageReady": false,
+      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/f/fc/GH_Step_outside_Grayson_Highlands_State_Park_Virginia_%2816243872530%29.jpg",
+      "imageTitle": "File:GH Step outside Grayson Highlands State Park Virginia (16243872530).jpg",
+      "imageCredit": "Photo : Virginia State Parks / CC BY 2.0 · Wikimedia Commons",
+      "imageCreator": "Virginia State Parks",
+      "imageLicense": "CC BY 2.0",
+      "imageProvider": "wikimedia",
+      "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:GH_Step_outside_Grayson_Highlands_State_Park_Virginia_(16243872530).jpg"
     },
     {
       "source": "The Campus",
@@ -2859,14 +2635,7 @@
       "sourceImageCreditCited": true,
       "sourceImageCreditImageKey": "news_purplecircle_creds_bualumnirelations.jpg",
       "sourceImageCreditRev": 7,
-      "leadImageReady": false,
-      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/6/65/University_of_Windsor%2C_Windsor%2C_Ontario_%2821585933119%29.jpg",
-      "imageTitle": "University of Windsor, Windsor, Ontario (21585933119)",
-      "imageCredit": "Photo : Ken Lund from Reno, Nevada, USA / CC BY-SA · Openverse",
-      "imageCreator": "Ken Lund from Reno, Nevada, USA",
-      "imageLicense": "by-sa",
-      "imageProvider": "openverse",
-      "imageSourceUrl": "https://commons.wikimedia.org/w/index.php?curid=54268103"
+      "leadImageReady": false
     },
     {
       "source": "The Campus",
@@ -2964,14 +2733,7 @@
       "date": "2026-03-25T11:00:00.000Z",
       "excerpt": "Retour sur la projection et discussion pour les 50 ans du Groupe Intervention Vidéo. L’article Au-delà de l’image est apparu en premier sur Le Délit .",
       "image": "https://www.delitfrancais.com/wp-content/uploads/2026/03/GIV-films-feministes.png",
-      "leadImageReady": true,
-      "sourceImageCredit": "Photo : Catvy Tran",
-      "sourceImageCreator": "Catvy Tran",
-      "sourceImageCreditUrl": "https://www.delitfrancais.com/2026/03/25/au-dela-de-limage/",
-      "sourceImageCreditFrom": "article",
-      "sourceImageCreditCited": true,
-      "sourceImageCreditImageKey": "giv-films-feministes.png",
-      "sourceImageCreditRev": 7
+      "leadImageReady": true
     },
     {
       "source": "Le Délit",
@@ -2985,14 +2747,7 @@
       "date": "2026-03-25T11:00:00.000Z",
       "excerpt": "L’animation québécoise reconnue à la cérémonie. L’article Une course serrée aux 98e Oscars est apparu en premier sur Le Délit .",
       "image": "https://www.delitfrancais.com/wp-content/uploads/2026/03/Capture-decran-le-2026-03-24-a-13.32.31.png",
-      "leadImageReady": true,
-      "sourceImageCredit": "Photo : Photo tirée du site de l’ONF",
-      "sourceImageCreator": "Photo tirée du site de l’ONF",
-      "sourceImageCreditUrl": "https://www.delitfrancais.com/2026/03/25/une-course-serree-aux-98e-oscars/",
-      "sourceImageCreditFrom": "article",
-      "sourceImageCreditCited": true,
-      "sourceImageCreditImageKey": "capture-decran-le-2026-03-24-a-13.32.31.png",
-      "sourceImageCreditRev": 7
+      "leadImageReady": true
     },
     {
       "source": "Le Délit",
@@ -3006,14 +2761,7 @@
       "date": "2026-03-25T11:00:00.000Z",
       "excerpt": "Sa sortie de l’anonymat soulève des questions sur l'art du tag. L’article Révélation de l’identité de Banksy est apparu en premier sur Le Délit .",
       "image": "https://www.delitfrancais.com/wp-content/uploads/2026/03/Banksy-bfmtv.webp",
-      "leadImageReady": true,
-      "sourceImageCredit": "Photo : Photo tirée de BFMTV",
-      "sourceImageCreator": "Photo tirée de BFMTV",
-      "sourceImageCreditUrl": "https://www.delitfrancais.com/2026/03/25/revelation-de-lidentite-de-banksy/",
-      "sourceImageCreditFrom": "article",
-      "sourceImageCreditCited": true,
-      "sourceImageCreditImageKey": "banksy-bfmtv.webp",
-      "sourceImageCreditRev": 7
+      "leadImageReady": true
     },
     {
       "source": "Le Délit",
@@ -3027,14 +2775,7 @@
       "date": "2026-03-25T11:00:00.000Z",
       "excerpt": "Réflexion sur l’usage de l’écriture inclusive. L’article Dis-moi comment écrire, je te dirai qui tu es est apparu en premier sur Le Délit .",
       "image": "https://www.delitfrancais.com/wp-content/uploads/2026/03/ecriture-inclusive.png",
-      "leadImageReady": true,
-      "sourceImageCredit": "Photo : Catvy Tran",
-      "sourceImageCreator": "Catvy Tran",
-      "sourceImageCreditUrl": "https://www.delitfrancais.com/2026/03/25/dis-moi-comment-ecrire-je-te-dirai-qui-tu-es-2/",
-      "sourceImageCreditFrom": "article",
-      "sourceImageCreditCited": true,
-      "sourceImageCreditImageKey": "ecriture-inclusive.png",
-      "sourceImageCreditRev": 7
+      "leadImageReady": true
     },
     {
       "source": "Le Délit",
@@ -3068,14 +2809,7 @@
       "date": "2026-03-25T11:00:00.000Z",
       "excerpt": "La sobriété budgétaire de Québec pour 2026-2027. L’article L’enseignement supérieur québécois profite d’une hausse budgétaire importante est apparu en premier sur Le Délit .",
       "image": "https://www.delitfrancais.com/wp-content/uploads/2026/03/Campus2-930x620.jpg",
-      "leadImageReady": true,
-      "sourceImageCredit": "Photo : Toscane Ralaimongo",
-      "sourceImageCreator": "Toscane Ralaimongo",
-      "sourceImageCreditUrl": "https://www.delitfrancais.com/2026/03/25/lenseignement-superieur-quebecois-profite-dune-hausse-budgetaire-importante/",
-      "sourceImageCreditFrom": "article",
-      "sourceImageCreditCited": true,
-      "sourceImageCreditImageKey": "campus2.jpg",
-      "sourceImageCreditRev": 7
+      "leadImageReady": true
     },
     {
       "source": "Le Délit",
@@ -3089,14 +2823,7 @@
       "date": "2026-03-25T11:00:00.000Z",
       "excerpt": "Quel sera le prix d'une ère où chaque aspect de notre vie est jetable? L’article Une génération jetable est apparu en premier sur Le Délit .",
       "image": "https://www.delitfrancais.com/wp-content/uploads/2026/03/surconsommation-1.jpeg",
-      "leadImageReady": true,
-      "sourceImageCredit": "Photo : Catvy Tran",
-      "sourceImageCreator": "Catvy Tran",
-      "sourceImageCreditUrl": "https://www.delitfrancais.com/2026/03/25/une-generation-jetable/",
-      "sourceImageCreditFrom": "article",
-      "sourceImageCreditCited": true,
-      "sourceImageCreditImageKey": "surconsommation-1.jpeg",
-      "sourceImageCreditRev": 7
+      "leadImageReady": true
     },
     {
       "source": "Le Délit",
@@ -3110,14 +2837,7 @@
       "date": "2026-03-25T11:00:00.000Z",
       "excerpt": "Individuellement comme en équipe, McGill domine les podiums. L’article Deuxième étoile aux Jeux de la traduction est apparu en premier sur Le Délit .",
       "image": "https://www.delitfrancais.com/wp-content/uploads/2026/03/080-20260315-.jpg",
-      "leadImageReady": true,
-      "sourceImageCredit": "Photo : Jacques Boivin",
-      "sourceImageCreator": "Jacques Boivin",
-      "sourceImageCreditUrl": "https://www.delitfrancais.com/2026/03/25/deuxieme-etoile-aux-jeux-de-la-traduction/",
-      "sourceImageCreditFrom": "article",
-      "sourceImageCreditCited": true,
-      "sourceImageCreditImageKey": "080-20260315-.jpg",
-      "sourceImageCreditRev": 7
+      "leadImageReady": true
     },
     {
       "source": "Le Délit",
@@ -3131,14 +2851,7 @@
       "date": "2026-03-25T11:00:00.000Z",
       "excerpt": "La compétition francophone se conclura lors d’une épreuve ouverte au public. L’article Concours d’éloquence : place à la finale! est apparu en premier sur Le Délit .",
       "image": "https://www.delitfrancais.com/wp-content/uploads/2026/03/00EA5795-4909-4FAE-91BB-8CE72F590220.jpg",
-      "leadImageReady": true,
-      "sourceImageCredit": "Photo : Photo fournie par l’équipe d’Éloquence McGill",
-      "sourceImageCreator": "Photo fournie par l’équipe d’Éloquence McGill",
-      "sourceImageCreditUrl": "https://www.delitfrancais.com/2026/03/25/concours-deloquence-place-a-la-finale/",
-      "sourceImageCreditFrom": "article",
-      "sourceImageCreditCited": true,
-      "sourceImageCreditImageKey": "00ea5795-4909-4fae-91bb-8ce72f590220.jpg",
-      "sourceImageCreditRev": 7
+      "leadImageReady": true
     },
     {
       "source": "Le Délit",
@@ -3152,14 +2865,7 @@
       "date": "2026-03-25T11:00:00.000Z",
       "excerpt": "Nous avons assez payé. Nous manifestons contre les pourboires – vous venez ? L’article En grève contre le pourboire! est apparu en premier sur Le Délit .",
       "image": "https://www.delitfrancais.com/wp-content/uploads/2026/03/pourboire-1.png",
-      "leadImageReady": true,
-      "sourceImageCredit": "Photo : Catvy Tran",
-      "sourceImageCreator": "Catvy Tran",
-      "sourceImageCreditUrl": "https://www.delitfrancais.com/2026/03/25/en-greve-contre-le-pourboire/",
-      "sourceImageCreditFrom": "article",
-      "sourceImageCreditCited": true,
-      "sourceImageCreditImageKey": "pourboire-1.png",
-      "sourceImageCreditRev": 7
+      "leadImageReady": true
     },
     {
       "source": "Le Délit",
@@ -3173,14 +2879,7 @@
       "date": "2026-03-25T11:00:00.000Z",
       "excerpt": "Les travailleurs universitaires dénoncent une offre « insultante ». L’article McGill face aux revendications de l’AÉÉDEM est apparu en premier sur Le Délit .",
       "image": "https://www.delitfrancais.com/wp-content/uploads/2026/03/manif-2-scaled.jpg",
-      "leadImageReady": true,
-      "sourceImageCredit": "Photo : Héloïse Durning",
-      "sourceImageCreator": "Héloïse Durning",
-      "sourceImageCreditUrl": "https://www.delitfrancais.com/2026/03/25/mcgill-face-aux-revendications-de-laeedem/",
-      "sourceImageCreditFrom": "article",
-      "sourceImageCreditCited": true,
-      "sourceImageCreditImageKey": "manif-2.jpg",
-      "sourceImageCreditRev": 7
+      "leadImageReady": true
     },
     {
       "source": "Le Délit",
@@ -3194,14 +2893,7 @@
       "date": "2026-03-25T11:00:00.000Z",
       "excerpt": "La catastrophe environnementale à l'arrière-plan de la guerre au Moyen-Orient. L’article Le fascisme : un suicide collectif est apparu en premier sur Le Délit .",
       "image": "https://www.delitfrancais.com/wp-content/uploads/2026/03/GuerreIranNature.jpeg",
-      "leadImageReady": true,
-      "sourceImageCredit": "Photo : Félix Fournier",
-      "sourceImageCreator": "Félix Fournier",
-      "sourceImageCreditUrl": "https://www.delitfrancais.com/2026/03/25/le-fascisme-un-suicide-collectif/",
-      "sourceImageCreditFrom": "article",
-      "sourceImageCreditCited": true,
-      "sourceImageCreditImageKey": "guerreirannature.jpeg",
-      "sourceImageCreditRev": 7
+      "leadImageReady": true
     },
     {
       "source": "Le Délit",
@@ -3352,13 +3044,14 @@
       "excerpt": "Six women who have made a difference The post Spotlighting Powerful McGill Alumnae appeared first on The McGill Daily .",
       "image": "",
       "leadImageReady": false,
-      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/e/e2/McGill_University_downtown_campus_12.JPG",
-      "imageTitle": "McGill University downtown campus 12",
-      "imageCredit": "Photo : Jeangagnon / CC BY-SA · Openverse",
+      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/1/18/Wilson_Hall%2C_McGill_University.jpg",
+      "imageTitle": "Wilson Hall, McGill University",
+      "imageCredit": "Photo : Jeangagnon / CC BY-SA 3.0 · Wikimedia Commons",
       "imageCreator": "Jeangagnon",
-      "imageLicense": "by-sa",
-      "imageProvider": "openverse",
-      "imageSourceUrl": "https://commons.wikimedia.org/w/index.php?curid=29711741"
+      "imageLicense": "CC BY-SA 3.0",
+      "imageProvider": "campus-bank",
+      "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Wilson_Hall,_McGill_University.jpg",
+      "_campusBank": true
     },
     {
       "source": "The McGill Daily",
@@ -3372,14 +3065,7 @@
       "date": "2026-03-23T23:51:46.000Z",
       "excerpt": "A conversation with McGill alumnus and journalist Luca Léry Moffat The post Reporting in a Warzone appeared first on The McGill Daily .",
       "image": "https://www.mcgilldaily.com/wp-content/uploads/2026/03/moffat-930x620.jpg",
-      "leadImageReady": true,
-      "sourceImageCredit": "Photo : Courtesy of The Kyiv Independent",
-      "sourceImageCreator": "Courtesy of The Kyiv Independent",
-      "sourceImageCreditUrl": "https://www.mcgilldaily.com/2026/03/reporting-in-a-warzone/",
-      "sourceImageCreditFrom": "article",
-      "sourceImageCreditCited": true,
-      "sourceImageCreditImageKey": "moffat.jpg",
-      "sourceImageCreditRev": 7
+      "leadImageReady": true
     },
     {
       "source": "The McGill Daily",
@@ -3393,14 +3079,7 @@
       "date": "2026-03-23T20:15:52.000Z",
       "excerpt": "Hope dwindles for regime change and improved conditions The post Iran is Not Dealt a Fair Hand When it Comes to Democracy appeared first on The McGill Daily .",
       "image": "https://www.mcgilldaily.com/wp-content/uploads/2026/03/IMG_0264-930x620.png",
-      "leadImageReady": true,
-      "sourceImageCredit": "Photo : Golnar Saegh",
-      "sourceImageCreator": "Golnar Saegh",
-      "sourceImageCreditUrl": "https://www.mcgilldaily.com/2026/03/iran-is-not-dealt-a-fair-hand-when-it-comes-to-democracy/",
-      "sourceImageCreditFrom": "article",
-      "sourceImageCreditCited": true,
-      "sourceImageCreditImageKey": "img_0264.png",
-      "sourceImageCreditRev": 7
+      "leadImageReady": true
     },
     {
       "source": "The Campus",
@@ -3505,14 +3184,7 @@
       "date": "2026-03-23T12:00:00.000Z",
       "excerpt": "Student-run organization Girls Who Code seeks to empower women and gender-diverse students in computer science and related fields. The post Rewriting the Code: McGill Students Break Barriers in Computer Science appeared first on The McGill Daily .",
       "image": "https://www.mcgilldaily.com/wp-content/uploads/2026/03/GirlsWhoCode_photo-870x620.jpg",
-      "leadImageReady": true,
-      "sourceImageCredit": "Photo credit: The McGill Daily",
-      "sourceImageCreator": "",
-      "sourceImageCreditUrl": "https://www.mcgilldaily.com/2026/03/rewriting-the-code-mcgill-students-break-barriers-in-computer-science/",
-      "sourceImageCreditFrom": "media",
-      "sourceImageCreditCited": false,
-      "sourceImageCreditImageKey": "girlswhocode_photo.jpg",
-      "sourceImageCreditRev": 7
+      "leadImageReady": true
     },
     {
       "source": "The McGill Daily",
@@ -3526,14 +3198,7 @@
       "date": "2026-03-23T12:00:00.000Z",
       "excerpt": "Apathy and psychological exhaustion in the face of short-form content The post The Emotional Whiplash of Infinite Scroll appeared first on The McGill Daily .",
       "image": "https://www.mcgilldaily.com/wp-content/uploads/2026/03/Untitled_Artwork-2-930x620.png",
-      "leadImageReady": true,
-      "sourceImageCredit": "Photo : Nikihila Shanker",
-      "sourceImageCreator": "Nikihila Shanker",
-      "sourceImageCreditUrl": "https://www.mcgilldaily.com/2026/03/the-emotional-whiplash-of-infinite-scroll/",
-      "sourceImageCreditFrom": "article",
-      "sourceImageCreditCited": true,
-      "sourceImageCreditImageKey": "untitled_artwork-2.png",
-      "sourceImageCreditRev": 7
+      "leadImageReady": true
     },
     {
       "source": "The McGill Daily",
@@ -3589,14 +3254,7 @@
       "date": "2026-03-23T12:00:00.000Z",
       "excerpt": "A classic told through a shadowed figure The post Review: Hamnet, The Retelling of a Lost Figure appeared first on The McGill Daily .",
       "image": "https://www.mcgilldaily.com/wp-content/uploads/2026/03/IMG_1649-930x620.jpeg",
-      "leadImageReady": true,
-      "sourceImageCredit": "Photo : Jane Goodman",
-      "sourceImageCreator": "Jane Goodman",
-      "sourceImageCreditUrl": "https://www.mcgilldaily.com/2026/03/review-hamnet-the-retelling-of-a-lost-figure/",
-      "sourceImageCreditFrom": "article",
-      "sourceImageCreditCited": true,
-      "sourceImageCreditImageKey": "img_1649.jpeg",
-      "sourceImageCreditRev": 7
+      "leadImageReady": true
     },
     {
       "source": "The McGill Daily",
@@ -3610,14 +3268,7 @@
       "date": "2026-03-23T12:00:00.000Z",
       "excerpt": "A new platform for creative film interpretation. The post TVM Reveals the First Issue of Post-Credits Magazine appeared first on The McGill Daily .",
       "image": "https://www.mcgilldaily.com/wp-content/uploads/2026/03/P1080326-930x620.jpg",
-      "leadImageReady": true,
-      "sourceImageCredit": "Photo : Isabelle Lim",
-      "sourceImageCreator": "Isabelle Lim",
-      "sourceImageCreditUrl": "https://www.mcgilldaily.com/2026/03/tvm-reveals-the-first-issue-of-post-credits-magazine/",
-      "sourceImageCreditFrom": "article",
-      "sourceImageCreditCited": true,
-      "sourceImageCreditImageKey": "p1080326.jpg",
-      "sourceImageCreditRev": 7
+      "leadImageReady": true
     },
     {
       "source": "The McGill Daily",
@@ -3631,14 +3282,7 @@
       "date": "2026-03-23T12:00:00.000Z",
       "excerpt": "Cinzia & The Eclipse shares her thoughts on her newest EP The post The Wax Talk appeared first on The McGill Daily .",
       "image": "https://www.mcgilldaily.com/wp-content/uploads/2026/03/image-930x620.png",
-      "leadImageReady": true,
-      "sourceImageCredit": "Photo : Cinzia",
-      "sourceImageCreator": "Cinzia",
-      "sourceImageCreditUrl": "https://www.mcgilldaily.com/2026/03/the-wax-talk/",
-      "sourceImageCreditFrom": "article",
-      "sourceImageCreditCited": true,
-      "sourceImageCreditImageKey": "image.png",
-      "sourceImageCreditRev": 7
+      "leadImageReady": true
     },
     {
       "source": "The McGill Daily",
@@ -3652,14 +3296,7 @@
       "date": "2026-03-23T12:00:00.000Z",
       "excerpt": "FX’s new show puts an iconic couple under a new lens The post Another Doomed Love Story: The American Media & Carolyn Bessette appeared first on The McGill Daily .",
       "image": "https://www.mcgilldaily.com/wp-content/uploads/2026/03/Love-Story-Women-in-Media-930x620.jpg",
-      "leadImageReady": true,
-      "sourceImageCredit": "Photo : Annabelle Premont",
-      "sourceImageCreator": "Annabelle Premont",
-      "sourceImageCreditUrl": "https://www.mcgilldaily.com/2026/03/another-doomed-love-story-the-american-media-carolyn-bessette/",
-      "sourceImageCreditFrom": "article",
-      "sourceImageCreditCited": true,
-      "sourceImageCreditImageKey": "love-story-women-in-media.jpg",
-      "sourceImageCreditRev": 7
+      "leadImageReady": true
     },
     {
       "source": "Le Délit",
@@ -3718,14 +3355,7 @@
       "date": "2026-03-16T16:01:54.000Z",
       "excerpt": "McGill chapter of international non-profit empowers children through play The post The Power of Play appeared first on The McGill Daily .",
       "image": "https://www.mcgilldaily.com/wp-content/uploads/2026/03/JackGill-930x620.jpg",
-      "leadImageReady": true,
-      "sourceImageCredit": "Photo : Courtesy of Jack Gill",
-      "sourceImageCreator": "Courtesy of Jack Gill",
-      "sourceImageCreditUrl": "https://www.mcgilldaily.com/2026/03/the-power-of-play/",
-      "sourceImageCreditFrom": "article",
-      "sourceImageCreditCited": true,
-      "sourceImageCreditImageKey": "jackgill.jpg",
-      "sourceImageCreditRev": 7
+      "leadImageReady": true
     },
     {
       "source": "Exil",
@@ -3864,7 +3494,14 @@
       "sourceImageCreditFrom": "article",
       "sourceImageCreditCited": true,
       "sourceImageCreditUrl": "https://www.polyscope.qc.ca/blog/post/lZU7aZPFn4T8eG8oO1hX",
-      "leadImageReady": false
+      "leadImageReady": false,
+      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/8/8b/Dr_Daniel_Borsuk_and_Prime_Minister_Francois_Legault.jpg",
+      "imageTitle": "Dr Daniel Borsuk and Prime Minister Francois Legault",
+      "imageCredit": "Photo : Productionmartin / CC BY-SA · Openverse",
+      "imageCreator": "Productionmartin",
+      "imageLicense": "by-sa",
+      "imageProvider": "openverse",
+      "imageSourceUrl": "https://commons.wikimedia.org/w/index.php?curid=123638671"
     },
     {
       "source": "Le Polyscope",
