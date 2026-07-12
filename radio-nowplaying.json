@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-12T03:37:32.159Z",
+  "updatedAt": "2026-07-12T06:34:52.685Z",
   "timezone": "America/Toronto",
   "stations": {
     "chyz": {
@@ -21,27 +21,27 @@
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-12T03:37:22.984Z"
+      "checkedAt": "2026-07-12T06:34:44.375Z"
     },
     "cism": {
       "id": "cism",
       "name": "CISM 89,3",
       "current": {
-        "title": "Solénoïde",
+        "title": "Mix anglo",
         "source": "api-live",
-        "start": "19:00",
+        "start": "22:00",
         "url": "https://stream03.ustream.ca/cism128.mp3",
-        "slug": "solenoide"
+        "slug": "mix-anglo"
       },
       "next": {
-        "title": "Les criquets crinqués (reprise)",
+        "title": "Rythmologie (reprise)",
         "source": "api-live",
-        "start": "20:00",
-        "url": "https://podcast.cism893.ca/podcast/download_mp3/363883.mp3",
-        "slug": "les-criquets-crinques"
+        "start": "00:00",
+        "url": "https://podcast.cism893.ca/podcast/download_mp3/364083.mp3",
+        "slug": "rythmologie"
       },
       "track": "",
-      "showTitle": "Solénoïde",
+      "showTitle": "Mix anglo",
       "host": "",
       "source": "api-live",
       "sources": [
@@ -51,101 +51,104 @@
         "type": "cism-v1",
         "url": "https://admin.cism893.ca/api/v1/live"
       },
-      "checkedAt": "2026-07-12T03:37:24.607Z"
+      "checkedAt": "2026-07-12T06:34:45.788Z"
     },
     "ckut": {
       "id": "ckut",
       "name": "CKUT 90,3",
       "current": {
-        "title": "SKEwInGTheWaBeS$$",
+        "title": "Utopia&#039;s Paradise",
         "source": "api-live",
-        "start": "23:00",
-        "end": "00:00"
+        "start": "02:00",
+        "end": "06:00"
       },
       "next": {
-        "title": "stereOphobic",
+        "title": "Mind, Soul, &amp; Spirit",
         "source": "api-live",
-        "start": "00:00",
-        "end": "02:00"
+        "start": "06:00",
+        "end": "09:00"
       },
-      "track": "",
-      "showTitle": "SKEwInGTheWaBeS$$",
+      "track": "Utopia",
+      "showTitle": "Utopia&#039;s Paradise",
       "host": "",
       "source": "api-live",
       "sources": [
-        "api-live",
-        "stream"
+        "api-live"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-12T03:37:27.364Z"
+      "checkedAt": "2026-07-12T06:34:48.187Z"
     },
     "cjlo": {
       "id": "cjlo",
       "name": "CJLO 1690AM",
       "current": {
-        "title": "Brave New Jams",
-        "source": "schedule",
-        "start": "22:00",
-        "end": "00:00",
-        "url": "http://www.cjlo.com/shows/brave-new-jams"
-      },
-      "next": {
         "title": "CJLO Late Night",
         "source": "schedule",
         "start": "00:00",
         "end": "06:00",
         "url": "http://www.cjlo.com/shows/cjlo-late-night"
       },
+      "next": {
+        "title": "Sun Ra, Sun Rise",
+        "source": "schedule",
+        "start": "06:00",
+        "end": "08:00",
+        "url": "http://www.cjlo.com/shows/sun-ra-sun-rise"
+      },
       "track": "",
-      "showTitle": "Brave New Jams",
+      "showTitle": "CJLO Late Night",
       "host": "",
       "source": "schedule",
       "sources": [
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-12T03:37:29.183Z"
+      "checkedAt": "2026-07-12T06:34:49.646Z"
     },
     "cfak": {
       "id": "cfak",
       "name": "CFAK 88,3",
-      "current": null,
-      "next": {
+      "current": {
         "title": "Les nuits CFAK",
         "source": "schedule",
         "start": "00:00",
         "end": "21:00"
       },
+      "next": {
+        "title": "Solénoïde",
+        "source": "schedule",
+        "start": "21:00",
+        "end": "00:00"
+      },
       "track": "",
-      "showTitle": "",
+      "showTitle": "Les nuits CFAK",
       "host": "",
       "source": "schedule",
       "sources": [
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-12T03:37:29.813Z"
+      "checkedAt": "2026-07-12T06:34:50.171Z"
     },
     "choq": {
       "id": "choq",
       "name": "CHOQ.ca",
       "current": {
-        "title": "Dogue version Lydia Kepinski et Blaise Borboen-Leonard",
+        "title": "OVERDOSE",
         "source": "api-live",
-        "host": "Ariane Roy",
-        "url": "https://www.choq.ca/assets/playlist/palmares-site-web.jpg"
+        "host": "Gab Bouchard"
       },
       "next": null,
-      "track": "Ariane Roy - Dogue version Lydia Kepinski et Blaise Borboen-Leonard",
-      "showTitle": "Dogue version Lydia Kepinski et Blaise Borboen-Leonard",
-      "host": "Ariane Roy",
+      "track": "Gab Bouchard - OVERDOSE",
+      "showTitle": "OVERDOSE",
+      "host": "Gab Bouchard",
       "source": "api-live",
       "sources": [
         "api-live",
         "stream"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-12T03:37:31.808Z"
+      "checkedAt": "2026-07-12T06:34:52.334Z"
     }
   }
 }
