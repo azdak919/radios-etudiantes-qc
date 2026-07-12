@@ -1,17 +1,17 @@
 {
-  "updated": "2026-07-12T09:27:56.414Z",
+  "updated": "2026-07-12T11:57:21.266Z",
   "total": 185,
   "withPhoto": 157,
-  "withStock": 38,
-  "withCampusBank": 15,
+  "withStock": 39,
+  "withCampusBank": 14,
   "fullyCovered": 185,
-  "leadReadyPhotos": 122,
-  "pageScraped": 86,
+  "leadReadyPhotos": 140,
+  "pageScraped": 87,
   "photosRecovered": 54,
   "imagesCleared": 2,
   "stockSearches": 60,
-  "stockFound": 38,
-  "campusBankFound": 15,
+  "stockFound": 39,
+  "campusBankFound": 14,
   "mainPageLeadReady": true,
   "gaps": [
     {
@@ -33,22 +33,16 @@
       "image": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Pavillon_principal_du_C%C3%A9gep_de_Jonqui%C3%A8re.jpg"
     },
     {
-      "title": "Jeunes auteurs, à vos crayons : le « pouvoir des mots » pour rejoindre les étudiants",
-      "link": "https://lapige.atmjonquiere.com/2026/05/21/jeunes-auteurs-a-vos-crayons-le-pouvoir-des-mots-pour-rejoindre-les-etudiants/?utm_source=rss&utm_medium=rss&utm_campaign=jeunes-auteurs-a-vos-crayons-le-pouvoir-des-mots-pour-rejoindre-les-etudiants",
-      "reason": "stock-too-small",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Peupl%C3%A9_jeunes_%C3%A9poux_la_terre_en_abondance._9%2C_G.14054%282%29.jpg"
-    },
-    {
       "title": "Un pont entre l’art et le travail de rue",
       "link": "https://lapige.atmjonquiere.com/2026/05/20/un-pont-entre-lart-et-le-travail-de-rue/?utm_source=rss&utm_medium=rss&utm_campaign=un-pont-entre-lart-et-le-travail-de-rue",
-      "reason": "campus-bank",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Pavillon_principal_du_C%C3%A9gep_de_Jonqui%C3%A8re.jpg"
+      "reason": "stock-too-small",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/c/c5/Travail_sur_le_pont_d%27un_bateau%2C_marin_-_btv1b10577978h.jpg"
     },
     {
       "title": "El Niño s’approche du Québec",
       "link": "https://lapige.atmjonquiere.com/2026/05/20/el-nino-sapproche-du-quebec/?utm_source=rss&utm_medium=rss&utm_campaign=el-nino-sapproche-du-quebec",
-      "reason": "campus-bank",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Pavillon_principal_du_C%C3%A9gep_de_Jonqui%C3%A8re.jpg"
+      "reason": "stock-too-small",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/5/50/Maison%2C_130-152%2C_Grande_All%C3%A9e_Ouest%2C_Qu%C3%A9bec_c%C3%B4t%C3%A9_ouest%2C_les_fa%C3%A7ades_11-d.na.civile-87-2608.jpg"
     },
     {
       "title": "Assistance technique en pharmacie : de premières portes ouvertes à Alma",
@@ -75,16 +69,22 @@
       "image": "https://lecollectif.ca/wp-content/uploads/2026/07/OBSESSIONS_CLUBSDESPORTS_ClubPleinAirAltitude_SourceFacebookClubPleinAirAltitude-1-768x1024.jpg"
     },
     {
+      "title": "Christine Labrie tourne la page sur huit ans comme députée de Sherbrooke",
+      "link": "https://lecollectif.ca/a-la-une/christine-labrie-tourne-la-page-sur-huit-ans-comme-deputee-de-sherbrooke/",
+      "reason": "stock-too-small",
+      "image": "https://lecollectif.ca/wp-content/uploads/2026/07/SOCIETE_ChristineLabrie_SourcePageFacebookDeRubaGhazal-819x1024.jpg"
+    },
+    {
       "title": "Recettes musicales québécoises pour l’été - Quartier Libre",
       "link": "https://quartierlibre.ca/ete-recettes-musicales-quebecoises/",
       "reason": "no-stock-match",
       "image": "https://quartierlibre.ca/wp-content/uploads/2026/05/20_florelaurentienne.jpg"
     },
     {
-      "title": "Letters from the Editors May 2026",
-      "link": "https://theplantnews.com/2026/05/11/letters-from-the-editors-may-2026/",
-      "reason": "campus-bank",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/1/16/Metro-level_entrance%2C_Dawson_College%2C_Apr_06_2022.jpg"
+      "title": "CSU approves affinity group policy, club rules update and councillor pay increase at special meeting",
+      "link": "https://thelinknewspaper.ca/article/16326",
+      "reason": "stock-too-small",
+      "image": "https://live.staticflickr.com/7089/7290404684_2750bb385f_b.jpg"
     }
   ]
 }
