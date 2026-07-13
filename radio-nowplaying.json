@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-13T16:05:07.782Z",
+  "updatedAt": "2026-07-13T18:17:13.945Z",
   "timezone": "America/Toronto",
   "stations": {
     "chyz": {
@@ -21,27 +21,27 @@
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-13T16:04:47.688Z"
+      "checkedAt": "2026-07-13T18:16:53.708Z"
     },
     "cism": {
       "id": "cism",
       "name": "CISM 89,3",
       "current": {
-        "title": "Ya Raï (reprise)",
-        "source": "api-live",
-        "start": "08:00",
-        "url": "https://stream03.ustream.ca/cism128.mp3",
-        "slug": "ya-rai"
-      },
-      "next": {
         "title": "La collation",
         "source": "api-live",
         "start": "09:00",
-        "url": "https://podcast.cism893.ca/podcast/download_mp3/364133.mp3",
+        "url": "https://stream03.ustream.ca/cism128.mp3",
         "slug": "mix-collation"
       },
+      "next": {
+        "title": "O'Keb",
+        "source": "api-live",
+        "start": "11:00",
+        "url": "https://podcast.cism893.ca/podcast/download_mp3/363861.mp3",
+        "slug": "okeb"
+      },
       "track": "",
-      "showTitle": "Ya Raï (reprise)",
+      "showTitle": "La collation",
       "host": "",
       "source": "api-live",
       "sources": [
@@ -51,25 +51,25 @@
         "type": "cism-v1",
         "url": "https://admin.cism893.ca/api/v1/live"
       },
-      "checkedAt": "2026-07-13T16:04:49.218Z"
+      "checkedAt": "2026-07-13T18:16:55.227Z"
     },
     "ckut": {
       "id": "ckut",
       "name": "CKUT 90,3",
       "current": {
-        "title": "World Skip The Beat",
-        "source": "api-live",
-        "start": "12:00",
-        "end": "14:00"
-      },
-      "next": {
         "title": "Radio Is Dead",
         "source": "api-live",
         "start": "14:00",
         "end": "15:00"
       },
+      "next": {
+        "title": "Whose Vibe Is It Anyway",
+        "source": "api-live",
+        "start": "15:00",
+        "end": "17:00"
+      },
       "track": "",
-      "showTitle": "World Skip The Beat",
+      "showTitle": "Radio Is Dead",
       "host": "",
       "source": "api-live",
       "sources": [
@@ -77,34 +77,34 @@
         "stream"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-13T16:04:51.765Z"
+      "checkedAt": "2026-07-13T18:16:58.001Z"
     },
     "cjlo": {
       "id": "cjlo",
       "name": "CJLO 1690AM",
       "current": {
-        "title": "Twang City",
+        "title": "CJLO's Alternative Mega Mix",
         "source": "schedule",
-        "start": "12:00",
-        "end": "13:00",
-        "url": "http://www.cjlo.com/shows/twang-city"
+        "start": "14:00",
+        "end": "15:00",
+        "url": "http://www.cjlo.com/shows/cjlos-alternative-mega-mix"
       },
       "next": {
-        "title": "Eldest Daughter",
+        "title": "Whip Appeal",
         "source": "schedule",
-        "start": "13:00",
-        "end": "14:00",
-        "url": "http://www.cjlo.com/shows/eldest-daughter"
+        "start": "15:00",
+        "end": "16:00",
+        "url": "http://www.cjlo.com/shows/whip-appeal"
       },
       "track": "",
-      "showTitle": "Twang City",
+      "showTitle": "CJLO's Alternative Mega Mix",
       "host": "",
       "source": "schedule",
       "sources": [
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-13T16:05:05.090Z"
+      "checkedAt": "2026-07-13T18:17:11.217Z"
     },
     "cfak": {
       "id": "cfak",
@@ -129,27 +129,28 @@
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-13T16:05:05.895Z"
+      "checkedAt": "2026-07-13T18:17:12.103Z"
     },
     "choq": {
       "id": "choq",
       "name": "CHOQ.ca",
       "current": {
-        "title": "EARTH",
+        "title": "RICH",
         "source": "api-live",
-        "host": "Xela Edna"
+        "host": "Camille Yembe",
+        "url": "https://www.choq.ca/assets/playlist/palmares-site-web.jpg"
       },
       "next": null,
-      "track": "Xela Edna - EARTH",
-      "showTitle": "EARTH",
-      "host": "Xela Edna",
+      "track": "Camille Yembe - RICH",
+      "showTitle": "RICH",
+      "host": "Camille Yembe",
       "source": "api-live",
       "sources": [
         "api-live",
         "stream"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-13T16:05:07.431Z"
+      "checkedAt": "2026-07-13T18:17:13.595Z"
     }
   }
 }
