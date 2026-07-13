@@ -1653,8 +1653,16 @@ html[data-translate-busy="1"] .translate-toggle {
   }
 }
 
+/*
+ * Replié : 1re rangée (ou 2 en portrait) + léger aperçu du *début* de la
+ * rangée suivante, adouci par le dégradé/flou (pas un flou sous le bouton).
+ */
+.filters-panel {
+  --filters-peek: 12px; /* aperçu du début de la rangée d’après */
+}
+
 .filters-panel:not(.is-expanded):not(.is-compact) .filters {
-  max-height: var(--filters-collapsed-h);
+  max-height: calc(var(--filters-collapsed-h) + var(--filters-peek));
   overflow: hidden;
   transition: max-height 0.35s ease;
 }
@@ -1664,21 +1672,40 @@ html[data-translate-busy="1"] .translate-toggle {
   transition: max-height 0.45s ease;
 }
 
+/*
+ * Masque sur le bas de la dernière rangée *visible* + le début de la suivante
+ * (zone peek) — c’est ce fragment qu’on voit un peu flou / fondu.
+ */
 .filters-panel.has-overflow:not(.is-expanded):not(.is-compact)::after {
   content: "";
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 40px;
-  height: 28px;
-  background: linear-gradient(to bottom, transparent, var(--bg));
+  /* Couvre la fin de la rangée pleine + l’aperçu de la suivante */
+  top: calc(var(--filters-collapsed-h) - 18px);
+  height: calc(18px + var(--filters-peek) + 2px);
+  z-index: 2;
   pointer-events: none;
+  background: linear-gradient(
+    to bottom,
+    color-mix(in srgb, var(--bg) 0%, transparent) 0%,
+    color-mix(in srgb, var(--bg) 25%, transparent) 28%,
+    color-mix(in srgb, var(--bg) 70%, transparent) 62%,
+    var(--bg) 100%
+  );
+  /* Léger flou optique sur le début de la rangée d’après */
+  -webkit-backdrop-filter: blur(1.5px);
+  backdrop-filter: blur(1.5px);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 35%, #000 100%);
+  mask-image: linear-gradient(to bottom, transparent 0%, #000 35%, #000 100%);
+  opacity: 1;
   transition: opacity 0.2s ease;
 }
 
 .filters-panel.is-expanded::after,
 .filters-panel.is-compact::after {
   opacity: 0;
+  pointer-events: none;
 }
 
 .filters {

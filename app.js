@@ -3784,11 +3784,35 @@ function appendBeforeMagazineSpacer(column, el) {
 }
 
 /**
+ * Hauteur du *contenu* d'une colonne magazine, hors spacer flex.
+ * Important : avec align-items:stretch, offsetHeight des deux colonnes est
+ * toujours égal (grille) — d'où l'ancien fill qui ne voyait jamais de vide.
+ */
+function magazineColumnContentHeight(col) {
+  if (!col) return 0;
+  let h = 0;
+  for (const child of col.children) {
+    if (
+      child.classList?.contains('news-hero-spacer')
+      || child.classList?.contains('brief-rail-spacer')
+    ) {
+      continue;
+    }
+    const style = getComputedStyle(child);
+    const mt = parseFloat(style.marginTop) || 0;
+    const mb = parseFloat(style.marginBottom) || 0;
+    h += child.offsetHeight + mt + mb;
+  }
+  const cs = getComputedStyle(col);
+  h += (parseFloat(cs.paddingTop) || 0) + (parseFloat(cs.paddingBottom) || 0);
+  return h;
+}
+
+/**
  * Équilibre les deux colonnes jusqu'à hauteurs de *contenu* proches :
- *  - colonne gauche trop courte → + vedettes (plus frais restants, même source OK)
- *  - colonne droite trop courte → + En bref (1 / institution non encore vue)
- * Toujours croître la colonne la plus courte ; arrêt si plus de candidats.
- * Spacers en dernier pour bas de bordures flush (pas de vide « mort » sans fill).
+ *  - gauche trop courte → + vedettes (plus frais restants, même source OK)
+ *  - droite trop courte → + En bref (1 / institution non encore vue)
+ * Mesure le contenu réel (pas la hauteur stretchée de la grille).
  */
 function balanceMagazineColumns() {
   if (!canBalanceMagazineColumns() || magazineBalanceBusy) return;
@@ -3803,12 +3827,13 @@ function balanceMagazineColumns() {
     clearMagazineSpacers(brief);
 
     let safety = 0;
-    const MAX_ROUNDS = 32;
+    const MAX_ROUNDS = 40;
 
     while (safety < MAX_ROUNDS && magazineReserve.length) {
       safety += 1;
-      const hH = hero.offsetHeight;
-      const bH = brief.offsetHeight;
+      // Contenu réel — pas offsetHeight de la cellule stretchée.
+      const hH = magazineColumnContentHeight(hero);
+      const bH = magazineColumnContentHeight(brief);
       const diff = bH - hH; // >0 → hero trop court ; <0 → brief trop court
 
       if (Math.abs(diff) <= COLUMN_HEIGHT_TOL) break;
@@ -3834,7 +3859,7 @@ function balanceMagazineColumns() {
           removeTailArticleForItem(item);
           added += 1;
         }
-        if (!added) break; // plus de candidats vedette
+        if (!added) break;
         continue;
       }
 
@@ -3850,7 +3875,7 @@ function balanceMagazineColumns() {
       let added = 0;
       for (let i = 0; i < need; i += 1) {
         const item = takeNextBriefFromReserve();
-        if (!item) break; // plus d'institution disponible
+        if (!item) break;
         const el = safeCreateArticle(item, 'compact');
         if (!el) continue;
         appendBeforeMagazineSpacer(brief, el);
