@@ -16,6 +16,13 @@ function safeHttpUrl(url, { allowHttp = false } = {}) {
   }
 }
 
+/** Écoute 'change' d'une MediaQueryList avec repli addListener (Safari ≤ 13). */
+function onMediaQueryChange(mq, handler) {
+  if (!mq) return;
+  if (typeof mq.addEventListener === 'function') mq.addEventListener('change', handler);
+  else if (typeof mq.addListener === 'function') mq.addListener(handler);
+}
+
 function safeCssColor(color) {
   if (!color || typeof color !== 'string') return null;
   const c = color.trim();
@@ -316,6 +323,9 @@ let currentGain = DEFAULT_GAIN;
 let volumeMuted = false;
 let gainBeforeMute = DEFAULT_GAIN;
 const MAX_GAIN = 2;                 // jusqu'à 200 %
+// Mobile : pas d'amplification (Web Audio suspendu à l'écran verrouillé) —
+// le curseur s'arrête à 100 % au lieu d'afficher une zone 100–200 % inerte.
+const GAIN_UI_MAX = (webAudioSupported && !MOBILE_PLAYBACK) ? MAX_GAIN : 1;
 const VOL_THUMB_PX = 16;
 let volumeSliderDragging = false;
 const boostUnavailable = new Set(); // ids des postes sans CORS
@@ -361,7 +371,7 @@ const FILTER_MARQUEE_RESYNC_MS = 480;
 /** Rangées visibles avant « Plus de sources » — desktop 3 ; tablette/mobile 2. */
 const FILTERS_COLLAPSED_ROWS_DESKTOP = 3;
 const FILTERS_COLLAPSED_ROWS_COMPACT = 2;
-const FILTERS_COMPACT_MQ = window.matchMedia('(max-width: 1099px)');
+const FILTERS_COMPACT_MQ = window.matchMedia('(max-width: 1099.98px)');
 const FILTERS_ROW_CAPACITY = 3;
 const FILTERS_COLS_NARROW = 420;
 /** Max colonnes bureau (grand écran). */
@@ -430,12 +440,17 @@ async function init() {
 
 function registerServiceWorker() {
   if (IS_TUNER_EMBED || !('serviceWorker' in navigator)) return;
+  // Ne jamais recharger pendant une écoute : un déploiement coupait la radio.
+  // La nouvelle version s'appliquera à la prochaine navigation / pause.
+  const reloadUnlessListening = () => {
+    if (!isPlaybackActive()) window.location.reload();
+  };
   navigator.serviceWorker.register('./sw.js').then((reg) => {
     reg.addEventListener('updatefound', () => {
       const worker = reg.installing;
       worker?.addEventListener('statechange', () => {
         if (worker.state === 'activated' && navigator.serviceWorker.controller) {
-          window.location.reload();
+          reloadUnlessListening();
         }
       });
     });
@@ -448,9 +463,7 @@ function registerServiceWorker() {
   navigator.serviceWorker.getRegistrations?.().then((regs) => {
     regs.forEach((reg) => reg.update());
   }).catch(() => {});
-  navigator.serviceWorker.addEventListener('controllerchange', () => {
-    window.location.reload();
-  });
+  navigator.serviceWorker.addEventListener('controllerchange', reloadUnlessListening);
 }
 
 /** Évite que hover/focus laissent un bouton masthead « engagé » après un tap ou clic. */
@@ -1126,11 +1139,11 @@ function onTunerSubRotateLayoutChange() {
 }
 
 function initTunerSubRotateListeners() {
-  TUNER_SUB_ROTATE_MQ?.addEventListener?.('change', onTunerSubRotateLayoutChange);
-  TUNER_DIAL_PHONE_MQ?.addEventListener?.('change', onTunerSubRotateLayoutChange);
-  TUNER_SUB_ROTATE_NARROW_MQ?.addEventListener?.('change', onTunerSubRotateLayoutChange);
-  TUNER_SUB_ROTATE_VERY_NARROW_MQ?.addEventListener?.('change', onTunerSubRotateLayoutChange);
-  PREFERS_REDUCED_MOTION?.addEventListener?.('change', onTunerSubRotateLayoutChange);
+  onMediaQueryChange(TUNER_SUB_ROTATE_MQ, onTunerSubRotateLayoutChange);
+  onMediaQueryChange(TUNER_DIAL_PHONE_MQ, onTunerSubRotateLayoutChange);
+  onMediaQueryChange(TUNER_SUB_ROTATE_NARROW_MQ, onTunerSubRotateLayoutChange);
+  onMediaQueryChange(TUNER_SUB_ROTATE_VERY_NARROW_MQ, onTunerSubRotateLayoutChange);
+  onMediaQueryChange(PREFERS_REDUCED_MOTION, onTunerSubRotateLayoutChange);
 }
 
 function renderTunerNowAir() {
@@ -1375,10 +1388,19 @@ function bindTuner() {
     localStorage.setItem('req-player-vol', currentGain);
   });
 
+  initVolumeRangeBounds();
   bindVolumePopover();
   bindVolumePopoverMute();
   bindVolumeSliderLayout();
   bindVolumeSliderDrag();
+}
+
+/** Sans amplification (mobile) : range 0–100 %, zone boost et repère 200 % masqués. */
+function initVolumeRangeBounds() {
+  if (!TUNER_VOLUME || GAIN_UI_MAX >= MAX_GAIN) return;
+  TUNER_VOLUME.max = String(GAIN_UI_MAX);
+  TUNER_VOLUME.setAttribute('aria-label', 'Volume — 0 % à gauche, 100 % à droite');
+  TUNER_VOL?.classList.add('tuner-vol--no-boost');
 }
 
 function bindVolumeSliderLayout() {
@@ -1390,7 +1412,7 @@ function bindVolumeSliderLayout() {
   const inner = track.closest('.tuner-inner');
   if (inner) volSliderResizeObs.observe(inner);
   window.addEventListener('resize', schedule, { passive: true });
-  VOL_COMPACT.addEventListener('change', schedule);
+  onMediaQueryChange(VOL_COMPACT, schedule);
   schedule();
 }
 
@@ -1431,7 +1453,7 @@ function bindVolumePopover() {
     if (!e.matches) close();
     updateVolumeUI();
   };
-  VOL_COMPACT.addEventListener('change', onVolLayoutChange);
+  onMediaQueryChange(VOL_COMPACT, onVolLayoutChange);
 }
 
 function bindVolumePopoverMute() {
@@ -1454,8 +1476,8 @@ function bindVolumeSliderDrag() {
     const travel = Math.max(rect.width - thumbPx, 1);
     const x = Math.min(Math.max(clientX - rect.left - thumbPx / 2, 0), travel);
     const ratio = x / travel;
-    const stepped = Math.round(ratio * MAX_GAIN / 0.02) * 0.02;
-    const clamped = Math.min(MAX_GAIN, Math.max(0, stepped));
+    const stepped = Math.round(ratio * GAIN_UI_MAX / 0.02) * 0.02;
+    const clamped = Math.min(GAIN_UI_MAX, Math.max(0, stepped));
     if (Math.abs(parseFloat(TUNER_VOLUME.value) - clamped) < 0.001) return;
     TUNER_VOLUME.value = String(clamped);
     TUNER_VOLUME.dispatchEvent(new Event('input', { bubbles: true }));
@@ -1676,7 +1698,7 @@ function initMarqueeResizeListeners() {
   });
 
   window.addEventListener('resize', scheduleMarqueeRefresh, { passive: true });
-  PREFERS_REDUCED_MOTION?.addEventListener?.('change', () => {
+  onMediaQueryChange(PREFERS_REDUCED_MOTION, () => {
     getMarqueeElements().forEach((el) => {
       const text = marqueeTextByEl.get(el);
       if (text != null) applyMarquee(el, text);
@@ -2122,7 +2144,7 @@ function updateVolumeSliderVisual() {
   const xMid = xMin + travel * 0.5;
   const xMax = xMin + travel;
   const gain = volumeMuted ? 0 : currentGain;
-  const ratio = Math.min(Math.max(gain / MAX_GAIN, 0), 1);
+  const ratio = Math.min(Math.max(gain / GAIN_UI_MAX, 0), 1);
   const xThumb = xMin + travel * ratio;
 
   track.style.setProperty('--vol-x', `${xThumb}px`);
@@ -2130,8 +2152,15 @@ function updateVolumeSliderVisual() {
   track.style.setProperty('--vol-x-mid', `${xMid}px`);
   track.style.setProperty('--vol-x-max', `${xMax}px`);
   track.style.setProperty('--vol-ratio', String(ratio));
-  track.style.setProperty('--vol-base', `${Math.min(ratio / 0.5, 1) * 100}%`);
-  track.style.setProperty('--vol-boost', `${Math.max((ratio - 0.5) / 0.5, 0) * 100}%`);
+  if (GAIN_UI_MAX >= MAX_GAIN) {
+    // Deux zones : remplissage bleu 0–100 %, orange 100–200 %.
+    track.style.setProperty('--vol-base', `${Math.min(ratio / 0.5, 1) * 100}%`);
+    track.style.setProperty('--vol-boost', `${Math.max((ratio - 0.5) / 0.5, 0) * 100}%`);
+  } else {
+    // Sans amplification : une seule zone pleine largeur.
+    track.style.setProperty('--vol-base', `${ratio * 100}%`);
+    track.style.setProperty('--vol-boost', '0%');
+  }
   track.classList.toggle('is-boost', gain > 1.001);
 }
 
@@ -2341,7 +2370,7 @@ function updateMediaSession(radio, { title, sub } = {}) {
 
 function restoreVolume() {
   const saved = parseFloat(localStorage.getItem('req-player-vol') ?? String(DEFAULT_GAIN));
-  currentGain = Number.isFinite(saved) ? Math.min(MAX_GAIN, Math.max(0, saved)) : DEFAULT_GAIN;
+  currentGain = Number.isFinite(saved) ? Math.min(GAIN_UI_MAX, Math.max(0, saved)) : DEFAULT_GAIN;
   gainBeforeMute = currentGain;
   TUNER_VOLUME.value = currentGain;
   volumeMuted = false;
@@ -2819,14 +2848,12 @@ function bindFiltersPanel() {
     syncFiltersPanel();
   });
 
-  FILTERS_MOBILE.addEventListener('change', () => {
+  const onFiltersLayoutChange = () => {
     syncFiltersPanel();
     scheduleFilterMarqueeRefresh();
-  });
-  FILTERS_COMPACT_MQ.addEventListener('change', () => {
-    syncFiltersPanel();
-    scheduleFilterMarqueeRefresh();
-  });
+  };
+  onMediaQueryChange(FILTERS_MOBILE, onFiltersLayoutChange);
+  onMediaQueryChange(FILTERS_COMPACT_MQ, onFiltersLayoutChange);
 
   if (NEWS_FILTERS && typeof ResizeObserver !== 'undefined') {
     const filtersResize = new ResizeObserver(() => {
@@ -4327,16 +4354,26 @@ function decodeNamedHtmlEntities(str = '') {
   ));
 }
 
+/** fromCodePoint sûr : couvre les caractères astraux (émojis) sans lever sur un code invalide. */
+function safeFromCodePoint(code, fallback) {
+  if (!Number.isFinite(code) || code < 0 || code > 0x10FFFF) return fallback;
+  try {
+    return String.fromCodePoint(code);
+  } catch {
+    return fallback;
+  }
+}
+
 function decodeHtmlEntities(str = '') {
   let s = String(str);
   for (let pass = 0; pass < 3; pass += 1) {
     const prev = s;
     s = s
       .replace(/<!\[CDATA\[([\s\S]*?)\]\]>/g, '$1')
-      .replace(/&#(\d+);/g, (_, n) => String.fromCharCode(parseInt(n, 10)))
-      .replace(/&#x([0-9a-f]+);/gi, (_, n) => String.fromCharCode(parseInt(n, 16)))
-      .replace(/&#0?39;/gi, '’')
-      .replace(decodeNamedHtmlEntities)
+      .replace(/&#(\d+);/g, (m, n) => safeFromCodePoint(parseInt(n, 10), m))
+      .replace(/&#x([0-9a-f]+);/gi, (m, n) => safeFromCodePoint(parseInt(n, 16), m))
+      .replace(/&#0?39;/gi, '’');
+    s = decodeNamedHtmlEntities(s)
       .replace(/&lt;/gi, '<')
       .replace(/&gt;/gi, '>');
     if (s === prev) break;

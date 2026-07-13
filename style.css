@@ -951,6 +951,21 @@ html.is-firefox .tuner-cast--bar[hidden] { display: flex !important; }
 }
 .tuner-vol.is-muted .tuner-vol-track { opacity: 0.42; }
 
+/* Sans amplification (mobile) : curseur 0–100 %, pas de zone boost ni de 200 %. */
+.tuner-vol--no-boost .tuner-vol-zone--boost,
+.tuner-vol--no-boost .tuner-vol-tick--100,
+.tuner-vol--no-boost .tuner-vol-label--max {
+  display: none;
+}
+.tuner-vol--no-boost .tuner-vol-label--mid {
+  left: calc(100% - var(--vol-thumb) / 2);
+  transform: translateX(-100%);
+}
+.tuner-vol--no-boost .tuner-vol-fill--base {
+  width: var(--vol-base);
+  max-width: 100%;
+}
+
 /* Grand bureau (≥1100 px) : curseur volume en ligne + mute au clic sur l'icône. */
 @media (min-width: 1100px) {
   .tuner-now { min-height: 42px; }
@@ -1063,8 +1078,9 @@ html.is-firefox .tuner-cast--bar[hidden] { display: flex !important; }
     /* Au sein du tuner (z-index 100) : au-dessus des autres contrôles du synthé */
     z-index: 20;
     box-sizing: border-box;
-    /* 100dvw / 100% : 100vw sur iOS déborde (barre / safe area). */
-    width: min(300px, calc(100% - 20px), calc(100dvw - 20px));
+    /* 100vw + 100dvw (min = le plus étroit des deux) : jamais hors écran.
+       Pas de % ici — il se résoudrait contre .tuner-vol (~42 px), pas le viewport. */
+    width: min(300px, calc(100vw - 20px), calc(100dvw - 20px));
     min-width: 0;
     padding: 12px 14px 10px;
     background: #22252c;
@@ -1176,7 +1192,7 @@ html.is-firefox .tuner-cast--bar[hidden] { display: flex !important; }
   .tuner-label { display: none; }
 
   .tuner-vol-slot {
-    width: min(292px, calc(100% - 16px), calc(100dvw - 16px));
+    width: min(292px, calc(100vw - 16px), calc(100dvw - 16px));
   }
 
   .tuner-step {
@@ -1583,7 +1599,7 @@ html[data-translate-busy="1"] .translate-toggle {
 }
 
 /* Tablette + mobile : seulement 2 rangées de sources (le reste via « Plus de sources »). */
-@media (max-width: 1099px) {
+@media (max-width: 1099.98px) {
   .filters-panel {
     --filters-collapsed-rows: 2;
   }
@@ -2671,6 +2687,11 @@ html[data-translate-busy="1"] .translate-toggle {
 }
 
 /* ─────────────── EXTERNAL RADIO LISTEN ─────────────── */
+/* Modale ouverte : le fond ne défile pas (classe posée par app.js). */
+body.external-listen-open {
+  overflow: hidden;
+}
+
 .external-listen {
   position: fixed;
   inset: 0;
@@ -2893,7 +2914,7 @@ html[data-translate-busy="1"] .translate-toggle {
  * Ancien seuil 820 px trop haut — une moitié d'Ideapad 15 (≈680–960 px CSS)
  * retombait en mode téléphone une colonne.
  */
-@media (min-width: 600px) and (max-width: 1099px) {
+@media (min-width: 600px) and (max-width: 1099.98px) {
   .news-tail {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -2908,7 +2929,7 @@ html[data-translate-busy="1"] .translate-toggle {
   }
 }
 
-@media (max-width: 1099px) {
+@media (max-width: 1099.98px) {
   /* Crédits photo : figcaption hors du cadre image (overflow/aspect-ratio) */
   .article--lead.has-image .article-media {
     aspect-ratio: auto;
@@ -2953,7 +2974,7 @@ html[data-translate-busy="1"] .translate-toggle {
   }
 }
 
-@media (max-width: 1099px) {
+@media (max-width: 1099.98px) {
   /* Titres de section mobile — gradation À la une > En bref > Suite du fil */
   .article-eyebrow,
   .brief-rail-title,
@@ -3469,6 +3490,28 @@ html[data-translate-busy="1"] .translate-toggle {
   .site-foot {
     margin-top: 28px;
   }
+}
+
+/*
+ * Zones sûres iPhone (encoche / coins arrondis / barre d'accueil) :
+ * viewport-fit=cover + PWA plein écran étendent la page sous la barre
+ * d'état — on consomme les insets (env() = 0 hors PWA / sans encoche).
+ * Déclaré en fin de feuille pour l'emporter sur les shorthands padding.
+ */
+.masthead-inner {
+  padding-top: calc(12px + env(safe-area-inset-top, 0px));
+}
+.tuner {
+  padding-top: env(safe-area-inset-top, 0px);
+}
+.masthead-inner,
+.tuner-inner,
+.wire {
+  padding-left: max(var(--pad), env(safe-area-inset-left, 0px));
+  padding-right: max(var(--pad), env(safe-area-inset-right, 0px));
+}
+.toast {
+  bottom: calc(22px + env(safe-area-inset-bottom, 0px));
 }
 
 @media (prefers-reduced-motion: reduce) {
