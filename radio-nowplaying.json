@@ -1,17 +1,11 @@
 {
-  "updatedAt": "2026-07-13T13:01:55.082Z",
+  "updatedAt": "2026-07-13T16:05:07.782Z",
   "timezone": "America/Toronto",
   "stations": {
     "chyz": {
       "id": "chyz",
       "name": "CHYZ 94,3",
-      "current": {
-        "title": "Lundi Indie",
-        "source": "schedule",
-        "start": "08:00",
-        "end": "10:00",
-        "url": "https://chyz.ca/emission/lundie-indie-playlist-du-matin/"
-      },
+      "current": null,
       "next": {
         "title": "Chéri.e, Jme Mobilise!",
         "source": "schedule",
@@ -20,34 +14,34 @@
         "url": "https://chyz.ca/emission/cheri-e-jmorganise/"
       },
       "track": "",
-      "showTitle": "Lundi Indie",
+      "showTitle": "",
       "host": "",
       "source": "schedule",
       "sources": [
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-13T13:01:32.481Z"
+      "checkedAt": "2026-07-13T16:04:47.688Z"
     },
     "cism": {
       "id": "cism",
       "name": "CISM 89,3",
       "current": {
-        "title": "Le Séismix",
+        "title": "Ya Raï (reprise)",
         "source": "api-live",
-        "start": "05:00",
+        "start": "08:00",
         "url": "https://stream03.ustream.ca/cism128.mp3",
-        "slug": "le-seismix"
+        "slug": "ya-rai"
       },
       "next": {
-        "title": "Le terrain sportif",
+        "title": "La collation",
         "source": "api-live",
-        "start": "06:30",
-        "url": "https://podcast.cism893.ca/podcast/download_mp3/363845.mp3",
-        "slug": "le-terrain-sportif"
+        "start": "09:00",
+        "url": "https://podcast.cism893.ca/podcast/download_mp3/364133.mp3",
+        "slug": "mix-collation"
       },
       "track": "",
-      "showTitle": "Le Séismix",
+      "showTitle": "Ya Raï (reprise)",
       "host": "",
       "source": "api-live",
       "sources": [
@@ -57,25 +51,25 @@
         "type": "cism-v1",
         "url": "https://admin.cism893.ca/api/v1/live"
       },
-      "checkedAt": "2026-07-13T13:01:34.435Z"
+      "checkedAt": "2026-07-13T16:04:49.218Z"
     },
     "ckut": {
       "id": "ckut",
       "name": "CKUT 90,3",
       "current": {
-        "title": "Latin Music Mondays",
+        "title": "World Skip The Beat",
         "source": "api-live",
-        "start": "09:00",
-        "end": "11:00"
+        "start": "12:00",
+        "end": "14:00"
       },
       "next": {
-        "title": "All Things Campus",
+        "title": "Radio Is Dead",
         "source": "api-live",
-        "start": "11:00",
-        "end": "12:00"
+        "start": "14:00",
+        "end": "15:00"
       },
       "track": "",
-      "showTitle": "Latin Music Mondays",
+      "showTitle": "World Skip The Beat",
       "host": "",
       "source": "api-live",
       "sources": [
@@ -83,34 +77,34 @@
         "stream"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-13T13:01:38.316Z"
+      "checkedAt": "2026-07-13T16:04:51.765Z"
     },
     "cjlo": {
       "id": "cjlo",
       "name": "CJLO 1690AM",
       "current": {
-        "title": "Death of the Midrange",
+        "title": "Twang City",
         "source": "schedule",
-        "start": "09:00",
-        "end": "10:00",
-        "url": "http://www.cjlo.com/shows/death-of-the-midrange"
+        "start": "12:00",
+        "end": "13:00",
+        "url": "http://www.cjlo.com/shows/twang-city"
       },
       "next": {
-        "title": "Democracy Now",
+        "title": "Eldest Daughter",
         "source": "schedule",
-        "start": "10:00",
-        "end": "11:00",
-        "url": "http://www.cjlo.com/shows/democracy-now"
+        "start": "13:00",
+        "end": "14:00",
+        "url": "http://www.cjlo.com/shows/eldest-daughter"
       },
       "track": "",
-      "showTitle": "Death of the Midrange",
+      "showTitle": "Twang City",
       "host": "",
       "source": "schedule",
       "sources": [
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-13T13:01:52.114Z"
+      "checkedAt": "2026-07-13T16:05:05.090Z"
     },
     "cfak": {
       "id": "cfak",
@@ -135,27 +129,27 @@
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-13T13:01:53.051Z"
+      "checkedAt": "2026-07-13T16:05:05.895Z"
     },
     "choq": {
       "id": "choq",
       "name": "CHOQ.ca",
       "current": {
-        "title": "Neu Roses (Transgressor's Song)",
+        "title": "EARTH",
         "source": "api-live",
-        "host": "Daniel Caesar"
+        "host": "Xela Edna"
       },
       "next": null,
-      "track": "Daniel Caesar - Neu Roses (Transgressor",
-      "showTitle": "Neu Roses (Transgressor's Song)",
-      "host": "Daniel Caesar",
+      "track": "Xela Edna - EARTH",
+      "showTitle": "EARTH",
+      "host": "Xela Edna",
       "source": "api-live",
       "sources": [
         "api-live",
         "stream"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-13T13:01:54.731Z"
+      "checkedAt": "2026-07-13T16:05:07.431Z"
     }
   }
 }
