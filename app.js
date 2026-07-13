@@ -3459,11 +3459,22 @@ function estimateHeroSeedHeight(heroCount) {
   return AVG_LEAD_CARD_H + Math.max(0, heroCount - 1) * AVG_FEATURE_CARD_H;
 }
 
-/** Graine En bref ≈ hauteur hero estimée (arrondi au plus proche). */
-function briefSeedCountForHero(heroCount) {
+/**
+ * Graine En bref ≈ hauteur hero estimée.
+ * @param {number} heroCount
+ * @param {{ sourceMode?: boolean }} [opts] — vue source : une image + vedettes
+ *   sous-estiment souvent la hauteur réelle → graine un peu plus haute.
+ */
+function briefSeedCountForHero(heroCount, opts = {}) {
+  const sourceMode = !!opts.sourceMode;
   const target = Math.max(0, estimateHeroSeedHeight(heroCount) - AVG_BRIEF_TITLE_H);
-  const n = Math.round(target / AVG_BRIEF_CARD_H);
-  return Math.min(BRIEF_SIDEBAR_SEED_MAX, Math.max(BRIEF_SIDEBAR_SEED_MIN, n));
+  // Source : lead souvent grande image → multiplier pour réduire le vide initial.
+  const mult = sourceMode ? 1.35 : 1;
+  const n = Math.round((target * mult) / AVG_BRIEF_CARD_H);
+  const min = sourceMode
+    ? Math.max(BRIEF_SIDEBAR_SEED_MIN, 5)
+    : BRIEF_SIDEBAR_SEED_MIN;
+  return Math.min(BRIEF_SIDEBAR_SEED_MAX, Math.max(min, n));
 }
 
 /** Réserve = suite du fil (date desc) pour le fill B uniquement. */
@@ -3905,8 +3916,9 @@ function demoteBriefCardToTail(brief, cardEl) {
 }
 
 /**
- * Équilibre magazine — uniquement En bref (hero figé à 5).
+ * Équilibre magazine — uniquement En bref (hero figé snapshot).
  * Ordre strict : TRIM d’abord, puis FILL. Jamais les deux en boucle croisée.
+ * Vue source : fill agressif (même institution) pour coller à la une+vedettes.
  */
 function balanceMagazineColumns() {
   if (!canBalanceMagazineColumns()) return;
@@ -3921,6 +3933,9 @@ function balanceMagazineColumns() {
 
   magazineBalanceBusy = true;
   magazineBalanceQueued = false;
+  const isSourceMode = NEWS_LIST.dataset.mode === 'source';
+  // Source : tolérance plus serrée — on veut coller la hauteur de la une.
+  const tol = isSourceMode ? Math.min(COLUMN_HEIGHT_TOL, 56) : COLUMN_HEIGHT_TOL;
 
   try {
     clearMagazineSpacers(hero);
@@ -3928,43 +3943,51 @@ function balanceMagazineColumns() {
 
     // --- 1) TRIM : En bref trop haute → retirer la dernière carte ---
     let trimGuard = 0;
-    while (trimGuard < 24) {
+    while (trimGuard < 28) {
       trimGuard += 1;
       const hH = magazineColumnContentHeight(hero);
       const bH = magazineColumnContentHeight(brief);
-      if (bH <= hH + COLUMN_HEIGHT_TOL) break;
+      if (bH <= hH + tol) break;
       const cards = brief.querySelectorAll('.article--compact');
       if (cards.length <= BRIEF_SIDEBAR_HARD_MIN) break;
       if (!demoteBriefCardToTail(brief, cards[cards.length - 1])) break;
     }
 
-    // --- 2) FILL : En bref trop basse → ajouter (sans dépasser) ---
-    // Vue source : une seule institution → toujours allowExtra (sinon 1 carte max).
-    const isSourceMode = NEWS_LIST.dataset.mode === 'source';
+    // --- 2) FILL : En bref trop basse → ajouter ---
+    // Vue source : always allowExtra (une seule institution).
     let fillGuard = 0;
-    while (fillGuard < 24) {
+    const maxFill = isSourceMode ? 32 : 24;
+    while (fillGuard < maxFill) {
       fillGuard += 1;
       const hH = magazineColumnContentHeight(hero);
       const bH = magazineColumnContentHeight(brief);
       const gap = hH - bH;
-      if (gap <= COLUMN_HEIGHT_TOL) break;
+      if (gap <= tol) break;
 
       const briefCount = brief.querySelectorAll('.article--compact').length;
       if (briefCount >= BRIEF_SIDEBAR_MAX || !magazineReserve.length) break;
 
       let item = takeNextBriefFromReserve({ allowExtra: isSourceMode });
-      if (!item && gap > AVG_BRIEF_CARD_H) {
-        item = takeNextBriefFromReserve({ allowExtra: true });
-      }
+      if (!item) item = takeNextBriefFromReserve({ allowExtra: true });
       if (!item) break;
 
       const el = safeCreateArticle(item, 'compact');
       if (!el) break;
       appendBeforeMagazineSpacer(brief, el);
 
-      // Overshoot → annuler et arrêter (le spacer gère le reste)
-      if (magazineColumnContentHeight(brief) > magazineColumnContentHeight(hero) + COLUMN_HEIGHT_TOL) {
-        demoteBriefCardToTail(brief, el);
+      const afterBrief = magazineColumnContentHeight(brief);
+      const afterHero = magazineColumnContentHeight(hero);
+      const overshoot = afterBrief - afterHero;
+
+      if (overshoot > tol) {
+        // Garder la carte si elle réduit le vide (mieux qu’un gros spacer).
+        // Sinon retirer (trop dépasser la une).
+        if (gap > overshoot) {
+          markPromotedToBrief(item);
+          removeTailArticleForItem(item);
+        } else {
+          demoteBriefCardToTail(brief, el);
+        }
         break;
       }
       markPromotedToBrief(item);
@@ -3989,8 +4012,9 @@ function balanceMagazineColumns() {
   bindMagazineImageBalanceOnce();
 }
 
-/** Compteur de passes post-rendu (évite rebalance à chaque image). */
+/** Compteur de passes post-rendu (évite rebalance infini). */
 let magazineBalancePasses = 0;
+const MAGAZINE_BALANCE_PASS_CAP = 4;
 
 function scheduleMagazineColumnBalance() {
   clearTimeout(magazineBalanceTimer);
@@ -3998,13 +4022,16 @@ function scheduleMagazineColumnBalance() {
   magazineBalanceTimer = window.setTimeout(() => {
     magazineBalancePasses = 1;
     balanceMagazineColumns();
-    // Une seule 2e passe après layout/images — pas de 3e
+    // 2e passe après layout ; 3e plus tard pour images une/vedettes (surtout vue source).
     window.setTimeout(() => {
-      if (magazineBalancePasses >= 2) return;
-      magazineBalancePasses = 2;
+      magazineBalancePasses = Math.max(magazineBalancePasses, 2);
       balanceMagazineColumns();
-    }, 600);
-  }, 100);
+    }, 500);
+    window.setTimeout(() => {
+      magazineBalancePasses = Math.max(magazineBalancePasses, 3);
+      balanceMagazineColumns();
+    }, 1200);
+  }, 80);
 }
 
 function bindMagazineImageBalanceOnce() {
@@ -4016,13 +4043,15 @@ function bindMagazineImageBalanceOnce() {
     const once = () => {
       img.removeEventListener('load', once);
       img.removeEventListener('error', once);
-      // Debounce doux : ne relance pas le cycle complet (qui yoyo)
-      if (magazineBalancePasses >= 2) return;
+      if (magazineBalancePasses >= MAGAZINE_BALANCE_PASS_CAP) return;
       clearTimeout(magazineBalanceTimer);
       magazineBalanceTimer = window.setTimeout(() => {
-        magazineBalancePasses = Math.max(magazineBalancePasses, 2);
+        magazineBalancePasses = Math.min(
+          MAGAZINE_BALANCE_PASS_CAP,
+          Math.max(magazineBalancePasses + 1, 2),
+        );
         balanceMagazineColumns();
-      }, 200);
+      }, 180);
     };
     img.addEventListener('load', once);
     img.addEventListener('error', once);
@@ -4082,8 +4111,11 @@ function partitionSourceFeed(items, referenceDate = new Date()) {
   const heroItems = pool.slice(0, heroN);
   const heroKeys = new Set(heroItems.map(articleKey));
   const rest = pool.filter((item) => !heroKeys.has(articleKey(item)));
-  // Graine En bref calée sur la hauteur réelle du hero (1+features).
-  const briefSeed = briefSeedCountForHero(Math.max(1, heroItems.length));
+  // Graine En bref calée sur la hauteur hero (une+vedettes), un peu plus
+  // généreuse en vue source pour coller dès le snapshot.
+  const briefSeed = briefSeedCountForHero(Math.max(1, heroItems.length), {
+    sourceMode: true,
+  });
   const briefItems = rest.slice(0, briefSeed);
   const briefKeys = new Set(briefItems.map(articleKey));
   const tailItems = rest.filter((item) => !briefKeys.has(articleKey(item)));

@@ -408,6 +408,11 @@ html[data-script-dir="rtl"] .wordmark-full {
 }
 
 .tuner-label { flex-shrink: 0; }
+/* Coral « en ondes » — partagé avec le titre d’émission (À l’antenne) sur bureau. */
+.tuner {
+  --tuner-onair-live: #ff7d6e;
+  --tuner-onair-idle: rgba(255, 255, 255, 0.42);
+}
 .tuner-onair {
   display: inline-flex;
   align-items: center;
@@ -415,7 +420,7 @@ html[data-script-dir="rtl"] .wordmark-full {
   font-size: 10px;
   font-weight: 800;
   letter-spacing: 0.14em;
-  color: rgba(255,255,255,0.42);
+  color: var(--tuner-onair-idle);
   white-space: nowrap;
 }
 .tuner-onair::before {
@@ -425,7 +430,7 @@ html[data-script-dir="rtl"] .wordmark-full {
   background: rgba(255,255,255,0.25);
   transition: background 200ms ease;
 }
-.tuner.is-playing .tuner-onair { color: #ff7d6e; }
+.tuner.is-playing .tuner-onair { color: var(--tuner-onair-live); }
 .tuner.is-playing .tuner-onair::before {
   background: var(--live);
   animation: onairPulse 1.6s ease-out infinite;
@@ -1273,7 +1278,7 @@ html.is-firefox .tuner-cast--bar[hidden] { display: flex !important; }
   font-weight: 800;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.38);
+  color: var(--tuner-onair-idle, rgba(255, 255, 255, 0.42));
   white-space: nowrap;
 }
 
@@ -1300,6 +1305,7 @@ html.is-firefox .tuner-cast--bar[hidden] { display: flex !important; }
   text-overflow: ellipsis;
 }
 
+/* Mobile / tablette : teinte live un peu plus claire (lisibilité). */
 .tuner.is-playing .tuner-nowair-title {
   color: #ff9a90;
 }
@@ -1365,6 +1371,16 @@ html.is-firefox .tuner-cast--bar[hidden] { display: flex !important; }
     padding-left: 28px;
     align-self: center;
     opacity: 1;
+  }
+
+  /* Bureau : émission « À l'antenne » = même coral que « EN ONDES ». */
+  .tuner.is-playing .tuner-nowair-label,
+  .tuner.is-playing .tuner-nowair-title {
+    color: var(--tuner-onair-live);
+  }
+  .tuner.is-external .tuner-nowair-label,
+  .tuner.is-external .tuner-nowair-title {
+    color: var(--radio-bright);
   }
 
   /* Ne jamais masquer le panneau en display:none sur bureau (collapse de colonne). */
