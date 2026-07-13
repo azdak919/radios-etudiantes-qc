@@ -3483,15 +3483,15 @@ function estimateHeroSeedHeight(heroCount) {
 function briefSeedCountForHero(heroCount, opts = {}) {
   const sourceMode = !!opts.sourceMode;
   const target = Math.max(0, estimateHeroSeedHeight(heroCount) - AVG_BRIEF_TITLE_H);
-  // Source : une+vedettes souvent plus hautes que l’estimation (images) →
-  // graine généreuse pour peupler En bref avant le fill mesuré.
-  const mult = sourceMode ? 1.85 : 1;
+  // Source : un peu au-dessus de l’estimé (images), sans graine trop haute
+  // (sinon 1 carte de trop en En bref après paint).
+  const mult = sourceMode ? 1.45 : 1;
   const n = Math.round((target * mult) / AVG_BRIEF_CARD_H);
   const min = sourceMode
-    ? Math.max(BRIEF_SIDEBAR_SEED_MIN, 6)
+    ? Math.max(BRIEF_SIDEBAR_SEED_MIN, 5)
     : BRIEF_SIDEBAR_SEED_MIN;
   const max = sourceMode
-    ? Math.min(BRIEF_SIDEBAR_MAX, BRIEF_SIDEBAR_SEED_MAX + 4)
+    ? Math.min(BRIEF_SIDEBAR_MAX, BRIEF_SIDEBAR_SEED_MAX + 2)
     : BRIEF_SIDEBAR_SEED_MAX;
   return Math.min(max, Math.max(min, n));
 }
@@ -3953,19 +3953,14 @@ function balanceMagazineColumns() {
   magazineBalanceBusy = true;
   magazineBalanceQueued = false;
   const isSourceMode = NEWS_LIST.dataset.mode === 'source';
-  // Source : coller la une (tolérance un peu plus large pour accepter
-  // une dernière carte compacte plutôt qu’un gros vide).
-  const tol = isSourceMode ? 72 : COLUMN_HEIGHT_TOL;
-  const hardMin = isSourceMode ? 3 : BRIEF_SIDEBAR_HARD_MIN;
+  // Tolérance : petit spacer OK ; 1 carte de trop (overshoot) non.
+  const tol = isSourceMode ? 56 : COLUMN_HEIGHT_TOL;
+  const hardMin = isSourceMode ? 2 : BRIEF_SIDEBAR_HARD_MIN;
 
-  try {
-    clearMagazineSpacers(hero);
-    clearMagazineSpacers(brief);
-
-    // --- 1) TRIM : En bref trop haute → retirer la dernière carte ---
-    let trimGuard = 0;
-    while (trimGuard < 28) {
-      trimGuard += 1;
+  const trimBriefIfTaller = () => {
+    let guard = 0;
+    while (guard < 28) {
+      guard += 1;
       const hH = magazineColumnContentHeight(hero);
       const bH = magazineColumnContentHeight(brief);
       if (bH <= hH + tol) break;
@@ -3973,9 +3968,17 @@ function balanceMagazineColumns() {
       if (cards.length <= hardMin) break;
       if (!demoteBriefCardToTail(brief, cards[cards.length - 1])) break;
     }
+  };
 
-    // --- 2) FILL : En bref trop basse → ajouter ---
-    // Vue source : always allowExtra (une seule institution / source).
+  try {
+    clearMagazineSpacers(hero);
+    clearMagazineSpacers(brief);
+
+    // --- 1) TRIM : En bref trop haute → retirer la dernière carte ---
+    trimBriefIfTaller();
+
+    // --- 2) FILL : En bref trop basse → ajouter (sans dépasser) ---
+    // Vue source : allowExtra (une seule institution / source).
     let fillGuard = 0;
     const maxFill = isSourceMode ? 40 : 24;
     while (fillGuard < maxFill) {
@@ -4001,15 +4004,11 @@ function balanceMagazineColumns() {
       const overshoot = afterBrief - afterHero;
 
       if (overshoot > tol) {
-        // Garder si on réduit le vide ; en vue source, accepter un léger
-        // dépassement plutôt qu’un grand spacer blanc.
-        if (gap > overshoot || (isSourceMode && overshoot < gap + AVG_BRIEF_CARD_H)) {
+        // Uniquement garder si le dépassement est *plus petit* que le trou
+        // qu’on comblait (net gain). Sinon → suite (évite 1 carte de trop).
+        if (gap > overshoot) {
           markPromotedToBrief(item);
           removeTailArticleForItem(item);
-          // Source : continuer si un trou notable reste encore
-          if (isSourceMode && magazineColumnContentHeight(hero) - magazineColumnContentHeight(brief) > tol) {
-            continue;
-          }
         } else {
           demoteBriefCardToTail(brief, el);
         }
@@ -4018,6 +4017,9 @@ function balanceMagazineColumns() {
       markPromotedToBrief(item);
       removeTailArticleForItem(item);
     }
+
+    // --- 3) TRIM final (images / fill ont pu dépasser d’une carte) ---
+    trimBriefIfTaller();
 
     ensureMagazineColumnSpacers(hero, brief);
   } finally {
