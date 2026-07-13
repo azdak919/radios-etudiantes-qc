@@ -3706,10 +3706,13 @@ function partitionNewsFeed(items, referenceDate = new Date()) {
   return { heroItems, briefItems: briefClean, tailItems, contingencyBand };
 }
 
-/** Bureau magazine (pas source / recherche). */
+/**
+ * Bureau magazine ≥1100px : fil global *et* vue source.
+ * (Recherche = liste plate — pas d’équilibre colonnes.)
+ */
 function canBalanceMagazineColumns() {
   if (!NEWS_LIST) return false;
-  if (NEWS_LIST.dataset.mode === 'source' || NEWS_LIST.dataset.mode === 'search') return false;
+  if (NEWS_LIST.dataset.mode === 'search') return false;
   return window.matchMedia('(min-width: 1100px)').matches;
 }
 
@@ -3934,6 +3937,8 @@ function balanceMagazineColumns() {
     }
 
     // --- 2) FILL : En bref trop basse → ajouter (sans dépasser) ---
+    // Vue source : une seule institution → toujours allowExtra (sinon 1 carte max).
+    const isSourceMode = NEWS_LIST.dataset.mode === 'source';
     let fillGuard = 0;
     while (fillGuard < 24) {
       fillGuard += 1;
@@ -3945,7 +3950,7 @@ function balanceMagazineColumns() {
       const briefCount = brief.querySelectorAll('.article--compact').length;
       if (briefCount >= BRIEF_SIDEBAR_MAX || !magazineReserve.length) break;
 
-      let item = takeNextBriefFromReserve({ allowExtra: false });
+      let item = takeNextBriefFromReserve({ allowExtra: isSourceMode });
       if (!item && gap > AVG_BRIEF_CARD_H) {
         item = takeNextBriefFromReserve({ allowExtra: true });
       }
@@ -4060,10 +4065,9 @@ function pickSourceLead(pool) {
 /**
  * Vue d'un seul média (filtre source).
  *
- * Une seule pièce « À la une » (lead), puis le reste en En bref / Suite —
- * pas de vedettes (feature) intermédiaires : sur < 1100 px elles ont
- * quasi le même rendu que les cartes En bref, ce qui donnait l'impression
- * d'un double (ex. The Concordian : 2 « grosses » cartes + EN BREF).
+ * Une seule pièce « À la une » (lead) — pas de vedettes (évite le double
+ * look sur mobile). En bref : graine calée sur la hauteur estimée de la une,
+ * puis même fill/trim magazine que le fil global (≥1100px).
  */
 function partitionSourceFeed(items, referenceDate = new Date()) {
   const sorted = sortByDateDesc(items);
@@ -4072,9 +4076,14 @@ function partitionSourceFeed(items, referenceDate = new Date()) {
   const heroItems = lead ? [lead] : [];
   const heroKeys = new Set(heroItems.map(articleKey));
   const rest = pool.filter((item) => !heroKeys.has(articleKey(item)));
-  const briefItems = rest.slice(0, BRIEF_SIDEBAR_MIN);
+  // Même logique de graine que le fil global (hauteur estimée du hero).
+  const briefSeed = briefSeedCountForHero(Math.max(1, heroItems.length));
+  const briefItems = rest.slice(0, briefSeed);
   const briefKeys = new Set(briefItems.map(articleKey));
   const tailItems = rest.filter((item) => !briefKeys.has(articleKey(item)));
+  // Réserve + meta pour le fill/trim En bref (balanceMagazineColumns).
+  magazineReserve = tailItems.slice();
+  resetMagazineMeta(heroItems, briefItems);
   const leadHasImage = !!(lead && hasDisplayImage(lead));
   return { heroItems, briefItems, tailItems, contingencyBand, leadHasImage };
 }
