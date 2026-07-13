@@ -1654,11 +1654,13 @@ html[data-translate-busy="1"] .translate-toggle {
 }
 
 /*
- * Replié : 1re rangée (ou 2 en portrait) + léger aperçu du *début* de la
- * rangée suivante, adouci par le dégradé/flou (pas un flou sous le bouton).
+ * Replié : rangée(s) pleine(s) + aperçu de la rangée d’après assez haut
+ * pour lire un peu le *nom de source* (padding 6px + ligne ~14px ≈ 22px),
+ * puis fondu/flou en bas — pas un flou opaque sur le nom.
  */
 .filters-panel {
-  --filters-peek: 12px; /* aperçu du début de la rangée d’après */
+  /* ~ pastille : pad-top + nom (12px/1.2) + un peu d’air */
+  --filters-peek: 30px;
 }
 
 .filters-panel:not(.is-expanded):not(.is-compact) .filters {
@@ -1673,31 +1675,30 @@ html[data-translate-busy="1"] .translate-toggle {
 }
 
 /*
- * Masque sur le bas de la dernière rangée *visible* + le début de la suivante
- * (zone peek) — c’est ce fragment qu’on voit un peu flou / fondu.
+ * Dégradé surtout sur la *moitié basse* de l’aperçu : le haut du peek
+ * (nom de source) reste lisible ; le bas s’estompe vers « Plus de sources ».
  */
 .filters-panel.has-overflow:not(.is-expanded):not(.is-compact)::after {
   content: "";
   position: absolute;
   left: 0;
   right: 0;
-  /* Couvre la fin de la rangée pleine + l’aperçu de la suivante */
-  top: calc(var(--filters-collapsed-h) - 18px);
-  height: calc(18px + var(--filters-peek) + 2px);
+  /* Commence un peu sous le haut du peek pour ne pas noyer le nom */
+  top: calc(var(--filters-collapsed-h) + 10px);
+  height: calc(var(--filters-peek) - 8px);
   z-index: 2;
   pointer-events: none;
   background: linear-gradient(
     to bottom,
     color-mix(in srgb, var(--bg) 0%, transparent) 0%,
-    color-mix(in srgb, var(--bg) 25%, transparent) 28%,
-    color-mix(in srgb, var(--bg) 70%, transparent) 62%,
+    color-mix(in srgb, var(--bg) 40%, transparent) 45%,
+    color-mix(in srgb, var(--bg) 85%, transparent) 80%,
     var(--bg) 100%
   );
-  /* Léger flou optique sur le début de la rangée d’après */
-  -webkit-backdrop-filter: blur(1.5px);
-  backdrop-filter: blur(1.5px);
-  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 35%, #000 100%);
-  mask-image: linear-gradient(to bottom, transparent 0%, #000 35%, #000 100%);
+  -webkit-backdrop-filter: blur(1px);
+  backdrop-filter: blur(1px);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 40%, #000 100%);
+  mask-image: linear-gradient(to bottom, transparent 0%, #000 40%, #000 100%);
   opacity: 1;
   transition: opacity 0.2s ease;
 }

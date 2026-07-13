@@ -3423,36 +3423,53 @@ function updateNewsLayout() {
 }
 
 /*
- * Partition du fil (3 sections) :
- *  1. Fraîcheur globale : les plus récents d'abord partout.
- *  2. À la une = le plus récent du pool.
- *  3. Vedettes = suivants les plus frais — plusieurs de la MÊME source OK.
- *  4. En bref = au plus 1 article par institution, le plus frais restant
- *     (après tout ce qui est déjà en une + vedettes).
- *  5. Suite du fil = le reste (date desc).
- *  6. Bureau : colonnes à bas alignés (fill contenu + spacer flex).
+ * Partition du fil — deux phases :
+ *
+ *  A) SNAPSHOT :
+ *     - Une + vedettes : les 5 plus frais (1+4), même source OK
+ *     - En bref : d’abord 1 plus frais / institution (hors hero), en nombre
+ *       calé sur la hauteur *estimée* de la colonne gauche (pas un quota fixe)
+ *     - Suite du fil = le reste
+ *
+ *  B) FILL magazine (≥1100px) — équilibre hauteurs de *contenu* :
+ *     - gauche courte → + vedettes (suite, même source OK, max 5 total)
+ *     - droite courte → + En bref : (1) nouvelles institutions, puis
+ *       (2) filet anti-vide : plus frais restants même institution déjà vue
+ *     - spacers seulement à la fin (bordures flush)
  */
-const HERO_FEATURE_MIN = 2; /* vedettes initiales (hors à la une) */
-const HERO_FEATURE_MAX = 12; /* plafond après fill (colonne gauche) */
-const HERO_SPOTLIGHT_MAX = 1 + HERO_FEATURE_MIN; /* une + 2 vedettes au 1er passage */
-const BRIEF_SIDEBAR_MIN = 7; /* En bref au premier passage */
-const BRIEF_SIDEBAR_MAX = 20; /* plafond après fill (colonne droite) */
-/* Hauteurs moyennes estimées pour calculer combien de cartes ajouter d'un coup. */
+const HERO_FEATURE_MIN = 4; /* 4 vedettes + 1 une = 5 */
+const HERO_FEATURE_MAX = 4; /* pas plus de 4 vedettes */
+const HERO_SPOTLIGHT_MAX = 1 + HERO_FEATURE_MIN; /* 5 au total */
+const BRIEF_SIDEBAR_SEED_MIN = 4;
+const BRIEF_SIDEBAR_SEED_MAX = 14; /* snapshot : assez pour coller à une colonne une×5 */
+const BRIEF_SIDEBAR_MAX = 24; /* fill : plafond */
+const BRIEF_SIDEBAR_MIN = BRIEF_SIDEBAR_SEED_MIN;
+const AVG_LEAD_CARD_H = 420;
 const AVG_FEATURE_CARD_H = 150;
-const AVG_BRIEF_CARD_H = 105;
-const COLUMN_HEIGHT_TOL = 28; /* px — colonnes « à peu près égales » */
+const AVG_BRIEF_CARD_H = 95;
+const AVG_BRIEF_TITLE_H = 42;
+const COLUMN_HEIGHT_TOL = 40;
 /* Vue source : pas de vedettes intermédiaires (voir partitionSourceFeed). */
 
-/**
- * Réserve partagée (suite du fil, date desc) + états de diversité pour le
- * remplissage dynamique hero ↔ En bref.
- * magazineBalanceBusy / generation : anti boucle infinie (pas de RO sur les
- * colonnes mutées ; une seule direction par passe).
- */
+/** Hauteur estimée du bloc une+vedettes. */
+function estimateHeroSeedHeight(heroCount) {
+  if (heroCount <= 0) return 0;
+  return AVG_LEAD_CARD_H + Math.max(0, heroCount - 1) * AVG_FEATURE_CARD_H;
+}
+
+/** Nombre de cartes En bref au snapshot ≈ hauteur estimée du hero. */
+function briefSeedCountForHero(heroCount) {
+  const target = Math.max(0, estimateHeroSeedHeight(heroCount) - AVG_BRIEF_TITLE_H);
+  const n = Math.ceil(target / AVG_BRIEF_CARD_H);
+  return Math.min(BRIEF_SIDEBAR_SEED_MAX, Math.max(BRIEF_SIDEBAR_SEED_MIN, n));
+}
+
+/** Réserve = suite du fil (date desc) pour le fill B uniquement. */
 let magazineReserve = [];
 let magazineBalanceTimer = 0;
 let magazineBalanceBusy = false;
-let magazineBalanceGen = 0;
+/** True si un rebalance a été demandé pendant qu'un fill tournait. */
+let magazineBalanceQueued = false;
 const magazineMeta = {
   heroKeys: new Set(),
   heroSources: new Set(),
@@ -3607,17 +3624,19 @@ function pickHeroSpotlight(items, _referenceDate = new Date()) {
 }
 
 /**
- * En bref : 1 article le plus frais par *institution*, parmi ce qui reste
- * après une + vedettes. Le Collectif peut donc réapparaître ici avec l'article
- * le plus frais *non déjà pris* par le hero.
- * @param {number} [maxSlots]
+ * En bref : 1 article le plus frais par *institution*, hors hero.
+ * @param {number} [maxSlots] — graine estimée ou plafond fill
  */
-function pickBriefSidebar(allItems, heroItems = [], _referenceDate = new Date(), maxSlots = BRIEF_SIDEBAR_MIN) {
+function pickBriefSidebar(allItems, heroItems = [], _referenceDate = new Date(), maxSlots = null) {
   const heroKeys = new Set(heroItems.map(articleKey));
   const sorted = sortByDateDesc(allItems);
   const picks = [];
   const usedInsts = new Set();
-  const limit = Math.max(1, maxSlots);
+  // Si non précisé : caler le nombre sur la hauteur estimée du hero.
+  const limit = Math.max(
+    1,
+    maxSlots == null ? briefSeedCountForHero(heroItems.length) : maxSlots,
+  );
 
   for (const item of sorted) {
     if (picks.length >= limit) break;
@@ -3661,28 +3680,26 @@ function partitionNewsFeed(items, referenceDate = new Date()) {
   // Pool unique, date desc — seule source de vérité pour l'ordre de fraîcheur.
   const sorted = sortByDateDesc(filterFreshItems(items, referenceDate));
   const { items: rawHero, contingencyBand: heroBand } = pickHeroSpotlight(sorted, referenceDate);
-  // Filet : une + vedettes = toujours les |n| plus frais du pool (jamais un mai
-  // au-dessus d'un juillet encore relégué en suite).
-  let heroItems = enforceHeroDateOrder(
+  // Filet : une + vedettes = toujours les |n| plus frais du pool.
+  const heroItems = enforceHeroDateOrder(
     ensureHeroLeadHasImage(rawHero, sorted),
     sorted,
   );
+  // Graine En bref ≈ hauteur estimée du hero (plus de quota fixe « 7 »).
+  const briefSeed = briefSeedCountForHero(heroItems.length);
   const { items: briefItems, contingencyBand: briefBand } = pickBriefSidebar(
     sorted,
     heroItems,
     referenceDate,
-    BRIEF_SIDEBAR_MIN,
+    briefSeed,
   );
-  // Si le fill précédent avait gonflé le hero, on re-synchronise les clés.
   const heroKeys = new Set(heroItems.map(articleKey));
-  const briefKeys = new Set(briefItems.map(articleKey));
-  // Brief ne doit pas contenir un article déjà en hero (filet).
   const briefClean = briefItems.filter((i) => !heroKeys.has(articleKey(i)));
   const briefKeysClean = new Set(briefClean.map(articleKey));
   const tailItems = sorted.filter(
     (i) => !heroKeys.has(articleKey(i)) && !briefKeysClean.has(articleKey(i)),
   );
-  // Réserve = suite (plus frais d'abord) pour combler colonnes
+  // Réserve pour le fill magazine (phase B)
   magazineReserve = tailItems.slice();
   resetMagazineMeta(heroItems, briefClean);
   const contingencyBand = Math.max(heroBand, briefBand);
@@ -3714,19 +3731,33 @@ function removeTailArticleForItem(item) {
 }
 
 /**
- * Prochain En bref : institution pas encore dans En bref, article pas déjà
- * en une/vedettes (la source peut déjà être en hero — on prend le suivant).
+ * Prochain En bref depuis la réserve (date desc) :
+ *  1) priorité : nouvelle institution (règle principale)
+ *  2) filet anti-vide : plus frais restant, même si l’institution est déjà
+ *     représentée — seulement quand allowExtra=true (colonne encore trop courte)
  */
-function takeNextBriefFromReserve() {
+function takeNextBriefFromReserve({ allowExtra = false } = {}) {
   if (!magazineReserve.length) return null;
-  const idx = magazineReserve.findIndex((item) => {
-    const key = articleKey(item);
-    if (magazineMeta.heroKeys.has(key) || magazineMeta.briefKeys.has(key)) return false;
-    if (magazineMeta.briefInsts.has(institutionKey(item))) return false;
-    return true;
-  });
-  if (idx < 0) return null;
-  return magazineReserve.splice(idx, 1)[0];
+
+  const tryPick = (pred) => {
+    const idx = magazineReserve.findIndex((item) => {
+      const key = articleKey(item);
+      if (magazineMeta.heroKeys.has(key) || magazineMeta.briefKeys.has(key)) return false;
+      return pred(item);
+    });
+    if (idx < 0) return null;
+    return magazineReserve.splice(idx, 1)[0];
+  };
+
+  // 1) Nouvelle institution d’abord
+  const freshInst = tryPick((item) => !magazineMeta.briefInsts.has(institutionKey(item)));
+  if (freshInst) return freshInst;
+
+  // 2) Filet : combler le vide sans coller aux règles strictes d’unicité
+  if (allowExtra) {
+    return tryPick(() => true);
+  }
+  return null;
 }
 
 /**
@@ -3809,44 +3840,50 @@ function magazineColumnContentHeight(col) {
 }
 
 /**
- * Équilibre les deux colonnes jusqu'à hauteurs de *contenu* proches :
- *  - gauche trop courte → + vedettes (plus frais restants, même source OK)
- *  - droite trop courte → + En bref (1 / institution non encore vue)
- * Mesure le contenu réel (pas la hauteur stretchée de la grille).
+ * Phase B — fill auto bureau.
+ * Croît toujours la colonne au *contenu* le plus court (jamais la cellule CSS).
+ * File d'attente si un fill est déjà en cours (évite courses / gen annulées).
  */
 function balanceMagazineColumns() {
-  if (!canBalanceMagazineColumns() || magazineBalanceBusy) return;
+  if (!canBalanceMagazineColumns()) return;
+  if (magazineBalanceBusy) {
+    magazineBalanceQueued = true;
+    return;
+  }
+
   const hero = NEWS_LIST.querySelector('.news-hero');
   const brief = NEWS_LIST.querySelector('.brief-rail');
   if (!hero || !brief) return;
 
   magazineBalanceBusy = true;
+  magazineBalanceQueued = false;
 
   try {
     clearMagazineSpacers(hero);
     clearMagazineSpacers(brief);
 
     let safety = 0;
-    const MAX_ROUNDS = 40;
+    const MAX_ROUNDS = 48;
 
     while (safety < MAX_ROUNDS && magazineReserve.length) {
       safety += 1;
-      // Contenu réel — pas offsetHeight de la cellule stretchée.
       const hH = magazineColumnContentHeight(hero);
       const bH = magazineColumnContentHeight(brief);
-      const diff = bH - hH; // >0 → hero trop court ; <0 → brief trop court
+      const diff = bH - hH; // >0 hero court ; <0 brief court
 
       if (Math.abs(diff) <= COLUMN_HEIGHT_TOL) break;
 
       if (diff > COLUMN_HEIGHT_TOL) {
-        // ── Hero (vedettes) trop court ────────────────────────────────
+        // Vedettes trop courtes → tirer de la suite (même source OK)
         const featureCount = hero.querySelectorAll('.article--feature').length;
         if (featureCount >= HERO_FEATURE_MAX) break;
 
         const slots = HERO_FEATURE_MAX - featureCount;
+        // Grand trou : au moins 2 cartes d'un coup pour combler vite le vide.
+        const minBatch = diff > 120 ? 2 : 1;
         const need = Math.min(
           slots,
-          Math.max(1, Math.ceil(diff / AVG_FEATURE_CARD_H)),
+          Math.max(minBatch, Math.ceil(diff / AVG_FEATURE_CARD_H)),
         );
         let added = 0;
         for (let i = 0; i < need; i += 1) {
@@ -3863,18 +3900,21 @@ function balanceMagazineColumns() {
         continue;
       }
 
-      // ── En bref trop court ──────────────────────────────────────────
+      // En bref trop court → nouvelles institutions, puis filet anti-vide
       const briefCount = brief.querySelectorAll('.article--compact').length;
       if (briefCount >= BRIEF_SIDEBAR_MAX) break;
 
       const slots = BRIEF_SIDEBAR_MAX - briefCount;
+      const minBatch = (-diff) > 80 ? 2 : 1;
       const need = Math.min(
         slots,
-        Math.max(1, Math.ceil((-diff) / AVG_BRIEF_CARD_H)),
+        Math.max(minBatch, Math.ceil((-diff) / AVG_BRIEF_CARD_H)),
       );
       let added = 0;
       for (let i = 0; i < need; i += 1) {
-        const item = takeNextBriefFromReserve();
+        // D’abord strict (nouvelle institution) ; si plus rien, filet (allowExtra).
+        let item = takeNextBriefFromReserve({ allowExtra: false });
+        if (!item) item = takeNextBriefFromReserve({ allowExtra: true });
         if (!item) break;
         const el = safeCreateArticle(item, 'compact');
         if (!el) continue;
@@ -3886,9 +3926,16 @@ function balanceMagazineColumns() {
       if (!added) break;
     }
 
+    // Spacer seulement pour aligner les bordures — après le fill contenu.
     ensureMagazineColumnSpacers(hero, brief);
   } finally {
-    window.setTimeout(() => { magazineBalanceBusy = false; }, 150);
+    window.setTimeout(() => {
+      magazineBalanceBusy = false;
+      if (magazineBalanceQueued) {
+        magazineBalanceQueued = false;
+        balanceMagazineColumns();
+      }
+    }, 80);
   }
 
   const briefCount = brief.querySelectorAll('.article--compact').length;
@@ -3898,25 +3945,20 @@ function balanceMagazineColumns() {
   bindMagazineImageBalanceOnce();
 }
 
+/**
+ * Planifie le fill après paint. Pas de « generation » qui annule les passes :
+ * une file simple + re-run si busy.
+ */
 function scheduleMagazineColumnBalance() {
   clearTimeout(magazineBalanceTimer);
-  const gen = ++magazineBalanceGen;
-  // Passages : paint → images partielles → images stables
   magazineBalanceTimer = window.setTimeout(() => {
-    if (gen !== magazineBalanceGen) return;
     balanceMagazineColumns();
-    window.setTimeout(() => {
-      if (gen !== magazineBalanceGen) return;
-      balanceMagazineColumns();
-    }, 320);
-    window.setTimeout(() => {
-      if (gen !== magazineBalanceGen) return;
-      balanceMagazineColumns();
-    }, 900);
-  }, 40);
+    // 2e passe une fois les images / layout stabilisés
+    window.setTimeout(() => balanceMagazineColumns(), 450);
+  }, 60);
 }
 
-/** Images : rebalance au load (pas de ResizeObserver sur les colonnes). */
+/** Images : demande un re-fill au load (file, pas d'annulation). */
 function bindMagazineImageBalanceOnce() {
   if (!NEWS_LIST) return;
   NEWS_LIST.querySelectorAll('.news-hero img, .brief-rail img').forEach((img) => {
