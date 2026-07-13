@@ -3256,18 +3256,6 @@ body.external-listen-open {
   }
 }
 
-/*
- * Tablette + demi-écran laptop (snap Windows / tuile) : 2 colonnes « Suite du fil ».
- * Ancien seuil 820 px trop haut — une moitié d'Ideapad 15 (≈680–960 px CSS)
- * retombait en mode téléphone une colonne.
- */
-@media (min-width: 600px) and (max-width: 1099.98px) {
-  .news-tail-body {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    column-gap: clamp(14px, 2.4vw, 28px);
-  }
-}
-
 @media (max-width: 1099.98px) {
   /* Crédits photo : figcaption hors du cadre image (overflow/aspect-ratio) */
   .article--lead.has-image .article-media {
