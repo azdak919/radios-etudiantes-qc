@@ -252,13 +252,14 @@ a { color: inherit; }
   padding: 0 2px;
 }
 /*
- * Hiérarchie typo masthead > À la une (tous viewports) :
+ * Hiérarchie typo (tous viewports) : LE RADAR > titre À la une > .wire-title.
  * --radar-wordmark-size max et min restent strictement au-dessus de
- * --radar-lead-title-size (évite le cas mobile où la une dépassait LE RADAR).
+ * --radar-lead-title-size, dont le plancher reste lui-même au-dessus du
+ * .wire-title « Le fil étudiant » (1.4rem).
  */
 :root {
   --radar-wordmark-size: clamp(1.85rem, 6.4vw + 0.25rem, 3.9rem);
-  --radar-lead-title-size: clamp(1.4rem, 4.1vw + 0.15rem, 2.55rem);
+  --radar-lead-title-size: clamp(1.55rem, 4.1vw + 0.15rem, 2.55rem);
 }
 /* block (pas flex) : le texte traduit (ex. inuktitut) peut se couper
    sur plusieurs lignes sans déborder du viewport mobile/tablette. */
@@ -338,7 +339,8 @@ html[data-script-dir="rtl"] .wordmark-full {
 @media (max-width: 720px) {
   :root {
     --radar-wordmark-size: clamp(1.7rem, 7.2vw, 2.7rem);
-    --radar-lead-title-size: clamp(1.3rem, 4.8vw, 1.85rem);
+    /* Plancher > .wire-title (1.4rem) et < --radar-wordmark-size (1.7rem). */
+    --radar-lead-title-size: clamp(1.55rem, 4.8vw, 1.85rem);
   }
   .wordmark-mark {
     line-height: 1.08;
@@ -1716,7 +1718,12 @@ html[data-translate-busy="1"] .translate-toggle {
  * Dégradé surtout sur la *moitié basse* de l’aperçu : le haut du peek
  * (nom de source) reste lisible ; le bas s’estompe vers « Plus de sources ».
  */
-.filters-panel.has-overflow:not(.is-expanded):not(.is-compact)::after {
+/*
+ * Le pseudo-élément existe dans tous les états (sinon il apparaît d'un coup,
+ * déjà à sa position repliée, pendant que les rangées se replient encore) ;
+ * seule son opacité change, avec un délai qui attend la fin du repli (0.35s).
+ */
+.filters-panel.has-overflow::after {
   content: "";
   position: absolute;
   left: 0;
@@ -1733,18 +1740,20 @@ html[data-translate-busy="1"] .translate-toggle {
     color-mix(in srgb, var(--bg) 85%, transparent) 80%,
     var(--bg) 100%
   );
-  -webkit-backdrop-filter: blur(1px);
-  backdrop-filter: blur(1px);
   -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 40%, #000 100%);
   mask-image: linear-gradient(to bottom, transparent 0%, #000 40%, #000 100%);
-  opacity: 1;
-  transition: opacity 0.2s ease, top 0.35s ease, height 0.35s ease;
+  opacity: 0;
+  /* visibility coupe aussi le backdrop-filter (que l'opacité seule n'éteint pas) */
+  visibility: hidden;
+  transition: opacity 0.12s ease, visibility 0s linear 0.12s;
 }
 
-.filters-panel.is-expanded::after,
-.filters-panel.is-compact::after {
-  opacity: 0;
-  pointer-events: none;
+.filters-panel.has-overflow:not(.is-expanded):not(.is-compact)::after {
+  opacity: 1;
+  visibility: visible;
+  -webkit-backdrop-filter: blur(1px);
+  backdrop-filter: blur(1px);
+  transition: opacity 0.18s ease 0.3s, visibility 0s linear 0.3s;
 }
 
 .filters {
@@ -3007,7 +3016,8 @@ body.external-listen-open {
   position: fixed;
   right: max(14px, env(safe-area-inset-right, 0px));
   left: auto;
-  bottom: max(16px, env(safe-area-inset-bottom, 0px));
+  /* --vk-inset : hauteur du clavier virtuel (visualViewport, voir app.js) */
+  bottom: calc(max(16px, env(safe-area-inset-bottom, 0px)) + var(--vk-inset, 0px));
   z-index: 180;
   display: flex;
   flex-direction: column;
@@ -3044,12 +3054,16 @@ body.external-listen-open {
   height: 22px;
   display: block;
 }
-.news-search__fab:hover {
-  border-color: color-mix(in srgb, var(--accent) 40%, var(--rule));
-  color: var(--accent);
-  box-shadow:
-    0 2px 10px -2px rgba(0, 0, 0, 0.14),
-    0 10px 28px -10px color-mix(in srgb, var(--accent) 35%, transparent);
+/* Survol : souris seulement — sur tactile, :hover reste « collé » après un
+   tap et le bouton semble encore engagé une fois la recherche fermée. */
+@media (hover: hover) and (pointer: fine) {
+  .news-search__fab:hover {
+    border-color: color-mix(in srgb, var(--accent) 40%, var(--rule));
+    color: var(--accent);
+    box-shadow:
+      0 2px 10px -2px rgba(0, 0, 0, 0.14),
+      0 10px 28px -10px color-mix(in srgb, var(--accent) 35%, transparent);
+  }
 }
 .news-search__fab:active {
   transform: scale(0.96);
@@ -3066,11 +3080,13 @@ body.external-listen-open {
   border-color: var(--accent);
   color: #fff;
 }
-.news-search__fab.is-active:hover,
-.news-search.has-query .news-search__fab:hover {
-  background: var(--accent-dark);
-  border-color: var(--accent-dark);
-  color: #fff;
+@media (hover: hover) and (pointer: fine) {
+  .news-search__fab.is-active:hover,
+  .news-search.has-query .news-search__fab:hover {
+    background: var(--accent-dark);
+    border-color: var(--accent-dark);
+    color: #fff;
+  }
 }
 [data-theme="dark"] .news-search__fab {
   background: var(--bg-soft);

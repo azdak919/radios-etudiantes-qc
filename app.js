@@ -3159,6 +3159,26 @@ function getNewsSearchQuery() {
   return newsSearchQuery;
 }
 
+/*
+ * Clavier virtuel : les éléments fixed ancrés en bas restent derrière le
+ * clavier quand seul le viewport visuel rétrécit. On mesure la zone occluse
+ * via visualViewport et on remonte le panneau d'autant (--vk-inset).
+ */
+function updateNewsSearchKeyboardInset() {
+  if (!NEWS_SEARCH) return;
+  const vv = window.visualViewport;
+  if (!vv || !newsSearchOpen) {
+    NEWS_SEARCH.style.removeProperty('--vk-inset');
+    return;
+  }
+  const occluded = Math.max(0, window.innerHeight - vv.height - vv.offsetTop);
+  if (occluded > 1) {
+    NEWS_SEARCH.style.setProperty('--vk-inset', `${Math.round(occluded)}px`);
+  } else {
+    NEWS_SEARCH.style.removeProperty('--vk-inset');
+  }
+}
+
 function setNewsSearchOpen(open) {
   newsSearchOpen = !!open;
   if (!NEWS_SEARCH || !NEWS_SEARCH_TOGGLE || !NEWS_SEARCH_PANEL) return;
@@ -3180,6 +3200,7 @@ function setNewsSearchOpen(open) {
       NEWS_SEARCH_INPUT?.select?.();
     });
   }
+  updateNewsSearchKeyboardInset();
 }
 
 function syncNewsSearchChrome() {
@@ -3307,6 +3328,12 @@ function bindNewsSearch() {
     if (hasQuery) clearNewsSearch({ keepOpen: false });
     else setNewsSearchOpen(false);
   });
+
+  // Suivre l'apparition/disparition du clavier virtuel (mobile).
+  if (window.visualViewport) {
+    window.visualViewport.addEventListener('resize', updateNewsSearchKeyboardInset);
+    window.visualViewport.addEventListener('scroll', updateNewsSearchKeyboardInset);
+  }
 
   // Raccourci « / » (comme beaucoup de docs) — hors champs de saisie.
   document.addEventListener('keydown', (e) => {
