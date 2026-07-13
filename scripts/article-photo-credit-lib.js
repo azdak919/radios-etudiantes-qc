@@ -852,6 +852,26 @@ function mergePriorEnrichment(item = {}, prior = null) {
     }
   }
 
+  // RSS sans media (ex. The Tribune) : garder la photo scrapée / banque campus
+  // du run précédent — sinon chaque fetch-news efface l’enrichissement et le
+  // fil reste sans vignette jusqu’à ce qu’ensure-lead-images finisse (ou plante).
+  const hasNewPhoto = !!(item.image && String(item.image).trim());
+  const hasPriorPhoto = !!(prior.image && String(prior.image).trim());
+  if (!hasNewPhoto && hasPriorPhoto) {
+    item.image = prior.image;
+    for (const field of [...PHOTO_CREDIT_FIELDS, ...LEAD_IMAGE_FIELDS]) {
+      if (prior[field] !== undefined && prior[field] !== '') {
+        item[field] = prior[field];
+      }
+    }
+  } else if (!hasNewPhoto && prior.stockImage && !item.stockImage) {
+    for (const field of LEAD_IMAGE_FIELDS) {
+      if (prior[field] !== undefined && prior[field] !== '') {
+        item[field] = prior[field];
+      }
+    }
+  }
+
   if (prior.leadExcerpt) item.leadExcerpt = prior.leadExcerpt;
   return item;
 }

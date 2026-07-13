@@ -1,0 +1,28 @@
+# Dependencies (scripts are plain Node — no package.json required)
+node_modules/
+
+# Local debug / scratch
+scripts/_dbg.js
+scripts/_*.tmp.js
+*.orig
+*.rej
+*~
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Env / secrets
+.env
+.env.*
+!.env.example
+
+# Logs & coverage
+*.log
+npm-debug.log*
+coverage/
+.nyc_output/

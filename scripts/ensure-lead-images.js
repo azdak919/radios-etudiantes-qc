@@ -276,23 +276,38 @@ async function main() {
     await sleep(120);
   }
 
+  // Priorité : articles sans aucune photo (ex. Tribune RSS vide) d'abord,
+  // les plus récents en tête — récupère les vraies og:image avant la banque.
   const scrapeQueue = items
     .filter((item) => {
       const { ok } = isCandidateForItem(item, sourceMap);
       return item.link && !ok(item.image);
     })
+    .sort((a, b) => {
+      const aEmpty = a.image || a.stockImage ? 1 : 0;
+      const bEmpty = b.image || b.stockImage ? 1 : 0;
+      if (aEmpty !== bEmpty) return aEmpty - bEmpty;
+      return (Date.parse(b.date) || 0) - (Date.parse(a.date) || 0);
+    })
     .slice(0, PAGE_SCRAPE_LIMIT);
 
   for (const item of scrapeQueue) {
-    const { reject, opts } = isCandidateForItem(item, sourceMap);
-    const resolved = await resolveLeadReadyPhoto(item, reject, opts);
-    if (!resolved?.url) continue;
-    pageScraped += 1;
-    if (doUpdate) {
-      item.image = resolved.url;
-      clearLegacyFallback(item);
+    // Isolation par item : un scrape qui plante ne doit pas tuer la file.
+    try {
+      const { reject, opts } = isCandidateForItem(item, sourceMap);
+      const resolved = await resolveLeadReadyPhoto(item, reject, opts);
+      if (!resolved?.url) continue;
+      pageScraped += 1;
+      if (doUpdate) {
+        item.image = resolved.url;
+        item.leadImageReady = resolved.leadReady !== false;
+        clearLegacyFallback(item);
+        if (resolved.leadReady !== false) clearStockPhoto(item);
+      }
+      if (resolved.leadReady !== false) photosRecovered += 1;
+    } catch (err) {
+      console.warn(`  ⚠ scrape skip ${item.source}: ${(err && err.message) || err}`);
     }
-    if (resolved.leadReady !== false) photosRecovered += 1;
     await sleep(200);
   }
 
