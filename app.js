@@ -373,6 +373,9 @@ const PREFERS_REDUCED_MOTION = window.matchMedia?.('(prefers-reduced-motion: red
 let sourceColors = {};     // source name → accent colour
 let brandColors = { institutions: {}, fallback_palette: ['#003DA5', '#6C2163', '#047857'] };
 let filtersExpanded = false;
+/** Suite du fil : repli après NEWS_TAIL_VISIBLE articles (toutes plateformes). */
+let newsTailExpanded = false;
+const NEWS_TAIL_VISIBLE = 10;
 let volSliderResizeObs = null;
 const marqueeTextByEl = new WeakMap();
 const marqueeObservedEls = new WeakSet();
@@ -3468,7 +3471,7 @@ function renderNews() {
     const section = document.createElement('div');
     section.className = 'news-tail';
     section.innerHTML = '<h3 class="news-tail-title">Suite du fil</h3>';
-    tail.forEach(article => section.appendChild(article));
+    tail.forEach((article) => section.appendChild(article));
     NEWS_LIST.appendChild(section);
   }
 
@@ -3476,9 +3479,71 @@ function renderNews() {
   if (briefCount) NEWS_LIST.dataset.briefCount = String(briefCount);
   else NEWS_LIST.removeAttribute('data-brief-count');
 
+  // Nouveau rendu : replier la suite sauf si l'utilisateur l'avait déjà ouverte
+  // (conservé via newsTailExpanded entre rebalances, reset sur filtre/recherche).
+  syncNewsTailCollapse({ preserveExpanded: false });
+
   updateNewsLayout();
   // Équilibre magazine : combler le vide sous vedettes et/ou sous En bref.
   scheduleMagazineColumnBalance();
+}
+
+/**
+ * Replie la Suite du fil après NEWS_TAIL_VISIBLE articles (comme « Plus de sources »).
+ * Appelé au rendu et après promote/demote magazine.
+ */
+function syncNewsTailCollapse({ preserveExpanded = true } = {}) {
+  const tail = NEWS_LIST?.querySelector('.news-tail');
+  if (!tail) return;
+
+  const articles = [...tail.querySelectorAll(':scope > .article, :scope > a.article')];
+  // Aussi les .article sans être direct child? createArticle uses <a class="article">
+  const cards = articles.length
+    ? articles
+    : [...tail.querySelectorAll('.article')].filter((el) => el.parentElement === tail);
+
+  const overflow = cards.length > NEWS_TAIL_VISIBLE;
+  cards.forEach((el, i) => {
+    el.classList.toggle('news-tail-article--overflow', i >= NEWS_TAIL_VISIBLE);
+  });
+
+  let toggle = tail.querySelector('.news-tail-toggle');
+  if (overflow) {
+    if (!toggle) {
+      toggle = document.createElement('button');
+      toggle.type = 'button';
+      toggle.className = 'news-tail-toggle';
+      toggle.innerHTML = '<span class="news-tail-toggle__label">Plus d\'articles</span>';
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.addEventListener('click', () => {
+        newsTailExpanded = !newsTailExpanded;
+        syncNewsTailCollapse({ preserveExpanded: true });
+        // Amener le bouton en vue après réduire
+        if (!newsTailExpanded) {
+          toggle.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+        }
+      });
+      tail.appendChild(toggle);
+    }
+    tail.classList.add('has-overflow');
+    if (!preserveExpanded) newsTailExpanded = false;
+    tail.classList.toggle('is-expanded', newsTailExpanded);
+    const label = toggle.querySelector('.news-tail-toggle__label');
+    if (label) {
+      label.textContent = newsTailExpanded ? 'Réduire' : 'Plus d\'articles';
+    }
+    toggle.setAttribute('aria-expanded', newsTailExpanded ? 'true' : 'false');
+    // Compter les articles masqués
+    const hidden = cards.length - NEWS_TAIL_VISIBLE;
+    if (!newsTailExpanded && hidden > 0) {
+      const lab = toggle.querySelector('.news-tail-toggle__label');
+      if (lab) lab.textContent = `Plus d'articles (${hidden})`;
+    }
+  } else {
+    tail.classList.remove('has-overflow', 'is-expanded');
+    toggle?.remove();
+    if (!preserveExpanded) newsTailExpanded = false;
+  }
 }
 
 function updateNewsLayout() {
@@ -3815,7 +3880,11 @@ function removeTailArticleForItem(item) {
       break;
     }
   }
-  if (!tail.querySelector('.article')) tail.remove();
+  if (!tail.querySelector('.article')) {
+    tail.remove();
+  } else {
+    syncNewsTailCollapse({ preserveExpanded: true });
+  }
 }
 
 /**
@@ -3981,9 +4050,18 @@ function demoteBriefCardToTail(brief, cardEl) {
   const el = safeCreateArticle(item, 'standard');
   if (el) {
     const titleEl = tail.querySelector('.news-tail-title');
-    if (titleEl && titleEl.nextSibling) tail.insertBefore(el, titleEl.nextSibling);
-    else tail.appendChild(el);
+    const toggle = tail.querySelector('.news-tail-toggle');
+    if (titleEl && titleEl.nextSibling && titleEl.nextSibling !== toggle) {
+      tail.insertBefore(el, titleEl.nextSibling);
+    } else if (toggle) {
+      tail.insertBefore(el, toggle);
+    } else if (titleEl) {
+      titleEl.insertAdjacentElement('afterend', el);
+    } else {
+      tail.appendChild(el);
+    }
   }
+  syncNewsTailCollapse({ preserveExpanded: true });
   return true;
 }
 
@@ -4088,6 +4166,7 @@ function balanceMagazineColumns() {
   const briefCount = brief.querySelectorAll('.article--compact').length;
   if (briefCount) NEWS_LIST.dataset.briefCount = String(briefCount);
   else NEWS_LIST.removeAttribute('data-brief-count');
+  syncNewsTailCollapse({ preserveExpanded: true });
   updateNewsLayout();
   bindMagazineImageBalanceOnce();
 }

@@ -3213,18 +3213,8 @@ body.external-listen-open {
 }
 
 @media (max-width: 600px) {
-  :root { --pad: 16px; }
+  :root { --pad: 18px; }
   /* Filet reste dans le flux (left:0) — plus de left négatif iPad/téléphone */
-
-  /* Vignette un cran plus étroite → plus de place pour le texte (zone noire). */
-  .article--thumb.has-image {
-    grid-template-columns: clamp(56px, 20vw, 76px) minmax(0, 1fr);
-    column-gap: 12px;
-  }
-  .news-hero .article--feature.article--thumb.has-image {
-    grid-template-columns: clamp(72px, 24vw, 100px) minmax(0, 1fr);
-    column-gap: 12px;
-  }
 
   /* Cartes avec vignette : un peu moins de padding vertical pour compenser
      la hauteur crédit photo, sans écraser le bloc texte. */
@@ -3234,23 +3224,28 @@ body.external-listen-open {
     padding-bottom: 11px;
   }
 
-  /* Titre / extrait : utiliser toute la largeur restante à côté de la vignette */
+  /* Titre / extrait : laisser de l'air à côté de la vignette */
   .article--thumb.has-image .article-title {
     padding-right: 0;
   }
-  .article--thumb.has-image .article-brief,
-  .article--thumb.has-image .article-brief-text {
-    max-width: none;
-  }
 
-  /* Plus de lignes d'extrait pour combler la hauteur de la vignette */
+  /* Mobile En bref + photo : 4 lignes (inchangé — pas de « fill » agressif) */
   .brief-rail .article--compact.article--thumb.has-image .article-brief-text,
   .brief-rail .article--compact.article--thumb.has-image .article-brief.is-truncated .article-brief-text {
-    -webkit-line-clamp: 6;
+    -webkit-line-clamp: 4;
   }
-  .news-tail .article--standard.article--thumb.has-image .article-brief-text,
-  .news-tail .article--standard.article--thumb.has-image .article-brief.is-truncated .article-brief-text {
-    -webkit-line-clamp: 5;
+
+  /*
+   * Vedettes seulement : vignette un cran plus étroite + plus d'extrait
+   * pour combler la zone noire à côté de la photo (pas En bref / Suite).
+   */
+  .news-hero .article--feature.article--thumb.has-image {
+    grid-template-columns: clamp(72px, 24vw, 100px) minmax(0, 1fr);
+    column-gap: 12px;
+  }
+  .news-hero .article--feature.article--thumb.has-image .article-brief,
+  .news-hero .article--feature.article--thumb.has-image .article-brief-text {
+    max-width: none;
   }
   .news-hero .article--feature.article--thumb.has-image .article-brief-text,
   .news-hero .article--feature.article--thumb.has-image .article-brief.is-truncated .article-brief-text {
@@ -3488,25 +3483,76 @@ body.external-listen-open {
   .news-tail .article--standard .article-brief-text {
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 4;
+    -webkit-line-clamp: 3;
     overflow: hidden;
   }
 
   .brief-rail .article--compact .article-brief.is-truncated .article-brief-text {
+    -webkit-line-clamp: 2;
+  }
+
+  /* Suite du fil : 3 lignes d'extrait (y compris avec « Lire la suite ») */
+  .news-tail .article--standard .article-brief.is-truncated .article-brief-text {
     -webkit-line-clamp: 3;
   }
+}
 
-  /* Suite du fil : plus d'extrait pour remplir à côté de la vignette */
-  .news-tail .article--standard .article-brief.is-truncated .article-brief-text {
-    -webkit-line-clamp: 4;
-  }
-
-  .brief-rail .article--compact.article--thumb.has-image .article-brief-text,
-  .brief-rail .article--compact.article--thumb.has-image .article-brief.is-truncated .article-brief-text,
-  .news-tail .article--standard.article--thumb.has-image .article-brief-text,
-  .news-tail .article--standard.article--thumb.has-image .article-brief.is-truncated .article-brief-text {
-    -webkit-line-clamp: 5;
-  }
+/* ── Suite du fil : repli après 10 articles (toutes plateformes) ── */
+.news-tail {
+  position: relative;
+}
+.news-tail:not(.is-expanded) .news-tail-article--overflow {
+  display: none !important;
+}
+.news-tail-toggle {
+  display: none;
+  grid-column: 1 / -1;
+  width: 100%;
+  margin: 10px 0 4px;
+  padding: 12px 14px;
+  border: 1px dashed color-mix(in srgb, var(--rule-strong) 70%, transparent);
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--bg-soft) 80%, transparent);
+  color: var(--ink-soft);
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  text-align: center;
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+.news-tail.has-overflow .news-tail-toggle {
+  display: block;
+}
+.news-tail-toggle:hover {
+  border-color: var(--rule-strong);
+  color: var(--ink);
+  background: var(--bg-soft);
+}
+.news-tail-toggle:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+/* Aperçu fondu sous le 10e article (comme « Plus de sources ») */
+.news-tail.has-overflow:not(.is-expanded)::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 48px; /* au-dessus du bouton */
+  height: 56px;
+  pointer-events: none;
+  z-index: 1;
+  background: linear-gradient(
+    to bottom,
+    color-mix(in srgb, var(--bg) 0%, transparent) 0%,
+    color-mix(in srgb, var(--bg) 55%, transparent) 50%,
+    var(--bg) 100%
+  );
+}
+.news-tail.is-expanded::after {
+  display: none;
 }
 
 /* Une colonne seulement sur vrai téléphone (< 600 px). */

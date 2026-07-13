@@ -790,6 +790,26 @@
       'iu-latn': 'Moins de sources',
       default: null,
     },
+    'Plus d\'articles': {
+      en: 'More articles',
+      es: 'Más artículos',
+      pt: 'Mais artigos',
+      de: 'Weitere Artikel',
+      it: 'Altri articoli',
+      iu: 'Plus d\'articles',
+      'iu-latn': 'Plus d\'articles',
+      default: null,
+    },
+    'Réduire': {
+      en: 'Show less',
+      es: 'Reducir',
+      pt: 'Reduzir',
+      de: 'Einklappen',
+      it: 'Riduci',
+      iu: 'Réduire',
+      'iu-latn': 'Réduire',
+      default: null,
+    },
   };
 
   function preferredUiPhrase(text = '', targetLang = '') {
