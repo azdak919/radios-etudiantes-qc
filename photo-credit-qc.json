@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-13T12:29:51.214Z",
+  "updated": "2026-07-13T13:19:55.394Z",
   "total": 205,
   "withImage": 191,
   "withCredit": 191,
@@ -7,59 +7,9 @@
   "pending": 0,
   "missingHero": 0,
   "ok": true,
-  "checked": 7,
-  "updatedCount": 7,
-  "citedNew": 4,
-  "fallbackNew": 3,
-  "samples": [
-    {
-      "title": "Revue de presse – semaine du 6 juillet 2026",
-      "source": "Média — Institut national de la recherche scientifique",
-      "credit": "Crédit photo : Média — Institut national de la recherche scientifique",
-      "cited": false,
-      "method": null
-    },
-    {
-      "title": "L’épidémie de la nonchalance - Le Délit",
-      "source": "Le Délit",
-      "credit": "Photo : Elie Nguyen",
-      "cited": true,
-      "method": "media-credit-featured"
-    },
-    {
-      "title": "La performance de l’homosexualité : un privilège? - Le Délit",
-      "source": "Le Délit",
-      "credit": "Photo : Félix Fournier",
-      "cited": true,
-      "method": "media-credit-featured"
-    },
-    {
-      "title": "Les femmes MAGA au service du patriarcat - Le Délit",
-      "source": "Le Délit",
-      "credit": "Photo : Stu Doré",
-      "cited": true,
-      "method": "media-credit-featured"
-    },
-    {
-      "title": "Leave the Children Out of This",
-      "source": "The Plant",
-      "credit": "Photo: My Little Princess (2011)",
-      "cited": true,
-      "method": "via-attribution"
-    },
-    {
-      "title": "Inside Mile End Kicks",
-      "source": "The Link",
-      "credit": "Photo credit: The Link",
-      "cited": false,
-      "method": null
-    },
-    {
-      "title": "The apprenticeship of public voice",
-      "source": "The Link",
-      "credit": "Photo credit: The Link",
-      "cited": false,
-      "method": null
-    }
-  ]
+  "checked": 0,
+  "updatedCount": 0,
+  "citedNew": 0,
+  "fallbackNew": 0,
+  "samples": []
 }

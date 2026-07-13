@@ -1,12 +1,12 @@
 {
-  "updated": "2026-07-13T12:23:35.064Z",
+  "updated": "2026-07-13T13:13:42.818Z",
   "total": 205,
   "pool": 58,
   "incomplete": 2,
   "withLeadExcerpt": 81,
   "candidates": 2,
   "enriched": 0,
-  "failed": 1,
+  "failed": 0,
   "ok": true,
   "samples": [
     {
@@ -16,6 +16,15 @@
       "score": 66,
       "chars": 400,
       "sample": "“20 degrees Celsius,” my weather app beams. My eyebrows knit with confusion. Twenty degrees? I opt t",
+      "changed": false
+    },
+    {
+      "title": "L’héritage des hippies dans l’Est du Québec",
+      "link": "https://www.uqar.ca/lheritage-des-hippies-dans-lest-du-quebec/",
+      "ok": true,
+      "score": 81,
+      "chars": 400,
+      "sample": "L’histoire de la contre-culture au Québec ne se limite pas aux événements et aux manifestations surv",
       "changed": false
     }
   ]

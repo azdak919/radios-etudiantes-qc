@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-13T12:21:18.075Z",
+  "updated": "2026-07-13T13:11:05.935Z",
   "updatedSlot": null,
   "count": 205,
   "freshnessSessions": 3,
@@ -10,7 +10,7 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-05-15T16:00:00.000Z",
-      "lastFetchOk": "2026-07-13T12:20:13.975Z"
+      "lastFetchOk": "2026-07-13T13:10:23.349Z"
     },
     "Montréal Campus": {
       "fetchOk": true,
@@ -18,7 +18,7 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-05-09T03:14:30.000Z",
-      "lastFetchOk": "2026-07-13T12:20:15.259Z"
+      "lastFetchOk": "2026-07-13T13:10:24.703Z"
     },
     "Le Délit": {
       "fetchOk": true,
@@ -26,7 +26,7 @@
       "articleCount": 20,
       "freshArticleCount": 20,
       "lastArticle": "2026-03-25T11:00:00.000Z",
-      "lastFetchOk": "2026-07-13T12:20:21.610Z"
+      "lastFetchOk": "2026-07-13T13:10:30.107Z"
     },
     "The McGill Daily": {
       "fetchOk": true,
@@ -34,7 +34,7 @@
       "articleCount": 15,
       "freshArticleCount": 15,
       "lastArticle": "2026-07-06T12:00:00.000Z",
-      "lastFetchOk": "2026-07-13T12:20:22.508Z"
+      "lastFetchOk": "2026-07-13T13:10:31.108Z"
     },
     "The Link": {
       "fetchOk": true,
@@ -42,7 +42,7 @@
       "articleCount": 20,
       "freshArticleCount": 20,
       "lastArticle": "2026-07-08T14:41:00.000Z",
-      "lastFetchOk": "2026-07-13T12:20:23.876Z"
+      "lastFetchOk": "2026-07-13T13:10:32.346Z"
     },
     "Zone Campus": {
       "fetchOk": true,
@@ -50,7 +50,7 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-05-08T14:20:26.000Z",
-      "lastFetchOk": "2026-07-13T12:20:25.429Z"
+      "lastFetchOk": "2026-07-13T13:10:33.760Z"
     },
     "L'Exemplaire": {
       "fetchOk": true,
@@ -58,15 +58,15 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-05-15T16:31:24.000Z",
-      "lastFetchOk": "2026-07-13T12:20:27.385Z"
+      "lastFetchOk": "2026-07-13T13:10:35.724Z"
     },
     "Le Collectif": {
-      "fetchOk": false,
-      "stale": true,
+      "fetchOk": true,
+      "stale": false,
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-07-11T16:34:55.000Z",
-      "lastFetchOk": null
+      "lastFetchOk": "2026-07-13T13:10:36.511Z"
     },
     "Exil": {
       "fetchOk": true,
@@ -74,7 +74,7 @@
       "articleCount": 7,
       "freshArticleCount": 7,
       "lastArticle": "2026-04-18T22:22:07.000Z",
-      "lastFetchOk": "2026-07-13T12:20:39.673Z"
+      "lastFetchOk": "2026-07-13T13:10:36.740Z"
     },
     "La Pige": {
       "fetchOk": true,
@@ -82,7 +82,7 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-06-22T14:36:10.000Z",
-      "lastFetchOk": "2026-07-13T12:20:40.568Z"
+      "lastFetchOk": "2026-07-13T13:10:37.533Z"
     },
     "Le Polyscope": {
       "fetchOk": true,
@@ -90,7 +90,7 @@
       "articleCount": 13,
       "freshArticleCount": 13,
       "lastArticle": "2026-02-25T14:38:32.764Z",
-      "lastFetchOk": "2026-07-13T12:20:43.900Z"
+      "lastFetchOk": "2026-07-13T13:10:40.753Z"
     },
     "The Tribune": {
       "fetchOk": true,
@@ -98,7 +98,7 @@
       "articleCount": 20,
       "freshArticleCount": 20,
       "lastArticle": "2026-06-26T15:24:28.000Z",
-      "lastFetchOk": "2026-07-13T12:20:44.204Z"
+      "lastFetchOk": "2026-07-13T13:10:41.043Z"
     },
     "The Campus": {
       "fetchOk": true,
@@ -106,7 +106,7 @@
       "articleCount": 20,
       "freshArticleCount": 20,
       "lastArticle": "2026-04-06T16:03:16.000Z",
-      "lastFetchOk": "2026-07-13T12:20:44.408Z"
+      "lastFetchOk": "2026-07-13T13:10:41.288Z"
     },
     "The Plant": {
       "fetchOk": true,
@@ -114,7 +114,7 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-05-11T20:44:08.000Z",
-      "lastFetchOk": "2026-07-13T12:20:44.568Z"
+      "lastFetchOk": "2026-07-13T13:10:41.431Z"
     },
     "Média — Institut national de la recherche scientifique": {
       "fetchOk": true,
@@ -122,15 +122,15 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-07-07T12:30:00.000Z",
-      "lastFetchOk": "2026-07-13T12:20:46.121Z"
+      "lastFetchOk": "2026-07-13T13:10:43.244Z"
     },
     "Média — Université du Québec à Rimouski": {
-      "fetchOk": false,
-      "stale": true,
+      "fetchOk": true,
+      "stale": false,
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-07-09T12:05:00.000Z",
-      "lastFetchOk": null
+      "lastFetchOk": "2026-07-13T13:10:43.825Z"
     }
   },
   "items": [
@@ -160,8 +160,7 @@
       "imageCreator": "Diliff",
       "imageLicense": "by",
       "imageProvider": "openverse",
-      "imageSourceUrl": "https://commons.wikimedia.org/w/index.php?curid=533725",
-      "_retainedFromCache": true
+      "imageSourceUrl": "https://commons.wikimedia.org/w/index.php?curid=533725"
     },
     {
       "source": "Le Collectif",
@@ -189,8 +188,7 @@
       "imageCreator": "Rod Raglin",
       "imageLicense": "by-sa",
       "imageProvider": "openverse",
-      "imageSourceUrl": "https://www.flickr.com/photos/78791029@N04/52511912533",
-      "_retainedFromCache": true
+      "imageSourceUrl": "https://www.flickr.com/photos/78791029@N04/52511912533"
     },
     {
       "source": "Le Collectif",
@@ -212,7 +210,6 @@
       "sourceImageCreditImageKey": "societe_devoilement-du-livre-bleu_sourcesite-internet-du-parti-quebecois.png",
       "sourceImageCreditRev": 8,
       "leadImageReady": false,
-      "leadExcerpt": "Le Parti québécois (PQ) a lancé, le 23 juin dernier, son fameux Livre bleu, visant à exposer sa vision d’un Québec indépendant, mais aussi à critiquer le palier fédéral en élaborant les principales priorités à prendre en compte lors du prochain référendum pour le camp du Oui. Lumière sur les différents chapitres, ainsi que sur certaines solutions avancées par le parti.",
       "stockImage": "https://upload.wikimedia.org/wikipedia/commons/c/cb/2014-07-14_12-04-12_devoilement-statue-quand-meme.jpg",
       "imageTitle": "2014-07-14 12-04-12 devoilement-statue-quand-meme",
       "imageCredit": "Photo : Thomas Bresson / CC BY · Openverse",
@@ -220,7 +217,7 @@
       "imageLicense": "by",
       "imageProvider": "openverse",
       "imageSourceUrl": "https://commons.wikimedia.org/w/index.php?curid=34020479",
-      "_retainedFromCache": true
+      "leadExcerpt": "Le Parti québécois (PQ) a lancé, le 23 juin dernier, son fameux Livre bleu, visant à exposer sa vision d’un Québec indépendant, mais aussi à critiquer le palier fédéral en élaborant les principales priorités à prendre en compte lors du prochain référendum pour le camp du Oui. Lumière sur les différents chapitres, ainsi que sur certaines solutions avancées par le parti."
     },
     {
       "source": "Le Collectif",
@@ -248,8 +245,7 @@
       "imageCreator": "Buntaimpreza",
       "imageLicense": "by-sa",
       "imageProvider": "openverse",
-      "imageSourceUrl": "https://commons.wikimedia.org/w/index.php?curid=130583156",
-      "_retainedFromCache": true
+      "imageSourceUrl": "https://commons.wikimedia.org/w/index.php?curid=130583156"
     },
     {
       "source": "Média — Université du Québec à Rimouski",
@@ -263,16 +259,14 @@
       "date": "2026-07-09T12:05:00.000Z",
       "excerpt": "D’aussi loin qu’il se souvienne, Sébastien Cardinal a toujours été attiré par la science. Les termes molécule, atome et électron ont rapidement éveillé en lui une curiosité qui n’a fait que grandir au fil du temps. Portrait d’un professeur en chimie pour qui un produit comme le",
       "image": "https://www.uqar.ca/app/uploads/2026/07/sebastien-cardinal-1920.jpg",
-      "leadExcerpt": "Originaire de Chicoutimi, Sébastien Cardinal a fait ses études en chimie à l’Université Laval, où il a obtenu un baccalauréat, une maîtrise et un doctorat dans cette discipline. C’est lors de ses études de cycles supérieurs, sous la supervision du professeur Normand Voyer , qu’il a commencé à s’intéresser au québécol, une molécule découverte en 2011 que l’on retrouve dans le sirop d’érable.",
-      "leadImageReady": true,
       "sourceImageCredit": "Crédit photo : Média — Université du Québec à Rimouski",
-      "sourceImageCreator": "",
       "sourceImageCreditUrl": "https://www.uqar.ca/voir-le-monde-comme-un-chimiste/",
       "sourceImageCreditFrom": "media",
       "sourceImageCreditCited": false,
       "sourceImageCreditImageKey": "sebastien-cardinal-1920.jpg",
       "sourceImageCreditRev": 8,
-      "_retainedFromCache": true
+      "leadImageReady": true,
+      "leadExcerpt": "Originaire de Chicoutimi, Sébastien Cardinal a fait ses études en chimie à l’Université Laval, où il a obtenu un baccalauréat, une maîtrise et un doctorat dans cette discipline. C’est lors de ses études de cycles supérieurs, sous la supervision du professeur Normand Voyer , qu’il a commencé à s’intéresser au québécol, une molécule découverte en 2011 que l’on retrouve dans le sirop d’érable."
     },
     {
       "source": "Le Collectif",
@@ -293,8 +287,7 @@
       "sourceImageCreditCited": true,
       "sourceImageCreditImageKey": "obsessions_hyperfixations_les-hyperfixations_sourceblogzencare-1.png",
       "sourceImageCreditRev": 2,
-      "leadImageReady": false,
-      "_retainedFromCache": true
+      "leadImageReady": false
     },
     {
       "source": "Le Collectif",
@@ -316,7 +309,6 @@
       "sourceImageCreditImageKey": "obsessions_quityourjob-photo2_sourcegettyimages-1.png",
       "sourceImageCreditRev": 2,
       "leadImageReady": false,
-      "leadExcerpt": "Sur les réseaux sociaux, le message revient sans cesse : quitte ton emploi, deviens travailleur autonome, vis de tes passions. Une vie sans patron, sans horaires fixes, sans routine imposée. Pour une génération qui a grandi avec TikTok et Instagram, le rêve est clair : être libre.",
       "stockImage": "https://upload.wikimedia.org/wikipedia/commons/2/23/Bethune_A_SGH_GT-19000_quitte_gaillefontaine.jpg",
       "imageTitle": "Bethune A SGH GT-19000 quitte gaillefontaine",
       "imageCredit": "Photo : Thierry Deras / CC BY-SA · Openverse",
@@ -324,7 +316,7 @@
       "imageLicense": "by-sa",
       "imageProvider": "openverse",
       "imageSourceUrl": "https://commons.wikimedia.org/w/index.php?curid=23487845",
-      "_retainedFromCache": true
+      "leadExcerpt": "Sur les réseaux sociaux, le message revient sans cesse : quitte ton emploi, deviens travailleur autonome, vis de tes passions. Une vie sans patron, sans horaires fixes, sans routine imposée. Pour une génération qui a grandi avec TikTok et Instagram, le rêve est clair : être libre."
     },
     {
       "source": "Le Collectif",
@@ -352,8 +344,7 @@
       "imageCreator": "londoncyclist",
       "imageLicense": "by",
       "imageProvider": "openverse",
-      "imageSourceUrl": "https://www.flickr.com/photos/10978010@N07/14620650820",
-      "_retainedFromCache": true
+      "imageSourceUrl": "https://www.flickr.com/photos/10978010@N07/14620650820"
     },
     {
       "source": "Le Collectif",
@@ -375,8 +366,7 @@
       "sourceImageCreditImageKey": "obsessions_clubsdesports_clubpleinairaltitude_sourcefacebookclubpleinairaltitude-1.jpg",
       "sourceImageCreditRev": 2,
       "leadImageReady": false,
-      "leadExcerpt": "Si vous êtes adeptes de course, de vélo ou encore de plein air, vous avez remarqué que, depuis quelques années déjà, les clubs et événements sportifs se sont multipliés. Si ces sports étaient déjà aimés avant, leur popularité a explosé depuis la pandémie.",
-      "_retainedFromCache": true
+      "leadExcerpt": "Si vous êtes adeptes de course, de vélo ou encore de plein air, vous avez remarqué que, depuis quelques années déjà, les clubs et événements sportifs se sont multipliés. Si ces sports étaient déjà aimés avant, leur popularité a explosé depuis la pandémie."
     },
     {
       "source": "The Link",
@@ -412,16 +402,14 @@
       "date": "2026-07-08T12:05:00.000Z",
       "excerpt": "La transition énergétique engendre une forte demande en minéraux dits critiques, notamment avec le développement de la filière batterie. Leur extraction entraîne toutefois des impacts socio-environnementaux dans des régions où l’on retrouve parfois des aires naturelles",
       "image": "https://www.uqar.ca/app/uploads/2026/07/transition-1920.jpg",
-      "leadExcerpt": "L’électrification des transports et le stockage des énergies renouvelables nécessitent une production importante de batteries et de composantes en minerais comme le lithium et le graphite. Les politiques de transitions énergétiques et la croissance des économies émergentes ont d’ailleurs accentué la demande mondiale pour ces minéraux.",
-      "leadImageReady": true,
       "sourceImageCredit": "Crédit photo : Média — Université du Québec à Rimouski",
-      "sourceImageCreator": "",
       "sourceImageCreditUrl": "https://www.uqar.ca/mieux-concilier-les-impacts-de-la-transition-energetique/",
       "sourceImageCreditFrom": "media",
       "sourceImageCreditCited": false,
       "sourceImageCreditImageKey": "transition-1920.jpg",
       "sourceImageCreditRev": 8,
-      "_retainedFromCache": true
+      "leadImageReady": true,
+      "leadExcerpt": "L’électrification des transports et le stockage des énergies renouvelables nécessitent une production importante de batteries et de composantes en minerais comme le lithium et le graphite. Les politiques de transitions énergétiques et la croissance des économies émergentes ont d’ailleurs accentué la demande mondiale pour ces minéraux."
     },
     {
       "source": "Le Collectif",
@@ -449,8 +437,7 @@
       "imageCreator": "festivalculturadigitalbr",
       "imageLicense": "by",
       "imageProvider": "openverse",
-      "imageSourceUrl": "https://www.flickr.com/photos/69310588@N03/6477034889",
-      "_retainedFromCache": true
+      "imageSourceUrl": "https://www.flickr.com/photos/69310588@N03/6477034889"
     },
     {
       "source": "Le Collectif",
@@ -478,8 +465,7 @@
       "imageCreator": "Marc-Lautenbacher",
       "imageLicense": "by-sa",
       "imageProvider": "openverse",
-      "imageSourceUrl": "https://commons.wikimedia.org/w/index.php?curid=73170675",
-      "_retainedFromCache": true
+      "imageSourceUrl": "https://commons.wikimedia.org/w/index.php?curid=73170675"
     },
     {
       "source": "Média — Institut national de la recherche scientifique",
@@ -514,16 +500,14 @@
       "date": "2026-07-07T12:05:00.000Z",
       "excerpt": "Une équipe de l’UQAR vient de publier dans la revue Scientific Reports une étude levant le voile sur des stratégies d’adaptation uniques de certains invertébrés marins de très grande taille qui évoluent dans les eaux glaciales de l’Antarctique. Un phénomène appelé gigantisme",
       "image": "https://www.uqar.ca/app/uploads/2026/07/ophionotus-victoriae-1920.jpg",
-      "leadExcerpt": "En plus de MM. Calosi, Pardo et Feugère, l’équipe de recherche était formée de Fanny Vermandele de l’Université Laval, de Mathieu Milour et Bertrand Genard des Laboratoires Iso-BioKem de Rimouski, de Paulina Bruning et Ignacio Garrido de l’UACH. On peut lire l’article Adaptive metabolic reprogramming conserves energy status in Antarctic giants ici .",
-      "leadImageReady": true,
       "sourceImageCredit": "Crédit photo : Média — Université du Québec à Rimouski",
-      "sourceImageCreator": "",
       "sourceImageCreditUrl": "https://www.uqar.ca/des-geants-marins-aux-strategies-dadaptation-etonnantes/",
       "sourceImageCreditFrom": "media",
       "sourceImageCreditCited": false,
       "sourceImageCreditImageKey": "ophionotus-victoriae-1920.jpg",
       "sourceImageCreditRev": 8,
-      "_retainedFromCache": true
+      "leadImageReady": true,
+      "leadExcerpt": "En plus de MM. Calosi, Pardo et Feugère, l’équipe de recherche était formée de Fanny Vermandele de l’Université Laval, de Mathieu Milour et Bertrand Genard des Laboratoires Iso-BioKem de Rimouski, de Paulina Bruning et Ignacio Garrido de l’UACH. On peut lire l’article Adaptive metabolic reprogramming conserves energy status in Antarctic giants ici ."
     },
     {
       "source": "Média — Institut national de la recherche scientifique",
@@ -538,7 +522,6 @@
       "excerpt": "Découvrez la revue de presse de la semaine pour explorer les publications qui mettent en lumière les activités, réalisations et sujets d’actualité qui concernent l'INRS. The post Revue de presse – semaine du 6 juillet 2026 appeared first on INRS .",
       "image": "https://inrs.ca/wp-content/uploads/chaleur-ville_803059146.png",
       "sourceImageCredit": "Crédit photo : Média — Institut national de la recherche scientifique",
-      "sourceImageCreator": "",
       "sourceImageCreditUrl": "https://inrs.ca/actualites/linrs-dans-les-medias-revue-de-presse/#utm_source=rss&utm_medium=rss&utm_campaign=linrs-dans-les-medias-revue-de-presse-du-16-janvier",
       "sourceImageCreditFrom": "media",
       "sourceImageCreditCited": false,
@@ -579,8 +562,6 @@
       "date": "2026-07-03T12:05:00.000Z",
       "excerpt": "Ils avaient les cheveux longs, prônaient l’amour libre et la non-violence et rejetaient la société de consommation. Les hippies ont marqué les années 60 et 70. Mais au-delà de son image folklorique, le mouvement hippie a laissé son empreinte dans les régions du Bas-Saint-Laurent",
       "image": "https://www.uqar.ca/app/uploads/2026/06/hippies-banq-1920.jpg",
-      "leadExcerpt": "L’histoire de la contre-culture au Québec ne se limite pas aux événements et aux manifestations survenus à Montréal et dans les grands centres urbains. Même que les hippies ont laissé un héritage appréciable dans l’Est du Québec, souligne l’historienne Émilie Cormier . « Le réseau des auberges de jeunesse, les coopératives, la valorisation des fermes de culture biologique et plusieurs autres trans",
-      "leadImageReady": true,
       "sourceImageCredit": "Photo : BAnQ/La Presse",
       "sourceImageCreator": "BAnQ/La Presse",
       "sourceImageCreditUrl": "https://www.uqar.ca/lheritage-des-hippies-dans-lest-du-quebec/",
@@ -588,7 +569,8 @@
       "sourceImageCreditCited": true,
       "sourceImageCreditImageKey": "hippies-banq-1920.jpg",
       "sourceImageCreditRev": 8,
-      "_retainedFromCache": true
+      "leadImageReady": true,
+      "leadExcerpt": "L’histoire de la contre-culture au Québec ne se limite pas aux événements et aux manifestations survenus à Montréal et dans les grands centres urbains. Même que les hippies ont laissé un héritage appréciable dans l’Est du Québec, souligne l’historienne Émilie Cormier . « Le réseau des auberges de jeunesse, les coopératives, la valorisation des fermes de culture biologique et plusieurs autres trans"
     },
     {
       "source": "Média — Université du Québec à Rimouski",
@@ -602,8 +584,6 @@
       "date": "2026-07-02T12:05:00.000Z",
       "excerpt": "L’intervention sociojudiciaire auprès des familles confrontées à une dynamique de violence post-séparation présente de nombreux défis. Une recherche-action menée par la professeure en travail social Catherine Turbide vise à recenser, à développer et à expérimenter de nouvelles",
       "image": "https://www.uqar.ca/app/uploads/2026/06/post-separation-shutters-1920.jpg",
-      "leadExcerpt": "L’ensemble des connaissances acquises à travers ces projets permettra d’identifier les stratégies les plus pertinentes, tant sur le plan scientifique que clinique. « À la phase 2, nous allons expérimenter certaines de ces stratégies dans le cadre de services offerts par la DPJ et procéder à une évaluation d’implantation », précise la professeure Turbide.",
-      "leadImageReady": true,
       "sourceImageCredit": "Photo : Shutterskock",
       "sourceImageCreator": "Shutterskock",
       "sourceImageCreditUrl": "https://www.uqar.ca/comment-adapter-lintervention-sociojudiciaire-aupres-des-familles-apres-une-separation-dans-un-contexte-de-violence/",
@@ -611,7 +591,8 @@
       "sourceImageCreditCited": true,
       "sourceImageCreditImageKey": "post-separation-shutters-1920.jpg",
       "sourceImageCreditRev": 8,
-      "_retainedFromCache": true
+      "leadImageReady": true,
+      "leadExcerpt": "L’ensemble des connaissances acquises à travers ces projets permettra d’identifier les stratégies les plus pertinentes, tant sur le plan scientifique que clinique. « À la phase 2, nous allons expérimenter certaines de ces stratégies dans le cadre de services offerts par la DPJ et procéder à une évaluation d’implantation », précise la professeure Turbide."
     },
     {
       "source": "Média — Université du Québec à Rimouski",
@@ -625,16 +606,14 @@
       "date": "2026-06-30T12:00:00.000Z",
       "excerpt": "L’UQAR a accueilli, au trimestre hiver 2026, à son campus de Lévis, une étudiante boursière internationale dans le cadre du Programme de futurs leaders dans les Amériques (PFLA), soutenu par Affaires mondiales Canada. Originaire du Brésil et étudiante au baccalauréat en sciences",
       "image": "https://www.uqar.ca/app/uploads/2026/06/photo-carolina-janie-ui.jpg",
-      "leadExcerpt": "Selon sa superviseure, Carolina s’est démarquée par la qualité et la clarté de sa démarche, ainsi que par la pertinence de son projet de recherche, en lien avec les champs d’expertise de la professeure. Bien que de nombreuses demandes d’étudiants internationaux soient reçues régulièrement, son dossier s’est distingué par sa cohérence et son potentiel académique.",
-      "leadImageReady": true,
       "sourceImageCredit": "Crédit photo : Média — Université du Québec à Rimouski",
-      "sourceImageCreator": "",
       "sourceImageCreditUrl": "https://www.uqar.ca/une-experience-internationale-enrichissante-a-luqar/",
       "sourceImageCreditFrom": "media",
       "sourceImageCreditCited": false,
       "sourceImageCreditImageKey": "photo-carolina-janie-ui.jpg",
       "sourceImageCreditRev": 8,
-      "_retainedFromCache": true
+      "leadImageReady": true,
+      "leadExcerpt": "Selon sa superviseure, Carolina s’est démarquée par la qualité et la clarté de sa démarche, ainsi que par la pertinence de son projet de recherche, en lien avec les champs d’expertise de la professeure. Bien que de nombreuses demandes d’étudiants internationaux soient reçues régulièrement, son dossier s’est distingué par sa cohérence et son potentiel académique."
     },
     {
       "source": "Média — Université du Québec à Rimouski",
@@ -648,16 +627,14 @@
       "date": "2026-06-29T12:05:00.000Z",
       "excerpt": "Charles Taylor est l’un des philosophes les plus éminents du Québec. Un ouvrage collectif codirigé par le professeur Bernard Gagnon, spécialiste d’éthique et de théorie politique, s’intéresse à l’évolution de sa pensée sur des thèmes comme la démocratie, la diversité et la",
       "image": "https://www.uqar.ca/app/uploads/2026/06/livre-charles-taylor-uqar-info.jpg",
-      "leadExcerpt": "L’identité, les valeurs communes, le multiculturalisme, l’éthique en politique, l’État de droit libéral moderne, le religieux et l’anthropologie moderne font partie des thèmes abordés dans l’ouvrage. Charles Taylor signe également un chapitre sur les dégénérescences de la démocratie. C’est la première fois que ce texte écrit en 2022 est traduit en français.",
-      "leadImageReady": true,
       "sourceImageCredit": "Crédit photo : Média — Université du Québec à Rimouski",
-      "sourceImageCreator": "",
       "sourceImageCreditUrl": "https://www.uqar.ca/un-nouvel-ouvrage-sur-la-pensee-de-charles-taylor/",
       "sourceImageCreditFrom": "media",
       "sourceImageCreditCited": false,
       "sourceImageCreditImageKey": "livre-charles-taylor-uqar-info.jpg",
       "sourceImageCreditRev": 8,
-      "_retainedFromCache": true
+      "leadImageReady": true,
+      "leadExcerpt": "L’identité, les valeurs communes, le multiculturalisme, l’éthique en politique, l’État de droit libéral moderne, le religieux et l’anthropologie moderne font partie des thèmes abordés dans l’ouvrage. Charles Taylor signe également un chapitre sur les dégénérescences de la démocratie. C’est la première fois que ce texte écrit en 2022 est traduit en français."
     },
     {
       "source": "The Link",
@@ -735,8 +712,6 @@
       "date": "2026-06-26T12:05:00.000Z",
       "excerpt": "Le plectrophane des neiges est une espèce en déclin. Candidat au doctorat en biologie, Baptiste Courtin consacre ses recherches aux choix stratégiques de cet as de l’adaptation au froid lors de sa migration printanière. Des travaux qui se déroulent entre Rimouski et Terre-Neuve,",
       "image": "https://www.uqar.ca/app/uploads/2026/06/dsc-9887-1920.jpg",
-      "leadExcerpt": "« Mes travaux de terrain à Terre-Neuve et au Labrador visent à comprendre pourquoi certains individus choisissent une traversée directe, plus longue et plus risquée au-dessus de la mer, tandis que d’autres privilégient une route plus progressive en longeant le Labrador, réduisant ainsi la distance à franchir d’un seul coup », explique M. Courtin.",
-      "leadImageReady": true,
       "sourceImageCredit": "Photo : Justine Grimard-Spalding",
       "sourceImageCreator": "Justine Grimard-Spalding",
       "sourceImageCreditUrl": "https://www.uqar.ca/suivre-le-plectrophane-des-neiges-de-rimouski-au-labrador/",
@@ -744,7 +719,8 @@
       "sourceImageCreditCited": true,
       "sourceImageCreditImageKey": "dsc-9887-1920.jpg",
       "sourceImageCreditRev": 8,
-      "_retainedFromCache": true
+      "leadImageReady": true,
+      "leadExcerpt": "« Mes travaux de terrain à Terre-Neuve et au Labrador visent à comprendre pourquoi certains individus choisissent une traversée directe, plus longue et plus risquée au-dessus de la mer, tandis que d’autres privilégient une route plus progressive en longeant le Labrador, réduisant ainsi la distance à franchir d’un seul coup », explique M. Courtin."
     },
     {
       "source": "Média — Université du Québec à Rimouski",
@@ -758,16 +734,14 @@
       "date": "2026-06-25T12:00:00.000Z",
       "excerpt": "Étudiante au baccalauréat en administration au campus de Lévis, Mathilde Côté a vécu une expérience hors du commun grâce à la bourse canadienne du jubilé de diamant de la reine Elizabeth II de la Fondation Rideau Hall. Depuis plusieurs semaines, elle réalise un stage au Maroc,",
       "image": "https://www.uqar.ca/app/uploads/2026/06/mathildeuqarinfo.jpg",
-      "leadExcerpt": "Pour Mathilde Côté, le choix de partir à l’international allait bien au-delà de l’acquisition d’une expérience professionnelle. « J’ai choisi le Maroc parce que je voulais vivre une expérience humaine avant tout. Cette immersion culturelle allait m’apporter autant sur le plan personnel que professionnel », explique-t-elle.",
-      "leadImageReady": true,
       "sourceImageCredit": "Crédit photo : Média — Université du Québec à Rimouski",
-      "sourceImageCreator": "",
       "sourceImageCreditUrl": "https://www.uqar.ca/du-campus-de-levis-a-casablanca-une-experience-de-stage-exceptionnelle/",
       "sourceImageCreditFrom": "media",
       "sourceImageCreditCited": false,
       "sourceImageCreditImageKey": "mathildeuqarinfo.jpg",
       "sourceImageCreditRev": 8,
-      "_retainedFromCache": true
+      "leadImageReady": true,
+      "leadExcerpt": "Pour Mathilde Côté, le choix de partir à l’international allait bien au-delà de l’acquisition d’une expérience professionnelle. « J’ai choisi le Maroc parce que je voulais vivre une expérience humaine avant tout. Cette immersion culturelle allait m’apporter autant sur le plan personnel que professionnel », explique-t-elle."
     },
     {
       "source": "The Tribune",
@@ -803,16 +777,14 @@
       "date": "2026-06-23T12:00:00.000Z",
       "excerpt": "Le Centre de services scolaire des Navigateurs (CSSDN) a procédé, le 15 mai, à la première pelletée de terre de la future école primaire universitaire Dorimène-Desjardins, dans le secteur Desjardins, à Lévis. Le projet, réalisé en partenariat avec l’Unité départementale des",
       "image": "https://www.uqar.ca/app/uploads/2026/06/la-pelletee-1.jpg",
-      "leadExcerpt": "Le projet, réalisé en partenariat avec l’Unité départementale des sciences de l’éducation de l’UQAR à Lévis, permettra de créer la première école primaire universitaire à l’est de Montréal et la troisième du genre au Québec.",
-      "leadImageReady": true,
       "sourceImageCredit": "Crédit photo : Média — Université du Québec à Rimouski",
-      "sourceImageCreator": "",
       "sourceImageCreditUrl": "https://www.uqar.ca/debut-de-la-construction-de-la-future-ecole-primaire-universitaire-a-levis/",
       "sourceImageCreditFrom": "media",
       "sourceImageCreditCited": false,
       "sourceImageCreditImageKey": "la-pelletee-1.jpg",
       "sourceImageCreditRev": 8,
-      "_retainedFromCache": true
+      "leadImageReady": true,
+      "leadExcerpt": "Le projet, réalisé en partenariat avec l’Unité départementale des sciences de l’éducation de l’UQAR à Lévis, permettra de créer la première école primaire universitaire à l’est de Montréal et la troisième du genre au Québec."
     },
     {
       "source": "Média — Institut national de la recherche scientifique",
@@ -2934,7 +2906,6 @@
       "excerpt": "Chandler Levack on Montreal’s music scene, early-2010s nostalgia and the charm of being awkward Chandler Levack on the set of her latest film Mile End Kicks. Courtesy Joe Fuda",
       "image": "https://thelinknewspaper.ca/images/articles/_resized/Screenshot_2026-04-11_17.01.52.png",
       "sourceImageCredit": "Photo credit: The Link",
-      "sourceImageCreator": "",
       "sourceImageCreditUrl": "https://thelinknewspaper.ca/article/16318",
       "sourceImageCreditFrom": "media",
       "sourceImageCreditCited": false,
@@ -2996,7 +2967,6 @@
       "excerpt": "Why student newspapers remain one of the last places people learn to speak publicly Public discourse does not survive automatically. It depends on people’s willingness to question institutions and place their ideas into shared space. Graphic Halle Keays",
       "image": "https://thelinknewspaper.ca/images/made/images/articles/_resized/12_OPS_690_518.png",
       "sourceImageCredit": "Photo credit: The Link",
-      "sourceImageCreator": "",
       "sourceImageCreditUrl": "https://thelinknewspaper.ca/article/16315",
       "sourceImageCreditFrom": "media",
       "sourceImageCreditCited": false,
@@ -3878,14 +3848,14 @@
       "excerpt": "Pour en finir avec l’insouciance de façade et embrasser pleinement l’authenticité.",
       "image": "https://www.delitfrancais.com/wp-content/uploads/2026/03/Creation-sans-titre-2-768x1024.png",
       "featured": true,
-      "leadExcerpt": "L’un des travers de notre génération est la tendance à adopter une attitude indifférente face à la vie. La nonchalance est devenue une forme de protection, où on minimise tout ce que l’on ressent : on cache ce qui pourrait nous atteindre et on évite de trop s’exposer. En paraissant insouciant, on garde le contrôle, puisque personne ne peut utiliser contre nous ce dont il ne mesure pas l’importance.",
       "sourceImageCredit": "Photo : Elie Nguyen",
       "sourceImageCreator": "Elie Nguyen",
       "sourceImageCreditUrl": "https://www.delitfrancais.com/2026/03/25/lepidemie-de-la-nonchalance/",
       "sourceImageCreditFrom": "article",
       "sourceImageCreditCited": true,
       "sourceImageCreditImageKey": "creation-sans-titre-2.png",
-      "sourceImageCreditRev": 8
+      "sourceImageCreditRev": 8,
+      "leadExcerpt": "L’un des travers de notre génération est la tendance à adopter une attitude indifférente face à la vie. La nonchalance est devenue une forme de protection, où on minimise tout ce que l’on ressent : on cache ce qui pourrait nous atteindre et on évite de trop s’exposer. En paraissant insouciant, on garde le contrôle, puisque personne ne peut utiliser contre nous ce dont il ne mesure pas l’importance."
     },
     {
       "source": "Le Délit",
@@ -3990,14 +3960,14 @@
       "excerpt": "Blague innocente, signe d’ouverture ou nouveau costume ?",
       "image": "https://www.delitfrancais.com/wp-content/uploads/2026/03/coinqueer-1.jpeg",
       "featured": true,
-      "leadExcerpt": "Deux hommes hétéros imitent une voix, se prennent par la taille, font semblant d’être en couple pour une photo, puis éclatent de rire. L’un ajoute « no homo » et tout rentre dans l’ordre. Pendant ce temps, un homme gai tient la main de son partenaire. Il surveille autour de lui, sonde le quartier, évalue le risque. Pour les uns, l’homosexualité est un prétexte pour rire. Pour les autres, c’est juste une vie.",
       "sourceImageCredit": "Photo : Félix Fournier",
       "sourceImageCreator": "Félix Fournier",
       "sourceImageCreditUrl": "https://www.delitfrancais.com/2026/03/25/la-performance-de-lhomosexualite-un-privilege/",
       "sourceImageCreditFrom": "article",
       "sourceImageCreditCited": true,
       "sourceImageCreditImageKey": "coinqueer-1.jpeg",
-      "sourceImageCreditRev": 8
+      "sourceImageCreditRev": 8,
+      "leadExcerpt": "Deux hommes hétéros imitent une voix, se prennent par la taille, font semblant d’être en couple pour une photo, puis éclatent de rire. L’un ajoute « no homo » et tout rentre dans l’ordre. Pendant ce temps, un homme gai tient la main de son partenaire. Il surveille autour de lui, sonde le quartier, évalue le risque. Pour les uns, l’homosexualité est un prétexte pour rire. Pour les autres, c’est juste une vie."
     },
     {
       "source": "The McGill Daily",
@@ -4355,14 +4325,14 @@
       "excerpt": "Kristi Noem et Erika Kirk comme figures de proue du néo-fascisme américain.",
       "image": "https://www.delitfrancais.com/wp-content/uploads/2026/03/MAGA_marius.png",
       "featured": true,
-      "leadExcerpt": "Une des capacités distinctives de ce système patriarcal est son habileté remarquable à se perpétuer en instrumentalisant certaines femmes pour reproduire les structures qui les subordonnent. C’est à travers ce mécanisme d’opacité que sa présence se resserre sur la société, et que ses contradictions se dissimulent sous le couvert de liberté individuelle, de traditions ou de choix personnels.",
       "sourceImageCredit": "Photo : Stu Doré",
       "sourceImageCreator": "Stu Doré",
       "sourceImageCreditUrl": "https://www.delitfrancais.com/2026/03/18/les-femmes-maga-au-service-du-patriarcat/",
       "sourceImageCreditFrom": "article",
       "sourceImageCreditCited": true,
       "sourceImageCreditImageKey": "maga_marius.png",
-      "sourceImageCreditRev": 8
+      "sourceImageCreditRev": 8,
+      "leadExcerpt": "Une des capacités distinctives de ce système patriarcal est son habileté remarquable à se perpétuer en instrumentalisant certaines femmes pour reproduire les structures qui les subordonnent. C’est à travers ce mécanisme d’opacité que sa présence se resserre sur la société, et que ses contradictions se dissimulent sous le couvert de liberté individuelle, de traditions ou de choix personnels."
     },
     {
       "source": "The McGill Daily",
