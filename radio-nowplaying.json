@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-14T09:06:13.219Z",
+  "updatedAt": "2026-07-14T11:08:20.391Z",
   "timezone": "America/Toronto",
   "stations": {
     "chyz": {
@@ -21,27 +21,27 @@
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-14T09:05:52.777Z"
+      "checkedAt": "2026-07-14T11:07:57.907Z"
     },
     "cism": {
       "id": "cism",
       "name": "CISM 89,3",
       "current": {
-        "title": "L'Alter Ego (reprise)",
+        "title": "À l'horizon",
         "source": "api-live",
-        "start": "00:00",
+        "start": "03:00",
         "url": "https://stream03.ustream.ca/cism128.mp3",
-        "slug": "lalter-ego"
+        "slug": "a-lhorizon"
       },
       "next": {
-        "title": "Mix Franco",
+        "title": "Le Séismix",
         "source": "api-live",
-        "start": "02:00",
-        "url": "https://podcast.cism893.ca/podcast/download_mp3/364275.mp3",
-        "slug": "mix-franco"
+        "start": "05:00",
+        "url": "https://podcast.cism893.ca/podcast/download_mp3/364290.mp3",
+        "slug": "le-seismix"
       },
       "track": "",
-      "showTitle": "L'Alter Ego (reprise)",
+      "showTitle": "À l'horizon",
       "host": "",
       "source": "api-live",
       "sources": [
@@ -51,25 +51,25 @@
         "type": "cism-v1",
         "url": "https://admin.cism893.ca/api/v1/live"
       },
-      "checkedAt": "2026-07-14T09:05:54.279Z"
+      "checkedAt": "2026-07-14T11:07:59.768Z"
     },
     "ckut": {
       "id": "ckut",
       "name": "CKUT 90,3",
       "current": {
-        "title": "The Beat Power Hour",
-        "source": "api-live",
-        "start": "05:00",
-        "end": "07:00"
-      },
-      "next": {
         "title": "Tuesday Morning After Pt1",
         "source": "api-live",
         "start": "07:00",
         "end": "08:00"
       },
+      "next": {
+        "title": "Tuesday Morning After Pt2",
+        "source": "api-live",
+        "start": "08:00",
+        "end": "09:00"
+      },
       "track": "",
-      "showTitle": "The Beat Power Hour",
+      "showTitle": "Tuesday Morning After Pt1",
       "host": "",
       "source": "api-live",
       "sources": [
@@ -77,80 +77,79 @@
         "stream"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-14T09:05:56.809Z"
+      "checkedAt": "2026-07-14T11:08:02.880Z"
     },
     "cjlo": {
       "id": "cjlo",
       "name": "CJLO 1690AM",
       "current": {
-        "title": "CJLO Late Night",
-        "source": "schedule",
-        "start": "01:00",
-        "end": "06:00",
-        "url": "http://www.cjlo.com/shows/cjlo-late-night"
-      },
-      "next": {
         "title": "Hip's Time to Wake Hop",
         "source": "schedule",
         "start": "06:00",
         "end": "09:00",
         "url": "http://www.cjlo.com/shows/hips-time-to-wake-hop"
       },
+      "next": {
+        "title": "At The Movies",
+        "source": "schedule",
+        "start": "09:00",
+        "end": "10:00",
+        "url": "http://www.cjlo.com/shows/at-the-movies"
+      },
       "track": "",
-      "showTitle": "CJLO Late Night",
+      "showTitle": "Hip's Time to Wake Hop",
       "host": "",
       "source": "schedule",
       "sources": [
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-14T09:06:10.124Z"
+      "checkedAt": "2026-07-14T11:08:16.636Z"
     },
     "cfak": {
       "id": "cfak",
       "name": "CFAK 88,3",
       "current": {
-        "title": "Les nuits CFAK",
-        "source": "schedule",
-        "start": "00:00",
-        "end": "07:00"
-      },
-      "next": {
         "title": "Folkswagen",
         "source": "schedule",
         "start": "07:00",
         "end": "08:00"
       },
+      "next": {
+        "title": "Palmarès CFAK",
+        "source": "schedule",
+        "start": "08:00",
+        "end": "18:30"
+      },
       "track": "",
-      "showTitle": "Les nuits CFAK",
+      "showTitle": "Folkswagen",
       "host": "",
       "source": "schedule",
       "sources": [
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-14T09:06:10.872Z"
+      "checkedAt": "2026-07-14T11:08:17.614Z"
     },
     "choq": {
       "id": "choq",
       "name": "CHOQ.ca",
       "current": {
-        "title": "Dolphin Samba feat. Aaron Serfaty",
+        "title": "Les avions",
         "source": "api-live",
-        "host": "Dolphin Hyperspace",
-        "url": "https://www.choq.ca/assets/playlist/palmares-site-web.jpg"
+        "host": "Bonne nuit, chérie"
       },
       "next": null,
-      "track": "Dolphin Hyperspace - Dolphin Samba feat. Aaron Serfaty",
-      "showTitle": "Dolphin Samba feat. Aaron Serfaty",
-      "host": "Dolphin Hyperspace",
+      "track": "Bonne nuit, chérie - Les avions",
+      "showTitle": "Les avions",
+      "host": "Bonne nuit, chérie",
       "source": "api-live",
       "sources": [
         "api-live",
         "stream"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-14T09:06:12.868Z"
+      "checkedAt": "2026-07-14T11:08:20.040Z"
     }
   }
 }
