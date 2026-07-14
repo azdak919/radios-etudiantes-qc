@@ -1,14 +1,32 @@
 {
-  "updated": "2026-07-14T16:42:30.455Z",
+  "updated": "2026-07-14T17:00:31.154Z",
   "total": 185,
   "pool": 58,
-  "incomplete": 2,
-  "withLeadExcerpt": 65,
-  "candidates": 2,
-  "enriched": 0,
+  "incomplete": 4,
+  "withLeadExcerpt": 66,
+  "candidates": 4,
+  "enriched": 2,
   "failed": 0,
   "ok": true,
   "samples": [
+    {
+      "title": "Pourquoi le L est en premier dans LGBTQ+ - Le Délit",
+      "link": "https://www.delitfrancais.com/2026/03/18/pourquoi-le-l-est-en-premier-dans-lgbtq/",
+      "ok": true,
+      "score": 81,
+      "chars": 400,
+      "sample": "Cependant, l’épidémie du sida a modifié le rapport entre les deux groupes. Au cours de cette crise, ",
+      "changed": true
+    },
+    {
+      "title": "Sois belle et tais-toi - Le Délit",
+      "link": "https://www.delitfrancais.com/2026/03/18/sois-belle-et-tais-toi-2/",
+      "ok": true,
+      "score": 96,
+      "chars": 295,
+      "sample": "C’est la sécheresse totale dans le cerveau de bien des gens. Le vôtre, peut-être. Mais ne craignez r",
+      "changed": true
+    },
     {
       "title": "The Cruel Optimism of Summer",
       "link": "https://www.mcgilldaily.com/2026/07/the-cruel-optimism-of-summer/",

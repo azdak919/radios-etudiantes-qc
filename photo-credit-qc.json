@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-14T16:48:25.240Z",
+  "updated": "2026-07-14T17:06:47.372Z",
   "total": 185,
   "withImage": 171,
   "withCredit": 171,
@@ -7,9 +7,9 @@
   "pending": 0,
   "missingHero": 0,
   "ok": true,
-  "checked": 7,
-  "updatedCount": 7,
-  "citedNew": 5,
+  "checked": 8,
+  "updatedCount": 8,
+  "citedNew": 6,
   "fallbackNew": 2,
   "samples": [
     {
@@ -41,9 +41,16 @@
       "method": "media-credit-featured"
     },
     {
-      "title": "Les femmes MAGA au service du patriarcat - Le Délit",
+      "title": "Pourquoi le L est en premier dans LGBTQ+ - Le Délit",
       "source": "Le Délit",
       "credit": "Photo : Stu Doré",
+      "cited": true,
+      "method": "media-credit-featured"
+    },
+    {
+      "title": "Sois belle et tais-toi - Le Délit",
+      "source": "Le Délit",
+      "credit": "Photo : Catvy Tran",
       "cited": true,
       "method": "media-credit-featured"
     },
