@@ -1,17 +1,11 @@
 {
-  "updatedAt": "2026-07-14T21:59:48.028Z",
+  "updatedAt": "2026-07-14T23:05:50.674Z",
   "timezone": "America/Toronto",
   "stations": {
     "chyz": {
       "id": "chyz",
       "name": "CHYZ 94,3",
-      "current": {
-        "title": "Les Arshitechs du Son",
-        "source": "schedule",
-        "start": "17:30",
-        "end": "18:30",
-        "url": "https://chyz.ca/emission/les-arshitechs-du-son/"
-      },
+      "current": null,
       "next": {
         "title": "Mercredi Bonbon",
         "source": "schedule",
@@ -20,34 +14,34 @@
         "url": "https://chyz.ca/emission/mercredi-bonbon/"
       },
       "track": "",
-      "showTitle": "Les Arshitechs du Son",
+      "showTitle": "",
       "host": "",
       "source": "schedule",
       "sources": [
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-14T21:59:25.333Z"
+      "checkedAt": "2026-07-14T23:05:29.611Z"
     },
     "cism": {
       "id": "cism",
       "name": "CISM 89,3",
       "current": {
-        "title": "CISM au Festival international Nuits d'Afrique",
+        "title": "À la bonne heure",
         "source": "api-live",
-        "start": "12:00",
+        "start": "15:00",
         "url": "https://stream03.ustream.ca/cism128.mp3",
-        "slug": "cism-au-festival-international-nuits-dafrique"
+        "slug": "a-la-bonne-heure"
       },
       "next": {
-        "title": "Le palmarès",
+        "title": "London café",
         "source": "api-live",
-        "start": "14:00",
-        "url": "https://podcast.cism893.ca/podcast/download_mp3/364323.mp3",
-        "slug": "palmares-de-cism"
+        "start": "16:00",
+        "url": "https://podcast.cism893.ca/podcast/download_mp3/363949.mp3",
+        "slug": "london-cafe"
       },
       "track": "",
-      "showTitle": "CISM au Festival international Nuits d'Afrique",
+      "showTitle": "À la bonne heure",
       "host": "",
       "source": "api-live",
       "sources": [
@@ -57,25 +51,25 @@
         "type": "cism-v1",
         "url": "https://admin.cism893.ca/api/v1/live"
       },
-      "checkedAt": "2026-07-14T21:59:26.817Z"
+      "checkedAt": "2026-07-14T23:05:31.281Z"
     },
     "ckut": {
       "id": "ckut",
       "name": "CKUT 90,3",
       "current": {
-        "title": "Off The Hour: Local Journalism Stories",
+        "title": "Soul Perspectives",
         "source": "api-live",
-        "start": "17:00",
-        "end": "18:00"
+        "start": "19:00",
+        "end": "20:30"
       },
       "next": {
-        "title": "Prison Radio",
+        "title": "Marca-RO",
         "source": "api-live",
-        "start": "18:00",
-        "end": "19:00"
+        "start": "20:30",
+        "end": "21:00"
       },
       "track": "",
-      "showTitle": "Off The Hour: Local Journalism Stories",
+      "showTitle": "Soul Perspectives",
       "host": "",
       "source": "api-live",
       "sources": [
@@ -83,79 +77,80 @@
         "stream"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-14T21:59:31.687Z"
+      "checkedAt": "2026-07-14T23:05:33.847Z"
     },
     "cjlo": {
       "id": "cjlo",
       "name": "CJLO 1690AM",
       "current": {
-        "title": "Cherry Vamp and the Sonic Coffin",
+        "title": "Ashes to Ashes",
         "source": "schedule",
-        "start": "17:00",
-        "end": "18:00",
-        "url": "http://www.cjlo.com/shows/cherry-vamp-and-the-sonic-coffin"
+        "start": "19:00",
+        "end": "20:00",
+        "url": "http://www.cjlo.com/shows/ashes-to-ashes"
       },
       "next": {
-        "title": "Bikini Brrroadcast",
+        "title": "Hittin' All The Bases",
         "source": "schedule",
-        "start": "18:00",
-        "end": "19:00",
-        "url": "http://www.cjlo.com/shows/bikini-brrroadcast"
+        "start": "20:00",
+        "end": "21:00",
+        "url": "http://www.cjlo.com/shows/hittin-all-the-bases"
       },
       "track": "",
-      "showTitle": "Cherry Vamp and the Sonic Coffin",
+      "showTitle": "Ashes to Ashes",
       "host": "",
       "source": "schedule",
       "sources": [
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-14T21:59:44.907Z"
+      "checkedAt": "2026-07-14T23:05:47.550Z"
     },
     "cfak": {
       "id": "cfak",
       "name": "CFAK 88,3",
       "current": {
-        "title": "Palmarès CFAK",
-        "source": "schedule",
-        "start": "08:00",
-        "end": "18:30"
-      },
-      "next": {
         "title": "L'Aut'Rock",
         "source": "schedule",
         "start": "18:30",
         "end": "20:00"
       },
+      "next": {
+        "title": "Dichotomie 88.3",
+        "source": "schedule",
+        "start": "20:00",
+        "end": "22:00"
+      },
       "track": "",
-      "showTitle": "Palmarès CFAK",
+      "showTitle": "L'Aut'Rock",
       "host": "",
       "source": "schedule",
       "sources": [
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-14T21:59:45.759Z"
+      "checkedAt": "2026-07-14T23:05:48.375Z"
     },
     "choq": {
       "id": "choq",
       "name": "CHOQ.ca",
       "current": {
-        "title": "181lesroisdelarene13juillet2026",
+        "title": "LIT EFFECT",
         "source": "api-live",
-        "url": "https://www.choq.ca/assets/playlist/palmares-site-web.jpg"
+        "host": "Denzel Curry",
+        "url": "https://www.choq.ca/assets/playlist/internationale.jpg"
       },
       "next": null,
-      "track": "",
-      "showTitle": "181lesroisdelarene13juillet2026",
-      "host": "",
+      "track": "Denzel Curry - LIT EFFECT",
+      "showTitle": "LIT EFFECT",
+      "host": "Denzel Curry",
       "source": "api-live",
       "sources": [
         "api-live",
         "stream"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-14T21:59:47.676Z"
+      "checkedAt": "2026-07-14T23:05:50.323Z"
     }
   }
 }
