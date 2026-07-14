@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-14T14:54:12.656Z",
+  "updatedAt": "2026-07-14T16:17:50.959Z",
   "timezone": "America/Toronto",
   "stations": {
     "chyz": {
@@ -21,27 +21,27 @@
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-14T14:53:51.006Z"
+      "checkedAt": "2026-07-14T16:17:28.125Z"
     },
     "cism": {
       "id": "cism",
       "name": "CISM 89,3",
       "current": {
-        "title": "Le Séismix",
+        "title": "Raconte ton quartier",
         "source": "api-live",
-        "start": "05:00",
+        "start": "08:00",
         "url": "https://stream03.ustream.ca/cism128.mp3",
-        "slug": "le-seismix"
+        "slug": "raconte-ton-quartier"
       },
       "next": {
-        "title": "Câlin collectif",
+        "title": "Second poteau",
         "source": "api-live",
-        "start": "07:00",
-        "url": "https://podcast.cism893.ca/podcast/download_mp3/363918.mp3",
-        "slug": "calins-collectifs"
+        "start": "09:00",
+        "url": "https://podcast.cism893.ca/podcast/download_mp3/364054.mp3",
+        "slug": "second-poteau"
       },
       "track": "",
-      "showTitle": "Le Séismix",
+      "showTitle": "Raconte ton quartier",
       "host": "",
       "source": "api-live",
       "sources": [
@@ -51,25 +51,25 @@
         "type": "cism-v1",
         "url": "https://admin.cism893.ca/api/v1/live"
       },
-      "checkedAt": "2026-07-14T14:53:52.649Z"
+      "checkedAt": "2026-07-14T16:17:29.945Z"
     },
     "ckut": {
       "id": "ckut",
       "name": "CKUT 90,3",
       "current": {
-        "title": "Basa Basa",
+        "title": "Kool Runnings",
         "source": "api-live",
-        "start": "09:00",
-        "end": "11:00"
+        "start": "12:00",
+        "end": "14:00"
       },
       "next": {
-        "title": "Ecolibrium/Environment in Canada",
+        "title": "Voice of Korea",
         "source": "api-live",
-        "start": "11:00",
-        "end": "12:00"
+        "start": "14:00",
+        "end": "15:00"
       },
       "track": "",
-      "showTitle": "Basa Basa",
+      "showTitle": "Kool Runnings",
       "host": "",
       "source": "api-live",
       "sources": [
@@ -77,34 +77,34 @@
         "stream"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-14T14:53:55.520Z"
+      "checkedAt": "2026-07-14T16:17:32.876Z"
     },
     "cjlo": {
       "id": "cjlo",
       "name": "CJLO 1690AM",
       "current": {
-        "title": "Democracy Now",
+        "title": "World Beat News",
         "source": "schedule",
-        "start": "10:00",
-        "end": "11:00",
-        "url": "http://www.cjlo.com/shows/democracy-now"
+        "start": "12:00",
+        "end": "13:00",
+        "url": "http://www.cjlo.com/shows/world-beat-news"
       },
       "next": {
-        "title": "Mirror Journal",
+        "title": "Shaking the Habitual",
         "source": "schedule",
-        "start": "11:00",
-        "end": "12:00",
-        "url": "http://www.cjlo.com/shows/mirror-journal"
+        "start": "13:00",
+        "end": "14:00",
+        "url": "http://www.cjlo.com/shows/shaking-the-habitual"
       },
       "track": "",
-      "showTitle": "Democracy Now",
+      "showTitle": "World Beat News",
       "host": "",
       "source": "schedule",
       "sources": [
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-14T14:54:09.086Z"
+      "checkedAt": "2026-07-14T16:17:46.992Z"
     },
     "cfak": {
       "id": "cfak",
@@ -129,27 +129,27 @@
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-14T14:54:10.097Z"
+      "checkedAt": "2026-07-14T16:17:48.122Z"
     },
     "choq": {
       "id": "choq",
       "name": "CHOQ.ca",
       "current": {
-        "title": "Fermer les yeux",
+        "title": "Redemption - Manik-5",
         "source": "api-live",
-        "host": "MCM"
+        "host": "Musique Nomade"
       },
       "next": null,
-      "track": "MCM - Fermer les yeux",
-      "showTitle": "Fermer les yeux",
-      "host": "MCM",
+      "track": "Musique Nomade - Redemption - Manik-5",
+      "showTitle": "Redemption - Manik-5",
+      "host": "Musique Nomade",
       "source": "api-live",
       "sources": [
         "api-live",
         "stream"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-14T14:54:12.306Z"
+      "checkedAt": "2026-07-14T16:17:50.609Z"
     }
   }
 }
