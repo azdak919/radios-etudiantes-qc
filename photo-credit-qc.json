@@ -1,16 +1,16 @@
 {
-  "updated": "2026-07-14T18:27:06.985Z",
+  "updated": "2026-07-14T18:44:29.346Z",
   "total": 185,
   "withImage": 171,
   "withCredit": 171,
-  "cited": 120,
+  "cited": 121,
   "pending": 0,
   "missingHero": 0,
   "ok": true,
   "checked": 8,
   "updatedCount": 8,
-  "citedNew": 5,
-  "fallbackNew": 3,
+  "citedNew": 6,
+  "fallbackNew": 2,
   "samples": [
     {
       "title": "Se préparer et vivre sa retraite : un long fleuve, pas si tranquille",
@@ -41,16 +41,16 @@
       "method": "media-credit-featured"
     },
     {
-      "title": "Des initiatives qui rassemblent - Le Délit",
+      "title": "Ce que nous devons aux femmes - Le Délit",
       "source": "Le Délit",
-      "credit": "Crédit photo : Le Délit",
-      "cited": false,
-      "method": null
+      "credit": "Photo : Alexandre Gontier",
+      "cited": true,
+      "method": "media-credit-near"
     },
     {
-      "title": "Élections de l’exécutif de l’AÉUM - Le Délit",
+      "title": "Les femmes MAGA au service du patriarcat - Le Délit",
       "source": "Le Délit",
-      "credit": "Photo : Toscane Ralaimongo",
+      "credit": "Photo : Stu Doré",
       "cited": true,
       "method": "media-credit-featured"
     },
