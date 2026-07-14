@@ -1,24 +1,36 @@
 {
-  "updated": "2026-07-14T11:13:51.142Z",
+  "updated": "2026-07-14T12:11:29.209Z",
   "total": 185,
   "withPhoto": 171,
-  "withStock": 28,
-  "withCampusBank": 7,
+  "withStock": 37,
+  "withCampusBank": 6,
   "fullyCovered": 185,
-  "leadReadyPhotos": 153,
-  "pageScraped": 45,
-  "photosRecovered": 22,
+  "leadReadyPhotos": 142,
+  "pageScraped": 54,
+  "photosRecovered": 23,
   "imagesCleared": 14,
-  "stockSearches": 31,
-  "stockFound": 23,
+  "stockSearches": 40,
+  "stockFound": 32,
   "campusBankFound": 3,
   "mainPageLeadReady": true,
   "gaps": [
     {
       "title": "The Cruel Optimism of Summer",
       "link": "https://www.mcgilldaily.com/2026/07/the-cruel-optimism-of-summer/",
-      "reason": "campus-bank",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/6/62/Roddick_Gates_closed%2C_McGill_University%2C_July_17%2C_2024.jpg"
+      "reason": "stock-too-small",
+      "image": "https://live.staticflickr.com/917/28627096297_a3e0756d47_b.jpg"
+    },
+    {
+      "title": "Dévoilement du Livre bleu",
+      "link": "https://lecollectif.ca/a-la-une/devoilement-du-livre-bleu/",
+      "reason": "stock-too-small",
+      "image": "https://lecollectif.ca/wp-content/uploads/2026/07/SOCIETE_Devoilement-du-Livre-bleu_SourceSite-internet-du-Parti-quebecois.png"
+    },
+    {
+      "title": "De Broue à l’Ordre du Canada, Marc Messier, l’artisan d’un théâtre et d’une télé populaires",
+      "link": "https://lecollectif.ca/a-la-une/de-broue-a-lordre-du-canada-marc-messier-lartisan-dun-theatre-et-dune-tele-populaires/",
+      "reason": "stock-too-small",
+      "image": "https://lecollectif.ca/wp-content/uploads/2026/07/CULTURE_MarcMessier_SourceFacebook-819x1024.jpeg"
     },
     {
       "title": "La popularité des clubs et événements sportifs",
@@ -45,46 +57,34 @@
       "image": "https://quartierlibre.ca/wp-content/uploads/2026/05/20_florelaurentienne.jpg"
     },
     {
+      "title": "Letters from the Editors May 2026",
+      "link": "https://theplantnews.com/2026/05/11/letters-from-the-editors-may-2026/",
+      "reason": "stock-too-small",
+      "image": "https://live.staticflickr.com/2295/2462847853_5a214f2dab_b.jpg"
+    },
+    {
+      "title": "CSU approves affinity group policy, club rules update and councillor pay increase at special meeting",
+      "link": "https://thelinknewspaper.ca/article/16326",
+      "reason": "stock-too-small",
+      "image": "https://live.staticflickr.com/7089/7290404684_2750bb385f_b.jpg"
+    },
+    {
+      "title": "CSU approves $36,000 in funding for student-led initiatives",
+      "link": "https://thelinknewspaper.ca/article/16319",
+      "reason": "campus-bank",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/1/16/CJ_Building%2C_Loyola_Campus%2C_Communication_Studies%2C_Concordia_University.jpg"
+    },
+    {
+      "title": "From the rink to the links",
+      "link": "https://thebucampus.ca/2026/04/06/from-the-rink-to-the-links/",
+      "reason": "stock-too-small",
+      "image": "https://live.staticflickr.com/4031/4400844746_a47c17ef6d_b.jpg"
+    },
+    {
       "title": "Mars enters Aries",
       "link": "https://thebucampus.ca/2026/04/06/mars-enters-aries/",
       "reason": "stock-too-small",
       "image": "https://upload.wikimedia.org/wikipedia/commons/1/16/Mars%2C_Aries_and_Scorpio_from_Persian_Manusc_Wellcome_L0030660.jpg"
-    },
-    {
-      "title": "Spotlighting Powerful Mc Gill Alumnae",
-      "link": "https://www.mcgilldaily.com/2026/03/spotlighting-powerful-mcgill-alumnae/",
-      "reason": "campus-bank",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/e/e8/Roddick_Gates_%28McGill_University%29_2005-09-02.jpg"
-    },
-    {
-      "title": "Second-Class Citizens",
-      "link": "https://www.mcgilldaily.com/2026/03/second-class-citizens/",
-      "reason": "campus-bank",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/1/1d/4_McGill_University%2C_Montreal%2CQuebec_2009.jpg"
-    },
-    {
-      "title": "The Gentrification of Online Fandom Spaces",
-      "link": "https://www.mcgilldaily.com/2026/03/the-gentrification-of-online-fandom-spaces/",
-      "reason": "stock-too-small",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/c/cb/Mexico_City%27s_Roma_neighborhood_gentrification_2016.jpg"
-    },
-    {
-      "title": "It’s Festival Summer!",
-      "link": "https://theplantnews.com/2026/05/11/its-festival-summer/",
-      "reason": "stock-too-small",
-      "image": "https://theplantnews.com/wp-content/uploads/2026/05/image-1-1.jpeg?w=1024"
-    },
-    {
-      "title": "Gothic Cinema Rises from the Grave",
-      "link": "https://theplantnews.com/2026/05/11/gothic-cinema-rises-from-the-grave/",
-      "reason": "stock-too-small",
-      "image": "https://theplantnews.com/wp-content/uploads/2026/05/image-4.png"
-    },
-    {
-      "title": "Opinion – L’hypocrisie qui rampe à l’Assemblée nationale",
-      "link": "https://exilecvm.wordpress.com/2026/04/18/opinion-lhypocrisie-qui-rampe-a-lassemblee-nationale/",
-      "reason": "stock-too-small",
-      "image": "https://exilecvm.wordpress.com/wp-content/uploads/2020/10/121330814_121456603062023_8783413434532337259_n.png"
     }
   ]
 }

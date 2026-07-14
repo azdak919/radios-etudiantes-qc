@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-14T11:08:15.696Z",
+  "updated": "2026-07-14T12:04:06.953Z",
   "updatedSlot": "2026-07-14T11:00:00.000Z",
   "count": 185,
   "freshnessSessions": 3,
@@ -10,7 +10,7 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-05-15T16:00:00.000Z",
-      "lastFetchOk": "2026-07-14T11:07:31.554Z"
+      "lastFetchOk": "2026-07-14T12:03:33.859Z"
     },
     "Montréal Campus": {
       "fetchOk": true,
@@ -18,7 +18,7 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-05-09T03:14:30.000Z",
-      "lastFetchOk": "2026-07-14T11:07:32.493Z"
+      "lastFetchOk": "2026-07-14T12:03:34.798Z"
     },
     "Le Délit": {
       "fetchOk": true,
@@ -26,7 +26,7 @@
       "articleCount": 20,
       "freshArticleCount": 20,
       "lastArticle": "2026-03-25T11:00:00.000Z",
-      "lastFetchOk": "2026-07-14T11:07:46.599Z"
+      "lastFetchOk": "2026-07-14T12:03:39.577Z"
     },
     "The McGill Daily": {
       "fetchOk": true,
@@ -34,7 +34,7 @@
       "articleCount": 15,
       "freshArticleCount": 15,
       "lastArticle": "2026-07-06T12:00:00.000Z",
-      "lastFetchOk": "2026-07-14T11:07:51.150Z"
+      "lastFetchOk": "2026-07-14T12:03:40.084Z"
     },
     "The Link": {
       "fetchOk": true,
@@ -42,7 +42,7 @@
       "articleCount": 20,
       "freshArticleCount": 20,
       "lastArticle": "2026-07-08T14:41:00.000Z",
-      "lastFetchOk": "2026-07-14T11:07:52.245Z"
+      "lastFetchOk": "2026-07-14T12:03:41.293Z"
     },
     "Zone Campus": {
       "fetchOk": true,
@@ -50,7 +50,7 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-05-08T14:20:26.000Z",
-      "lastFetchOk": "2026-07-14T11:07:53.044Z"
+      "lastFetchOk": "2026-07-14T12:03:42.029Z"
     },
     "L'Exemplaire": {
       "fetchOk": true,
@@ -58,7 +58,7 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-05-15T16:31:24.000Z",
-      "lastFetchOk": "2026-07-14T11:07:53.959Z"
+      "lastFetchOk": "2026-07-14T12:03:44.847Z"
     },
     "Le Collectif": {
       "fetchOk": true,
@@ -66,7 +66,7 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-07-11T16:34:55.000Z",
-      "lastFetchOk": "2026-07-14T11:07:55.041Z"
+      "lastFetchOk": "2026-07-14T12:03:45.891Z"
     },
     "Exil": {
       "fetchOk": true,
@@ -74,7 +74,7 @@
       "articleCount": 7,
       "freshArticleCount": 7,
       "lastArticle": "2026-04-18T22:22:07.000Z",
-      "lastFetchOk": "2026-07-14T11:07:55.170Z"
+      "lastFetchOk": "2026-07-14T12:03:46.325Z"
     },
     "La Pige": {
       "fetchOk": true,
@@ -82,7 +82,7 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-06-22T14:36:10.000Z",
-      "lastFetchOk": "2026-07-14T11:07:55.855Z"
+      "lastFetchOk": "2026-07-14T12:03:46.918Z"
     },
     "Le Polyscope": {
       "fetchOk": true,
@@ -90,7 +90,7 @@
       "articleCount": 13,
       "freshArticleCount": 13,
       "lastArticle": "2026-02-25T14:38:32.764Z",
-      "lastFetchOk": "2026-07-14T11:07:57.115Z"
+      "lastFetchOk": "2026-07-14T12:03:48.811Z"
     },
     "The Tribune": {
       "fetchOk": true,
@@ -98,7 +98,7 @@
       "articleCount": 20,
       "freshArticleCount": 20,
       "lastArticle": "2026-06-26T15:24:28.000Z",
-      "lastFetchOk": "2026-07-14T11:07:57.268Z"
+      "lastFetchOk": "2026-07-14T12:03:48.990Z"
     },
     "The Campus": {
       "fetchOk": true,
@@ -106,7 +106,7 @@
       "articleCount": 20,
       "freshArticleCount": 20,
       "lastArticle": "2026-04-06T16:03:16.000Z",
-      "lastFetchOk": "2026-07-14T11:07:57.430Z"
+      "lastFetchOk": "2026-07-14T12:03:49.189Z"
     },
     "The Plant": {
       "fetchOk": true,
@@ -114,7 +114,7 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-05-11T20:44:08.000Z",
-      "lastFetchOk": "2026-07-14T11:07:57.589Z"
+      "lastFetchOk": "2026-07-14T12:03:49.427Z"
     }
   },
   "items": [
@@ -180,7 +180,14 @@
       "sourceImageCreditImageKey": "societe_devoilement-du-livre-bleu_sourcesite-internet-du-parti-quebecois.png",
       "sourceImageCreditRev": 8,
       "leadImageReady": false,
-      "leadExcerpt": "Le Parti québécois (PQ) a lancé, le 23 juin dernier, son fameux Livre bleu, visant à exposer sa vision d’un Québec indépendant, mais aussi à critiquer le palier fédéral en élaborant les principales priorités à prendre en compte lors du prochain référendum pour le camp du Oui. Lumière sur les différents chapitres, ainsi que sur certaines solutions avancées par le parti."
+      "leadExcerpt": "Le Parti québécois (PQ) a lancé, le 23 juin dernier, son fameux Livre bleu, visant à exposer sa vision d’un Québec indépendant, mais aussi à critiquer le palier fédéral en élaborant les principales priorités à prendre en compte lors du prochain référendum pour le camp du Oui. Lumière sur les différents chapitres, ainsi que sur certaines solutions avancées par le parti.",
+      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/c/cb/2014-07-14_12-04-12_devoilement-statue-quand-meme.jpg",
+      "imageTitle": "2014-07-14 12-04-12 devoilement-statue-quand-meme",
+      "imageCredit": "Photo : Thomas Bresson / CC BY · Openverse",
+      "imageCreator": "Thomas Bresson",
+      "imageLicense": "by",
+      "imageProvider": "openverse",
+      "imageSourceUrl": "https://commons.wikimedia.org/w/index.php?curid=34020479"
     },
     {
       "source": "Le Collectif",
@@ -201,7 +208,14 @@
       "sourceImageCreditCited": true,
       "sourceImageCreditImageKey": "culture_marcmessier_sourcefacebook.jpeg",
       "sourceImageCreditRev": 8,
-      "leadImageReady": false
+      "leadImageReady": false,
+      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/e/ef/Broue_ciel.jpg",
+      "imageTitle": "Broue ciel",
+      "imageCredit": "Photo : Buntaimpreza / CC BY-SA · Openverse",
+      "imageCreator": "Buntaimpreza",
+      "imageLicense": "by-sa",
+      "imageProvider": "openverse",
+      "imageSourceUrl": "https://commons.wikimedia.org/w/index.php?curid=130583156"
     },
     {
       "source": "Le Collectif",
@@ -373,13 +387,13 @@
       "excerpt": "A meditation on the often harsh realities of summer The post The Cruel Optimism of Summer appeared first on The McGill Daily .",
       "image": "",
       "leadImageReady": false,
-      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/6/62/Roddick_Gates_closed%2C_McGill_University%2C_July_17%2C_2024.jpg",
-      "imageTitle": "Roddick Gates closed, McGill University, July 17, 2024",
-      "imageCredit": "Photo : Gen. Quon / CC BY-SA 4.0 · Wikimedia Commons",
-      "imageCreator": "Gen. Quon",
-      "imageLicense": "CC BY-SA 4.0",
-      "imageProvider": "campus-bank",
-      "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Roddick_Gates_closed,_McGill_University,_July_17,_2024.jpg",
+      "stockImage": "https://live.staticflickr.com/917/28627096297_a3e0756d47_b.jpg",
+      "imageTitle": "Cruel Summer (Explore)",
+      "imageCredit": "Photo : sjpowermac / CC0 · Openverse",
+      "imageCreator": "sjpowermac",
+      "imageLicense": "cc0",
+      "imageProvider": "openverse",
+      "imageSourceUrl": "https://www.flickr.com/photos/41890311@N06/28627096297",
       "leadExcerpt": "“20 degrees Celsius,” my weather app beams. My eyebrows knit with confusion. Twenty degrees? I opt to forgo my jacket, and, if I’m feeling bold, no sweater either. It’s the first truly warm evening in Montreal, and as the city defrosts, everyone is spilling onto sidewalks and terrasses. Women are wearing tiny dresses, and men have started to write poetry. The whole city radiates optimism, as if Ch"
     },
     {
@@ -1398,7 +1412,14 @@
       "sourceImageCreditCited": true,
       "sourceImageCreditImageKey": "image-5.jpeg",
       "sourceImageCreditRev": 7,
-      "leadImageReady": false
+      "leadImageReady": false,
+      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/1/13/Katseye_at_Wango_Tango_2025_%28cropped%29.jpg",
+      "imageTitle": "Katseye at Wango Tango 2025 (cropped)",
+      "imageCredit": "Photo : Warmtoned / CC BY · Openverse",
+      "imageCreator": "Warmtoned",
+      "imageLicense": "by",
+      "imageProvider": "openverse",
+      "imageSourceUrl": "https://commons.wikimedia.org/w/index.php?curid=170993044"
     },
     {
       "source": "Quartier Libre",
@@ -2034,14 +2055,14 @@
       "sourceImageCreditImageKey": "121330814_121456603062023_8783413434532337259_n.png",
       "sourceImageCreditRev": 8,
       "leadImageReady": false,
-      "leadExcerpt": "À quelques mois d’une élection provinciale qui promet (si on se fie aux sondages d’intentions de vote) un changement de parti au pouvoir, le monde politique québécois se remet en haute vitesse. Plus les intentions des candidats sont définies, plus les langues se décorent de fleurs populistes et réactionnaires; telle est la nature de la politique, on cherche les votes.",
       "stockImage": "https://upload.wikimedia.org/wikipedia/commons/4/47/Assembl%C3%A9e_nationale_du_Qu%C3%A9bec%2C_l%27H%C3%B4tel_du_Parlement%2C_fa%C3%A7ade_avec_ancien_entr%C3%A9_principal.jpg",
       "imageTitle": "Assemblée nationale du Québec, l'Hôtel du Parlement, façade avec ancien entré principal",
       "imageCredit": "Photo : Marc-Lautenbacher / CC BY-SA · Openverse",
       "imageCreator": "Marc-Lautenbacher",
       "imageLicense": "by-sa",
       "imageProvider": "openverse",
-      "imageSourceUrl": "https://commons.wikimedia.org/w/index.php?curid=73170675"
+      "imageSourceUrl": "https://commons.wikimedia.org/w/index.php?curid=73170675",
+      "leadExcerpt": "À quelques mois d’une élection provinciale qui promet (si on se fie aux sondages d’intentions de vote) un changement de parti au pouvoir, le monde politique québécois se remet en haute vitesse. Plus les intentions des candidats sont définies, plus les langues se décorent de fleurs populistes et réactionnaires; telle est la nature de la politique, on cherche les votes."
     },
     {
       "source": "The Tribune",
@@ -2104,7 +2125,14 @@
       "sourceImageCreditCited": true,
       "sourceImageCreditImageKey": "img_0291-2.jpg",
       "sourceImageCreditRev": 4,
-      "leadImageReady": false
+      "leadImageReady": false,
+      "stockImage": "https://live.staticflickr.com/4803/46205223352_864174cbb7_b.jpg",
+      "imageTitle": "SpaceX Dragon 16",
+      "imageCredit": "Photo : Astro_Alex / CC BY-SA · Openverse",
+      "imageCreator": "Astro_Alex",
+      "imageLicense": "by-sa",
+      "imageProvider": "openverse",
+      "imageSourceUrl": "https://www.flickr.com/photos/72482589@N07/46205223352"
     },
     {
       "source": "The Link",
@@ -2194,7 +2222,14 @@
       "sourceImageCreditCited": true,
       "sourceImageCreditImageKey": "odie_harr-2.jpg",
       "sourceImageCreditRev": 4,
-      "leadImageReady": false
+      "leadImageReady": false,
+      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/6/6e/Mongolia_Uvs_sum_map.png",
+      "imageTitle": "File:Mongolia Uvs sum map.png",
+      "imageCredit": "Photo : Bogomolov.PL / CC BY-SA · Openverse",
+      "imageCreator": "Bogomolov.PL",
+      "imageLicense": "by-sa",
+      "imageProvider": "openverse",
+      "imageSourceUrl": "https://commons.wikimedia.org/w/index.php?curid=5119382"
     },
     {
       "source": "The Link",
@@ -2215,7 +2250,8 @@
       "imageCreator": "Jeangagnon",
       "imageLicense": "CC BY-SA 3.0",
       "imageProvider": "campus-bank",
-      "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Henry_F._Hall_Building_01.JPG"
+      "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Henry_F._Hall_Building_01.JPG",
+      "_campusBank": true
     },
     {
       "source": "The McGill Daily",
@@ -2403,7 +2439,14 @@
       "sourceImageCreditCited": false,
       "sourceImageCreditImageKey": "bottle.png",
       "sourceImageCreditRev": 8,
-      "leadImageReady": false
+      "leadImageReady": false,
+      "stockImage": "https://live.staticflickr.com/7174/6753143443_79679c0dbf_b.jpg",
+      "imageTitle": "STATUTORY WARNING: SMOKING is injurious to health.",
+      "imageCredit": "Photo : ||-SAM Nasim-|| / CC BY · Openverse",
+      "imageCreator": "||-SAM Nasim-||",
+      "imageLicense": "by",
+      "imageProvider": "openverse",
+      "imageSourceUrl": "https://www.flickr.com/photos/65732636@N06/6753143443"
     },
     {
       "source": "The Tribune",
@@ -2833,7 +2876,14 @@
       "sourceImageCreditCited": true,
       "sourceImageCreditImageKey": "news_purplecircle_creds_bualumnirelations.jpg",
       "sourceImageCreditRev": 8,
-      "leadImageReady": false
+      "leadImageReady": false,
+      "stockImage": "https://live.staticflickr.com/135/346536576_65799020cd_b.jpg",
+      "imageTitle": "Purple circle",
+      "imageCredit": "Photo : Dale Gillard / CC BY · Openverse",
+      "imageCreator": "Dale Gillard",
+      "imageLicense": "by",
+      "imageProvider": "openverse",
+      "imageSourceUrl": "https://www.flickr.com/photos/65032901@N00/346536576"
     },
     {
       "source": "The Campus",
@@ -3183,29 +3233,6 @@
       "region": "Montréal",
       "type": "universite",
       "lang": "fr",
-      "title": "L’épidémie de la nonchalance - Le Délit",
-      "link": "https://www.delitfrancais.com/2026/03/25/lepidemie-de-la-nonchalance/",
-      "author": "La rédaction",
-      "date": "2026-03-25T07:00:00.000Z",
-      "excerpt": "Pour en finir avec l’insouciance de façade et embrasser pleinement l’authenticité.",
-      "image": "https://www.delitfrancais.com/wp-content/uploads/2026/03/QC.jpeg",
-      "featured": true,
-      "leadExcerpt": "L’un des travers de notre génération est la tendance à adopter une attitude indifférente face à la vie. La nonchalance est devenue une forme de protection, où on minimise tout ce que l’on ressent : on cache ce qui pourrait nous atteindre et on évite de trop s’exposer. En paraissant insouciant, on garde le contrôle, puisque personne ne peut utiliser contre nous ce dont il ne mesure pas l’importance.",
-      "leadImageReady": true,
-      "sourceImageCredit": "Photo : Elie Nguyen",
-      "sourceImageCreator": "Elie Nguyen",
-      "sourceImageCreditUrl": "https://www.delitfrancais.com/2026/03/25/lepidemie-de-la-nonchalance/",
-      "sourceImageCreditFrom": "article",
-      "sourceImageCreditCited": true,
-      "sourceImageCreditImageKey": "qc.jpeg",
-      "sourceImageCreditRev": 8
-    },
-    {
-      "source": "Le Délit",
-      "institution": "Université McGill",
-      "region": "Montréal",
-      "type": "universite",
-      "lang": "fr",
       "title": "Le retard et les bienfaits du temps long - Le Délit",
       "link": "https://www.delitfrancais.com/2026/03/25/le-retard-et-les-bienfaits-du-temps-long/",
       "author": "La rédaction",
@@ -3314,6 +3341,29 @@
       "sourceImageCreditRev": 8
     },
     {
+      "source": "Le Délit",
+      "institution": "Université McGill",
+      "region": "Montréal",
+      "type": "universite",
+      "lang": "fr",
+      "title": "L’épidémie de la nonchalance - Le Délit",
+      "link": "https://www.delitfrancais.com/2026/03/25/lepidemie-de-la-nonchalance/",
+      "author": "La rédaction",
+      "date": "2026-03-25T07:00:00.000Z",
+      "excerpt": "Pour en finir avec l’insouciance de façade et embrasser pleinement l’authenticité.",
+      "image": "https://www.delitfrancais.com/wp-content/uploads/2026/03/QC.jpeg",
+      "featured": true,
+      "leadExcerpt": "L’un des travers de notre génération est la tendance à adopter une attitude indifférente face à la vie. La nonchalance est devenue une forme de protection, où on minimise tout ce que l’on ressent : on cache ce qui pourrait nous atteindre et on évite de trop s’exposer. En paraissant insouciant, on garde le contrôle, puisque personne ne peut utiliser contre nous ce dont il ne mesure pas l’importance.",
+      "leadImageReady": true,
+      "sourceImageCredit": "Photo : Elie Nguyen",
+      "sourceImageCreator": "Elie Nguyen",
+      "sourceImageCreditUrl": "https://www.delitfrancais.com/2026/03/25/lepidemie-de-la-nonchalance/",
+      "sourceImageCreditFrom": "article",
+      "sourceImageCreditCited": true,
+      "sourceImageCreditImageKey": "qc.jpeg",
+      "sourceImageCreditRev": 8
+    },
+    {
       "source": "The McGill Daily",
       "institution": "McGill University",
       "region": "Montréal",
@@ -3326,14 +3376,13 @@
       "excerpt": "Six women who have made a difference The post Spotlighting Powerful McGill Alumnae appeared first on The McGill Daily .",
       "image": "",
       "leadImageReady": false,
-      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/8/8b/McGill_University%2C_Winter.jpg",
-      "imageTitle": "McGill University, Winter",
-      "imageCredit": "Photo : Abdallahh / CC BY-SA 3.0 · Wikimedia Commons",
-      "imageCreator": "Abdallahh",
+      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/c/c0/McGill_University_downtown_campus_31.JPG",
+      "imageTitle": "McGill University downtown campus 31",
+      "imageCredit": "Photo : Jeangagnon / CC BY-SA 3.0 · Wikimedia Commons",
+      "imageCreator": "Jeangagnon",
       "imageLicense": "CC BY-SA 3.0",
       "imageProvider": "campus-bank",
-      "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:McGill_University,_Winter.jpg",
-      "_campusBank": true
+      "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:McGill_University_downtown_campus_31.JPG"
     },
     {
       "source": "The McGill Daily",
@@ -3522,13 +3571,13 @@
       "excerpt": "The growing cost of being a woman in Quebec The post Second-Class Citizens appeared first on The McGill Daily .",
       "image": "",
       "leadImageReady": false,
-      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/b/b9/View_from_McGill_University_downtown_campus_01.JPG",
-      "imageTitle": "View from McGill University downtown campus 01",
-      "imageCredit": "Photo : Jeangagnon / CC BY-SA 3.0 · Wikimedia Commons",
-      "imageCreator": "Jeangagnon",
-      "imageLicense": "CC BY-SA 3.0",
+      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/2/2d/McGill_University_Montr%C3%A9al.jpeg",
+      "imageTitle": "McGill University, Montréal",
+      "imageCredit": "Photo : Thomas1313 / CC BY-SA 4.0 · Wikimedia Commons",
+      "imageCreator": "Thomas1313",
+      "imageLicense": "CC BY-SA 4.0",
       "imageProvider": "campus-bank",
-      "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:View_from_McGill_University_downtown_campus_01.JPG",
+      "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:McGill_University_Montr%C3%A9al.jpeg",
       "_campusBank": true
     },
     {
@@ -3642,21 +3691,20 @@
       "region": "Montréal",
       "type": "universite",
       "lang": "fr",
-      "title": "Sois belle et tais-toi - Le Délit",
-      "link": "https://www.delitfrancais.com/2026/03/18/sois-belle-et-tais-toi-2/",
+      "title": "Ce que nous devons aux femmes - Le Délit",
+      "link": "https://www.delitfrancais.com/2026/03/18/ce-que-nous-devons-aux-femmes/",
       "author": "La rédaction",
       "date": "2026-03-18T07:00:00.000Z",
-      "excerpt": "Petit guide pratique pour écarter les femmes du canon littéraire.",
-      "image": "https://www.delitfrancais.com/wp-content/uploads/2026/03/canon-litteraire.jpg",
+      "excerpt": "Votre entourage, en tant qu’étudiantes et étudiants de l’Université McGill, est peut-être composé en majorité de personnes qui se revendiquent comme féministes. Certaines le sont, d’autres le prétendent, mais relativement rares sont les McGillois qui refusent ouvertement le féminisme.",
+      "image": "https://www.delitfrancais.com/wp-content/uploads/2026/03/Capture-decran-le-2026-03-22-a-17.22.07.png",
       "featured": true,
-      "leadExcerpt": "C’est la sécheresse totale dans le cerveau de bien des gens. Le vôtre, peut-être. Mais ne craignez rien, ce n’est pas de votre faute. Cette absence de figures féminines dans le canon littéraire tient à une multitude de facteurs qui se résument à l’oubli. Un oubli collectif. Un oubli volontaire.",
       "leadImageReady": true,
-      "sourceImageCredit": "Photo : Catvy Tran",
-      "sourceImageCreator": "Catvy Tran",
-      "sourceImageCreditUrl": "https://www.delitfrancais.com/2026/03/18/sois-belle-et-tais-toi-2/",
+      "sourceImageCredit": "Photo : Alexandre Gontier",
+      "sourceImageCreator": "Alexandre Gontier",
+      "sourceImageCreditUrl": "https://www.delitfrancais.com/2026/03/18/ce-que-nous-devons-aux-femmes/",
       "sourceImageCreditFrom": "article",
       "sourceImageCreditCited": true,
-      "sourceImageCreditImageKey": "canon-litteraire.jpg",
+      "sourceImageCreditImageKey": "capture-decran-le-2026-03-22-a-17.22.07.png",
       "sourceImageCreditRev": 8
     },
     {
@@ -3665,21 +3713,21 @@
       "region": "Montréal",
       "type": "universite",
       "lang": "fr",
-      "title": "Qui sont les agents qui patrouillent notre campus? - Le Délit",
-      "link": "https://www.delitfrancais.com/2026/03/18/qui-sont-les-agents-qui-patrouillent-notre-campus/",
+      "title": "Les femmes MAGA au service du patriarcat - Le Délit",
+      "link": "https://www.delitfrancais.com/2026/03/18/les-femmes-maga-au-service-du-patriarcat/",
       "author": "La rédaction",
       "date": "2026-03-18T07:00:00.000Z",
-      "excerpt": "Une enquête sur Garda à McGill.",
-      "image": "https://www.delitfrancais.com/wp-content/uploads/2026/03/garda.png",
+      "excerpt": "Kristi Noem et Erika Kirk comme figures de proue du néo-fascisme américain.",
+      "image": "https://www.delitfrancais.com/wp-content/uploads/2026/03/Capture-decran-le-2026-03-22-a-17.22.07.png",
       "featured": true,
-      "leadExcerpt": "« L’Université McGill est à la recherche de patrouilleurs dynamiques et engagés pour assurer la sécurité de sa communauté universitaire », selon une annonce publiée sur le site web du Groupe de sécurité Garda S.E.N.C. (Garda), mieux connu sous le nom de GardaWorld. Cette entreprise canadienne de sécurité privée est sous contrat avec McGill depuis le 26 août 2024, et ce, jusqu’au 30 avril 2027.",
+      "leadExcerpt": "Une des capacités distinctives de ce système patriarcal est son habileté remarquable à se perpétuer en instrumentalisant certaines femmes pour reproduire les structures qui les subordonnent. C’est à travers ce mécanisme d’opacité que sa présence se resserre sur la société, et que ses contradictions se dissimulent sous le couvert de liberté individuelle, de traditions ou de choix personnels.",
       "leadImageReady": true,
-      "sourceImageCredit": "Photo : Stu Doré/Félix Fournier",
-      "sourceImageCreator": "Stu Doré/Félix Fournier",
-      "sourceImageCreditUrl": "https://www.delitfrancais.com/2026/03/18/qui-sont-les-agents-qui-patrouillent-notre-campus/",
+      "sourceImageCredit": "Photo : Stu Doré",
+      "sourceImageCreator": "Stu Doré",
+      "sourceImageCreditUrl": "https://www.delitfrancais.com/2026/03/18/les-femmes-maga-au-service-du-patriarcat/",
       "sourceImageCreditFrom": "article",
       "sourceImageCreditCited": true,
-      "sourceImageCreditImageKey": "garda.png",
+      "sourceImageCreditImageKey": "capture-decran-le-2026-03-22-a-17.22.07.png",
       "sourceImageCreditRev": 8
     },
     {
@@ -3780,7 +3828,14 @@
       "sourceImageCreditCited": false,
       "sourceImageCreditImageKey": "illustration.jpg",
       "sourceImageCreditRev": 8,
-      "leadImageReady": false
+      "leadImageReady": false,
+      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/c/c9/Dites_donc_Madame%2C_elle_n%27est_pas_propre_cette_feuille_la%21_-Si_vous_croyez_que_c%27est_amusant_pour_moi_d%27avoir_de_ces_pages_le_dans_mon_livre%2C_vous_auriez_bien_di_me_faire_ecrire_autre_chose._LACMA_M.76.132.117.jpg",
+      "imageTitle": "File:Dites donc Madame, elle n'est pas propre cette feuille la! -Si vous croyez que c'est amusant pour moi d'avoir de ces pages le dans mon livre, vous auriez bien di me faire ecrire autre chose. LACMA M.76.132.117.jpg",
+      "imageCredit": "Photo : Cham (Count Amédée-Charles-Henry de Noé) (France, Paris, 1819-1879) / PUBLIC DOMAIN · Wikimedia Commons",
+      "imageCreator": "Cham (Count Amédée-Charles-Henry de Noé) (France, Paris, 1819-1879)",
+      "imageLicense": "Public domain",
+      "imageProvider": "wikimedia",
+      "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Dites_donc_Madame,_elle_n%27est_pas_propre_cette_feuille_la!_-Si_vous_croyez_que_c%27est_amusant_pour_moi_d%27avoir_de_ces_pages_le_dans_mon_livre,_vous_auriez_bien_di_me_faire_ecrire_autre_chose._LACMA_M.76.132.117.jpg"
     },
     {
       "source": "Le Polyscope",
@@ -3892,7 +3947,14 @@
       "sourceImageCreditCited": false,
       "sourceImageCreditImageKey": "1.png",
       "sourceImageCreditRev": 8,
-      "leadImageReady": false
+      "leadImageReady": false,
+      "stockImage": "https://live.staticflickr.com/177/390617403_581e5544c2_b.jpg",
+      "imageTitle": "Parking Ticket Note",
+      "imageCredit": "Photo : xddorox / CC BY · Openverse",
+      "imageCreator": "xddorox",
+      "imageLicense": "by",
+      "imageProvider": "openverse",
+      "imageSourceUrl": "https://www.flickr.com/photos/26745132@N00/390617403"
     },
     {
       "source": "Le Polyscope",
@@ -3911,7 +3973,14 @@
       "sourceImageCreditFrom": "article",
       "sourceImageCreditCited": true,
       "sourceImageCreditUrl": "https://www.polyscope.qc.ca/blog/post/bpyPu7N2Pbm8nsfLwAEP",
-      "leadImageReady": false
+      "leadImageReady": false,
+      "stockImage": "https://live.staticflickr.com/7085/7259166358_99a86e9aff_b.jpg",
+      "imageTitle": "ode to an air conditioner",
+      "imageCredit": "Photo : brdonovan / CC BY-SA · Openverse",
+      "imageCreator": "brdonovan",
+      "imageLicense": "by-sa",
+      "imageProvider": "openverse",
+      "imageSourceUrl": "https://www.flickr.com/photos/58621196@N05/7259166358"
     },
     {
       "source": "Le Polyscope",
@@ -3931,14 +4000,7 @@
       "sourceImageCreditCited": false,
       "sourceImageCreditImageKey": "screenshot 2025-10-24 091951.png",
       "sourceImageCreditRev": 8,
-      "leadImageReady": false,
-      "stockImage": "https://live.staticflickr.com/136/349613923_f836eb6248_b.jpg",
-      "imageTitle": "Pantone formula guide",
-      "imageCredit": "Photo : jepoirrier / CC BY-SA · Openverse",
-      "imageCreator": "jepoirrier",
-      "imageLicense": "by-sa",
-      "imageProvider": "openverse",
-      "imageSourceUrl": "https://www.flickr.com/photos/57519914@N00/349613923"
+      "leadImageReady": false
     },
     {
       "source": "Exil",

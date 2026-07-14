@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-14T11:15:06.002Z",
+  "updated": "2026-07-14T12:12:28.483Z",
   "count": 20,
   "items": [
     {
@@ -19,7 +19,7 @@
           "type": "facebook",
           "url": "https://www.facebook.com/QuartierLibre.ca",
           "handle": "QuartierLibre.ca",
-          "stats": "6 564 mentions J'aime",
+          "stats": "",
           "label": "Facebook"
         },
         {
@@ -142,7 +142,7 @@
           "type": "facebook",
           "url": "https://facebook.com/thelinknewspaper",
           "handle": "thelinknewspaper",
-          "stats": "4 749 mentions J'aime",
+          "stats": "",
           "label": "Facebook"
         },
         {
@@ -178,7 +178,7 @@
           "type": "facebook",
           "url": "https://www.facebook.com/zonecampus",
           "handle": "zonecampus",
-          "stats": "2 043 mentions J'aime",
+          "stats": "",
           "label": "Facebook"
         }
       ]

@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-14T11:13:56.855Z",
+  "updated": "2026-07-14T12:11:35.392Z",
   "total": 185,
   "withImage": 171,
   "withCredit": 171,
@@ -27,13 +27,6 @@
       "method": null
     },
     {
-      "title": "L’épidémie de la nonchalance - Le Délit",
-      "source": "Le Délit",
-      "credit": "Photo : Elie Nguyen",
-      "cited": true,
-      "method": "media-credit-featured"
-    },
-    {
       "title": "La performance de l’homosexualité : un privilège? - Le Délit",
       "source": "Le Délit",
       "credit": "Photo : Félix Fournier",
@@ -41,16 +34,23 @@
       "method": "media-credit-featured"
     },
     {
-      "title": "Sois belle et tais-toi - Le Délit",
+      "title": "L’épidémie de la nonchalance - Le Délit",
       "source": "Le Délit",
-      "credit": "Photo : Catvy Tran",
+      "credit": "Photo : Elie Nguyen",
       "cited": true,
       "method": "media-credit-featured"
     },
     {
-      "title": "Qui sont les agents qui patrouillent notre campus? - Le Délit",
+      "title": "Ce que nous devons aux femmes - Le Délit",
       "source": "Le Délit",
-      "credit": "Photo : Stu Doré/Félix Fournier",
+      "credit": "Photo : Alexandre Gontier",
+      "cited": true,
+      "method": "media-credit-near"
+    },
+    {
+      "title": "Les femmes MAGA au service du patriarcat - Le Délit",
+      "source": "Le Délit",
+      "credit": "Photo : Stu Doré",
       "cited": true,
       "method": "media-credit-featured"
     },
