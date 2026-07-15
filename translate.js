@@ -2202,7 +2202,7 @@
 
     const frag = document.createDocumentFragment();
 
-    // Filtre (liste longue) — pratique type combobox / listbox filtrable
+    // Filtre (liste longue) — loupe plutôt que placeholder « Filtrer… »
     const searchWrap = document.createElement('div');
     searchWrap.className = 'translate-menu__search-wrap';
     searchWrap.setAttribute('role', 'presentation');
@@ -2210,9 +2210,17 @@
       + '<label class="translate-menu__search-label" for="translate-menu-filter">'
       + '<span class="sr-only">Filtrer les langues</span>'
       + '</label>'
+      + '<div class="translate-menu__search-field">'
+      + '<svg class="translate-menu__search-icon" viewBox="0 0 24 24" width="16" height="16" '
+      + 'fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" '
+      + 'stroke-linejoin="round" aria-hidden="true">'
+      + '<circle cx="11" cy="11" r="7"/>'
+      + '<path d="M20 20l-3.5-3.5"/>'
+      + '</svg>'
       + '<input type="search" id="translate-menu-filter" class="translate-menu__search" '
-      + 'placeholder="Filtrer…" autocomplete="off" spellcheck="false" '
-      + 'aria-label="Filtrer les langues" enterkeyhint="search" />';
+      + 'placeholder="" autocomplete="off" spellcheck="false" '
+      + 'aria-label="Filtrer les langues" enterkeyhint="search" />'
+      + '</div>';
     frag.appendChild(searchWrap);
 
     let lastGroup = '';
