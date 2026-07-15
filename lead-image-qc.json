@@ -1,30 +1,42 @@
 {
-  "updated": "2026-07-15T12:14:45.580Z",
+  "updated": "2026-07-15T20:54:52.132Z",
   "total": 185,
   "withPhoto": 168,
-  "withStock": 39,
-  "withCampusBank": 9,
+  "withStock": 58,
+  "withCampusBank": 8,
   "fullyCovered": 185,
-  "leadReadyPhotos": 153,
-  "pageScraped": 17,
-  "photosRecovered": 17,
-  "imagesCleared": 11,
-  "stockSearches": 33,
-  "stockFound": 21,
+  "leadReadyPhotos": 138,
+  "pageScraped": 21,
+  "photosRecovered": 21,
+  "imagesCleared": 10,
+  "stockSearches": 57,
+  "stockFound": 44,
   "campusBankFound": 5,
   "mainPageLeadReady": true,
   "gaps": [
     {
-      "title": "CSU fails to reach quorum at first special council meeting of new mandate",
-      "link": "https://thelinknewspaper.ca/article/16335",
-      "reason": "campus-bank",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/d/d1/Henry_F._Hall_Building_07.JPG"
-    },
-    {
       "title": "The Cruel Optimism of Summer",
       "link": "https://www.mcgilldaily.com/2026/07/the-cruel-optimism-of-summer/",
       "reason": "campus-bank",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/6/62/Roddick_Gates_closed%2C_McGill_University%2C_July_17%2C_2024.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/1/18/Wilson_Hall%2C_McGill_University.jpg"
+    },
+    {
+      "title": "CSU terminates council’s chief election officer",
+      "link": "https://thelinknewspaper.ca/article/16334",
+      "reason": "campus-bank",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/1/16/CJ_Building%2C_Loyola_Campus%2C_Communication_Studies%2C_Concordia_University.jpg"
+    },
+    {
+      "title": "L’augmentation des fraudes en ligne et comment s’en protéger",
+      "link": "https://lecollectif.ca/a-la-une/laugmentation-des-fraudes-en-ligne-et-comment-sen-proteger/",
+      "reason": "no-stock-match",
+      "image": "https://lecollectif.ca/wp-content/uploads/2026/07/SOCIETE_FraudeInternet_SourcePieuvre-1024x576.jpg"
+    },
+    {
+      "title": "L’impact du tourisme sur les villes populaires",
+      "link": "https://lecollectif.ca/a-la-une/limpact-du-tourisme-sur-les-villes-populaires/",
+      "reason": "no-stock-match",
+      "image": "https://lecollectif.ca/wp-content/uploads/2026/07/SOCIETE_Tourisme_Source-Ordre-des-architectes-du-Quebec.jpg"
     },
     {
       "title": "Un Sherbrookois aux portes du baseball professionnel",
@@ -33,58 +45,46 @@
       "image": "https://lecollectif.ca/wp-content/uploads/2026/07/SPORTS_DeitenLachance_MLB_SourceBaseballQuebec-684x1024.png"
     },
     {
+      "title": "Voyager sans arrêt : passion ou obsession ?",
+      "link": "https://lecollectif.ca/culture/voyager-sans-arret-passion-ou-obsession/",
+      "reason": "stock-too-small",
+      "image": "https://lecollectif.ca/wp-content/uploads/2026/07/OBSESSIONS_VOYAGES_VoyagerSansArretPassionOuObsession_SourcePixabay-1-1024x683.jpg"
+    },
+    {
+      "title": "La vie sans alcool : les habitudes des jeunes redéfinies",
+      "link": "https://lecollectif.ca/societe/la-vie-sans-alcool-les-habitudes-des-jeunes-redefinies/",
+      "reason": "no-stock-match",
+      "image": "https://lecollectif.ca/wp-content/uploads/2026/07/OBSESSIONS_BOISSONSENERGISANTES_Matcha_SourceCamelliaSinensis-1-1024x682.png"
+    },
+    {
+      "title": "Pourquoi notre génération passe d’une obsession à l’autre?",
+      "link": "https://lecollectif.ca/edition-papier/pourquoi-notre-generation-passe-dune-obsession-a-lautre/",
+      "reason": "no-stock-match",
+      "image": "https://lecollectif.ca/wp-content/uploads/2026/07/OBSESSIONS_HYPERFIXATIONS_Les-hyperfixations_SourceBlogZencare-1.png"
+    },
+    {
+      "title": "Quitte ton 9 à 5 » : rêve de liberté ou illusion générationnelle?",
+      "link": "https://lecollectif.ca/societe/quitte-ton-9-a-5-reve-de-liberte-ou-illusion-generationnelle/",
+      "reason": "stock-too-small",
+      "image": "https://lecollectif.ca/wp-content/uploads/2026/07/OBSESSIONS_QuitYourJob-photo2_SourceGettyImages-1-1024x683.png"
+    },
+    {
+      "title": "L’ERD sauvée de la dissolution par quatre membres",
+      "link": "https://lapige.atmjonquiere.com/2026/05/21/lerd-sauvee-de-la-dissolution-par-quatre-membres/?utm_source=rss&utm_medium=rss&utm_campaign=lerd-sauvee-de-la-dissolution-par-quatre-membres",
+      "reason": "no-stock-match",
+      "image": "https://lapige.atmjonquiere.com/wp-content/uploads/sites/3/2026/05/ERD.jpeg"
+    },
+    {
+      "title": "Un pont entre l’art et le travail de rue",
+      "link": "https://lapige.atmjonquiere.com/2026/05/20/un-pont-entre-lart-et-le-travail-de-rue/?utm_source=rss&utm_medium=rss&utm_campaign=un-pont-entre-lart-et-le-travail-de-rue",
+      "reason": "stock-too-small",
+      "image": "https://lapige.atmjonquiere.com/wp-content/uploads/sites/3/2026/05/Image-16.jpg"
+    },
+    {
       "title": "CALAMINE : RAPPER AUTREMENT QUE LE « BOYS CLUB »",
       "link": "https://quartierlibre.ca/calamine-rapper-autrement/",
-      "reason": "no-stock-match",
+      "reason": "stock-too-small",
       "image": "https://quartierlibre.ca/wp-content/uploads/2026/05/20_calamine-1.jpg"
-    },
-    {
-      "title": "Recettes musicales québécoises pour l’été",
-      "link": "https://quartierlibre.ca/ete-recettes-musicales-quebecoises/",
-      "reason": "no-stock-match",
-      "image": "https://quartierlibre.ca/wp-content/uploads/2026/05/20_florelaurentienne.jpg"
-    },
-    {
-      "title": "Mars enters Aries",
-      "link": "https://thebucampus.ca/2026/04/06/mars-enters-aries/",
-      "reason": "stock-too-small",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/1/16/Mars%2C_Aries_and_Scorpio_from_Persian_Manusc_Wellcome_L0030660.jpg"
-    },
-    {
-      "title": "Spotlighting Powerful McGill Alumnae",
-      "link": "https://www.mcgilldaily.com/2026/03/spotlighting-powerful-mcgill-alumnae/",
-      "reason": "stock-too-small",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/e/e2/McGill_University_downtown_campus_12.JPG"
-    },
-    {
-      "title": "National Golf tournament",
-      "link": "https://thebucampus.ca/2026/03/23/national-golf-tournament/",
-      "reason": "stock-too-small",
-      "image": "https://live.staticflickr.com/24/99099986_4195128a59_b.jpg"
-    },
-    {
-      "title": "Gaiters wrap up hard-fought season with eyes on next year",
-      "link": "https://thebucampus.ca/2026/03/23/gaiters-wrap-up-hard-fought-season-with-eyes-on-next-year/",
-      "reason": "campus-bank",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/b/b3/Bishop%27s_University_campus_2011.jpg"
-    },
-    {
-      "title": "Second-Class Citizens",
-      "link": "https://www.mcgilldaily.com/2026/03/second-class-citizens/",
-      "reason": "campus-bank",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/1/1d/4_McGill_University%2C_Montreal%2CQuebec_2009.jpg"
-    },
-    {
-      "title": "The Gentrification of Online Fandom Spaces",
-      "link": "https://www.mcgilldaily.com/2026/03/the-gentrification-of-online-fandom-spaces/",
-      "reason": "stock-too-small",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/b/bc/East_Austin_Gentrification_Holly_St_2018.jpg"
-    },
-    {
-      "title": "Le pays avant tout – esquisse",
-      "link": "https://exilecvm.wordpress.com/2026/02/28/le-pays-avant-tout-esquisse/",
-      "reason": "campus-bank",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/6/6c/C%C3%A9gep_du_Vieux_Montr%C3%A9al%2C_Nov_03_2022.jpg"
     }
   ]
 }
