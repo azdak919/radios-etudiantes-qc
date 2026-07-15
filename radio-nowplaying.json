@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-15T17:48:19.559Z",
+  "updatedAt": "2026-07-15T19:14:59.172Z",
   "timezone": "America/Toronto",
   "stations": {
     "chyz": {
@@ -21,27 +21,27 @@
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-15T17:47:58.912Z"
+      "checkedAt": "2026-07-15T19:14:38.197Z"
     },
     "cism": {
       "id": "cism",
       "name": "CISM 89,3",
       "current": {
-        "title": "La collation",
-        "source": "api-live",
-        "start": "09:00",
-        "url": "https://stream03.ustream.ca/cism128.mp3",
-        "slug": "mix-collation"
-      },
-      "next": {
         "title": "Genre de bleu (reprise)",
         "source": "api-live",
         "start": "11:00",
-        "url": "https://podcast.cism893.ca/podcast/download_mp3/364235.mp3",
+        "url": "https://stream03.ustream.ca/cism128.mp3",
         "slug": "genre-de-bleu"
       },
+      "next": {
+        "title": "La carte cadeau",
+        "source": "api-live",
+        "start": "12:00",
+        "url": "https://podcast.cism893.ca/podcast/download_mp3/364001.mp3",
+        "slug": "la-carte-cadeau"
+      },
       "track": "",
-      "showTitle": "La collation",
+      "showTitle": "Genre de bleu (reprise)",
       "host": "",
       "source": "api-live",
       "sources": [
@@ -51,25 +51,25 @@
         "type": "cism-v1",
         "url": "https://admin.cism893.ca/api/v1/live"
       },
-      "checkedAt": "2026-07-15T17:48:00.468Z"
+      "checkedAt": "2026-07-15T19:14:39.847Z"
     },
     "ckut": {
       "id": "ckut",
       "name": "CKUT 90,3",
       "current": {
-        "title": "If You Got Ears",
+        "title": "All Da Way Live",
         "source": "api-live",
-        "start": "12:00",
-        "end": "14:00"
+        "start": "15:00",
+        "end": "17:00"
       },
       "next": {
-        "title": "Radyo Kapwa",
+        "title": "Off the Hour/Sounds of Resistance",
         "source": "api-live",
-        "start": "14:00",
-        "end": "15:00"
+        "start": "17:00",
+        "end": "18:00"
       },
       "track": "",
-      "showTitle": "If You Got Ears",
+      "showTitle": "All Da Way Live",
       "host": "",
       "source": "api-live",
       "sources": [
@@ -77,80 +77,79 @@
         "stream"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-15T17:48:02.830Z"
+      "checkedAt": "2026-07-15T19:14:42.679Z"
     },
     "cjlo": {
       "id": "cjlo",
       "name": "CJLO 1690AM",
       "current": {
-        "title": "I Think You Might Like This",
+        "title": "Patch Notes",
         "source": "schedule",
-        "start": "13:00",
-        "end": "14:00",
-        "url": "http://www.cjlo.com/shows/i-think-you-might-like-this"
+        "start": "15:00",
+        "end": "16:00",
+        "url": "http://www.cjlo.com/shows/patch-notes"
       },
       "next": {
-        "title": "Something for the Mood",
+        "title": "Borderline",
         "source": "schedule",
-        "start": "14:00",
-        "end": "15:00",
-        "url": "http://www.cjlo.com/shows/something-for-the-mood"
+        "start": "16:00",
+        "end": "17:00",
+        "url": "http://www.cjlo.com/shows/borderline"
       },
       "track": "",
-      "showTitle": "I Think You Might Like This",
+      "showTitle": "Patch Notes",
       "host": "",
       "source": "schedule",
       "sources": [
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-15T17:48:16.144Z"
+      "checkedAt": "2026-07-15T19:14:56.218Z"
     },
     "cfak": {
       "id": "cfak",
       "name": "CFAK 88,3",
       "current": {
-        "title": "Palmarès CFAK",
-        "source": "schedule",
-        "start": "08:00",
-        "end": "14:00"
-      },
-      "next": {
         "title": "Le popcorn de l'infini",
         "source": "schedule",
         "start": "14:00",
         "end": "00:00"
       },
+      "next": {
+        "title": "Les nuits CFAK",
+        "source": "schedule",
+        "start": "00:00",
+        "end": "07:00"
+      },
       "track": "",
-      "showTitle": "Palmarès CFAK",
+      "showTitle": "Le popcorn de l'infini",
       "host": "",
       "source": "schedule",
       "sources": [
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-15T17:48:16.998Z"
+      "checkedAt": "2026-07-15T19:14:57.202Z"
     },
     "choq": {
       "id": "choq",
       "name": "CHOQ.ca",
       "current": {
-        "title": "Ol’ Time African Gods",
+        "title": "15-juillet",
         "source": "api-live",
-        "host": "Shabaka",
-        "url": "https://www.choq.ca/assets/playlist/internationale.jpg"
+        "host": "Palmares"
       },
       "next": null,
-      "track": "Shabaka - Ol’ Time African Gods",
-      "showTitle": "Ol’ Time African Gods",
-      "host": "Shabaka",
+      "track": "Palmares - 15-juillet",
+      "showTitle": "15-juillet",
+      "host": "Palmares",
       "source": "api-live",
       "sources": [
         "api-live",
         "stream"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-15T17:48:19.208Z"
+      "checkedAt": "2026-07-15T19:14:58.821Z"
     }
   }
 }
