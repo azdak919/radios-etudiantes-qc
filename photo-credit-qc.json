@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-15T15:23:07.037Z",
+  "updated": "2026-07-15T17:09:14.127Z",
   "total": 185,
   "withImage": 168,
   "withCredit": 168,
@@ -13,16 +13,16 @@
   "fallbackNew": 0,
   "samples": [
     {
-      "title": "Sois belle et tais-toi",
+      "title": "Ce que nous devons aux femmes",
       "source": "Le Délit",
-      "credit": "Photo : Catvy Tran",
+      "credit": "Photo : Alexandre Gontier",
       "cited": true,
-      "method": "media-credit-featured"
+      "method": "media-credit-near"
     },
     {
-      "title": "Qui sont les agents qui patrouillent notre campus ?",
+      "title": "Les femmes MAGA au service du patriarcat",
       "source": "Le Délit",
-      "credit": "Photo : Stu Doré/Félix Fournier",
+      "credit": "Photo : Stu Doré",
       "cited": true,
       "method": "media-credit-featured"
     }
