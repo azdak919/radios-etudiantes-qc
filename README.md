@@ -10,7 +10,7 @@
 
 **→ [Essayer LE RADAR maintenant](https://azdak919.github.io/radios-etudiantes-qc/)**
 
-> Projet non officiel et collaboratif. Le Radar n’est affilié à aucun des médias listés.
+> Projet non officiel. Le Radar n’est affilié à aucun des médias listés.
 
 ---
 
