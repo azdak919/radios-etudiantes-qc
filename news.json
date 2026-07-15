@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-15T14:14:32.625Z",
+  "updated": "2026-07-15T15:14:53.597Z",
   "updatedSlot": "2026-07-15T14:00:00.000Z",
   "count": 185,
   "freshnessSessions": 3,
@@ -10,7 +10,7 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-05-15T16:00:00.000Z",
-      "lastFetchOk": "2026-07-15T14:13:54.107Z"
+      "lastFetchOk": "2026-07-15T15:14:16.251Z"
     },
     "Montréal Campus": {
       "fetchOk": true,
@@ -18,7 +18,7 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-05-09T03:14:30.000Z",
-      "lastFetchOk": "2026-07-15T14:13:55.412Z"
+      "lastFetchOk": "2026-07-15T15:14:17.332Z"
     },
     "Le Délit": {
       "fetchOk": true,
@@ -26,7 +26,7 @@
       "articleCount": 20,
       "freshArticleCount": 20,
       "lastArticle": "2026-03-25T11:00:00.000Z",
-      "lastFetchOk": "2026-07-15T14:14:00.973Z"
+      "lastFetchOk": "2026-07-15T15:14:24.027Z"
     },
     "The McGill Daily": {
       "fetchOk": true,
@@ -34,7 +34,7 @@
       "articleCount": 15,
       "freshArticleCount": 15,
       "lastArticle": "2026-07-06T12:00:00.000Z",
-      "lastFetchOk": "2026-07-15T14:14:01.917Z"
+      "lastFetchOk": "2026-07-15T15:14:25.385Z"
     },
     "The Link": {
       "fetchOk": true,
@@ -42,7 +42,7 @@
       "articleCount": 20,
       "freshArticleCount": 20,
       "lastArticle": "2026-07-08T14:41:00.000Z",
-      "lastFetchOk": "2026-07-15T14:14:03.209Z"
+      "lastFetchOk": "2026-07-15T15:14:25.914Z"
     },
     "Zone Campus": {
       "fetchOk": true,
@@ -50,7 +50,7 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-05-08T14:20:26.000Z",
-      "lastFetchOk": "2026-07-15T14:14:04.652Z"
+      "lastFetchOk": "2026-07-15T15:14:26.879Z"
     },
     "L'Exemplaire": {
       "fetchOk": true,
@@ -58,7 +58,7 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-05-15T16:31:24.000Z",
-      "lastFetchOk": "2026-07-15T14:14:06.280Z"
+      "lastFetchOk": "2026-07-15T15:14:28.754Z"
     },
     "Le Collectif": {
       "fetchOk": true,
@@ -66,7 +66,7 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-07-14T21:29:28.000Z",
-      "lastFetchOk": "2026-07-15T14:14:07.153Z"
+      "lastFetchOk": "2026-07-15T15:14:29.626Z"
     },
     "Exil": {
       "fetchOk": true,
@@ -74,7 +74,7 @@
       "articleCount": 7,
       "freshArticleCount": 7,
       "lastArticle": "2026-04-18T22:22:07.000Z",
-      "lastFetchOk": "2026-07-15T14:14:07.355Z"
+      "lastFetchOk": "2026-07-15T15:14:29.979Z"
     },
     "La Pige": {
       "fetchOk": true,
@@ -82,7 +82,7 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-06-22T14:36:10.000Z",
-      "lastFetchOk": "2026-07-15T14:14:08.108Z"
+      "lastFetchOk": "2026-07-15T15:14:30.648Z"
     },
     "Le Polyscope": {
       "fetchOk": true,
@@ -90,7 +90,7 @@
       "articleCount": 13,
       "freshArticleCount": 13,
       "lastArticle": "2026-02-25T14:38:32.764Z",
-      "lastFetchOk": "2026-07-15T14:14:11.693Z"
+      "lastFetchOk": "2026-07-15T15:14:32.778Z"
     },
     "The Tribune": {
       "fetchOk": true,
@@ -98,7 +98,7 @@
       "articleCount": 20,
       "freshArticleCount": 20,
       "lastArticle": "2026-06-26T15:24:28.000Z",
-      "lastFetchOk": "2026-07-15T14:14:11.913Z"
+      "lastFetchOk": "2026-07-15T15:14:33.052Z"
     },
     "The Campus": {
       "fetchOk": true,
@@ -106,7 +106,7 @@
       "articleCount": 20,
       "freshArticleCount": 20,
       "lastArticle": "2026-04-06T16:03:16.000Z",
-      "lastFetchOk": "2026-07-15T14:14:12.123Z"
+      "lastFetchOk": "2026-07-15T15:14:33.385Z"
     },
     "The Plant": {
       "fetchOk": true,
@@ -114,7 +114,7 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-05-11T20:44:08.000Z",
-      "lastFetchOk": "2026-07-15T14:14:12.267Z"
+      "lastFetchOk": "2026-07-15T15:14:33.598Z"
     }
   },
   "items": [
@@ -494,14 +494,14 @@
       "date": "2026-06-22T14:36:10.000Z",
       "excerpt": "« Les gens ont tendance à frapper un mur au moment de la retraite par manque de préparation », estime Le directeur général de la Fédération de l’âge d’or du Québec (Fadoq) pour la région Saguenay-Lac-Saint-Jean – Ungava, Patrice Saint-Pierre. (Photo : Léa Morin-Letort) L’heure",
       "image": "https://lapige.atmjonquiere.com/wp-content/uploads/sites/3/2026/06/Bruno-Cormier-retraite-benevole.png",
-      "leadExcerpt": "« Les gens ont tendance à frapper un mur au moment de la retraite par manque de préparation », estime Le directeur général de la Fédération de l’âge d’or du Québec (Fadoq) pour la région Saguenay-Lac-Saint-Jean – Ungava, Patrice Saint-Pierre. (Photo : Léa Morin-Letort)",
       "sourceImageCredit": "Photo : Léa Morin-Letort",
       "sourceImageCreator": "Léa Morin-Letort",
       "sourceImageCreditUrl": "https://lapige.atmjonquiere.com/2026/06/22/se-preparer-et-vivre-sa-retraite-un-long-fleuve-pas-si-tranquille/?utm_source=rss&utm_medium=rss&utm_campaign=se-preparer-et-vivre-sa-retraite-un-long-fleuve-pas-si-tranquille",
       "sourceImageCreditFrom": "article",
       "sourceImageCreditCited": true,
       "sourceImageCreditImageKey": "bruno-cormier-retraite-benevole.png",
-      "sourceImageCreditRev": 8
+      "sourceImageCreditRev": 8,
+      "leadExcerpt": "« Les gens ont tendance à frapper un mur au moment de la retraite par manque de préparation », estime Le directeur général de la Fédération de l’âge d’or du Québec (Fadoq) pour la région Saguenay-Lac-Saint-Jean – Ungava, Patrice Saint-Pierre. (Photo : Léa Morin-Letort)"
     },
     {
       "source": "The Tribune",
@@ -905,14 +905,13 @@
       "excerpt": "Le 5 mai dernier, le pavillon Roger-Gaudry a accueilli le premier forum du Réseau des écoles associées ( RÉA ). Ce projet ambitieux de la Faculté des sciences de l’éducation (FSÉ) transforme des écoles primaires et secondaires en véritables « hôpitaux universitaires » de la",
       "image": "https://quartierlibre.ca/wp-content/uploads/2026/05/image-2-768x1024.jpeg",
       "_pageAuthor": "Ulysse Taillard-Hodez",
-      "leadExcerpt": "Mme Fournier Dubé a insisté sur le fait que les enseignant·e·s sont les véritables « agents de changement ». Son rôle n’est pas d’imposer un cadre scientifique rigide, mais de vulgariser la recherche pour l’adapter aux besoins du terrain.",
       "sourceImageCredit": "Crédit photo : Quartier Libre",
-      "sourceImageCreator": "",
       "sourceImageCreditUrl": "https://quartierlibre.ca/forum-rea-education-en-milieu-defavorise/",
       "sourceImageCreditFrom": "media",
       "sourceImageCreditCited": false,
       "sourceImageCreditImageKey": "image-2.jpeg",
-      "sourceImageCreditRev": 8
+      "sourceImageCreditRev": 8,
+      "leadExcerpt": "Mme Fournier Dubé a insisté sur le fait que les enseignant·e·s sont les véritables « agents de changement ». Son rôle n’est pas d’imposer un cadre scientifique rigide, mais de vulgariser la recherche pour l’adapter aux besoins du terrain."
     },
     {
       "source": "Quartier Libre",
@@ -1526,7 +1525,6 @@
       "image": "https://quartierlibre.ca/wp-content/uploads/2026/05/image-1-1024x677.jpeg",
       "_pageAuthor": "Bérénice Lemarié",
       "sourceImageCredit": "Crédit photo : Quartier Libre",
-      "sourceImageCreator": "",
       "sourceImageCreditUrl": "https://quartierlibre.ca/festival-jamais-lu-2026/",
       "sourceImageCreditFrom": "media",
       "sourceImageCreditCited": false,
@@ -3254,29 +3252,6 @@
       "region": "Montréal",
       "type": "universite",
       "lang": "fr",
-      "title": "La performance de l’homosexualité : un privilège ?",
-      "link": "https://www.delitfrancais.com/2026/03/25/la-performance-de-lhomosexualite-un-privilege/",
-      "author": "Joséphine Miton",
-      "date": "2026-03-25T07:00:00.000Z",
-      "excerpt": "Blague innocente, signe d’ouverture ou nouveau costume ?",
-      "image": "https://www.delitfrancais.com/wp-content/uploads/2026/03/coinqueer-1.jpeg",
-      "featured": true,
-      "_pageAuthor": "Joséphine Miton",
-      "leadExcerpt": "Deux hommes hétéros imitent une voix, se prennent par la taille, font semblant d’être en couple pour une photo, puis éclatent de rire. L’un ajoute « no homo » et tout rentre dans l’ordre. Pendant ce temps, un homme gai tient la main de son partenaire. Il surveille autour de lui, sonde le quartier, évalue le risque. Pour les uns, l’homosexualité est un prétexte pour rire. Pour les autres, c’est juste une vie.",
-      "sourceImageCredit": "Photo : Félix Fournier",
-      "sourceImageCreator": "Félix Fournier",
-      "sourceImageCreditUrl": "https://www.delitfrancais.com/2026/03/25/la-performance-de-lhomosexualite-un-privilege/",
-      "sourceImageCreditFrom": "article",
-      "sourceImageCreditCited": true,
-      "sourceImageCreditImageKey": "coinqueer-1.jpeg",
-      "sourceImageCreditRev": 8
-    },
-    {
-      "source": "Le Délit",
-      "institution": "Université McGill",
-      "region": "Montréal",
-      "type": "universite",
-      "lang": "fr",
       "title": "L’épidémie de la nonchalance",
       "link": "https://www.delitfrancais.com/2026/03/25/lepidemie-de-la-nonchalance/",
       "author": "Elie Nguyen",
@@ -3285,14 +3260,14 @@
       "image": "https://www.delitfrancais.com/wp-content/uploads/2026/03/Creation-sans-titre-2-768x1024.png",
       "featured": true,
       "_pageAuthor": "Elie Nguyen",
-      "leadExcerpt": "L’un des travers de notre génération est la tendance à adopter une attitude indifférente face à la vie. La nonchalance est devenue une forme de protection, où on minimise tout ce que l’on ressent : on cache ce qui pourrait nous atteindre et on évite de trop s’exposer. En paraissant insouciant, on garde le contrôle, puisque personne ne peut utiliser contre nous ce dont il ne mesure pas l’importance.",
       "sourceImageCredit": "Photo : Elie Nguyen",
       "sourceImageCreator": "Elie Nguyen",
       "sourceImageCreditUrl": "https://www.delitfrancais.com/2026/03/25/lepidemie-de-la-nonchalance/",
       "sourceImageCreditFrom": "article",
       "sourceImageCreditCited": true,
       "sourceImageCreditImageKey": "creation-sans-titre-2.png",
-      "sourceImageCreditRev": 8
+      "sourceImageCreditRev": 8,
+      "leadExcerpt": "L’un des travers de notre génération est la tendance à adopter une attitude indifférente face à la vie. La nonchalance est devenue une forme de protection, où on minimise tout ce que l’on ressent : on cache ce qui pourrait nous atteindre et on évite de trop s’exposer. En paraissant insouciant, on garde le contrôle, puisque personne ne peut utiliser contre nous ce dont il ne mesure pas l’importance."
     },
     {
       "source": "Le Délit",
@@ -3385,6 +3360,29 @@
       "sourceImageCreditImageKey": "concordiareponsev2.jpeg",
       "leadImageReady": true,
       "leadExcerpt": "Première gaffe intellectuelle (in)volontaire du Concordian . En trente secondes de recherches plus ou moins rigoureuses, il aurait pu comprendre les réelles causes de la décote du Québec par la Standard and Poor’s (S&P) – qui n’a absolument rien à voir avec la recrudescence de l’intérêt des Québécois envers la souveraineté."
+    },
+    {
+      "source": "Le Délit",
+      "institution": "Université McGill",
+      "region": "Montréal",
+      "type": "universite",
+      "lang": "fr",
+      "title": "La performance de l’homosexualité : un privilège ?",
+      "link": "https://www.delitfrancais.com/2026/03/25/la-performance-de-lhomosexualite-un-privilege/",
+      "author": "Joséphine Miton",
+      "date": "2026-03-25T07:00:00.000Z",
+      "excerpt": "Blague innocente, signe d’ouverture ou nouveau costume ?",
+      "image": "https://www.delitfrancais.com/wp-content/uploads/2026/03/coinqueer-1.jpeg",
+      "featured": true,
+      "_pageAuthor": "Joséphine Miton",
+      "sourceImageCredit": "Photo : Félix Fournier",
+      "sourceImageCreator": "Félix Fournier",
+      "sourceImageCreditUrl": "https://www.delitfrancais.com/2026/03/25/la-performance-de-lhomosexualite-un-privilege/",
+      "sourceImageCreditFrom": "article",
+      "sourceImageCreditCited": true,
+      "sourceImageCreditImageKey": "coinqueer-1.jpeg",
+      "sourceImageCreditRev": 8,
+      "leadExcerpt": "Deux hommes hétéros imitent une voix, se prennent par la taille, font semblant d’être en couple pour une photo, puis éclatent de rire. L’un ajoute « no homo » et tout rentre dans l’ordre. Pendant ce temps, un homme gai tient la main de son partenaire. Il surveille autour de lui, sonde le quartier, évalue le risque. Pour les uns, l’homosexualité est un prétexte pour rire. Pour les autres, c’est juste une vie."
     },
     {
       "source": "The McGill Daily",
@@ -3713,22 +3711,22 @@
       "region": "Montréal",
       "type": "universite",
       "lang": "fr",
-      "title": "Ce que nous devons aux femmes",
-      "link": "https://www.delitfrancais.com/2026/03/18/ce-que-nous-devons-aux-femmes/",
-      "author": "Eugénie St-Pierre",
+      "title": "Sois belle et tais-toi",
+      "link": "https://www.delitfrancais.com/2026/03/18/sois-belle-et-tais-toi-2/",
+      "author": "Rose Langlois",
       "date": "2026-03-18T07:00:00.000Z",
-      "excerpt": "Votre entourage, en tant qu’étudiantes et étudiants de l’Université McGill, est peut-être composé en majorité de personnes qui se revendiquent comme féministes. Certaines le sont, d’autres le prétendent, mais relativement rares sont les McGillois qui refusent ouvertement le féminisme.",
-      "image": "https://www.delitfrancais.com/wp-content/uploads/2026/03/Capture-decran-le-2026-03-22-a-17.22.07.png",
+      "excerpt": "Petit guide pratique pour écarter les femmes du canon littéraire.",
+      "image": "https://www.delitfrancais.com/wp-content/uploads/2026/03/canon-litteraire.jpg",
       "featured": true,
-      "_pageAuthor": "Eugénie St-Pierre",
-      "sourceImageCredit": "Photo : Alexandre Gontier",
-      "sourceImageCreator": "Alexandre Gontier",
-      "sourceImageCreditUrl": "https://www.delitfrancais.com/2026/03/18/ce-que-nous-devons-aux-femmes/",
+      "_pageAuthor": "Rose Langlois",
+      "leadExcerpt": "C’est la sécheresse totale dans le cerveau de bien des gens. Le vôtre, peut-être. Mais ne craignez rien, ce n’est pas de votre faute. Cette absence de figures féminines dans le canon littéraire tient à une multitude de facteurs qui se résument à l’oubli. Un oubli collectif. Un oubli volontaire.",
+      "sourceImageCredit": "Photo : Catvy Tran",
+      "sourceImageCreator": "Catvy Tran",
+      "sourceImageCreditUrl": "https://www.delitfrancais.com/2026/03/18/sois-belle-et-tais-toi-2/",
       "sourceImageCreditFrom": "article",
       "sourceImageCreditCited": true,
-      "sourceImageCreditImageKey": "capture-decran-le-2026-03-22-a-17.22.07.png",
-      "sourceImageCreditRev": 8,
-      "leadImageReady": true
+      "sourceImageCreditImageKey": "canon-litteraire.jpg",
+      "sourceImageCreditRev": 8
     },
     {
       "source": "Le Délit",
@@ -3736,21 +3734,21 @@
       "region": "Montréal",
       "type": "universite",
       "lang": "fr",
-      "title": "Les femmes MAGA au service du patriarcat",
-      "link": "https://www.delitfrancais.com/2026/03/18/les-femmes-maga-au-service-du-patriarcat/",
-      "author": "Anonyme",
+      "title": "Qui sont les agents qui patrouillent notre campus ?",
+      "link": "https://www.delitfrancais.com/2026/03/18/qui-sont-les-agents-qui-patrouillent-notre-campus/",
+      "author": "Héloïse Durning",
       "date": "2026-03-18T07:00:00.000Z",
-      "excerpt": "Kristi Noem et Erika Kirk comme figures de proue du néo-fascisme américain.",
-      "image": "https://www.delitfrancais.com/wp-content/uploads/2026/03/MAGA_marius.png",
+      "excerpt": "Une enquête sur Garda à McGill.",
+      "image": "https://www.delitfrancais.com/wp-content/uploads/2026/03/garda.png",
       "featured": true,
-      "_pageAuthor": "Anonyme",
-      "leadExcerpt": "Une des capacités distinctives de ce système patriarcal est son habileté remarquable à se perpétuer en instrumentalisant certaines femmes pour reproduire les structures qui les subordonnent. C’est à travers ce mécanisme d’opacité que sa présence se resserre sur la société, et que ses contradictions se dissimulent sous le couvert de liberté individuelle, de traditions ou de choix personnels.",
-      "sourceImageCredit": "Photo : Stu Doré",
-      "sourceImageCreator": "Stu Doré",
-      "sourceImageCreditUrl": "https://www.delitfrancais.com/2026/03/18/les-femmes-maga-au-service-du-patriarcat/",
+      "_pageAuthor": "Héloïse Durning",
+      "leadExcerpt": "« L’Université McGill est à la recherche de patrouilleurs dynamiques et engagés pour assurer la sécurité de sa communauté universitaire », selon une annonce publiée sur le site web du Groupe de sécurité Garda S.E.N.C. (Garda), mieux connu sous le nom de GardaWorld. Cette entreprise canadienne de sécurité privée est sous contrat avec McGill depuis le 26 août 2024, et ce, jusqu’au 30 avril 2027.",
+      "sourceImageCredit": "Photo : Stu Doré/Félix Fournier",
+      "sourceImageCreator": "Stu Doré/Félix Fournier",
+      "sourceImageCreditUrl": "https://www.delitfrancais.com/2026/03/18/qui-sont-les-agents-qui-patrouillent-notre-campus/",
       "sourceImageCreditFrom": "article",
       "sourceImageCreditCited": true,
-      "sourceImageCreditImageKey": "maga_marius.png",
+      "sourceImageCreditImageKey": "garda.png",
       "sourceImageCreditRev": 8
     },
     {

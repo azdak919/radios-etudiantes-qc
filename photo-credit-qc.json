@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-15T14:22:45.424Z",
+  "updated": "2026-07-15T15:23:07.037Z",
   "total": 185,
   "withImage": 168,
   "withCredit": 168,
@@ -7,59 +7,24 @@
   "pending": 0,
   "missingHero": 0,
   "ok": true,
-  "checked": 7,
-  "updatedCount": 7,
-  "citedNew": 5,
-  "fallbackNew": 2,
+  "checked": 2,
+  "updatedCount": 2,
+  "citedNew": 2,
+  "fallbackNew": 0,
   "samples": [
     {
-      "title": "Se préparer et vivre sa retraite : un long fleuve, pas si tranquille",
-      "source": "La Pige",
-      "credit": "Photo : Léa Morin-Letort",
-      "cited": true,
-      "method": "wp-caption"
-    },
-    {
-      "title": "Forum RÉA : une alliance pour l’éducation en milieu défavorisé",
-      "source": "Quartier Libre",
-      "credit": "Crédit photo : Quartier Libre",
-      "cited": false,
-      "method": null
-    },
-    {
-      "title": "La performance de l’homosexualité : un privilège ?",
+      "title": "Sois belle et tais-toi",
       "source": "Le Délit",
-      "credit": "Photo : Félix Fournier",
+      "credit": "Photo : Catvy Tran",
       "cited": true,
       "method": "media-credit-featured"
     },
     {
-      "title": "L’épidémie de la nonchalance",
+      "title": "Qui sont les agents qui patrouillent notre campus ?",
       "source": "Le Délit",
-      "credit": "Photo : Elie Nguyen",
+      "credit": "Photo : Stu Doré/Félix Fournier",
       "cited": true,
       "method": "media-credit-featured"
-    },
-    {
-      "title": "Les femmes MAGA au service du patriarcat",
-      "source": "Le Délit",
-      "credit": "Photo : Stu Doré",
-      "cited": true,
-      "method": "media-credit-featured"
-    },
-    {
-      "title": "Leave the Children Out of This",
-      "source": "The Plant",
-      "credit": "Photo: My Little Princess (2011)",
-      "cited": true,
-      "method": "via-attribution"
-    },
-    {
-      "title": "Festival Jamais Lu : « Quand le monde devient dur à lire, on doit se raconter des histoires »",
-      "source": "Quartier Libre",
-      "credit": "Crédit photo : Quartier Libre",
-      "cited": false,
-      "method": null
     }
   ]
 }
