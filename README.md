@@ -148,7 +148,7 @@ Signale aussi les liens cassés, flux morts ou sources manquantes.
 
 ## Crédits et contenus
 
-**Conçu avec ♡ par Charles Tison en 2026**
+**Conçu avec ♡ par [Azdak](https://www.buymeacoffee.com/azdak) en 2026**
 
 Code libre utilisé conformément aux licences applicables; contenus et médias crédités à leurs auteurs respectifs.
 
