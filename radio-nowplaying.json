@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-15T08:34:20.082Z",
+  "updatedAt": "2026-07-15T09:10:53.348Z",
   "timezone": "America/Toronto",
   "stations": {
     "chyz": {
@@ -21,7 +21,7 @@
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-15T08:33:58.391Z"
+      "checkedAt": "2026-07-15T09:10:33.726Z"
     },
     "cism": {
       "id": "cism",
@@ -51,7 +51,7 @@
         "type": "cism-v1",
         "url": "https://admin.cism893.ca/api/v1/live"
       },
-      "checkedAt": "2026-07-15T08:34:00.002Z"
+      "checkedAt": "2026-07-15T09:10:35.133Z"
     },
     "ckut": {
       "id": "ckut",
@@ -77,7 +77,7 @@
         "stream"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-15T08:34:02.797Z"
+      "checkedAt": "2026-07-15T09:10:37.421Z"
     },
     "cjlo": {
       "id": "cjlo",
@@ -104,7 +104,7 @@
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-15T08:34:16.490Z"
+      "checkedAt": "2026-07-15T09:10:50.720Z"
     },
     "cfak": {
       "id": "cfak",
@@ -129,27 +129,27 @@
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-15T08:34:17.481Z"
+      "checkedAt": "2026-07-15T09:10:51.576Z"
     },
     "choq": {
       "id": "choq",
       "name": "CHOQ.ca",
       "current": {
-        "title": "Tuer la flamme",
+        "title": "cassiopee",
         "source": "api-live",
-        "host": "Jules"
+        "host": "VALOIS"
       },
       "next": null,
-      "track": "Bonne nuit, chérie - Les avions",
-      "showTitle": "Tuer la flamme",
-      "host": "Jules",
+      "track": "VALOIS - cassiopee",
+      "showTitle": "cassiopee",
+      "host": "VALOIS",
       "source": "api-live",
       "sources": [
         "api-live",
         "stream"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-15T08:34:19.731Z"
+      "checkedAt": "2026-07-15T09:10:52.998Z"
     }
   }
 }
