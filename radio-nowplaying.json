@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-15T09:10:53.348Z",
+  "updatedAt": "2026-07-15T11:09:42.656Z",
   "timezone": "America/Toronto",
   "stations": {
     "chyz": {
@@ -21,27 +21,27 @@
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-15T09:10:33.726Z"
+      "checkedAt": "2026-07-15T11:09:19.990Z"
     },
     "cism": {
       "id": "cism",
       "name": "CISM 89,3",
       "current": {
-        "title": "Les sentinelles de l'art (reprise)",
+        "title": "Fréquence 440",
         "source": "api-live",
-        "start": "00:00",
+        "start": "03:00",
         "url": "https://stream03.ustream.ca/cism128.mp3",
-        "slug": "les-sentinelles-de-lart"
+        "slug": "frequence-440"
       },
       "next": {
-        "title": "Mix Franco",
+        "title": "Hors cadre",
         "source": "api-live",
-        "start": "02:00",
-        "url": "https://podcast.cism893.ca/podcast/download_mp3/364347.mp3",
-        "slug": "mix-franco"
+        "start": "04:00",
+        "url": "https://podcast.cism893.ca/podcast/download_mp3/363976.mp3",
+        "slug": "hors-cadre"
       },
       "track": "",
-      "showTitle": "Les sentinelles de l'art (reprise)",
+      "showTitle": "Fréquence 440",
       "host": "",
       "source": "api-live",
       "sources": [
@@ -51,25 +51,25 @@
         "type": "cism-v1",
         "url": "https://admin.cism893.ca/api/v1/live"
       },
-      "checkedAt": "2026-07-15T09:10:35.133Z"
+      "checkedAt": "2026-07-15T11:09:21.868Z"
     },
     "ckut": {
       "id": "ckut",
       "name": "CKUT 90,3",
       "current": {
-        "title": "Full Circle",
-        "source": "api-live",
-        "start": "04:00",
-        "end": "07:00"
-      },
-      "next": {
         "title": "The Wednesday Morning After",
         "source": "api-live",
         "start": "07:00",
         "end": "09:00"
       },
+      "next": {
+        "title": "The Sleepy King/Terminal 5",
+        "source": "api-live",
+        "start": "09:00",
+        "end": "11:00"
+      },
       "track": "",
-      "showTitle": "Full Circle",
+      "showTitle": "The Wednesday Morning After",
       "host": "",
       "source": "api-live",
       "sources": [
@@ -77,79 +77,79 @@
         "stream"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-15T09:10:37.421Z"
+      "checkedAt": "2026-07-15T11:09:25.076Z"
     },
     "cjlo": {
       "id": "cjlo",
       "name": "CJLO 1690AM",
       "current": {
-        "title": "CJLO Late Night",
-        "source": "schedule",
-        "start": "00:00",
-        "end": "06:00",
-        "url": "http://www.cjlo.com/shows/cjlo-late-night"
-      },
-      "next": {
         "title": "Morning Electro-shock",
         "source": "schedule",
         "start": "06:00",
         "end": "08:00",
         "url": "http://www.cjlo.com/shows/morning-electro-shock"
       },
+      "next": {
+        "title": "Words an...",
+        "source": "schedule",
+        "start": "07:30",
+        "end": "08:00",
+        "url": "http://www.cjlo.com/shows/words-and-culture"
+      },
       "track": "",
-      "showTitle": "CJLO Late Night",
+      "showTitle": "Morning Electro-shock",
       "host": "",
       "source": "schedule",
       "sources": [
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-15T09:10:50.720Z"
+      "checkedAt": "2026-07-15T11:09:39.252Z"
     },
     "cfak": {
       "id": "cfak",
       "name": "CFAK 88,3",
       "current": {
-        "title": "Les nuits CFAK",
-        "source": "schedule",
-        "start": "00:00",
-        "end": "07:00"
-      },
-      "next": {
         "title": "Folkswagen",
         "source": "schedule",
         "start": "07:00",
         "end": "08:00"
       },
+      "next": {
+        "title": "Palmarès CFAK",
+        "source": "schedule",
+        "start": "08:00",
+        "end": "14:00"
+      },
       "track": "",
-      "showTitle": "Les nuits CFAK",
+      "showTitle": "Folkswagen",
       "host": "",
       "source": "schedule",
       "sources": [
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-15T09:10:51.576Z"
+      "checkedAt": "2026-07-15T11:09:40.221Z"
     },
     "choq": {
       "id": "choq",
       "name": "CHOQ.ca",
       "current": {
-        "title": "cassiopee",
+        "title": "compas",
         "source": "api-live",
-        "host": "VALOIS"
+        "host": "Noé Lira"
       },
       "next": null,
-      "track": "VALOIS - cassiopee",
-      "showTitle": "cassiopee",
-      "host": "VALOIS",
+      "track": "Noé Lira - compas",
+      "showTitle": "compas",
+      "host": "Noé Lira",
       "source": "api-live",
       "sources": [
         "api-live",
         "stream"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-15T09:10:52.998Z"
+      "checkedAt": "2026-07-15T11:09:42.305Z"
     }
   }
 }
