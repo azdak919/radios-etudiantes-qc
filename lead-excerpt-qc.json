@@ -1,23 +1,14 @@
 {
-  "updated": "2026-07-15T12:10:12.362Z",
+  "updated": "2026-07-15T14:16:29.268Z",
   "total": 185,
   "pool": 58,
-  "incomplete": 5,
+  "incomplete": 4,
   "withLeadExcerpt": 72,
-  "candidates": 5,
-  "enriched": 1,
+  "candidates": 4,
+  "enriched": 0,
   "failed": 0,
   "ok": true,
   "samples": [
-    {
-      "title": "Les femmes MAGA au service du patriarcat",
-      "link": "https://www.delitfrancais.com/2026/03/18/les-femmes-maga-au-service-du-patriarcat/",
-      "ok": true,
-      "score": 100,
-      "chars": 393,
-      "sample": "Une des capacités distinctives de ce système patriarcal est son habileté remarquable à se perpétuer ",
-      "changed": true
-    },
     {
       "title": "Voyager sans arrêt : passion ou obsession ?",
       "link": "https://lecollectif.ca/culture/voyager-sans-arret-passion-ou-obsession/",
