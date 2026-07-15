@@ -539,7 +539,7 @@
    *  - **Auteurs** d’articles → jamais (article-author)
    *  - **Crédits photo** (photographes, « Crédit photo : … ») → jamais
    *  - **Institutions** (article-inst, filter-btn__inst, …) → localisées
-   *    (hors mode Original / FR source) : Universidad…, McGill University, College…
+   *    seulement hors Original / FR / EN (ex. ES : Universidad…, Colegio…)
    *  - Libellés UI (« Par », « À la une », « Toutes les sources ») → traduits
    */
   const SKIP_CLASS_RE = /\b(?:notranslate|article-source|article-author|filter-btn__name|article-media-credit(?:__creator)?)\b/;
@@ -1061,14 +1061,15 @@
   let translateTargetLang = null;
 
   /**
-   * Localiser les noms d’établissements hors Original / FR.
-   * EN inclus (ex. Université McGill → McGill University, Cégep → College).
-   * FR = langue source de l’UI ; Original = aucune localisation.
+   * Localiser les noms d’établissements seulement hors Original / FR / EN.
+   * Original, français et anglais : libellés d’origine tels quels
+   * (Université McGill, McGill University, Cégep… selon la source).
+   * Autres langues (ES, PT…) : Universidad…, Colegio…, etc.
    */
   function shouldLocalizeInstitutions(targetLang = translateTargetLang) {
     if (!targetLang) return false;
     const lang = institutionLangKey(targetLang);
-    if (!lang || lang === 'fr') return false;
+    if (!lang || lang === 'fr' || lang === 'en') return false;
     return true;
   }
 
@@ -1096,12 +1097,12 @@
     if (!t) return false;
     if (isProtectedMediaName(t)) return true;
 
-    // Original / FR : ne pas localiser les établissements
+    // Original / FR / EN : ne pas localiser les établissements
     if (isInstitutionLabelZone(node) && !shouldLocalizeInstitutions()) {
       return true;
     }
 
-    // Hors FR : autoriser la localisation dans les zones institution
+    // Autres langues : autoriser la localisation dans les zones institution
     if (isProtectedInstitutionName(t)) {
       if (isTranslatableInstitutionZone(node)) return false;
       return true;
@@ -1569,7 +1570,7 @@
   }
 
   function preferredInstitutionLabel(original = '', targetLang = '') {
-    // Pas de glossaire / mapping en FR ou Original
+    // Pas de glossaire / mapping en Original, FR ou EN
     if (!shouldLocalizeInstitutions(targetLang)) return null;
 
     const key = String(original || '').replace(/\s+/g, ' ').trim();

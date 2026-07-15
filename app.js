@@ -1708,7 +1708,7 @@ function applyFilterInstMarquees() {
     }
     const { institution, type } = sourceInfo(src);
     const instLabel = filterSourceInstitutionLabel(institution, type, src);
-    // Établissement : localisable (hors FR/Original) ; médias restent notranslate.
+    // Établissement : localisable hors Original/FR/EN ; médias restent notranslate.
     applyMarquee(instEl, adaptRadarInstitutionLabel(instLabel || ''));
   });
 }
@@ -2725,9 +2725,8 @@ for (const [full, acr] of Object.entries(INSTITUTION_ACRONYMS)) {
 
 /**
  * Capitalisation affichage des types d'établissement.
- * Les libellés d'institution sont localisables hors FR/Original (translate.js) ;
- * ce filet corrige aussi une casse abîmée si un moteur externe intervient
- * (ex. gtx ES : « universidad laval » → « Universidad Laval »).
+ * Institutions : original en Original/FR/EN ; localisées hors de ces modes
+ * (translate.js). Ce filet corrige aussi une casse abîmée (gtx).
  */
 function formatInstitutionDisplay(name = '') {
   if (!name) return '';
@@ -2843,8 +2842,8 @@ function articleInstitutionMetaHtml(name = '', type = '', role = 'standard') {
   // Nom complet seulement pour la une et les vedettes (plus d’espace).
   // En bref + Suite du fil : toujours acronyme / forme courte.
   const spacious = role === 'lead' || role === 'feature';
-  // Pas de notranslate : hors FR/Original, translate.js localise les établissements
-  // (ES/PT/EN… : Universidad…, McGill University, College…).
+  // Pas de notranslate : hors Original/FR/EN, translate.js localise (ES/PT…).
+  // En Original / FR / EN : libellés d’origine intacts.
   if (spacious && full && full !== short) {
     return `<span class="article-inst">`
       + `<span class="article-inst__full">${escapeHtml(full)}</span>`
