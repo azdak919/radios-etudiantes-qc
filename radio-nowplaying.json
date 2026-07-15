@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-15T06:36:36.862Z",
+  "updatedAt": "2026-07-15T08:34:20.082Z",
   "timezone": "America/Toronto",
   "stations": {
     "chyz": {
@@ -21,27 +21,27 @@
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-15T06:36:15.565Z"
+      "checkedAt": "2026-07-15T08:33:58.391Z"
     },
     "cism": {
       "id": "cism",
       "name": "CISM 89,3",
       "current": {
-        "title": "Mix anglo",
-        "source": "api-live",
-        "start": "22:00",
-        "url": "https://stream03.ustream.ca/cism128.mp3",
-        "slug": "mix-anglo"
-      },
-      "next": {
         "title": "Les sentinelles de l'art (reprise)",
         "source": "api-live",
         "start": "00:00",
-        "url": "https://podcast.cism893.ca/podcast/download_mp3/363933.mp3",
+        "url": "https://stream03.ustream.ca/cism128.mp3",
         "slug": "les-sentinelles-de-lart"
       },
+      "next": {
+        "title": "Mix Franco",
+        "source": "api-live",
+        "start": "02:00",
+        "url": "https://podcast.cism893.ca/podcast/download_mp3/364347.mp3",
+        "slug": "mix-franco"
+      },
       "track": "",
-      "showTitle": "Mix anglo",
+      "showTitle": "Les sentinelles de l'art (reprise)",
       "host": "",
       "source": "api-live",
       "sources": [
@@ -51,25 +51,25 @@
         "type": "cism-v1",
         "url": "https://admin.cism893.ca/api/v1/live"
       },
-      "checkedAt": "2026-07-15T06:36:17.086Z"
+      "checkedAt": "2026-07-15T08:34:00.002Z"
     },
     "ckut": {
       "id": "ckut",
       "name": "CKUT 90,3",
       "current": {
-        "title": "WarpCor / Out of the Void",
-        "source": "api-live",
-        "start": "02:00",
-        "end": "04:00"
-      },
-      "next": {
         "title": "Full Circle",
         "source": "api-live",
         "start": "04:00",
         "end": "07:00"
       },
+      "next": {
+        "title": "The Wednesday Morning After",
+        "source": "api-live",
+        "start": "07:00",
+        "end": "09:00"
+      },
       "track": "",
-      "showTitle": "WarpCor / Out of the Void",
+      "showTitle": "Full Circle",
       "host": "",
       "source": "api-live",
       "sources": [
@@ -77,7 +77,7 @@
         "stream"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-15T06:36:19.757Z"
+      "checkedAt": "2026-07-15T08:34:02.797Z"
     },
     "cjlo": {
       "id": "cjlo",
@@ -104,7 +104,7 @@
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-15T06:36:33.672Z"
+      "checkedAt": "2026-07-15T08:34:16.490Z"
     },
     "cfak": {
       "id": "cfak",
@@ -129,28 +129,27 @@
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-15T06:36:34.607Z"
+      "checkedAt": "2026-07-15T08:34:17.481Z"
     },
     "choq": {
       "id": "choq",
       "name": "CHOQ.ca",
       "current": {
-        "title": "Cohorts of the Abyss",
+        "title": "Tuer la flamme",
         "source": "api-live",
-        "host": "NINTH REALM",
-        "url": "https://www.choq.ca/assets/playlist/les-nuits-brutales.png"
+        "host": "Jules"
       },
       "next": null,
-      "track": "NINTH REALM - Cohorts of the Abyss",
-      "showTitle": "Cohorts of the Abyss",
-      "host": "NINTH REALM",
+      "track": "Bonne nuit, chérie - Les avions",
+      "showTitle": "Tuer la flamme",
+      "host": "Jules",
       "source": "api-live",
       "sources": [
         "api-live",
         "stream"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-15T06:36:36.511Z"
+      "checkedAt": "2026-07-15T08:34:19.731Z"
     }
   }
 }
