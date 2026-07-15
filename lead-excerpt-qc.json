@@ -1,22 +1,22 @@
 {
-  "updated": "2026-07-15T11:11:28.737Z",
+  "updated": "2026-07-15T12:10:12.362Z",
   "total": 185,
   "pool": 58,
   "incomplete": 5,
-  "withLeadExcerpt": 73,
+  "withLeadExcerpt": 72,
   "candidates": 5,
-  "enriched": 0,
+  "enriched": 1,
   "failed": 0,
   "ok": true,
   "samples": [
     {
-      "title": "Pourquoi le L est en premier dans LGBTQ+",
-      "link": "https://www.delitfrancais.com/2026/03/18/pourquoi-le-l-est-en-premier-dans-lgbtq/",
+      "title": "Les femmes MAGA au service du patriarcat",
+      "link": "https://www.delitfrancais.com/2026/03/18/les-femmes-maga-au-service-du-patriarcat/",
       "ok": true,
-      "score": 81,
-      "chars": 400,
-      "sample": "Cependant, l’épidémie du sida a modifié le rapport entre les deux groupes. Au cours de cette crise, ",
-      "changed": false
+      "score": 100,
+      "chars": 393,
+      "sample": "Une des capacités distinctives de ce système patriarcal est son habileté remarquable à se perpétuer ",
+      "changed": true
     },
     {
       "title": "Voyager sans arrêt : passion ou obsession ?",

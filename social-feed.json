@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-15T11:18:40.582Z",
+  "updated": "2026-07-15T12:15:49.516Z",
   "count": 19,
   "items": [
     {
@@ -48,7 +48,7 @@
           "type": "facebook",
           "url": "https://www.facebook.com/montrealcampus",
           "handle": "montrealcampus",
-          "stats": "6 260 mentions J'aime",
+          "stats": "",
           "label": "Facebook"
         },
         {
@@ -84,7 +84,7 @@
           "type": "facebook",
           "url": "https://facebook.com/ledelitfrancais",
           "handle": "ledelitfrancais",
-          "stats": "4 692 mentions J'aime",
+          "stats": "",
           "label": "Facebook"
         },
         {
@@ -113,7 +113,7 @@
           "type": "facebook",
           "url": "https://www.facebook.com/themcgilldaily",
           "handle": "themcgilldaily",
-          "stats": "7 225 mentions J'aime",
+          "stats": "",
           "label": "Facebook"
         },
         {
@@ -142,7 +142,7 @@
           "type": "facebook",
           "url": "https://www.facebook.com/zonecampus",
           "handle": "zonecampus",
-          "stats": "2 043 mentions J'aime",
+          "stats": "",
           "label": "Facebook"
         }
       ]
@@ -157,7 +157,7 @@
           "type": "facebook",
           "url": "https://www.facebook.com/lexemplaire",
           "handle": "lexemplaire",
-          "stats": "851 mentions J'aime",
+          "stats": "",
           "label": "Facebook"
         },
         {
@@ -186,7 +186,7 @@
           "type": "facebook",
           "url": "https://www.facebook.com/journallecollectif",
           "handle": "journallecollectif",
-          "stats": "4 056 mentions J'aime",
+          "stats": "",
           "label": "Facebook"
         }
       ]

@@ -1,17 +1,17 @@
 {
-  "updated": "2026-07-15T03:59:57.238Z",
+  "updated": "2026-07-15T12:14:45.580Z",
   "total": 185,
   "withPhoto": 168,
   "withStock": 39,
-  "withCampusBank": 8,
+  "withCampusBank": 9,
   "fullyCovered": 185,
-  "leadReadyPhotos": 137,
+  "leadReadyPhotos": 153,
   "pageScraped": 17,
   "photosRecovered": 17,
   "imagesCleared": 11,
-  "stockSearches": 44,
-  "stockFound": 31,
-  "campusBankFound": 4,
+  "stockSearches": 33,
+  "stockFound": 21,
+  "campusBankFound": 5,
   "mainPageLeadReady": true,
   "gaps": [
     {
@@ -23,14 +23,8 @@
     {
       "title": "The Cruel Optimism of Summer",
       "link": "https://www.mcgilldaily.com/2026/07/the-cruel-optimism-of-summer/",
-      "reason": "stock-too-small",
-      "image": "https://live.staticflickr.com/917/28627096297_a3e0756d47_b.jpg"
-    },
-    {
-      "title": "CSU terminates council’s chief election officer",
-      "link": "https://thelinknewspaper.ca/article/16334",
-      "reason": "no-stock-match",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/1/15/2135-2149_Mackay_Street%2C_Montreal.JPG"
+      "reason": "campus-bank",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/6/62/Roddick_Gates_closed%2C_McGill_University%2C_July_17%2C_2024.jpg"
     },
     {
       "title": "Un Sherbrookois aux portes du baseball professionnel",
@@ -51,30 +45,6 @@
       "image": "https://quartierlibre.ca/wp-content/uploads/2026/05/20_florelaurentienne.jpg"
     },
     {
-      "title": "CSU approves affinity group policy, club rules update and councillor pay increase at special meeting",
-      "link": "https://thelinknewspaper.ca/article/16326",
-      "reason": "stock-too-small",
-      "image": "https://live.staticflickr.com/7089/7290404684_2750bb385f_b.jpg"
-    },
-    {
-      "title": "Opinion – L’hypocrisie qui rampe à l’Assemblée nationale",
-      "link": "https://exilecvm.wordpress.com/2026/04/18/opinion-lhypocrisie-qui-rampe-a-lassemblee-nationale/",
-      "reason": "stock-too-small",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/4/47/Assembl%C3%A9e_nationale_du_Qu%C3%A9bec%2C_l%27H%C3%B4tel_du_Parlement%2C_fa%C3%A7ade_avec_ancien_entr%C3%A9_principal.jpg"
-    },
-    {
-      "title": "CSU approves $36,000 in funding for student-led initiatives",
-      "link": "https://thelinknewspaper.ca/article/16319",
-      "reason": "no-stock-match",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/1/16/CJ_Building%2C_Loyola_Campus%2C_Communication_Studies%2C_Concordia_University.jpg"
-    },
-    {
-      "title": "From the rink to the links",
-      "link": "https://thebucampus.ca/2026/04/06/from-the-rink-to-the-links/",
-      "reason": "stock-too-small",
-      "image": "https://live.staticflickr.com/4031/4400844746_a47c17ef6d_b.jpg"
-    },
-    {
       "title": "Mars enters Aries",
       "link": "https://thebucampus.ca/2026/04/06/mars-enters-aries/",
       "reason": "stock-too-small",
@@ -85,6 +55,36 @@
       "link": "https://www.mcgilldaily.com/2026/03/spotlighting-powerful-mcgill-alumnae/",
       "reason": "stock-too-small",
       "image": "https://upload.wikimedia.org/wikipedia/commons/e/e2/McGill_University_downtown_campus_12.JPG"
+    },
+    {
+      "title": "National Golf tournament",
+      "link": "https://thebucampus.ca/2026/03/23/national-golf-tournament/",
+      "reason": "stock-too-small",
+      "image": "https://live.staticflickr.com/24/99099986_4195128a59_b.jpg"
+    },
+    {
+      "title": "Gaiters wrap up hard-fought season with eyes on next year",
+      "link": "https://thebucampus.ca/2026/03/23/gaiters-wrap-up-hard-fought-season-with-eyes-on-next-year/",
+      "reason": "campus-bank",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/b/b3/Bishop%27s_University_campus_2011.jpg"
+    },
+    {
+      "title": "Second-Class Citizens",
+      "link": "https://www.mcgilldaily.com/2026/03/second-class-citizens/",
+      "reason": "campus-bank",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/1/1d/4_McGill_University%2C_Montreal%2CQuebec_2009.jpg"
+    },
+    {
+      "title": "The Gentrification of Online Fandom Spaces",
+      "link": "https://www.mcgilldaily.com/2026/03/the-gentrification-of-online-fandom-spaces/",
+      "reason": "stock-too-small",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/b/bc/East_Austin_Gentrification_Holly_St_2018.jpg"
+    },
+    {
+      "title": "Le pays avant tout – esquisse",
+      "link": "https://exilecvm.wordpress.com/2026/02/28/le-pays-avant-tout-esquisse/",
+      "reason": "campus-bank",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/6/6c/C%C3%A9gep_du_Vieux_Montr%C3%A9al%2C_Nov_03_2022.jpg"
     }
   ]
 }
