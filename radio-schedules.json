@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-01T11:58:52.696Z",
+  "updatedAt": "2026-07-15T10:46:32.469Z",
   "timezone": "America/Toronto",
   "stations": {
     "chyz": {
@@ -8,7 +8,7 @@
       "sources": [
         "chyz:https://chyz.ca/horaire/"
       ],
-      "checkedAt": "2026-07-01T11:58:52.696Z",
+      "checkedAt": "2026-07-15T10:46:32.469Z",
       "grid": [
         {
           "day": 0,
@@ -32,18 +32,18 @@
           "url": "https://chyz.ca/emission/radio-futura/"
         },
         {
+          "day": 0,
+          "start": "16:50",
+          "end": "20:30",
+          "title": "Capitales de Québec",
+          "url": "https://chyz.ca/emission/capitales-de-quebec/"
+        },
+        {
           "day": 1,
           "start": "08:00",
           "end": "10:00",
           "title": "Lundi Indie",
           "url": "https://chyz.ca/emission/lundie-indie-playlist-du-matin/"
-        },
-        {
-          "day": 1,
-          "start": "16:00",
-          "end": "16:30",
-          "title": "Chéri.e, Jme Mobilise!",
-          "url": "https://chyz.ca/emission/cheri-e-jmorganise/"
         },
         {
           "day": 1,
@@ -54,10 +54,10 @@
         },
         {
           "day": 1,
-          "start": "21:00",
-          "end": "22:00",
-          "title": "La Cassette",
-          "url": "https://chyz.ca/emission/la-cassette/"
+          "start": "20:30",
+          "end": "21:30",
+          "title": "La Voie des Droits",
+          "url": "https://chyz.ca/emission/la-voie-des-droits/"
         },
         {
           "day": 2,
@@ -125,7 +125,7 @@
         {
           "day": 4,
           "start": "17:30",
-          "end": "18:30",
+          "end": "19:00",
           "title": "Les Arshitechs du Son",
           "url": "https://chyz.ca/emission/les-arshitechs-du-son/"
         },
@@ -152,10 +152,10 @@
         },
         {
           "day": 5,
-          "start": "17:30",
-          "end": "18:30",
-          "title": "Les Arshitechs du Son",
-          "url": "https://chyz.ca/emission/les-arshitechs-du-son/"
+          "start": "16:50",
+          "end": "23:00",
+          "title": "Capitales de Québec",
+          "url": "https://chyz.ca/emission/capitales-de-quebec/"
         },
         {
           "day": 6,
@@ -177,6 +177,13 @@
           "end": "16:00",
           "title": "Radio Futura",
           "url": "https://chyz.ca/emission/radio-futura/"
+        },
+        {
+          "day": 6,
+          "start": "18:50",
+          "end": "23:00",
+          "title": "Capitales de Québec",
+          "url": "https://chyz.ca/emission/capitales-de-quebec/"
         }
       ]
     },
@@ -186,7 +193,7 @@
       "sources": [
         "cism:https://cism893.ca/grille-horaire/"
       ],
-      "checkedAt": "2026-07-01T11:58:52.696Z",
+      "checkedAt": "2026-07-15T10:46:32.469Z",
       "grid": [
         {
           "day": 0,
@@ -472,8 +479,8 @@
           "day": 2,
           "start": "12:00",
           "end": "14:00",
-          "title": "Les sentinelles de l'art",
-          "url": "https://cism893.ca/emissions/les-sentinelles-de-lart"
+          "title": "CISM au Festival international Nuits d'Afrique",
+          "url": "https://cism893.ca/emissions/cism-au-festival-international-nuits-dafrique"
         },
         {
           "day": 2,
@@ -675,8 +682,8 @@
           "day": 4,
           "start": "07:00",
           "end": "08:00",
-          "title": "Ici, la criminologie",
-          "url": "https://cism893.ca/emissions/ici-la-criminologie"
+          "title": "Second poteau",
+          "url": "https://cism893.ca/emissions/second-poteau"
         },
         {
           "day": 4,
@@ -966,7 +973,7 @@
       "sources": [
         "airtime:https://ckut.airtime.pro"
       ],
-      "checkedAt": "2026-07-01T11:58:52.696Z",
+      "checkedAt": "2026-07-15T10:46:32.469Z",
       "grid": [
         {
           "day": 0,
@@ -1404,7 +1411,7 @@
           "day": 4,
           "start": "17:00",
           "end": "18:00",
-          "title": "Off the Hour: Trib Talks"
+          "title": "Off the Hour: Labour Radio"
         },
         {
           "day": 4,
@@ -1582,7 +1589,7 @@
       "sources": [
         "cjlo:http://www.cjlo.com/schedule"
       ],
-      "checkedAt": "2026-07-01T11:58:52.696Z",
+      "checkedAt": "2026-07-15T10:46:32.469Z",
       "grid": [
         {
           "day": 0,
@@ -1651,8 +1658,8 @@
           "day": 0,
           "start": "15:00",
           "end": "16:00",
-          "title": "The Tommy John Show",
-          "url": "http://www.cjlo.com/shows/the-tommy-john-show"
+          "title": "CJLO's Alternative Mega Mix",
+          "url": "http://www.cjlo.com/shows/cjlos-alternative-mega-mix"
         },
         {
           "day": 0,
@@ -1693,8 +1700,8 @@
           "day": 0,
           "start": "21:00",
           "end": "22:00",
-          "title": "CJLO's Alternative Mega Mix",
-          "url": "http://www.cjlo.com/shows/cjlos-alternative-mega-mix"
+          "title": "Afro Archives",
+          "url": "http://www.cjlo.com/shows/afro-archives"
         },
         {
           "day": 0,
@@ -1770,8 +1777,8 @@
           "day": 1,
           "start": "14:00",
           "end": "15:00",
-          "title": "CJLO's Alternative Mega Mix",
-          "url": "http://www.cjlo.com/shows/cjlos-alternative-mega-mix"
+          "title": "The Tommy John Show",
+          "url": "http://www.cjlo.com/shows/the-tommy-john-show"
         },
         {
           "day": 1,
@@ -1833,8 +1840,8 @@
           "day": 1,
           "start": "23:00",
           "end": "00:00",
-          "title": "Amplitude",
-          "url": "http://www.cjlo.com/shows/amplitude"
+          "title": "CJLO's Alternative Mega Mix",
+          "url": "http://www.cjlo.com/shows/cjlos-alternative-mega-mix"
         },
         {
           "day": 2,
@@ -1853,9 +1860,16 @@
         {
           "day": 2,
           "start": "06:00",
-          "end": "09:00",
+          "end": "08:00",
           "title": "Hip's Time to Wake Hop",
           "url": "http://www.cjlo.com/shows/hips-time-to-wake-hop"
+        },
+        {
+          "day": 2,
+          "start": "08:00",
+          "end": "09:00",
+          "title": "Trawling the Megahertz",
+          "url": "http://www.cjlo.com/shows/trawling-the-megahertz"
         },
         {
           "day": 2,
@@ -1952,8 +1966,8 @@
           "day": 2,
           "start": "22:00",
           "end": "23:00",
-          "title": "on an evening",
-          "url": "http://www.cjlo.com/shows/on-an-evening"
+          "title": "CJLO's Alternative Mega Mix",
+          "url": "http://www.cjlo.com/shows/cjlos-alternative-mega-mix"
         },
         {
           "day": 2,
@@ -1987,15 +2001,8 @@
           "day": 3,
           "start": "08:00",
           "end": "09:00",
-          "title": "Trawling the Megahertz",
-          "url": "http://www.cjlo.com/shows/trawling-the-megahertz"
-        },
-        {
-          "day": 3,
-          "start": "08:30",
-          "end": "09:00",
-          "title": "Free Cit...",
-          "url": "http://www.cjlo.com/shows/free-city-radio"
+          "title": "CJLO's Alternative Mega Mix",
+          "url": "http://www.cjlo.com/shows/cjlos-alternative-mega-mix"
         },
         {
           "day": 3,
@@ -2050,8 +2057,8 @@
           "day": 3,
           "start": "16:00",
           "end": "17:00",
-          "title": "My Rules",
-          "url": "http://www.cjlo.com/shows/my-rules"
+          "title": "Borderline",
+          "url": "http://www.cjlo.com/shows/borderline"
         },
         {
           "day": 3,
@@ -2176,8 +2183,8 @@
           "day": 4,
           "start": "18:00",
           "end": "19:00",
-          "title": "CJLO's Alternative Mega Mix",
-          "url": "http://www.cjlo.com/shows/cjlos-alternative-mega-mix"
+          "title": "Electric Messiah",
+          "url": "http://www.cjlo.com/shows/electric-messiah"
         },
         {
           "day": 4,
@@ -2203,20 +2210,6 @@
         {
           "day": 4,
           "start": "21:00",
-          "end": "22:00",
-          "title": "Mo' Ritmo Radio",
-          "url": "http://www.cjlo.com/shows/mo-ritmo-radio"
-        },
-        {
-          "day": 4,
-          "start": "21:00",
-          "end": "22:00",
-          "title": "Electric Messiah",
-          "url": "http://www.cjlo.com/shows/electric-messiah"
-        },
-        {
-          "day": 4,
-          "start": "22:00",
           "end": "23:00",
           "title": "CJLO's Alternative Mega Mix",
           "url": "http://www.cjlo.com/shows/cjlos-alternative-mega-mix"
@@ -2237,7 +2230,7 @@
         },
         {
           "day": 5,
-          "start": "01:00",
+          "start": "02:00",
           "end": "06:00",
           "title": "CJLO Late Night",
           "url": "http://www.cjlo.com/shows/cjlo-late-night"
@@ -2467,7 +2460,7 @@
       "sources": [
         "cfak:https://www.cfak.ca/programmation/"
       ],
-      "checkedAt": "2026-07-01T11:58:52.696Z",
+      "checkedAt": "2026-07-15T10:46:32.469Z",
       "grid": [
         {
           "day": 0,
@@ -2646,8 +2639,14 @@
         {
           "day": 5,
           "start": "15:00",
-          "end": "19:00",
+          "end": "18:00",
           "title": "Nouveautés Franco"
+        },
+        {
+          "day": 5,
+          "start": "18:00",
+          "end": "19:00",
+          "title": "La récréation"
         },
         {
           "day": 5,
