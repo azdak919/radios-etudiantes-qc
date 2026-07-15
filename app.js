@@ -4546,7 +4546,7 @@ function ensureLeadTitleAboveMedia(article) {
 const WEAK_IMAGE_PATH = /article-tile|size-article-tile/;
 
 /** Aligné sur scripts/article-image-lib.js GLOBAL_IMAGE_REJECT_RE */
-const GLOBAL_IMAGE_REJECT_RE = /(?:logo|avatar|icon|placeholder|default|blank|spacer|profile|author|favicon|gravatar|emoji|smiley|lapige_web|(?:^|\/)article-2\.|campus-logo|campusgraphic|article-tile|size-article-tile|thumbnail|thumb_|recent-posts|wp-block-query|widget|sponsor|banner|social-share|-150x\d+\.|cropped-logo|(?:^|\/)daily\.png$|editorial[_-]|(?:^|\/)editorial(?:s)?(?:[_./-]|$)|画板|%e7%94%bb%e6%9d%bf|_optimized_optimized_optimized|00\.graphics\.csu\.naya_hachwa)/i;
+const GLOBAL_IMAGE_REJECT_RE = /(?:logo|avatar|icon|placeholder|default|blank|spacer|profile|author|favicon|gravatar|emoji|smiley|lapige_web|(?:^|\/)article-2\.|campus-logo|campusgraphic|article-tile|size-article-tile|thumbnail|thumb_|recent-posts|wp-block-query|widget|sponsor|banner|social-share|-150x\d+\.|cropped-logo|logoexile|121330814_121456603062023_8783413434532337259_n|(?:^|\/)daily\.png$|editorial[_-]|(?:^|\/)editorial(?:s)?(?:[_./-]|$)|画板|%e7%94%bb%e6%9d%bf|_optimized_optimized_optimized|00\.graphics\.csu\.naya_hachwa)/i;
 
 function isFallbackImageUrl(raw = '') {
   const src = String(raw).trim();
@@ -4737,15 +4737,18 @@ function buildClientFallbackDataUrl(item) {
 
 function shouldPreferStockPhoto(item, role = 'lead') {
   // Jamais remplacer une vraie photo d'article par la banque campus (pavillon).
-  if (item.imageProvider === 'campus-bank' && hasUsablePhoto(item)) return false;
-  // Source absente / rejetée (logo Daily.png, bannière editorial_…) → stock.
-  if (hasStockPhoto(item) && !hasUsablePhoto(item)) return true;
+  if (item.imageProvider === 'campus-bank' && hasUsablePhoto(item, role)) return false;
+  // Source absente / rejetée (logo Daily.png, logo Exil, bannière editorial_…) → stock.
+  // Le rejet path (GLOBAL_IMAGE_REJECT_RE) fait basculer hasUsablePhoto à false.
+  if (hasStockPhoto(item, role) && !hasUsablePhoto(item, role)) return true;
   // Photo source trop faible pour la une, mais stock thématique Openverse déjà trouvé
-  // (ex. McGill Daily : Daily.png laissé en image + openverse gentrification).
+  // (ex. McGill Daily : Daily.png laissé en image + openverse). Uniquement la une :
+  // En bref garde l'affiche / photo d'article même si leadImageReady est false
+  // (ex. poster portrait Note nocturne > stock hors-sujet).
   if (
     role === 'lead'
     && item.leadImageReady === false
-    && hasStockPhoto(item)
+    && hasStockPhoto(item, role)
     && item.imageProvider
     && item.imageProvider !== 'campus-bank'
   ) {

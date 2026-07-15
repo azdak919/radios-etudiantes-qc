@@ -86,7 +86,7 @@
           ]
         }
       },
-      "_note": "Flux RSS : dc:creator « Coordinating » (compte WP) — auteur réel sur la page. og:image / featured souvent logo Daily.png ou bannière editorial_* (numéro spécial) sans photo dans le corps — rejeter et basculer banque/campus. preferFirstContentImage : vraie photo du corps, pas la meta Yoast.",
+      "_note": "Flux RSS : dc:creator « Coordinating » (compte WP) — ignoreRssAuthor + forcePageAuthor. Byline Neve : meta name=author + .meta.author.vcard / rel=author (souvent hors du corps entry-content). og:image / featured souvent logo Daily.png ou bannière editorial_* — rejeter. preferFirstContentImage : vraie photo du corps, pas la meta Yoast.",
       "_lastChecked": "2026-07-14T23:38:55.029Z",
       "_failCount": 0,
       "_status": "ok",
@@ -190,7 +190,18 @@
       "_status": "ok",
       "_lastItemDate": "2026-04-18T22:22:07.000Z",
       "popularity": 10,
-      "_lastFetchOk": "2026-07-14T23:38:59.290Z"
+      "_lastFetchOk": "2026-07-14T23:38:59.290Z",
+      "botHints": {
+        "images": {
+          "rejectPathPatterns": [
+            "121330814_121456603062023_8783413434532337259_n",
+            "logoexile",
+            "cropped-logo"
+          ],
+          "_note": "WordPress réutilise le logo X Exil (og:image / défaut 2020) sur les billets sans photo. Rejeter pour basculer stock thématique (ex. Hôtel du Parlement) ou banque campus."
+        }
+      },
+      "_note": "exilecvm.wordpress.com / exilecvm.ca — beaucoup d’opinions sans photo d’article, seulement le logo partagé."
     },
     {
       "name": "La Pige",

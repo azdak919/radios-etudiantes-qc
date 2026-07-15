@@ -359,9 +359,24 @@ async function main() {
     try {
       const { reject, opts, ok } = isCandidateForItem(item, sourceMap);
 
+      // Image source déjà rejetée (logo Exil, Daily.png…) : la retirer pour
+      // que le stock / campus prenne le relais sans être écrasé plus bas.
+      if (doUpdate && item.image && !ok(item.image)) {
+        item.image = '';
+        item.leadImageReady = false;
+        imagesCleared += 1;
+      }
+
       if (await photoIsLeadReady(item)) {
         if (doUpdate) {
-          if (hasSourcePhoto(item, sourceMap)) clearStockPhoto(item);
+          // Ne retirer le stock QUE si la photo SOURCE seule est lead-ready.
+          // Sinon (stock Assemblée + logo Exil) on effaçait le bon visuel.
+          const sourceLead = item.image && ok(item.image) && await probeLeadReady(item.image);
+          if (sourceLead) {
+            clearStockPhoto(item);
+          } else if (item.stockImage && item.image && !ok(item.image)) {
+            item.image = '';
+          }
           await markSourceLeadQuality(item);
           clearLegacyFallback(item);
         }
@@ -371,11 +386,19 @@ async function main() {
       if (!item.image || !ok(item.image)) {
         const resolved = await resolveLeadReadyPhoto(item, reject, opts);
         if (resolved?.url && doUpdate) {
-          item.image = resolved.url;
-          item.leadImageReady = resolved.leadReady !== false;
-          clearLegacyFallback(item);
-          pageScraped += 1;
-          if (resolved.leadReady !== false) photosRecovered += 1;
+          // leadReady : vraie photo → garder. Sinon défaut de site faible
+          // (logo partagé) : ne pas l'imposer, laisser la file stock.
+          if (resolved.leadReady !== false) {
+            item.image = resolved.url;
+            item.leadImageReady = true;
+            clearLegacyFallback(item);
+            clearStockPhoto(item);
+            pageScraped += 1;
+            photosRecovered += 1;
+          } else {
+            pageScraped += 1;
+            // Ne pas écrire le logo faible dans item.image
+          }
         }
         if (await photoIsLeadReady(item)) continue;
       } else if (hasSourcePhoto(item, sourceMap)) {
@@ -384,21 +407,28 @@ async function main() {
           const better = resolved.leadReady !== false
             || resolved.url !== item.image
             || !item.leadImageReady;
-          if (better) {
+          if (better && resolved.leadReady !== false) {
             item.image = resolved.url;
-            item.leadImageReady = resolved.leadReady !== false;
+            item.leadImageReady = true;
             clearLegacyFallback(item);
-            // Une vraie photo d'article remplace toujours la banque campus.
-            if (resolved.leadReady !== false || item.imageProvider === 'campus-bank') {
-              clearStockPhoto(item);
-            }
+            // Une vraie photo d'article remplace toujours la banque campus / stock.
+            clearStockPhoto(item);
             pageScraped += 1;
-            if (resolved.leadReady !== false) photosRecovered += 1;
+            photosRecovered += 1;
+          } else if (better && resolved.leadReady === false && resolved.url !== item.image) {
+            // Amélioration faible seulement si on n'a pas encore de stock thématique
+            if (!item.stockImage || item.imageProvider === 'campus-bank') {
+              item.image = resolved.url;
+              item.leadImageReady = false;
+              clearLegacyFallback(item);
+              pageScraped += 1;
+            }
           }
         }
         if (await photoIsLeadReady(item)) {
           if (doUpdate) {
-            clearStockPhoto(item);
+            const sourceLead = item.image && ok(item.image) && await probeLeadReady(item.image);
+            if (sourceLead) clearStockPhoto(item);
             clearLegacyFallback(item);
           }
           continue;

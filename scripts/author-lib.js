@@ -236,6 +236,23 @@ function focusHtmlForAuthorExtraction(html = '', maxLen = 100_000) {
     if (chunks.length >= 4) break;
   }
 
+  // Neve / McGill Daily : byline « by <a rel=author>… » juste avant entry-content
+  // (souvent ~100k — hors du slice head 28k et hors du corps article).
+  for (const m of html.matchAll(
+    /class=["'][^"']*(?:\bnv-meta-list\b|\bmeta\s+author\b|\bauthor-name\b|\bauthor\s+vcard\b)[^"']*["'][^>]*>[\s\S]{0,2000}/gi,
+  )) {
+    chunks.push(m[0]);
+    if (chunks.length >= 8) break;
+  }
+
+  // Liens rel=author isolés (thèmes WP classiques)
+  for (const m of html.matchAll(
+    /<a[^>]*\brel=["'][^"']*\bauthor\b[^"']*["'][^>]*>[\s\S]{0,200}?<\/a>/gi,
+  )) {
+    chunks.push(m[0]);
+    if (chunks.length >= 12) break;
+  }
+
   // Corps d'article (byline « Name – Role » en tête)
   const bodyRes = [
     /class=["'][^"']*(?:entry-content|wp-block-post-content|post-content|article-content|td-post-content)[^"']*["'][^>]*>([\s\S]{0,45000})/i,
@@ -250,8 +267,18 @@ function focusHtmlForAuthorExtraction(html = '', maxLen = 100_000) {
     }
   }
 
-  // Méta head (og:description « Par … », dc.creator)
+  // Méta head (og:description « Par … », meta name=author, dc.creator)
   chunks.push(html.slice(0, 28_000));
+
+  // Yoast JSON-LD (souvent en fin de page) — Person.name pour l'auteur
+  for (const m of html.matchAll(
+    /<script[^>]+type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/gi,
+  )) {
+    if (/@type"\s*:\s*"Person"|author/i.test(m[1])) {
+      chunks.push(m[0]);
+      if (chunks.length >= 16) break;
+    }
+  }
 
   const focused = chunks.filter(Boolean).join('\n\n');
   if (focused.length >= 400) {
@@ -376,6 +403,72 @@ function authorsFromSchemaPerson(html = '') {
   )) {
     const n = expandAuthorName(m[1]);
     if (n) names.push(n);
+  }
+  // Yoast / schema.org JSON-LD : Person dans @graph (The McGill Daily, etc.)
+  for (const block of html.matchAll(
+    /<script[^>]+type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/gi,
+  )) {
+    try {
+      const parsed = JSON.parse(block[1]);
+      const nodes = [];
+      const walk = (node) => {
+        if (!node || typeof node !== 'object') return;
+        if (Array.isArray(node)) {
+          node.forEach(walk);
+          return;
+        }
+        nodes.push(node);
+        if (node['@graph']) walk(node['@graph']);
+        if (node.author) walk(node.author);
+      };
+      walk(parsed);
+      for (const node of nodes) {
+        const type = String(node['@type'] || '');
+        if (!/\bPerson\b/i.test(type)) continue;
+        const n = expandAuthorName(node.name || '');
+        if (n && !isJunkAuthorName(n)) names.push(n);
+      }
+      // Article.author peut être une liste de Person ou de chaînes
+      for (const node of nodes) {
+        if (!node.author) continue;
+        const authors = Array.isArray(node.author) ? node.author : [node.author];
+        for (const a of authors) {
+          if (typeof a === 'string') {
+            const n = expandAuthorName(a);
+            if (n) names.push(n);
+          } else if (a && typeof a === 'object' && a.name) {
+            const n = expandAuthorName(a.name);
+            if (n) names.push(n);
+          }
+        }
+      }
+    } catch {
+      /* JSON-LD mal formé */
+    }
+  }
+  return [...new Set(names)];
+}
+
+/**
+ * Neve / thèmes WP : <li class="meta author vcard"><span class="author-name fn">by
+ * <a rel="author">Name</a></span>
+ */
+function authorsFromMetaAuthorVcard(html = '') {
+  const names = [];
+  for (const m of html.matchAll(
+    /class=["'][^"']*\b(?:meta\s+author|author\s+vcard|author-name|nv-meta-list)\b[^"']*["'][^>]*>[\s\S]{0,500}?<a[^>]*(?:rel=["'][^"']*author[^"']*["']|href=["'][^"']*\/author\/)[^>]*>([\s\S]*?)<\/a>/gi,
+  )) {
+    const n = expandAuthorName(m[1]);
+    if (n && !isJunkAuthorName(n)) names.push(n);
+  }
+  // Multi-auteurs : plusieurs <a rel=author> dans le même bloc meta
+  for (const block of html.matchAll(
+    /class=["'][^"']*\bmeta\s+author\b[^"']*["'][^>]*>([\s\S]{0,800}?)<\/li>/gi,
+  )) {
+    for (const a of block[1].matchAll(/<a[^>]*>([\s\S]*?)<\/a>/gi)) {
+      const n = expandAuthorName(a[1]);
+      if (n && !isJunkAuthorName(n)) names.push(n);
+    }
   }
   return [...new Set(names)];
 }
@@ -728,18 +821,36 @@ function authorFromArticleHtml(html = '', lang = 'fr', hints = {}, sourceName = 
     candidates.push({ author: joinAuthorNames(bylineAuthors, l), trust: 100 });
   }
 
+  // Neve / McGill Daily — byline « by Name » (prioritaire sur le compte Coordinating).
+  const vcardAuthors = authorsFromMetaAuthorVcard(html);
+  if (vcardAuthors.length) {
+    candidates.push({ author: joinAuthorNames(vcardAuthors, l), trust: 103 });
+  }
+
   const relAuthors = authorsFromRelLinks(html);
   if (relAuthors.length > 1) {
     candidates.push({ author: joinAuthorNames(relAuthors, l), trust: 98 });
-  } else if (relAuthors.length === 1 && !bylineAuthors.length) {
+  } else if (relAuthors.length === 1 && !bylineAuthors.length && !vcardAuthors.length) {
     candidates.push({ author: relAuthors[0], trust: 95 });
   }
 
+  // meta name="author" : un ou plusieurs (The McGill Daily : « Erandy Rogel »,
+  // « Eva Marriott-Fabre, Sena Ho »). Avant, seul le cas multi-auteurs (virgule)
+  // était pris — d'où « The editorial team » sur presque tous les billets Daily.
   const metaAuthor = metaContent(html, 'author');
-  if (metaAuthor && metaAuthor.includes(',')) {
-    const parts = metaAuthor.split(/,\s*/).map((part) => normalizeAuthor(part)).filter(Boolean);
-    if (parts.length) {
-      candidates.push({ author: joinAuthorNames(parts, l), trust: 92 });
+  if (metaAuthor) {
+    if (metaAuthor.includes(',') || /\s+and\s+|\s+et\s+/i.test(metaAuthor)) {
+      const parts = splitMultiAuthorLabel(metaAuthor)
+        .map((part) => normalizeAuthor(part))
+        .filter(Boolean);
+      if (parts.length) {
+        candidates.push({ author: joinAuthorNames(parts, l), trust: 97 });
+      }
+    } else {
+      const single = expandAuthorName(metaAuthor, l);
+      if (single && !isEditorialPlaceholder(single, l)) {
+        candidates.push({ author: single, trust: 96 });
+      }
     }
   }
 
