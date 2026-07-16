@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-16T17:05:29.099Z",
+  "updated": "2026-07-16T18:49:20.844Z",
   "total": 185,
   "withImage": 168,
   "withCredit": 168,
@@ -7,18 +7,11 @@
   "pending": 0,
   "missingHero": 0,
   "ok": true,
-  "checked": 7,
-  "updatedCount": 7,
-  "citedNew": 5,
+  "checked": 6,
+  "updatedCount": 6,
+  "citedNew": 4,
   "fallbackNew": 2,
   "samples": [
-    {
-      "title": "Se préparer et vivre sa retraite : un long fleuve, pas si tranquille",
-      "source": "La Pige",
-      "credit": "Photo : Léa Morin-Letort",
-      "cited": true,
-      "method": "wp-caption"
-    },
     {
       "title": "Forum RÉA : une alliance pour l’éducation en milieu défavorisé",
       "source": "Quartier Libre",
@@ -27,16 +20,16 @@
       "method": null
     },
     {
-      "title": "L’épidémie de la nonchalance",
+      "title": "La performance de l’homosexualité : un privilège ?",
       "source": "Le Délit",
-      "credit": "Photo : Elie Nguyen",
+      "credit": "Photo : Félix Fournier",
       "cited": true,
       "method": "media-credit-featured"
     },
     {
-      "title": "La performance de l’homosexualité : un privilège ?",
+      "title": "L’épidémie de la nonchalance",
       "source": "Le Délit",
-      "credit": "Photo : Félix Fournier",
+      "credit": "Photo : Elie Nguyen",
       "cited": true,
       "method": "media-credit-featured"
     },
