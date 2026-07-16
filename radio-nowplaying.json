@@ -1,17 +1,11 @@
 {
-  "updatedAt": "2026-07-16T13:57:11.340Z",
+  "updatedAt": "2026-07-16T15:42:01.652Z",
   "timezone": "America/Toronto",
   "stations": {
     "chyz": {
       "id": "chyz",
       "name": "CHYZ 94,3",
-      "current": {
-        "title": "Jeudi Révolte",
-        "source": "schedule",
-        "start": "08:00",
-        "end": "10:00",
-        "url": "https://chyz.ca/emission/jeudi-revolte/"
-      },
+      "current": null,
       "next": {
         "title": "Chéri.e, j’arrive!",
         "source": "schedule",
@@ -20,34 +14,34 @@
         "url": "https://chyz.ca/emission/cheri-e-jarrive/"
       },
       "track": "",
-      "showTitle": "Jeudi Révolte",
+      "showTitle": "",
       "host": "",
       "source": "schedule",
       "sources": [
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-16T13:56:50.918Z"
+      "checkedAt": "2026-07-16T15:41:40.431Z"
     },
     "cism": {
       "id": "cism",
       "name": "CISM 89,3",
       "current": {
-        "title": "Le Séismix",
-        "source": "api-live",
-        "start": "05:00",
-        "url": "https://stream03.ustream.ca/cism128.mp3",
-        "slug": "le-seismix"
-      },
-      "next": {
         "title": "Second poteau",
         "source": "api-live",
         "start": "07:00",
-        "url": "https://podcast.cism893.ca/podcast/download_mp3/364376.mp3",
+        "url": "https://stream03.ustream.ca/cism128.mp3",
         "slug": "second-poteau"
       },
+      "next": {
+        "title": "Jimmy et Neutron",
+        "source": "api-live",
+        "start": "08:00",
+        "url": "https://podcast.cism893.ca/podcast/download_mp3/364058.mp3",
+        "slug": "jimmy-et-neutron"
+      },
       "track": "",
-      "showTitle": "Le Séismix",
+      "showTitle": "Second poteau",
       "host": "",
       "source": "api-live",
       "sources": [
@@ -57,25 +51,25 @@
         "type": "cism-v1",
         "url": "https://admin.cism893.ca/api/v1/live"
       },
-      "checkedAt": "2026-07-16T13:56:52.613Z"
+      "checkedAt": "2026-07-16T15:41:42.365Z"
     },
     "ckut": {
       "id": "ckut",
       "name": "CKUT 90,3",
       "current": {
-        "title": "Folk Directions",
-        "source": "api-live",
-        "start": "09:00",
-        "end": "11:00"
-      },
-      "next": {
         "title": "Under The Olive Tree",
         "source": "api-live",
         "start": "11:00",
         "end": "12:00"
       },
+      "next": {
+        "title": "Venus Radio",
+        "source": "api-live",
+        "start": "12:00",
+        "end": "14:00"
+      },
       "track": "",
-      "showTitle": "Folk Directions",
+      "showTitle": "Under The Olive Tree",
       "host": "",
       "source": "api-live",
       "sources": [
@@ -83,79 +77,79 @@
         "stream"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-16T13:56:55.611Z"
+      "checkedAt": "2026-07-16T15:41:45.299Z"
     },
     "cjlo": {
       "id": "cjlo",
       "name": "CJLO 1690AM",
       "current": {
-        "title": "Everything Everywhere",
+        "title": "Weirdo Rippers",
         "source": "schedule",
-        "start": "09:00",
-        "end": "10:00",
-        "url": "http://www.cjlo.com/shows/everything-everywhere"
+        "start": "11:00",
+        "end": "12:00",
+        "url": "http://www.cjlo.com/shows/weirdo-rippers"
       },
       "next": {
-        "title": "Democracy Now",
+        "title": "The Power Hour",
         "source": "schedule",
-        "start": "10:00",
-        "end": "11:00",
-        "url": "http://www.cjlo.com/shows/democracy-now"
+        "start": "12:00",
+        "end": "13:00",
+        "url": "http://www.cjlo.com/shows/the-power-hour"
       },
       "track": "",
-      "showTitle": "Everything Everywhere",
+      "showTitle": "Weirdo Rippers",
       "host": "",
       "source": "schedule",
       "sources": [
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-16T13:57:08.935Z"
+      "checkedAt": "2026-07-16T15:41:59.136Z"
     },
     "cfak": {
       "id": "cfak",
       "name": "CFAK 88,3",
       "current": {
-        "title": "Palmarès CFAK",
-        "source": "schedule",
-        "start": "08:00",
-        "end": "11:00"
-      },
-      "next": {
         "title": "À nous le futur",
         "source": "schedule",
         "start": "11:00",
         "end": "20:00"
       },
+      "next": {
+        "title": "After 5@8",
+        "source": "schedule",
+        "start": "20:00",
+        "end": "00:00"
+      },
       "track": "",
-      "showTitle": "Palmarès CFAK",
+      "showTitle": "À nous le futur",
       "host": "",
       "source": "schedule",
       "sources": [
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-16T13:57:09.576Z"
+      "checkedAt": "2026-07-16T15:41:59.589Z"
     },
     "choq": {
       "id": "choq",
       "name": "CHOQ.ca",
       "current": {
-        "title": "Sibylle",
+        "title": "Chambre noire",
         "source": "api-live",
-        "host": "Celina Silva"
+        "host": "Chaude Chaleur"
       },
       "next": null,
-      "track": "Celina Silva - Sibylle",
-      "showTitle": "Sibylle",
-      "host": "Celina Silva",
+      "track": "Chaude Chaleur - Chambre noire",
+      "showTitle": "Chambre noire",
+      "host": "Chaude Chaleur",
       "source": "api-live",
       "sources": [
         "api-live",
         "stream"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-16T13:57:10.989Z"
+      "checkedAt": "2026-07-16T15:42:01.301Z"
     }
   }
 }
