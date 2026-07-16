@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-16T06:43:22.650Z",
+  "updated": "2026-07-16T09:40:32.370Z",
   "total": 185,
   "withImage": 168,
   "withCredit": 168,
@@ -7,59 +7,9 @@
   "pending": 0,
   "missingHero": 0,
   "ok": true,
-  "checked": 7,
-  "updatedCount": 7,
-  "citedNew": 5,
-  "fallbackNew": 2,
-  "samples": [
-    {
-      "title": "L’épidémie de la nonchalance",
-      "source": "Le Délit",
-      "credit": "Photo : Elie Nguyen",
-      "cited": true,
-      "method": "media-credit-featured"
-    },
-    {
-      "title": "La performance de l’homosexualité : un privilège ?",
-      "source": "Le Délit",
-      "credit": "Photo : Félix Fournier",
-      "cited": true,
-      "method": "media-credit-featured"
-    },
-    {
-      "title": "Qui sont les agents qui patrouillent notre campus ?",
-      "source": "Le Délit",
-      "credit": "Photo : Stu Doré/Félix Fournier",
-      "cited": true,
-      "method": "media-credit-featured"
-    },
-    {
-      "title": "Leave the Children Out of This",
-      "source": "The Plant",
-      "credit": "Photo: My Little Princess (2011)",
-      "cited": true,
-      "method": "via-attribution"
-    },
-    {
-      "title": "Festival Jamais Lu : « Quand le monde devient dur à lire, on doit se raconter des histoires »",
-      "source": "Quartier Libre",
-      "credit": "Crédit photo : Quartier Libre",
-      "cited": false,
-      "method": null
-    },
-    {
-      "title": "Inside Mile End Kicks",
-      "source": "The Link",
-      "credit": "Photo: Courtesy of Joe Fuda",
-      "cited": true,
-      "method": "figcaption-trailing"
-    },
-    {
-      "title": "The apprenticeship of public voice",
-      "source": "The Link",
-      "credit": "Photo credit: The Link",
-      "cited": false,
-      "method": null
-    }
-  ]
+  "checked": 0,
+  "updatedCount": 0,
+  "citedNew": 0,
+  "fallbackNew": 0,
+  "samples": []
 }
