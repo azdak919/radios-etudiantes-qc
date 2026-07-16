@@ -6,19 +6,19 @@
   xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
     <title>Le Radar</title>
-    <link>https://azdak919.github.io/radios-etudiantes-qc/</link>
+    <link>https://azdak919.github.io/le-radar/</link>
     <description>Fil agrégé des journaux étudiants des cégeps et universités du Québec (français et anglais). Titres, brèves, images et liens vers les articles originaux.</description>
     <language>fr-CA</language>
     <lastBuildDate>Tue, 14 Jul 2026 21:29:28 +0000</lastBuildDate>
     <generator>LE RADAR Student Media Aggregator</generator>
-    <docs>https://azdak919.github.io/radios-etudiantes-qc/feeds.html</docs>
+    <docs>https://azdak919.github.io/le-radar/feeds.html</docs>
     <copyright>© publications étudiantes sources — fil agrégé par LE RADAR</copyright>
     <ttl>180</ttl>
-    <atom:link href="https://azdak919.github.io/radios-etudiantes-qc/feed.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://azdak919.github.io/le-radar/feed.xml" rel="self" type="application/rss+xml" />
     <image>
-      <url>https://azdak919.github.io/radios-etudiantes-qc/assets/icon-192.png</url>
+      <url>https://azdak919.github.io/le-radar/assets/icon-192.png</url>
       <title>Le Radar</title>
-      <link>https://azdak919.github.io/radios-etudiantes-qc/</link>
+      <link>https://azdak919.github.io/le-radar/</link>
     </image>
     <item>
       <title>L’augmentation des fraudes en ligne et comment s’en protéger</title>

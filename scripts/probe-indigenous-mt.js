@@ -45,7 +45,7 @@ function fetchText(url, { method = 'GET', body = null, headers = {}, timeoutMs =
         {
           method,
           headers: {
-            'User-Agent': 'Mozilla/5.0 (compatible; REQ-IndigenousMTProbe/1.0; +https://azdak919.github.io/radios-etudiantes-qc/)',
+            'User-Agent': 'Mozilla/5.0 (compatible; REQ-IndigenousMTProbe/1.0; +https://azdak919.github.io/le-radar/)',
             Accept: 'application/json, text/plain, */*',
             ...headers,
           },

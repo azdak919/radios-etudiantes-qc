@@ -2,13 +2,13 @@
 
 > *Les médias étudiants du Québec, sur ton radar • Student media on your radar.*
 
-[![Live Demo](https://img.shields.io/badge/demo-live-brightgreen)](https://azdak919.github.io/radios-etudiantes-qc/)
+[![Live Demo](https://img.shields.io/badge/demo-live-brightgreen)](https://azdak919.github.io/le-radar/)
 ![PWA](https://img.shields.io/badge/PWA-ready-blue)
 ![License](https://img.shields.io/badge/license-GPL--2.0-green)
 
 **LE RADAR** est une application web progressive (PWA) **éditoriale, texte d'abord** qui rassemble en un seul endroit **les radios et les journaux étudiants** des cégeps et universités du Québec. Une page unique : un **syntoniseur radio** en tête, et le **fil des actualités étudiantes** en dessous.
 
-**→ [Essayer LE RADAR maintenant](https://azdak919.github.io/radios-etudiantes-qc/)**
+**→ [Essayer LE RADAR maintenant](https://azdak919.github.io/le-radar/)**
 
 > Projet non officiel. Le Radar n’est affilié à aucun des médias listés.
 
@@ -40,8 +40,8 @@ En bref — **pourpre `#6C2163`** = marque, **rouge `#C8102E`** = en direct, **b
 ## 🚀 Démarrage rapide (local)
 
 ```bash
-git clone https://github.com/azdak919/radios-etudiantes-qc.git
-cd radios-etudiantes-qc
+git clone https://github.com/azdak919/le-radar.git
+cd le-radar
 
 python -m http.server 8080
 # ou
@@ -55,7 +55,7 @@ Ouvre **http://localhost:8080** — déploiement direct sur GitHub Pages (push s
 ## 📊 Structure du projet
 
 ```
-radios-etudiantes-qc/
+le-radar/
 ├── index.html              # Page principale (fil + syntoniseur)
 ├── feeds.html              # Page des flux RSS LE RADAR
 ├── style.css               # Styles (clair / sombre, radio, fil)

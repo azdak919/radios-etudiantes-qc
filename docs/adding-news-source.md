@@ -183,7 +183,7 @@ Le bot sonde `site` + chemins RSS ; promotion auto si flux frais (< 1 an).
 ## 4. Commande rapide
 
 ```bash
-cd radios-etudiantes-qc
+cd le-radar
 
 # Cas RSS classique
 node scripts/add-news-source.js \

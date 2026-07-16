@@ -27,7 +27,7 @@ const path = require('path');
 const https = require('https');
 
 const OUT_PATH = path.join(__dirname, '..', 'institutions.json');
-const UA = 'REQ-InstitutionsBot/1.0 (https://github.com/azdak919/radios-etudiantes-qc)';
+const UA = 'REQ-InstitutionsBot/1.0 (https://github.com/azdak919/le-radar)';
 const SPARQL = 'https://query.wikidata.org/sparql';
 const CEGEP_QID = 'Q1110056';
 const TIMEOUT = 60000;

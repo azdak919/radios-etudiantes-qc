@@ -10,7 +10,7 @@ const https = require('https');
 const http = require('http');
 const { meetsLeadDisplaySize, probeRemoteImageSize, sleep } = require('./article-image-lib');
 
-const USER_AGENT = 'LE-RADAR-NewsBot/1.0 (student media aggregator; contact: radios-etudiantes-qc)';
+const USER_AGENT = 'LE-RADAR-NewsBot/1.0 (student media aggregator; contact: le-radar)';
 
 const STOP_WORDS = new Set([
   'le', 'la', 'les', 'un', 'une', 'des', 'du', 'de', 'd', 'l', 'à', 'au', 'aux', 'en', 'et', 'ou',

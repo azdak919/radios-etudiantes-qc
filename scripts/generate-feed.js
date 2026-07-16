@@ -16,7 +16,7 @@ const { pruneToFreshWindow } = require('./source-retention-lib');
 const ROOT = path.join(__dirname, '..');
 const NEWS_PATH = path.join(ROOT, 'news.json');
 const SOURCES_PATH = path.join(ROOT, 'news-sources.json');
-const SITE_BASE = (process.env.RADAR_SITE_URL || 'https://azdak919.github.io/radios-etudiantes-qc').replace(/\/$/, '');
+const SITE_BASE = (process.env.RADAR_SITE_URL || 'https://azdak919.github.io/le-radar').replace(/\/$/, '');
 const MAX_ITEMS = 50;
 const BRIEF_MAX = 900;
 

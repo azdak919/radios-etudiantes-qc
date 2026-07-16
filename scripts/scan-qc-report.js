@@ -151,7 +151,7 @@ function fetchText(url, redirects = 4) {
         url,
         {
           headers: {
-            'User-Agent': 'Mozilla/5.0 (compatible; LE-RADAR-QC-Report/1.0; +https://github.com/azdak919/radios-etudiantes-qc)',
+            'User-Agent': 'Mozilla/5.0 (compatible; LE-RADAR-QC-Report/1.0; +https://github.com/azdak919/le-radar)',
             Accept: 'text/html,application/xhtml+xml,application/rss+xml,application/xml,*/*',
           },
           timeout: TIMEOUT,
