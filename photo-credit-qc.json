@@ -1,15 +1,15 @@
 {
-  "updated": "2026-07-16T04:01:52.515Z",
+  "updated": "2026-07-16T06:43:22.650Z",
   "total": 185,
   "withImage": 168,
   "withCredit": 168,
-  "cited": 121,
+  "cited": 122,
   "pending": 0,
   "missingHero": 0,
   "ok": true,
-  "checked": 6,
-  "updatedCount": 6,
-  "citedNew": 4,
+  "checked": 7,
+  "updatedCount": 7,
+  "citedNew": 5,
   "fallbackNew": 2,
   "samples": [
     {
@@ -41,11 +41,18 @@
       "method": "via-attribution"
     },
     {
-      "title": "Inside Mile End Kicks",
-      "source": "The Link",
-      "credit": "Photo credit: The Link",
+      "title": "Festival Jamais Lu : « Quand le monde devient dur à lire, on doit se raconter des histoires »",
+      "source": "Quartier Libre",
+      "credit": "Crédit photo : Quartier Libre",
       "cited": false,
       "method": null
+    },
+    {
+      "title": "Inside Mile End Kicks",
+      "source": "The Link",
+      "credit": "Photo: Courtesy of Joe Fuda",
+      "cited": true,
+      "method": "figcaption-trailing"
     },
     {
       "title": "The apprenticeship of public voice",
