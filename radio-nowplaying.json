@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-17T06:19:06.482Z",
+  "updatedAt": "2026-07-17T08:29:07.998Z",
   "timezone": "America/Toronto",
   "stations": {
     "chyz": {
@@ -21,27 +21,27 @@
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-17T06:18:52.763Z"
+      "checkedAt": "2026-07-17T08:28:56.617Z"
     },
     "cism": {
       "id": "cism",
       "name": "CISM 89,3",
       "current": {
-        "title": "Mix anglo",
-        "source": "api-live",
-        "start": "22:00",
-        "url": "https://stream03.ustream.ca/cism128.mp3",
-        "slug": "mix-anglo"
-      },
-      "next": {
         "title": "La grande ludothèque (reprise)",
         "source": "api-live",
         "start": "00:00",
-        "url": "https://podcast.cism893.ca/podcast/download_mp3/364072.mp3",
+        "url": "https://stream03.ustream.ca/cism128.mp3",
         "slug": "la-grande-ludotheque"
       },
+      "next": {
+        "title": "Mix Franco",
+        "source": "api-live",
+        "start": "02:00",
+        "url": "https://podcast.cism893.ca/podcast/download_mp3/364482.mp3",
+        "slug": "mix-franco"
+      },
       "track": "",
-      "showTitle": "Mix anglo",
+      "showTitle": "La grande ludothèque (reprise)",
       "host": "",
       "source": "api-live",
       "sources": [
@@ -51,25 +51,25 @@
         "type": "cism-v1",
         "url": "https://admin.cism893.ca/api/v1/live"
       },
-      "checkedAt": "2026-07-17T06:18:54.717Z"
+      "checkedAt": "2026-07-17T08:28:58.353Z"
     },
     "ckut": {
       "id": "ckut",
       "name": "CKUT 90,3",
       "current": {
-        "title": "Listen! You Smell Something?",
-        "source": "api-live",
-        "start": "01:00",
-        "end": "04:00"
-      },
-      "next": {
         "title": "G-Flex Survivor&#039;s Corner",
         "source": "api-live",
         "start": "04:00",
         "end": "07:00"
       },
-      "track": "",
-      "showTitle": "Listen! You Smell Something?",
+      "next": {
+        "title": "Morning Detour",
+        "source": "api-live",
+        "start": "07:00",
+        "end": "09:00"
+      },
+      "track": "G-Flex Survivor",
+      "showTitle": "G-Flex Survivor&#039;s Corner",
       "host": "",
       "source": "api-live",
       "sources": [
@@ -77,7 +77,7 @@
         "stream"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-17T06:18:58.069Z"
+      "checkedAt": "2026-07-17T08:29:01.306Z"
     },
     "cjlo": {
       "id": "cjlo",
@@ -104,7 +104,7 @@
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-17T06:19:02.919Z"
+      "checkedAt": "2026-07-17T08:29:04.073Z"
     },
     "cfak": {
       "id": "cfak",
@@ -129,27 +129,28 @@
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-17T06:19:04.132Z"
+      "checkedAt": "2026-07-17T08:29:05.189Z"
     },
     "choq": {
       "id": "choq",
       "name": "CHOQ.ca",
       "current": {
-        "title": "Produit derive",
+        "title": "Liars Tale",
         "source": "api-live",
-        "host": "VioleTT Pi",
-        "url": "https://www.choq.ca/assets/playlist/les-nuits-brutales.png"
+        "host": "KNEECAP",
+        "url": "https://www.choq.ca/assets/playlist/internationale.jpg"
       },
       "next": null,
-      "track": "",
-      "showTitle": "Produit derive",
-      "host": "VioleTT Pi",
+      "track": "Daniel Isaiah - Old Ram",
+      "showTitle": "Liars Tale",
+      "host": "KNEECAP",
       "source": "api-live",
       "sources": [
-        "api-live"
+        "api-live",
+        "stream"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-17T06:19:06.132Z"
+      "checkedAt": "2026-07-17T08:29:07.648Z"
     }
   }
 }
