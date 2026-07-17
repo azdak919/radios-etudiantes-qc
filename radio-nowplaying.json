@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-17T00:06:24.771Z",
+  "updatedAt": "2026-07-17T03:48:02.349Z",
   "timezone": "America/Toronto",
   "stations": {
     "chyz": {
@@ -21,27 +21,27 @@
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-17T00:05:59.237Z"
+      "checkedAt": "2026-07-17T03:47:40.194Z"
     },
     "cism": {
       "id": "cism",
       "name": "CISM 89,3",
       "current": {
-        "title": "Rythmologie",
+        "title": "La rumba",
         "source": "api-live",
-        "start": "16:00",
+        "start": "19:00",
         "url": "https://stream03.ustream.ca/cism128.mp3",
-        "slug": "rythmologie"
+        "slug": "la-rumba"
       },
       "next": {
-        "title": "Entropie",
+        "title": "La courbe 2.0",
         "source": "api-live",
-        "start": "18:00",
-        "url": "https://podcast.cism893.ca/podcast/download_mp3/364091.mp3",
-        "slug": "entropie"
+        "start": "20:00",
+        "url": "https://podcast.cism893.ca/podcast/download_mp3/364095.mp3",
+        "slug": "la-courbe-2-0"
       },
       "track": "",
-      "showTitle": "Rythmologie",
+      "showTitle": "La rumba",
       "host": "",
       "source": "api-live",
       "sources": [
@@ -51,60 +51,59 @@
         "type": "cism-v1",
         "url": "https://admin.cism893.ca/api/v1/live"
       },
-      "checkedAt": "2026-07-17T00:06:00.892Z"
+      "checkedAt": "2026-07-17T03:47:42.163Z"
     },
     "ckut": {
       "id": "ckut",
       "name": "CKUT 90,3",
       "current": {
-        "title": "Other Worlds on Earth/Dromostexte",
+        "title": "L&#039;aire du Diable",
         "source": "api-live",
-        "start": "20:00",
-        "end": "21:00"
+        "start": "23:00",
+        "end": "01:00"
       },
       "next": {
-        "title": "Chaud Pour/Francis",
+        "title": "Listen! You Smell Something?",
         "source": "api-live",
-        "start": "21:00",
-        "end": "23:00"
+        "start": "01:00",
+        "end": "04:00"
       },
       "track": "",
-      "showTitle": "Other Worlds on Earth/Dromostexte",
+      "showTitle": "L&#039;aire du Diable",
       "host": "",
       "source": "api-live",
       "sources": [
-        "api-live",
-        "stream"
+        "api-live"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-17T00:06:08.450Z"
+      "checkedAt": "2026-07-17T03:47:45.351Z"
     },
     "cjlo": {
       "id": "cjlo",
       "name": "CJLO 1690AM",
       "current": {
-        "title": "Maiden Voyage",
+        "title": "Raving Record Reviews",
         "source": "schedule",
-        "start": "20:00",
-        "end": "21:00",
-        "url": "http://www.cjlo.com/shows/maiden-voyage"
+        "start": "23:00",
+        "end": "00:00",
+        "url": "http://www.cjlo.com/shows/raving-record-reviews"
       },
       "next": {
-        "title": "CJLO's Alternative Mega Mix",
+        "title": "Finally Midnight",
         "source": "schedule",
-        "start": "21:00",
-        "end": "23:00",
-        "url": "http://www.cjlo.com/shows/cjlos-alternative-mega-mix"
+        "start": "00:00",
+        "end": "02:00",
+        "url": "http://www.cjlo.com/shows/finally-midnight"
       },
       "track": "",
-      "showTitle": "Maiden Voyage",
+      "showTitle": "Raving Record Reviews",
       "host": "",
       "source": "schedule",
       "sources": [
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-17T00:06:21.769Z"
+      "checkedAt": "2026-07-17T03:47:59.337Z"
     },
     "cfak": {
       "id": "cfak",
@@ -129,28 +128,28 @@
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-17T00:06:22.410Z"
+      "checkedAt": "2026-07-17T03:48:00.110Z"
     },
     "choq": {
       "id": "choq",
       "name": "CHOQ.ca",
       "current": {
-        "title": "Correct",
+        "title": "Big Hips",
         "source": "api-live",
-        "host": "Les Louanges",
-        "url": "https://www.choq.ca/assets/playlist/internationale.jpg"
+        "host": "MX LONELY",
+        "url": "https://www.choq.ca/assets/playlist/palmares-site-web.jpg"
       },
       "next": null,
-      "track": "Blackwater Holylight - Mourning After",
-      "showTitle": "Correct",
-      "host": "Les Louanges",
+      "track": "The Lemon Twigs - Bring You Down",
+      "showTitle": "Big Hips",
+      "host": "MX LONELY",
       "source": "api-live",
       "sources": [
         "api-live",
         "stream"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-17T00:06:24.421Z"
+      "checkedAt": "2026-07-17T03:48:01.998Z"
     }
   }
 }
