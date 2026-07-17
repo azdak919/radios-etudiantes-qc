@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-17T20:47:21.997Z",
+  "updated": "2026-07-17T22:18:25.192Z",
   "count": 19,
   "items": [
     {
@@ -48,7 +48,7 @@
           "type": "facebook",
           "url": "https://www.facebook.com/montrealcampus",
           "handle": "montrealcampus",
-          "stats": "6 261 mentions J'aime",
+          "stats": "",
           "label": "Facebook"
         },
         {
@@ -113,7 +113,7 @@
           "type": "facebook",
           "url": "https://www.facebook.com/themcgilldaily",
           "handle": "themcgilldaily",
-          "stats": "",
+          "stats": "7 225 mentions J'aime",
           "label": "Facebook"
         },
         {
@@ -142,7 +142,7 @@
           "type": "facebook",
           "url": "https://www.facebook.com/zonecampus",
           "handle": "zonecampus",
-          "stats": "",
+          "stats": "2 043 mentions J'aime",
           "label": "Facebook"
         }
       ]
