@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-17T23:25:16.345Z",
+  "updatedAt": "2026-07-18T00:56:36.723Z",
   "timezone": "America/Toronto",
   "stations": {
     "chyz": {
@@ -27,27 +27,27 @@
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-17T23:24:55.886Z"
+      "checkedAt": "2026-07-18T00:56:14.217Z"
     },
     "cism": {
       "id": "cism",
       "name": "CISM 89,3",
       "current": {
-        "title": "Salsa & Bembê",
-        "source": "api-live",
-        "start": "15:00",
-        "url": "https://stream03.ustream.ca/cism128.mp3",
-        "slug": "salsa-et-bembe"
-      },
-      "next": {
         "title": "Turbo tannant",
         "source": "api-live",
         "start": "16:00",
-        "url": "https://podcast.cism893.ca/podcast/download_mp3/364155.mp3",
+        "url": "https://stream03.ustream.ca/cism128.mp3",
         "slug": "turbo-tannant"
       },
+      "next": {
+        "title": "Ok Doomer",
+        "source": "api-live",
+        "start": "17:00",
+        "url": "https://podcast.cism893.ca/podcast/download_mp3/364157.mp3",
+        "slug": "ok-doomer"
+      },
       "track": "",
-      "showTitle": "Salsa & Bembê",
+      "showTitle": "Turbo tannant",
       "host": "",
       "source": "api-live",
       "sources": [
@@ -57,7 +57,7 @@
         "type": "cism-v1",
         "url": "https://admin.cism893.ca/api/v1/live"
       },
-      "checkedAt": "2026-07-17T23:24:57.425Z"
+      "checkedAt": "2026-07-18T00:56:16.063Z"
     },
     "ckut": {
       "id": "ckut",
@@ -83,34 +83,34 @@
         "stream"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-17T23:25:00.054Z"
+      "checkedAt": "2026-07-18T00:56:18.994Z"
     },
     "cjlo": {
       "id": "cjlo",
       "name": "CJLO 1690AM",
       "current": {
-        "title": "The Go-Go Radio Magic Show",
-        "source": "schedule",
-        "start": "18:00",
-        "end": "20:00",
-        "url": "http://www.cjlo.com/shows/the-go-go-radio-magic-show"
-      },
-      "next": {
         "title": "El Encuentro Latino",
         "source": "schedule",
         "start": "20:00",
         "end": "21:00",
         "url": "http://www.cjlo.com/shows/el-encuentro-latino"
       },
+      "next": {
+        "title": "Stereo Field Trip",
+        "source": "schedule",
+        "start": "21:00",
+        "end": "22:00",
+        "url": "http://www.cjlo.com/shows/stereo-field-trip"
+      },
       "track": "",
-      "showTitle": "The Go-Go Radio Magic Show",
+      "showTitle": "El Encuentro Latino",
       "host": "",
       "source": "schedule",
       "sources": [
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-17T23:25:13.366Z"
+      "checkedAt": "2026-07-18T00:56:32.856Z"
     },
     "cfak": {
       "id": "cfak",
@@ -135,7 +135,7 @@
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-17T23:25:14.250Z"
+      "checkedAt": "2026-07-18T00:56:33.860Z"
     },
     "choq": {
       "id": "choq",
@@ -146,7 +146,7 @@
         "host": "KNEECAP"
       },
       "next": null,
-      "track": "Jonquille - Tu prendras des detours",
+      "track": "Nicolet - Doppelganger",
       "showTitle": "Liars Tale",
       "host": "KNEECAP",
       "source": "api-live",
@@ -155,7 +155,7 @@
         "stream"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-17T23:25:15.994Z"
+      "checkedAt": "2026-07-18T00:56:36.372Z"
     }
   }
 }
