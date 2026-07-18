@@ -1,27 +1,33 @@
 {
-  "updatedAt": "2026-07-18T13:59:35.676Z",
+  "updatedAt": "2026-07-18T15:05:33.343Z",
   "timezone": "America/Toronto",
   "stations": {
     "chyz": {
       "id": "chyz",
       "name": "CHYZ 94,3",
-      "current": null,
-      "next": {
-        "title": "Palmarès CHYZ",
+      "current": {
+        "title": "Le Ré-Show : Deuxième Service",
         "source": "schedule",
-        "start": "10:00",
-        "end": "10:30",
-        "url": "https://chyz.ca/emission/palmares-chyz/"
+        "start": "11:00",
+        "end": "12:00",
+        "url": "https://chyz.ca/emission/le-re-show-deuxieme-service/"
+      },
+      "next": {
+        "title": "Radio Futura",
+        "source": "schedule",
+        "start": "13:00",
+        "end": "16:00",
+        "url": "https://chyz.ca/emission/radio-futura/"
       },
       "track": "",
-      "showTitle": "",
+      "showTitle": "Le Ré-Show : Deuxième Service",
       "host": "",
       "source": "schedule",
       "sources": [
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-18T13:59:15.008Z"
+      "checkedAt": "2026-07-18T15:05:13.230Z"
     },
     "cism": {
       "id": "cism",
@@ -51,25 +57,25 @@
         "type": "cism-v1",
         "url": "https://admin.cism893.ca/api/v1/live"
       },
-      "checkedAt": "2026-07-18T13:59:16.670Z"
+      "checkedAt": "2026-07-18T15:05:14.829Z"
     },
     "ckut": {
       "id": "ckut",
       "name": "CKUT 90,3",
       "current": {
-        "title": "Quebec Acadie",
+        "title": "Samedi Midi",
         "source": "api-live",
-        "start": "06:00",
-        "end": "10:00"
+        "start": "10:30",
+        "end": "14:00"
       },
       "next": {
-        "title": "Making Contact / Anything Goes",
+        "title": "Funky Revolutions",
         "source": "api-live",
-        "start": "10:00",
-        "end": "10:30"
+        "start": "14:00",
+        "end": "16:00"
       },
       "track": "",
-      "showTitle": "Quebec Acadie",
+      "showTitle": "Samedi Midi",
       "host": "",
       "source": "api-live",
       "sources": [
@@ -77,34 +83,34 @@
         "stream"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-18T13:59:19.047Z"
+      "checkedAt": "2026-07-18T15:05:17.319Z"
     },
     "cjlo": {
       "id": "cjlo",
       "name": "CJLO 1690AM",
       "current": {
-        "title": "The Live Wire Show",
-        "source": "schedule",
-        "start": "09:00",
-        "end": "10:00",
-        "url": "http://www.cjlo.com/shows/the-live-wire-show"
-      },
-      "next": {
         "title": "Gospel Unlimited",
         "source": "schedule",
         "start": "10:00",
         "end": "12:00",
         "url": "http://www.cjlo.com/shows/gospel-unlimited"
       },
+      "next": {
+        "title": "Anatomy of Caribbean Music",
+        "source": "schedule",
+        "start": "12:00",
+        "end": "14:00",
+        "url": "http://www.cjlo.com/shows/anatomy-of-caribbean-music"
+      },
       "track": "",
-      "showTitle": "The Live Wire Show",
+      "showTitle": "Gospel Unlimited",
       "host": "",
       "source": "schedule",
       "sources": [
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-18T13:59:32.367Z"
+      "checkedAt": "2026-07-18T15:05:30.633Z"
     },
     "cfak": {
       "id": "cfak",
@@ -124,27 +130,27 @@
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-18T13:59:33.214Z"
+      "checkedAt": "2026-07-18T15:05:31.452Z"
     },
     "choq": {
       "id": "choq",
       "name": "CHOQ.ca",
       "current": {
-        "title": "Virgin Soil",
+        "title": "((Obe LeKe))",
         "source": "api-live",
-        "host": "1000 Rabbits"
+        "host": "Komedza"
       },
       "next": null,
-      "track": "1000 Rabbits - Virgin Soil",
-      "showTitle": "Virgin Soil",
-      "host": "1000 Rabbits",
+      "track": "Komedza - ((Obe LeKe))",
+      "showTitle": "((Obe LeKe))",
+      "host": "Komedza",
       "source": "api-live",
       "sources": [
         "api-live",
         "stream"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-18T13:59:35.326Z"
+      "checkedAt": "2026-07-18T15:05:32.993Z"
     }
   }
 }
