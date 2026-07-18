@@ -1,14 +1,23 @@
 {
-  "updated": "2026-07-18T13:55:04.337Z",
+  "updated": "2026-07-18T14:44:42.709Z",
   "total": 185,
   "pool": 58,
   "incomplete": 4,
   "withLeadExcerpt": 72,
   "candidates": 4,
   "enriched": 0,
-  "failed": 1,
+  "failed": 0,
   "ok": true,
   "samples": [
+    {
+      "title": "Voyager sans arrêt : passion ou obsession ?",
+      "link": "https://lecollectif.ca/culture/voyager-sans-arret-passion-ou-obsession/",
+      "ok": true,
+      "score": 76,
+      "chars": 400,
+      "sample": "Les occasions de penser au voyage sont nombreuses. Les médias et les réseaux sociaux montrent sans c",
+      "changed": false
+    },
     {
       "title": "The Cruel Optimism of Summer",
       "link": "https://www.mcgilldaily.com/2026/07/the-cruel-optimism-of-summer/",

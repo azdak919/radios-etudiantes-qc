@@ -1,8 +1,8 @@
 {
-  "updated": "2026-07-18T13:54:48.356Z",
+  "updated": "2026-07-18T14:44:26.061Z",
   "total": 185,
   "withAuthor": 185,
-  "mismatches": 109,
+  "mismatches": 113,
   "ok": true,
   "samples": [
     {
@@ -10,40 +10,72 @@
       "link": "https://lecollectif.ca/a-la-une/laugmentation-des-fraudes-en-ligne-et-comment-sen-proteger/",
       "source": "Le Collectif",
       "fieldAuthor": "La rédaction",
-      "canonicalAuthor": "La rédaction",
-      "reason": "no-author-source"
+      "canonicalAuthor": "Salma Labiede",
+      "reason": "page-byline"
     },
     {
       "title": "L’impact du tourisme sur les villes populaires",
       "link": "https://lecollectif.ca/a-la-une/limpact-du-tourisme-sur-les-villes-populaires/",
       "source": "Le Collectif",
       "fieldAuthor": "La rédaction",
-      "canonicalAuthor": "La rédaction",
-      "reason": "no-author-source"
+      "canonicalAuthor": "Salma Labiede",
+      "reason": "page-byline"
     },
     {
       "title": "Le vélo prend de plus en plus de place",
       "link": "https://lecollectif.ca/a-la-une/le-velo-prend-de-plus-en-plus-de-place/",
       "source": "Le Collectif",
       "fieldAuthor": "La rédaction",
-      "canonicalAuthor": "La rédaction",
-      "reason": "no-author-source"
+      "canonicalAuthor": "Salma Labiede",
+      "reason": "page-byline"
+    },
+    {
+      "title": "Un Sherbrookois aux portes du baseball professionnel",
+      "link": "https://lecollectif.ca/a-la-une/un-sherbrookois-aux-portes-du-baseball-professionnel/",
+      "source": "Le Collectif",
+      "fieldAuthor": "La rédaction",
+      "canonicalAuthor": "Camille Guindon",
+      "reason": "page-byline"
+    },
+    {
+      "title": "Voyager sans arrêt : passion ou obsession ?",
+      "link": "https://lecollectif.ca/culture/voyager-sans-arret-passion-ou-obsession/",
+      "source": "Le Collectif",
+      "fieldAuthor": "La rédaction",
+      "canonicalAuthor": "Nicolas Mathieu",
+      "reason": "page-byline"
     },
     {
       "title": "La vie sans alcool : les habitudes des jeunes redéfinies",
       "link": "https://lecollectif.ca/societe/la-vie-sans-alcool-les-habitudes-des-jeunes-redefinies/",
       "source": "Le Collectif",
       "fieldAuthor": "La rédaction",
-      "canonicalAuthor": "La rédaction",
-      "reason": "no-author-source"
+      "canonicalAuthor": "Salma Labiede",
+      "reason": "page-byline"
+    },
+    {
+      "title": "De Broue à l’Ordre du Canada, Marc Messier, l’artisan d’un théâtre et d’une télé populaires",
+      "link": "https://lecollectif.ca/a-la-une/de-broue-a-lordre-du-canada-marc-messier-lartisan-dun-theatre-et-dune-tele-populaires/",
+      "source": "Le Collectif",
+      "fieldAuthor": "La rédaction",
+      "canonicalAuthor": "Nicolas Mathieu",
+      "reason": "page-byline"
     },
     {
       "title": "Pourquoi notre génération passe d’une obsession à l’autre?",
       "link": "https://lecollectif.ca/edition-papier/pourquoi-notre-generation-passe-dune-obsession-a-lautre/",
       "source": "Le Collectif",
       "fieldAuthor": "La rédaction",
-      "canonicalAuthor": "La rédaction",
-      "reason": "no-author-source"
+      "canonicalAuthor": "Salma Labiede",
+      "reason": "page-byline"
+    },
+    {
+      "title": "Quitte ton 9 à 5 » : rêve de liberté ou illusion générationnelle?",
+      "link": "https://lecollectif.ca/societe/quitte-ton-9-a-5-reve-de-liberte-ou-illusion-generationnelle/",
+      "source": "Le Collectif",
+      "fieldAuthor": "La rédaction",
+      "canonicalAuthor": "Camille Guindon",
+      "reason": "page-byline"
     },
     {
       "title": "CSU fails to reach quorum at first special council meeting of new mandate",
@@ -132,39 +164,7 @@
       "fieldAuthor": "The editorial team",
       "canonicalAuthor": "Sean Richard",
       "reason": "page-byline"
-    },
-    {
-      "title": "Montreal protestors commemorate the 78th anniversary of the Nakba",
-      "link": "https://www.thetribune.ca/news/montreal-protestors-commemorate-the-78th-anniversary-of-the-nakba-21052026/?utm_source=rss&utm_medium=rss&utm_campaign=montreal-protestors-commemorate-the-78th-anniversary-of-the-nakba-21052026",
-      "source": "The Tribune",
-      "fieldAuthor": "The editorial team",
-      "canonicalAuthor": "Ellen Lurie",
-      "reason": "page-byline"
-    },
-    {
-      "title": "Présences invisibles : écrire la ville sans permission",
-      "link": "https://quartierlibre.ca/presences-invisibles-ecrire-la-ville/",
-      "source": "Quartier Libre",
-      "fieldAuthor": "La rédaction",
-      "canonicalAuthor": "Emilie Rizkallah",
-      "reason": "page-byline"
-    },
-    {
-      "title": "CALAMINE : RAPPER AUTREMENT QUE LE « BOYS CLUB »",
-      "link": "https://quartierlibre.ca/calamine-rapper-autrement/",
-      "source": "Quartier Libre",
-      "fieldAuthor": "La rédaction",
-      "canonicalAuthor": "Samuel Roy",
-      "reason": "page-byline"
-    },
-    {
-      "title": "Forum RÉA : une alliance pour l’éducation en milieu défavorisé",
-      "link": "https://quartierlibre.ca/forum-rea-education-en-milieu-defavorise/",
-      "source": "Quartier Libre",
-      "fieldAuthor": "La rédaction",
-      "canonicalAuthor": "Ulysse Taillard-Hodez",
-      "reason": "page-byline"
     }
   ],
-  "fixed": 109
+  "fixed": 113
 }
