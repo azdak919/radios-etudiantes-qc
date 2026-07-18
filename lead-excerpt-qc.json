@@ -1,12 +1,12 @@
 {
-  "updated": "2026-07-18T03:49:56.752Z",
+  "updated": "2026-07-18T06:24:34.470Z",
   "total": 185,
   "pool": 58,
-  "incomplete": 5,
+  "incomplete": 4,
   "withLeadExcerpt": 72,
-  "candidates": 5,
+  "candidates": 4,
   "enriched": 0,
-  "failed": 1,
+  "failed": 0,
   "ok": true,
   "samples": [
     {
