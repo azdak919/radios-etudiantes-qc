@@ -1,6 +1,6 @@
 {
-  "updated": "2026-07-18T18:21:42.722Z",
-  "count": 19,
+  "updated": "2026-07-18T18:36:36.490Z",
+  "count": 16,
   "items": [
     {
       "name": "Quartier Libre",
@@ -126,28 +126,6 @@
       ]
     },
     {
-      "name": "Zone Campus",
-      "institution": "Université du Québec à Trois-Rivières",
-      "type": "universite",
-      "kind": "journal",
-      "networks": [
-        {
-          "type": "instagram",
-          "url": "https://www.instagram.com/zonecampus/",
-          "handle": "@zonecampus",
-          "stats": "",
-          "label": "Instagram"
-        },
-        {
-          "type": "facebook",
-          "url": "https://www.facebook.com/zonecampus",
-          "handle": "zonecampus",
-          "stats": "",
-          "label": "Facebook"
-        }
-      ]
-    },
-    {
       "name": "L'Exemplaire",
       "institution": "Université Laval",
       "type": "universite",
@@ -157,7 +135,7 @@
           "type": "facebook",
           "url": "https://www.facebook.com/lexemplaire",
           "handle": "lexemplaire",
-          "stats": "",
+          "stats": "851 mentions J'aime",
           "label": "Facebook"
         },
         {
@@ -166,28 +144,6 @@
           "handle": "@lexemplaire",
           "stats": "Le média-école des étudiant.e.s en journalisme de l'Université Laval, Québec.",
           "label": "X"
-        }
-      ]
-    },
-    {
-      "name": "Le Collectif",
-      "institution": "Université de Sherbrooke",
-      "type": "universite",
-      "kind": "journal",
-      "networks": [
-        {
-          "type": "instagram",
-          "url": "https://www.instagram.com/jlecollectif/",
-          "handle": "@jlecollectif",
-          "stats": "",
-          "label": "Instagram"
-        },
-        {
-          "type": "facebook",
-          "url": "https://www.facebook.com/journallecollectif",
-          "handle": "journallecollectif",
-          "stats": "",
-          "label": "Facebook"
         }
       ]
     },
@@ -208,30 +164,8 @@
           "type": "facebook",
           "url": "https://www.facebook.com/WordPresscom",
           "handle": "WordPresscom",
-          "stats": "",
+          "stats": "751 531 mentions J'aime",
           "label": "Facebook"
-        }
-      ]
-    },
-    {
-      "name": "La Pige",
-      "institution": "Cégep de Jonquière (ATM – journalisme)",
-      "type": "cegep",
-      "kind": "journal",
-      "networks": [
-        {
-          "type": "facebook",
-          "url": "https://www.facebook.com/2008",
-          "handle": "2008",
-          "stats": "",
-          "label": "Facebook"
-        },
-        {
-          "type": "youtube",
-          "url": "https://www.youtube.com/@atmlapige",
-          "handle": "@atmlapige",
-          "stats": "",
-          "label": "YouTube"
         }
       ]
     },
@@ -252,7 +186,7 @@
           "type": "facebook",
           "url": "https://www.facebook.com/p/Polyscope-61550693026725",
           "handle": "p",
-          "stats": "",
+          "stats": "98 mentions J'aime",
           "label": "Facebook"
         },
         {

@@ -1,31 +1,22 @@
 {
-  "updated": "2026-07-18T18:14:13.139Z",
+  "updated": "2026-07-18T18:29:29.709Z",
   "total": 185,
   "pool": 58,
-  "incomplete": 6,
+  "incomplete": 5,
   "withLeadExcerpt": 72,
-  "candidates": 6,
+  "candidates": 5,
   "enriched": 1,
   "failed": 1,
   "ok": true,
   "samples": [
     {
-      "title": "Élections de l’exécutif de l’AÉUM",
-      "link": "https://www.delitfrancais.com/2026/03/18/elections-de-lexecutif-de-laeum/",
+      "title": "Les femmes MAGA au service du patriarcat",
+      "link": "https://www.delitfrancais.com/2026/03/18/les-femmes-maga-au-service-du-patriarcat/",
       "ok": true,
-      "score": 66,
-      "chars": 400,
-      "sample": "Desjardins, candidate à la présidence, issue de la coalition S.T.A.N.D., promet de rendre l’AÉUM « p",
+      "score": 100,
+      "chars": 393,
+      "sample": "Une des capacités distinctives de ce système patriarcal est son habileté remarquable à se perpétuer ",
       "changed": true
-    },
-    {
-      "title": "Voyager sans arrêt : passion ou obsession ?",
-      "link": "https://lecollectif.ca/culture/voyager-sans-arret-passion-ou-obsession/",
-      "ok": true,
-      "score": 76,
-      "chars": 400,
-      "sample": "Les occasions de penser au voyage sont nombreuses. Les médias et les réseaux sociaux montrent sans c",
-      "changed": false
     },
     {
       "title": "The Cruel Optimism of Summer",
