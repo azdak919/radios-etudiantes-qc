@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-18T12:27:52.103Z",
+  "updatedAt": "2026-07-18T13:59:35.676Z",
   "timezone": "America/Toronto",
   "stations": {
     "chyz": {
@@ -21,27 +21,27 @@
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-18T12:27:31.965Z"
+      "checkedAt": "2026-07-18T13:59:15.008Z"
     },
     "cism": {
       "id": "cism",
       "name": "CISM 89,3",
       "current": {
-        "title": "Mix Franco",
-        "source": "api-live",
-        "start": "02:00",
-        "url": "https://stream03.ustream.ca/cism128.mp3",
-        "slug": "mix-franco"
-      },
-      "next": {
         "title": "Voix tropicale",
         "source": "api-live",
         "start": "05:00",
-        "url": "https://podcast.cism893.ca/podcast/download_mp3/364176.mp3",
+        "url": "https://stream03.ustream.ca/cism128.mp3",
         "slug": "voix-tropicale"
       },
+      "next": {
+        "title": "Elkin Polo El Show",
+        "source": "api-live",
+        "start": "09:00",
+        "url": "https://podcast.cism893.ca/podcast/download_mp3/364187.mp3",
+        "slug": "elkin-polo-el-show"
+      },
       "track": "",
-      "showTitle": "Mix Franco",
+      "showTitle": "Voix tropicale",
       "host": "",
       "source": "api-live",
       "sources": [
@@ -51,7 +51,7 @@
         "type": "cism-v1",
         "url": "https://admin.cism893.ca/api/v1/live"
       },
-      "checkedAt": "2026-07-18T12:27:33.572Z"
+      "checkedAt": "2026-07-18T13:59:16.670Z"
     },
     "ckut": {
       "id": "ckut",
@@ -77,34 +77,34 @@
         "stream"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-18T12:27:35.804Z"
+      "checkedAt": "2026-07-18T13:59:19.047Z"
     },
     "cjlo": {
       "id": "cjlo",
       "name": "CJLO 1690AM",
       "current": {
-        "title": "World-Up'",
-        "source": "schedule",
-        "start": "06:00",
-        "end": "09:00",
-        "url": "http://www.cjlo.com/shows/world-up"
-      },
-      "next": {
         "title": "The Live Wire Show",
         "source": "schedule",
         "start": "09:00",
         "end": "10:00",
         "url": "http://www.cjlo.com/shows/the-live-wire-show"
       },
+      "next": {
+        "title": "Gospel Unlimited",
+        "source": "schedule",
+        "start": "10:00",
+        "end": "12:00",
+        "url": "http://www.cjlo.com/shows/gospel-unlimited"
+      },
       "track": "",
-      "showTitle": "World-Up'",
+      "showTitle": "The Live Wire Show",
       "host": "",
       "source": "schedule",
       "sources": [
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-18T12:27:49.012Z"
+      "checkedAt": "2026-07-18T13:59:32.367Z"
     },
     "cfak": {
       "id": "cfak",
@@ -124,27 +124,27 @@
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-18T12:27:49.740Z"
+      "checkedAt": "2026-07-18T13:59:33.214Z"
     },
     "choq": {
       "id": "choq",
       "name": "CHOQ.ca",
       "current": {
-        "title": "Le cowboy aux mains d'argent",
+        "title": "Virgin Soil",
         "source": "api-live",
-        "host": "Lysandre"
+        "host": "1000 Rabbits"
       },
       "next": null,
-      "track": "Lysandre - Le cowboy aux mains d",
-      "showTitle": "Le cowboy aux mains d'argent",
-      "host": "Lysandre",
+      "track": "1000 Rabbits - Virgin Soil",
+      "showTitle": "Virgin Soil",
+      "host": "1000 Rabbits",
       "source": "api-live",
       "sources": [
         "api-live",
         "stream"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-18T12:27:51.752Z"
+      "checkedAt": "2026-07-18T13:59:35.326Z"
     }
   }
 }
