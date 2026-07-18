@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-18T21:24:42.845Z",
+  "updatedAt": "2026-07-18T22:24:33.309Z",
   "timezone": "America/Toronto",
   "stations": {
     "chyz": {
@@ -21,27 +21,27 @@
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-18T21:24:21.550Z"
+      "checkedAt": "2026-07-18T22:24:10.878Z"
     },
     "cism": {
       "id": "cism",
       "name": "CISM 89,3",
       "current": {
-        "title": "Change le beat",
-        "source": "api-live",
-        "start": "13:00",
-        "url": "https://stream03.ustream.ca/cism128.mp3",
-        "slug": "change-le-beat"
-      },
-      "next": {
         "title": "Faites entrer un DJ",
         "source": "api-live",
         "start": "14:00",
-        "url": "https://podcast.cism893.ca/podcast/download_mp3/364198.mp3",
+        "url": "https://stream03.ustream.ca/cism128.mp3",
         "slug": "faites-entrer-un-dj"
       },
+      "next": {
+        "title": "Contenu explicite",
+        "source": "api-live",
+        "start": "16:00",
+        "url": "https://podcast.cism893.ca/podcast/download_mp3/364203.mp3",
+        "slug": "contenu-explicite"
+      },
       "track": "",
-      "showTitle": "Change le beat",
+      "showTitle": "Faites entrer un DJ",
       "host": "",
       "source": "api-live",
       "sources": [
@@ -51,7 +51,7 @@
         "type": "cism-v1",
         "url": "https://admin.cism893.ca/api/v1/live"
       },
-      "checkedAt": "2026-07-18T21:24:22.797Z"
+      "checkedAt": "2026-07-18T22:24:12.707Z"
     },
     "ckut": {
       "id": "ckut",
@@ -77,34 +77,34 @@
         "stream"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-18T21:24:25.653Z"
+      "checkedAt": "2026-07-18T22:24:15.624Z"
     },
     "cjlo": {
       "id": "cjlo",
       "name": "CJLO 1690AM",
       "current": {
-        "title": "Mo' Ritmo Radio",
-        "source": "schedule",
-        "start": "17:00",
-        "end": "18:00",
-        "url": "http://www.cjlo.com/shows/mo-ritmo-radio"
-      },
-      "next": {
         "title": "The Limelight",
         "source": "schedule",
         "start": "18:00",
         "end": "19:00",
         "url": "http://www.cjlo.com/shows/the-limelight"
       },
+      "next": {
+        "title": "Screamers",
+        "source": "schedule",
+        "start": "19:00",
+        "end": "20:00",
+        "url": "http://www.cjlo.com/shows/screamers"
+      },
       "track": "",
-      "showTitle": "Mo' Ritmo Radio",
+      "showTitle": "The Limelight",
       "host": "",
       "source": "schedule",
       "sources": [
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-18T21:24:39.444Z"
+      "checkedAt": "2026-07-18T22:24:29.529Z"
     },
     "cfak": {
       "id": "cfak",
@@ -124,27 +124,27 @@
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-18T21:24:40.287Z"
+      "checkedAt": "2026-07-18T22:24:30.467Z"
     },
     "choq": {
       "id": "choq",
       "name": "CHOQ.ca",
       "current": {
-        "title": "Vacances Everest",
+        "title": "((Obe LeKe))",
         "source": "api-live",
-        "host": "Les Deuxluxes"
+        "host": "Komedza"
       },
       "next": null,
-      "track": "Les Deuxluxes - Vacances Everest",
-      "showTitle": "Vacances Everest",
-      "host": "Les Deuxluxes",
+      "track": "Komedza - ((Obe LeKe))",
+      "showTitle": "((Obe LeKe))",
+      "host": "Komedza",
       "source": "api-live",
       "sources": [
         "api-live",
         "stream"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-18T21:24:42.495Z"
+      "checkedAt": "2026-07-18T22:24:32.959Z"
     }
   }
 }
