@@ -1,47 +1,53 @@
 {
-  "updatedAt": "2026-07-18T16:27:35.086Z",
+  "updatedAt": "2026-07-18T17:33:03.198Z",
   "timezone": "America/Toronto",
   "stations": {
     "chyz": {
       "id": "chyz",
       "name": "CHYZ 94,3",
-      "current": null,
-      "next": {
+      "current": {
         "title": "Radio Futura",
         "source": "schedule",
         "start": "13:00",
         "end": "16:00",
         "url": "https://chyz.ca/emission/radio-futura/"
       },
+      "next": {
+        "title": "Capitales de Québec",
+        "source": "schedule",
+        "start": "18:50",
+        "end": "23:00",
+        "url": "https://chyz.ca/emission/capitales-de-quebec/"
+      },
       "track": "",
-      "showTitle": "",
+      "showTitle": "Radio Futura",
       "host": "",
       "source": "schedule",
       "sources": [
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-18T16:27:13.627Z"
+      "checkedAt": "2026-07-18T17:32:40.136Z"
     },
     "cism": {
       "id": "cism",
       "name": "CISM 89,3",
       "current": {
-        "title": "Voix tropicale",
-        "source": "api-live",
-        "start": "05:00",
-        "url": "https://stream03.ustream.ca/cism128.mp3",
-        "slug": "voix-tropicale"
-      },
-      "next": {
         "title": "Elkin Polo El Show",
         "source": "api-live",
         "start": "09:00",
-        "url": "https://podcast.cism893.ca/podcast/download_mp3/364187.mp3",
+        "url": "https://stream03.ustream.ca/cism128.mp3",
         "slug": "elkin-polo-el-show"
       },
+      "next": {
+        "title": "Change le beat",
+        "source": "api-live",
+        "start": "13:00",
+        "url": "https://podcast.cism893.ca/podcast/download_mp3/364193.mp3",
+        "slug": "change-le-beat"
+      },
       "track": "",
-      "showTitle": "Voix tropicale",
+      "showTitle": "Elkin Polo El Show",
       "host": "",
       "source": "api-live",
       "sources": [
@@ -51,7 +57,7 @@
         "type": "cism-v1",
         "url": "https://admin.cism893.ca/api/v1/live"
       },
-      "checkedAt": "2026-07-18T16:27:15.220Z"
+      "checkedAt": "2026-07-18T17:32:42.127Z"
     },
     "ckut": {
       "id": "ckut",
@@ -77,7 +83,7 @@
         "stream"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-18T16:27:18.103Z"
+      "checkedAt": "2026-07-18T17:32:45.196Z"
     },
     "cjlo": {
       "id": "cjlo",
@@ -104,7 +110,7 @@
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-18T16:27:31.628Z"
+      "checkedAt": "2026-07-18T17:32:58.964Z"
     },
     "cfak": {
       "id": "cfak",
@@ -124,27 +130,27 @@
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-18T16:27:32.578Z"
+      "checkedAt": "2026-07-18T17:33:00.068Z"
     },
     "choq": {
       "id": "choq",
       "name": "CHOQ.ca",
       "current": {
-        "title": "Saving Face",
+        "title": "VERTICAL WORLDS",
         "source": "api-live",
-        "host": "Olivia Khoury"
+        "host": "Ecca Vandal"
       },
       "next": null,
-      "track": "Olivia Khoury - Saving Face",
-      "showTitle": "Saving Face",
-      "host": "Olivia Khoury",
+      "track": "Ecca Vandal - VERTICAL WORLDS",
+      "showTitle": "VERTICAL WORLDS",
+      "host": "Ecca Vandal",
       "source": "api-live",
       "sources": [
         "api-live",
         "stream"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-18T16:27:34.735Z"
+      "checkedAt": "2026-07-18T17:33:02.847Z"
     }
   }
 }
