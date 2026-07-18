@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-18T08:21:18.011Z",
+  "updatedAt": "2026-07-18T09:57:57.062Z",
   "timezone": "America/Toronto",
   "stations": {
     "chyz": {
@@ -21,7 +21,7 @@
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-18T08:20:55.717Z"
+      "checkedAt": "2026-07-18T09:57:34.456Z"
     },
     "cism": {
       "id": "cism",
@@ -51,7 +51,7 @@
         "type": "cism-v1",
         "url": "https://admin.cism893.ca/api/v1/live"
       },
-      "checkedAt": "2026-07-18T08:20:57.477Z"
+      "checkedAt": "2026-07-18T09:57:36.380Z"
     },
     "ckut": {
       "id": "ckut",
@@ -77,7 +77,7 @@
         "stream"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-18T08:21:00.464Z"
+      "checkedAt": "2026-07-18T09:57:39.573Z"
     },
     "cjlo": {
       "id": "cjlo",
@@ -104,7 +104,7 @@
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-18T08:21:14.254Z"
+      "checkedAt": "2026-07-18T09:57:53.190Z"
     },
     "cfak": {
       "id": "cfak",
@@ -124,27 +124,27 @@
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-18T08:21:15.359Z"
+      "checkedAt": "2026-07-18T09:57:54.166Z"
     },
     "choq": {
       "id": "choq",
       "name": "CHOQ.ca",
       "current": {
-        "title": "Fruits Of My Labor",
+        "title": "les morts ne s'excusent pas",
         "source": "api-live",
-        "host": "Satya"
+        "host": "Mélodie-Jade"
       },
       "next": null,
-      "track": "Satya - Fruits Of My Labor",
-      "showTitle": "Fruits Of My Labor",
-      "host": "Satya",
+      "track": "Mélodie-Jade - les morts ne s",
+      "showTitle": "les morts ne s'excusent pas",
+      "host": "Mélodie-Jade",
       "source": "api-live",
       "sources": [
         "api-live",
         "stream"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-18T08:21:17.660Z"
+      "checkedAt": "2026-07-18T09:57:56.712Z"
     }
   }
 }
