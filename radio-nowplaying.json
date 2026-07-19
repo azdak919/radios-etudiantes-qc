@@ -1,53 +1,53 @@
 {
-  "updatedAt": "2026-07-19T19:41:53.172Z",
+  "updatedAt": "2026-07-19T20:53:07.865Z",
   "timezone": "America/Toronto",
   "stations": {
     "chyz": {
       "id": "chyz",
       "name": "CHYZ 94,3",
       "current": {
-        "title": "Radio Futura",
-        "source": "schedule",
-        "start": "13:00",
-        "end": "16:00",
-        "url": "https://chyz.ca/emission/radio-futura/"
-      },
-      "next": {
         "title": "Capitales de Québec",
         "source": "schedule",
         "start": "16:50",
         "end": "20:30",
         "url": "https://chyz.ca/emission/capitales-de-quebec/"
       },
+      "next": {
+        "title": "Lundi Indie",
+        "source": "schedule",
+        "start": "08:00",
+        "end": "10:00",
+        "url": "https://chyz.ca/emission/lundie-indie-playlist-du-matin/"
+      },
       "track": "",
-      "showTitle": "Radio Futura",
+      "showTitle": "Capitales de Québec",
       "host": "",
       "source": "schedule",
       "sources": [
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-19T19:41:31.749Z"
+      "checkedAt": "2026-07-19T20:52:46.126Z"
     },
     "cism": {
       "id": "cism",
       "name": "CISM 89,3",
       "current": {
-        "title": "Yallah lâcher prise",
-        "source": "api-live",
-        "start": "11:00",
-        "url": "https://stream03.ustream.ca/cism128.mp3",
-        "slug": "yallah-lacher-prise-avec-rhabibiii"
-      },
-      "next": {
         "title": "Basses fréquences",
         "source": "api-live",
         "start": "12:00",
-        "url": "https://podcast.cism893.ca/podcast/download_mp3/364245.mp3",
+        "url": "https://stream03.ustream.ca/cism128.mp3",
         "slug": "basses-frequences"
       },
+      "next": {
+        "title": "Le char de marge",
+        "source": "api-live",
+        "start": "14:00",
+        "url": "https://podcast.cism893.ca/podcast/download_mp3/364252.mp3",
+        "slug": "le-char-de-marge"
+      },
       "track": "",
-      "showTitle": "Yallah lâcher prise",
+      "showTitle": "Basses fréquences",
       "host": "",
       "source": "api-live",
       "sources": [
@@ -57,25 +57,25 @@
         "type": "cism-v1",
         "url": "https://admin.cism893.ca/api/v1/live"
       },
-      "checkedAt": "2026-07-19T19:41:33.761Z"
+      "checkedAt": "2026-07-19T20:52:48.149Z"
     },
     "ckut": {
       "id": "ckut",
       "name": "CKUT 90,3",
       "current": {
-        "title": "The Magic Roundabout",
-        "source": "api-live",
-        "start": "14:00",
-        "end": "16:00"
-      },
-      "next": {
         "title": "Bhum Bhum Time",
         "source": "api-live",
         "start": "16:00",
         "end": "18:00"
       },
+      "next": {
+        "title": "Desi Beats (must be .mp3!!)",
+        "source": "api-live",
+        "start": "18:00",
+        "end": "19:00"
+      },
       "track": "",
-      "showTitle": "The Magic Roundabout",
+      "showTitle": "Bhum Bhum Time",
       "host": "",
       "source": "api-live",
       "sources": [
@@ -83,34 +83,34 @@
         "stream"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-19T19:41:36.642Z"
+      "checkedAt": "2026-07-19T20:52:51.056Z"
     },
     "cjlo": {
       "id": "cjlo",
       "name": "CJLO 1690AM",
       "current": {
-        "title": "CJLO's Alternative Mega Mix",
-        "source": "schedule",
-        "start": "15:00",
-        "end": "16:00",
-        "url": "http://www.cjlo.com/shows/cjlos-alternative-mega-mix"
-      },
-      "next": {
         "title": "Grade A Explosives",
         "source": "schedule",
         "start": "16:00",
         "end": "18:00",
         "url": "http://www.cjlo.com/shows/grade-a-explosives"
       },
+      "next": {
+        "title": "Bill's Country & Western Favou...",
+        "source": "schedule",
+        "start": "18:00",
+        "end": "19:00",
+        "url": "http://www.cjlo.com/shows/bills-country-and-western-favourites"
+      },
       "track": "",
-      "showTitle": "CJLO's Alternative Mega Mix",
+      "showTitle": "Grade A Explosives",
       "host": "",
       "source": "schedule",
       "sources": [
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-19T19:41:50.426Z"
+      "checkedAt": "2026-07-19T20:53:04.916Z"
     },
     "cfak": {
       "id": "cfak",
@@ -135,27 +135,27 @@
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-19T19:41:51.018Z"
+      "checkedAt": "2026-07-19T20:53:05.331Z"
     },
     "choq": {
       "id": "choq",
       "name": "CHOQ.ca",
       "current": {
-        "title": "Life Remains",
+        "title": "Depuis Marseille",
         "source": "api-live",
-        "host": "Dominique Fils-Aimé"
+        "host": "Valence"
       },
       "next": null,
-      "track": "Dominique Fils-Aimé - Life Remains",
-      "showTitle": "Life Remains",
-      "host": "Dominique Fils-Aimé",
+      "track": "Valence - Depuis Marseille",
+      "showTitle": "Depuis Marseille",
+      "host": "Valence",
       "source": "api-live",
       "sources": [
         "api-live",
         "stream"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-19T19:41:52.820Z"
+      "checkedAt": "2026-07-19T20:53:07.514Z"
     }
   }
 }
