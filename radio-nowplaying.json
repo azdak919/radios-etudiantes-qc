@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-18T23:28:12.594Z",
+  "updatedAt": "2026-07-19T01:04:32.815Z",
   "timezone": "America/Toronto",
   "stations": {
     "chyz": {
@@ -27,27 +27,27 @@
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-18T23:27:50.366Z"
+      "checkedAt": "2026-07-19T01:04:09.907Z"
     },
     "cism": {
       "id": "cism",
       "name": "CISM 89,3",
       "current": {
-        "title": "Faites entrer un DJ",
+        "title": "Le radar",
         "source": "api-live",
-        "start": "14:00",
+        "start": "17:00",
         "url": "https://stream03.ustream.ca/cism128.mp3",
-        "slug": "faites-entrer-un-dj"
+        "slug": "le-radar-2"
       },
       "next": {
-        "title": "Contenu explicite",
+        "title": "Disconomique",
         "source": "api-live",
-        "start": "16:00",
-        "url": "https://podcast.cism893.ca/podcast/download_mp3/364203.mp3",
-        "slug": "contenu-explicite"
+        "start": "17:30",
+        "url": "https://podcast.cism893.ca/podcast/download_mp3/364207.mp3",
+        "slug": "disconomique"
       },
       "track": "",
-      "showTitle": "Faites entrer un DJ",
+      "showTitle": "Le radar",
       "host": "",
       "source": "api-live",
       "sources": [
@@ -57,25 +57,25 @@
         "type": "cism-v1",
         "url": "https://admin.cism893.ca/api/v1/live"
       },
-      "checkedAt": "2026-07-18T23:27:51.930Z"
+      "checkedAt": "2026-07-19T01:04:11.883Z"
     },
     "ckut": {
       "id": "ckut",
       "name": "CKUT 90,3",
       "current": {
-        "title": "Masters At Work",
-        "source": "api-live",
-        "start": "19:00",
-        "end": "21:00"
-      },
-      "next": {
         "title": "Howls From Hell/Too Loud For The Crowd",
         "source": "api-live",
         "start": "21:00",
         "end": "23:00"
       },
+      "next": {
+        "title": "SKEwInGTheWaBeS$$",
+        "source": "api-live",
+        "start": "23:00",
+        "end": "00:00"
+      },
       "track": "",
-      "showTitle": "Masters At Work",
+      "showTitle": "Howls From Hell/Too Loud For The Crowd",
       "host": "",
       "source": "api-live",
       "sources": [
@@ -83,34 +83,34 @@
         "stream"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-18T23:27:55.780Z"
+      "checkedAt": "2026-07-19T01:04:15.141Z"
     },
     "cjlo": {
       "id": "cjlo",
       "name": "CJLO 1690AM",
       "current": {
-        "title": "Screamers",
+        "title": "The Spacious Astrology Playlist",
         "source": "schedule",
-        "start": "19:00",
-        "end": "20:00",
-        "url": "http://www.cjlo.com/shows/screamers"
+        "start": "21:00",
+        "end": "22:00",
+        "url": "http://www.cjlo.com/shows/the-spacious-astrology-playlist"
       },
       "next": {
-        "title": "CJLO's Alternative Mega Mix",
+        "title": "The Go-G...",
         "source": "schedule",
-        "start": "20:00",
-        "end": "21:00",
-        "url": "http://www.cjlo.com/shows/cjlos-alternative-mega-mix"
+        "start": "21:30",
+        "end": "22:00",
+        "url": "http://www.cjlo.com/shows/the-go-go-radio-magic-show"
       },
       "track": "",
-      "showTitle": "Screamers",
+      "showTitle": "The Spacious Astrology Playlist",
       "host": "",
       "source": "schedule",
       "sources": [
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-18T23:28:09.426Z"
+      "checkedAt": "2026-07-19T01:04:29.383Z"
     },
     "cfak": {
       "id": "cfak",
@@ -130,28 +130,28 @@
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-18T23:28:10.411Z"
+      "checkedAt": "2026-07-19T01:04:30.330Z"
     },
     "choq": {
       "id": "choq",
       "name": "CHOQ.ca",
       "current": {
-        "title": "Rare",
+        "title": "Saturnday",
         "source": "api-live",
-        "host": "Maria BC",
-        "url": "https://www.choq.ca/assets/playlist/internationale.jpg"
+        "host": "Hush",
+        "url": "https://www.choq.ca/assets/playlist/palmares-site-web.jpg"
       },
       "next": null,
-      "track": "Maria BC - Rare",
-      "showTitle": "Rare",
-      "host": "Maria BC",
+      "track": "Hush - Saturnday",
+      "showTitle": "Saturnday",
+      "host": "Hush",
       "source": "api-live",
       "sources": [
         "api-live",
         "stream"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-18T23:28:12.244Z"
+      "checkedAt": "2026-07-19T01:04:32.464Z"
     }
   }
 }
