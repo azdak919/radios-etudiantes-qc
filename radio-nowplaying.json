@@ -1,47 +1,53 @@
 {
-  "updatedAt": "2026-07-19T17:00:10.363Z",
+  "updatedAt": "2026-07-19T18:03:37.382Z",
   "timezone": "America/Toronto",
   "stations": {
     "chyz": {
       "id": "chyz",
       "name": "CHYZ 94,3",
-      "current": null,
-      "next": {
+      "current": {
         "title": "Radio Futura",
         "source": "schedule",
         "start": "13:00",
         "end": "16:00",
         "url": "https://chyz.ca/emission/radio-futura/"
       },
+      "next": {
+        "title": "Capitales de Québec",
+        "source": "schedule",
+        "start": "16:50",
+        "end": "20:30",
+        "url": "https://chyz.ca/emission/capitales-de-quebec/"
+      },
       "track": "",
-      "showTitle": "",
+      "showTitle": "Radio Futura",
       "host": "",
       "source": "schedule",
       "sources": [
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-19T16:59:50.513Z"
+      "checkedAt": "2026-07-19T18:03:15.411Z"
     },
     "cism": {
       "id": "cism",
       "name": "CISM 89,3",
       "current": {
-        "title": "Par mots et par vaux",
+        "title": "Ya Raï",
         "source": "api-live",
-        "start": "08:00",
+        "start": "10:00",
         "url": "https://stream03.ustream.ca/cism128.mp3",
-        "slug": "par-mots-et-par-vaux"
+        "slug": "ya-rai"
       },
       "next": {
-        "title": "Le 120e parallèle",
+        "title": "Yallah lâcher prise",
         "source": "api-live",
-        "start": "09:00",
-        "url": "https://podcast.cism893.ca/podcast/download_mp3/364239.mp3",
-        "slug": "le-120e-parallele"
+        "start": "11:00",
+        "url": "https://podcast.cism893.ca/podcast/download_mp3/364244.mp3",
+        "slug": "yallah-lacher-prise-avec-rhabibiii"
       },
       "track": "",
-      "showTitle": "Par mots et par vaux",
+      "showTitle": "Ya Raï",
       "host": "",
       "source": "api-live",
       "sources": [
@@ -51,25 +57,25 @@
         "type": "cism-v1",
         "url": "https://admin.cism893.ca/api/v1/live"
       },
-      "checkedAt": "2026-07-19T16:59:51.962Z"
+      "checkedAt": "2026-07-19T18:03:17.071Z"
     },
     "ckut": {
       "id": "ckut",
       "name": "CKUT 90,3",
       "current": {
-        "title": "Free Kick",
+        "title": "The Magic Roundabout",
         "source": "api-live",
-        "start": "11:00",
-        "end": "13:00"
+        "start": "14:00",
+        "end": "16:00"
       },
       "next": {
-        "title": "Modular Systems/Future Classics",
+        "title": "Bhum Bhum Time",
         "source": "api-live",
-        "start": "13:00",
-        "end": "14:00"
+        "start": "16:00",
+        "end": "18:00"
       },
       "track": "",
-      "showTitle": "Free Kick",
+      "showTitle": "The Magic Roundabout",
       "host": "",
       "source": "api-live",
       "sources": [
@@ -77,34 +83,34 @@
         "stream"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-19T16:59:54.675Z"
+      "checkedAt": "2026-07-19T18:03:20.218Z"
     },
     "cjlo": {
       "id": "cjlo",
       "name": "CJLO 1690AM",
       "current": {
-        "title": "Northern Stagelights",
-        "source": "schedule",
-        "start": "13:00",
-        "end": "14:00",
-        "url": "http://www.cjlo.com/shows/northern-stagelights"
-      },
-      "next": {
         "title": "Cinema Smackdown",
         "source": "schedule",
         "start": "14:00",
         "end": "15:00",
         "url": "http://www.cjlo.com/shows/cinema-smackdown"
       },
+      "next": {
+        "title": "CJLO's Alternative Mega Mix",
+        "source": "schedule",
+        "start": "15:00",
+        "end": "16:00",
+        "url": "http://www.cjlo.com/shows/cjlos-alternative-mega-mix"
+      },
       "track": "",
-      "showTitle": "Northern Stagelights",
+      "showTitle": "Cinema Smackdown",
       "host": "",
       "source": "schedule",
       "sources": [
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-19T17:00:07.900Z"
+      "checkedAt": "2026-07-19T18:03:34.033Z"
     },
     "cfak": {
       "id": "cfak",
@@ -129,26 +135,27 @@
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-19T17:00:08.543Z"
+      "checkedAt": "2026-07-19T18:03:34.636Z"
     },
     "choq": {
       "id": "choq",
       "name": "CHOQ.ca",
       "current": {
-        "title": "PromoRadioFlIM2026",
-        "source": "api-live"
+        "title": "Life Remains",
+        "source": "api-live",
+        "host": "Dominique Fils-Aimé"
       },
       "next": null,
-      "track": "Slayyyter - DANCE...",
-      "showTitle": "PromoRadioFlIM2026",
-      "host": "",
+      "track": "Dominique Fils-Aimé - Life Remains",
+      "showTitle": "Life Remains",
+      "host": "Dominique Fils-Aimé",
       "source": "api-live",
       "sources": [
         "api-live",
         "stream"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-19T17:00:10.012Z"
+      "checkedAt": "2026-07-19T18:03:37.032Z"
     }
   }
 }
