@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-19T07:28:23.001Z",
+  "updatedAt": "2026-07-19T08:36:18.932Z",
   "timezone": "America/Toronto",
   "stations": {
     "chyz": {
@@ -21,27 +21,27 @@
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-19T07:28:02.592Z"
+      "checkedAt": "2026-07-19T08:35:57.091Z"
     },
     "cism": {
       "id": "cism",
       "name": "CISM 89,3",
       "current": {
-        "title": "Mix anglo",
-        "source": "api-live",
-        "start": "22:00",
-        "url": "https://stream03.ustream.ca/cism128.mp3",
-        "slug": "mix-anglo"
-      },
-      "next": {
         "title": "Rythmologie (reprise)",
         "source": "api-live",
         "start": "00:00",
-        "url": "https://podcast.cism893.ca/podcast/download_mp3/364535.mp3",
+        "url": "https://stream03.ustream.ca/cism128.mp3",
         "slug": "rythmologie"
       },
+      "next": {
+        "title": "Mix Franco",
+        "source": "api-live",
+        "start": "02:00",
+        "url": "https://podcast.cism893.ca/podcast/download_mp3/364623.mp3",
+        "slug": "mix-franco"
+      },
       "track": "",
-      "showTitle": "Mix anglo",
+      "showTitle": "Rythmologie (reprise)",
       "host": "",
       "source": "api-live",
       "sources": [
@@ -51,7 +51,7 @@
         "type": "cism-v1",
         "url": "https://admin.cism893.ca/api/v1/live"
       },
-      "checkedAt": "2026-07-19T07:28:04.138Z"
+      "checkedAt": "2026-07-19T08:35:58.922Z"
     },
     "ckut": {
       "id": "ckut",
@@ -76,7 +76,7 @@
         "api-live"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-19T07:28:06.591Z"
+      "checkedAt": "2026-07-19T08:36:01.777Z"
     },
     "cjlo": {
       "id": "cjlo",
@@ -103,7 +103,7 @@
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-19T07:28:19.840Z"
+      "checkedAt": "2026-07-19T08:36:15.743Z"
     },
     "cfak": {
       "id": "cfak",
@@ -128,27 +128,27 @@
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-19T07:28:20.622Z"
+      "checkedAt": "2026-07-19T08:36:16.164Z"
     },
     "choq": {
       "id": "choq",
       "name": "CHOQ.ca",
       "current": {
-        "title": "Nous, le venin",
+        "title": "Lingo",
         "source": "api-live",
-        "host": "Mourir"
+        "host": "Alewya"
       },
       "next": null,
-      "track": "Mourir - Nous, le venin",
-      "showTitle": "Nous, le venin",
-      "host": "Mourir",
+      "track": "Alewya - Lingo",
+      "showTitle": "Lingo",
+      "host": "Alewya",
       "source": "api-live",
       "sources": [
         "api-live",
         "stream"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-19T07:28:22.650Z"
+      "checkedAt": "2026-07-19T08:36:18.580Z"
     }
   }
 }
