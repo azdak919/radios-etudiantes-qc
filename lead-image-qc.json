@@ -1,16 +1,16 @@
 {
-  "updated": "2026-07-19T11:56:02.304Z",
+  "updated": "2026-07-19T14:04:36.519Z",
   "total": 185,
   "withPhoto": 168,
   "withStock": 41,
   "withCampusBank": 8,
   "fullyCovered": 185,
-  "leadReadyPhotos": 139,
-  "pageScraped": 16,
-  "photosRecovered": 16,
+  "leadReadyPhotos": 142,
+  "pageScraped": 17,
+  "photosRecovered": 17,
   "imagesCleared": 11,
   "stockSearches": 40,
-  "stockFound": 31,
+  "stockFound": 30,
   "campusBankFound": 5,
   "mainPageLeadReady": true,
   "gaps": [
@@ -25,6 +25,12 @@
       "link": "https://www.mcgilldaily.com/2026/07/the-cruel-optimism-of-summer/",
       "reason": "stock-too-small",
       "image": "https://live.staticflickr.com/917/28627096297_a3e0756d47_b.jpg"
+    },
+    {
+      "title": "CSU terminates council’s chief election officer",
+      "link": "https://thelinknewspaper.ca/article/16334",
+      "reason": "campus-bank",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/1/16/CJ_Building%2C_Loyola_Campus%2C_Communication_Studies%2C_Concordia_University.jpg"
     },
     {
       "title": "Un Sherbrookois aux portes du baseball professionnel",
@@ -47,8 +53,8 @@
     {
       "title": "CSU approves $36,000 in funding for student-led initiatives",
       "link": "https://thelinknewspaper.ca/article/16319",
-      "reason": "campus-bank",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/1/16/CJ_Building%2C_Loyola_Campus%2C_Communication_Studies%2C_Concordia_University.jpg"
+      "reason": "no-stock-match",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/9/99/Henry_F._Hall_Building_01.JPG"
     },
     {
       "title": "From the rink to the links",
@@ -79,12 +85,6 @@
       "link": "https://thebucampus.ca/2026/03/23/gaiters-wrap-up-hard-fought-season-with-eyes-on-next-year/",
       "reason": "campus-bank",
       "image": "https://upload.wikimedia.org/wikipedia/commons/b/b3/Bishop%27s_University_campus_2011.jpg"
-    },
-    {
-      "title": "Second-Class Citizens",
-      "link": "https://www.mcgilldaily.com/2026/03/second-class-citizens/",
-      "reason": "campus-bank",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/b/b9/View_from_McGill_University_downtown_campus_01.JPG"
     }
   ]
 }
