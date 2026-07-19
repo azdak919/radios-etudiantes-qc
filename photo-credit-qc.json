@@ -1,23 +1,23 @@
 {
-  "updated": "2026-07-19T20:41:54.129Z",
+  "updated": "2026-07-19T22:20:05.751Z",
   "total": 185,
   "withImage": 168,
   "withCredit": 168,
-  "cited": 121,
+  "cited": 122,
   "pending": 0,
   "missingHero": 0,
   "ok": true,
-  "checked": 8,
-  "updatedCount": 8,
+  "checked": 7,
+  "updatedCount": 7,
   "citedNew": 5,
-  "fallbackNew": 3,
+  "fallbackNew": 2,
   "samples": [
     {
       "title": "Se préparer et vivre sa retraite : un long fleuve, pas si tranquille",
       "source": "La Pige",
-      "credit": "Crédit photo : La Pige",
-      "cited": false,
-      "method": null
+      "credit": "Photo : Léa Morin-Letort",
+      "cited": true,
+      "method": "wp-caption"
     },
     {
       "title": "Forum RÉA : une alliance pour l’éducation en milieu défavorisé",
@@ -39,13 +39,6 @@
       "credit": "Photo : Elie Nguyen",
       "cited": true,
       "method": "media-credit-featured"
-    },
-    {
-      "title": "Ce que nous devons aux femmes",
-      "source": "Le Délit",
-      "credit": "Photo : Alexandre Gontier",
-      "cited": true,
-      "method": "media-credit-near"
     },
     {
       "title": "Les femmes MAGA au service du patriarcat",
