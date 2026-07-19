@@ -1,26 +1,10 @@
 {
-  "updated": "2026-07-19T18:29:31.336Z",
+  "updated": "2026-07-19T20:36:07.194Z",
   "total": 185,
   "withAuthor": 185,
-  "mismatches": 106,
+  "mismatches": 104,
   "ok": true,
   "samples": [
-    {
-      "title": "Un Sherbrookois aux portes du baseball professionnel",
-      "link": "https://lecollectif.ca/a-la-une/un-sherbrookois-aux-portes-du-baseball-professionnel/",
-      "source": "Le Collectif",
-      "fieldAuthor": "La rédaction",
-      "canonicalAuthor": "Camille Guindon",
-      "reason": "page-byline"
-    },
-    {
-      "title": "Voyager sans arrêt : passion ou obsession ?",
-      "link": "https://lecollectif.ca/culture/voyager-sans-arret-passion-ou-obsession/",
-      "source": "Le Collectif",
-      "fieldAuthor": "La rédaction",
-      "canonicalAuthor": "Nicolas Mathieu",
-      "reason": "page-byline"
-    },
     {
       "title": "CSU fails to reach quorum at first special council meeting of new mandate",
       "link": "https://thelinknewspaper.ca/article/16335",
@@ -164,7 +148,23 @@
       "fieldAuthor": "The editorial team",
       "canonicalAuthor": "Ellen Lurie",
       "reason": "page-byline"
+    },
+    {
+      "title": "Recettes musicales québécoises pour l’été",
+      "link": "https://quartierlibre.ca/ete-recettes-musicales-quebecoises/",
+      "source": "Quartier Libre",
+      "fieldAuthor": "La rédaction",
+      "canonicalAuthor": "Bérénice Lemarié",
+      "reason": "page-byline"
+    },
+    {
+      "title": "FAÉCUM : la démocratie universitaire critiquée",
+      "link": "https://quartierlibre.ca/faecum-la-democratie-universitaire-critiquee/",
+      "source": "Quartier Libre",
+      "fieldAuthor": "La rédaction",
+      "canonicalAuthor": "Ulysse Taillard-Hodez",
+      "reason": "page-byline"
     }
   ],
-  "fixed": 106
+  "fixed": 104
 }

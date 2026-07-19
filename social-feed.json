@@ -1,6 +1,6 @@
 {
-  "updated": "2026-07-19T18:37:17.354Z",
-  "count": 19,
+  "updated": "2026-07-19T20:42:43.985Z",
+  "count": 16,
   "items": [
     {
       "name": "Quartier Libre",
@@ -126,28 +126,6 @@
       ]
     },
     {
-      "name": "Zone Campus",
-      "institution": "Université du Québec à Trois-Rivières",
-      "type": "universite",
-      "kind": "journal",
-      "networks": [
-        {
-          "type": "instagram",
-          "url": "https://www.instagram.com/zonecampus/",
-          "handle": "@zonecampus",
-          "stats": "",
-          "label": "Instagram"
-        },
-        {
-          "type": "facebook",
-          "url": "https://www.facebook.com/zonecampus",
-          "handle": "zonecampus",
-          "stats": "2 043 mentions J'aime",
-          "label": "Facebook"
-        }
-      ]
-    },
-    {
       "name": "L'Exemplaire",
       "institution": "Université Laval",
       "type": "universite",
@@ -170,28 +148,6 @@
       ]
     },
     {
-      "name": "Le Collectif",
-      "institution": "Université de Sherbrooke",
-      "type": "universite",
-      "kind": "journal",
-      "networks": [
-        {
-          "type": "instagram",
-          "url": "https://www.instagram.com/jlecollectif/",
-          "handle": "@jlecollectif",
-          "stats": "",
-          "label": "Instagram"
-        },
-        {
-          "type": "facebook",
-          "url": "https://www.facebook.com/journallecollectif",
-          "handle": "journallecollectif",
-          "stats": "4 054 mentions J'aime",
-          "label": "Facebook"
-        }
-      ]
-    },
-    {
       "name": "Exil",
       "institution": "Cégep du Vieux Montréal",
       "type": "cegep",
@@ -208,30 +164,8 @@
           "type": "facebook",
           "url": "https://www.facebook.com/WordPresscom",
           "handle": "WordPresscom",
-          "stats": "751 524 mentions J'aime",
+          "stats": "751 521 mentions J'aime",
           "label": "Facebook"
-        }
-      ]
-    },
-    {
-      "name": "La Pige",
-      "institution": "Cégep de Jonquière (ATM – journalisme)",
-      "type": "cegep",
-      "kind": "journal",
-      "networks": [
-        {
-          "type": "facebook",
-          "url": "https://www.facebook.com/2008",
-          "handle": "2008",
-          "stats": "",
-          "label": "Facebook"
-        },
-        {
-          "type": "youtube",
-          "url": "https://www.youtube.com/@atmlapige",
-          "handle": "@atmlapige",
-          "stats": "",
-          "label": "YouTube"
         }
       ]
     },
@@ -455,7 +389,7 @@
           "type": "facebook",
           "url": "https://www.facebook.com/cjlo1690am",
           "handle": "cjlo1690am",
-          "stats": "",
+          "stats": "7 020 mentions J'aime",
           "label": "Facebook"
         }
       ]
@@ -477,7 +411,7 @@
           "type": "facebook",
           "url": "https://www.facebook.com/CFAK883",
           "handle": "CFAK883",
-          "stats": "",
+          "stats": "3 785 mentions J'aime",
           "label": "Facebook"
         },
         {

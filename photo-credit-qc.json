@@ -1,23 +1,23 @@
 {
-  "updated": "2026-07-19T18:36:06.893Z",
+  "updated": "2026-07-19T20:41:54.129Z",
   "total": 185,
   "withImage": 168,
   "withCredit": 168,
-  "cited": 122,
+  "cited": 121,
   "pending": 0,
   "missingHero": 0,
   "ok": true,
   "checked": 8,
   "updatedCount": 8,
-  "citedNew": 6,
-  "fallbackNew": 2,
+  "citedNew": 5,
+  "fallbackNew": 3,
   "samples": [
     {
       "title": "Se préparer et vivre sa retraite : un long fleuve, pas si tranquille",
       "source": "La Pige",
-      "credit": "Photo : Léa Morin-Letort",
-      "cited": true,
-      "method": "wp-caption"
+      "credit": "Crédit photo : La Pige",
+      "cited": false,
+      "method": null
     },
     {
       "title": "Forum RÉA : une alliance pour l’éducation en milieu défavorisé",
