@@ -1,11 +1,11 @@
 {
-  "updated": "2026-07-20T20:45:58.940Z",
+  "updated": "2026-07-20T20:59:33.274Z",
   "total": 185,
   "pool": 58,
   "incomplete": 3,
   "withLeadExcerpt": 73,
   "candidates": 3,
-  "enriched": 1,
+  "enriched": 0,
   "failed": 0,
   "ok": true,
   "samples": [
@@ -16,7 +16,7 @@
       "score": 76,
       "chars": 400,
       "sample": "Les occasions de penser au voyage sont nombreuses. Les médias et les réseaux sociaux montrent sans c",
-      "changed": true
+      "changed": false
     },
     {
       "title": "The Cruel Optimism of Summer",
