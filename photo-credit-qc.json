@@ -1,16 +1,16 @@
 {
-  "updated": "2026-07-20T07:43:07.949Z",
+  "updated": "2026-07-20T11:23:58.264Z",
   "total": 185,
   "withImage": 168,
   "withCredit": 168,
-  "cited": 121,
+  "cited": 122,
   "pending": 0,
   "missingHero": 0,
   "ok": true,
   "checked": 8,
   "updatedCount": 8,
-  "citedNew": 5,
-  "fallbackNew": 3,
+  "citedNew": 6,
+  "fallbackNew": 2,
   "samples": [
     {
       "title": "Se préparer et vivre sa retraite : un long fleuve, pas si tranquille",
@@ -27,13 +27,6 @@
       "method": null
     },
     {
-      "title": "L’épidémie de la nonchalance",
-      "source": "Le Délit",
-      "credit": "Photo : Elie Nguyen",
-      "cited": true,
-      "method": "media-credit-featured"
-    },
-    {
       "title": "La performance de l’homosexualité : un privilège ?",
       "source": "Le Délit",
       "credit": "Photo : Félix Fournier",
@@ -41,18 +34,25 @@
       "method": "media-credit-featured"
     },
     {
+      "title": "L’épidémie de la nonchalance",
+      "source": "Le Délit",
+      "credit": "Photo : Elie Nguyen",
+      "cited": true,
+      "method": "media-credit-featured"
+    },
+    {
+      "title": "Ce que nous devons aux femmes",
+      "source": "Le Délit",
+      "credit": "Photo : Alexandre Gontier",
+      "cited": true,
+      "method": "media-credit-near"
+    },
+    {
       "title": "Les femmes MAGA au service du patriarcat",
       "source": "Le Délit",
       "credit": "Photo : Stu Doré",
       "cited": true,
       "method": "media-credit-featured"
-    },
-    {
-      "title": "Des initiatives qui rassemblent",
-      "source": "Le Délit",
-      "credit": "Crédit photo : Le Délit",
-      "cited": false,
-      "method": null
     },
     {
       "title": "Leave the Children Out of This",
