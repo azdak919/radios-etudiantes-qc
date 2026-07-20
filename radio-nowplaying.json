@@ -1,17 +1,11 @@
 {
-  "updatedAt": "2026-07-20T12:32:54.712Z",
+  "updatedAt": "2026-07-20T15:13:17.799Z",
   "timezone": "America/Toronto",
   "stations": {
     "chyz": {
       "id": "chyz",
       "name": "CHYZ 94,3",
-      "current": {
-        "title": "Lundi Indie",
-        "source": "schedule",
-        "start": "08:00",
-        "end": "10:00",
-        "url": "https://chyz.ca/emission/lundie-indie-playlist-du-matin/"
-      },
+      "current": null,
       "next": {
         "title": "Les Arshitechs du Son",
         "source": "schedule",
@@ -20,34 +14,34 @@
         "url": "https://chyz.ca/emission/les-arshitechs-du-son/"
       },
       "track": "",
-      "showTitle": "Lundi Indie",
+      "showTitle": "",
       "host": "",
       "source": "schedule",
       "sources": [
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-20T12:32:32.741Z"
+      "checkedAt": "2026-07-20T15:12:58.241Z"
     },
     "cism": {
       "id": "cism",
       "name": "CISM 89,3",
       "current": {
-        "title": "Le char de marge (reprise)",
+        "title": "Le terrain sportif",
         "source": "api-live",
-        "start": "03:00",
+        "start": "06:30",
         "url": "https://stream03.ustream.ca/cism128.mp3",
-        "slug": "le-char-de-marge"
+        "slug": "le-terrain-sportif"
       },
       "next": {
-        "title": "Le Séismix",
+        "title": "Ya Raï (reprise)",
         "source": "api-live",
-        "start": "05:00",
-        "url": "https://podcast.cism893.ca/podcast/download_mp3/364568.mp3",
-        "slug": "le-seismix"
+        "start": "08:00",
+        "url": "https://podcast.cism893.ca/podcast/download_mp3/364703.mp3",
+        "slug": "ya-rai"
       },
       "track": "",
-      "showTitle": "Le char de marge (reprise)",
+      "showTitle": "Le terrain sportif",
       "host": "",
       "source": "api-live",
       "sources": [
@@ -57,25 +51,25 @@
         "type": "cism-v1",
         "url": "https://admin.cism893.ca/api/v1/live"
       },
-      "checkedAt": "2026-07-20T12:32:34.747Z"
+      "checkedAt": "2026-07-20T15:12:59.966Z"
     },
     "ckut": {
       "id": "ckut",
       "name": "CKUT 90,3",
       "current": {
-        "title": "Le Lendemain de la veille",
+        "title": "All Things Campus",
         "source": "api-live",
-        "start": "08:00",
-        "end": "09:00"
+        "start": "11:00",
+        "end": "12:00"
       },
       "next": {
-        "title": "Latin Music Mondays",
+        "title": "World Skip The Beat",
         "source": "api-live",
-        "start": "09:00",
-        "end": "11:00"
+        "start": "12:00",
+        "end": "14:00"
       },
       "track": "",
-      "showTitle": "Le Lendemain de la veille",
+      "showTitle": "All Things Campus",
       "host": "",
       "source": "api-live",
       "sources": [
@@ -83,79 +77,79 @@
         "stream"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-20T12:32:37.912Z"
+      "checkedAt": "2026-07-20T15:13:02.145Z"
     },
     "cjlo": {
       "id": "cjlo",
       "name": "CJLO 1690AM",
       "current": {
-        "title": "The Starting Rotation",
+        "title": "2 Days and a Night",
         "source": "schedule",
-        "start": "08:00",
-        "end": "09:00",
-        "url": "http://www.cjlo.com/shows/the-starting-rotation"
+        "start": "11:00",
+        "end": "12:00",
+        "url": "http://www.cjlo.com/shows/2-days-and-a-night"
       },
       "next": {
-        "title": "Death of the Midrange",
+        "title": "Twang City",
         "source": "schedule",
-        "start": "09:00",
-        "end": "10:00",
-        "url": "http://www.cjlo.com/shows/death-of-the-midrange"
+        "start": "12:00",
+        "end": "13:00",
+        "url": "http://www.cjlo.com/shows/twang-city"
       },
       "track": "",
-      "showTitle": "The Starting Rotation",
+      "showTitle": "2 Days and a Night",
       "host": "",
       "source": "schedule",
       "sources": [
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-20T12:32:51.759Z"
+      "checkedAt": "2026-07-20T15:13:15.509Z"
     },
     "cfak": {
       "id": "cfak",
       "name": "CFAK 88,3",
       "current": {
-        "title": "Palmarès CFAK",
-        "source": "schedule",
-        "start": "08:00",
-        "end": "09:00"
-      },
-      "next": {
         "title": "Solénoïde",
         "source": "schedule",
         "start": "09:00",
         "end": "18:00"
       },
+      "next": {
+        "title": "Ma radio Académia",
+        "source": "schedule",
+        "start": "18:00",
+        "end": "20:00"
+      },
       "track": "",
-      "showTitle": "Palmarès CFAK",
+      "showTitle": "Solénoïde",
       "host": "",
       "source": "schedule",
       "sources": [
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-20T12:32:52.402Z"
+      "checkedAt": "2026-07-20T15:13:16.289Z"
     },
     "choq": {
       "id": "choq",
       "name": "CHOQ.ca",
       "current": {
-        "title": "Retention",
+        "title": "Aliens in the Sky",
         "source": "api-live",
-        "host": "Atsuko Chiba"
+        "host": "Sara Sue Vallee"
       },
       "next": null,
-      "track": "Atsuko Chiba - Retention",
-      "showTitle": "Retention",
-      "host": "Atsuko Chiba",
+      "track": "Sara Sue Vallee - Aliens in the Sky",
+      "showTitle": "Aliens in the Sky",
+      "host": "Sara Sue Vallee",
       "source": "api-live",
       "sources": [
         "api-live",
         "stream"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-20T12:32:54.361Z"
+      "checkedAt": "2026-07-20T15:13:17.448Z"
     }
   }
 }
