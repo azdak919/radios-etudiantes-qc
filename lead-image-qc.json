@@ -1,25 +1,19 @@
 {
-  "updated": "2026-07-20T21:06:01.185Z",
+  "updated": "2026-07-20T23:53:32.396Z",
   "total": 185,
   "withPhoto": 168,
   "withStock": 40,
   "withCampusBank": 8,
   "fullyCovered": 185,
-  "leadReadyPhotos": 140,
-  "pageScraped": 18,
-  "photosRecovered": 18,
+  "leadReadyPhotos": 141,
+  "pageScraped": 17,
+  "photosRecovered": 17,
   "imagesCleared": 11,
-  "stockSearches": 43,
-  "stockFound": 32,
+  "stockSearches": 39,
+  "stockFound": 29,
   "campusBankFound": 5,
   "mainPageLeadReady": true,
   "gaps": [
-    {
-      "title": "CSU fails to reach quorum at first special council meeting of new mandate",
-      "link": "https://thelinknewspaper.ca/article/16335",
-      "reason": "campus-bank",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/d/d1/Henry_F._Hall_Building_07.JPG"
-    },
     {
       "title": "The Cruel Optimism of Summer",
       "link": "https://www.mcgilldaily.com/2026/07/the-cruel-optimism-of-summer/",
@@ -57,16 +51,10 @@
       "image": "https://live.staticflickr.com/7089/7290404684_2750bb385f_b.jpg"
     },
     {
-      "title": "Opinion – L’hypocrisie qui rampe à l’Assemblée nationale",
-      "link": "https://exilecvm.wordpress.com/2026/04/18/opinion-lhypocrisie-qui-rampe-a-lassemblee-nationale/",
-      "reason": "stock-too-small",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/4/47/Assembl%C3%A9e_nationale_du_Qu%C3%A9bec%2C_l%27H%C3%B4tel_du_Parlement%2C_fa%C3%A7ade_avec_ancien_entr%C3%A9_principal.jpg"
-    },
-    {
       "title": "CSU approves $36,000 in funding for student-led initiatives",
       "link": "https://thelinknewspaper.ca/article/16319",
-      "reason": "no-stock-match",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/9/99/Henry_F._Hall_Building_01.JPG"
+      "reason": "campus-bank",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/d/d1/Henry_F._Hall_Building_07.JPG"
     },
     {
       "title": "From the rink to the links",
@@ -85,6 +73,18 @@
       "link": "https://www.mcgilldaily.com/2026/03/spotlighting-powerful-mcgill-alumnae/",
       "reason": "stock-too-small",
       "image": "https://upload.wikimedia.org/wikipedia/commons/e/e2/McGill_University_downtown_campus_12.JPG"
+    },
+    {
+      "title": "National Golf tournament",
+      "link": "https://thebucampus.ca/2026/03/23/national-golf-tournament/",
+      "reason": "stock-too-small",
+      "image": "https://live.staticflickr.com/24/99099986_4195128a59_b.jpg"
+    },
+    {
+      "title": "Gaiters wrap up hard-fought season with eyes on next year",
+      "link": "https://thebucampus.ca/2026/03/23/gaiters-wrap-up-hard-fought-season-with-eyes-on-next-year/",
+      "reason": "campus-bank",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/b/b3/Bishop%27s_University_campus_2011.jpg"
     }
   ]
 }
