@@ -1,6 +1,6 @@
 {
-  "updated": "2026-07-20T12:08:30.335Z",
-  "count": 19,
+  "updated": "2026-07-20T13:08:08.792Z",
+  "count": 18,
   "items": [
     {
       "name": "Quartier Libre",
@@ -48,7 +48,7 @@
           "type": "facebook",
           "url": "https://www.facebook.com/montrealcampus",
           "handle": "montrealcampus",
-          "stats": "6 258 mentions J'aime",
+          "stats": "6 257 mentions J'aime",
           "label": "Facebook"
         },
         {
@@ -210,28 +210,6 @@
           "handle": "WordPresscom",
           "stats": "",
           "label": "Facebook"
-        }
-      ]
-    },
-    {
-      "name": "La Pige",
-      "institution": "Cégep de Jonquière (ATM – journalisme)",
-      "type": "cegep",
-      "kind": "journal",
-      "networks": [
-        {
-          "type": "facebook",
-          "url": "https://www.facebook.com/2008",
-          "handle": "2008",
-          "stats": "",
-          "label": "Facebook"
-        },
-        {
-          "type": "youtube",
-          "url": "https://www.youtube.com/@atmlapige",
-          "handle": "@atmlapige",
-          "stats": "",
-          "label": "YouTube"
         }
       ]
     },

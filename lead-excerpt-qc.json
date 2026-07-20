@@ -1,14 +1,23 @@
 {
-  "updated": "2026-07-20T12:03:09.416Z",
+  "updated": "2026-07-20T13:00:43.700Z",
   "total": 185,
   "pool": 58,
-  "incomplete": 4,
+  "incomplete": 5,
   "withLeadExcerpt": 72,
-  "candidates": 4,
-  "enriched": 0,
+  "candidates": 5,
+  "enriched": 1,
   "failed": 0,
   "ok": true,
   "samples": [
+    {
+      "title": "Qui sont les agents qui patrouillent notre campus ?",
+      "link": "https://www.delitfrancais.com/2026/03/18/qui-sont-les-agents-qui-patrouillent-notre-campus/",
+      "ok": true,
+      "score": 100,
+      "chars": 396,
+      "sample": "« L’Université McGill est à la recherche de patrouilleurs dynamiques et engagés pour assurer la sécu",
+      "changed": true
+    },
     {
       "title": "Voyager sans arrêt : passion ou obsession ?",
       "link": "https://lecollectif.ca/culture/voyager-sans-arret-passion-ou-obsession/",

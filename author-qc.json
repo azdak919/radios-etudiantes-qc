@@ -1,8 +1,8 @@
 {
-  "updated": "2026-07-20T12:02:52.875Z",
+  "updated": "2026-07-20T13:00:26.356Z",
   "total": 185,
   "withAuthor": 185,
-  "mismatches": 96,
+  "mismatches": 106,
   "ok": true,
   "samples": [
     {
@@ -118,6 +118,38 @@
       "reason": "page-byline"
     },
     {
+      "title": "Présences invisibles : écrire la ville sans permission",
+      "link": "https://quartierlibre.ca/presences-invisibles-ecrire-la-ville/",
+      "source": "Quartier Libre",
+      "fieldAuthor": "La rédaction",
+      "canonicalAuthor": "Emilie Rizkallah",
+      "reason": "page-byline"
+    },
+    {
+      "title": "CALAMINE : RAPPER AUTREMENT QUE LE « BOYS CLUB »",
+      "link": "https://quartierlibre.ca/calamine-rapper-autrement/",
+      "source": "Quartier Libre",
+      "fieldAuthor": "La rédaction",
+      "canonicalAuthor": "Samuel Roy",
+      "reason": "page-byline"
+    },
+    {
+      "title": "Forum RÉA : une alliance pour l’éducation en milieu défavorisé",
+      "link": "https://quartierlibre.ca/forum-rea-education-en-milieu-defavorise/",
+      "source": "Quartier Libre",
+      "fieldAuthor": "La rédaction",
+      "canonicalAuthor": "Ulysse Taillard-Hodez",
+      "reason": "page-byline"
+    },
+    {
+      "title": "Un projet de loi rendrait obligatoire le statut d’étudiant·e proche aidant·e",
+      "link": "https://quartierlibre.ca/projet-loi-etudiant-proche-aidante/",
+      "source": "Quartier Libre",
+      "fieldAuthor": "La rédaction",
+      "canonicalAuthor": "Mohammed Aziz Mestiri",
+      "reason": "page-byline"
+    },
+    {
       "title": "A final note from the Editor-in-Chief of Volume 45, for the record",
       "link": "https://www.thetribune.ca/opinion/op-off-the-board/a-final-note-from-the-editor-in-chief-of-volume-45-for-the-record-14052026/?utm_source=rss&utm_medium=rss&utm_campaign=a-final-note-from-the-editor-in-chief-of-volume-45-for-the-record-14052026",
       "source": "The Tribune",
@@ -132,39 +164,7 @@
       "fieldAuthor": "The editorial team",
       "canonicalAuthor": "Ellen Lurie",
       "reason": "page-byline"
-    },
-    {
-      "title": "Letters from the Editors May 2026",
-      "link": "https://theplantnews.com/2026/05/11/letters-from-the-editors-may-2026/",
-      "source": "The Plant",
-      "fieldAuthor": "The editorial team",
-      "canonicalAuthor": "The editorial team",
-      "reason": "no-author-source"
-    },
-    {
-      "title": "Cuba @ Dawson",
-      "link": "https://theplantnews.com/2026/05/11/cuba-dawson/",
-      "source": "The Plant",
-      "fieldAuthor": "The editorial team",
-      "canonicalAuthor": "Atika Ume Fazal",
-      "reason": "page-byline"
-    },
-    {
-      "title": "What’s Next for Books at Dawson?",
-      "link": "https://theplantnews.com/2026/05/11/whats-next-for-books-at-dawson/",
-      "source": "The Plant",
-      "fieldAuthor": "The editorial team",
-      "canonicalAuthor": "Jacqueline Graif",
-      "reason": "page-byline"
-    },
-    {
-      "title": "No Way Home: Female Migrant Workers Caught in Iraq’s Crossfire",
-      "link": "https://theplantnews.com/2026/05/11/no-way-home-female-migrant-workers-caught-in-iraqs-crossfire/",
-      "source": "The Plant",
-      "fieldAuthor": "The editorial team",
-      "canonicalAuthor": "Chloe Bercovitz",
-      "reason": "page-byline"
     }
   ],
-  "fixed": 96
+  "fixed": 106
 }
