@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-21T14:27:29.291Z",
+  "updated": "2026-07-21T15:28:28.408Z",
   "total": 185,
   "pool": 58,
   "incomplete": 3,
@@ -10,12 +10,12 @@
   "ok": true,
   "samples": [
     {
-      "title": "The Balogun scandal is just the latest instance of FIFA’s political pandering",
-      "link": "https://www.thetribune.ca/sports/the-balogun-scandal-is-just-the-latest-instance-of-fifas-political-pandering-21072026/?utm_source=rss&utm_medium=rss&utm_campaign=the-balogun-scandal-is-just-the-latest-instance-of-fifas-political-pandering-21072026",
+      "title": "Les femmes MAGA au service du patriarcat",
+      "link": "https://www.delitfrancais.com/2026/03/18/les-femmes-maga-au-service-du-patriarcat/",
       "ok": true,
-      "score": 96,
-      "chars": 345,
-      "sample": "Although FIFA insists the Balogun decision is in line with FDC protocol, FIFA has not postponed a Wo",
+      "score": 100,
+      "chars": 393,
+      "sample": "Une des capacités distinctives de ce système patriarcal est son habileté remarquable à se perpétuer ",
       "changed": true
     },
     {

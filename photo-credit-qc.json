@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-21T14:33:41.877Z",
+  "updated": "2026-07-21T15:34:41.745Z",
   "total": 185,
   "withImage": 167,
   "withCredit": 167,
@@ -7,9 +7,17 @@
   "pending": 0,
   "missingHero": 0,
   "ok": true,
-  "checked": 0,
-  "updatedCount": 0,
-  "citedNew": 0,
+  "checked": 1,
+  "updatedCount": 1,
+  "citedNew": 1,
   "fallbackNew": 0,
-  "samples": []
+  "samples": [
+    {
+      "title": "Les femmes MAGA au service du patriarcat",
+      "source": "Le Délit",
+      "credit": "Photo : Stu Doré",
+      "cited": true,
+      "method": "media-credit-featured"
+    }
+  ]
 }
