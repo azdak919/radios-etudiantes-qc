@@ -1,6 +1,6 @@
 {
-  "updated": "2026-07-21T17:04:15.964Z",
-  "updatedSlot": "2026-07-21T16:00:00.000Z",
+  "updated": "2026-07-21T18:43:02.370Z",
+  "updatedSlot": "2026-07-21T17:30:00.000Z",
   "count": 185,
   "freshnessSessions": 3,
   "sources": {
@@ -10,7 +10,7 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-05-15T16:00:00.000Z",
-      "lastFetchOk": "2026-07-21T17:03:45.045Z"
+      "lastFetchOk": "2026-07-21T18:42:25.338Z"
     },
     "Montréal Campus": {
       "fetchOk": true,
@@ -18,7 +18,7 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-05-09T03:14:30.000Z",
-      "lastFetchOk": "2026-07-21T17:03:45.997Z"
+      "lastFetchOk": "2026-07-21T18:42:26.309Z"
     },
     "Le Délit": {
       "fetchOk": true,
@@ -26,7 +26,7 @@
       "articleCount": 20,
       "freshArticleCount": 20,
       "lastArticle": "2026-03-25T11:00:00.000Z",
-      "lastFetchOk": "2026-07-21T17:03:49.435Z"
+      "lastFetchOk": "2026-07-21T18:42:29.950Z"
     },
     "The McGill Daily": {
       "fetchOk": true,
@@ -34,7 +34,7 @@
       "articleCount": 15,
       "freshArticleCount": 15,
       "lastArticle": "2026-07-06T12:00:00.000Z",
-      "lastFetchOk": "2026-07-21T17:03:50.090Z"
+      "lastFetchOk": "2026-07-21T18:42:30.657Z"
     },
     "The Link": {
       "fetchOk": true,
@@ -42,7 +42,7 @@
       "articleCount": 20,
       "freshArticleCount": 20,
       "lastArticle": "2026-07-08T14:41:00.000Z",
-      "lastFetchOk": "2026-07-21T17:03:51.407Z"
+      "lastFetchOk": "2026-07-21T18:42:31.722Z"
     },
     "Zone Campus": {
       "fetchOk": true,
@@ -50,7 +50,7 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-05-08T14:20:26.000Z",
-      "lastFetchOk": "2026-07-21T17:03:52.300Z"
+      "lastFetchOk": "2026-07-21T18:42:32.555Z"
     },
     "L'Exemplaire": {
       "fetchOk": true,
@@ -58,7 +58,7 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-05-15T16:31:24.000Z",
-      "lastFetchOk": "2026-07-21T17:03:53.488Z"
+      "lastFetchOk": "2026-07-21T18:42:33.720Z"
     },
     "Le Collectif": {
       "fetchOk": true,
@@ -66,7 +66,7 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-07-21T00:54:50.000Z",
-      "lastFetchOk": "2026-07-21T17:03:54.711Z"
+      "lastFetchOk": "2026-07-21T18:42:34.780Z"
     },
     "Exil": {
       "fetchOk": true,
@@ -74,7 +74,7 @@
       "articleCount": 7,
       "freshArticleCount": 7,
       "lastArticle": "2026-04-18T22:22:07.000Z",
-      "lastFetchOk": "2026-07-21T17:03:55.205Z"
+      "lastFetchOk": "2026-07-21T18:42:35.066Z"
     },
     "La Pige": {
       "fetchOk": true,
@@ -82,7 +82,7 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-06-22T14:36:10.000Z",
-      "lastFetchOk": "2026-07-21T17:03:55.953Z"
+      "lastFetchOk": "2026-07-21T18:42:35.703Z"
     },
     "Le Polyscope": {
       "fetchOk": true,
@@ -90,7 +90,7 @@
       "articleCount": 13,
       "freshArticleCount": 13,
       "lastArticle": "2026-02-25T14:38:32.764Z",
-      "lastFetchOk": "2026-07-21T17:03:57.907Z"
+      "lastFetchOk": "2026-07-21T18:42:37.782Z"
     },
     "The Tribune": {
       "fetchOk": true,
@@ -98,7 +98,7 @@
       "articleCount": 20,
       "freshArticleCount": 20,
       "lastArticle": "2026-07-21T13:21:49.000Z",
-      "lastFetchOk": "2026-07-21T17:03:58.098Z"
+      "lastFetchOk": "2026-07-21T18:42:37.960Z"
     },
     "The Campus": {
       "fetchOk": true,
@@ -106,7 +106,7 @@
       "articleCount": 20,
       "freshArticleCount": 20,
       "lastArticle": "2026-04-06T16:03:16.000Z",
-      "lastFetchOk": "2026-07-21T17:03:58.487Z"
+      "lastFetchOk": "2026-07-21T18:42:38.196Z"
     },
     "The Plant": {
       "fetchOk": true,
@@ -114,7 +114,7 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-05-11T20:44:08.000Z",
-      "lastFetchOk": "2026-07-21T17:03:58.915Z"
+      "lastFetchOk": "2026-07-21T18:42:38.515Z"
     }
   },
   "items": [
@@ -131,15 +131,14 @@
       "excerpt": "On July 2, Folarin Balogun , star forward for the United States Men’s National Team ( USMNT ), received a straight red card in the 64th minute of the USA vs. Bosnia and Herzegovina Round of 32 match in the Fédération Internationale de Football Association ( FIFA ) World Cup 2026",
       "image": "https://www.thetribune.ca/wp-content/uploads/2026/07/Screen-Shot-2026-07-21-at-9.14.03-AM.png",
       "authorCheckedAt": "2026-07-21T14:27:13.568Z",
-      "leadImageReady": true,
-      "leadExcerpt": "Although FIFA insists the Balogun decision is in line with FDC protocol, FIFA has not postponed a World Cup red card suspension since Manoel Francisco dos Santos—famously known as Garrincha —earned a red card in 1962 . This was another incident where extensive lobbying by the politically powerful enabled a beloved, penalized player to compete.",
       "sourceImageCredit": "Photo credit: The Tribune",
-      "sourceImageCreator": "",
       "sourceImageCreditUrl": "https://www.thetribune.ca/sports/the-balogun-scandal-is-just-the-latest-instance-of-fifas-political-pandering-21072026/?utm_source=rss&utm_medium=rss&utm_campaign=the-balogun-scandal-is-just-the-latest-instance-of-fifas-political-pandering-21072026",
       "sourceImageCreditFrom": "media",
       "sourceImageCreditCited": false,
       "sourceImageCreditImageKey": "screen-shot-2026-07-21-at-9.14.03-am.png",
-      "sourceImageCreditRev": 9
+      "sourceImageCreditRev": 9,
+      "leadImageReady": true,
+      "leadExcerpt": "Although FIFA insists the Balogun decision is in line with FDC protocol, FIFA has not postponed a World Cup red card suspension since Manoel Francisco dos Santos—famously known as Garrincha —earned a red card in 1962 . This was another incident where extensive lobbying by the politically powerful enabled a beloved, penalized player to compete."
     },
     {
       "source": "Le Collectif",
@@ -427,13 +426,13 @@
       "image": "",
       "authorCheckedAt": "2026-07-21T03:50:41.883Z",
       "leadImageReady": false,
-      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/6/62/Roddick_Gates_closed%2C_McGill_University%2C_July_17%2C_2024.jpg",
-      "imageTitle": "Roddick Gates closed, McGill University, July 17, 2024",
-      "imageCredit": "Photo : Gen. Quon / CC BY-SA 4.0 · Wikimedia Commons",
-      "imageCreator": "Gen. Quon",
-      "imageLicense": "CC BY-SA 4.0",
-      "imageProvider": "campus-bank",
-      "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Roddick_Gates_closed,_McGill_University,_July_17,_2024.jpg",
+      "stockImage": "https://live.staticflickr.com/917/28627096297_a3e0756d47_b.jpg",
+      "imageTitle": "Cruel Summer (Explore)",
+      "imageCredit": "Photo : sjpowermac / CC0 · Openverse",
+      "imageCreator": "sjpowermac",
+      "imageLicense": "cc0",
+      "imageProvider": "openverse",
+      "imageSourceUrl": "https://www.flickr.com/photos/41890311@N06/28627096297",
       "leadExcerpt": "“20 degrees Celsius,” my weather app beams. My eyebrows knit with confusion. Twenty degrees? I opt to forgo my jacket, and, if I’m feeling bold, no sweater either. It’s the first truly warm evening in Montreal, and as the city defrosts, everyone is spilling onto sidewalks and terrasses. Women are wearing tiny dresses, and men have started to write poetry. The whole city radiates optimism, as if Ch"
     },
     {
@@ -457,7 +456,8 @@
       "imageLicense": "CC BY-SA 3.0",
       "imageProvider": "campus-bank",
       "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:2135-2149_Mackay_Street,_Montreal.JPG",
-      "leadExcerpt": "Elbakaye added that she has been attempting to contact Ellis for over three months, but he has not responded. She also explained that she is working on a training guide for the next CEO alongside the council's administrative coordinator."
+      "leadExcerpt": "Elbakaye added that she has been attempting to contact Ellis for over three months, but he has not responded. She also explained that she is working on a training guide for the next CEO alongside the council's administrative coordinator.",
+      "_campusBank": true
     },
     {
       "source": "The McGill Daily",
@@ -1377,13 +1377,13 @@
       "sourceImageCreditImageKey": "image-1-1.jpeg",
       "sourceImageCreditRev": 9,
       "leadImageReady": false,
-      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/4/43/Marine_Stage_at_Summer_Sonic_Festival.jpg",
-      "imageTitle": "File:Marine Stage at Summer Sonic Festival.jpg",
-      "imageCredit": "Photo : LuxTonnerre / CC BY 2.0 · Wikimedia Commons",
-      "imageCreator": "LuxTonnerre",
-      "imageLicense": "CC BY 2.0",
-      "imageProvider": "wikimedia",
-      "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Marine_Stage_at_Summer_Sonic_Festival.jpg"
+      "stockImage": "https://live.staticflickr.com/5328/9532016692_bcc98c9af9_b.jpg",
+      "imageTitle": "MegaHouse Festival Summer 2013",
+      "imageCredit": "Photo : othree / CC BY · Openverse",
+      "imageCreator": "othree",
+      "imageLicense": "by",
+      "imageProvider": "openverse",
+      "imageSourceUrl": "https://www.flickr.com/photos/12452841@N00/9532016692"
     },
     {
       "source": "The Plant",
@@ -2230,13 +2230,13 @@
       "sourceImageCreditImageKey": "img_0291-2.jpg",
       "sourceImageCreditRev": 4,
       "leadImageReady": false,
-      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/e/e8/Komodo_dragon_%28Varanus_komodoensis%29.jpg",
-      "imageTitle": "File:Komodo dragon (Varanus komodoensis).jpg",
-      "imageCredit": "Photo : Charles J. Sharp / CC BY-SA 4.0 · Wikimedia Commons",
-      "imageCreator": "Charles J. Sharp",
-      "imageLicense": "CC BY-SA 4.0",
-      "imageProvider": "wikimedia",
-      "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Komodo_dragon_(Varanus_komodoensis).jpg"
+      "stockImage": "https://live.staticflickr.com/5565/14703903977_00685f6ee5_b.jpg",
+      "imageTitle": "Dragon",
+      "imageCredit": "Photo : Artur Rydzewski / CC BY-SA · Openverse",
+      "imageCreator": "Artur Rydzewski",
+      "imageLicense": "by-sa",
+      "imageProvider": "openverse",
+      "imageSourceUrl": "https://www.flickr.com/photos/119200904@N07/14703903977"
     },
     {
       "source": "The Link",
@@ -2885,13 +2885,13 @@
       "sourceImageCreditImageKey": "opinions_1_step-outside_cred-piper-howell.jpg",
       "sourceImageCreditRev": 9,
       "leadImageReady": false,
-      "stockImage": "https://live.staticflickr.com/7726/26613564544_14e83b035d_b.jpg",
-      "imageTitle": "Small 800px Amanda Zarna Jeff and Kanit at Break Free PNW 2016 Photo taken by Les Berenson 13217622_10153694166782921_78861309285289138_o",
-      "imageCredit": "Photo : Backbone Campaign / CC BY · Openverse",
-      "imageCreator": "Backbone Campaign",
-      "imageLicense": "by",
-      "imageProvider": "openverse",
-      "imageSourceUrl": "https://www.flickr.com/photos/33000102@N03/26613564544"
+      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/f/fc/GH_Step_outside_Grayson_Highlands_State_Park_Virginia_%2816243872530%29.jpg",
+      "imageTitle": "File:GH Step outside Grayson Highlands State Park Virginia (16243872530).jpg",
+      "imageCredit": "Photo : Virginia State Parks / CC BY 2.0 · Wikimedia Commons",
+      "imageCreator": "Virginia State Parks",
+      "imageLicense": "CC BY 2.0",
+      "imageProvider": "wikimedia",
+      "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:GH_Step_outside_Grayson_Highlands_State_Park_Virginia_(16243872530).jpg"
     },
     {
       "source": "The Campus",
@@ -2936,13 +2936,13 @@
       "sourceImageCreditImageKey": "opinions_3_graduationcatchingup_credlatoyasimms.png",
       "sourceImageCreditRev": 9,
       "leadImageReady": false,
-      "stockImage": "https://live.staticflickr.com/158/366393127_ae569532a7_b.jpg",
-      "imageTitle": "saturated writing",
-      "imageCredit": "Photo : tnarik / CC BY-SA · Openverse",
-      "imageCreator": "tnarik",
-      "imageLicense": "by-sa",
-      "imageProvider": "openverse",
-      "imageSourceUrl": "https://www.flickr.com/photos/80075387@N00/366393127"
+      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/a/aa/When_Scars_tell_you_a_Story.jpg",
+      "imageTitle": "File:When Scars tell you a Story.jpg",
+      "imageCredit": "Photo : Hawinprinto / CC BY-SA 4.0 · Wikimedia Commons",
+      "imageCreator": "Hawinprinto",
+      "imageLicense": "CC BY-SA 4.0",
+      "imageProvider": "wikimedia",
+      "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:When_Scars_tell_you_a_Story.jpg"
     },
     {
       "source": "The Campus",
@@ -3346,29 +3346,6 @@
       "region": "Montréal",
       "type": "universite",
       "lang": "fr",
-      "title": "Le retard et les bienfaits du temps long",
-      "link": "https://www.delitfrancais.com/2026/03/25/le-retard-et-les-bienfaits-du-temps-long/",
-      "author": "Dalia Djazouli",
-      "date": "2026-03-25T07:00:00.000Z",
-      "excerpt": "Imposer sa propre subjectivité temporelle.",
-      "image": "https://www.delitfrancais.com/wp-content/uploads/2026/03/retard-1-scaled.jpeg",
-      "featured": true,
-      "_pageAuthor": "Dalia Djazouli",
-      "sourceImageCredit": "Photo : Félix Fournier",
-      "sourceImageCreator": "Félix Fournier",
-      "sourceImageCreditUrl": "https://www.delitfrancais.com/2026/03/25/le-retard-et-les-bienfaits-du-temps-long/",
-      "sourceImageCreditFrom": "article",
-      "sourceImageCreditCited": true,
-      "sourceImageCreditImageKey": "retard-1.jpeg",
-      "leadImageReady": true,
-      "leadExcerpt": "L’imposition de la ponctualité comme norme suprême ne se cantonne pas à notre journal étudiant : elle est propre à nos sociétés industrialisées, dont la conception du temps est particulièrement rigoureuse et utilitariste. La temporalité est perçue comme un objet tangible, que l’on peut et doit rentabiliser autant que possible. Les journées sont compartimentées, et chaque heure doit être mise à profit."
-    },
-    {
-      "source": "Le Délit",
-      "institution": "Université McGill",
-      "region": "Montréal",
-      "type": "universite",
-      "lang": "fr",
       "title": "Rassembler pour mieux diviser",
       "link": "https://www.delitfrancais.com/2026/03/25/rassembler-pour-mieux-diviser/",
       "author": "Catherine Brunet Rodriguez",
@@ -3481,6 +3458,29 @@
       "sourceImageCreditRev": 9
     },
     {
+      "source": "Le Délit",
+      "institution": "Université McGill",
+      "region": "Montréal",
+      "type": "universite",
+      "lang": "fr",
+      "title": "Le retard et les bienfaits du temps long",
+      "link": "https://www.delitfrancais.com/2026/03/25/le-retard-et-les-bienfaits-du-temps-long/",
+      "author": "Dalia Djazouli",
+      "date": "2026-03-25T07:00:00.000Z",
+      "excerpt": "Imposer sa propre subjectivité temporelle.",
+      "image": "https://www.delitfrancais.com/wp-content/uploads/2026/03/retard-1-scaled.jpeg",
+      "featured": true,
+      "_pageAuthor": "Dalia Djazouli",
+      "sourceImageCredit": "Photo : Félix Fournier",
+      "sourceImageCreator": "Félix Fournier",
+      "sourceImageCreditUrl": "https://www.delitfrancais.com/2026/03/25/le-retard-et-les-bienfaits-du-temps-long/",
+      "sourceImageCreditFrom": "article",
+      "sourceImageCreditCited": true,
+      "sourceImageCreditImageKey": "retard-1.jpeg",
+      "leadImageReady": true,
+      "leadExcerpt": "L’imposition de la ponctualité comme norme suprême ne se cantonne pas à notre journal étudiant : elle est propre à nos sociétés industrialisées, dont la conception du temps est particulièrement rigoureuse et utilitariste. La temporalité est perçue comme un objet tangible, que l’on peut et doit rentabiliser autant que possible. Les journées sont compartimentées, et chaque heure doit être mise à profit."
+    },
+    {
       "source": "The McGill Daily",
       "institution": "McGill University",
       "region": "Montréal",
@@ -3494,14 +3494,13 @@
       "image": "",
       "authorCheckedAt": "2026-07-21T03:51:44.102Z",
       "leadImageReady": false,
-      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/8/8b/McGill_University%2C_Winter.jpg",
-      "imageTitle": "McGill University, Winter",
-      "imageCredit": "Photo : Abdallahh / CC BY-SA 3.0 · Wikimedia Commons",
-      "imageCreator": "Abdallahh",
-      "imageLicense": "CC BY-SA 3.0",
-      "imageProvider": "campus-bank",
-      "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:McGill_University,_Winter.jpg",
-      "_campusBank": true
+      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/e/e2/McGill_University_downtown_campus_12.JPG",
+      "imageTitle": "McGill University downtown campus 12",
+      "imageCredit": "Photo : Jeangagnon / CC BY-SA · Openverse",
+      "imageCreator": "Jeangagnon",
+      "imageLicense": "by-sa",
+      "imageProvider": "openverse",
+      "imageSourceUrl": "https://commons.wikimedia.org/w/index.php?curid=29711741"
     },
     {
       "source": "The McGill Daily",
@@ -3561,13 +3560,13 @@
       "image": "",
       "authorCheckedAt": "2026-07-21T03:51:45.023Z",
       "leadImageReady": false,
-      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/e/e5/Masters_Tournament_-_2013_-_Dogwood_Cabin%2C_August_National_Golf_Club_%288689651576%29.jpg",
-      "imageTitle": "File:Masters Tournament - 2013 - Dogwood Cabin, August National Golf Club (8689651576).jpg",
-      "imageCredit": "Photo : Dan Perry from Atlanta, USA / CC BY 2.0 · Wikimedia Commons",
-      "imageCreator": "Dan Perry from Atlanta, USA",
-      "imageLicense": "CC BY 2.0",
-      "imageProvider": "wikimedia",
-      "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Masters_Tournament_-_2013_-_Dogwood_Cabin,_August_National_Golf_Club_(8689651576).jpg"
+      "stockImage": "https://live.staticflickr.com/24/99099986_4195128a59_b.jpg",
+      "imageTitle": "The Donald & Mark Wahlberg",
+      "imageCredit": "Photo : jurvetson / CC BY · Openverse",
+      "imageCreator": "jurvetson",
+      "imageLicense": "by",
+      "imageProvider": "openverse",
+      "imageSourceUrl": "https://www.flickr.com/photos/44124348109@N01/99099986"
     },
     {
       "source": "The Campus",
@@ -3700,13 +3699,13 @@
       "image": "",
       "authorCheckedAt": "2026-07-21T03:51:46.844Z",
       "leadImageReady": false,
-      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/b/b9/View_from_McGill_University_downtown_campus_01.JPG",
-      "imageTitle": "View from McGill University downtown campus 01",
+      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/c/c0/McGill_University_downtown_campus_31.JPG",
+      "imageTitle": "McGill University downtown campus 31",
       "imageCredit": "Photo : Jeangagnon / CC BY-SA 3.0 · Wikimedia Commons",
       "imageCreator": "Jeangagnon",
       "imageLicense": "CC BY-SA 3.0",
       "imageProvider": "campus-bank",
-      "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:View_from_McGill_University_downtown_campus_01.JPG",
+      "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:McGill_University_downtown_campus_31.JPG",
       "_campusBank": true
     },
     {
