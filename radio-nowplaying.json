@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-21T08:47:26.908Z",
+  "updatedAt": "2026-07-21T10:03:32.109Z",
   "timezone": "America/Toronto",
   "stations": {
     "chyz": {
@@ -21,27 +21,27 @@
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-21T08:47:07.176Z"
+      "checkedAt": "2026-07-21T10:03:11.131Z"
     },
     "cism": {
       "id": "cism",
       "name": "CISM 89,3",
       "current": {
-        "title": "L'Alter Ego (reprise)",
-        "source": "api-live",
-        "start": "00:00",
-        "url": "https://stream03.ustream.ca/cism128.mp3",
-        "slug": "lalter-ego"
-      },
-      "next": {
         "title": "Mix Franco",
         "source": "api-live",
         "start": "02:00",
-        "url": "https://podcast.cism893.ca/podcast/download_mp3/364736.mp3",
+        "url": "https://stream03.ustream.ca/cism128.mp3",
         "slug": "mix-franco"
       },
+      "next": {
+        "title": "À l'horizon",
+        "source": "api-live",
+        "start": "03:00",
+        "url": "https://podcast.cism893.ca/podcast/download_mp3/364352.mp3",
+        "slug": "a-lhorizon"
+      },
       "track": "",
-      "showTitle": "L'Alter Ego (reprise)",
+      "showTitle": "Mix Franco",
       "host": "",
       "source": "api-live",
       "sources": [
@@ -51,25 +51,25 @@
         "type": "cism-v1",
         "url": "https://admin.cism893.ca/api/v1/live"
       },
-      "checkedAt": "2026-07-21T08:47:08.811Z"
+      "checkedAt": "2026-07-21T10:03:12.774Z"
     },
     "ckut": {
       "id": "ckut",
       "name": "CKUT 90,3",
       "current": {
-        "title": "Attik / Show For Children",
-        "source": "api-live",
-        "start": "03:00",
-        "end": "05:00"
-      },
-      "next": {
         "title": "The Beat Power Hour",
         "source": "api-live",
         "start": "05:00",
         "end": "07:00"
       },
+      "next": {
+        "title": "Tuesday Morning After Pt1",
+        "source": "api-live",
+        "start": "07:00",
+        "end": "08:00"
+      },
       "track": "",
-      "showTitle": "Attik / Show For Children",
+      "showTitle": "The Beat Power Hour",
       "host": "",
       "source": "api-live",
       "sources": [
@@ -77,34 +77,34 @@
         "stream"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-21T08:47:11.087Z"
+      "checkedAt": "2026-07-21T10:03:16.081Z"
     },
     "cjlo": {
       "id": "cjlo",
       "name": "CJLO 1690AM",
       "current": {
-        "title": "CJLO Late Night",
-        "source": "schedule",
-        "start": "01:00",
-        "end": "06:00",
-        "url": "http://www.cjlo.com/shows/cjlo-late-night"
-      },
-      "next": {
         "title": "Hip's Time to Wake Hop",
         "source": "schedule",
         "start": "06:00",
         "end": "08:00",
         "url": "http://www.cjlo.com/shows/hips-time-to-wake-hop"
       },
+      "next": {
+        "title": "Trawling the Megahertz",
+        "source": "schedule",
+        "start": "08:00",
+        "end": "09:00",
+        "url": "http://www.cjlo.com/shows/trawling-the-megahertz"
+      },
       "track": "",
-      "showTitle": "CJLO Late Night",
+      "showTitle": "Hip's Time to Wake Hop",
       "host": "",
       "source": "schedule",
       "sources": [
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-21T08:47:24.187Z"
+      "checkedAt": "2026-07-21T10:03:29.302Z"
     },
     "cfak": {
       "id": "cfak",
@@ -129,28 +129,28 @@
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-21T08:47:24.650Z"
+      "checkedAt": "2026-07-21T10:03:29.793Z"
     },
     "choq": {
       "id": "choq",
       "name": "CHOQ.ca",
       "current": {
-        "title": "crystalize",
+        "title": "Vagues",
         "source": "api-live",
-        "host": "Kelela",
+        "host": "Sara Sue Vallee",
         "url": "https://www.choq.ca/assets/playlist/palmares-site-web.jpg"
       },
       "next": null,
-      "track": "Kelela - crystalize",
-      "showTitle": "crystalize",
-      "host": "Kelela",
+      "track": "Sara Sue Vallee - Vagues",
+      "showTitle": "Vagues",
+      "host": "Sara Sue Vallee",
       "source": "api-live",
       "sources": [
         "api-live",
         "stream"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-21T08:47:26.558Z"
+      "checkedAt": "2026-07-21T10:03:31.758Z"
     }
   }
 }
