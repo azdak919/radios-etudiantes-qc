@@ -1,17 +1,11 @@
 {
-  "updatedAt": "2026-07-21T12:09:26.195Z",
+  "updatedAt": "2026-07-21T14:35:49.347Z",
   "timezone": "America/Toronto",
   "stations": {
     "chyz": {
       "id": "chyz",
       "name": "CHYZ 94,3",
-      "current": {
-        "title": "Mardi Champ Gauche",
-        "source": "schedule",
-        "start": "08:00",
-        "end": "10:00",
-        "url": "https://chyz.ca/emission/mardi-champ-gauche-playlist-du-matin/"
-      },
+      "current": null,
       "next": {
         "title": "Chéri.e, j’arrive!",
         "source": "schedule",
@@ -20,34 +14,34 @@
         "url": "https://chyz.ca/emission/cheri-e-jarrive/"
       },
       "track": "",
-      "showTitle": "Mardi Champ Gauche",
+      "showTitle": "",
       "host": "",
       "source": "schedule",
       "sources": [
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-21T12:09:06.170Z"
+      "checkedAt": "2026-07-21T14:35:27.466Z"
     },
     "cism": {
       "id": "cism",
       "name": "CISM 89,3",
       "current": {
-        "title": "À l'horizon",
-        "source": "api-live",
-        "start": "03:00",
-        "url": "https://stream03.ustream.ca/cism128.mp3",
-        "slug": "a-lhorizon"
-      },
-      "next": {
         "title": "Le Séismix",
         "source": "api-live",
         "start": "05:00",
-        "url": "https://podcast.cism893.ca/podcast/download_mp3/364750.mp3",
+        "url": "https://stream03.ustream.ca/cism128.mp3",
         "slug": "le-seismix"
       },
+      "next": {
+        "title": "Câlin collectif",
+        "source": "api-live",
+        "start": "07:00",
+        "url": "https://podcast.cism893.ca/podcast/download_mp3/364367.mp3",
+        "slug": "calins-collectifs"
+      },
       "track": "",
-      "showTitle": "À l'horizon",
+      "showTitle": "Le Séismix",
       "host": "",
       "source": "api-live",
       "sources": [
@@ -57,25 +51,25 @@
         "type": "cism-v1",
         "url": "https://admin.cism893.ca/api/v1/live"
       },
-      "checkedAt": "2026-07-21T12:09:07.912Z"
+      "checkedAt": "2026-07-21T14:35:29.500Z"
     },
     "ckut": {
       "id": "ckut",
       "name": "CKUT 90,3",
       "current": {
-        "title": "Tuesday Morning After Pt2",
-        "source": "api-live",
-        "start": "08:00",
-        "end": "09:00"
-      },
-      "next": {
         "title": "Basa Basa",
         "source": "api-live",
         "start": "09:00",
         "end": "11:00"
       },
+      "next": {
+        "title": "Ecolibrium/Environment in Canada",
+        "source": "api-live",
+        "start": "11:00",
+        "end": "12:00"
+      },
       "track": "",
-      "showTitle": "Tuesday Morning After Pt2",
+      "showTitle": "Basa Basa",
       "host": "",
       "source": "api-live",
       "sources": [
@@ -83,34 +77,34 @@
         "stream"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-21T12:09:10.148Z"
+      "checkedAt": "2026-07-21T14:35:32.467Z"
     },
     "cjlo": {
       "id": "cjlo",
       "name": "CJLO 1690AM",
       "current": {
-        "title": "Trawling the Megahertz",
+        "title": "Democracy Now",
         "source": "schedule",
-        "start": "08:00",
-        "end": "09:00",
-        "url": "http://www.cjlo.com/shows/trawling-the-megahertz"
+        "start": "10:00",
+        "end": "11:00",
+        "url": "http://www.cjlo.com/shows/democracy-now"
       },
       "next": {
-        "title": "At The Movies",
+        "title": "Mirror Journal",
         "source": "schedule",
-        "start": "09:00",
-        "end": "10:00",
-        "url": "http://www.cjlo.com/shows/at-the-movies"
+        "start": "11:00",
+        "end": "12:00",
+        "url": "http://www.cjlo.com/shows/mirror-journal"
       },
       "track": "",
-      "showTitle": "Trawling the Megahertz",
+      "showTitle": "Democracy Now",
       "host": "",
       "source": "schedule",
       "sources": [
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-21T12:09:23.524Z"
+      "checkedAt": "2026-07-21T14:35:46.245Z"
     },
     "cfak": {
       "id": "cfak",
@@ -135,27 +129,27 @@
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-21T12:09:24.425Z"
+      "checkedAt": "2026-07-21T14:35:47.305Z"
     },
     "choq": {
       "id": "choq",
       "name": "CHOQ.ca",
       "current": {
-        "title": "DOIT4ME",
+        "title": "Hochelagurl",
         "source": "api-live",
-        "host": "Tiffany Day"
+        "host": "Calamine"
       },
       "next": null,
-      "track": "Tiffany Day - DOIT4ME",
-      "showTitle": "DOIT4ME",
-      "host": "Tiffany Day",
+      "track": "Calamine - Hochelagurl",
+      "showTitle": "Hochelagurl",
+      "host": "Calamine",
       "source": "api-live",
       "sources": [
         "api-live",
         "stream"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-21T12:09:25.845Z"
+      "checkedAt": "2026-07-21T14:35:48.997Z"
     }
   }
 }
