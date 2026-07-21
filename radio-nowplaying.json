@@ -1,17 +1,11 @@
 {
-  "updatedAt": "2026-07-21T00:59:30.707Z",
+  "updatedAt": "2026-07-21T04:22:47.309Z",
   "timezone": "America/Toronto",
   "stations": {
     "chyz": {
       "id": "chyz",
       "name": "CHYZ 94,3",
-      "current": {
-        "title": "La Voie des Droits",
-        "source": "schedule",
-        "start": "20:30",
-        "end": "21:30",
-        "url": "https://chyz.ca/emission/la-voie-des-droits/"
-      },
+      "current": null,
       "next": {
         "title": "Mardi Champ Gauche",
         "source": "schedule",
@@ -20,34 +14,34 @@
         "url": "https://chyz.ca/emission/mardi-champ-gauche-playlist-du-matin/"
       },
       "track": "",
-      "showTitle": "La Voie des Droits",
+      "showTitle": "",
       "host": "",
       "source": "schedule",
       "sources": [
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-21T00:59:08.013Z"
+      "checkedAt": "2026-07-21T04:22:26.713Z"
     },
     "cism": {
       "id": "cism",
       "name": "CISM 89,3",
       "current": {
-        "title": "Les garçons pleurent aussi",
+        "title": "Rock à la casbah",
         "source": "api-live",
-        "start": "15:00",
+        "start": "20:00",
         "url": "https://stream03.ustream.ca/cism128.mp3",
-        "slug": "les-garcons-pleurent-aussi"
+        "slug": "rock-a-la-casbah"
       },
       "next": {
-        "title": "Les criquets crinqués",
+        "title": "Toute est dans toute (reprise)",
         "source": "api-live",
-        "start": "17:00",
-        "url": "https://podcast.cism893.ca/podcast/download_mp3/364333.mp3",
-        "slug": "les-criquets-crinques"
+        "start": "21:00",
+        "url": "https://podcast.cism893.ca/podcast/download_mp3/364574.mp3",
+        "slug": "tout-est-dans-toute"
       },
       "track": "",
-      "showTitle": "Les garçons pleurent aussi",
+      "showTitle": "Rock à la casbah",
       "host": "",
       "source": "api-live",
       "sources": [
@@ -57,25 +51,25 @@
         "type": "cism-v1",
         "url": "https://admin.cism893.ca/api/v1/live"
       },
-      "checkedAt": "2026-07-21T00:59:10.129Z"
+      "checkedAt": "2026-07-21T04:22:28.387Z"
     },
     "ckut": {
       "id": "ckut",
       "name": "CKUT 90,3",
       "current": {
-        "title": "Underground Sounds",
+        "title": "Harmony Express",
         "source": "api-live",
-        "start": "20:00",
-        "end": "22:00"
+        "start": "00:00",
+        "end": "02:00"
       },
       "next": {
-        "title": "Drastic Plastic",
+        "title": "Pirate et Libres",
         "source": "api-live",
-        "start": "22:00",
-        "end": "23:00"
+        "start": "02:00",
+        "end": "03:00"
       },
       "track": "",
-      "showTitle": "Underground Sounds",
+      "showTitle": "Harmony Express",
       "host": "",
       "source": "api-live",
       "sources": [
@@ -83,79 +77,80 @@
         "stream"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-21T00:59:12.960Z"
+      "checkedAt": "2026-07-21T04:22:30.780Z"
     },
     "cjlo": {
       "id": "cjlo",
       "name": "CJLO 1690AM",
       "current": {
-        "title": "In The Garage",
+        "title": "Floydian Slip",
         "source": "schedule",
-        "start": "20:00",
-        "end": "21:00",
-        "url": "http://www.cjlo.com/shows/in-the-garage"
+        "start": "00:00",
+        "end": "01:00",
+        "url": "http://www.cjlo.com/shows/floydian-slip"
       },
       "next": {
-        "title": "LEKTOR DECODER",
+        "title": "CJLO Late Night",
         "source": "schedule",
-        "start": "21:00",
-        "end": "22:00",
-        "url": "http://www.cjlo.com/shows/lektor-decoder"
+        "start": "01:00",
+        "end": "06:00",
+        "url": "http://www.cjlo.com/shows/cjlo-late-night"
       },
       "track": "",
-      "showTitle": "In The Garage",
+      "showTitle": "Floydian Slip",
       "host": "",
       "source": "schedule",
       "sources": [
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-21T00:59:27.272Z"
+      "checkedAt": "2026-07-21T04:22:44.192Z"
     },
     "cfak": {
       "id": "cfak",
       "name": "CFAK 88,3",
       "current": {
-        "title": "Le terrain sportif",
-        "source": "schedule",
-        "start": "20:00",
-        "end": "00:01"
-      },
-      "next": {
         "title": "Les nuits CFAK",
         "source": "schedule",
         "start": "00:00",
         "end": "07:00"
       },
+      "next": {
+        "title": "Folkswagen",
+        "source": "schedule",
+        "start": "07:00",
+        "end": "08:00"
+      },
       "track": "",
-      "showTitle": "Le terrain sportif",
+      "showTitle": "Les nuits CFAK",
       "host": "",
       "source": "schedule",
       "sources": [
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-21T00:59:27.738Z"
+      "checkedAt": "2026-07-21T04:22:44.833Z"
     },
     "choq": {
       "id": "choq",
       "name": "CHOQ.ca",
       "current": {
-        "title": "Undreaming",
+        "title": "Spectral Insomnia",
         "source": "api-live",
-        "host": "la luna"
+        "host": "Pure Wrath",
+        "url": "https://www.choq.ca/assets/playlist/les-nuits-brutales.png"
       },
       "next": null,
-      "track": "la luna - Undreaming",
-      "showTitle": "Undreaming",
-      "host": "la luna",
+      "track": "Pure Wrath - Spectral Insomnia",
+      "showTitle": "Spectral Insomnia",
+      "host": "Pure Wrath",
       "source": "api-live",
       "sources": [
         "api-live",
         "stream"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-21T00:59:30.356Z"
+      "checkedAt": "2026-07-21T04:22:46.958Z"
     }
   }
 }
