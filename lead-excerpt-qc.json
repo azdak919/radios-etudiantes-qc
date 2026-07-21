@@ -1,23 +1,14 @@
 {
-  "updated": "2026-07-21T06:44:32.251Z",
+  "updated": "2026-07-21T09:42:56.893Z",
   "total": 185,
   "pool": 58,
-  "incomplete": 3,
+  "incomplete": 2,
   "withLeadExcerpt": 73,
-  "candidates": 3,
-  "enriched": 1,
+  "candidates": 2,
+  "enriched": 0,
   "failed": 0,
   "ok": true,
   "samples": [
-    {
-      "title": "Les femmes MAGA au service du patriarcat",
-      "link": "https://www.delitfrancais.com/2026/03/18/les-femmes-maga-au-service-du-patriarcat/",
-      "ok": true,
-      "score": 100,
-      "chars": 393,
-      "sample": "Une des capacités distinctives de ce système patriarcal est son habileté remarquable à se perpétuer ",
-      "changed": true
-    },
     {
       "title": "The Cruel Optimism of Summer",
       "link": "https://www.mcgilldaily.com/2026/07/the-cruel-optimism-of-summer/",

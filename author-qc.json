@@ -1,8 +1,8 @@
 {
-  "updated": "2026-07-21T06:44:16.623Z",
+  "updated": "2026-07-21T09:42:55.190Z",
   "total": 185,
   "withAuthor": 185,
-  "mismatches": 5,
+  "mismatches": 4,
   "ok": true,
   "samples": [
     {
@@ -30,14 +30,6 @@
       "reason": "no-author-source"
     },
     {
-      "title": "Les femmes MAGA au service du patriarcat",
-      "link": "https://www.delitfrancais.com/2026/03/18/les-femmes-maga-au-service-du-patriarcat/",
-      "source": "Le Délit",
-      "fieldAuthor": "La rédaction",
-      "canonicalAuthor": "Anonyme",
-      "reason": "page-byline"
-    },
-    {
       "title": "Garda World au CVM (Éditorial)",
       "link": "https://exilecvm.wordpress.com/2026/03/13/manifestation-contre-gardaworld/",
       "source": "Exil",
@@ -46,5 +38,5 @@
       "reason": "no-author-source"
     }
   ],
-  "fixed": 5
+  "fixed": 4
 }
