@@ -1,10 +1,18 @@
 {
-  "updated": "2026-07-21T12:17:04.048Z",
+  "updated": "2026-07-21T14:27:13.859Z",
   "total": 185,
   "withAuthor": 185,
-  "mismatches": 4,
+  "mismatches": 5,
   "ok": true,
   "samples": [
+    {
+      "title": "The Balogun scandal is just the latest instance of FIFA’s political pandering",
+      "link": "https://www.thetribune.ca/sports/the-balogun-scandal-is-just-the-latest-instance-of-fifas-political-pandering-21072026/?utm_source=rss&utm_medium=rss&utm_campaign=the-balogun-scandal-is-just-the-latest-instance-of-fifas-political-pandering-21072026",
+      "source": "The Tribune",
+      "fieldAuthor": "The editorial team",
+      "canonicalAuthor": "Ellen Lurie",
+      "reason": "page-byline"
+    },
     {
       "title": "Letters from the Editors May 2026",
       "link": "https://theplantnews.com/2026/05/11/letters-from-the-editors-may-2026/",
@@ -38,5 +46,5 @@
       "reason": "no-author-source"
     }
   ],
-  "fixed": 4
+  "fixed": 5
 }

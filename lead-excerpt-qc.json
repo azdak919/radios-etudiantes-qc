@@ -1,14 +1,23 @@
 {
-  "updated": "2026-07-21T12:17:06.162Z",
+  "updated": "2026-07-21T14:27:29.291Z",
   "total": 185,
   "pool": 58,
-  "incomplete": 2,
-  "withLeadExcerpt": 73,
-  "candidates": 2,
-  "enriched": 0,
+  "incomplete": 3,
+  "withLeadExcerpt": 74,
+  "candidates": 3,
+  "enriched": 1,
   "failed": 0,
   "ok": true,
   "samples": [
+    {
+      "title": "The Balogun scandal is just the latest instance of FIFA’s political pandering",
+      "link": "https://www.thetribune.ca/sports/the-balogun-scandal-is-just-the-latest-instance-of-fifas-political-pandering-21072026/?utm_source=rss&utm_medium=rss&utm_campaign=the-balogun-scandal-is-just-the-latest-instance-of-fifas-political-pandering-21072026",
+      "ok": true,
+      "score": 96,
+      "chars": 345,
+      "sample": "Although FIFA insists the Balogun decision is in line with FDC protocol, FIFA has not postponed a Wo",
+      "changed": true
+    },
     {
       "title": "The Cruel Optimism of Summer",
       "link": "https://www.mcgilldaily.com/2026/07/the-cruel-optimism-of-summer/",

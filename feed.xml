@@ -9,7 +9,7 @@
     <link>https://azdak919.github.io/le-radar/</link>
     <description>Fil agrégé des journaux étudiants des cégeps et universités du Québec (français et anglais). Titres, brèves, images et liens vers les articles originaux.</description>
     <language>fr-CA</language>
-    <lastBuildDate>Tue, 21 Jul 2026 00:54:50 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 21 Jul 2026 13:21:49 +0000</lastBuildDate>
     <generator>LE RADAR Student Media Aggregator</generator>
     <docs>https://azdak919.github.io/le-radar/feeds.html</docs>
     <copyright>© publications étudiantes sources — fil agrégé par LE RADAR</copyright>
@@ -20,6 +20,22 @@
       <title>Le Radar</title>
       <link>https://azdak919.github.io/le-radar/</link>
     </image>
+    <item>
+      <title>The Balogun scandal is just the latest instance of FIFA’s political pandering</title>
+      <link>https://www.thetribune.ca/sports/the-balogun-scandal-is-just-the-latest-instance-of-fifas-political-pandering-21072026/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=the-balogun-scandal-is-just-the-latest-instance-of-fifas-political-pandering-21072026</link>
+      <guid isPermaLink="true">https://www.thetribune.ca/sports/the-balogun-scandal-is-just-the-latest-instance-of-fifas-political-pandering-21072026/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=the-balogun-scandal-is-just-the-latest-instance-of-fifas-political-pandering-21072026</guid>
+      <pubDate>Tue, 21 Jul 2026 13:21:49 +0000</pubDate>
+      <dc:creator>Ellen Lurie</dc:creator>
+      <source url="https://www.thetribune.ca/">The Tribune</source>
+      <description><![CDATA[The Tribune · Ellen Lurie · Jul 21]]></description>
+      <content:encoded><![CDATA[<p style="margin:0 0 0.75em;font-size:0.9em;color:#555"><strong>The Tribune · Ellen Lurie · Jul 21</strong></p>
+<p style="margin:0 0 0.75em;line-height:1.5">Although FIFA insists the Balogun decision is in line with FDC protocol, FIFA has not postponed a World Cup red card suspension since Manoel Francisco dos Santos—famously known as Garrincha —earned a red card in 1962 . This was another incident where extensive lobbying by the politically powerful enabled a beloved, penalized player to compete.</p>]]></content:encoded>
+      <category>The Tribune</category>
+      <category>McGill</category>
+      <category>Montréal</category>
+      <category>université</category>
+      <category>English</category>
+    </item>
     <item>
       <title>Le scepticisme</title>
       <link>https://lecollectif.ca/edition-papier/le-scepticisme/</link>
@@ -1293,32 +1309,6 @@
       </media:content>
       <media:thumbnail url="https://i0.wp.com/www.exemplaire.com.ulaval.ca/wp-content/uploads/2026/05/SKIBIDI-MINIA-2.png?resize=696%2C392&amp;ssl=1" />
       <enclosure url="https://i0.wp.com/www.exemplaire.com.ulaval.ca/wp-content/uploads/2026/05/SKIBIDI-MINIA-2.png?resize=696%2C392&amp;ssl=1" type="image/png" length="1" />
-    </item>
-    <item>
-      <title>Montréal Mystère : le polar à l’honneur dans un festival bilingue</title>
-      <link>https://quartierlibre.ca/montreal-mystere-festival-bilingue/</link>
-      <guid isPermaLink="true">https://quartierlibre.ca/montreal-mystere-festival-bilingue/</guid>
-      <pubDate>Tue, 12 May 2026 18:39:17 +0000</pubDate>
-      <dc:creator>Carla Roche</dc:creator>
-      <source url="https://quartierlibre.ca/">Quartier Libre</source>
-      <description><![CDATA[Quartier Libre · Carla Roche · 12 mai]]></description>
-      <content:encoded><![CDATA[<p style="margin:0 0 0.75em;font-size:0.9em;color:#555"><strong>Quartier Libre · Carla Roche · 12 mai</strong></p>
-<figure style="margin:0 0 1em">
-<img src="https://quartierlibre.ca/wp-content/uploads/2026/05/21_Montreal-Mystere-1024x768.jpg" alt="Montréal Mystère : le polar à l’honneur dans un festival bilingue" style="max-width:100%;height:auto;display:block;border-radius:4px" />
-<figcaption style="font-size:0.85em;color:#666;margin-top:0.35em">Crédit photo : Quartier Libre</figcaption>
-</figure>
-<p style="margin:0 0 0.75em;line-height:1.5">Les 29 et 30 mai prochains, les adeptes d’ouvrages de suspense, à mystère et d’enquêtes auront rendez-vous au Centre culturel Georges-Vanier pour la troisième édition du festival du livre policier Montréal Mystère , un événement encore jeune, mais déjà bien installé dans le paysage littéraire montréalais.</p>]]></content:encoded>
-      <category>Quartier Libre</category>
-      <category>UdeM</category>
-      <category>Montréal</category>
-      <category>université</category>
-      <category>Français</category>
-      <media:content url="https://quartierlibre.ca/wp-content/uploads/2026/05/21_Montreal-Mystere-1024x768.jpg" medium="image" type="image/jpeg">
-        <media:credit>Crédit photo : Quartier Libre</media:credit>
-        <media:title>Montréal Mystère : le polar à l’honneur dans un festival bilingue</media:title>
-      </media:content>
-      <media:thumbnail url="https://quartierlibre.ca/wp-content/uploads/2026/05/21_Montreal-Mystere-1024x768.jpg" />
-      <enclosure url="https://quartierlibre.ca/wp-content/uploads/2026/05/21_Montreal-Mystere-1024x768.jpg" type="image/jpeg" length="1" />
     </item>
   </channel>
 </rss>

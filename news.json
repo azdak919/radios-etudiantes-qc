@@ -1,6 +1,6 @@
 {
-  "updated": "2026-07-21T12:16:54.883Z",
-  "updatedSlot": null,
+  "updated": "2026-07-21T14:27:03.560Z",
+  "updatedSlot": "2026-07-21T14:00:00.000Z",
   "count": 185,
   "freshnessSessions": 3,
   "sources": {
@@ -10,7 +10,7 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-05-15T16:00:00.000Z",
-      "lastFetchOk": "2026-07-21T12:16:15.601Z"
+      "lastFetchOk": "2026-07-21T14:26:24.079Z"
     },
     "Montréal Campus": {
       "fetchOk": true,
@@ -18,7 +18,7 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-05-09T03:14:30.000Z",
-      "lastFetchOk": "2026-07-21T12:16:17.064Z"
+      "lastFetchOk": "2026-07-21T14:26:25.297Z"
     },
     "Le Délit": {
       "fetchOk": true,
@@ -26,7 +26,7 @@
       "articleCount": 20,
       "freshArticleCount": 20,
       "lastArticle": "2026-03-25T11:00:00.000Z",
-      "lastFetchOk": "2026-07-21T12:16:21.519Z"
+      "lastFetchOk": "2026-07-21T14:26:29.962Z"
     },
     "The McGill Daily": {
       "fetchOk": true,
@@ -34,7 +34,7 @@
       "articleCount": 15,
       "freshArticleCount": 15,
       "lastArticle": "2026-07-06T12:00:00.000Z",
-      "lastFetchOk": "2026-07-21T12:16:22.405Z"
+      "lastFetchOk": "2026-07-21T14:26:30.799Z"
     },
     "The Link": {
       "fetchOk": true,
@@ -42,7 +42,7 @@
       "articleCount": 20,
       "freshArticleCount": 20,
       "lastArticle": "2026-07-08T14:41:00.000Z",
-      "lastFetchOk": "2026-07-21T12:16:23.609Z"
+      "lastFetchOk": "2026-07-21T14:26:32.161Z"
     },
     "Zone Campus": {
       "fetchOk": true,
@@ -50,7 +50,7 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-05-08T14:20:26.000Z",
-      "lastFetchOk": "2026-07-21T12:16:25.044Z"
+      "lastFetchOk": "2026-07-21T14:26:33.702Z"
     },
     "L'Exemplaire": {
       "fetchOk": true,
@@ -58,7 +58,7 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-05-15T16:31:24.000Z",
-      "lastFetchOk": "2026-07-21T12:16:26.264Z"
+      "lastFetchOk": "2026-07-21T14:26:34.998Z"
     },
     "Le Collectif": {
       "fetchOk": true,
@@ -66,7 +66,7 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-07-21T00:54:50.000Z",
-      "lastFetchOk": "2026-07-21T12:16:27.278Z"
+      "lastFetchOk": "2026-07-21T14:26:35.789Z"
     },
     "Exil": {
       "fetchOk": true,
@@ -74,7 +74,7 @@
       "articleCount": 7,
       "freshArticleCount": 7,
       "lastArticle": "2026-04-18T22:22:07.000Z",
-      "lastFetchOk": "2026-07-21T12:16:27.681Z"
+      "lastFetchOk": "2026-07-21T14:26:36.071Z"
     },
     "La Pige": {
       "fetchOk": true,
@@ -82,7 +82,7 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-06-22T14:36:10.000Z",
-      "lastFetchOk": "2026-07-21T12:16:28.591Z"
+      "lastFetchOk": "2026-07-21T14:26:36.924Z"
     },
     "Le Polyscope": {
       "fetchOk": true,
@@ -90,15 +90,15 @@
       "articleCount": 13,
       "freshArticleCount": 13,
       "lastArticle": "2026-02-25T14:38:32.764Z",
-      "lastFetchOk": "2026-07-21T12:16:32.368Z"
+      "lastFetchOk": "2026-07-21T14:26:40.209Z"
     },
     "The Tribune": {
       "fetchOk": true,
       "stale": false,
       "articleCount": 20,
       "freshArticleCount": 20,
-      "lastArticle": "2026-07-20T18:02:11.000Z",
-      "lastFetchOk": "2026-07-21T12:16:32.623Z"
+      "lastArticle": "2026-07-21T13:21:49.000Z",
+      "lastFetchOk": "2026-07-21T14:26:40.504Z"
     },
     "The Campus": {
       "fetchOk": true,
@@ -106,7 +106,7 @@
       "articleCount": 20,
       "freshArticleCount": 20,
       "lastArticle": "2026-04-06T16:03:16.000Z",
-      "lastFetchOk": "2026-07-21T12:16:33.134Z"
+      "lastFetchOk": "2026-07-21T14:26:40.752Z"
     },
     "The Plant": {
       "fetchOk": true,
@@ -114,10 +114,25 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-05-11T20:44:08.000Z",
-      "lastFetchOk": "2026-07-21T12:16:33.433Z"
+      "lastFetchOk": "2026-07-21T14:26:40.938Z"
     }
   },
   "items": [
+    {
+      "source": "The Tribune",
+      "institution": "McGill University",
+      "region": "Montréal",
+      "type": "universite",
+      "lang": "en",
+      "title": "The Balogun scandal is just the latest instance of FIFA’s political pandering",
+      "link": "https://www.thetribune.ca/sports/the-balogun-scandal-is-just-the-latest-instance-of-fifas-political-pandering-21072026/?utm_source=rss&utm_medium=rss&utm_campaign=the-balogun-scandal-is-just-the-latest-instance-of-fifas-political-pandering-21072026",
+      "author": "Ellen Lurie",
+      "date": "2026-07-21T13:21:49.000Z",
+      "excerpt": "On July 2, Folarin Balogun , star forward for the United States Men’s National Team ( USMNT ), received a straight red card in the 64th minute of the USA vs. Bosnia and Herzegovina Round of 32 match in the Fédération Internationale de Football Association ( FIFA ) World Cup 2026",
+      "image": "",
+      "authorCheckedAt": "2026-07-21T14:27:13.568Z",
+      "leadExcerpt": "Although FIFA insists the Balogun decision is in line with FDC protocol, FIFA has not postponed a World Cup red card suspension since Manoel Francisco dos Santos—famously known as Garrincha —earned a red card in 1962 . This was another incident where extensive lobbying by the politically powerful enabled a beloved, penalized player to compete."
+    },
     {
       "source": "Le Collectif",
       "institution": "Université de Sherbrooke",
@@ -2598,27 +2613,6 @@
       "region": "Montréal",
       "type": "universite",
       "lang": "en",
-      "title": "Referendum to boycott Israeli institutions passes with the highest voting turnout in recent LSA history",
-      "link": "https://www.thetribune.ca/news/referendum-to-boycott-israeli-institutions-passes-with-the-highest-voting-turnout-in-recent-lsa-history-07042026/?utm_source=rss&utm_medium=rss&utm_campaign=referendum-to-boycott-israeli-institutions-passes-with-the-highest-voting-turnout-in-recent-lsa-history-07042026",
-      "author": "Amelia H. Clark",
-      "date": "2026-04-07T10:05:00.000Z",
-      "excerpt": "On March 19, voting for the Referendum Regarding the Academic and Cultural Boycott of Israel to Preserve Academic Freedom (PACBI) opened to all members of the Law Students’ Association ( LSA ). The motion, put forward by Law Students for Palestine at McGill ( LS4PM ) and McGill",
-      "image": "https://www.thetribune.ca/wp-content/uploads/2026/04/IMG_2550-scaled.png",
-      "authorCheckedAt": "2026-07-21T03:51:35.936Z",
-      "sourceImageCredit": "Photo credit: The Tribune",
-      "sourceImageCreditUrl": "https://www.thetribune.ca/news/referendum-to-boycott-israeli-institutions-passes-with-the-highest-voting-turnout-in-recent-lsa-history-07042026/?utm_source=rss&utm_medium=rss&utm_campaign=referendum-to-boycott-israeli-institutions-passes-with-the-highest-voting-turnout-in-recent-lsa-history-07042026",
-      "sourceImageCreditFrom": "media",
-      "sourceImageCreditCited": false,
-      "sourceImageCreditImageKey": "img_2550.png",
-      "sourceImageCreditRev": 9,
-      "leadImageReady": true
-    },
-    {
-      "source": "The Tribune",
-      "institution": "McGill University",
-      "region": "Montréal",
-      "type": "universite",
-      "lang": "en",
       "title": "Black Sisterhood at McGill targeted with online racist harassment",
       "link": "https://www.thetribune.ca/news/mcgill-news/black-sisterhood-at-mcgill-targeted-with-online-racist-harassment-07042026/?utm_source=rss&utm_medium=rss&utm_campaign=black-sisterhood-at-mcgill-targeted-with-online-racist-harassment-07042026",
       "author": "Moyọ Alabi and Ellen Lurie",
@@ -2633,6 +2627,27 @@
       "sourceImageCreditCited": true,
       "sourceImageCreditImageKey": "untitled_artwork-149.png",
       "sourceImageCreditRev": 7,
+      "leadImageReady": true
+    },
+    {
+      "source": "The Tribune",
+      "institution": "McGill University",
+      "region": "Montréal",
+      "type": "universite",
+      "lang": "en",
+      "title": "Referendum to boycott Israeli institutions passes with the highest voting turnout in recent LSA history",
+      "link": "https://www.thetribune.ca/news/referendum-to-boycott-israeli-institutions-passes-with-the-highest-voting-turnout-in-recent-lsa-history-07042026/?utm_source=rss&utm_medium=rss&utm_campaign=referendum-to-boycott-israeli-institutions-passes-with-the-highest-voting-turnout-in-recent-lsa-history-07042026",
+      "author": "Amelia H. Clark",
+      "date": "2026-04-07T10:05:00.000Z",
+      "excerpt": "On March 19, voting for the Referendum Regarding the Academic and Cultural Boycott of Israel to Preserve Academic Freedom (PACBI) opened to all members of the Law Students’ Association ( LSA ). The motion, put forward by Law Students for Palestine at McGill ( LS4PM ) and McGill",
+      "image": "https://www.thetribune.ca/wp-content/uploads/2026/04/IMG_2550-scaled.png",
+      "authorCheckedAt": "2026-07-21T03:51:35.936Z",
+      "sourceImageCredit": "Photo credit: The Tribune",
+      "sourceImageCreditUrl": "https://www.thetribune.ca/news/referendum-to-boycott-israeli-institutions-passes-with-the-highest-voting-turnout-in-recent-lsa-history-07042026/?utm_source=rss&utm_medium=rss&utm_campaign=referendum-to-boycott-israeli-institutions-passes-with-the-highest-voting-turnout-in-recent-lsa-history-07042026",
+      "sourceImageCreditFrom": "media",
+      "sourceImageCreditCited": false,
+      "sourceImageCreditImageKey": "img_2550.png",
+      "sourceImageCreditRev": 9,
       "leadImageReady": true
     },
     {
@@ -2674,27 +2689,6 @@
       "sourceImageCreditFrom": "media",
       "sourceImageCreditCited": false,
       "sourceImageCreditImageKey": "scitech1_annaseger.jpg",
-      "sourceImageCreditRev": 9,
-      "leadImageReady": true
-    },
-    {
-      "source": "The Tribune",
-      "institution": "McGill University",
-      "region": "Montréal",
-      "type": "universite",
-      "lang": "en",
-      "title": "McGill investigating antisemitic vandalism in Faculty of Medicine",
-      "link": "https://www.thetribune.ca/news/mcgill-investigating-antisemitic-vandalism-in-faculty-of-medicine-07042026/?utm_source=rss&utm_medium=rss&utm_campaign=mcgill-investigating-antisemitic-vandalism-in-faculty-of-medicine-07042026",
-      "author": "Yusur Al-Sharqi",
-      "date": "2026-04-07T10:05:00.000Z",
-      "excerpt": "Content warning: Antisemitism and violent threats A recent act of antisemitic vandalism at McGill is raising renewed concerns about campus safety for Jewish students. The graffiti, found in a bathroom stall in the Faculty of Medicine, read “Kill all Jews” and “Jews out of McGill",
-      "image": "https://www.thetribune.ca/wp-content/uploads/2026/04/HAWqjMPXsAABxB4.webp",
-      "authorCheckedAt": "2026-07-21T03:51:39.731Z",
-      "sourceImageCredit": "Photo credit: The Tribune",
-      "sourceImageCreditUrl": "https://www.thetribune.ca/news/mcgill-investigating-antisemitic-vandalism-in-faculty-of-medicine-07042026/?utm_source=rss&utm_medium=rss&utm_campaign=mcgill-investigating-antisemitic-vandalism-in-faculty-of-medicine-07042026",
-      "sourceImageCreditFrom": "media",
-      "sourceImageCreditCited": false,
-      "sourceImageCreditImageKey": "hawqjmpxsaabxb4.webp",
       "sourceImageCreditRev": 9,
       "leadImageReady": true
     },
