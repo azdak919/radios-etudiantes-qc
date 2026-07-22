@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-21T23:29:41.260Z",
+  "updatedAt": "2026-07-22T01:01:10.350Z",
   "timezone": "America/Toronto",
   "stations": {
     "chyz": {
@@ -21,27 +21,27 @@
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-21T23:29:20.321Z"
+      "checkedAt": "2026-07-22T01:00:47.644Z"
     },
     "cism": {
       "id": "cism",
       "name": "CISM 89,3",
       "current": {
-        "title": "À la bonne heure",
-        "source": "api-live",
-        "start": "15:00",
-        "url": "https://stream03.ustream.ca/cism128.mp3",
-        "slug": "a-la-bonne-heure"
-      },
-      "next": {
         "title": "London café",
         "source": "api-live",
         "start": "16:00",
-        "url": "https://podcast.cism893.ca/podcast/download_mp3/364396.mp3",
+        "url": "https://stream03.ustream.ca/cism128.mp3",
         "slug": "london-cafe"
       },
+      "next": {
+        "title": "Les Pénibles",
+        "source": "api-live",
+        "start": "17:30",
+        "url": "https://podcast.cism893.ca/podcast/download_mp3/364400.mp3",
+        "slug": "les-penibles"
+      },
       "track": "",
-      "showTitle": "À la bonne heure",
+      "showTitle": "London café",
       "host": "",
       "source": "api-live",
       "sources": [
@@ -51,25 +51,25 @@
         "type": "cism-v1",
         "url": "https://admin.cism893.ca/api/v1/live"
       },
-      "checkedAt": "2026-07-21T23:29:22.440Z"
+      "checkedAt": "2026-07-22T01:00:50.277Z"
     },
     "ckut": {
       "id": "ckut",
       "name": "CKUT 90,3",
       "current": {
-        "title": "Soul Perspectives",
+        "title": "Montreal Sound Ark",
         "source": "api-live",
-        "start": "19:00",
-        "end": "20:30"
+        "start": "21:00",
+        "end": "23:00"
       },
       "next": {
-        "title": "Marca-RO",
+        "title": "Easy Sonic Living/Zoe&#039;s Hour/Dreams And Tales/Internet Lunch Forever",
         "source": "api-live",
-        "start": "20:30",
-        "end": "21:00"
+        "start": "23:00",
+        "end": "00:00"
       },
       "track": "",
-      "showTitle": "Soul Perspectives",
+      "showTitle": "Montreal Sound Ark",
       "host": "",
       "source": "api-live",
       "sources": [
@@ -77,80 +77,79 @@
         "stream"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-21T23:29:25.039Z"
+      "checkedAt": "2026-07-22T01:00:53.342Z"
     },
     "cjlo": {
       "id": "cjlo",
       "name": "CJLO 1690AM",
       "current": {
-        "title": "Ashes to Ashes",
+        "title": "Beatnik Boy: Mixtape",
         "source": "schedule",
-        "start": "19:00",
-        "end": "20:00",
-        "url": "http://www.cjlo.com/shows/ashes-to-ashes"
+        "start": "21:00",
+        "end": "22:00",
+        "url": "http://www.cjlo.com/shows/beatnik-boy-mixtape"
       },
       "next": {
-        "title": "Hittin' All The Bases",
+        "title": "CJLO's Alternative Mega Mix",
         "source": "schedule",
-        "start": "20:00",
-        "end": "21:00",
-        "url": "http://www.cjlo.com/shows/hittin-all-the-bases"
+        "start": "22:00",
+        "end": "23:00",
+        "url": "http://www.cjlo.com/shows/cjlos-alternative-mega-mix"
       },
       "track": "",
-      "showTitle": "Ashes to Ashes",
+      "showTitle": "Beatnik Boy: Mixtape",
       "host": "",
       "source": "schedule",
       "sources": [
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-21T23:29:38.277Z"
+      "checkedAt": "2026-07-22T01:01:07.333Z"
     },
     "cfak": {
       "id": "cfak",
       "name": "CFAK 88,3",
       "current": {
-        "title": "L'Aut'Rock",
-        "source": "schedule",
-        "start": "18:30",
-        "end": "20:00"
-      },
-      "next": {
         "title": "Dichotomie 88.3",
         "source": "schedule",
         "start": "20:00",
         "end": "22:00"
       },
+      "next": {
+        "title": "Mix Franco",
+        "source": "schedule",
+        "start": "22:00",
+        "end": "00:00"
+      },
       "track": "",
-      "showTitle": "L'Aut'Rock",
+      "showTitle": "Dichotomie 88.3",
       "host": "",
       "source": "schedule",
       "sources": [
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-21T23:29:38.866Z"
+      "checkedAt": "2026-07-22T01:01:08.020Z"
     },
     "choq": {
       "id": "choq",
       "name": "CHOQ.ca",
       "current": {
-        "title": "Pieces",
+        "title": "intro socks leb (1)",
         "source": "api-live",
-        "host": "Robber Robber",
-        "url": "https://www.choq.ca/assets/playlist/internationale.jpg"
+        "url": "https://www.choq.ca/assets/playlist/palmares-site-web.jpg"
       },
       "next": null,
-      "track": "Robber Robber - Pieces",
-      "showTitle": "Pieces",
-      "host": "Robber Robber",
+      "track": "",
+      "showTitle": "intro socks leb (1)",
+      "host": "",
       "source": "api-live",
       "sources": [
         "api-live",
         "stream"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-21T23:29:40.910Z"
+      "checkedAt": "2026-07-22T01:01:10.000Z"
     }
   }
 }
