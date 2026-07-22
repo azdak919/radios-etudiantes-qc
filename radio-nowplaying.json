@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-22T01:01:10.350Z",
+  "updatedAt": "2026-07-22T04:47:54.520Z",
   "timezone": "America/Toronto",
   "stations": {
     "chyz": {
@@ -21,27 +21,27 @@
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-22T01:00:47.644Z"
+      "checkedAt": "2026-07-22T04:47:32.606Z"
     },
     "cism": {
       "id": "cism",
       "name": "CISM 89,3",
       "current": {
-        "title": "London café",
+        "title": "Les garçons pleurent aussi (reprise)",
         "source": "api-live",
-        "start": "16:00",
+        "start": "20:00",
         "url": "https://stream03.ustream.ca/cism128.mp3",
-        "slug": "london-cafe"
+        "slug": "les-garcons-pleurent-aussi"
       },
       "next": {
-        "title": "Les Pénibles",
+        "title": "Mix anglo",
         "source": "api-live",
-        "start": "17:30",
-        "url": "https://podcast.cism893.ca/podcast/download_mp3/364400.mp3",
-        "slug": "les-penibles"
+        "start": "22:00",
+        "url": "https://podcast.cism893.ca/podcast/download_mp3/364802.mp3",
+        "slug": "mix-anglo"
       },
       "track": "",
-      "showTitle": "London café",
+      "showTitle": "Les garçons pleurent aussi (reprise)",
       "host": "",
       "source": "api-live",
       "sources": [
@@ -51,25 +51,25 @@
         "type": "cism-v1",
         "url": "https://admin.cism893.ca/api/v1/live"
       },
-      "checkedAt": "2026-07-22T01:00:50.277Z"
+      "checkedAt": "2026-07-22T04:47:34.800Z"
     },
     "ckut": {
       "id": "ckut",
       "name": "CKUT 90,3",
       "current": {
-        "title": "Montreal Sound Ark",
+        "title": "Space Plane",
         "source": "api-live",
-        "start": "21:00",
-        "end": "23:00"
+        "start": "00:00",
+        "end": "02:00"
       },
       "next": {
-        "title": "Easy Sonic Living/Zoe&#039;s Hour/Dreams And Tales/Internet Lunch Forever",
+        "title": "WarpCor / Out of the Void",
         "source": "api-live",
-        "start": "23:00",
-        "end": "00:00"
+        "start": "02:00",
+        "end": "04:00"
       },
       "track": "",
-      "showTitle": "Montreal Sound Ark",
+      "showTitle": "Space Plane",
       "host": "",
       "source": "api-live",
       "sources": [
@@ -77,79 +77,80 @@
         "stream"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-22T01:00:53.342Z"
+      "checkedAt": "2026-07-22T04:47:37.900Z"
     },
     "cjlo": {
       "id": "cjlo",
       "name": "CJLO 1690AM",
       "current": {
-        "title": "Beatnik Boy: Mixtape",
+        "title": "CJLO Late Night",
         "source": "schedule",
-        "start": "21:00",
-        "end": "22:00",
-        "url": "http://www.cjlo.com/shows/beatnik-boy-mixtape"
+        "start": "00:00",
+        "end": "06:00",
+        "url": "http://www.cjlo.com/shows/cjlo-late-night"
       },
       "next": {
-        "title": "CJLO's Alternative Mega Mix",
+        "title": "Morning Electro-shock",
         "source": "schedule",
-        "start": "22:00",
-        "end": "23:00",
-        "url": "http://www.cjlo.com/shows/cjlos-alternative-mega-mix"
+        "start": "06:00",
+        "end": "08:00",
+        "url": "http://www.cjlo.com/shows/morning-electro-shock"
       },
       "track": "",
-      "showTitle": "Beatnik Boy: Mixtape",
+      "showTitle": "CJLO Late Night",
       "host": "",
       "source": "schedule",
       "sources": [
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-22T01:01:07.333Z"
+      "checkedAt": "2026-07-22T04:47:51.717Z"
     },
     "cfak": {
       "id": "cfak",
       "name": "CFAK 88,3",
       "current": {
-        "title": "Dichotomie 88.3",
+        "title": "Les nuits CFAK",
         "source": "schedule",
-        "start": "20:00",
-        "end": "22:00"
+        "start": "00:00",
+        "end": "07:00"
       },
       "next": {
-        "title": "Mix Franco",
+        "title": "Folkswagen",
         "source": "schedule",
-        "start": "22:00",
-        "end": "00:00"
+        "start": "07:00",
+        "end": "08:00"
       },
       "track": "",
-      "showTitle": "Dichotomie 88.3",
+      "showTitle": "Les nuits CFAK",
       "host": "",
       "source": "schedule",
       "sources": [
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-22T01:01:08.020Z"
+      "checkedAt": "2026-07-22T04:47:52.506Z"
     },
     "choq": {
       "id": "choq",
       "name": "CHOQ.ca",
       "current": {
-        "title": "intro socks leb (1)",
+        "title": "Rio Jovem",
         "source": "api-live",
-        "url": "https://www.choq.ca/assets/playlist/palmares-site-web.jpg"
+        "host": "Kaatayra",
+        "url": "https://www.choq.ca/assets/playlist/les-nuits-brutales.png"
       },
       "next": null,
-      "track": "",
-      "showTitle": "intro socks leb (1)",
-      "host": "",
+      "track": "Kaatayra - Rio Jovem",
+      "showTitle": "Rio Jovem",
+      "host": "Kaatayra",
       "source": "api-live",
       "sources": [
         "api-live",
         "stream"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-22T01:01:10.000Z"
+      "checkedAt": "2026-07-22T04:47:54.170Z"
     }
   }
 }
