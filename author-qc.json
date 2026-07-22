@@ -1,8 +1,8 @@
 {
-  "updated": "2026-07-22T17:04:17.132Z",
+  "updated": "2026-07-22T18:43:09.116Z",
   "total": 185,
   "withAuthor": 185,
-  "mismatches": 4,
+  "mismatches": 5,
   "ok": true,
   "samples": [
     {
@@ -30,6 +30,14 @@
       "reason": "no-author-source"
     },
     {
+      "title": "Qui sont les agents qui patrouillent notre campus ?",
+      "link": "https://www.delitfrancais.com/2026/03/18/qui-sont-les-agents-qui-patrouillent-notre-campus/",
+      "source": "Le Délit",
+      "fieldAuthor": "La rédaction",
+      "canonicalAuthor": "Héloïse Durning",
+      "reason": "page-byline"
+    },
+    {
       "title": "Garda World au CVM (Éditorial)",
       "link": "https://exilecvm.wordpress.com/2026/03/13/manifestation-contre-gardaworld/",
       "source": "Exil",
@@ -38,5 +46,5 @@
       "reason": "no-author-source"
     }
   ],
-  "fixed": 4
+  "fixed": 5
 }

@@ -9,7 +9,7 @@
     <link>https://azdak919.github.io/le-radar/</link>
     <description>Fil agrégé des journaux étudiants des cégeps et universités du Québec (français et anglais). Titres, brèves, images et liens vers les articles originaux.</description>
     <language>fr-CA</language>
-    <lastBuildDate>Wed, 22 Jul 2026 12:33:15 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 22 Jul 2026 18:35:27 +0000</lastBuildDate>
     <generator>LE RADAR Student Media Aggregator</generator>
     <docs>https://azdak919.github.io/le-radar/feeds.html</docs>
     <copyright>© publications étudiantes sources — fil agrégé par LE RADAR</copyright>
@@ -20,6 +20,32 @@
       <title>Le Radar</title>
       <link>https://azdak919.github.io/le-radar/</link>
     </image>
+    <item>
+      <title>Des artistes de chez nous ont brillé à la Fête du Lac des Nations</title>
+      <link>https://lecollectif.ca/culture/des-artistes-de-chez-nous-ont-brille-a-la-fete-du-lac-des-nations/</link>
+      <guid isPermaLink="true">https://lecollectif.ca/culture/des-artistes-de-chez-nous-ont-brille-a-la-fete-du-lac-des-nations/</guid>
+      <pubDate>Wed, 22 Jul 2026 18:35:27 +0000</pubDate>
+      <dc:creator>Sarah Gendreau Simoneau et Émy Robert</dc:creator>
+      <source url="https://lecollectif.ca/">Le Collectif</source>
+      <description><![CDATA[Le Collectif · Sarah Gendreau Simoneau et Émy Robert · 22 juill.]]></description>
+      <content:encoded><![CDATA[<p style="margin:0 0 0.75em;font-size:0.9em;color:#555"><strong>Le Collectif · Sarah Gendreau Simoneau et Émy Robert · 22 juill.</strong></p>
+<figure style="margin:0 0 1em">
+<img src="https://lecollectif.ca/wp-content/uploads/2026/07/CULTURE_FLNPhoto1_CreditAntoineMeunier.jpg" alt="Des artistes de chez nous ont brillé à la Fête du Lac des Nations" style="max-width:100%;height:auto;display:block;border-radius:4px" />
+<figcaption style="font-size:0.85em;color:#666;margin-top:0.35em">Photo : ItAntoineMeunier</figcaption>
+</figure>
+<p style="margin:0 0 0.75em;line-height:1.5">En tout, plus de 150 000 festivaliers et festivalières étaient au rendez-vous cette année, selon les données recueillies par l’équipe de la FLN. La programmation annoncée en mars dernier avait fait réagir la population qui dénonçait le manque d’artistes internationaux, Three Days Grace, seul groupe international en tête d’affiche du festival, n’ayant été annoncé qu’en mai.</p>]]></content:encoded>
+      <category>Le Collectif</category>
+      <category>UdeS</category>
+      <category>Estrie</category>
+      <category>université</category>
+      <category>Français</category>
+      <media:content url="https://lecollectif.ca/wp-content/uploads/2026/07/CULTURE_FLNPhoto1_CreditAntoineMeunier.jpg" medium="image" type="image/jpeg">
+        <media:credit>Photo : ItAntoineMeunier</media:credit>
+        <media:title>Des artistes de chez nous ont brillé à la Fête du Lac des Nations</media:title>
+      </media:content>
+      <media:thumbnail url="https://lecollectif.ca/wp-content/uploads/2026/07/CULTURE_FLNPhoto1_CreditAntoineMeunier.jpg" />
+      <enclosure url="https://lecollectif.ca/wp-content/uploads/2026/07/CULTURE_FLNPhoto1_CreditAntoineMeunier.jpg" type="image/jpeg" length="1" />
+    </item>
     <item>
       <title>Trump réitère sa volonté de contrer la fraude électorale</title>
       <link>https://lecollectif.ca/a-la-une/trump-reitere-sa-volonte-de-contrer-la-fraude-electorale/</link>
@@ -305,32 +331,6 @@
       </media:content>
       <media:thumbnail url="https://lecollectif.ca/wp-content/uploads/2026/07/SOCIETE_FraudeInternet_SourcePieuvre.jpg" />
       <enclosure url="https://lecollectif.ca/wp-content/uploads/2026/07/SOCIETE_FraudeInternet_SourcePieuvre.jpg" type="image/jpeg" length="1" />
-    </item>
-    <item>
-      <title>L’impact du tourisme sur les villes populaires</title>
-      <link>https://lecollectif.ca/a-la-une/limpact-du-tourisme-sur-les-villes-populaires/</link>
-      <guid isPermaLink="true">https://lecollectif.ca/a-la-une/limpact-du-tourisme-sur-les-villes-populaires/</guid>
-      <pubDate>Tue, 14 Jul 2026 21:25:29 +0000</pubDate>
-      <dc:creator>Salma Labiede</dc:creator>
-      <source url="https://lecollectif.ca/">Le Collectif</source>
-      <description><![CDATA[Le Collectif · Salma Labiede · 14 juill.]]></description>
-      <content:encoded><![CDATA[<p style="margin:0 0 0.75em;font-size:0.9em;color:#555"><strong>Le Collectif · Salma Labiede · 14 juill.</strong></p>
-<figure style="margin:0 0 1em">
-<img src="https://lecollectif.ca/wp-content/uploads/2026/07/SOCIETE_Tourisme_Source-Ordre-des-architectes-du-Quebec.jpg" alt="L’impact du tourisme sur les villes populaires" style="max-width:100%;height:auto;display:block;border-radius:4px" />
-<figcaption style="font-size:0.85em;color:#666;margin-top:0.35em">Photo : Ordre des architectes du Québec</figcaption>
-</figure>
-<p style="margin:0 0 0.75em;line-height:1.5">Dans de nombreuses villes du monde, le tourisme constitue un moteur économique essentiel. Chaque année, des millions de voyageurs affluent vers des destinations renommées pour leur patrimoine, leur culture, leur cuisine ou leurs paysages. Durant la haute saison, cette industrie permet de générer des revenus importants.</p>]]></content:encoded>
-      <category>Le Collectif</category>
-      <category>UdeS</category>
-      <category>Estrie</category>
-      <category>université</category>
-      <category>Français</category>
-      <media:content url="https://lecollectif.ca/wp-content/uploads/2026/07/SOCIETE_Tourisme_Source-Ordre-des-architectes-du-Quebec.jpg" medium="image" type="image/jpeg">
-        <media:credit>Photo : Ordre des architectes du Québec</media:credit>
-        <media:title>L’impact du tourisme sur les villes populaires</media:title>
-      </media:content>
-      <media:thumbnail url="https://lecollectif.ca/wp-content/uploads/2026/07/SOCIETE_Tourisme_Source-Ordre-des-architectes-du-Quebec.jpg" />
-      <enclosure url="https://lecollectif.ca/wp-content/uploads/2026/07/SOCIETE_Tourisme_Source-Ordre-des-architectes-du-Quebec.jpg" type="image/jpeg" length="1" />
     </item>
     <item>
       <title>CSU fails to reach quorum at first special council meeting of new mandate</title>
@@ -993,7 +993,7 @@
       <content:encoded><![CDATA[<p style="margin:0 0 0.75em;font-size:0.9em;color:#555"><strong>Quartier Libre · Ulysse Taillard-Hodez · 14 mai</strong></p>
 <figure style="margin:0 0 1em">
 <img src="https://quartierlibre.ca/wp-content/uploads/2026/05/PXL_20260505_174149744-1024x768.jpg" alt="Forum RÉA : une alliance pour l’éducation en milieu défavorisé" style="max-width:100%;height:auto;display:block;border-radius:4px" />
-<figcaption style="font-size:0.85em;color:#666;margin-top:0.35em">Crédit photo : Quartier Libre</figcaption>
+
 </figure>
 <p style="margin:0 0 0.75em;line-height:1.5">Mme Fournier Dubé a insisté sur le fait que les enseignant·e·s sont les véritables « agents de changement ». Son rôle n’est pas d’imposer un cadre scientifique rigide, mais de vulgariser la recherche pour l’adapter aux besoins du terrain.</p>]]></content:encoded>
       <category>Quartier Libre</category>
@@ -1002,7 +1002,6 @@
       <category>université</category>
       <category>Français</category>
       <media:content url="https://quartierlibre.ca/wp-content/uploads/2026/05/PXL_20260505_174149744-1024x768.jpg" medium="image" type="image/jpeg">
-        <media:credit>Crédit photo : Quartier Libre</media:credit>
         <media:title>Forum RÉA : une alliance pour l’éducation en milieu défavorisé</media:title>
       </media:content>
       <media:thumbnail url="https://quartierlibre.ca/wp-content/uploads/2026/05/PXL_20260505_174149744-1024x768.jpg" />

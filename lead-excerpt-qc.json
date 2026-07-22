@@ -1,14 +1,32 @@
 {
-  "updated": "2026-07-22T17:04:18.857Z",
+  "updated": "2026-07-22T18:43:26.062Z",
   "total": 185,
   "pool": 58,
-  "incomplete": 2,
+  "incomplete": 4,
   "withLeadExcerpt": 74,
-  "candidates": 2,
-  "enriched": 0,
+  "candidates": 4,
+  "enriched": 2,
   "failed": 0,
   "ok": true,
   "samples": [
+    {
+      "title": "Qui sont les agents qui patrouillent notre campus ?",
+      "link": "https://www.delitfrancais.com/2026/03/18/qui-sont-les-agents-qui-patrouillent-notre-campus/",
+      "ok": true,
+      "score": 100,
+      "chars": 396,
+      "sample": "« L’Université McGill est à la recherche de patrouilleurs dynamiques et engagés pour assurer la sécu",
+      "changed": true
+    },
+    {
+      "title": "Des artistes de chez nous ont brillé à la Fête du Lac des Nations",
+      "link": "https://lecollectif.ca/culture/des-artistes-de-chez-nous-ont-brille-a-la-fete-du-lac-des-nations/",
+      "ok": true,
+      "score": 100,
+      "chars": 375,
+      "sample": "En tout, plus de 150 000 festivaliers et festivalières étaient au rendez-vous cette année, selon les",
+      "changed": true
+    },
     {
       "title": "The Cruel Optimism of Summer",
       "link": "https://www.mcgilldaily.com/2026/07/the-cruel-optimism-of-summer/",
