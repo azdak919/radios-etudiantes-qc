@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-22T16:57:06.202Z",
+  "updated": "2026-07-22T17:09:35.452Z",
   "total": 185,
   "withImage": 168,
   "withCredit": 168,
@@ -13,25 +13,11 @@
   "fallbackNew": 1,
   "samples": [
     {
-      "title": "Se préparer et vivre sa retraite : un long fleuve, pas si tranquille",
-      "source": "La Pige",
-      "credit": "Photo : Léa Morin-Letort",
-      "cited": true,
-      "method": "figcaption-paren-kind"
-    },
-    {
       "title": "Forum RÉA : une alliance pour l’éducation en milieu défavorisé",
       "source": "Quartier Libre",
       "credit": "Crédit photo : Quartier Libre",
       "cited": false,
       "method": null
-    },
-    {
-      "title": "La performance de l’homosexualité : un privilège ?",
-      "source": "Le Délit",
-      "credit": "Photo : Félix Fournier",
-      "cited": true,
-      "method": "media-credit-featured"
     },
     {
       "title": "L’épidémie de la nonchalance",
@@ -41,11 +27,25 @@
       "method": "media-credit-featured"
     },
     {
+      "title": "La performance de l’homosexualité : un privilège ?",
+      "source": "Le Délit",
+      "credit": "Photo : Félix Fournier",
+      "cited": true,
+      "method": "media-credit-featured"
+    },
+    {
       "title": "Les femmes MAGA au service du patriarcat",
       "source": "Le Délit",
       "credit": "Photo : Stu Doré",
       "cited": true,
       "method": "media-credit-featured"
+    },
+    {
+      "title": "Se préparer et vivre sa retraite : un long fleuve, pas si tranquille",
+      "source": "La Pige",
+      "credit": "Photo : Léa Morin-Letort",
+      "cited": true,
+      "method": "figcaption-paren-kind"
     },
     {
       "title": "Leave the Children Out of This",

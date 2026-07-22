@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-22T16:51:41.591Z",
+  "updated": "2026-07-22T17:04:07.857Z",
   "updatedSlot": "2026-07-22T16:00:00.000Z",
   "count": 185,
   "freshnessSessions": 3,
@@ -10,7 +10,7 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-05-15T16:00:00.000Z",
-      "lastFetchOk": "2026-07-22T16:51:08.532Z"
+      "lastFetchOk": "2026-07-22T17:03:34.612Z"
     },
     "Montréal Campus": {
       "fetchOk": true,
@@ -18,7 +18,7 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-05-09T03:14:30.000Z",
-      "lastFetchOk": "2026-07-22T16:51:09.581Z"
+      "lastFetchOk": "2026-07-22T17:03:35.669Z"
     },
     "Le Délit": {
       "fetchOk": true,
@@ -26,7 +26,7 @@
       "articleCount": 20,
       "freshArticleCount": 20,
       "lastArticle": "2026-03-25T11:00:00.000Z",
-      "lastFetchOk": "2026-07-22T16:51:13.615Z"
+      "lastFetchOk": "2026-07-22T17:03:39.300Z"
     },
     "The McGill Daily": {
       "fetchOk": true,
@@ -34,7 +34,7 @@
       "articleCount": 15,
       "freshArticleCount": 15,
       "lastArticle": "2026-07-06T12:00:00.000Z",
-      "lastFetchOk": "2026-07-22T16:51:14.548Z"
+      "lastFetchOk": "2026-07-22T17:03:39.918Z"
     },
     "The Link": {
       "fetchOk": true,
@@ -42,7 +42,7 @@
       "articleCount": 20,
       "freshArticleCount": 20,
       "lastArticle": "2026-07-08T14:41:00.000Z",
-      "lastFetchOk": "2026-07-22T16:51:15.690Z"
+      "lastFetchOk": "2026-07-22T17:03:41.074Z"
     },
     "Zone Campus": {
       "fetchOk": true,
@@ -50,7 +50,7 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-05-08T14:20:26.000Z",
-      "lastFetchOk": "2026-07-22T16:51:16.524Z"
+      "lastFetchOk": "2026-07-22T17:03:42.430Z"
     },
     "L'Exemplaire": {
       "fetchOk": true,
@@ -58,7 +58,7 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-05-15T16:31:24.000Z",
-      "lastFetchOk": "2026-07-22T16:51:17.951Z"
+      "lastFetchOk": "2026-07-22T17:03:43.900Z"
     },
     "Le Collectif": {
       "fetchOk": true,
@@ -66,7 +66,7 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-07-22T12:33:15.000Z",
-      "lastFetchOk": "2026-07-22T16:51:19.018Z"
+      "lastFetchOk": "2026-07-22T17:03:45.003Z"
     },
     "Exil": {
       "fetchOk": true,
@@ -74,7 +74,7 @@
       "articleCount": 7,
       "freshArticleCount": 7,
       "lastArticle": "2026-04-18T22:22:07.000Z",
-      "lastFetchOk": "2026-07-22T16:51:19.267Z"
+      "lastFetchOk": "2026-07-22T17:03:45.277Z"
     },
     "La Pige": {
       "fetchOk": true,
@@ -82,7 +82,7 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-06-22T14:36:10.000Z",
-      "lastFetchOk": "2026-07-22T16:51:19.994Z"
+      "lastFetchOk": "2026-07-22T17:03:45.957Z"
     },
     "Le Polyscope": {
       "fetchOk": true,
@@ -90,7 +90,7 @@
       "articleCount": 13,
       "freshArticleCount": 13,
       "lastArticle": "2026-02-25T14:38:32.764Z",
-      "lastFetchOk": "2026-07-22T16:51:21.940Z"
+      "lastFetchOk": "2026-07-22T17:03:48.217Z"
     },
     "The Tribune": {
       "fetchOk": true,
@@ -98,7 +98,7 @@
       "articleCount": 20,
       "freshArticleCount": 20,
       "lastArticle": "2026-07-21T13:21:49.000Z",
-      "lastFetchOk": "2026-07-22T16:51:22.147Z"
+      "lastFetchOk": "2026-07-22T17:03:48.407Z"
     },
     "The Campus": {
       "fetchOk": true,
@@ -106,7 +106,7 @@
       "articleCount": 20,
       "freshArticleCount": 20,
       "lastArticle": "2026-04-06T16:03:16.000Z",
-      "lastFetchOk": "2026-07-22T16:51:22.381Z"
+      "lastFetchOk": "2026-07-22T17:03:48.629Z"
     },
     "The Plant": {
       "fetchOk": true,
@@ -114,7 +114,7 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-05-11T20:44:08.000Z",
-      "lastFetchOk": "2026-07-22T16:51:22.641Z"
+      "lastFetchOk": "2026-07-22T17:03:48.973Z"
     }
   },
   "items": [
@@ -137,7 +137,6 @@
       "sourceImageCreditCited": true,
       "sourceImageCreditImageKey": "societe_trump-reitere-sa-volonte-de-contrer-la-fraude-electorale_getty-images.jpg",
       "sourceImageCreditRev": 9,
-      "leadExcerpt": "Le président américain Donald Trump prononçait un discours le 16 juillet dernier, principalement pour rappeler la fraude électorale qu’il déplore depuis sa défaite lors des présidentielles de 2020 face à Joe Biden. Fidèle à lui-même, Trump s’est permis de critiquer largement le Parti démocrate, à l’aube des élections de mi-mandat à venir en novembre prochain.",
       "leadImageReady": false,
       "stockImage": "https://upload.wikimedia.org/wikipedia/commons/5/59/Donald_Trump_RNC_July_2016.jpg",
       "imageTitle": "File:Donald Trump RNC July 2016.jpg",
@@ -145,7 +144,8 @@
       "imageCreator": "Ali Shaker/VOA",
       "imageLicense": "Public domain",
       "imageProvider": "wikimedia",
-      "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Donald_Trump_RNC_July_2016.jpg"
+      "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Donald_Trump_RNC_July_2016.jpg",
+      "leadExcerpt": "Le président américain Donald Trump prononçait un discours le 16 juillet dernier, principalement pour rappeler la fraude électorale qu’il déplore depuis sa défaite lors des présidentielles de 2020 face à Joe Biden. Fidèle à lui-même, Trump s’est permis de critiquer largement le Parti démocrate, à l’aube des élections de mi-mandat à venir en novembre prochain."
     },
     {
       "source": "The Tribune",
@@ -417,7 +417,8 @@
       "imageLicense": "CC BY-SA 4.0",
       "imageProvider": "campus-bank",
       "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Henry_F._Hall_Building_10.jpg",
-      "leadExcerpt": "The agenda contained a request to excuse the CSU’s finance coordinator from the duty of submitting the Annual Operating Budget (AOB) to the council in June. It also included an amendment to a motion passed on May 13 regarding the closure of Mackay Street, the authorization to use the Office for Student Life and Engagement endowment fund and an amendment to the union’s bylaws regarding dates of regular council meetings."
+      "leadExcerpt": "The agenda contained a request to excuse the CSU’s finance coordinator from the duty of submitting the Annual Operating Budget (AOB) to the council in June. It also included an amendment to a motion passed on May 13 regarding the closure of Mackay Street, the authorization to use the Office for Student Life and Engagement endowment fund and an amendment to the union’s bylaws regarding dates of regular council meetings.",
+      "_campusBank": true
     },
     {
       "source": "The McGill Daily",
@@ -463,7 +464,8 @@
       "imageLicense": "CC BY-SA 3.0",
       "imageProvider": "campus-bank",
       "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:2135-2149_Mackay_Street,_Montreal.JPG",
-      "leadExcerpt": "Elbakaye added that she has been attempting to contact Ellis for over three months, but he has not responded. She also explained that she is working on a training guide for the next CEO alongside the council's administrative coordinator."
+      "leadExcerpt": "Elbakaye added that she has been attempting to contact Ellis for over three months, but he has not responded. She also explained that she is working on a training guide for the next CEO alongside the council's administrative coordinator.",
+      "_campusBank": true
     },
     {
       "source": "The McGill Daily",
@@ -545,6 +547,7 @@
       "date": "2026-06-22T14:36:10.000Z",
       "excerpt": "« Les gens ont tendance à frapper un mur au moment de la retraite par manque de préparation », estime Le directeur général de la Fédération de l’âge d’or du Québec (Fadoq) pour la région Saguenay-Lac-Saint-Jean – Ungava, Patrice Saint-Pierre. (Photo : Léa Morin-Letort) L’heure",
       "image": "https://lapige.atmjonquiere.com/wp-content/uploads/sites/3/2026/06/Joanne-Normandin_retraite-benevole-scaled.jpg",
+      "leadExcerpt": "« Les gens ont tendance à frapper un mur au moment de la retraite par manque de préparation », estime Le directeur général de la Fédération de l’âge d’or du Québec (Fadoq) pour la région Saguenay-Lac-Saint-Jean – Ungava, Patrice Saint-Pierre. (Photo : Léa Morin-Letort)",
       "sourceImageCredit": "Photo : Léa Morin-Letort",
       "sourceImageCreator": "Léa Morin-Letort",
       "sourceImageCreditUrl": "https://lapige.atmjonquiere.com/2026/06/22/se-preparer-et-vivre-sa-retraite-un-long-fleuve-pas-si-tranquille/?utm_source=rss&utm_medium=rss&utm_campaign=se-preparer-et-vivre-sa-retraite-un-long-fleuve-pas-si-tranquille",
@@ -552,7 +555,6 @@
       "sourceImageCreditCited": true,
       "sourceImageCreditImageKey": "joanne-normandin_retraite-benevole.jpg",
       "sourceImageCreditRev": 9,
-      "leadExcerpt": "« Les gens ont tendance à frapper un mur au moment de la retraite par manque de préparation », estime Le directeur général de la Fédération de l’âge d’or du Québec (Fadoq) pour la région Saguenay-Lac-Saint-Jean – Ungava, Patrice Saint-Pierre. (Photo : Léa Morin-Letort)",
       "leadImageReady": true
     },
     {
@@ -974,15 +976,15 @@
       "image": "https://quartierlibre.ca/wp-content/uploads/2026/05/PXL_20260505_174149744-1024x768.jpg",
       "authorCheckedAt": "2026-07-22T03:51:31.286Z",
       "_pageAuthor": "Ulysse Taillard-Hodez",
+      "leadExcerpt": "Mme Fournier Dubé a insisté sur le fait que les enseignant·e·s sont les véritables « agents de changement ». Son rôle n’est pas d’imposer un cadre scientifique rigide, mais de vulgariser la recherche pour l’adapter aux besoins du terrain.",
+      "leadImageReady": true,
       "sourceImageCredit": "Crédit photo : Quartier Libre",
+      "sourceImageCreator": "",
       "sourceImageCreditUrl": "https://quartierlibre.ca/forum-rea-education-en-milieu-defavorise/",
       "sourceImageCreditFrom": "media",
       "sourceImageCreditCited": false,
       "sourceImageCreditImageKey": "pxl_20260505_174149744.jpg",
-      "sourceImageCreditRev": 9,
-      "leadExcerpt": "Mme Fournier Dubé a insisté sur le fait que les enseignant·e·s sont les véritables « agents de changement ». Son rôle n’est pas d’imposer un cadre scientifique rigide, mais de vulgariser la recherche pour l’adapter aux besoins du terrain.",
-      "leadImageReady": true,
-      "sourceImageCreator": ""
+      "sourceImageCreditRev": 9
     },
     {
       "source": "Quartier Libre",
@@ -1383,13 +1385,13 @@
       "sourceImageCreditImageKey": "image-1-1.jpeg",
       "sourceImageCreditRev": 9,
       "leadImageReady": false,
-      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/4/43/Marine_Stage_at_Summer_Sonic_Festival.jpg",
-      "imageTitle": "File:Marine Stage at Summer Sonic Festival.jpg",
-      "imageCredit": "Photo : LuxTonnerre / CC BY 2.0 · Wikimedia Commons",
-      "imageCreator": "LuxTonnerre",
-      "imageLicense": "CC BY 2.0",
-      "imageProvider": "wikimedia",
-      "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Marine_Stage_at_Summer_Sonic_Festival.jpg"
+      "stockImage": "https://live.staticflickr.com/5328/9532016692_bcc98c9af9_b.jpg",
+      "imageTitle": "MegaHouse Festival Summer 2013",
+      "imageCredit": "Photo : othree / CC BY · Openverse",
+      "imageCreator": "othree",
+      "imageLicense": "by",
+      "imageProvider": "openverse",
+      "imageSourceUrl": "https://www.flickr.com/photos/12452841@N00/9532016692"
     },
     {
       "source": "The Plant",
@@ -2890,13 +2892,13 @@
       "sourceImageCreditImageKey": "opinions_1_step-outside_cred-piper-howell.jpg",
       "sourceImageCreditRev": 9,
       "leadImageReady": false,
-      "stockImage": "https://live.staticflickr.com/7726/26613564544_14e83b035d_b.jpg",
-      "imageTitle": "Small 800px Amanda Zarna Jeff and Kanit at Break Free PNW 2016 Photo taken by Les Berenson 13217622_10153694166782921_78861309285289138_o",
-      "imageCredit": "Photo : Backbone Campaign / CC BY · Openverse",
-      "imageCreator": "Backbone Campaign",
-      "imageLicense": "by",
-      "imageProvider": "openverse",
-      "imageSourceUrl": "https://www.flickr.com/photos/33000102@N03/26613564544"
+      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/f/fc/GH_Step_outside_Grayson_Highlands_State_Park_Virginia_%2816243872530%29.jpg",
+      "imageTitle": "File:GH Step outside Grayson Highlands State Park Virginia (16243872530).jpg",
+      "imageCredit": "Photo : Virginia State Parks / CC BY 2.0 · Wikimedia Commons",
+      "imageCreator": "Virginia State Parks",
+      "imageLicense": "CC BY 2.0",
+      "imageProvider": "wikimedia",
+      "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:GH_Step_outside_Grayson_Highlands_State_Park_Virginia_(16243872530).jpg"
     },
     {
       "source": "The Campus",
@@ -2941,13 +2943,13 @@
       "sourceImageCreditImageKey": "opinions_3_graduationcatchingup_credlatoyasimms.png",
       "sourceImageCreditRev": 9,
       "leadImageReady": false,
-      "stockImage": "https://live.staticflickr.com/158/366393127_ae569532a7_b.jpg",
-      "imageTitle": "saturated writing",
-      "imageCredit": "Photo : tnarik / CC BY-SA · Openverse",
-      "imageCreator": "tnarik",
-      "imageLicense": "by-sa",
-      "imageProvider": "openverse",
-      "imageSourceUrl": "https://www.flickr.com/photos/80075387@N00/366393127"
+      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/a/aa/When_Scars_tell_you_a_Story.jpg",
+      "imageTitle": "File:When Scars tell you a Story.jpg",
+      "imageCredit": "Photo : Hawinprinto / CC BY-SA 4.0 · Wikimedia Commons",
+      "imageCreator": "Hawinprinto",
+      "imageLicense": "CC BY-SA 4.0",
+      "imageProvider": "wikimedia",
+      "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:When_Scars_tell_you_a_Story.jpg"
     },
     {
       "source": "The Campus",
@@ -3351,6 +3353,76 @@
       "region": "Montréal",
       "type": "universite",
       "lang": "fr",
+      "title": "L’épidémie de la nonchalance",
+      "link": "https://www.delitfrancais.com/2026/03/25/lepidemie-de-la-nonchalance/",
+      "author": "Elie Nguyen",
+      "date": "2026-03-25T07:00:00.000Z",
+      "excerpt": "Pour en finir avec l’insouciance de façade et embrasser pleinement l’authenticité.",
+      "image": "https://www.delitfrancais.com/wp-content/uploads/2026/03/QC.jpeg",
+      "featured": true,
+      "_pageAuthor": "Elie Nguyen",
+      "leadExcerpt": "L’un des travers de notre génération est la tendance à adopter une attitude indifférente face à la vie. La nonchalance est devenue une forme de protection, où on minimise tout ce que l’on ressent : on cache ce qui pourrait nous atteindre et on évite de trop s’exposer. En paraissant insouciant, on garde le contrôle, puisque personne ne peut utiliser contre nous ce dont il ne mesure pas l’importance.",
+      "leadImageReady": true,
+      "sourceImageCredit": "Photo : Elie Nguyen",
+      "sourceImageCreator": "Elie Nguyen",
+      "sourceImageCreditUrl": "https://www.delitfrancais.com/2026/03/25/lepidemie-de-la-nonchalance/",
+      "sourceImageCreditFrom": "article",
+      "sourceImageCreditCited": true,
+      "sourceImageCreditImageKey": "qc.jpeg",
+      "sourceImageCreditRev": 9
+    },
+    {
+      "source": "Le Délit",
+      "institution": "Université McGill",
+      "region": "Montréal",
+      "type": "universite",
+      "lang": "fr",
+      "title": "Le retard et les bienfaits du temps long",
+      "link": "https://www.delitfrancais.com/2026/03/25/le-retard-et-les-bienfaits-du-temps-long/",
+      "author": "Dalia Djazouli",
+      "date": "2026-03-25T07:00:00.000Z",
+      "excerpt": "Imposer sa propre subjectivité temporelle.",
+      "image": "https://www.delitfrancais.com/wp-content/uploads/2026/03/retard-1-scaled.jpeg",
+      "featured": true,
+      "_pageAuthor": "Dalia Djazouli",
+      "sourceImageCredit": "Photo : Félix Fournier",
+      "sourceImageCreator": "Félix Fournier",
+      "sourceImageCreditUrl": "https://www.delitfrancais.com/2026/03/25/le-retard-et-les-bienfaits-du-temps-long/",
+      "sourceImageCreditFrom": "article",
+      "sourceImageCreditCited": true,
+      "sourceImageCreditImageKey": "retard-1.jpeg",
+      "leadImageReady": true,
+      "leadExcerpt": "L’imposition de la ponctualité comme norme suprême ne se cantonne pas à notre journal étudiant : elle est propre à nos sociétés industrialisées, dont la conception du temps est particulièrement rigoureuse et utilitariste. La temporalité est perçue comme un objet tangible, que l’on peut et doit rentabiliser autant que possible. Les journées sont compartimentées, et chaque heure doit être mise à profit."
+    },
+    {
+      "source": "Le Délit",
+      "institution": "Université McGill",
+      "region": "Montréal",
+      "type": "universite",
+      "lang": "fr",
+      "title": "Rassembler pour mieux diviser",
+      "link": "https://www.delitfrancais.com/2026/03/25/rassembler-pour-mieux-diviser/",
+      "author": "Catherine Brunet Rodriguez",
+      "date": "2026-03-25T07:00:00.000Z",
+      "excerpt": "Analyse critique du projet de loi 1 sur la Constitution québécoise.",
+      "image": "https://www.delitfrancais.com/wp-content/uploads/2026/03/QC-scaled.jpeg",
+      "featured": true,
+      "_pageAuthor": "Catherine Brunet Rodriguez",
+      "sourceImageCredit": "Photo : Félix Fournier",
+      "sourceImageCreator": "Félix Fournier",
+      "sourceImageCreditUrl": "https://www.delitfrancais.com/2026/03/25/rassembler-pour-mieux-diviser/",
+      "sourceImageCreditFrom": "article",
+      "sourceImageCreditCited": true,
+      "sourceImageCreditImageKey": "qc.jpeg",
+      "leadImageReady": true,
+      "leadExcerpt": "Cela fait maintenant presque six mois que notre cher ministre de la Justice, Simon Jolin-Barrette, a présenté aux Québécois·e·s son fameux projet de loi 1, la Constitution québécoise. Six mois à discuter d’une constitution illégitime, issue d’un processus de non-consultation flagrant et d’un manque d’écoute évident de la part du gouvernement."
+    },
+    {
+      "source": "Le Délit",
+      "institution": "Université McGill",
+      "region": "Montréal",
+      "type": "universite",
+      "lang": "fr",
       "title": "Au revoir!",
       "link": "https://www.delitfrancais.com/2026/03/25/au-revoir/",
       "author": "Eugénie St-Pierre et Juliette Elie",
@@ -3405,85 +3477,15 @@
       "image": "https://www.delitfrancais.com/wp-content/uploads/2026/03/ecriture-inclusive.png",
       "featured": true,
       "_pageAuthor": "Joséphine Miton",
+      "leadExcerpt": "Deux hommes hétéros imitent une voix, se prennent par la taille, font semblant d’être en couple pour une photo, puis éclatent de rire. L’un ajoute « no homo » et tout rentre dans l’ordre. Pendant ce temps, un homme gai tient la main de son partenaire. Il surveille autour de lui, sonde le quartier, évalue le risque. Pour les uns, l’homosexualité est un prétexte pour rire. Pour les autres, c’est juste une vie.",
+      "leadImageReady": true,
       "sourceImageCredit": "Photo : Félix Fournier",
       "sourceImageCreator": "Félix Fournier",
       "sourceImageCreditUrl": "https://www.delitfrancais.com/2026/03/25/la-performance-de-lhomosexualite-un-privilege/",
       "sourceImageCreditFrom": "article",
       "sourceImageCreditCited": true,
       "sourceImageCreditImageKey": "ecriture-inclusive.png",
-      "sourceImageCreditRev": 9,
-      "leadExcerpt": "Deux hommes hétéros imitent une voix, se prennent par la taille, font semblant d’être en couple pour une photo, puis éclatent de rire. L’un ajoute « no homo » et tout rentre dans l’ordre. Pendant ce temps, un homme gai tient la main de son partenaire. Il surveille autour de lui, sonde le quartier, évalue le risque. Pour les uns, l’homosexualité est un prétexte pour rire. Pour les autres, c’est juste une vie.",
-      "leadImageReady": true
-    },
-    {
-      "source": "Le Délit",
-      "institution": "Université McGill",
-      "region": "Montréal",
-      "type": "universite",
-      "lang": "fr",
-      "title": "L’épidémie de la nonchalance",
-      "link": "https://www.delitfrancais.com/2026/03/25/lepidemie-de-la-nonchalance/",
-      "author": "Elie Nguyen",
-      "date": "2026-03-25T07:00:00.000Z",
-      "excerpt": "Pour en finir avec l’insouciance de façade et embrasser pleinement l’authenticité.",
-      "image": "https://www.delitfrancais.com/wp-content/uploads/2026/03/QC.jpeg",
-      "featured": true,
-      "_pageAuthor": "Elie Nguyen",
-      "sourceImageCredit": "Photo : Elie Nguyen",
-      "sourceImageCreator": "Elie Nguyen",
-      "sourceImageCreditUrl": "https://www.delitfrancais.com/2026/03/25/lepidemie-de-la-nonchalance/",
-      "sourceImageCreditFrom": "article",
-      "sourceImageCreditCited": true,
-      "sourceImageCreditImageKey": "qc.jpeg",
-      "sourceImageCreditRev": 9,
-      "leadExcerpt": "L’un des travers de notre génération est la tendance à adopter une attitude indifférente face à la vie. La nonchalance est devenue une forme de protection, où on minimise tout ce que l’on ressent : on cache ce qui pourrait nous atteindre et on évite de trop s’exposer. En paraissant insouciant, on garde le contrôle, puisque personne ne peut utiliser contre nous ce dont il ne mesure pas l’importance.",
-      "leadImageReady": true
-    },
-    {
-      "source": "Le Délit",
-      "institution": "Université McGill",
-      "region": "Montréal",
-      "type": "universite",
-      "lang": "fr",
-      "title": "Le retard et les bienfaits du temps long",
-      "link": "https://www.delitfrancais.com/2026/03/25/le-retard-et-les-bienfaits-du-temps-long/",
-      "author": "Dalia Djazouli",
-      "date": "2026-03-25T07:00:00.000Z",
-      "excerpt": "Imposer sa propre subjectivité temporelle.",
-      "image": "https://www.delitfrancais.com/wp-content/uploads/2026/03/retard-1-scaled.jpeg",
-      "featured": true,
-      "_pageAuthor": "Dalia Djazouli",
-      "sourceImageCredit": "Photo : Félix Fournier",
-      "sourceImageCreator": "Félix Fournier",
-      "sourceImageCreditUrl": "https://www.delitfrancais.com/2026/03/25/le-retard-et-les-bienfaits-du-temps-long/",
-      "sourceImageCreditFrom": "article",
-      "sourceImageCreditCited": true,
-      "sourceImageCreditImageKey": "retard-1.jpeg",
-      "leadImageReady": true,
-      "leadExcerpt": "L’imposition de la ponctualité comme norme suprême ne se cantonne pas à notre journal étudiant : elle est propre à nos sociétés industrialisées, dont la conception du temps est particulièrement rigoureuse et utilitariste. La temporalité est perçue comme un objet tangible, que l’on peut et doit rentabiliser autant que possible. Les journées sont compartimentées, et chaque heure doit être mise à profit."
-    },
-    {
-      "source": "Le Délit",
-      "institution": "Université McGill",
-      "region": "Montréal",
-      "type": "universite",
-      "lang": "fr",
-      "title": "Rassembler pour mieux diviser",
-      "link": "https://www.delitfrancais.com/2026/03/25/rassembler-pour-mieux-diviser/",
-      "author": "Catherine Brunet Rodriguez",
-      "date": "2026-03-25T07:00:00.000Z",
-      "excerpt": "Analyse critique du projet de loi 1 sur la Constitution québécoise.",
-      "image": "https://www.delitfrancais.com/wp-content/uploads/2026/03/QC-scaled.jpeg",
-      "featured": true,
-      "_pageAuthor": "Catherine Brunet Rodriguez",
-      "sourceImageCredit": "Photo : Félix Fournier",
-      "sourceImageCreator": "Félix Fournier",
-      "sourceImageCreditUrl": "https://www.delitfrancais.com/2026/03/25/rassembler-pour-mieux-diviser/",
-      "sourceImageCreditFrom": "article",
-      "sourceImageCreditCited": true,
-      "sourceImageCreditImageKey": "qc.jpeg",
-      "leadImageReady": true,
-      "leadExcerpt": "Cela fait maintenant presque six mois que notre cher ministre de la Justice, Simon Jolin-Barrette, a présenté aux Québécois·e·s son fameux projet de loi 1, la Constitution québécoise. Six mois à discuter d’une constitution illégitime, issue d’un processus de non-consultation flagrant et d’un manque d’écoute évident de la part du gouvernement."
+      "sourceImageCreditRev": 9
     },
     {
       "source": "The McGill Daily",
@@ -3862,15 +3864,15 @@
       "featured": true,
       "authorCheckedAt": "2026-07-22T15:25:21.081Z",
       "_pageAuthor": "Anonyme",
+      "leadExcerpt": "Une des capacités distinctives de ce système patriarcal est son habileté remarquable à se perpétuer en instrumentalisant certaines femmes pour reproduire les structures qui les subordonnent. C’est à travers ce mécanisme d’opacité que sa présence se resserre sur la société, et que ses contradictions se dissimulent sous le couvert de liberté individuelle, de traditions ou de choix personnels.",
+      "leadImageReady": true,
       "sourceImageCredit": "Photo : Stu Doré",
       "sourceImageCreator": "Stu Doré",
       "sourceImageCreditUrl": "https://www.delitfrancais.com/2026/03/18/les-femmes-maga-au-service-du-patriarcat/",
       "sourceImageCreditFrom": "article",
       "sourceImageCreditCited": true,
       "sourceImageCreditImageKey": "capture-decran-le-2026-03-22-a-17.22.07.png",
-      "sourceImageCreditRev": 9,
-      "leadExcerpt": "Une des capacités distinctives de ce système patriarcal est son habileté remarquable à se perpétuer en instrumentalisant certaines femmes pour reproduire les structures qui les subordonnent. C’est à travers ce mécanisme d’opacité que sa présence se resserre sur la société, et que ses contradictions se dissimulent sous le couvert de liberté individuelle, de traditions ou de choix personnels.",
-      "leadImageReady": true
+      "sourceImageCreditRev": 9
     },
     {
       "source": "The McGill Daily",
@@ -4008,13 +4010,13 @@
       "excerpt": "Compte rendu de l’assemblée générale étudiante H26 L’assemblée générale (AG) de l’association étudiante du Cégep du Vieux-Montréal s’est déroulée dans l’après-midi du 4 février dernier à l’Exode. Le refus d’une grève cet hiver, l’intronisation du programme FIL, les nouveautés du",
       "image": "",
       "leadImageReady": false,
-      "stockImage": "https://upload.wikimedia.org/wikipedia/commons/e/e5/Formation_condens%C3%A9e_%C3%A0_Wikip%C3%A9dia_lors_du_cours_IPMSH_du_C%C3%A9gep_du_Vieux_Montr%C3%A9al.jpg",
-      "imageTitle": "File:Formation condensée à Wikipédia lors du cours IPMSH du Cégep du Vieux Montréal.jpg",
-      "imageCredit": "Photo : JBouchez / CC BY-SA 4.0 · Wikimedia Commons",
-      "imageCreator": "JBouchez",
-      "imageLicense": "CC BY-SA 4.0",
-      "imageProvider": "wikimedia",
-      "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Formation_condens%C3%A9e_%C3%A0_Wikip%C3%A9dia_lors_du_cours_IPMSH_du_C%C3%A9gep_du_Vieux_Montr%C3%A9al.jpg"
+      "stockImage": "https://live.staticflickr.com/5087/5336969301_208ee86e33_b.jpg",
+      "imageTitle": "Toronto Winter Maintenance Budget",
+      "imageCredit": "Photo : MSVG / CC BY · Openverse",
+      "imageCreator": "MSVG",
+      "imageLicense": "by",
+      "imageProvider": "openverse",
+      "imageSourceUrl": "https://www.flickr.com/photos/13907834@N00/5336969301"
     },
     {
       "source": "Le Polyscope",
