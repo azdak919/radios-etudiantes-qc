@@ -1,30 +1,21 @@
 {
-  "updated": "2026-07-22T14:27:53.450Z",
+  "updated": "2026-07-22T15:25:37.016Z",
   "total": 185,
   "pool": 58,
-  "incomplete": 4,
+  "incomplete": 3,
   "withLeadExcerpt": 74,
-  "candidates": 4,
-  "enriched": 2,
+  "candidates": 3,
+  "enriched": 1,
   "failed": 0,
   "ok": true,
   "samples": [
     {
-      "title": "Qui sont les agents qui patrouillent notre campus ?",
-      "link": "https://www.delitfrancais.com/2026/03/18/qui-sont-les-agents-qui-patrouillent-notre-campus/",
+      "title": "Les femmes MAGA au service du patriarcat",
+      "link": "https://www.delitfrancais.com/2026/03/18/les-femmes-maga-au-service-du-patriarcat/",
       "ok": true,
       "score": 100,
-      "chars": 396,
-      "sample": "« L’Université McGill est à la recherche de patrouilleurs dynamiques et engagés pour assurer la sécu",
-      "changed": true
-    },
-    {
-      "title": "Trump réitère sa volonté de contrer la fraude électorale",
-      "link": "https://lecollectif.ca/a-la-une/trump-reitere-sa-volonte-de-contrer-la-fraude-electorale/",
-      "ok": true,
-      "score": 100,
-      "chars": 361,
-      "sample": "Le président américain Donald Trump prononçait un discours le 16 juillet dernier, principalement pou",
+      "chars": 393,
+      "sample": "Une des capacités distinctives de ce système patriarcal est son habileté remarquable à se perpétuer ",
       "changed": true
     },
     {

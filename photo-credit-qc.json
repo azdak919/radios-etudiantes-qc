@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-22T14:34:07.902Z",
+  "updated": "2026-07-22T15:31:50.277Z",
   "total": 185,
   "withImage": 168,
   "withCredit": 168,
@@ -7,22 +7,15 @@
   "pending": 0,
   "missingHero": 0,
   "ok": true,
-  "checked": 2,
-  "updatedCount": 2,
-  "citedNew": 2,
+  "checked": 1,
+  "updatedCount": 1,
+  "citedNew": 1,
   "fallbackNew": 0,
   "samples": [
     {
-      "title": "Trump réitère sa volonté de contrer la fraude électorale",
-      "source": "Le Collectif",
-      "credit": "Photo : Saul Loeb/Pool - Getty Images",
-      "cited": true,
-      "method": "json-ld"
-    },
-    {
-      "title": "Qui sont les agents qui patrouillent notre campus ?",
+      "title": "Les femmes MAGA au service du patriarcat",
       "source": "Le Délit",
-      "credit": "Photo : Stu Doré/Félix Fournier",
+      "credit": "Photo : Stu Doré",
       "cited": true,
       "method": "media-credit-featured"
     }
