@@ -1,14 +1,32 @@
 {
-  "updated": "2026-07-22T12:19:15.399Z",
+  "updated": "2026-07-22T14:27:53.450Z",
   "total": 185,
   "pool": 58,
-  "incomplete": 2,
+  "incomplete": 4,
   "withLeadExcerpt": 74,
-  "candidates": 2,
-  "enriched": 0,
+  "candidates": 4,
+  "enriched": 2,
   "failed": 0,
   "ok": true,
   "samples": [
+    {
+      "title": "Qui sont les agents qui patrouillent notre campus ?",
+      "link": "https://www.delitfrancais.com/2026/03/18/qui-sont-les-agents-qui-patrouillent-notre-campus/",
+      "ok": true,
+      "score": 100,
+      "chars": 396,
+      "sample": "« L’Université McGill est à la recherche de patrouilleurs dynamiques et engagés pour assurer la sécu",
+      "changed": true
+    },
+    {
+      "title": "Trump réitère sa volonté de contrer la fraude électorale",
+      "link": "https://lecollectif.ca/a-la-une/trump-reitere-sa-volonte-de-contrer-la-fraude-electorale/",
+      "ok": true,
+      "score": 100,
+      "chars": 361,
+      "sample": "Le président américain Donald Trump prononçait un discours le 16 juillet dernier, principalement pou",
+      "changed": true
+    },
     {
       "title": "The Cruel Optimism of Summer",
       "link": "https://www.mcgilldaily.com/2026/07/the-cruel-optimism-of-summer/",

@@ -1,6 +1,6 @@
 {
-  "updated": "2026-07-22T12:18:50.751Z",
-  "updatedSlot": null,
+  "updated": "2026-07-22T14:27:25.788Z",
+  "updatedSlot": "2026-07-22T14:00:00.000Z",
   "count": 185,
   "freshnessSessions": 3,
   "sources": {
@@ -10,7 +10,7 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-05-15T16:00:00.000Z",
-      "lastFetchOk": "2026-07-22T12:18:10.408Z"
+      "lastFetchOk": "2026-07-22T14:26:52.695Z"
     },
     "Montréal Campus": {
       "fetchOk": true,
@@ -18,7 +18,7 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-05-09T03:14:30.000Z",
-      "lastFetchOk": "2026-07-22T12:18:11.738Z"
+      "lastFetchOk": "2026-07-22T14:26:53.725Z"
     },
     "Le Délit": {
       "fetchOk": true,
@@ -26,7 +26,7 @@
       "articleCount": 20,
       "freshArticleCount": 20,
       "lastArticle": "2026-03-25T11:00:00.000Z",
-      "lastFetchOk": "2026-07-22T12:18:16.444Z"
+      "lastFetchOk": "2026-07-22T14:26:58.326Z"
     },
     "The McGill Daily": {
       "fetchOk": true,
@@ -34,7 +34,7 @@
       "articleCount": 15,
       "freshArticleCount": 15,
       "lastArticle": "2026-07-06T12:00:00.000Z",
-      "lastFetchOk": "2026-07-22T12:18:17.406Z"
+      "lastFetchOk": "2026-07-22T14:26:59.266Z"
     },
     "The Link": {
       "fetchOk": true,
@@ -42,7 +42,7 @@
       "articleCount": 20,
       "freshArticleCount": 20,
       "lastArticle": "2026-07-08T14:41:00.000Z",
-      "lastFetchOk": "2026-07-22T12:18:18.668Z"
+      "lastFetchOk": "2026-07-22T14:27:00.389Z"
     },
     "Zone Campus": {
       "fetchOk": true,
@@ -50,7 +50,7 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-05-08T14:20:26.000Z",
-      "lastFetchOk": "2026-07-22T12:18:20.518Z"
+      "lastFetchOk": "2026-07-22T14:27:01.531Z"
     },
     "L'Exemplaire": {
       "fetchOk": true,
@@ -58,15 +58,15 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-05-15T16:31:24.000Z",
-      "lastFetchOk": "2026-07-22T12:18:22.657Z"
+      "lastFetchOk": "2026-07-22T14:27:02.771Z"
     },
     "Le Collectif": {
       "fetchOk": true,
       "stale": false,
       "articleCount": 10,
       "freshArticleCount": 10,
-      "lastArticle": "2026-07-21T00:54:50.000Z",
-      "lastFetchOk": "2026-07-22T12:18:23.848Z"
+      "lastArticle": "2026-07-22T12:33:15.000Z",
+      "lastFetchOk": "2026-07-22T14:27:04.005Z"
     },
     "Exil": {
       "fetchOk": true,
@@ -74,7 +74,7 @@
       "articleCount": 7,
       "freshArticleCount": 7,
       "lastArticle": "2026-04-18T22:22:07.000Z",
-      "lastFetchOk": "2026-07-22T12:18:24.265Z"
+      "lastFetchOk": "2026-07-22T14:27:04.355Z"
     },
     "La Pige": {
       "fetchOk": true,
@@ -82,7 +82,7 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-06-22T14:36:10.000Z",
-      "lastFetchOk": "2026-07-22T12:18:25.115Z"
+      "lastFetchOk": "2026-07-22T14:27:05.258Z"
     },
     "Le Polyscope": {
       "fetchOk": true,
@@ -90,7 +90,7 @@
       "articleCount": 13,
       "freshArticleCount": 13,
       "lastArticle": "2026-02-25T14:38:32.764Z",
-      "lastFetchOk": "2026-07-22T12:18:29.224Z"
+      "lastFetchOk": "2026-07-22T14:27:07.653Z"
     },
     "The Tribune": {
       "fetchOk": true,
@@ -98,7 +98,7 @@
       "articleCount": 20,
       "freshArticleCount": 20,
       "lastArticle": "2026-07-21T13:21:49.000Z",
-      "lastFetchOk": "2026-07-22T12:18:29.477Z"
+      "lastFetchOk": "2026-07-22T14:27:07.928Z"
     },
     "The Campus": {
       "fetchOk": true,
@@ -106,7 +106,7 @@
       "articleCount": 20,
       "freshArticleCount": 20,
       "lastArticle": "2026-04-06T16:03:16.000Z",
-      "lastFetchOk": "2026-07-22T12:18:29.990Z"
+      "lastFetchOk": "2026-07-22T14:27:08.282Z"
     },
     "The Plant": {
       "fetchOk": true,
@@ -114,10 +114,31 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-05-11T20:44:08.000Z",
-      "lastFetchOk": "2026-07-22T12:18:30.326Z"
+      "lastFetchOk": "2026-07-22T14:27:08.502Z"
     }
   },
   "items": [
+    {
+      "source": "Le Collectif",
+      "institution": "Université de Sherbrooke",
+      "region": "Estrie",
+      "type": "universite",
+      "lang": "fr",
+      "title": "Trump réitère sa volonté de contrer la fraude électorale",
+      "link": "https://lecollectif.ca/a-la-une/trump-reitere-sa-volonte-de-contrer-la-fraude-electorale/",
+      "author": "Médéric Dens",
+      "date": "2026-07-22T12:33:15.000Z",
+      "excerpt": "Le président américain Donald Trump prononçait un discours le 16 juillet dernier, principalement pour rappeler la fraude électorale qu’il déplore depuis sa défaite lors des présidentielles de 2020 face à Joe Biden. Fidèle à lui-même, Trump s’est permis de critiquer largement le",
+      "image": "https://lecollectif.ca/wp-content/uploads/2026/07/SOCIETE_Trump-reitere-sa-volonte-de-contrer-la-fraude-electorale_Getty-Images.jpg",
+      "leadExcerpt": "Le président américain Donald Trump prononçait un discours le 16 juillet dernier, principalement pour rappeler la fraude électorale qu’il déplore depuis sa défaite lors des présidentielles de 2020 face à Joe Biden. Fidèle à lui-même, Trump s’est permis de critiquer largement le Parti démocrate, à l’aube des élections de mi-mandat à venir en novembre prochain.",
+      "sourceImageCredit": "Photo : Saul Loeb/Pool - Getty Images",
+      "sourceImageCreator": "Saul Loeb/Pool - Getty Images",
+      "sourceImageCreditUrl": "https://lecollectif.ca/a-la-une/trump-reitere-sa-volonte-de-contrer-la-fraude-electorale/",
+      "sourceImageCreditFrom": "article",
+      "sourceImageCreditCited": true,
+      "sourceImageCreditImageKey": "societe_trump-reitere-sa-volonte-de-contrer-la-fraude-electorale_getty-images.jpg",
+      "sourceImageCreditRev": 9
+    },
     {
       "source": "The Tribune",
       "institution": "McGill University",
@@ -130,7 +151,7 @@
       "date": "2026-07-21T13:21:49.000Z",
       "excerpt": "On July 2, Folarin Balogun , star forward for the United States Men’s National Team ( USMNT ), received a straight red card in the 64th minute of the USA vs. Bosnia and Herzegovina Round of 32 match in the Fédération Internationale de Football Association ( FIFA ) World Cup 2026",
       "image": "https://www.thetribune.ca/wp-content/uploads/2026/07/Screen-Shot-2026-07-21-at-9.14.03-AM.png",
-      "authorCheckedAt": "2026-07-21T14:27:13.568Z",
+      "authorCheckedAt": "2026-07-22T14:27:35.804Z",
       "sourceImageCredit": "Photo credit: The Tribune",
       "sourceImageCreditUrl": "https://www.thetribune.ca/sports/the-balogun-scandal-is-just-the-latest-instance-of-fifas-political-pandering-21072026/?utm_source=rss&utm_medium=rss&utm_campaign=the-balogun-scandal-is-just-the-latest-instance-of-fifas-political-pandering-21072026",
       "sourceImageCreditFrom": "media",
@@ -366,28 +387,6 @@
       "sourceImageCreditRev": 8,
       "leadImageReady": true,
       "leadExcerpt": "Dans de nombreuses villes du monde, le tourisme constitue un moteur économique essentiel. Chaque année, des millions de voyageurs affluent vers des destinations renommées pour leur patrimoine, leur culture, leur cuisine ou leurs paysages. Durant la haute saison, cette industrie permet de générer des revenus importants."
-    },
-    {
-      "source": "Le Collectif",
-      "institution": "Université de Sherbrooke",
-      "region": "Estrie",
-      "type": "universite",
-      "lang": "fr",
-      "title": "Le vélo prend de plus en plus de place",
-      "link": "https://lecollectif.ca/a-la-une/le-velo-prend-de-plus-en-plus-de-place/",
-      "author": "Salma Labiede",
-      "date": "2026-07-14T21:13:56.000Z",
-      "excerpt": "Il suffit de se promener dans les rues de Montréal, de Québec ou de Sherbrooke pour le remarquer : il y a de plus en plus de vélos sur les routes. Autrefois considéré comme une activité de loisir pendant l’été, le vélo est maintenant devenu un véritable moyen de transport pour",
-      "image": "https://lecollectif.ca/wp-content/uploads/2026/07/SPORTS_Velo_Source-Velo-Quebec-1024x573.jpg",
-      "sourceImageCredit": "Photo : Vélo Québec",
-      "sourceImageCreator": "Vélo Québec",
-      "sourceImageCreditUrl": "https://lecollectif.ca/a-la-une/le-velo-prend-de-plus-en-plus-de-place/",
-      "sourceImageCreditFrom": "article",
-      "sourceImageCreditCited": true,
-      "sourceImageCreditImageKey": "sports_velo_source-velo-quebec.jpg",
-      "sourceImageCreditRev": 8,
-      "leadImageReady": true,
-      "leadExcerpt": "Les plus récentes données de Vélo Québec démontrent que le vélo occupe une place de plus en plus importante dans les habitudes de déplacement au Québec. En 2025, environ 2,7 millions de Québécois ont utilisé leur vélo comme moyen de transport. Cette progression est particulièrement visible dans les grands centres urbains, où les déplacements à vélo continuent d’augmenter."
     },
     {
       "source": "The Link",
@@ -3813,21 +3812,22 @@
       "region": "Montréal",
       "type": "universite",
       "lang": "fr",
-      "title": "Ce que nous devons aux femmes",
-      "link": "https://www.delitfrancais.com/2026/03/18/ce-que-nous-devons-aux-femmes/",
-      "author": "Eugénie St-Pierre",
+      "title": "Qui sont les agents qui patrouillent notre campus ?",
+      "link": "https://www.delitfrancais.com/2026/03/18/qui-sont-les-agents-qui-patrouillent-notre-campus/",
+      "author": "Héloïse Durning",
       "date": "2026-03-18T07:00:00.000Z",
-      "excerpt": "Votre entourage, en tant qu’étudiantes et étudiants de l’Université McGill, est peut-être composé en majorité de personnes qui se revendiquent comme féministes. Certaines le sont, d’autres le prétendent, mais relativement rares sont les McGillois qui refusent ouvertement le féminisme.",
-      "image": "https://www.delitfrancais.com/wp-content/uploads/2026/03/Capture-decran-le-2026-03-22-a-17.22.07.png",
+      "excerpt": "Une enquête sur Garda à McGill.",
+      "image": "https://www.delitfrancais.com/wp-content/uploads/2026/03/garda.png",
       "featured": true,
-      "_pageAuthor": "Eugénie St-Pierre",
-      "authorCheckedAt": "2026-07-22T12:19:00.332Z",
-      "sourceImageCredit": "Photo : Alexandre Gontier",
-      "sourceImageCreator": "Alexandre Gontier",
-      "sourceImageCreditUrl": "https://www.delitfrancais.com/2026/03/18/ce-que-nous-devons-aux-femmes/",
+      "_pageAuthor": "Héloïse Durning",
+      "authorCheckedAt": "2026-07-22T14:27:36.479Z",
+      "leadExcerpt": "« L’Université McGill est à la recherche de patrouilleurs dynamiques et engagés pour assurer la sécurité de sa communauté universitaire », selon une annonce publiée sur le site web du Groupe de sécurité Garda S.E.N.C. (Garda), mieux connu sous le nom de GardaWorld. Cette entreprise canadienne de sécurité privée est sous contrat avec McGill depuis le 26 août 2024, et ce, jusqu’au 30 avril 2027.",
+      "sourceImageCredit": "Photo : Stu Doré/Félix Fournier",
+      "sourceImageCreator": "Stu Doré/Félix Fournier",
+      "sourceImageCreditUrl": "https://www.delitfrancais.com/2026/03/18/qui-sont-les-agents-qui-patrouillent-notre-campus/",
       "sourceImageCreditFrom": "article",
       "sourceImageCreditCited": true,
-      "sourceImageCreditImageKey": "capture-decran-le-2026-03-22-a-17.22.07.png",
+      "sourceImageCreditImageKey": "garda.png",
       "sourceImageCreditRev": 9
     },
     {
@@ -3836,23 +3836,22 @@
       "region": "Montréal",
       "type": "universite",
       "lang": "fr",
-      "title": "Les femmes MAGA au service du patriarcat",
-      "link": "https://www.delitfrancais.com/2026/03/18/les-femmes-maga-au-service-du-patriarcat/",
-      "author": "Anonyme",
+      "title": "Ce que nous devons aux femmes",
+      "link": "https://www.delitfrancais.com/2026/03/18/ce-que-nous-devons-aux-femmes/",
+      "author": "Eugénie St-Pierre",
       "date": "2026-03-18T07:00:00.000Z",
-      "excerpt": "Kristi Noem et Erika Kirk comme figures de proue du néo-fascisme américain.",
-      "image": "https://www.delitfrancais.com/wp-content/uploads/2026/03/MAGA_marius.png",
+      "excerpt": "Votre entourage, en tant qu’étudiantes et étudiants de l’Université McGill, est peut-être composé en majorité de personnes qui se revendiquent comme féministes. Certaines le sont, d’autres le prétendent, mais relativement rares sont les McGillois qui refusent ouvertement le féminisme.",
+      "image": "https://www.delitfrancais.com/wp-content/uploads/2026/03/Capture-decran-le-2026-03-22-a-17.22.07.png",
       "featured": true,
-      "authorCheckedAt": "2026-07-22T11:26:00.542Z",
-      "_pageAuthor": "Anonyme",
-      "sourceImageCredit": "Photo : Stu Doré",
-      "sourceImageCreator": "Stu Doré",
-      "sourceImageCreditUrl": "https://www.delitfrancais.com/2026/03/18/les-femmes-maga-au-service-du-patriarcat/",
+      "authorCheckedAt": "2026-07-22T12:19:00.332Z",
+      "_pageAuthor": "Eugénie St-Pierre",
+      "sourceImageCredit": "Photo : Alexandre Gontier",
+      "sourceImageCreator": "Alexandre Gontier",
+      "sourceImageCreditUrl": "https://www.delitfrancais.com/2026/03/18/ce-que-nous-devons-aux-femmes/",
       "sourceImageCreditFrom": "article",
       "sourceImageCreditCited": true,
-      "sourceImageCreditImageKey": "maga_marius.png",
-      "sourceImageCreditRev": 9,
-      "leadExcerpt": "Une des capacités distinctives de ce système patriarcal est son habileté remarquable à se perpétuer en instrumentalisant certaines femmes pour reproduire les structures qui les subordonnent. C’est à travers ce mécanisme d’opacité que sa présence se resserre sur la société, et que ses contradictions se dissimulent sous le couvert de liberté individuelle, de traditions ou de choix personnels."
+      "sourceImageCreditImageKey": "capture-decran-le-2026-03-22-a-17.22.07.png",
+      "sourceImageCreditRev": 9
     },
     {
       "source": "The McGill Daily",

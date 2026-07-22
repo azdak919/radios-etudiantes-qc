@@ -9,7 +9,7 @@
     <link>https://azdak919.github.io/le-radar/</link>
     <description>Fil agrégé des journaux étudiants des cégeps et universités du Québec (français et anglais). Titres, brèves, images et liens vers les articles originaux.</description>
     <language>fr-CA</language>
-    <lastBuildDate>Tue, 21 Jul 2026 13:21:49 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 22 Jul 2026 12:33:15 +0000</lastBuildDate>
     <generator>LE RADAR Student Media Aggregator</generator>
     <docs>https://azdak919.github.io/le-radar/feeds.html</docs>
     <copyright>© publications étudiantes sources — fil agrégé par LE RADAR</copyright>
@@ -20,6 +20,32 @@
       <title>Le Radar</title>
       <link>https://azdak919.github.io/le-radar/</link>
     </image>
+    <item>
+      <title>Trump réitère sa volonté de contrer la fraude électorale</title>
+      <link>https://lecollectif.ca/a-la-une/trump-reitere-sa-volonte-de-contrer-la-fraude-electorale/</link>
+      <guid isPermaLink="true">https://lecollectif.ca/a-la-une/trump-reitere-sa-volonte-de-contrer-la-fraude-electorale/</guid>
+      <pubDate>Wed, 22 Jul 2026 12:33:15 +0000</pubDate>
+      <dc:creator>Médéric Dens</dc:creator>
+      <source url="https://lecollectif.ca/">Le Collectif</source>
+      <description><![CDATA[Le Collectif · Médéric Dens · 22 juill.]]></description>
+      <content:encoded><![CDATA[<p style="margin:0 0 0.75em;font-size:0.9em;color:#555"><strong>Le Collectif · Médéric Dens · 22 juill.</strong></p>
+<figure style="margin:0 0 1em">
+<img src="https://lecollectif.ca/wp-content/uploads/2026/07/SOCIETE_Trump-reitere-sa-volonte-de-contrer-la-fraude-electorale_Getty-Images.jpg" alt="Trump réitère sa volonté de contrer la fraude électorale" style="max-width:100%;height:auto;display:block;border-radius:4px" />
+<figcaption style="font-size:0.85em;color:#666;margin-top:0.35em">Photo : Saul Loeb/Pool - Getty Images</figcaption>
+</figure>
+<p style="margin:0 0 0.75em;line-height:1.5">Le président américain Donald Trump prononçait un discours le 16 juillet dernier, principalement pour rappeler la fraude électorale qu’il déplore depuis sa défaite lors des présidentielles de 2020 face à Joe Biden. Fidèle à lui-même, Trump s’est permis de critiquer largement le Parti démocrate, à l’aube des élections de mi-mandat à venir en novembre prochain.</p>]]></content:encoded>
+      <category>Le Collectif</category>
+      <category>UdeS</category>
+      <category>Estrie</category>
+      <category>université</category>
+      <category>Français</category>
+      <media:content url="https://lecollectif.ca/wp-content/uploads/2026/07/SOCIETE_Trump-reitere-sa-volonte-de-contrer-la-fraude-electorale_Getty-Images.jpg" medium="image" type="image/jpeg">
+        <media:credit>Photo : Saul Loeb/Pool - Getty Images</media:credit>
+        <media:title>Trump réitère sa volonté de contrer la fraude électorale</media:title>
+      </media:content>
+      <media:thumbnail url="https://lecollectif.ca/wp-content/uploads/2026/07/SOCIETE_Trump-reitere-sa-volonte-de-contrer-la-fraude-electorale_Getty-Images.jpg" />
+      <enclosure url="https://lecollectif.ca/wp-content/uploads/2026/07/SOCIETE_Trump-reitere-sa-volonte-de-contrer-la-fraude-electorale_Getty-Images.jpg" type="image/jpeg" length="1" />
+    </item>
     <item>
       <title>The Balogun scandal is just the latest instance of FIFA’s political pandering</title>
       <link>https://www.thetribune.ca/sports/the-balogun-scandal-is-just-the-latest-instance-of-fifas-political-pandering-21072026/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=the-balogun-scandal-is-just-the-latest-instance-of-fifas-political-pandering-21072026</link>
@@ -305,32 +331,6 @@
       </media:content>
       <media:thumbnail url="https://lecollectif.ca/wp-content/uploads/2026/07/SOCIETE_Tourisme_Source-Ordre-des-architectes-du-Quebec.jpg" />
       <enclosure url="https://lecollectif.ca/wp-content/uploads/2026/07/SOCIETE_Tourisme_Source-Ordre-des-architectes-du-Quebec.jpg" type="image/jpeg" length="1" />
-    </item>
-    <item>
-      <title>Le vélo prend de plus en plus de place</title>
-      <link>https://lecollectif.ca/a-la-une/le-velo-prend-de-plus-en-plus-de-place/</link>
-      <guid isPermaLink="true">https://lecollectif.ca/a-la-une/le-velo-prend-de-plus-en-plus-de-place/</guid>
-      <pubDate>Tue, 14 Jul 2026 21:13:56 +0000</pubDate>
-      <dc:creator>Salma Labiede</dc:creator>
-      <source url="https://lecollectif.ca/">Le Collectif</source>
-      <description><![CDATA[Le Collectif · Salma Labiede · 14 juill.]]></description>
-      <content:encoded><![CDATA[<p style="margin:0 0 0.75em;font-size:0.9em;color:#555"><strong>Le Collectif · Salma Labiede · 14 juill.</strong></p>
-<figure style="margin:0 0 1em">
-<img src="https://lecollectif.ca/wp-content/uploads/2026/07/SPORTS_Velo_Source-Velo-Quebec-1024x573.jpg" alt="Le vélo prend de plus en plus de place" style="max-width:100%;height:auto;display:block;border-radius:4px" />
-<figcaption style="font-size:0.85em;color:#666;margin-top:0.35em">Photo : Vélo Québec</figcaption>
-</figure>
-<p style="margin:0 0 0.75em;line-height:1.5">Les plus récentes données de Vélo Québec démontrent que le vélo occupe une place de plus en plus importante dans les habitudes de déplacement au Québec. En 2025, environ 2,7 millions de Québécois ont utilisé leur vélo comme moyen de transport. Cette progression est particulièrement visible dans les grands centres urbains, où les déplacements à vélo continuent d’augmenter.</p>]]></content:encoded>
-      <category>Le Collectif</category>
-      <category>UdeS</category>
-      <category>Estrie</category>
-      <category>université</category>
-      <category>Français</category>
-      <media:content url="https://lecollectif.ca/wp-content/uploads/2026/07/SPORTS_Velo_Source-Velo-Quebec-1024x573.jpg" medium="image" type="image/jpeg">
-        <media:credit>Photo : Vélo Québec</media:credit>
-        <media:title>Le vélo prend de plus en plus de place</media:title>
-      </media:content>
-      <media:thumbnail url="https://lecollectif.ca/wp-content/uploads/2026/07/SPORTS_Velo_Source-Velo-Quebec-1024x573.jpg" />
-      <enclosure url="https://lecollectif.ca/wp-content/uploads/2026/07/SPORTS_Velo_Source-Velo-Quebec-1024x573.jpg" type="image/jpeg" length="1" />
     </item>
     <item>
       <title>CSU fails to reach quorum at first special council meeting of new mandate</title>
