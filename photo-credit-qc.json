@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-22T03:58:20.584Z",
+  "updated": "2026-07-22T04:17:24.362Z",
   "total": 185,
   "withImage": 168,
   "withCredit": 168,
@@ -7,43 +7,22 @@
   "pending": 0,
   "missingHero": 0,
   "ok": true,
-  "checked": 5,
-  "updatedCount": 5,
-  "citedNew": 4,
-  "fallbackNew": 1,
+  "checked": 2,
+  "updatedCount": 2,
+  "citedNew": 2,
+  "fallbackNew": 0,
   "samples": [
     {
-      "title": "Forum RÉA : une alliance pour l’éducation en milieu défavorisé",
-      "source": "Quartier Libre",
-      "credit": "Crédit photo : Quartier Libre",
-      "cited": false,
-      "method": null
-    },
-    {
-      "title": "L’épidémie de la nonchalance",
+      "title": "Ce que nous devons aux femmes",
       "source": "Le Délit",
-      "credit": "Photo : Elie Nguyen",
+      "credit": "Photo : Alexandre Gontier",
       "cited": true,
-      "method": "media-credit-featured"
+      "method": "media-credit-near"
     },
     {
-      "title": "La performance de l’homosexualité : un privilège ?",
-      "source": "Le Délit",
-      "credit": "Photo : Félix Fournier",
-      "cited": true,
-      "method": "media-credit-featured"
-    },
-    {
-      "title": "Pourquoi le L est en premier dans LGBTQ+",
+      "title": "Les femmes MAGA au service du patriarcat",
       "source": "Le Délit",
       "credit": "Photo : Stu Doré",
-      "cited": true,
-      "method": "media-credit-featured"
-    },
-    {
-      "title": "Sois belle et tais-toi",
-      "source": "Le Délit",
-      "credit": "Photo : Catvy Tran",
       "cited": true,
       "method": "media-credit-featured"
     }
