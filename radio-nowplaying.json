@@ -1,17 +1,11 @@
 {
-  "updatedAt": "2026-07-22T22:05:33.661Z",
+  "updatedAt": "2026-07-22T23:31:06.034Z",
   "timezone": "America/Toronto",
   "stations": {
     "chyz": {
       "id": "chyz",
       "name": "CHYZ 94,3",
-      "current": {
-        "title": "Les Arshitechs du Son",
-        "source": "schedule",
-        "start": "17:30",
-        "end": "18:30",
-        "url": "https://chyz.ca/emission/les-arshitechs-du-son/"
-      },
+      "current": null,
       "next": {
         "title": "Blasphème",
         "source": "schedule",
@@ -20,34 +14,34 @@
         "url": "https://chyz.ca/emission/blaspheme/"
       },
       "track": "",
-      "showTitle": "Les Arshitechs du Son",
+      "showTitle": "",
       "host": "",
       "source": "schedule",
       "sources": [
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-22T22:05:07.393Z"
+      "checkedAt": "2026-07-22T23:30:45.264Z"
     },
     "cism": {
       "id": "cism",
       "name": "CISM 89,3",
       "current": {
-        "title": "Le palmarès",
-        "source": "api-live",
-        "start": "14:00",
-        "url": "https://stream03.ustream.ca/cism128.mp3",
-        "slug": "palmares-de-cism"
-      },
-      "next": {
         "title": "Parler pour jaser",
         "source": "api-live",
         "start": "15:00",
-        "url": "https://podcast.cism893.ca/podcast/download_mp3/364465.mp3",
+        "url": "https://stream03.ustream.ca/cism128.mp3",
         "slug": "parler-pour-jaser"
       },
+      "next": {
+        "title": "Le cours de math",
+        "source": "api-live",
+        "start": "16:00",
+        "url": "https://podcast.cism893.ca/podcast/download_mp3/364467.mp3",
+        "slug": "le-cours-de-math"
+      },
       "track": "",
-      "showTitle": "Le palmarès",
+      "showTitle": "Parler pour jaser",
       "host": "",
       "source": "api-live",
       "sources": [
@@ -57,25 +51,25 @@
         "type": "cism-v1",
         "url": "https://admin.cism893.ca/api/v1/live"
       },
-      "checkedAt": "2026-07-22T22:05:10.091Z"
+      "checkedAt": "2026-07-22T23:30:47.788Z"
     },
     "ckut": {
       "id": "ckut",
       "name": "CKUT 90,3",
       "current": {
-        "title": "Hersay: Audio Smut/OWL/The Teachings/Metro Boulot Dodo",
-        "source": "api-live",
-        "start": "18:00",
-        "end": "19:00"
-      },
-      "next": {
         "title": "Harbinger Showcase",
         "source": "api-live",
         "start": "19:00",
         "end": "20:00"
       },
+      "next": {
+        "title": "Jazz Euphorium",
+        "source": "api-live",
+        "start": "20:00",
+        "end": "22:00"
+      },
       "track": "",
-      "showTitle": "Hersay: Audio Smut/OWL/The Teachings/Metro Boulot Dodo",
+      "showTitle": "Harbinger Showcase",
       "host": "",
       "source": "api-live",
       "sources": [
@@ -83,34 +77,34 @@
         "stream"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-22T22:05:16.397Z"
+      "checkedAt": "2026-07-22T23:30:50.412Z"
     },
     "cjlo": {
       "id": "cjlo",
       "name": "CJLO 1690AM",
       "current": {
-        "title": "The New Consonance",
-        "source": "schedule",
-        "start": "18:00",
-        "end": "19:00",
-        "url": "http://www.cjlo.com/shows/the-new-consonance"
-      },
-      "next": {
         "title": "BVST",
         "source": "schedule",
         "start": "19:00",
         "end": "21:00",
         "url": "http://www.cjlo.com/shows/bvst"
       },
+      "next": {
+        "title": "Rap Radar",
+        "source": "schedule",
+        "start": "21:00",
+        "end": "22:00",
+        "url": "http://www.cjlo.com/shows/rap-radar"
+      },
       "track": "",
-      "showTitle": "The New Consonance",
+      "showTitle": "BVST",
       "host": "",
       "source": "schedule",
       "sources": [
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-22T22:05:30.216Z"
+      "checkedAt": "2026-07-22T23:31:03.741Z"
     },
     "cfak": {
       "id": "cfak",
@@ -135,27 +129,27 @@
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-22T22:05:30.990Z"
+      "checkedAt": "2026-07-22T23:31:04.327Z"
     },
     "choq": {
       "id": "choq",
       "name": "CHOQ.ca",
       "current": {
-        "title": "The River",
+        "title": "Plead The 5th",
         "source": "api-live",
-        "host": "Dominique Fils-Aimé"
+        "host": "Andre Waithe"
       },
       "next": null,
-      "track": "Dominique Fils-Aimé - The River",
-      "showTitle": "The River",
-      "host": "Dominique Fils-Aimé",
+      "track": "Andre Waithe - Plead The 5th",
+      "showTitle": "Plead The 5th",
+      "host": "Andre Waithe",
       "source": "api-live",
       "sources": [
         "api-live",
         "stream"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-22T22:05:33.311Z"
+      "checkedAt": "2026-07-22T23:31:05.683Z"
     }
   }
 }
