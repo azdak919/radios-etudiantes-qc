@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-22T22:24:44.957Z",
+  "updated": "2026-07-22T23:55:57.332Z",
   "total": 185,
   "withImage": 168,
   "withCredit": 168,
@@ -7,9 +7,31 @@
   "pending": 0,
   "missingHero": 0,
   "ok": true,
-  "checked": 0,
-  "updatedCount": 0,
-  "citedNew": 0,
+  "checked": 3,
+  "updatedCount": 3,
+  "citedNew": 3,
   "fallbackNew": 0,
-  "samples": []
+  "samples": [
+    {
+      "title": "L’épidémie de la nonchalance",
+      "source": "Le Délit",
+      "credit": "Photo : Elie Nguyen",
+      "cited": true,
+      "method": "media-credit-featured"
+    },
+    {
+      "title": "La performance de l’homosexualité : un privilège ?",
+      "source": "Le Délit",
+      "credit": "Photo : Félix Fournier",
+      "cited": true,
+      "method": "media-credit-featured"
+    },
+    {
+      "title": "Les femmes MAGA au service du patriarcat",
+      "source": "Le Délit",
+      "credit": "Photo : Stu Doré",
+      "cited": true,
+      "method": "media-credit-featured"
+    }
+  ]
 }

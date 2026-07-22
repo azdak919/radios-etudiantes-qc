@@ -1,60 +1,24 @@
 {
-  "updated": "2026-07-22T22:25:15.746Z",
+  "updated": "2026-07-22T23:56:46.593Z",
   "total": 185,
   "withPhoto": 168,
-  "withStock": 63,
+  "withStock": 40,
   "withCampusBank": 9,
   "fullyCovered": 185,
-  "leadReadyPhotos": 139,
-  "pageScraped": 14,
-  "photosRecovered": 14,
-  "imagesCleared": 10,
-  "stockSearches": 68,
-  "stockFound": 47,
-  "campusBankFound": 6,
+  "leadReadyPhotos": 141,
+  "pageScraped": 17,
+  "photosRecovered": 17,
+  "imagesCleared": 11,
+  "stockSearches": 36,
+  "stockFound": 27,
+  "campusBankFound": 3,
   "mainPageLeadReady": true,
   "gaps": [
-    {
-      "title": "The Cruel Optimism of Summer",
-      "link": "https://www.mcgilldaily.com/2026/07/the-cruel-optimism-of-summer/",
-      "reason": "campus-bank",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/6/62/Roddick_Gates_closed%2C_McGill_University%2C_July_17%2C_2024.jpg"
-    },
-    {
-      "title": "CSU terminates council’s chief election officer",
-      "link": "https://thelinknewspaper.ca/article/16334",
-      "reason": "campus-bank",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/1/16/CJ_Building%2C_Loyola_Campus%2C_Communication_Studies%2C_Concordia_University.jpg"
-    },
-    {
-      "title": "Des artistes de chez nous ont brillé à la Fête du Lac des Nations",
-      "link": "https://lecollectif.ca/culture/des-artistes-de-chez-nous-ont-brille-a-la-fete-du-lac-des-nations/",
-      "reason": "stock-too-small",
-      "image": "https://lecollectif.ca/wp-content/uploads/2026/07/CULTURE_FLNPhoto1_CreditAntoineMeunier-1024x683.jpg"
-    },
-    {
-      "title": "Le scepticisme",
-      "link": "https://lecollectif.ca/edition-papier/le-scepticisme/",
-      "reason": "stock-too-small",
-      "image": "https://lecollectif.ca/wp-content/uploads/2026/07/OBSESSIONS_Scepticisme_JeunesDesinformationReseauxSociaux_SourceFondationJeanJaures-1-1024x576.png"
-    },
-    {
-      "title": "L’écoanxiété",
-      "link": "https://lecollectif.ca/societe/lecoanxiete/",
-      "reason": "stock-too-small",
-      "image": "https://lecollectif.ca/wp-content/uploads/2026/07/OBSESSIONS_Ecoanxiete_SourceNatureActionQuebec-1024x682.jpg"
-    },
     {
       "title": "Le militantisme",
       "link": "https://lecollectif.ca/societe/le-militantisme/",
       "reason": "no-stock-match",
       "image": "https://lecollectif.ca/wp-content/uploads/2026/07/OBSESSIONS_Le-militantisme_SourceGettyImages-1.jpg"
-    },
-    {
-      "title": "L’abondance d’un mode de vie plus lent",
-      "link": "https://lecollectif.ca/societe/labondance-dun-mode-de-vie-plus-lent/",
-      "reason": "no-stock-match",
-      "image": "https://lecollectif.ca/wp-content/uploads/2026/07/OBSESSIONS_SLOWLIVING_ModeDeVieLentCueillette_SourceLatelierDeCueillette-1-1024x1024.jpg"
     },
     {
       "title": "Les relations artificielles",
@@ -63,28 +27,64 @@
       "image": "https://lecollectif.ca/wp-content/uploads/2026/07/OBSESSIONS_RELATIONS_ODTelerealiteAmour_SourcePageFacebookDOD-1-819x1024.jpg"
     },
     {
-      "title": "Le phénomène de la nostalgie",
-      "link": "https://lecollectif.ca/societe/le-phenomene-de-la-nostalgie/",
+      "title": "Recettes musicales québécoises pour l’été",
+      "link": "https://quartierlibre.ca/ete-recettes-musicales-quebecoises/",
       "reason": "no-stock-match",
-      "image": "https://lecollectif.ca/wp-content/uploads/2026/07/OBSESSIONS_NOSTALGIE_Vinyles_SourceDrummondVinyl-1-1024x819.jpg"
+      "image": "https://quartierlibre.ca/wp-content/uploads/2026/05/20_florelaurentienne.jpg"
     },
     {
-      "title": "Une [sur]consommation… plus consciente?",
-      "link": "https://lecollectif.ca/societe/une-surconsommation-plus-consciente/",
+      "title": "CSU approves affinity group policy, club rules update and councillor pay increase at special meeting",
+      "link": "https://thelinknewspaper.ca/article/16326",
       "reason": "stock-too-small",
-      "image": "https://lecollectif.ca/wp-content/uploads/2026/07/Creation-sans-titre-33-1024x576.png"
+      "image": "https://live.staticflickr.com/7089/7290404684_2750bb385f_b.jpg"
     },
     {
-      "title": "L’augmentation des fraudes en ligne et comment s’en protéger",
-      "link": "https://lecollectif.ca/a-la-une/laugmentation-des-fraudes-en-ligne-et-comment-sen-proteger/",
-      "reason": "no-stock-match",
-      "image": "https://lecollectif.ca/wp-content/uploads/2026/07/SOCIETE_FraudeInternet_SourcePieuvre-1024x576.jpg"
-    },
-    {
-      "title": "Un hommage aux cyclistes décédés sur les routes",
-      "link": "https://lapige.atmjonquiere.com/2026/05/21/les-cyclistes-sont-honores-au-lac-saint-jean/?utm_source=rss&utm_medium=rss&utm_campaign=les-cyclistes-sont-honores-au-lac-saint-jean",
+      "title": "From the rink to the links",
+      "link": "https://thebucampus.ca/2026/04/06/from-the-rink-to-the-links/",
       "reason": "stock-too-small",
-      "image": "https://lapige.atmjonquiere.com/wp-content/uploads/sites/3/2026/05/shared-image-1.jpg"
+      "image": "https://live.staticflickr.com/4031/4400844746_a47c17ef6d_b.jpg"
+    },
+    {
+      "title": "Mars enters Aries",
+      "link": "https://thebucampus.ca/2026/04/06/mars-enters-aries/",
+      "reason": "stock-too-small",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/1/16/Mars%2C_Aries_and_Scorpio_from_Persian_Manusc_Wellcome_L0030660.jpg"
+    },
+    {
+      "title": "Spotlighting Powerful McGill Alumnae",
+      "link": "https://www.mcgilldaily.com/2026/03/spotlighting-powerful-mcgill-alumnae/",
+      "reason": "stock-too-small",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/e/e2/McGill_University_downtown_campus_12.JPG"
+    },
+    {
+      "title": "National Golf tournament",
+      "link": "https://thebucampus.ca/2026/03/23/national-golf-tournament/",
+      "reason": "stock-too-small",
+      "image": "https://live.staticflickr.com/24/99099986_4195128a59_b.jpg"
+    },
+    {
+      "title": "Gaiters wrap up hard-fought season with eyes on next year",
+      "link": "https://thebucampus.ca/2026/03/23/gaiters-wrap-up-hard-fought-season-with-eyes-on-next-year/",
+      "reason": "campus-bank",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/b/b3/Bishop%27s_University_campus_2011.jpg"
+    },
+    {
+      "title": "Second-Class Citizens",
+      "link": "https://www.mcgilldaily.com/2026/03/second-class-citizens/",
+      "reason": "campus-bank",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/1/1d/4_McGill_University%2C_Montreal%2CQuebec_2009.jpg"
+    },
+    {
+      "title": "The Gentrification of Online Fandom Spaces",
+      "link": "https://www.mcgilldaily.com/2026/03/the-gentrification-of-online-fandom-spaces/",
+      "reason": "stock-too-small",
+      "image": "https://live.staticflickr.com/5262/5621160117_4f124aa86d_b.jpg"
+    },
+    {
+      "title": "Le pays avant tout – esquisse",
+      "link": "https://exilecvm.wordpress.com/2026/02/28/le-pays-avant-tout-esquisse/",
+      "reason": "campus-bank",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/6/6c/C%C3%A9gep_du_Vieux_Montr%C3%A9al%2C_Nov_03_2022.jpg"
     }
   ]
 }
