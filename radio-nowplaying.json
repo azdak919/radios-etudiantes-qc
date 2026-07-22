@@ -1,17 +1,11 @@
 {
-  "updatedAt": "2026-07-22T12:13:10.594Z",
+  "updatedAt": "2026-07-22T14:35:15.248Z",
   "timezone": "America/Toronto",
   "stations": {
     "chyz": {
       "id": "chyz",
       "name": "CHYZ 94,3",
-      "current": {
-        "title": "Mercredi Bonbon",
-        "source": "schedule",
-        "start": "08:00",
-        "end": "10:00",
-        "url": "https://chyz.ca/emission/mercredi-bonbon/"
-      },
+      "current": null,
       "next": {
         "title": "Chéri.e, j’arrive!",
         "source": "schedule",
@@ -20,34 +14,34 @@
         "url": "https://chyz.ca/emission/cheri-e-jarrive/"
       },
       "track": "",
-      "showTitle": "Mercredi Bonbon",
+      "showTitle": "",
       "host": "",
       "source": "schedule",
       "sources": [
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-22T12:12:49.929Z"
+      "checkedAt": "2026-07-22T14:34:52.702Z"
     },
     "cism": {
       "id": "cism",
       "name": "CISM 89,3",
       "current": {
-        "title": "Hors cadre",
-        "source": "api-live",
-        "start": "04:00",
-        "url": "https://stream03.ustream.ca/cism128.mp3",
-        "slug": "hors-cadre"
-      },
-      "next": {
         "title": "Le Séismix",
         "source": "api-live",
         "start": "05:00",
-        "url": "https://podcast.cism893.ca/podcast/download_mp3/364823.mp3",
+        "url": "https://stream03.ustream.ca/cism128.mp3",
         "slug": "le-seismix"
       },
+      "next": {
+        "title": "Club classique",
+        "source": "api-live",
+        "start": "07:00",
+        "url": "https://podcast.cism893.ca/podcast/download_mp3/364436.mp3",
+        "slug": "club-classique"
+      },
       "track": "",
-      "showTitle": "Hors cadre",
+      "showTitle": "Le Séismix",
       "host": "",
       "source": "api-live",
       "sources": [
@@ -57,25 +51,25 @@
         "type": "cism-v1",
         "url": "https://admin.cism893.ca/api/v1/live"
       },
-      "checkedAt": "2026-07-22T12:12:51.902Z"
+      "checkedAt": "2026-07-22T14:34:55.185Z"
     },
     "ckut": {
       "id": "ckut",
       "name": "CKUT 90,3",
       "current": {
-        "title": "The Wednesday Morning After",
-        "source": "api-live",
-        "start": "07:00",
-        "end": "09:00"
-      },
-      "next": {
         "title": "The Sleepy King/Terminal 5",
         "source": "api-live",
         "start": "09:00",
         "end": "11:00"
       },
+      "next": {
+        "title": "Free City Radio",
+        "source": "api-live",
+        "start": "11:00",
+        "end": "11:30"
+      },
       "track": "",
-      "showTitle": "The Wednesday Morning After",
+      "showTitle": "The Sleepy King/Terminal 5",
       "host": "",
       "source": "api-live",
       "sources": [
@@ -83,34 +77,34 @@
         "stream"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-22T12:12:54.357Z"
+      "checkedAt": "2026-07-22T14:34:58.336Z"
     },
     "cjlo": {
       "id": "cjlo",
       "name": "CJLO 1690AM",
       "current": {
-        "title": "CJLO's Alternative Mega Mix",
+        "title": "Democracy Now",
         "source": "schedule",
-        "start": "08:00",
-        "end": "09:00",
-        "url": "http://www.cjlo.com/shows/cjlos-alternative-mega-mix"
+        "start": "10:00",
+        "end": "11:00",
+        "url": "http://www.cjlo.com/shows/democracy-now"
       },
       "next": {
-        "title": "Are We There Yet?",
+        "title": "Unheard Of",
         "source": "schedule",
-        "start": "09:00",
-        "end": "10:00",
-        "url": "http://www.cjlo.com/shows/are-we-there-yet"
+        "start": "11:00",
+        "end": "12:00",
+        "url": "http://www.cjlo.com/shows/unheard-of"
       },
       "track": "",
-      "showTitle": "CJLO's Alternative Mega Mix",
+      "showTitle": "Democracy Now",
       "host": "",
       "source": "schedule",
       "sources": [
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-22T12:13:07.710Z"
+      "checkedAt": "2026-07-22T14:35:12.166Z"
     },
     "cfak": {
       "id": "cfak",
@@ -135,27 +129,28 @@
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-22T12:13:08.301Z"
+      "checkedAt": "2026-07-22T14:35:12.934Z"
     },
     "choq": {
       "id": "choq",
       "name": "CHOQ.ca",
       "current": {
-        "title": "J'pense que",
+        "title": "Beau bordel",
         "source": "api-live",
-        "host": "Arielle Soucy"
+        "host": "blesse",
+        "url": "https://www.choq.ca/assets/playlist/palmares-site-web.jpg"
       },
       "next": null,
-      "track": "Arielle Soucy - J",
-      "showTitle": "J'pense que",
-      "host": "Arielle Soucy",
+      "track": "blesse - Beau bordel",
+      "showTitle": "Beau bordel",
+      "host": "blesse",
       "source": "api-live",
       "sources": [
         "api-live",
         "stream"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-22T12:13:10.244Z"
+      "checkedAt": "2026-07-22T14:35:14.898Z"
     }
   }
 }
