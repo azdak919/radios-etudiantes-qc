@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-22T20:57:34.609Z",
+  "updated": "2026-07-22T22:24:44.957Z",
   "total": 185,
   "withImage": 168,
   "withCredit": 168,
@@ -7,17 +7,9 @@
   "pending": 0,
   "missingHero": 0,
   "ok": true,
-  "checked": 1,
-  "updatedCount": 1,
+  "checked": 0,
+  "updatedCount": 0,
   "citedNew": 0,
-  "fallbackNew": 1,
-  "samples": [
-    {
-      "title": "Forum RÉA : une alliance pour l’éducation en milieu défavorisé",
-      "source": "Quartier Libre",
-      "credit": "Crédit photo : Quartier Libre",
-      "cited": false,
-      "method": null
-    }
-  ]
+  "fallbackNew": 0,
+  "samples": []
 }
