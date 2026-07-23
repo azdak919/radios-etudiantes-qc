@@ -46,6 +46,10 @@ test('météo campus : elle s’adapte à la largeur du masthead', async ({ page
     'href',
     /coords=45\.398%2C-74\.032$/,
   );
+  await expect(ribbon.locator("[data-weather-city=\"odanak\"]")).toHaveAttribute(
+    "href",
+    "https://www.meteomedia.com/fr/ville/ca/quebec/odanak-12/actuelle",
+  );
   await page.evaluate(() => {
     window.RadarTranslate = { ...(window.RadarTranslate || {}), getMode: () => 'en' };
     window.dispatchEvent(new CustomEvent('radar:translate-mode', { detail: { mode: 'en' } }));

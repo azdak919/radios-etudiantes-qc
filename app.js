@@ -895,17 +895,17 @@ let mastheadWeatherTimer = null;
 const mastheadWeatherDecks = { campus: [], nation: [] };
 let mastheadWeatherSlots = [];
 let mastheadWeatherNextSlot = 0;
-// La première carte est le repère urbain : Montréal / Québec dominent la
-// rotation, mais les grands pôles universitaires y ont aussi leur tour.
-// La séquence est volontairement pondérée plutôt qu'aléatoire afin que les
-// deux métropoles reviennent régulièrement et sans répétitions accidentelles.
-const MASTHEAD_WEATHER_PRIMARY_SEQUENCE = [
-  'montreal', 'quebec', 'montreal', 'quebec', 'sherbrooke',
-  'montreal', 'quebec', 'trois-rivieres', 'montreal', 'quebec',
-  'saguenay', 'montreal', 'quebec', 'rimouski', 'montreal',
-  'quebec', 'gatineau', 'montreal', 'quebec', 'rouyn-noranda',
-];
+// La carte principale reste exclusivement réservée à Montréal et Québec.
+const MASTHEAD_WEATHER_PRIMARY_SEQUENCE = ["montreal", "quebec"];
 const MASTHEAD_WEATHER_PRIMARY_IDS = new Set(MASTHEAD_WEATHER_PRIMARY_SEQUENCE);
+// Les cartes régionales suivent l’importance démographique universitaire.
+const MASTHEAD_WEATHER_REGIONAL_PRIORITY = [
+  "sherbrooke", "trois-rivieres", "gatineau", "saguenay",
+  "rimouski", "rouyn-noranda",
+];
+const MASTHEAD_WEATHER_REGIONAL_RANK = new Map(
+  MASTHEAD_WEATHER_REGIONAL_PRIORITY.map((id, index) => [id, index]),
+);
 let mastheadWeatherPrimaryIndex = 0;
 let mastheadWeatherCompactSecondaryIndex = 0;
 let mastheadWeatherResizeFrame = 0;
@@ -949,8 +949,8 @@ function buildMastheadWeatherBoard() {
     el.target = '_blank';
     el.rel = 'noopener noreferrer';
     const provider = weatherForecastProvider(city);
-    el.title = `Prévisions de  — `;
-    el.setAttribute('aria-label', `Prévisions de  pour `);
+    el.title = `Prévisions de ${provider} — ${context}`;
+    el.setAttribute("aria-label", `Prévisions de ${provider} pour ${context}`);
     el.innerHTML = '<span class="masthead-weather__icon" aria-hidden="true">·</span><span class="masthead-weather__name"><span class="masthead-weather__name-text"></span></span><span class="masthead-weather__temp">—</span>';
     el.querySelector('.masthead-weather__name-text').textContent = city.name;
     fragment.append(el);
@@ -970,14 +970,16 @@ function nextWeatherCity(group, usedIds) {
   const eligible = WEATHER_CITIES.filter((city) => {
     if (usedIds.has(city.id)) return false;
     if (group === 'nation') return !!city.nation;
-    // Les pôles universitaires de référence ont leur carte dédiée à gauche.
     return !city.nation && !MASTHEAD_WEATHER_PRIMARY_IDS.has(city.id);
   });
   if (!eligible.length) return null;
   let deck = mastheadWeatherDecks[group];
   deck = deck.filter((city) => eligible.some((candidate) => candidate.id === city.id));
   if (!deck.length) {
-    deck = [...eligible].sort(() => Math.random() - 0.5);
+    deck = [...eligible].sort((a, b) =>
+      (MASTHEAD_WEATHER_REGIONAL_RANK.get(a.id) ?? Number.MAX_SAFE_INTEGER)
+      - (MASTHEAD_WEATHER_REGIONAL_RANK.get(b.id) ?? Number.MAX_SAFE_INTEGER),
+    );
   }
   const city = deck.shift();
   mastheadWeatherDecks[group] = deck;
