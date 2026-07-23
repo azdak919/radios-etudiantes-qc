@@ -40,9 +40,12 @@ test('météo campus : elle s’adapte à la largeur du masthead', async ({ page
   expect(actionsBox.x).toBeGreaterThan(weatherBox.x + weatherBox.width);
 
   const beforeRotation = await ribbon.locator('.masthead-weather__city.is-active').evaluateAll((cities) => cities.map((city) => city.dataset.weatherCity));
+  const widthBeforeRotation = (await ribbon.boundingBox()).width;
   await page.waitForTimeout(5300);
   const afterRotation = await ribbon.locator('.masthead-weather__city.is-active').evaluateAll((cities) => cities.map((city) => city.dataset.weatherCity));
+  const widthAfterRotation = (await ribbon.boundingBox()).width;
   expect(afterRotation.filter((id) => beforeRotation.includes(id))).toHaveLength(3);
+  expect(widthAfterRotation).toBe(widthBeforeRotation);
   await expect(ribbon.locator('.masthead-weather__city.is-active').first()).toHaveAttribute('data-weather-city', 'quebec');
 
   await page.setViewportSize({ width: 1200, height: 900 });

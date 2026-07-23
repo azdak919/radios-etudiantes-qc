@@ -233,7 +233,7 @@ a { color: inherit; }
     column-gap: clamp(4px, .6vw, 10px);
   }
   .masthead-date { grid-area: date; justify-self: start; }
-  .masthead-weather { display: inline-flex; grid-area: weather; justify-self: center; }
+  .masthead-weather { display: inline-flex; grid-area: weather; width: 100%; justify-self: stretch; }
   .masthead-actions { grid-area: actions; justify-self: end; }
   .masthead-weather__board { --weather-columns: 1; }
 }
