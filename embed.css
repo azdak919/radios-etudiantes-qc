@@ -12,9 +12,11 @@ html[data-embed="tuner"] {
   --embed-bar-h: 62px;
   --embed-ctrl: 42px;
   --embed-play: 42px;
-  --embed-gap: 9px;
-  --embed-vol-track: 96px;
-  --embed-nowair-w: minmax(200px, 280px);
+  --embed-gap: 7px;
+  /* Volume un peu plus compact pour laisser place au dial */
+  --embed-vol-track: 80px;
+  /* Colonnes quasi égales : dial (dans la gauche) ≈ module antenne */
+  --embed-cols: minmax(0, 1.05fr) minmax(0, 1fr);
   --tuner-onair-live: #ff7d6e;
   --tuner-onair-idle: rgba(255, 255, 255, 0.42);
   color-scheme: dark;
@@ -55,14 +57,14 @@ html[data-embed="tuner"] .tuner {
 html[data-embed="tuner"] .tuner-inner {
   max-width: none;
   margin: 0;
-  /* Grille bureau : synthé | À l'antenne (comme ≥1100 px du site) */
+  /* Grille 50/50 : zone synthé | module À l'antenne (même poids visuel) */
   padding: 10px 6px;
-  gap: 0;
+  gap: 10px;
   height: 100%;
   box-sizing: border-box;
   overflow: hidden;
   display: grid;
-  grid-template-columns: minmax(0, 1.2fr) var(--embed-nowair-w);
+  grid-template-columns: var(--embed-cols);
   align-items: center;
 }
 
@@ -72,6 +74,7 @@ html[data-embed="tuner"] .tuner-controls {
   flex: unset;
   min-width: 0;
   width: 100%;
+  max-width: 100%;
   align-items: center;
   container-type: inline-size;
   container-name: tuner-controls;
@@ -171,32 +174,44 @@ html[data-embed="tuner"] .tuner-dial {
   flex: 1 1 0;
   min-width: 0;
   width: 0;
+  /* Au moins ~40 % de la colonne gauche pour rester lisible */
+  flex-basis: 40%;
 }
 
 html[data-embed="tuner"] .tuner-now {
   min-height: var(--embed-ctrl);
   height: var(--embed-ctrl);
-  padding: 3px 24px 3px 11px;
+  padding: 3px 22px 3px 11px;
   border-radius: 9px;
   box-sizing: border-box;
   justify-content: center;
   gap: 0;
+  width: 100%;
+  min-width: 0;
 }
 
 html[data-embed="tuner"] .tuner-now-name {
-  font-size: 14px;
+  font-size: 13px;
   line-height: 1.15;
   font-weight: 600;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 html[data-embed="tuner"] .tuner-now-sub {
-  font-size: 11px;
+  font-size: 10.5px;
   line-height: 1.2;
   color: rgba(255, 255, 255, 0.5);
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 html[data-embed="tuner"] .tuner-now-sub-rotate {
   min-height: 1.2em;
+  min-width: 0;
+  width: 100%;
 }
 
 /* Lecture : contour coral (site tous formats) */
@@ -330,7 +345,7 @@ html[data-embed="tuner"] .tuner-vol.is-open .tuner-vol-slot {
 html[data-embed="tuner"] .tuner-vol-track {
   width: var(--embed-vol-track);
   max-width: var(--embed-vol-track);
-  min-width: 96px;
+  min-width: 56px;
   flex: 0 0 var(--embed-vol-track);
   height: var(--embed-ctrl);
   justify-content: center;
@@ -361,26 +376,32 @@ html[data-embed="tuner"] .tuner-eq {
   display: none !important;
 }
 
-/* ── Module « À l'antenne » (colonne droite, comme le site bureau) ── */
+/* ── Module « À l'antenne » — même carte / hauteur que .tuner-now ── */
 html[data-embed="tuner"] .tuner-nowair,
 html[data-embed="tuner"] .tuner-nowair.hidden {
   grid-column: 2;
   display: flex !important;
   flex-direction: row;
-  align-items: flex-start;
-  gap: 8px;
+  align-items: center;
+  gap: 10px;
   flex: unset;
   width: 100%;
   max-width: none;
   min-width: 0;
+  height: var(--embed-ctrl);
+  min-height: var(--embed-ctrl);
   margin-left: 0;
-  padding-left: 14px;
-  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  /* Même silhouette que le carré du dial */
+  padding: 3px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 9px;
+  background: rgba(255, 255, 255, 0.05);
   align-self: center;
   opacity: 1;
   pointer-events: auto;
   box-sizing: border-box;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease, border-color 140ms ease, background 140ms ease, box-shadow 140ms ease;
+  overflow: hidden;
 }
 
 html[data-embed="tuner"] .tuner-nowair.is-swapping {
@@ -389,14 +410,13 @@ html[data-embed="tuner"] .tuner-nowair.is-swapping {
 
 html[data-embed="tuner"] .tuner-nowair-label {
   flex-shrink: 0;
-  margin-top: 2px;
+  margin-top: 0;
   font-size: 9px;
   font-weight: 800;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--tuner-onair-idle);
   white-space: nowrap;
-  /* Vertical label stack for tight height — keep horizontal like desktop */
   writing-mode: horizontal-tb;
 }
 
@@ -405,16 +425,17 @@ html[data-embed="tuner"] .tuner-nowair-body {
   min-width: 0;
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 1px;
   justify-content: center;
+  overflow: hidden;
 }
 
 html[data-embed="tuner"] .tuner-nowair-title {
   margin: 0;
   font-family: var(--serif, "Source Serif 4", Georgia, serif);
-  font-size: 12.5px;
+  font-size: 13px;
   font-weight: 600;
-  line-height: 1.2;
+  line-height: 1.15;
   color: var(--radio-bright, #8eb8ff);
   white-space: nowrap;
   overflow: hidden;
@@ -424,14 +445,25 @@ html[data-embed="tuner"] .tuner-nowair-title {
 
 html[data-embed="tuner"] .tuner-nowair-sub {
   margin: 0;
-  font-size: 10px;
+  font-size: 10.5px;
   font-weight: 500;
-  line-height: 1.25;
+  line-height: 1.2;
   color: rgba(255, 255, 255, 0.48);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   max-width: 100%;
+}
+
+/* Contour coral / ambre aligné sur le dial en lecture */
+html[data-embed="tuner"] .tuner.is-playing .tuner-nowair.is-live {
+  border-color: rgba(255, 125, 110, 0.55);
+  background: rgba(200, 16, 46, 0.08);
+}
+
+html[data-embed="tuner"] .tuner.is-playing .tuner-nowair.is-upcoming {
+  border-color: rgba(201, 168, 106, 0.5);
+  background: rgba(201, 168, 106, 0.08);
 }
 
 /* Teintes live / à venir (miroir bureau) */
@@ -490,13 +522,14 @@ html[data-embed="tuner"] .toast {
 /* Iframe < ~640 px : une seule colonne (synthé), antenne masquée */
 @media (max-width: 639.98px) {
   html[data-embed="tuner"] {
-    --embed-nowair-w: 0px;
-    --embed-vol-track: 80px;
+    --embed-cols: minmax(0, 1fr);
+    --embed-vol-track: 72px;
   }
 
   html[data-embed="tuner"] .tuner-inner {
-    grid-template-columns: minmax(0, 1fr);
+    grid-template-columns: var(--embed-cols);
     padding: 10px 4px;
+    gap: 0;
   }
 
   html[data-embed="tuner"] .tuner-nowair,
@@ -511,32 +544,26 @@ html[data-embed="tuner"] .toast {
 
 @media (max-width: 479.98px) {
   html[data-embed="tuner"] {
-    --embed-vol-track: 64px;
+    --embed-vol-track: 56px;
+    --embed-gap: 5px;
   }
 
   html[data-embed="tuner"] .tuner-inner {
     padding: 10px 2px;
   }
+}
 
-  html[data-embed="tuner"] .tuner-controls {
-    gap: 6px;
+/* Pastille large : proportions 1:1 strictes + volume un peu plus large */
+@media (min-width: 720px) {
+  html[data-embed="tuner"] {
+    --embed-cols: minmax(0, 1fr) minmax(0, 1fr);
+    --embed-vol-track: 88px;
+    --embed-gap: 8px;
   }
 }
 
-/* Pastille Ataraxia large (≥720 px utiles) : antenne un peu plus large */
-@media (min-width: 720px) {
+@media (min-width: 900px) {
   html[data-embed="tuner"] {
-    --embed-nowair-w: minmax(220px, 300px);
-    --embed-vol-track: 104px;
-  }
-
-  html[data-embed="tuner"] .tuner-nowair,
-  html[data-embed="tuner"] .tuner-nowair.hidden {
-    padding-left: 16px;
-    gap: 10px;
-  }
-
-  html[data-embed="tuner"] .tuner-nowair-title {
-    font-size: 13px;
+    --embed-vol-track: 100px;
   }
 }
