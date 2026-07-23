@@ -16,6 +16,17 @@ test('le panneau À l’antenne reste bleu lorsque le synthétiseur est arrêté
   expect(colors.idle).not.toBe(colors.playing);
 });
 
+test('l’iframe alterne les postes affichés lorsque la radio est arrêtée', async ({ page }) => {
+  await page.goto('/pomo/', { waitUntil: 'domcontentloaded' });
+  const tuner = page.locator('#radar-embed').contentFrame();
+  const title = tuner.locator('#tuner-nowair-title');
+  await expect(title).not.toHaveText('');
+  const first = await title.textContent();
+
+  await expect.poll(() => title.textContent(), { timeout: 11_000 })
+    .not.toBe(first);
+});
+
 test('Pomodoro garde son document hôte pendant une navigation avec lecture active', async ({ page }) => {
   await page.goto('/pomo/', { waitUntil: 'domcontentloaded' });
   const tuner = page.locator('#radar-embed').contentFrame();

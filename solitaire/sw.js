@@ -3,8 +3,8 @@
    Scope: /solitaire/ only — isolated from root radar SW and pomo.
    ═══════════════════════════════════════════════════════ */
 
-const SHELL_CACHE  = 'solitaire-shell-v21';
-const FONT_CACHE   = 'solitaire-fonts-v21';
+const SHELL_CACHE  = 'solitaire-shell-v22';
+const FONT_CACHE   = 'solitaire-fonts-v22';
 const CACHE_PREFIX = 'solitaire-';
 const KNOWN_CACHES = [SHELL_CACHE, FONT_CACHE];
 

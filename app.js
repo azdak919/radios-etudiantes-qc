@@ -1560,6 +1560,21 @@ function scheduleNowAirPreviewTick() {
   }
   if (currentStation || !isNowAirPanelPreviewMode()) return;
 
+  // Dans l'iframe, le sous-titre du dial est volontairement étroit et peut
+  // défiler longtemps. Ne pas faire dépendre l'aperçu des postes de cette
+  // durée : le panneau « À l'antenne » doit continuer à alterner comme la
+  // page Radar au repos.
+  if (IS_TUNER_EMBED) {
+    nowAirPreviewTimer = setTimeout(() => {
+      nowAirPreviewTimer = null;
+      if (currentStation || !isNowAirPanelPreviewMode()) return;
+      pickNowAirPreviewRadio();
+      renderTunerNowAir();
+      scheduleNowAirPreviewTick();
+    }, TUNER_SUB_ROTATE_MS);
+    return;
+  }
+
   planTunerSubRotateDelay(TUNER_SUB, 0, (delay) => {
     if (currentStation || !isNowAirPanelPreviewMode()) return;
     nowAirPreviewTimer = setTimeout(() => {
