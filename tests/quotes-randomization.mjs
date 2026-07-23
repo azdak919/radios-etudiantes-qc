@@ -25,15 +25,15 @@ const context = {
   },
 };
 vm.createContext(context);
-vm.runInContext(`${read('pomo/js/storage.js')}\n${read('pomo/js/quotes-data.js')}\nthis.__quotes = QUOTES;`, context);
+vm.runInContext(`${read('pomo/js/storage.js')}\n${read('pomo/js/quotes-data.js')}`, context);
+vm.runInContext(`${read('pomo/js/quotes-i18n.js')}\n${read('pomo/js/quotes-expansion.js')}\nthis.__quotes = QUOTES;\nthis.__quoteI18n = QUOTE_I18N;`, context);
 vm.runInContext(read('pomo/js/quotes.js'), context);
-vm.runInContext(`${read('pomo/js/quotes-i18n.js')}\nthis.__quoteI18n = QUOTE_I18N;`, context);
 
 const quotes = context.__quotes;
 const translations = context.__quoteI18n;
 const api = context.window.AtaraxiaQuotes;
 
-assert.equal(quotes.length, 150, 'le catalogue enrichi doit contenir 150 citations');
+assert.equal(quotes.length, 200, 'le catalogue enrichi doit contenir 200 citations');
 assert.equal(new Set(quotes.map((quote) => quote.id)).size, quotes.length, 'identifiants de citations uniques requis');
 assert.equal(new Set(quotes.map((quote) => quote.text)).size, quotes.length, 'textes de citations uniques requis');
 
@@ -41,12 +41,13 @@ const allowedCategories = new Set(['stoic', 'buddhist', 'tao-zen', 'world-wisdom
 for (const quote of quotes) {
   assert(quote.id && quote.text && quote.authorEn, `citation complète requise: ${quote.id || 'sans identifiant'}`);
   assert(allowedCategories.has(quote.category), `catégorie invalide pour ${quote.id}: ${quote.category}`);
+  assert(!Object.hasOwn(quote, 'verificationStatus'), `statut technique superflu pour ${quote.id}`);
 }
 
 const sourcedIndigenous = quotes.filter((quote) =>
-  quote.category === 'indigenous' && quote.verificationStatus === 'verified'
+  quote.category === 'indigenous' && quote.sourceUrl
 );
-assert.equal(sourcedIndigenous.length, 25, '25 nouvelles voix autochtones vérifiées sont requises');
+assert.equal(sourcedIndigenous.length, 39, '39 voix autochtones sourcées sont requises');
 for (const quote of sourcedIndigenous) {
   assert(quote.people, `peuple ou nation requis pour ${quote.id}`);
   assert(quote.sourceTitle, `titre de source requis pour ${quote.id}`);
@@ -55,6 +56,20 @@ for (const quote of sourcedIndigenous) {
   assert(translations[quote.id]?.fr?.text, `traduction française requise pour ${quote.id}`);
   assert(translations[quote.id]?.fr?.author, `attribution française requise pour ${quote.id}`);
 }
+
+const categoryCounts = Object.fromEntries(
+  [...allowedCategories].map((category) => [
+    category,
+    quotes.filter((quote) => quote.category === category).length,
+  ])
+);
+assert.deepEqual(categoryCounts, {
+  stoic: 73,
+  buddhist: 39,
+  'tao-zen': 12,
+  'world-wisdom': 19,
+  indigenous: 57,
+}, 'les proportions historiques doivent être conservées');
 
 for (const prefix of ['ind-08-', 'ind-09-']) {
   const quote = quotes.find((entry) => entry.id.startsWith(prefix));

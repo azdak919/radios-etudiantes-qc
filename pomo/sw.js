@@ -8,8 +8,8 @@
      • Anything else same-origin under scope → stale-while-revalidate
    ═══════════════════════════════════════════════════════ */
 
-const SHELL_CACHE  = 'pomo-shell-v16';
-const FONT_CACHE   = 'pomo-fonts-v16';
+const SHELL_CACHE  = 'pomo-shell-v17';
+const FONT_CACHE   = 'pomo-fonts-v17';
 const CACHE_PREFIX = 'pomo-';
 const KNOWN_CACHES = [SHELL_CACHE, FONT_CACHE];
 
@@ -48,6 +48,7 @@ const SHELL_ASSETS = [
   './js/backgrounds.js',
   './js/quotes-data.js',
   './js/quotes-i18n.js',
+  './js/quotes-expansion.js',
   './js/quotes.js',
   './js/toast.js',
   './js/pomo-audio.js',

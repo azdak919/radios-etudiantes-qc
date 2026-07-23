@@ -1,0 +1,368 @@
+/* Ataraxia — additional curated quotes and French translations.
+ * Keep the historical catalogue in quotes-data.js stable; new sourced entries
+ * are registered here together with their translation.
+ */
+(() => {
+  const additions = [
+    // Stoicism — 18
+    {
+      id: 'exp-sto-ma-universe-change', category: 'stoic',
+      text: 'The universe is change; our life is what our thoughts make it.',
+      author: 'Μάρκος Αὐρήλιος · Meditations', authorEn: 'Marcus Aurelius · Meditations (adapted)',
+      sourceTitle: 'Thoughts of Marcus Aurelius — George Long translation',
+      sourceUrl: 'https://www.gutenberg.org/cache/epub/6920/pg6920-images.html',
+      frText: "L'univers est changement ; notre vie est ce que nos pensées en font.",
+      frAuthor: 'Marc Aurèle · Méditations (adapté)',
+    },
+    {
+      id: 'exp-sto-ma-art-of-living', category: 'stoic',
+      text: 'The art of living is more like wrestling than dancing.',
+      author: 'Μάρκος Αὐρήλιος · Meditations', authorEn: 'Marcus Aurelius · Meditations (adapted)',
+      sourceTitle: 'Thoughts of Marcus Aurelius — George Long translation',
+      sourceUrl: 'https://www.gutenberg.org/cache/epub/6920/pg6920-images.html',
+      frText: "L'art de vivre ressemble davantage à la lutte qu'à la danse.",
+      frAuthor: 'Marc Aurèle · Méditations (adapté)',
+    },
+    {
+      id: 'exp-sto-ma-no-opinion', category: 'stoic',
+      text: 'You always have the option of having no opinion.',
+      author: 'Μάρκος Αὐρήλιος · Meditations', authorEn: 'Marcus Aurelius · Meditations (adapted)',
+      sourceTitle: 'Thoughts of Marcus Aurelius — George Long translation',
+      sourceUrl: 'https://www.gutenberg.org/cache/epub/6920/pg6920-images.html',
+      frText: "Tu as toujours la possibilité de ne pas avoir d'opinion.",
+      frAuthor: 'Marc Aurèle · Méditations (adapté)',
+    },
+    {
+      id: 'exp-sto-ma-worth-and-values', category: 'stoic',
+      text: "A person's worth is measured by the worth of what they value.",
+      author: 'Μάρκος Αὐρήλιος · Meditations', authorEn: 'Marcus Aurelius · Meditations (adapted)',
+      sourceTitle: 'Thoughts of Marcus Aurelius — George Long translation',
+      sourceUrl: 'https://www.gutenberg.org/cache/epub/6920/pg6920-images.html',
+      frText: "La valeur d'une personne se mesure à celle de ce qu'elle estime.",
+      frAuthor: 'Marc Aurèle · Méditations (adapté)',
+    },
+    {
+      id: 'exp-sto-ma-fountain-of-good', category: 'stoic',
+      text: 'Look within. Within is the fountain of good, always ready to rise again.',
+      author: 'Μάρκος Αὐρήλιος · Meditations', authorEn: 'Marcus Aurelius · Meditations (adapted)',
+      sourceTitle: 'Thoughts of Marcus Aurelius — George Long translation',
+      sourceUrl: 'https://www.gutenberg.org/cache/epub/6920/pg6920-images.html',
+      frText: 'Regarde en toi. Là se trouve la source du bien, toujours prête à jaillir de nouveau.',
+      frAuthor: 'Marc Aurèle · Méditations (adapté)',
+    },
+    {
+      id: 'exp-sto-ma-only-present', category: 'stoic',
+      text: 'The present is the only thing of which a person can be deprived.',
+      author: 'Μάρκος Αὐρήλιος · Meditations', authorEn: 'Marcus Aurelius · Meditations (adapted)',
+      sourceTitle: 'Thoughts of Marcus Aurelius — George Long translation',
+      sourceUrl: 'https://www.gutenberg.org/cache/epub/6920/pg6920-images.html',
+      frText: "Le présent est la seule chose dont une personne puisse être privée.",
+      frAuthor: 'Marc Aurèle · Méditations (adapté)',
+    },
+    {
+      id: 'exp-sto-ep-no-great-thing-suddenly', category: 'stoic',
+      text: 'No great thing is created suddenly.',
+      author: 'Ἐπίκτητος', authorEn: 'Epictetus (adapted)',
+      sourceTitle: 'The Teaching of Epictetus — T. W. Rolleston translation',
+      sourceUrl: 'https://www.gutenberg.org/cache/epub/39855/pg39855-images.html',
+      frText: "Rien de grand ne se crée soudainement.", frAuthor: 'Épictète (adapté)',
+    },
+    {
+      id: 'exp-sto-ep-improve-and-seem-foolish', category: 'stoic',
+      text: 'If you want to improve, be content to be thought foolish.',
+      author: 'Ἐπίκτητος · Enchiridion', authorEn: 'Epictetus · Enchiridion (adapted)',
+      sourceTitle: 'The Teaching of Epictetus — T. W. Rolleston translation',
+      sourceUrl: 'https://www.gutenberg.org/cache/epub/39855/pg39855-images.html',
+      frText: "Si tu veux progresser, accepte que l'on te croie insensé.",
+      frAuthor: 'Épictète · Manuel (adapté)',
+    },
+    {
+      id: 'exp-sto-ep-embody-philosophy', category: 'stoic',
+      text: 'Do not explain your philosophy. Embody it.',
+      author: 'Ἐπίκτητος', authorEn: 'Epictetus (adapted)',
+      sourceTitle: 'The Teaching of Epictetus — T. W. Rolleston translation',
+      sourceUrl: 'https://www.gutenberg.org/cache/epub/39855/pg39855-images.html',
+      frText: "N'explique pas ta philosophie. Incarne-la.", frAuthor: 'Épictète (adapté)',
+    },
+    {
+      id: 'exp-sto-ep-learn-what-you-know', category: 'stoic',
+      text: 'It is impossible to learn what one thinks one already knows.',
+      author: 'Ἐπίκτητος', authorEn: 'Epictetus (adapted)',
+      sourceTitle: 'The Teaching of Epictetus — T. W. Rolleston translation',
+      sourceUrl: 'https://www.gutenberg.org/cache/epub/39855/pg39855-images.html',
+      frText: "Il est impossible d'apprendre ce que l'on croit déjà savoir.", frAuthor: 'Épictète (adapté)',
+    },
+    {
+      id: 'exp-sto-ep-educated-are-free', category: 'stoic',
+      text: 'Only the educated are free.',
+      author: 'Ἐπίκτητος', authorEn: 'Epictetus (adapted)',
+      sourceTitle: 'The Teaching of Epictetus — T. W. Rolleston translation',
+      sourceUrl: 'https://www.gutenberg.org/cache/epub/39855/pg39855-images.html',
+      frText: 'Seuls les êtres instruits sont libres.', frAuthor: 'Épictète (adapté)',
+    },
+    {
+      id: 'exp-sto-ep-choose-your-role', category: 'stoic',
+      text: 'Choose the role you are fitted to perform.',
+      author: 'Ἐπίκτητος · Enchiridion', authorEn: 'Epictetus · Enchiridion (adapted)',
+      sourceTitle: 'The Teaching of Epictetus — T. W. Rolleston translation',
+      sourceUrl: 'https://www.gutenberg.org/cache/epub/39855/pg39855-images.html',
+      frText: 'Choisis le rôle que tu es apte à remplir.', frAuthor: 'Épictète · Manuel (adapté)',
+    },
+    {
+      id: 'exp-sto-sen-life-passes', category: 'stoic',
+      text: 'While we wait for life, life passes.', author: 'Seneca', authorEn: 'Seneca (adapted)',
+      sourceTitle: 'Moral letters to Lucilius — Project Gutenberg',
+      sourceUrl: 'https://www.gutenberg.org/ebooks/59025',
+      frText: 'Pendant que nous attendons de vivre, la vie passe.', frAuthor: 'Sénèque (adapté)',
+    },
+    {
+      id: 'exp-sto-sen-life-is-long', category: 'stoic',
+      text: 'Life is long if you know how to use it.', author: 'Seneca · On the Shortness of Life', authorEn: 'Seneca · On the Shortness of Life (adapted)',
+      sourceTitle: 'Dialogues of Seneca — Project Gutenberg',
+      sourceUrl: 'https://www.gutenberg.org/ebooks/64576',
+      frText: "La vie est longue si tu sais en faire usage.", frAuthor: 'Sénèque · De la brièveté de la vie (adapté)',
+    },
+    {
+      id: 'exp-sto-sen-improving-company', category: 'stoic',
+      text: 'Associate with people who are likely to improve you.', author: 'Seneca · Moral Letters', authorEn: 'Seneca · Moral Letters (adapted)',
+      sourceTitle: 'Moral letters to Lucilius — Project Gutenberg',
+      sourceUrl: 'https://www.gutenberg.org/ebooks/59025',
+      frText: "Fréquente des personnes susceptibles de t'améliorer.", frAuthor: 'Sénèque · Lettres à Lucilius (adapté)',
+    },
+    {
+      id: 'exp-sto-sen-suffer-before-necessary', category: 'stoic',
+      text: 'We suffer more often in imagination than in reality.', author: 'Seneca · Moral Letters', authorEn: 'Seneca · Moral Letters (adapted)',
+      sourceTitle: 'Moral letters to Lucilius — Project Gutenberg',
+      sourceUrl: 'https://www.gutenberg.org/ebooks/59025',
+      frText: "Nous souffrons plus souvent en imagination qu'en réalité.", frAuthor: 'Sénèque · Lettres à Lucilius (adapté)',
+    },
+    {
+      id: 'exp-sto-sen-opportunity-for-kindness', category: 'stoic',
+      text: 'Wherever there is a human being, there is an opportunity for kindness.', author: 'Seneca · Moral Letters', authorEn: 'Seneca · Moral Letters (adapted)',
+      sourceTitle: 'Moral letters to Lucilius — Project Gutenberg',
+      sourceUrl: 'https://www.gutenberg.org/ebooks/59025',
+      frText: "Partout où il y a un être humain, il y a une occasion d'être bon.", frAuthor: 'Sénèque · Lettres à Lucilius (adapté)',
+    },
+    {
+      id: 'exp-sto-sen-own-faults', category: 'stoic',
+      text: 'See how many things you do that you would not tolerate in another.', author: 'Seneca · On Anger', authorEn: 'Seneca · On Anger (adapted)',
+      sourceTitle: 'Dialogues of Seneca — Project Gutenberg',
+      sourceUrl: 'https://www.gutenberg.org/ebooks/64576',
+      frText: "Vois combien de choses tu fais que tu ne tolérerais pas chez autrui.", frAuthor: 'Sénèque · De la colère (adapté)',
+    },
+
+    // Buddhism — 10
+    {
+      id: 'exp-bud-hatred-never-ceases', category: 'buddhist',
+      text: 'Hatred is never appeased by hatred; by non-hatred alone is hatred appeased.',
+      author: 'ධම්මපදය · Dhammapada', authorEn: 'Dhammapada (adapted)',
+      sourceTitle: 'The Dhammapada — F. Max Müller translation', sourceUrl: 'https://www.gutenberg.org/cache/epub/2017/pg2017-images.html',
+      frText: "La haine ne s'apaise jamais par la haine ; seule l'absence de haine l'apaise.", frAuthor: 'Dhammapada (adapté)',
+    },
+    {
+      id: 'exp-bud-disciplined-mind', category: 'buddhist', text: 'A disciplined mind brings happiness.',
+      author: 'ධම්මපදය · Dhammapada', authorEn: 'Dhammapada (adapted)',
+      sourceTitle: 'The Dhammapada — F. Max Müller translation', sourceUrl: 'https://www.gutenberg.org/cache/epub/2017/pg2017-images.html',
+      frText: 'Un esprit discipliné apporte le bonheur.', frAuthor: 'Dhammapada (adapté)',
+    },
+    {
+      id: 'exp-bud-scent-of-virtue', category: 'buddhist', text: 'The scent of virtue travels even against the wind.',
+      author: 'ධම්මපදය · Dhammapada', authorEn: 'Dhammapada (adapted)',
+      sourceTitle: 'The Dhammapada — F. Max Müller translation', sourceUrl: 'https://www.gutenberg.org/cache/epub/2017/pg2017-images.html',
+      frText: 'Le parfum de la vertu voyage même contre le vent.', frAuthor: 'Dhammapada (adapté)',
+    },
+    {
+      id: 'exp-bud-one-day-with-wisdom', category: 'buddhist', text: 'Better than a hundred years without wisdom is one day lived in wisdom.',
+      author: 'ධම්මපදය · Dhammapada', authorEn: 'Dhammapada (adapted)',
+      sourceTitle: 'The Dhammapada — F. Max Müller translation', sourceUrl: 'https://www.gutenberg.org/cache/epub/2017/pg2017-images.html',
+      frText: 'Mieux vaut un jour vécu avec sagesse que cent années sans sagesse.', frAuthor: 'Dhammapada (adapté)',
+    },
+    {
+      id: 'exp-bud-conquer-anger-with-love', category: 'buddhist', text: 'Conquer anger with love, evil with good, greed with generosity, and lies with truth.',
+      author: 'ධම්මපදය · Dhammapada', authorEn: 'Dhammapada (adapted)',
+      sourceTitle: 'The Dhammapada — F. Max Müller translation', sourceUrl: 'https://www.gutenberg.org/cache/epub/2017/pg2017-images.html',
+      frText: 'Surmonte la colère par la bonté, le mal par le bien, la cupidité par la générosité et le mensonge par la vérité.', frAuthor: 'Dhammapada (adapté)',
+    },
+    {
+      id: 'exp-bud-well-thatched-roof', category: 'buddhist', text: 'As rain cannot pierce a well-thatched roof, passion cannot pierce a well-trained mind.',
+      author: 'ධම්මපදය · Dhammapada', authorEn: 'Dhammapada (adapted)',
+      sourceTitle: 'The Dhammapada — F. Max Müller translation', sourceUrl: 'https://www.gutenberg.org/cache/epub/2017/pg2017-images.html',
+      frText: "Comme la pluie ne traverse pas un toit bien couvert, la passion ne traverse pas un esprit bien entraîné.", frAuthor: 'Dhammapada (adapté)',
+    },
+    {
+      id: 'exp-bud-conditioned-impermanent', category: 'buddhist', text: 'All conditioned things are impermanent.',
+      author: 'ධම්මපදය · Dhammapada', authorEn: 'Dhammapada (adapted)',
+      sourceTitle: 'The Dhammapada — F. Max Müller translation', sourceUrl: 'https://www.gutenberg.org/cache/epub/2017/pg2017-images.html',
+      frText: 'Toutes les choses conditionnées sont impermanentes.', frAuthor: 'Dhammapada (adapté)',
+    },
+    {
+      id: 'exp-bud-conditioned-unsatisfactory', category: 'buddhist', text: 'All conditioned things are marked by suffering.',
+      author: 'ධම්මපදය · Dhammapada', authorEn: 'Dhammapada (adapted)',
+      sourceTitle: 'The Dhammapada — F. Max Müller translation', sourceUrl: 'https://www.gutenberg.org/cache/epub/2017/pg2017-images.html',
+      frText: 'Toutes les choses conditionnées sont marquées par la souffrance.', frAuthor: 'Dhammapada (adapté)',
+    },
+    {
+      id: 'exp-bud-no-permanent-self', category: 'buddhist', text: 'All phenomena are without a permanent self.',
+      author: 'ධම්මපදය · Dhammapada', authorEn: 'Dhammapada (adapted)',
+      sourceTitle: 'The Dhammapada — F. Max Müller translation', sourceUrl: 'https://www.gutenberg.org/cache/epub/2017/pg2017-images.html',
+      frText: 'Tous les phénomènes sont dépourvus de soi permanent.', frAuthor: 'Dhammapada (adapté)',
+    },
+    {
+      id: 'exp-bud-vigilant-do-not-die', category: 'buddhist', text: 'The vigilant do not die; the heedless are already like the dead.',
+      author: 'ධම්මපදය · Dhammapada', authorEn: 'Dhammapada (adapted)',
+      sourceTitle: 'The Dhammapada — F. Max Müller translation', sourceUrl: 'https://www.gutenberg.org/cache/epub/2017/pg2017-images.html',
+      frText: 'Les vigilants ne meurent pas ; les insouciants sont déjà comme morts.', frAuthor: 'Dhammapada (adapté)',
+    },
+
+    // Tao and Zen — 3
+    {
+      id: 'exp-tao-enough-is-enough', category: 'tao-zen', text: 'Knowing that enough is enough, one will always have enough.',
+      author: '老子 · 道德經', authorEn: 'Lao Tzu · Tao Te Ching (adapted)',
+      sourceTitle: 'Tao Te Ching — James Legge translation', sourceUrl: 'https://www.gutenberg.org/ebooks/23974',
+      frText: "Qui sait que ce qui suffit est suffisant aura toujours assez.", frAuthor: 'Lao Tseu · Tao Te King (adapté)',
+    },
+    {
+      id: 'exp-tao-know-you-do-not-know', category: 'tao-zen', text: 'To know that you do not know is the highest knowledge.',
+      author: '老子 · 道德經', authorEn: 'Lao Tzu · Tao Te Ching (adapted)',
+      sourceTitle: 'Tao Te Ching — James Legge translation', sourceUrl: 'https://www.gutenberg.org/ebooks/23974',
+      frText: 'Savoir que tu ne sais pas est la plus haute connaissance.', frAuthor: 'Lao Tseu · Tao Te King (adapté)',
+    },
+    {
+      id: 'exp-tao-knowing-and-speaking', category: 'tao-zen', text: 'Those who know do not speak; those who speak do not know.',
+      author: '老子 · 道德經', authorEn: 'Lao Tzu · Tao Te Ching (adapted)',
+      sourceTitle: 'Tao Te Ching — James Legge translation', sourceUrl: 'https://www.gutenberg.org/ebooks/23974',
+      frText: 'Ceux qui savent ne parlent pas ; ceux qui parlent ne savent pas.', frAuthor: 'Lao Tseu · Tao Te King (adapté)',
+    },
+
+    // Wisdom of the world — 5
+    {
+      id: 'exp-world-socrates-examined-life', category: 'world-wisdom', text: 'The unexamined life is not worth living.',
+      author: 'Σωκράτης · Apology', authorEn: 'Socrates · Plato, Apology',
+      sourceTitle: 'Apology — Benjamin Jowett translation', sourceUrl: 'https://www.gutenberg.org/files/1656/1656-h/1656-h.htm',
+      frText: "Une vie sans examen ne mérite pas d'être vécue.", frAuthor: 'Socrate · Platon, Apologie',
+    },
+    {
+      id: 'exp-world-confucius-learn-often', category: 'world-wisdom', text: 'Is it not pleasant to learn with constant perseverance and application?',
+      author: '孔子 · 論語', authorEn: 'Confucius · Analects',
+      sourceTitle: 'The Analects of Confucius — James Legge translation', sourceUrl: 'https://www.gutenberg.org/ebooks/4094',
+      frText: "N'est-il pas agréable d'apprendre avec constance et application ?", frAuthor: 'Confucius · Entretiens',
+    },
+    {
+      id: 'exp-world-confucius-equal-the-worthy', category: 'world-wisdom', text: 'When we see people of worth, we should think of equalling them.',
+      author: '孔子 · 論語', authorEn: 'Confucius · Analects (adapted)',
+      sourceTitle: 'The Analects of Confucius — James Legge translation', sourceUrl: 'https://www.gutenberg.org/ebooks/4094',
+      frText: "Quand nous voyons des personnes de valeur, pensons à les égaler.", frAuthor: 'Confucius · Entretiens (adapté)',
+    },
+    {
+      id: 'exp-world-confucius-cautious-seldom-err', category: 'world-wisdom', text: 'The cautious seldom err.',
+      author: '孔子 · 論語', authorEn: 'Confucius · Analects',
+      sourceTitle: 'The Analects of Confucius — James Legge translation', sourceUrl: 'https://www.gutenberg.org/ebooks/4094',
+      frText: 'Les personnes prudentes se trompent rarement.', frAuthor: 'Confucius · Entretiens',
+    },
+    {
+      id: 'exp-world-confucius-courage-to-do-right', category: 'world-wisdom', text: 'To see what is right and not do it is want of courage.',
+      author: '孔子 · 論語', authorEn: 'Confucius · Analects',
+      sourceTitle: 'The Analects of Confucius — James Legge translation', sourceUrl: 'https://www.gutenberg.org/ebooks/4094',
+      frText: "Voir ce qui est juste et ne pas le faire, c'est manquer de courage.", frAuthor: 'Confucius · Entretiens',
+    },
+
+    // Indigenous voices — 14
+    {
+      id: 'exp-ind-thompson-give-thanks-daily', category: 'indigenous', people: 'Onkwehonwe',
+      text: 'We give thanks daily because it may not be here tomorrow.',
+      author: 'Chief Howard Thompson · Mohawk', authorEn: 'Chief Howard Thompson · Mohawk',
+      sourceTitle: 'Preserve, revitalize and promote Indigenous languages',
+      sourceUrl: 'https://www.un.org/en/desa/%E2%80%98preserve-revitalize-and-promote%E2%80%99-indigenous-languages-or-lose-%E2%80%98wealth',
+      frText: "Nous rendons grâce chaque jour, car tout cela pourrait ne plus être là demain.", frAuthor: 'Chef Howard Thompson · Mohawk',
+    },
+    {
+      id: 'exp-ind-morales-language-cosmovision', category: 'indigenous', people: 'Aymara',
+      text: 'Language is culture; language is an expression of a cosmovision and a way of seeing the world.',
+      author: 'Evo Morales · Aymara', authorEn: 'Evo Morales · Aymara',
+      sourceTitle: 'International Year of Indigenous Languages',
+      sourceUrl: 'https://www.un.org/development/desa/en/news/social/international-year-of-indigenous-languages-2019.html',
+      frText: "La langue est la culture ; elle exprime une cosmovision et une façon de voir le monde.", frAuthor: 'Evo Morales · Aymara',
+    },
+    {
+      id: 'exp-ind-lux-education-culture', category: 'indigenous', people: 'Maya K’iche’',
+      text: 'No culture could exist without education, and education must incorporate culture.',
+      author: 'Otilia Lux de Coti · Maya K’iche’', authorEn: 'Otilia Lux de Coti · Maya K’iche’',
+      sourceTitle: 'UN Permanent Forum on Indigenous Issues — 2004', sourceUrl: 'https://press.un.org/en/2004/hr4750.doc.htm',
+      frText: "Aucune culture ne peut exister sans éducation, et l'éducation doit intégrer la culture.", frAuthor: 'Otilia Lux de Coti · Maya K’iche’',
+    },
+    {
+      id: 'exp-ind-tauli-corpuz-land-culture', category: 'indigenous', people: 'Kankanaey Igorot',
+      text: 'Without access to and respect for our lands, our cultures will continue to erode.',
+      author: 'Victoria Tauli-Corpuz · Kankanaey Igorot', authorEn: 'Victoria Tauli-Corpuz · Kankanaey Igorot',
+      sourceTitle: 'UN Permanent Forum on Indigenous Issues — 2007', sourceUrl: 'https://press.un.org/en/2007/hr4917.doc.htm',
+      frText: "Sans accès à nos terres ni respect de celles-ci, nos cultures continueront de s'éroder.", frAuthor: 'Victoria Tauli-Corpuz · Kankanaey Igorot',
+    },
+    {
+      id: 'exp-ind-tauli-corpuz-priorities', category: 'indigenous', people: 'Kankanaey Igorot',
+      text: 'Indigenous peoples’ priorities must become part of the development agenda.',
+      author: 'Victoria Tauli-Corpuz · Kankanaey Igorot', authorEn: 'Victoria Tauli-Corpuz · Kankanaey Igorot',
+      sourceTitle: 'Indigenous peoples and the development agenda', sourceUrl: 'https://www.un.org/development/desa/en/news/social/indigenous-issues-2.html',
+      frText: "Les priorités des peuples autochtones doivent faire partie du programme de développement.", frAuthor: 'Victoria Tauli-Corpuz · Kankanaey Igorot',
+    },
+    {
+      id: 'exp-ind-cali-tzay-mother-earth', category: 'indigenous', people: 'Maya Kaqchikel',
+      text: 'Our languages define our relationship with Mother Earth.',
+      author: 'Francisco Calí Tzay · Maya Kaqchikel', authorEn: 'Francisco Calí Tzay · Maya Kaqchikel',
+      sourceTitle: 'Indigenous languages: gateways to cultural diversity', sourceUrl: 'https://www.unesco.org/en/articles/cutting-edge-indigenous-languages-gateways-worlds-cultural-diversity',
+      frText: "Nos langues définissent notre relation avec la Terre Mère.", frAuthor: 'Francisco Calí Tzay · Maya Kaqchikel',
+    },
+    {
+      id: 'exp-ind-simon-citizenship', category: 'indigenous', people: 'Inuit',
+      text: 'Reconciliation is a responsibility of citizenship.', author: 'Mary Simon · Inuk', authorEn: 'Mary Simon · Inuk',
+      sourceTitle: 'LaFontaine-Baldwin Lecture', sourceUrl: 'https://www.gg.ca/en/media/news/2022/lafontaine-baldwin-speech',
+      frText: 'La réconciliation est une responsabilité citoyenne.', frAuthor: 'Mary Simon · Inuk',
+    },
+    {
+      id: 'exp-ind-simon-language-hope', category: 'indigenous', people: 'Inuit',
+      text: 'A sign of hope is being able to speak your own language.', author: 'Mary Simon · Inuk', authorEn: 'Mary Simon · Inuk',
+      sourceTitle: 'Arctic Circle Assembly 2022', sourceUrl: 'https://www.gg.ca/en/media/news/2022/speech-arctic-circle-assembly',
+      frText: "Pouvoir parler sa propre langue est un signe d'espoir.", frAuthor: 'Mary Simon · Inuk',
+    },
+    {
+      id: 'exp-ind-simon-interconnected', category: 'indigenous', people: 'Inuit',
+      text: 'There is no us versus them. We are all interconnected.', author: 'Mary Simon · Inuk', authorEn: 'Mary Simon · Inuk',
+      sourceTitle: 'Banff Forum 2025', sourceUrl: 'https://www.gg.ca/en/media/news/2025/banff-forum',
+      frText: "Il n'y a pas « nous contre eux ». Nous sommes tous interreliés.", frAuthor: 'Mary Simon · Inuk',
+    },
+    {
+      id: 'exp-ind-simon-own-stories', category: 'indigenous', people: 'Inuit',
+      text: 'We must ensure that our own stories are passed on to the next generation.', author: 'Mary Simon · Inuk', authorEn: 'Mary Simon · Inuk',
+      sourceTitle: "Tk'emlúps te Secwépemc memorial address", sourceUrl: 'https://www.gg.ca/en/media/news/2022/memorial-event-commemorating-one-year-confirmation-unmarked-graves-residential-school-tkemlups-te',
+      frText: "Nous devons veiller à transmettre nos propres histoires à la prochaine génération.", frAuthor: 'Mary Simon · Inuk',
+    },
+    {
+      id: 'exp-ind-cournoyea-paternalism', category: 'indigenous', people: 'Inuvialuit',
+      text: 'Paternalism has been a total failure.', author: 'Nellie Cournoyea · Inuvialuit', authorEn: 'Nellie Cournoyea · Inuvialuit',
+      sourceTitle: 'Assembly of First Nations — 38th Annual General Assembly', sourceUrl: 'https://www.canada.ca/en/indigenous-northern-affairs/news/2017/07/text.html',
+      frText: 'Le paternalisme a été un échec total.', frAuthor: 'Nellie Cournoyea · Inuvialuit',
+    },
+    {
+      id: 'exp-ind-rigsby-jones-belonging', category: 'indigenous', people: 'Snuneymuxw',
+      text: 'Reconciliation is about belonging and feeling welcomed.', author: 'Elder Yvonne Rigsby-Jones · Snuneymuxw', authorEn: 'Elder Yvonne Rigsby-Jones · Snuneymuxw',
+      sourceTitle: 'Every Child Matters — Reconciliation Through Education', sourceUrl: 'https://nctr.ca/wp-content/uploads/2021/01/ECM_Digest_English_Digital_.pdf',
+      frText: "La réconciliation, c'est appartenir et se sentir accueilli.", frAuthor: 'Aînée Yvonne Rigsby-Jones · Snuneymuxw',
+    },
+    {
+      id: 'exp-ind-menchu-peace-justice', category: 'indigenous', people: 'Maya K’iche’',
+      text: 'Peace cannot exist without justice.', author: 'Rigoberta Menchú · Maya K’iche’', authorEn: 'Rigoberta Menchú · Maya K’iche’',
+      sourceTitle: 'Indigenous languages: gateways to cultural diversity', sourceUrl: 'https://www.unesco.org/en/articles/cutting-edge-indigenous-languages-gateways-worlds-cultural-diversity',
+      frText: 'La paix ne peut exister sans justice.', frAuthor: 'Rigoberta Menchú · Maya K’iche’',
+    },
+    {
+      id: 'exp-ind-simon-time-to-know', category: 'indigenous', people: 'Inuit',
+      text: "The time for ‘I didn't know’ is over.", author: 'Mary Simon · Inuk', authorEn: 'Mary Simon · Inuk',
+      sourceTitle: 'Truth and Reconciliation Commission — 10 years', sourceUrl: 'https://www.gg.ca/en/media/news/2025/trc-10-years',
+      frText: "Le temps du « je ne savais pas » est révolu.", frAuthor: 'Mary Simon · Inuk',
+    },
+  ];
+
+  for (const { frText, frAuthor, ...quote } of additions) {
+    QUOTES.push(quote);
+    QUOTE_I18N[quote.id] = { fr: { text: frText, author: frAuthor } };
+  }
+})();

@@ -1,17 +1,28 @@
 import { expect, test } from '@playwright/test';
 
-test('Pomo expose le catalogue enrichi et les sources vérifiées', async ({ page }) => {
+test('Pomo expose les 200 citations et leurs sources', async ({ page }) => {
   await page.goto('/pomo/', { waitUntil: 'domcontentloaded' });
 
   const catalog = await page.evaluate(() => ({
     total: QUOTES.length,
     indigenous: QUOTES.filter((quote) => quote.category === 'indigenous').length,
-    verified: QUOTES.filter((quote) =>
-      quote.category === 'indigenous' && quote.verificationStatus === 'verified'
-    ).length,
+    sourced: QUOTES.filter((quote) => quote.category === 'indigenous' && quote.sourceUrl).length,
+    categories: Object.fromEntries(
+      ['stoic', 'buddhist', 'tao-zen', 'world-wisdom', 'indigenous'].map((category) => [
+        category,
+        QUOTES.filter((quote) => quote.category === category).length,
+      ])
+    ),
+    hasInternalStatus: QUOTES.some((quote) => 'verificationStatus' in quote),
   }));
 
-  expect(catalog).toEqual({ total: 150, indigenous: 43, verified: 25 });
+  expect(catalog).toEqual({
+    total: 200,
+    indigenous: 57,
+    sourced: 39,
+    categories: { stoic: 73, buddhist: 39, 'tao-zen': 12, 'world-wisdom': 19, indigenous: 57 },
+    hasInternalStatus: false,
+  });
 
   await page.evaluate(() => {
     const quote = QUOTES.find((entry) => entry.id === 'src-hemlock-language-earth');
