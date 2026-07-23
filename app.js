@@ -1102,13 +1102,14 @@ function tunerDialTitleLine(radio) {
 }
 
 /**
- * Ligne 1 du syntoniseur (bureau) : « poste FM · institution ».
- * Ex. CISM 89,3 FM · Université de Montréal
+ * Ligne 1 du syntoniseur (bureau) : « poste FM · acronyme ».
+ * Ex. CISM 89,3 FM · UdeM
  */
 function tunerDesktopTitleLine(radio) {
   if (!radio) return 'Syntoniser un poste';
   const name = stationDisplayName(radio) || String(radio.name || '').trim() || 'Syntoniser un poste';
-  const inst = adaptRadarInstitutionLabel(tunerInstitutionLabel(radio.institution));
+  const inst = shortInstitution(radio.institution, radio.type)
+    || adaptRadarInstitutionLabel(tunerInstitutionLabel(radio.institution));
   return inst ? `${name} · ${inst}` : name;
 }
 
