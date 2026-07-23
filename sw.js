@@ -1,4 +1,4 @@
-const CACHE_NAME = "radar-shell-v422";
+const CACHE_NAME = "radar-shell-v423";
 const CACHE_PREFIX = "radar-";
 // Isolated mini-apps under /pomo/ and /solitaire/ own their own SWs + caches.
 const ISOLATED_PATH_RE = /\/(pomo|solitaire)(\/|$)/;
