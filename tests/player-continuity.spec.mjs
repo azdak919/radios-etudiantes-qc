@@ -1,5 +1,21 @@
 import { expect, test } from '@playwright/test';
 
+test('le panneau À l’antenne reste bleu lorsque le synthétiseur est arrêté', async ({ page }) => {
+  await page.goto('/pomo/', { waitUntil: 'domcontentloaded' });
+  const tuner = page.locator('#radar-embed').contentFrame();
+  const colors = await tuner.locator('#tuner-nowair-title').evaluate((title) => {
+    const radio = title.closest('.tuner');
+    const panel = title.closest('.tuner-nowair');
+    panel.classList.add('is-live');
+    radio.classList.remove('is-playing');
+    const idle = getComputedStyle(title).color;
+    radio.classList.add('is-playing');
+    const playing = getComputedStyle(title).color;
+    return { idle, playing };
+  });
+  expect(colors.idle).not.toBe(colors.playing);
+});
+
 test('Pomodoro garde son document hôte pendant une navigation avec lecture active', async ({ page }) => {
   await page.goto('/pomo/', { waitUntil: 'domcontentloaded' });
   const tuner = page.locator('#radar-embed').contentFrame();

@@ -519,19 +519,20 @@ html[data-embed="tuner"] .tuner-nowair-sub {
   max-width: 100%;
 }
 
-/* Statuts — même saturation que EN ONDES (pas de labels « lavés ») */
-html[data-embed="tuner"] .tuner-nowair.is-live .tuner-nowair-label,
-html[data-embed="tuner"] .tuner-nowair.is-live .tuner-nowair-title {
+/* Les couleurs de statut signalent une lecture active seulement. Sans synthé,
+   le panneau reste au bleu discret, même si la grille connaît une émission. */
+html[data-embed="tuner"] .tuner.is-playing .tuner-nowair.is-live .tuner-nowair-label,
+html[data-embed="tuner"] .tuner.is-playing .tuner-nowair.is-live .tuner-nowair-title {
   color: var(--tuner-onair-live);
 }
 
-/* À VENIR : ambre plein (poids équivalent au coral EN ONDES) */
-html[data-embed="tuner"] .tuner-nowair.is-upcoming .tuner-nowair-label,
-html[data-embed="tuner"] .tuner-nowair.is-upcoming .tuner-nowair-title {
+/* À VENIR : ambre uniquement pendant la lecture; hors lecture = bleu inactif. */
+html[data-embed="tuner"] .tuner.is-playing .tuner-nowair.is-upcoming .tuner-nowair-label,
+html[data-embed="tuner"] .tuner.is-playing .tuner-nowair.is-upcoming .tuner-nowair-title {
   color: #f0c14e;
 }
 
-html[data-embed="tuner"] .tuner-nowair.is-upcoming .tuner-nowair-sub {
+html[data-embed="tuner"] .tuner.is-playing .tuner-nowair.is-upcoming .tuner-nowair-sub {
   color: rgba(240, 193, 78, 0.78);
 }
 
