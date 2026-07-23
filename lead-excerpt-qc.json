@@ -1,14 +1,23 @@
 {
-  "updated": "2026-07-23T03:49:15.245Z",
+  "updated": "2026-07-23T04:01:42.166Z",
   "total": 185,
   "pool": 58,
-  "incomplete": 3,
-  "withLeadExcerpt": 74,
-  "candidates": 3,
-  "enriched": 0,
+  "incomplete": 4,
+  "withLeadExcerpt": 75,
+  "candidates": 4,
+  "enriched": 1,
   "failed": 1,
   "ok": true,
   "samples": [
+    {
+      "title": "Épisode de feux de forêts en France",
+      "link": "https://lecollectif.ca/a-la-une/episode-de-feux-de-forets-en-france/",
+      "ok": true,
+      "score": 100,
+      "chars": 286,
+      "sample": "La France fait face à une vague de chaleur jamais enregistrée auparavant. Les airs climatisées ne pe",
+      "changed": true
+    },
     {
       "title": "The Cruel Optimism of Summer",
       "link": "https://www.mcgilldaily.com/2026/07/the-cruel-optimism-of-summer/",

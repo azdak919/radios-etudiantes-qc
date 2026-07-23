@@ -9,7 +9,7 @@
     <link>https://azdak919.github.io/le-radar/</link>
     <description>Fil agrégé des journaux étudiants des cégeps et universités du Québec (français et anglais). Titres, brèves, images et liens vers les articles originaux.</description>
     <language>fr-CA</language>
-    <lastBuildDate>Wed, 22 Jul 2026 18:35:27 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 23 Jul 2026 02:01:59 +0000</lastBuildDate>
     <generator>LE RADAR Student Media Aggregator</generator>
     <docs>https://azdak919.github.io/le-radar/feeds.html</docs>
     <copyright>© publications étudiantes sources — fil agrégé par LE RADAR</copyright>
@@ -21,6 +21,32 @@
       <link>https://azdak919.github.io/le-radar/</link>
     </image>
     <item>
+      <title>Épisode de feux de forêts en France</title>
+      <link>https://lecollectif.ca/a-la-une/episode-de-feux-de-forets-en-france/</link>
+      <guid isPermaLink="true">https://lecollectif.ca/a-la-une/episode-de-feux-de-forets-en-france/</guid>
+      <pubDate>Thu, 23 Jul 2026 02:01:59 +0000</pubDate>
+      <dc:creator>Médéric Dens</dc:creator>
+      <source url="https://lecollectif.ca/">Le Collectif</source>
+      <description><![CDATA[Le Collectif · Médéric Dens · 22 juill.]]></description>
+      <content:encoded><![CDATA[<p style="margin:0 0 0.75em;font-size:0.9em;color:#555"><strong>Le Collectif · Médéric Dens · 22 juill.</strong></p>
+<figure style="margin:0 0 1em">
+<img src="https://lecollectif.ca/wp-content/uploads/2026/07/SOCIETE_Episode-de-feux-de-forets-en-France_Getty-Images.jpg" alt="Épisode de feux de forêts en France" style="max-width:100%;height:auto;display:block;border-radius:4px" />
+<figcaption style="font-size:0.85em;color:#666;margin-top:0.35em">Photo : Pierre Crom/Getty Images</figcaption>
+</figure>
+<p style="margin:0 0 0.75em;line-height:1.5">La France fait face à une vague de chaleur jamais enregistrée auparavant. Les airs climatisées ne peuvent fournir la majorité des personnes. De son côté, le Rassemblement national et sa cheffe, Marine Le Pen, politise manifestement l’enjeu, alors que la crise climatique semble ignorée.</p>]]></content:encoded>
+      <category>Le Collectif</category>
+      <category>UdeS</category>
+      <category>Estrie</category>
+      <category>université</category>
+      <category>Français</category>
+      <media:content url="https://lecollectif.ca/wp-content/uploads/2026/07/SOCIETE_Episode-de-feux-de-forets-en-France_Getty-Images.jpg" medium="image" type="image/jpeg">
+        <media:credit>Photo : Pierre Crom/Getty Images</media:credit>
+        <media:title>Épisode de feux de forêts en France</media:title>
+      </media:content>
+      <media:thumbnail url="https://lecollectif.ca/wp-content/uploads/2026/07/SOCIETE_Episode-de-feux-de-forets-en-France_Getty-Images.jpg" />
+      <enclosure url="https://lecollectif.ca/wp-content/uploads/2026/07/SOCIETE_Episode-de-feux-de-forets-en-France_Getty-Images.jpg" type="image/jpeg" length="1" />
+    </item>
+    <item>
       <title>Des artistes de chez nous ont brillé à la Fête du Lac des Nations</title>
       <link>https://lecollectif.ca/culture/des-artistes-de-chez-nous-ont-brille-a-la-fete-du-lac-des-nations/</link>
       <guid isPermaLink="true">https://lecollectif.ca/culture/des-artistes-de-chez-nous-ont-brille-a-la-fete-du-lac-des-nations/</guid>
@@ -30,7 +56,7 @@
       <description><![CDATA[Le Collectif · Sarah Gendreau Simoneau et Émy Robert · 22 juill.]]></description>
       <content:encoded><![CDATA[<p style="margin:0 0 0.75em;font-size:0.9em;color:#555"><strong>Le Collectif · Sarah Gendreau Simoneau et Émy Robert · 22 juill.</strong></p>
 <figure style="margin:0 0 1em">
-<img src="https://lecollectif.ca/wp-content/uploads/2026/07/CULTURE_FLNPhoto1_CreditAntoineMeunier.jpg" alt="Des artistes de chez nous ont brillé à la Fête du Lac des Nations" style="max-width:100%;height:auto;display:block;border-radius:4px" />
+<img src="https://lecollectif.ca/wp-content/uploads/2026/07/CULTURE_FLNPhoto1_CreditAntoineMeunier-1024x683.jpg" alt="Des artistes de chez nous ont brillé à la Fête du Lac des Nations" style="max-width:100%;height:auto;display:block;border-radius:4px" />
 <figcaption style="font-size:0.85em;color:#666;margin-top:0.35em">Photo : ItAntoineMeunier</figcaption>
 </figure>
 <p style="margin:0 0 0.75em;line-height:1.5">En tout, plus de 150 000 festivaliers et festivalières étaient au rendez-vous cette année, selon les données recueillies par l’équipe de la FLN. La programmation annoncée en mars dernier avait fait réagir la population qui dénonçait le manque d’artistes internationaux, Three Days Grace, seul groupe international en tête d’affiche du festival, n’ayant été annoncé qu’en mai.</p>]]></content:encoded>
@@ -39,12 +65,12 @@
       <category>Estrie</category>
       <category>université</category>
       <category>Français</category>
-      <media:content url="https://lecollectif.ca/wp-content/uploads/2026/07/CULTURE_FLNPhoto1_CreditAntoineMeunier.jpg" medium="image" type="image/jpeg">
+      <media:content url="https://lecollectif.ca/wp-content/uploads/2026/07/CULTURE_FLNPhoto1_CreditAntoineMeunier-1024x683.jpg" medium="image" type="image/jpeg">
         <media:credit>Photo : ItAntoineMeunier</media:credit>
         <media:title>Des artistes de chez nous ont brillé à la Fête du Lac des Nations</media:title>
       </media:content>
-      <media:thumbnail url="https://lecollectif.ca/wp-content/uploads/2026/07/CULTURE_FLNPhoto1_CreditAntoineMeunier.jpg" />
-      <enclosure url="https://lecollectif.ca/wp-content/uploads/2026/07/CULTURE_FLNPhoto1_CreditAntoineMeunier.jpg" type="image/jpeg" length="1" />
+      <media:thumbnail url="https://lecollectif.ca/wp-content/uploads/2026/07/CULTURE_FLNPhoto1_CreditAntoineMeunier-1024x683.jpg" />
+      <enclosure url="https://lecollectif.ca/wp-content/uploads/2026/07/CULTURE_FLNPhoto1_CreditAntoineMeunier-1024x683.jpg" type="image/jpeg" length="1" />
     </item>
     <item>
       <title>Trump réitère sa volonté de contrer la fraude électorale</title>
@@ -108,7 +134,7 @@
       <description><![CDATA[Le Collectif · Médéric Dens · 20 juill.]]></description>
       <content:encoded><![CDATA[<p style="margin:0 0 0.75em;font-size:0.9em;color:#555"><strong>Le Collectif · Médéric Dens · 20 juill.</strong></p>
 <figure style="margin:0 0 1em">
-<img src="https://lecollectif.ca/wp-content/uploads/2026/07/OBSESSIONS_Scepticisme_JeunesDesinformationReseauxSociaux_SourceFondationJeanJaures-1.png" alt="Le scepticisme" style="max-width:100%;height:auto;display:block;border-radius:4px" />
+<img src="https://lecollectif.ca/wp-content/uploads/2026/07/OBSESSIONS_Scepticisme_JeunesDesinformationReseauxSociaux_SourceFondationJeanJaures-1-1024x576.png" alt="Le scepticisme" style="max-width:100%;height:auto;display:block;border-radius:4px" />
 <figcaption style="font-size:0.85em;color:#666;margin-top:0.35em">Photo : Fondation Jean Jaurès</figcaption>
 </figure>
 <p style="margin:0 0 0.75em;line-height:1.5">Les théories complotistes, la polarisation politique et la multiplication des technologies, comme les médias sociaux, les deepfakes et l’intelligence artificielle (IA), poussent à adopter un regard critique. Si notre génération est obsédée par la rapidité de l’information et la quête de résultats immédiats, elle est également obsédée par la remise en question et le scepticisme.</p>]]></content:encoded>
@@ -117,12 +143,12 @@
       <category>Estrie</category>
       <category>université</category>
       <category>Français</category>
-      <media:content url="https://lecollectif.ca/wp-content/uploads/2026/07/OBSESSIONS_Scepticisme_JeunesDesinformationReseauxSociaux_SourceFondationJeanJaures-1.png" medium="image" type="image/png">
+      <media:content url="https://lecollectif.ca/wp-content/uploads/2026/07/OBSESSIONS_Scepticisme_JeunesDesinformationReseauxSociaux_SourceFondationJeanJaures-1-1024x576.png" medium="image" type="image/png">
         <media:credit>Photo : Fondation Jean Jaurès</media:credit>
         <media:title>Le scepticisme</media:title>
       </media:content>
-      <media:thumbnail url="https://lecollectif.ca/wp-content/uploads/2026/07/OBSESSIONS_Scepticisme_JeunesDesinformationReseauxSociaux_SourceFondationJeanJaures-1.png" />
-      <enclosure url="https://lecollectif.ca/wp-content/uploads/2026/07/OBSESSIONS_Scepticisme_JeunesDesinformationReseauxSociaux_SourceFondationJeanJaures-1.png" type="image/png" length="1" />
+      <media:thumbnail url="https://lecollectif.ca/wp-content/uploads/2026/07/OBSESSIONS_Scepticisme_JeunesDesinformationReseauxSociaux_SourceFondationJeanJaures-1-1024x576.png" />
+      <enclosure url="https://lecollectif.ca/wp-content/uploads/2026/07/OBSESSIONS_Scepticisme_JeunesDesinformationReseauxSociaux_SourceFondationJeanJaures-1-1024x576.png" type="image/png" length="1" />
     </item>
     <item>
       <title>L’écoanxiété</title>
@@ -134,7 +160,7 @@
       <description><![CDATA[Le Collectif · Médéric Dens · 20 juill.]]></description>
       <content:encoded><![CDATA[<p style="margin:0 0 0.75em;font-size:0.9em;color:#555"><strong>Le Collectif · Médéric Dens · 20 juill.</strong></p>
 <figure style="margin:0 0 1em">
-<img src="https://lecollectif.ca/wp-content/uploads/2026/07/OBSESSIONS_Ecoanxiete_SourceNatureActionQuebec.jpg" alt="L’écoanxiété" style="max-width:100%;height:auto;display:block;border-radius:4px" />
+<img src="https://lecollectif.ca/wp-content/uploads/2026/07/OBSESSIONS_Ecoanxiete_SourceNatureActionQuebec-1024x682.jpg" alt="L’écoanxiété" style="max-width:100%;height:auto;display:block;border-radius:4px" />
 <figcaption style="font-size:0.85em;color:#666;margin-top:0.35em">Photo : Nature Action Québec</figcaption>
 </figure>
 <p style="margin:0 0 0.75em;line-height:1.5">En effet, grandir avec la peur de subir des changements climatiques majeurs affecte plus de 66 % des jeunes du secondaire au Québec, qui disent vivre de l’écoanxiété quotidiennement, à l’occasion ou toujours. À l’inverse, seuls 34 % des jeunes disent ne jamais y penser.</p>]]></content:encoded>
@@ -143,12 +169,12 @@
       <category>Estrie</category>
       <category>université</category>
       <category>Français</category>
-      <media:content url="https://lecollectif.ca/wp-content/uploads/2026/07/OBSESSIONS_Ecoanxiete_SourceNatureActionQuebec.jpg" medium="image" type="image/jpeg">
+      <media:content url="https://lecollectif.ca/wp-content/uploads/2026/07/OBSESSIONS_Ecoanxiete_SourceNatureActionQuebec-1024x682.jpg" medium="image" type="image/jpeg">
         <media:credit>Photo : Nature Action Québec</media:credit>
         <media:title>L’écoanxiété</media:title>
       </media:content>
-      <media:thumbnail url="https://lecollectif.ca/wp-content/uploads/2026/07/OBSESSIONS_Ecoanxiete_SourceNatureActionQuebec.jpg" />
-      <enclosure url="https://lecollectif.ca/wp-content/uploads/2026/07/OBSESSIONS_Ecoanxiete_SourceNatureActionQuebec.jpg" type="image/jpeg" length="1" />
+      <media:thumbnail url="https://lecollectif.ca/wp-content/uploads/2026/07/OBSESSIONS_Ecoanxiete_SourceNatureActionQuebec-1024x682.jpg" />
+      <enclosure url="https://lecollectif.ca/wp-content/uploads/2026/07/OBSESSIONS_Ecoanxiete_SourceNatureActionQuebec-1024x682.jpg" type="image/jpeg" length="1" />
     </item>
     <item>
       <title>Le militantisme</title>
@@ -186,7 +212,7 @@
       <description><![CDATA[Le Collectif · Rebecca Gagné · 20 juill.]]></description>
       <content:encoded><![CDATA[<p style="margin:0 0 0.75em;font-size:0.9em;color:#555"><strong>Le Collectif · Rebecca Gagné · 20 juill.</strong></p>
 <figure style="margin:0 0 1em">
-<img src="https://lecollectif.ca/wp-content/uploads/2026/07/OBSESSIONS_SLOWLIVING_ModeDeVieLentCueillette_SourceLatelierDeCueillette-1.jpg" alt="L’abondance d’un mode de vie plus lent" style="max-width:100%;height:auto;display:block;border-radius:4px" />
+<img src="https://lecollectif.ca/wp-content/uploads/2026/07/OBSESSIONS_SLOWLIVING_ModeDeVieLentCueillette_SourceLatelierDeCueillette-1-1024x1024.jpg" alt="L’abondance d’un mode de vie plus lent" style="max-width:100%;height:auto;display:block;border-radius:4px" />
 <figcaption style="font-size:0.85em;color:#666;margin-top:0.35em">Photo : L’atelier de cueillette</figcaption>
 </figure>
 <p style="margin:0 0 0.75em;line-height:1.5">« Je répète toujours aux gens que, pour pouvoir faire de la cueillette sauvage, ce n’est pas juste d’apprendre le nom des plantes. C’est au-delà de ça : ma philosophie derrière l’entreprise c’est d’apprendre aux gens à ralentir, à regarder autrement la nature sous un autre œil et à prendre le temps. »</p>]]></content:encoded>
@@ -195,12 +221,12 @@
       <category>Estrie</category>
       <category>université</category>
       <category>Français</category>
-      <media:content url="https://lecollectif.ca/wp-content/uploads/2026/07/OBSESSIONS_SLOWLIVING_ModeDeVieLentCueillette_SourceLatelierDeCueillette-1.jpg" medium="image" type="image/jpeg">
+      <media:content url="https://lecollectif.ca/wp-content/uploads/2026/07/OBSESSIONS_SLOWLIVING_ModeDeVieLentCueillette_SourceLatelierDeCueillette-1-1024x1024.jpg" medium="image" type="image/jpeg">
         <media:credit>Photo : L’atelier de cueillette</media:credit>
         <media:title>L’abondance d’un mode de vie plus lent</media:title>
       </media:content>
-      <media:thumbnail url="https://lecollectif.ca/wp-content/uploads/2026/07/OBSESSIONS_SLOWLIVING_ModeDeVieLentCueillette_SourceLatelierDeCueillette-1.jpg" />
-      <enclosure url="https://lecollectif.ca/wp-content/uploads/2026/07/OBSESSIONS_SLOWLIVING_ModeDeVieLentCueillette_SourceLatelierDeCueillette-1.jpg" type="image/jpeg" length="1" />
+      <media:thumbnail url="https://lecollectif.ca/wp-content/uploads/2026/07/OBSESSIONS_SLOWLIVING_ModeDeVieLentCueillette_SourceLatelierDeCueillette-1-1024x1024.jpg" />
+      <enclosure url="https://lecollectif.ca/wp-content/uploads/2026/07/OBSESSIONS_SLOWLIVING_ModeDeVieLentCueillette_SourceLatelierDeCueillette-1-1024x1024.jpg" type="image/jpeg" length="1" />
     </item>
     <item>
       <title>Lumumba’s legacy on football’s biggest stage: How one fan utilized FIFA’s fandom to remember a martyr of colonial violence</title>
@@ -264,7 +290,7 @@
       <description><![CDATA[Le Collectif · Elizabeth Gagné · 19 juill.]]></description>
       <content:encoded><![CDATA[<p style="margin:0 0 0.75em;font-size:0.9em;color:#555"><strong>Le Collectif · Elizabeth Gagné · 19 juill.</strong></p>
 <figure style="margin:0 0 1em">
-<img src="https://lecollectif.ca/wp-content/uploads/2026/07/OBSESSIONS_NOSTALGIE_Vinyles_SourceDrummondVinyl-1.jpg" alt="Le phénomène de la nostalgie" style="max-width:100%;height:auto;display:block;border-radius:4px" />
+<img src="https://lecollectif.ca/wp-content/uploads/2026/07/OBSESSIONS_NOSTALGIE_Vinyles_SourceDrummondVinyl-1-1024x819.jpg" alt="Le phénomène de la nostalgie" style="max-width:100%;height:auto;display:block;border-radius:4px" />
 <figcaption style="font-size:0.85em;color:#666;margin-top:0.35em">Photo : Drummond Vinyl</figcaption>
 </figure>
 <p style="margin:0 0 0.75em;line-height:1.5">Selon Usito , la nostalgie peut être comprise comme la tristesse causée par l’éloignement du pays natal. Le terme peut également désigner un regret empreint de mélancolie lié à une chose passée ou à une époque que l’on n’a pas connue, ainsi qu’un désir teinté d’insatisfaction.</p>]]></content:encoded>
@@ -273,12 +299,12 @@
       <category>Estrie</category>
       <category>université</category>
       <category>Français</category>
-      <media:content url="https://lecollectif.ca/wp-content/uploads/2026/07/OBSESSIONS_NOSTALGIE_Vinyles_SourceDrummondVinyl-1.jpg" medium="image" type="image/jpeg">
+      <media:content url="https://lecollectif.ca/wp-content/uploads/2026/07/OBSESSIONS_NOSTALGIE_Vinyles_SourceDrummondVinyl-1-1024x819.jpg" medium="image" type="image/jpeg">
         <media:credit>Photo : Drummond Vinyl</media:credit>
         <media:title>Le phénomène de la nostalgie</media:title>
       </media:content>
-      <media:thumbnail url="https://lecollectif.ca/wp-content/uploads/2026/07/OBSESSIONS_NOSTALGIE_Vinyles_SourceDrummondVinyl-1.jpg" />
-      <enclosure url="https://lecollectif.ca/wp-content/uploads/2026/07/OBSESSIONS_NOSTALGIE_Vinyles_SourceDrummondVinyl-1.jpg" type="image/jpeg" length="1" />
+      <media:thumbnail url="https://lecollectif.ca/wp-content/uploads/2026/07/OBSESSIONS_NOSTALGIE_Vinyles_SourceDrummondVinyl-1-1024x819.jpg" />
+      <enclosure url="https://lecollectif.ca/wp-content/uploads/2026/07/OBSESSIONS_NOSTALGIE_Vinyles_SourceDrummondVinyl-1-1024x819.jpg" type="image/jpeg" length="1" />
     </item>
     <item>
       <title>Une [sur]consommation… plus consciente?</title>
@@ -290,7 +316,7 @@
       <description><![CDATA[Le Collectif · Rebecca Gagné · 19 juill.]]></description>
       <content:encoded><![CDATA[<p style="margin:0 0 0.75em;font-size:0.9em;color:#555"><strong>Le Collectif · Rebecca Gagné · 19 juill.</strong></p>
 <figure style="margin:0 0 1em">
-<img src="https://lecollectif.ca/wp-content/uploads/2026/07/Creation-sans-titre-33.png" alt="Une [sur]consommation… plus consciente?" style="max-width:100%;height:auto;display:block;border-radius:4px" />
+<img src="https://lecollectif.ca/wp-content/uploads/2026/07/Creation-sans-titre-33-1024x576.png" alt="Une [sur]consommation… plus consciente?" style="max-width:100%;height:auto;display:block;border-radius:4px" />
 <figcaption style="font-size:0.85em;color:#666;margin-top:0.35em">Photo : Rebecca Gagné</figcaption>
 </figure>
 <p style="margin:0 0 0.75em;line-height:1.5">Entre temps, Caroline Boivin a commencé à donner le cours de marketing vert à la maîtrise en marketing il y a environ 15 ans. « J’essaie de voir un peu comment le marketing peut contribuer à l’adoption de ces produits [verts] et aux habitudes des consommateurs. »</p>]]></content:encoded>
@@ -299,38 +325,12 @@
       <category>Estrie</category>
       <category>université</category>
       <category>Français</category>
-      <media:content url="https://lecollectif.ca/wp-content/uploads/2026/07/Creation-sans-titre-33.png" medium="image" type="image/png">
+      <media:content url="https://lecollectif.ca/wp-content/uploads/2026/07/Creation-sans-titre-33-1024x576.png" medium="image" type="image/png">
         <media:credit>Photo : Rebecca Gagné</media:credit>
         <media:title>Une [sur]consommation… plus consciente?</media:title>
       </media:content>
-      <media:thumbnail url="https://lecollectif.ca/wp-content/uploads/2026/07/Creation-sans-titre-33.png" />
-      <enclosure url="https://lecollectif.ca/wp-content/uploads/2026/07/Creation-sans-titre-33.png" type="image/png" length="1" />
-    </item>
-    <item>
-      <title>L’augmentation des fraudes en ligne et comment s’en protéger</title>
-      <link>https://lecollectif.ca/a-la-une/laugmentation-des-fraudes-en-ligne-et-comment-sen-proteger/</link>
-      <guid isPermaLink="true">https://lecollectif.ca/a-la-une/laugmentation-des-fraudes-en-ligne-et-comment-sen-proteger/</guid>
-      <pubDate>Tue, 14 Jul 2026 21:29:28 +0000</pubDate>
-      <dc:creator>Salma Labiede</dc:creator>
-      <source url="https://lecollectif.ca/">Le Collectif</source>
-      <description><![CDATA[Le Collectif · Salma Labiede · 14 juill.]]></description>
-      <content:encoded><![CDATA[<p style="margin:0 0 0.75em;font-size:0.9em;color:#555"><strong>Le Collectif · Salma Labiede · 14 juill.</strong></p>
-<figure style="margin:0 0 1em">
-<img src="https://lecollectif.ca/wp-content/uploads/2026/07/SOCIETE_FraudeInternet_SourcePieuvre.jpg" alt="L’augmentation des fraudes en ligne et comment s’en protéger" style="max-width:100%;height:auto;display:block;border-radius:4px" />
-<figcaption style="font-size:0.85em;color:#666;margin-top:0.35em">Photo : Pieuvre</figcaption>
-</figure>
-<p style="margin:0 0 0.75em;line-height:1.5">Les fraudes prennent plusieurs formes : elles peuvent survenir au téléphone, en ligne ou même en personne. Toutefois, avec l’essor d’Internet, des téléphones intelligents, des messages textes et des courriels, les fraudes en ligne se sont multipliées à un rythme inquiétant.</p>]]></content:encoded>
-      <category>Le Collectif</category>
-      <category>UdeS</category>
-      <category>Estrie</category>
-      <category>université</category>
-      <category>Français</category>
-      <media:content url="https://lecollectif.ca/wp-content/uploads/2026/07/SOCIETE_FraudeInternet_SourcePieuvre.jpg" medium="image" type="image/jpeg">
-        <media:credit>Photo : Pieuvre</media:credit>
-        <media:title>L’augmentation des fraudes en ligne et comment s’en protéger</media:title>
-      </media:content>
-      <media:thumbnail url="https://lecollectif.ca/wp-content/uploads/2026/07/SOCIETE_FraudeInternet_SourcePieuvre.jpg" />
-      <enclosure url="https://lecollectif.ca/wp-content/uploads/2026/07/SOCIETE_FraudeInternet_SourcePieuvre.jpg" type="image/jpeg" length="1" />
+      <media:thumbnail url="https://lecollectif.ca/wp-content/uploads/2026/07/Creation-sans-titre-33-1024x576.png" />
+      <enclosure url="https://lecollectif.ca/wp-content/uploads/2026/07/Creation-sans-titre-33-1024x576.png" type="image/png" length="1" />
     </item>
     <item>
       <title>CSU fails to reach quorum at first special council meeting of new mandate</title>
@@ -498,7 +498,7 @@
       <description><![CDATA[La Pige · Léa Morin Letort · 22 juin]]></description>
       <content:encoded><![CDATA[<p style="margin:0 0 0.75em;font-size:0.9em;color:#555"><strong>La Pige · Léa Morin Letort · 22 juin</strong></p>
 <figure style="margin:0 0 1em">
-<img src="https://lapige.atmjonquiere.com/wp-content/uploads/sites/3/2026/06/Joanne-Normandin_retraite-benevole-scaled.jpg" alt="Se préparer et vivre sa retraite : un long fleuve, pas si tranquille" style="max-width:100%;height:auto;display:block;border-radius:4px" />
+<img src="https://lapige.atmjonquiere.com/wp-content/uploads/sites/3/2026/06/Bruno-Cormier-retraite-benevole.png" alt="Se préparer et vivre sa retraite : un long fleuve, pas si tranquille" style="max-width:100%;height:auto;display:block;border-radius:4px" />
 <figcaption style="font-size:0.85em;color:#666;margin-top:0.35em">Photo : Léa Morin-Letort</figcaption>
 </figure>
 <p style="margin:0 0 0.75em;line-height:1.5">« Les gens ont tendance à frapper un mur au moment de la retraite par manque de préparation », estime Le directeur général de la Fédération de l’âge d’or du Québec (Fadoq) pour la région Saguenay-Lac-Saint-Jean – Ungava, Patrice Saint-Pierre. (Photo : Léa Morin-Letort)</p>]]></content:encoded>
@@ -507,12 +507,12 @@
       <category>Saguenay–Lac-Saint-Jean</category>
       <category>cégep</category>
       <category>Français</category>
-      <media:content url="https://lapige.atmjonquiere.com/wp-content/uploads/sites/3/2026/06/Joanne-Normandin_retraite-benevole-scaled.jpg" medium="image" type="image/jpeg">
+      <media:content url="https://lapige.atmjonquiere.com/wp-content/uploads/sites/3/2026/06/Bruno-Cormier-retraite-benevole.png" medium="image" type="image/png">
         <media:credit>Photo : Léa Morin-Letort</media:credit>
         <media:title>Se préparer et vivre sa retraite : un long fleuve, pas si tranquille</media:title>
       </media:content>
-      <media:thumbnail url="https://lapige.atmjonquiere.com/wp-content/uploads/sites/3/2026/06/Joanne-Normandin_retraite-benevole-scaled.jpg" />
-      <enclosure url="https://lapige.atmjonquiere.com/wp-content/uploads/sites/3/2026/06/Joanne-Normandin_retraite-benevole-scaled.jpg" type="image/jpeg" length="1" />
+      <media:thumbnail url="https://lapige.atmjonquiere.com/wp-content/uploads/sites/3/2026/06/Bruno-Cormier-retraite-benevole.png" />
+      <enclosure url="https://lapige.atmjonquiere.com/wp-content/uploads/sites/3/2026/06/Bruno-Cormier-retraite-benevole.png" type="image/png" length="1" />
     </item>
     <item>
       <title>AI’s use in legal decisions poses major risks to the Canadian judicial system’s integrity and neutrality</title>
@@ -550,7 +550,7 @@
       <description><![CDATA[The Link · Marisa Filice · Jun 10]]></description>
       <content:encoded><![CDATA[<p style="margin:0 0 0.75em;font-size:0.9em;color:#555"><strong>The Link · Marisa Filice · Jun 10</strong></p>
 <figure style="margin:0 0 1em">
-<img src="https://thelinknewspaper.ca/images/articles/_resized/CAMNT06052026-40.jpg" alt="Road to the 2026 FIFA World Cup" style="max-width:100%;height:auto;display:block;border-radius:4px" />
+<img src="https://thelinknewspaper.ca/images/made/images/articles/_resized/CAMNT06052026-40_690_460_90.jpg" alt="Road to the 2026 FIFA World Cup" style="max-width:100%;height:auto;display:block;border-radius:4px" />
 <figcaption style="font-size:0.85em;color:#666;margin-top:0.35em">Photo: Marisa Filice</figcaption>
 </figure>
 <p style="margin:0 0 0.75em;line-height:1.5">The Canadian men&apos;s national soccer team hosted the Republic of Ireland at Saputo Stadium for a friendly match on June 5, drawing a sold-out crowd of 19,619 fans for the team&apos;s final home match ahead of the 2026 FIFA World Cup.</p>]]></content:encoded>
@@ -559,12 +559,12 @@
       <category>Montréal</category>
       <category>université</category>
       <category>English</category>
-      <media:content url="https://thelinknewspaper.ca/images/articles/_resized/CAMNT06052026-40.jpg" medium="image" type="image/jpeg">
+      <media:content url="https://thelinknewspaper.ca/images/made/images/articles/_resized/CAMNT06052026-40_690_460_90.jpg" medium="image" type="image/jpeg">
         <media:credit>Photo: Marisa Filice</media:credit>
         <media:title>Road to the 2026 FIFA World Cup</media:title>
       </media:content>
-      <media:thumbnail url="https://thelinknewspaper.ca/images/articles/_resized/CAMNT06052026-40.jpg" />
-      <enclosure url="https://thelinknewspaper.ca/images/articles/_resized/CAMNT06052026-40.jpg" type="image/jpeg" length="1" />
+      <media:thumbnail url="https://thelinknewspaper.ca/images/made/images/articles/_resized/CAMNT06052026-40_690_460_90.jpg" />
+      <enclosure url="https://thelinknewspaper.ca/images/made/images/articles/_resized/CAMNT06052026-40_690_460_90.jpg" type="image/jpeg" length="1" />
     </item>
     <item>
       <title>Les grands oubliés du handicap : les proches aidants</title>
@@ -628,7 +628,7 @@
       <description><![CDATA[The Link · Samuel Kayll · May 22]]></description>
       <content:encoded><![CDATA[<p style="margin:0 0 0.75em;font-size:0.9em;color:#555"><strong>The Link · Samuel Kayll · May 22</strong></p>
 <figure style="margin:0 0 1em">
-<img src="https://thelinknewspaper.ca/images/articles/_resized/12.news.artemis.sam.online.daniel.1U5A7650.jpg" alt="Artemis II takes over Place-des-Arts" style="max-width:100%;height:auto;display:block;border-radius:4px" />
+<img src="https://thelinknewspaper.ca/images/made/images/articles/_resized/12.news.artemis.sam.online.daniel.1U5A7650_690_460_90.jpg" alt="Artemis II takes over Place-des-Arts" style="max-width:100%;height:auto;display:block;border-radius:4px" />
 <figcaption style="font-size:0.85em;color:#666;margin-top:0.35em">Photo: Daniel Gonzalez</figcaption>
 </figure>
 <p style="margin:0 0 0.75em;line-height:1.5">Thousands of people filled the seats of Salle Wilfrid-Pelletier at Place-des-Arts for a panel featuring the astronauts of the Artemis II mission on Friday, May 15. Hosted by the Chamber of Commerce of Metropolitan Montreal (CCMM), the discussion marked the final stop on the group’s Canada tour , which featured a meeting with Prime Minister Mark Carney.</p>]]></content:encoded>
@@ -637,12 +637,12 @@
       <category>Montréal</category>
       <category>université</category>
       <category>English</category>
-      <media:content url="https://thelinknewspaper.ca/images/articles/_resized/12.news.artemis.sam.online.daniel.1U5A7650.jpg" medium="image" type="image/jpeg">
+      <media:content url="https://thelinknewspaper.ca/images/made/images/articles/_resized/12.news.artemis.sam.online.daniel.1U5A7650_690_460_90.jpg" medium="image" type="image/jpeg">
         <media:credit>Photo: Daniel Gonzalez</media:credit>
         <media:title>Artemis II takes over Place-des-Arts</media:title>
       </media:content>
-      <media:thumbnail url="https://thelinknewspaper.ca/images/articles/_resized/12.news.artemis.sam.online.daniel.1U5A7650.jpg" />
-      <enclosure url="https://thelinknewspaper.ca/images/articles/_resized/12.news.artemis.sam.online.daniel.1U5A7650.jpg" type="image/jpeg" length="1" />
+      <media:thumbnail url="https://thelinknewspaper.ca/images/made/images/articles/_resized/12.news.artemis.sam.online.daniel.1U5A7650_690_460_90.jpg" />
+      <enclosure url="https://thelinknewspaper.ca/images/made/images/articles/_resized/12.news.artemis.sam.online.daniel.1U5A7650_690_460_90.jpg" type="image/jpeg" length="1" />
     </item>
     <item>
       <title>CSU rejects motion for Israel and Jewish solidarity fund ad hoc committee</title>
@@ -940,7 +940,7 @@
       <description><![CDATA[Quartier Libre · Emilie Rizkallah · 15 mai]]></description>
       <content:encoded><![CDATA[<p style="margin:0 0 0.75em;font-size:0.9em;color:#555"><strong>Quartier Libre · Emilie Rizkallah · 15 mai</strong></p>
 <figure style="margin:0 0 1em">
-<img src="https://quartierlibre.ca/wp-content/uploads/2026/05/Photo-5_IMG_3586.jpg" alt="Présences invisibles : écrire la ville sans permission" style="max-width:100%;height:auto;display:block;border-radius:4px" />
+<img src="https://quartierlibre.ca/wp-content/uploads/2026/05/Photo-5_IMG_3586-1024x768.jpg" alt="Présences invisibles : écrire la ville sans permission" style="max-width:100%;height:auto;display:block;border-radius:4px" />
 <figcaption style="font-size:0.85em;color:#666;margin-top:0.35em">Crédit photo : Quartier Libre</figcaption>
 </figure>
 <p style="margin:0 0 0.75em;line-height:1.5">À Montréal, les murs parlent, sans jamais révéler celles et ceux qui les écrivent. Sous les couches de peinture et les signatures superposées, une présence discrète s’impose : celle d’une génération, souvent étudiante, qui investit l’espace urbain en marge des cadres établis.</p>]]></content:encoded>
@@ -949,12 +949,12 @@
       <category>Montréal</category>
       <category>université</category>
       <category>Français</category>
-      <media:content url="https://quartierlibre.ca/wp-content/uploads/2026/05/Photo-5_IMG_3586.jpg" medium="image" type="image/jpeg">
+      <media:content url="https://quartierlibre.ca/wp-content/uploads/2026/05/Photo-5_IMG_3586-1024x768.jpg" medium="image" type="image/jpeg">
         <media:credit>Crédit photo : Quartier Libre</media:credit>
         <media:title>Présences invisibles : écrire la ville sans permission</media:title>
       </media:content>
-      <media:thumbnail url="https://quartierlibre.ca/wp-content/uploads/2026/05/Photo-5_IMG_3586.jpg" />
-      <enclosure url="https://quartierlibre.ca/wp-content/uploads/2026/05/Photo-5_IMG_3586.jpg" type="image/jpeg" length="1" />
+      <media:thumbnail url="https://quartierlibre.ca/wp-content/uploads/2026/05/Photo-5_IMG_3586-1024x768.jpg" />
+      <enclosure url="https://quartierlibre.ca/wp-content/uploads/2026/05/Photo-5_IMG_3586-1024x768.jpg" type="image/jpeg" length="1" />
     </item>
     <item>
       <title>CALAMINE : RAPPER AUTREMENT QUE LE « BOYS CLUB »</title>
@@ -992,7 +992,7 @@
       <description><![CDATA[Quartier Libre · Ulysse Taillard-Hodez · 14 mai]]></description>
       <content:encoded><![CDATA[<p style="margin:0 0 0.75em;font-size:0.9em;color:#555"><strong>Quartier Libre · Ulysse Taillard-Hodez · 14 mai</strong></p>
 <figure style="margin:0 0 1em">
-<img src="https://quartierlibre.ca/wp-content/uploads/2026/05/PXL_20260505_174149744.jpg" alt="Forum RÉA : une alliance pour l’éducation en milieu défavorisé" style="max-width:100%;height:auto;display:block;border-radius:4px" />
+<img src="https://quartierlibre.ca/wp-content/uploads/2026/05/image-2-768x1024.jpeg" alt="Forum RÉA : une alliance pour l’éducation en milieu défavorisé" style="max-width:100%;height:auto;display:block;border-radius:4px" />
 <figcaption style="font-size:0.85em;color:#666;margin-top:0.35em">Crédit photo : Quartier Libre</figcaption>
 </figure>
 <p style="margin:0 0 0.75em;line-height:1.5">Mme Fournier Dubé a insisté sur le fait que les enseignant·e·s sont les véritables « agents de changement ». Son rôle n’est pas d’imposer un cadre scientifique rigide, mais de vulgariser la recherche pour l’adapter aux besoins du terrain.</p>]]></content:encoded>
@@ -1001,12 +1001,12 @@
       <category>Montréal</category>
       <category>université</category>
       <category>Français</category>
-      <media:content url="https://quartierlibre.ca/wp-content/uploads/2026/05/PXL_20260505_174149744.jpg" medium="image" type="image/jpeg">
+      <media:content url="https://quartierlibre.ca/wp-content/uploads/2026/05/image-2-768x1024.jpeg" medium="image" type="image/jpeg">
         <media:credit>Crédit photo : Quartier Libre</media:credit>
         <media:title>Forum RÉA : une alliance pour l’éducation en milieu défavorisé</media:title>
       </media:content>
-      <media:thumbnail url="https://quartierlibre.ca/wp-content/uploads/2026/05/PXL_20260505_174149744.jpg" />
-      <enclosure url="https://quartierlibre.ca/wp-content/uploads/2026/05/PXL_20260505_174149744.jpg" type="image/jpeg" length="1" />
+      <media:thumbnail url="https://quartierlibre.ca/wp-content/uploads/2026/05/image-2-768x1024.jpeg" />
+      <enclosure url="https://quartierlibre.ca/wp-content/uploads/2026/05/image-2-768x1024.jpeg" type="image/jpeg" length="1" />
     </item>
     <item>
       <title>Un projet de loi rendrait obligatoire le statut d’étudiant·e proche aidant·e</title>
@@ -1018,7 +1018,7 @@
       <description><![CDATA[Quartier Libre · Mohammed Aziz Mestiri · 14 mai]]></description>
       <content:encoded><![CDATA[<p style="margin:0 0 0.75em;font-size:0.9em;color:#555"><strong>Quartier Libre · Mohammed Aziz Mestiri · 14 mai</strong></p>
 <figure style="margin:0 0 1em">
-<img src="https://quartierlibre.ca/wp-content/uploads/2026/05/12-13_Statuts-Politique-Parents-Proche-Aidants.jpg" alt="Un projet de loi rendrait obligatoire le statut d’étudiant·e proche aidant·e" style="max-width:100%;height:auto;display:block;border-radius:4px" />
+<img src="https://quartierlibre.ca/wp-content/uploads/2026/05/12-13_Statuts-Politique-Parents-Proche-Aidants-1024x768.jpg" alt="Un projet de loi rendrait obligatoire le statut d’étudiant·e proche aidant·e" style="max-width:100%;height:auto;display:block;border-radius:4px" />
 <figcaption style="font-size:0.85em;color:#666;margin-top:0.35em">Photo : MOHAMMED AZIZ MESTIRI</figcaption>
 </figure>
 <p style="margin:0 0 0.75em;line-height:1.5">Depuis mars 2024, l’Université de Montréal (UdeM) dispose d’une politique de soutien aux parents aux études. Le projet de loi 394 ( PL394 ) de Québec solidaire lui imposerait, en cas d’adoption, d’en créer une destinée également aux proches aidant·e·s.</p>]]></content:encoded>
@@ -1027,12 +1027,12 @@
       <category>Montréal</category>
       <category>université</category>
       <category>Français</category>
-      <media:content url="https://quartierlibre.ca/wp-content/uploads/2026/05/12-13_Statuts-Politique-Parents-Proche-Aidants.jpg" medium="image" type="image/jpeg">
+      <media:content url="https://quartierlibre.ca/wp-content/uploads/2026/05/12-13_Statuts-Politique-Parents-Proche-Aidants-1024x768.jpg" medium="image" type="image/jpeg">
         <media:credit>Photo : MOHAMMED AZIZ MESTIRI</media:credit>
         <media:title>Un projet de loi rendrait obligatoire le statut d’étudiant·e proche aidant·e</media:title>
       </media:content>
-      <media:thumbnail url="https://quartierlibre.ca/wp-content/uploads/2026/05/12-13_Statuts-Politique-Parents-Proche-Aidants.jpg" />
-      <enclosure url="https://quartierlibre.ca/wp-content/uploads/2026/05/12-13_Statuts-Politique-Parents-Proche-Aidants.jpg" type="image/jpeg" length="1" />
+      <media:thumbnail url="https://quartierlibre.ca/wp-content/uploads/2026/05/12-13_Statuts-Politique-Parents-Proche-Aidants-1024x768.jpg" />
+      <enclosure url="https://quartierlibre.ca/wp-content/uploads/2026/05/12-13_Statuts-Politique-Parents-Proche-Aidants-1024x768.jpg" type="image/jpeg" length="1" />
     </item>
     <item>
       <title>A final note from the Editor-in-Chief of Volume 45, for the record</title>
@@ -1122,7 +1122,7 @@
       <description><![CDATA[Quartier Libre · Ulysse Taillard-Hodez · 12 mai]]></description>
       <content:encoded><![CDATA[<p style="margin:0 0 0.75em;font-size:0.9em;color:#555"><strong>Quartier Libre · Ulysse Taillard-Hodez · 12 mai</strong></p>
 <figure style="margin:0 0 1em">
-<img src="https://quartierlibre.ca/wp-content/uploads/2026/05/10-11_FAECUM_photo-assemblee.jpg" alt="FAÉCUM : la démocratie universitaire critiquée" style="max-width:100%;height:auto;display:block;border-radius:4px" />
+<img src="https://quartierlibre.ca/wp-content/uploads/2026/05/10-11_FAECUM_photo-assemblee-1024x768.jpg" alt="FAÉCUM : la démocratie universitaire critiquée" style="max-width:100%;height:auto;display:block;border-radius:4px" />
 <figcaption style="font-size:0.85em;color:#666;margin-top:0.35em">Crédit photo : Quartier Libre</figcaption>
 </figure>
 <p style="margin:0 0 0.75em;line-height:1.5">Entre absence de quorum, élections houleuses et accusations de « campagnes de salissage », la Fédération des associations du campus de l’Université de Montréal (FAÉCUM) traverse une zone de turbulences. Du fonctionnement des associations étudiantes aux congrès mouvementés, récit d’une démocratie en difficulté.</p>]]></content:encoded>
@@ -1131,12 +1131,12 @@
       <category>Montréal</category>
       <category>université</category>
       <category>Français</category>
-      <media:content url="https://quartierlibre.ca/wp-content/uploads/2026/05/10-11_FAECUM_photo-assemblee.jpg" medium="image" type="image/jpeg">
+      <media:content url="https://quartierlibre.ca/wp-content/uploads/2026/05/10-11_FAECUM_photo-assemblee-1024x768.jpg" medium="image" type="image/jpeg">
         <media:credit>Crédit photo : Quartier Libre</media:credit>
         <media:title>FAÉCUM : la démocratie universitaire critiquée</media:title>
       </media:content>
-      <media:thumbnail url="https://quartierlibre.ca/wp-content/uploads/2026/05/10-11_FAECUM_photo-assemblee.jpg" />
-      <enclosure url="https://quartierlibre.ca/wp-content/uploads/2026/05/10-11_FAECUM_photo-assemblee.jpg" type="image/jpeg" length="1" />
+      <media:thumbnail url="https://quartierlibre.ca/wp-content/uploads/2026/05/10-11_FAECUM_photo-assemblee-1024x768.jpg" />
+      <enclosure url="https://quartierlibre.ca/wp-content/uploads/2026/05/10-11_FAECUM_photo-assemblee-1024x768.jpg" type="image/jpeg" length="1" />
     </item>
     <item>
       <title>L’alcool est-il vraiment le nouveau tabac ?</title>

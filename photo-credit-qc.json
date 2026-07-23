@@ -1,17 +1,31 @@
 {
-  "updated": "2026-07-23T03:55:29.462Z",
+  "updated": "2026-07-23T04:07:57.203Z",
   "total": 185,
   "withImage": 168,
   "withCredit": 168,
-  "cited": 125,
+  "cited": 127,
   "pending": 0,
   "missingHero": 0,
   "ok": true,
-  "checked": 7,
-  "updatedCount": 7,
-  "citedNew": 3,
-  "fallbackNew": 4,
+  "checked": 6,
+  "updatedCount": 6,
+  "citedNew": 4,
+  "fallbackNew": 2,
   "samples": [
+    {
+      "title": "Épisode de feux de forêts en France",
+      "source": "Le Collectif",
+      "credit": "Photo : Pierre Crom/Getty Images",
+      "cited": true,
+      "method": "json-ld"
+    },
+    {
+      "title": "Forum RÉA : une alliance pour l’éducation en milieu défavorisé",
+      "source": "Quartier Libre",
+      "credit": "Crédit photo : Quartier Libre",
+      "cited": false,
+      "method": null
+    },
     {
       "title": "L’épidémie de la nonchalance",
       "source": "Le Délit",
@@ -37,27 +51,6 @@
       "title": "Des initiatives qui rassemblent",
       "source": "Le Délit",
       "credit": "Crédit photo : Le Délit",
-      "cited": false,
-      "method": null
-    },
-    {
-      "title": "Se préparer et vivre sa retraite : un long fleuve, pas si tranquille",
-      "source": "La Pige",
-      "credit": "Crédit photo : La Pige",
-      "cited": false,
-      "method": null
-    },
-    {
-      "title": "Forum RÉA : une alliance pour l’éducation en milieu défavorisé",
-      "source": "Quartier Libre",
-      "credit": "Crédit photo : Quartier Libre",
-      "cited": false,
-      "method": null
-    },
-    {
-      "title": "Festival Jamais Lu : « Quand le monde devient dur à lire, on doit se raconter des histoires »",
-      "source": "Quartier Libre",
-      "credit": "Crédit photo : Quartier Libre",
       "cited": false,
       "method": null
     }
