@@ -1078,6 +1078,18 @@ function tunerDialTitleLine(radio) {
   return inst ? `${radio.name} · ${inst}` : radio.name;
 }
 
+/**
+ * Ligne 1 du syntoniseur (bureau) : « poste · slogan ».
+ * Ex. CISM 89,3 · La radio étudiante de l'Université de Montréal
+ */
+function tunerDesktopTitleLine(radio) {
+  if (!radio) return 'Syntoniser un poste';
+  const name = String(radio.name || '').trim() || 'Syntoniser un poste';
+  const slogan = radioSlogan(radio);
+  if (!slogan || normLoose(slogan) === normLoose(name)) return name;
+  return `${name} · ${slogan}`;
+}
+
 /** Mobile / tablette (< 1100 px) : titre du dial = poste · établissement. */
 function isDialCompactLayout() {
   return IS_TUNER_EMBED || !!TUNER_SUB_ROTATE_MQ?.matches;
@@ -1650,7 +1662,7 @@ function renderTunerNowAir() {
     setTunerNameText(
       isDialCompactLayout()
         ? tunerDialTitleLine(currentStation)
-        : currentStation.name,
+        : tunerDesktopTitleLine(currentStation),
     );
     syncChoqAirRotate(currentStation);
   } else if (previewing) {
@@ -2312,7 +2324,8 @@ function selectStation(id, { autoplay = false, openExternal = false } = {}) {
     TUNER_SUB?.parentElement?.classList.toggle('is-empty', !metaLine);
     applyMarquee(TUNER_SUB, metaLine);
   } else {
-    setTunerNameText(radio.name);
+    // Bureau : ligne 1 = poste · slogan ; ligne 2 = fréquence · institution
+    setTunerNameText(tunerDesktopTitleLine(radio));
     const siteExt = adaptRadarUiText('Site externe');
     setTunerSubText(external
       ? `${siteExt} · ${inst}`
@@ -3452,7 +3465,7 @@ function onRadarTranslateModeChange() {
       TUNER_SUB?.parentElement?.classList.toggle('is-empty', !metaLine);
       if (!tunerSubRotateShowAir) applyMarquee(TUNER_SUB, metaLine);
     } else {
-      setTunerNameText(radio.name);
+      setTunerNameText(tunerDesktopTitleLine(radio));
       const siteExt = adaptRadarUiText('Site externe');
       setTunerSubText(external
         ? `${siteExt} · ${inst}`
