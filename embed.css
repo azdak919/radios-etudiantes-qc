@@ -13,10 +13,10 @@ html[data-embed="tuner"] {
   --embed-ctrl: 42px;
   --embed-play: 42px;
   --embed-gap: 7px;
-  /* Volume un peu plus compact pour laisser place au dial */
-  --embed-vol-track: 80px;
-  /* Colonnes quasi égales : dial (dans la gauche) ≈ module antenne */
-  --embed-cols: minmax(0, 1.05fr) minmax(0, 1fr);
+  /* Volume compact — le dial a besoin de la place */
+  --embed-vol-track: 72px;
+  /* Gauche (synthé) dominante : le dial ne doit jamais être écrasé */
+  --embed-cols: minmax(0, 2.1fr) minmax(160px, 0.9fr);
   --tuner-onair-live: #ff7d6e;
   --tuner-onair-idle: rgba(255, 255, 255, 0.42);
   color-scheme: dark;
@@ -57,9 +57,9 @@ html[data-embed="tuner"] .tuner {
 html[data-embed="tuner"] .tuner-inner {
   max-width: none;
   margin: 0;
-  /* Grille 50/50 : zone synthé | module À l'antenne (même poids visuel) */
+  /* Synthé ~2/3 · antenne ~1/3 (les contrôles fixes mangent la gauche) */
   padding: 10px 6px;
-  gap: 10px;
+  gap: 12px;
   height: 100%;
   box-sizing: border-box;
   overflow: hidden;
@@ -172,11 +172,10 @@ html[data-embed="tuner"] .tuner-step svg {
 
 /* ── Dial (2 lignes : poste · acronyme / slogan) ───────────── */
 html[data-embed="tuner"] .tuner-dial {
-  flex: 1 1 0;
-  min-width: 0;
+  flex: 1 1 auto;
+  min-width: 140px; /* ne plus s’écraser en « in pos / Univer: » */
   width: 0;
-  /* Au moins ~40 % de la colonne gauche pour rester lisible */
-  flex-basis: 40%;
+  max-width: none;
 }
 
 html[data-embed="tuner"] .tuner-now {
@@ -189,6 +188,7 @@ html[data-embed="tuner"] .tuner-now {
   gap: 0;
   width: 100%;
   min-width: 0;
+  overflow: hidden;
 }
 
 html[data-embed="tuner"] .tuner-now-name {
@@ -196,8 +196,10 @@ html[data-embed="tuner"] .tuner-now-name {
   line-height: 1.15;
   font-weight: 600;
   min-width: 0;
+  max-width: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 html[data-embed="tuner"] .tuner-now-sub {
@@ -205,14 +207,32 @@ html[data-embed="tuner"] .tuner-now-sub {
   line-height: 1.2;
   color: rgba(255, 255, 255, 0.5);
   min-width: 0;
+  max-width: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 html[data-embed="tuner"] .tuner-now-sub-rotate {
   min-height: 1.2em;
   min-width: 0;
   width: 100%;
+  overflow: hidden;
+}
+
+/* Embed étroit : pas de marquee (montre un fragment illisible mid-scroll) */
+html[data-embed="tuner"] .is-marquee {
+  text-overflow: ellipsis !important;
+}
+
+html[data-embed="tuner"] .is-marquee > .tuner-now-sub-text {
+  animation: none !important;
+  transform: none !important;
+  will-change: auto;
+  display: inline;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* Lecture : contour coral (site tous formats) */
@@ -377,7 +397,7 @@ html[data-embed="tuner"] .tuner-eq {
   display: none !important;
 }
 
-/* ── Module « À l'antenne » — même carte / hauteur que .tuner-now ── */
+/* ── Module « À l'antenne » — hauteur = dial, largeur plafonnée ── */
 html[data-embed="tuner"] .tuner-nowair,
 html[data-embed="tuner"] .tuner-nowair.hidden {
   grid-column: 2;
@@ -387,12 +407,12 @@ html[data-embed="tuner"] .tuner-nowair.hidden {
   gap: 10px;
   flex: unset;
   width: 100%;
-  max-width: none;
+  max-width: 280px; /* ne pas dominer le dial */
   min-width: 0;
   height: var(--embed-ctrl);
   min-height: var(--embed-ctrl);
   margin-left: 0;
-  /* Même hauteur que le dial, sans barre / bordure à gauche (séparateur volume) */
+  justify-self: stretch;
   padding: 3px 10px 3px 4px;
   border: none;
   border-radius: 9px;
@@ -545,17 +565,31 @@ html[data-embed="tuner"] .toast {
   }
 }
 
-/* Pastille large : proportions 1:1 strictes + volume un peu plus large */
+/* Pastille large : synthé toujours prioritaire, antenne plafonnée */
 @media (min-width: 720px) {
   html[data-embed="tuner"] {
-    --embed-cols: minmax(0, 1fr) minmax(0, 1fr);
-    --embed-vol-track: 88px;
+    --embed-cols: minmax(0, 2.2fr) minmax(180px, 1fr);
+    --embed-vol-track: 84px;
     --embed-gap: 8px;
+  }
+
+  html[data-embed="tuner"] .tuner-dial {
+    min-width: 180px;
+  }
+
+  html[data-embed="tuner"] .tuner-nowair,
+  html[data-embed="tuner"] .tuner-nowair.hidden {
+    max-width: 300px;
   }
 }
 
 @media (min-width: 900px) {
   html[data-embed="tuner"] {
-    --embed-vol-track: 100px;
+    --embed-cols: minmax(0, 2.4fr) minmax(200px, 1fr);
+    --embed-vol-track: 96px;
+  }
+
+  html[data-embed="tuner"] .tuner-dial {
+    min-width: 200px;
   }
 }
