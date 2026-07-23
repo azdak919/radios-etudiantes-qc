@@ -121,7 +121,7 @@ html[data-embed="tuner"] .tuner.is-playing .tuner-onair::before {
   animation: onairPulse 1.6s ease-out infinite;
 }
 
-/* Attribution — 🎙️ + le-radar.ca (bleu radio, contraste avec coral EN ONDES) */
+/* Attribution — 📡 + le-radar.ca (bleu radio, contraste avec coral EN ONDES) */
 html[data-embed="tuner"] .tuner-embed-credit {
   display: inline-flex;
   align-items: center;
