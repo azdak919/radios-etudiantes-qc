@@ -1,24 +1,36 @@
 {
-  "updated": "2026-07-23T14:41:02.168Z",
+  "updated": "2026-07-23T20:38:01.868Z",
   "total": 185,
   "withPhoto": 168,
   "withStock": 41,
   "withCampusBank": 9,
   "fullyCovered": 185,
-  "leadReadyPhotos": 154,
-  "pageScraped": 17,
-  "photosRecovered": 17,
+  "leadReadyPhotos": 156,
+  "pageScraped": 16,
+  "photosRecovered": 16,
   "imagesCleared": 11,
   "stockSearches": 34,
-  "stockFound": 21,
-  "campusBankFound": 5,
+  "stockFound": 23,
+  "campusBankFound": 6,
   "mainPageLeadReady": true,
   "gaps": [
+    {
+      "title": "The Cruel Optimism of Summer",
+      "link": "https://www.mcgilldaily.com/2026/07/the-cruel-optimism-of-summer/",
+      "reason": "campus-bank",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/1/18/Wilson_Hall%2C_McGill_University.jpg"
+    },
     {
       "title": "CSU terminates council’s chief election officer",
       "link": "https://thelinknewspaper.ca/article/16334",
       "reason": "campus-bank",
       "image": "https://upload.wikimedia.org/wikipedia/commons/1/16/CJ_Building%2C_Loyola_Campus%2C_Communication_Studies%2C_Concordia_University.jpg"
+    },
+    {
+      "title": "Sommet de l’OTAN à Ankara",
+      "link": "https://lecollectif.ca/a-la-une/sommet-de-lotan-a-ankara/",
+      "reason": "stock-too-small",
+      "image": "https://lecollectif.ca/wp-content/uploads/2026/07/SOCIETE_Sommet-de-lOTAN-a-Ankara_Getty-Images.jpg"
     },
     {
       "title": "Marine Le Pen condamnée",
@@ -33,28 +45,16 @@
       "image": "https://lecollectif.ca/wp-content/uploads/2026/07/SOCIETE_Episode-de-feux-de-forets-en-France_Getty-Images.jpg"
     },
     {
-      "title": "Le militantisme",
-      "link": "https://lecollectif.ca/societe/le-militantisme/",
-      "reason": "no-stock-match",
-      "image": "https://lecollectif.ca/wp-content/uploads/2026/07/OBSESSIONS_Le-militantisme_SourceGettyImages-1.jpg"
-    },
-    {
-      "title": "Les relations artificielles",
-      "link": "https://lecollectif.ca/societe/les-relations-artificielles/",
-      "reason": "stock-too-small",
-      "image": "https://lecollectif.ca/wp-content/uploads/2026/07/OBSESSIONS_RELATIONS_ODTelerealiteAmour_SourcePageFacebookDOD-1-819x1024.jpg"
-    },
-    {
-      "title": "CALAMINE : RAPPER AUTREMENT QUE LE « BOYS CLUB »",
-      "link": "https://quartierlibre.ca/calamine-rapper-autrement/",
-      "reason": "no-stock-match",
-      "image": "https://quartierlibre.ca/wp-content/uploads/2026/05/20_calamine-1.jpg"
-    },
-    {
       "title": "Recettes musicales québécoises pour l’été",
       "link": "https://quartierlibre.ca/ete-recettes-musicales-quebecoises/",
       "reason": "no-stock-match",
       "image": "https://quartierlibre.ca/wp-content/uploads/2026/05/20_florelaurentienne.jpg"
+    },
+    {
+      "title": "Opinion – L’hypocrisie qui rampe à l’Assemblée nationale",
+      "link": "https://exilecvm.wordpress.com/2026/04/18/opinion-lhypocrisie-qui-rampe-a-lassemblee-nationale/",
+      "reason": "stock-too-small",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/4/47/Assembl%C3%A9e_nationale_du_Qu%C3%A9bec%2C_l%27H%C3%B4tel_du_Parlement%2C_fa%C3%A7ade_avec_ancien_entr%C3%A9_principal.jpg"
     },
     {
       "title": "CSU approves $36,000 in funding for student-led initiatives",

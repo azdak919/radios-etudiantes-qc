@@ -1,14 +1,32 @@
 {
-  "updated": "2026-07-23T18:47:06.448Z",
+  "updated": "2026-07-23T20:32:54.622Z",
   "total": 185,
   "pool": 58,
-  "incomplete": 3,
-  "withLeadExcerpt": 75,
-  "candidates": 3,
-  "enriched": 0,
-  "failed": 1,
+  "incomplete": 4,
+  "withLeadExcerpt": 76,
+  "candidates": 4,
+  "enriched": 2,
+  "failed": 0,
   "ok": true,
   "samples": [
+    {
+      "title": "Sois belle et tais-toi",
+      "link": "https://www.delitfrancais.com/2026/03/18/sois-belle-et-tais-toi-2/",
+      "ok": true,
+      "score": 96,
+      "chars": 295,
+      "sample": "C’est la sécheresse totale dans le cerveau de bien des gens. Le vôtre, peut-être. Mais ne craignez r",
+      "changed": true
+    },
+    {
+      "title": "Qui sont les agents qui patrouillent notre campus ?",
+      "link": "https://www.delitfrancais.com/2026/03/18/qui-sont-les-agents-qui-patrouillent-notre-campus/",
+      "ok": true,
+      "score": 100,
+      "chars": 396,
+      "sample": "« L’Université McGill est à la recherche de patrouilleurs dynamiques et engagés pour assurer la sécu",
+      "changed": true
+    },
     {
       "title": "The Cruel Optimism of Summer",
       "link": "https://www.mcgilldaily.com/2026/07/the-cruel-optimism-of-summer/",
