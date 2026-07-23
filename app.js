@@ -810,34 +810,33 @@ function nowAirLines(radio) {
     return { title: schedCur.title, sub, kind: 'live' };
   }
 
-  // 3) Hors créneau : musique libre + prochaine émission (ne pas afficher la piste
-  //    comme si c'était l'émission « à l'antenne »)
+  // 3) Hors créneau : prochaine émission = titre sous « À venir ».
+  //    La piste (musique libre CHOQ, etc.) va en sous-titre — jamais en titre
+  //    sous le libellé « À venir » (sinon on lit « à venir : Antagonik »).
   const upcoming = botNext || (schedNext
     ? { title: schedNext.title, start: schedNext.start, end: schedNext.end }
     : null);
   const upTime = upcomingTimeRange(upcoming);
 
-  if (track) {
-    if (upcoming?.title) {
-      return {
-        title: `♪ ${track}`,
-        // Libellé panneau = « À venir » → sous-titre = émission · horaire (sans redoubler)
-        sub: upTime ? `${upcoming.title} · ${upTime}` : upcoming.title,
-        kind: 'upcoming',
-      };
+  if (upcoming?.title) {
+    const bits = [];
+    if (upTime) bits.push(upTime);
+    if (track && normLoose(track) !== normLoose(upcoming.title)) {
+      bits.push(`♪ ${track}`);
     }
+    return {
+      title: upcoming.title,
+      sub: bits.join(' · ') || slogan || '',
+      kind: 'upcoming',
+    };
+  }
+
+  // Pas d’émission planifiée : afficher la piste en cours (musique libre)
+  if (track) {
     return {
       title: `♪ ${track}`,
       sub: slogan || `Vous écoutez ${radio.name}`,
       kind: 'live',
-    };
-  }
-
-  if (upcoming?.title) {
-    return {
-      title: upcoming.title,
-      sub: upTime,
-      kind: 'upcoming',
     };
   }
 
@@ -4134,6 +4133,11 @@ function pickHeroSpotlight(items, _referenceDate = new Date()) {
 
 /**
  * En bref : 1 article le plus frais par *institution*, hors hero.
+ *
+ * Règle multi-sources : si une institution a déjà un article à la une ou
+ * en vedette (featured), elle n’entre pas en En bref — la place est laissée
+ * aux autres campus. L’ordre des picks reste la fraîcheur (date desc).
+ *
  * Limité au haut du fil restant (pool cap) pour éviter de hisser un billet
  * de mai (seule pub d’une institution) au-dessus de juillet via un trim
  * En bref → tête de suite.
@@ -4141,6 +4145,8 @@ function pickHeroSpotlight(items, _referenceDate = new Date()) {
  */
 function pickBriefSidebar(allItems, heroItems = [], _referenceDate = new Date(), maxSlots = null) {
   const heroKeys = new Set(heroItems.map(articleKey));
+  // Institutions déjà représentées en une / vedettes → absentes d’En bref
+  const heroInsts = new Set(heroItems.map(institutionKey).filter(Boolean));
   const sorted = sortByDateDesc(allItems);
   const remaining = sorted.filter((item) => !heroKeys.has(articleKey(item)));
   // Si non précisé : caler le nombre sur la hauteur estimée du hero.
@@ -4149,7 +4155,8 @@ function pickBriefSidebar(allItems, heroItems = [], _referenceDate = new Date(),
     maxSlots == null ? briefSeedCountForHero(heroItems.length) : maxSlots,
   );
   // Candidats = haut du reste du fil seulement (pas tout l’historique frais).
-  const poolCap = Math.max(limit * 8, 36);
+  // Cap un peu plus large : l’exclusion d’institutions hero réduit le pool utile.
+  const poolCap = Math.max(limit * 10, 48);
   const pool = remaining.slice(0, poolCap);
 
   const picks = [];
@@ -4158,11 +4165,15 @@ function pickBriefSidebar(allItems, heroItems = [], _referenceDate = new Date(),
   for (const item of pool) {
     if (picks.length >= limit) break;
     const inst = institutionKey(item);
+    if (!inst) continue;
+    if (heroInsts.has(inst)) continue;
     if (usedInsts.has(inst)) continue;
     picks.push(item);
     usedInsts.add(inst);
   }
 
+  // Fraîcheur : re-trier les picks retenus (le parcours pool est déjà date desc,
+  // mais on garantit l’ordre d’affichage).
   return {
     items: sortByDateDesc(picks),
     contingencyBand: 0,
@@ -4259,28 +4270,34 @@ function removeTailArticleForItem(item) {
 
 /**
  * Prochain En bref depuis la réserve (date desc) :
- *  1) priorité : nouvelle institution (règle principale)
- *  2) filet anti-vide : plus frais restant, même si l’institution est déjà
- *     représentée — seulement quand allowExtra=true (colonne encore trop courte)
+ *  1) nouvelle institution, **hors** institutions déjà en une / vedette
+ *  2) filet anti-vide (allowExtra) : encore hors une/vedette, même si l’institution
+ *     est déjà en En bref — jamais une institution hero (place aux autres campus)
  */
 function takeNextBriefFromReserve({ allowExtra = false } = {}) {
   if (!magazineReserve.length) return null;
+
+  const notHeroInst = (item) => {
+    const inst = institutionKey(item);
+    return !inst || !magazineMeta.heroInsts.has(inst);
+  };
 
   const tryPick = (pred) => {
     const idx = magazineReserve.findIndex((item) => {
       const key = articleKey(item);
       if (magazineMeta.heroKeys.has(key) || magazineMeta.briefKeys.has(key)) return false;
+      if (!notHeroInst(item)) return false;
       return pred(item);
     });
     if (idx < 0) return null;
     return magazineReserve.splice(idx, 1)[0];
   };
 
-  // 1) Nouvelle institution d’abord
+  // 1) Nouvelle institution (pas encore en En bref, pas en une/vedette)
   const freshInst = tryPick((item) => !magazineMeta.briefInsts.has(institutionKey(item)));
   if (freshInst) return freshInst;
 
-  // 2) Filet : combler le vide sans coller aux règles strictes d’unicité
+  // 2) Filet hauteur : d’autres articles d’institutions non-hero seulement
   if (allowExtra) {
     return tryPick(() => true);
   }

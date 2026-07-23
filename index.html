@@ -24,46 +24,35 @@
       dès le premier paint (avant le CSS mis en cache / le JS async).
     -->
     <style>
-      /* Critique bureau C : antenne après volume, air + poids d’afficheur. */
       @media (min-width: 1100px) {
         .tuner-inner {
+          display: grid !important;
+          grid-template-columns: minmax(0, 1.15fr) minmax(300px, 370px) !important;
+          gap: 0 !important;
+          align-items: center !important;
+          max-width: 1180px;
+          padding-top: 8px !important;
+          padding-bottom: 8px !important;
+        }
+        .tuner-controls { grid-column: 1; min-width: 0; }
+        .tuner-actions { margin-left: 0 !important; flex-shrink: 0; }
+        .tuner-nowair {
+          grid-column: 2;
           display: flex !important;
           flex-direction: row !important;
-          flex-wrap: nowrap !important;
-          align-items: center !important;
-          gap: 18px !important;
-          max-width: min(1280px, 100%);
-        }
-        .tuner-controls {
-          flex: 1 1 0 !important;
-          min-width: 0 !important;
-          display: flex !important;
           align-items: center !important;
           gap: 10px;
-        }
-        .tuner-dial {
-          flex: 1 1 160px !important;
-          min-width: 140px !important;
-          max-width: 300px !important;
-        }
-        .tuner-actions { margin-left: 0 !important; flex-shrink: 0; gap: 10px; }
-        .tuner-nowair {
-          display: flex !important;
-          flex-direction: column !important;
-          align-items: stretch !important;
-          justify-content: center !important;
-          gap: 4px !important;
-          flex: 0 0 252px !important;
-          width: 252px !important;
-          min-width: 220px !important;
-          max-width: 280px !important;
-          min-height: 48px;
-          padding: 4px 6px 4px 20px !important;
-          border-left: 1px solid rgba(255, 255, 255, 0.18);
+          min-width: 0;
+          padding-left: 28px;
+          border-left: 1px solid rgba(255, 255, 255, 0.12);
           opacity: 1 !important;
           pointer-events: auto !important;
         }
         .tuner-nowair-label { margin-top: 0 !important; }
+        .tuner-nowair-body {
+          flex-direction: column !important;
+          gap: 1px !important;
+        }
         .tuner-vol {
           flex: 0 0 auto !important;
           max-width: 168px !important;
