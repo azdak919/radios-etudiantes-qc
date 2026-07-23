@@ -771,34 +771,59 @@ function upcomingTimeRange(upcoming) {
 }
 
 /**
- * CHOQ hors émission planifiée : piste live + prochaine émission.
- * Cas particulier (musique libre + grille d’émissions).
+ * CHOQ — phases d’affichage alternées (cas particuliers) :
+ *  A) Hors créneau : piste live ↔ prochaine émission (À venir)
+ *  B) Émission en direct + piste différente : émission ↔ piste
+ * @returns {{ live: object, alt: object } | null}
  */
 function choqHybridAirPhases(radio) {
   if (!radio || radio.id !== 'choq') return null;
   const entry = nowPlayingEntry(radio);
   const track = String(entry?.track || '').trim();
-  if (!track) return null;
-  // Une vraie émission en cours → pas d’hybride
-  if (botCurrentShow(radio)?.title || scheduleCurrentSlot(radio)?.title) return null;
-
-  const upcoming = botNextShow(radio) || scheduleNextSlot(radio);
-  if (!upcoming?.title) return null;
-
   const slogan = radioSlogan(radio);
-  const upTime = upcomingTimeRange(upcoming);
-  return {
-    live: {
-      title: `♪ ${track}`,
-      sub: slogan || radio.name || '',
-      kind: 'live',
-    },
-    upcoming: {
-      title: upcoming.title,
-      sub: upTime || slogan || '',
-      kind: 'upcoming',
-    },
-  };
+  const botCur = botCurrentShow(radio);
+  const schedCur = scheduleCurrentSlot(radio);
+  const liveShow = (botCur?.title && botCur) || (schedCur?.title && schedCur) || null;
+
+  // B) Émission en ondes + morceau distinct (API live / Triton / ICY)
+  if (liveShow?.title && track && normLoose(track) !== normLoose(liveShow.title)) {
+    const start = liveShow.start || schedCur?.start || botCur?.start || '';
+    const end = liveShow.end || schedCur?.end || botCur?.end || '';
+    const timeRange = start && end ? `${start} – ${end}` : (start || '');
+    return {
+      live: {
+        title: liveShow.title,
+        sub: timeRange || slogan || radio.name || '',
+        kind: 'live',
+      },
+      alt: {
+        title: `♪ ${track}`,
+        sub: liveShow.title,
+        kind: 'live',
+      },
+    };
+  }
+
+  // A) Musique libre (pas d’émission en cours) + émission à venir
+  if (!liveShow && track) {
+    const upcoming = botNextShow(radio) || scheduleNextSlot(radio);
+    if (!upcoming?.title) return null;
+    const upTime = upcomingTimeRange(upcoming);
+    return {
+      live: {
+        title: `♪ ${track}`,
+        sub: slogan || radio.name || '',
+        kind: 'live',
+      },
+      alt: {
+        title: upcoming.title,
+        sub: upTime || slogan || '',
+        kind: 'upcoming',
+      },
+    };
+  }
+
+  return null;
 }
 
 function stopChoqAirRotate() {
@@ -808,7 +833,7 @@ function stopChoqAirRotate() {
   }
 }
 
-/** Alterne piste (À l'antenne) ↔ émission (À venir) pour CHOQ. */
+/** Alterne les deux phases CHOQ (live ↔ alt). */
 function syncChoqAirRotate(radio) {
   const hybrid = choqHybridAirPhases(radio);
   if (!hybrid) {
@@ -822,7 +847,6 @@ function syncChoqAirRotate(radio) {
       return;
     }
     choqAirRotateShowUpcoming = !choqAirRotateShowUpcoming;
-    // Forcer le re-render (sinon lastNowAir bloque)
     lastNowAir = { title: null, sub: null, empty: null, previewId: null, kind: null };
     renderTunerNowAir();
   }, CHOQ_AIR_ROTATE_MS);
@@ -830,7 +854,7 @@ function syncChoqAirRotate(radio) {
 
 /**
  * Lignes d'antenne pour le syntoniseur.
- * Priorité : émission en cours → (CHOQ hybride alterné) → à venir → piste → idle.
+ * Priorité : CHOQ hybride → émission en cours → à venir → piste → idle.
  * @returns {{ title: string, sub: string, kind: 'live'|'upcoming'|'idle' }}
  */
 function nowAirLines(radio) {
@@ -841,6 +865,12 @@ function nowAirLines(radio) {
   const schedCur = scheduleCurrentSlot(radio);
   const schedNext = scheduleNextSlot(radio);
   const track = String(entry?.track || '').trim();
+
+  // 0) CHOQ hybride (émission+piste OU piste+à venir) — avant le rendu simple
+  const hybrid = choqHybridAirPhases(radio);
+  if (hybrid) {
+    return choqAirRotateShowUpcoming ? hybrid.alt : hybrid.live;
+  }
 
   // 1) Émission en cours (bot, déjà fusionné api > schedule)
   if (botCur?.title) {
@@ -869,13 +899,7 @@ function nowAirLines(radio) {
     return { title: schedCur.title, sub, kind: 'live' };
   }
 
-  // 3) CHOQ : alternance piste en cours ↔ émission à venir
-  const hybrid = choqHybridAirPhases(radio);
-  if (hybrid) {
-    return choqAirRotateShowUpcoming ? hybrid.upcoming : hybrid.live;
-  }
-
-  // 4) Hors créneau (autres postes) : prochaine émission
+  // 3) Hors créneau (autres postes) : prochaine émission
   const upcoming = botNext || (schedNext
     ? { title: schedNext.title, start: schedNext.start, end: schedNext.end }
     : null);
@@ -894,7 +918,7 @@ function nowAirLines(radio) {
     };
   }
 
-  // 5) Piste seule (musique libre sans grille)
+  // 4) Piste seule (musique libre sans grille)
   if (track) {
     return {
       title: `♪ ${track}`,
