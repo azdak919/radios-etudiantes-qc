@@ -1,8 +1,8 @@
 {
-  "updated": "2026-07-23T20:47:55.170Z",
+  "updated": "2026-07-23T22:17:53.606Z",
   "total": 185,
   "withAuthor": 185,
-  "mismatches": 4,
+  "mismatches": 6,
   "ok": true,
   "samples": [
     {
@@ -30,6 +30,22 @@
       "reason": "no-author-source"
     },
     {
+      "title": "Des initiatives qui rassemblent",
+      "link": "https://www.delitfrancais.com/2026/03/18/des-initiatives-qui-rassemblent/",
+      "source": "Le Délit",
+      "fieldAuthor": "La rédaction",
+      "canonicalAuthor": "Héloïse Durning et Elie Nguyen",
+      "reason": "page-byline"
+    },
+    {
+      "title": "Élections de l’exécutif de l’AÉUM",
+      "link": "https://www.delitfrancais.com/2026/03/18/elections-de-lexecutif-de-laeum/",
+      "source": "Le Délit",
+      "fieldAuthor": "La rédaction",
+      "canonicalAuthor": "Timotée Allouch-Chantepie, Héloïse Durning, Aurélien Quéméner et Eugénie St-Pierre",
+      "reason": "page-byline"
+    },
+    {
       "title": "Garda World au CVM (Éditorial)",
       "link": "https://exilecvm.wordpress.com/2026/03/13/manifestation-contre-gardaworld/",
       "source": "Exil",
@@ -38,5 +54,5 @@
       "reason": "no-author-source"
     }
   ],
-  "fixed": 4
+  "fixed": 6
 }
