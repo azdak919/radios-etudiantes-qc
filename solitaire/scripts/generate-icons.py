@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Génère les PNG PWA / favicons Solitaire — joker 🃏 (Twemoji), style Le Radar."""
+"""Génère les PNG PWA / favicons Solitaire — joker 🃏 (Twemoji), style Le Radar / Pomodoro."""
 
 from pathlib import Path
 
@@ -35,6 +35,17 @@ def rounded_mask(size: int, radius: int) -> Image.Image:
     return mask
 
 
+def emoji_ratio(size: int, *, maskable: bool) -> float:
+    """Larger glyph at tiny sizes so bookmarks stay readable (🃏 not a red blob)."""
+    if maskable:
+        return 0.52
+    if size <= 16:
+        return 0.78
+    if size <= 32:
+        return 0.72
+    return 0.66
+
+
 def render_icon(size: int, *, maskable: bool = False) -> Image.Image:
     radius = max(3, round(size * 0.227))
     emoji_src = Image.open(EMOJI_PNG).convert("RGBA")
@@ -44,7 +55,7 @@ def render_icon(size: int, *, maskable: bool = False) -> Image.Image:
     base.putalpha(rounded_mask(size, radius))
     canvas.alpha_composite(base)
 
-    ratio = 0.50 if maskable else 0.62
+    ratio = emoji_ratio(size, maskable=maskable)
     emoji_size = max(10, round(size * ratio))
     emoji = emoji_src.resize((emoji_size, emoji_size), Image.Resampling.LANCZOS)
     offset = ((size - emoji_size) // 2, (size - emoji_size) // 2)
@@ -63,10 +74,13 @@ def main() -> None:
         print(f"✓ {name}")
 
     ico_path = ROOT / "favicon.ico"
-    render_icon(32).save(
+    # Multi-size ICO: browsers often pull 16/32 for the bookmark bar
+    imgs = [render_icon(16), render_icon(32)]
+    imgs[0].save(
         ico_path,
         format="ICO",
         sizes=[(16, 16), (32, 32)],
+        append_images=[imgs[1]],
     )
     print("✓ favicon.ico")
 
