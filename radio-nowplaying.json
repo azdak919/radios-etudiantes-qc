@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-23T15:32:21.326Z",
+  "updatedAt": "2026-07-23T17:24:47.484Z",
   "timezone": "America/Toronto",
   "stations": {
     "chyz": {
@@ -21,27 +21,27 @@
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-23T15:31:55.812Z"
+      "checkedAt": "2026-07-23T17:24:22.793Z"
     },
     "cism": {
       "id": "cism",
       "name": "CISM 89,3",
       "current": {
-        "title": "Ici, la criminologie",
+        "title": "La collation",
         "source": "api-live",
-        "start": "07:00",
+        "start": "09:00",
         "url": "https://stream03.ustream.ca/cism128.mp3",
-        "slug": "ici-la-criminologie"
+        "slug": "mix-collation"
       },
       "next": {
-        "title": "Jimmy et Neutron",
+        "title": "Une fenêtre sur le monde",
         "source": "api-live",
-        "start": "08:00",
-        "url": "https://podcast.cism893.ca/podcast/download_mp3/364510.mp3",
-        "slug": "jimmy-et-neutron"
+        "start": "11:00",
+        "url": "https://podcast.cism893.ca/podcast/download_mp3/364519.mp3",
+        "slug": "une-fenetre-sur-le-monde"
       },
       "track": "",
-      "showTitle": "Ici, la criminologie",
+      "showTitle": "La collation",
       "host": "",
       "source": "api-live",
       "sources": [
@@ -51,25 +51,25 @@
         "type": "cism-v1",
         "url": "https://admin.cism893.ca/api/v1/live"
       },
-      "checkedAt": "2026-07-23T15:31:58.155Z"
+      "checkedAt": "2026-07-23T17:24:24.931Z"
     },
     "ckut": {
       "id": "ckut",
       "name": "CKUT 90,3",
       "current": {
-        "title": "Under The Olive Tree",
-        "source": "api-live",
-        "start": "11:00",
-        "end": "12:00"
-      },
-      "next": {
         "title": "Venus Radio",
         "source": "api-live",
         "start": "12:00",
         "end": "14:00"
       },
+      "next": {
+        "title": "Voices of Montreal: New Voices/Tranzister Radio/Radio Moon/Panacea",
+        "source": "api-live",
+        "start": "14:00",
+        "end": "15:00"
+      },
       "track": "",
-      "showTitle": "Under The Olive Tree",
+      "showTitle": "Venus Radio",
       "host": "",
       "source": "api-live",
       "sources": [
@@ -77,34 +77,34 @@
         "stream"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-23T15:32:01.011Z"
+      "checkedAt": "2026-07-23T17:24:27.277Z"
     },
     "cjlo": {
       "id": "cjlo",
       "name": "CJLO 1690AM",
       "current": {
-        "title": "Weirdo Rippers",
+        "title": "What's Happening in NDG",
         "source": "schedule",
-        "start": "11:00",
-        "end": "12:00",
-        "url": "http://www.cjlo.com/shows/weirdo-rippers"
+        "start": "13:00",
+        "end": "14:00",
+        "url": "http://www.cjlo.com/shows/whats-happening-in-ndg"
       },
       "next": {
-        "title": "The Power Hour",
+        "title": "The 514",
         "source": "schedule",
-        "start": "12:00",
-        "end": "13:00",
-        "url": "http://www.cjlo.com/shows/the-power-hour"
+        "start": "14:00",
+        "end": "15:00",
+        "url": "http://www.cjlo.com/shows/the-514"
       },
       "track": "",
-      "showTitle": "Weirdo Rippers",
+      "showTitle": "What's Happening in NDG",
       "host": "",
       "source": "schedule",
       "sources": [
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-23T15:32:14.573Z"
+      "checkedAt": "2026-07-23T17:24:40.438Z"
     },
     "cfak": {
       "id": "cfak",
@@ -129,18 +129,12 @@
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-23T15:32:15.143Z"
+      "checkedAt": "2026-07-23T17:24:41.183Z"
     },
     "choq": {
       "id": "choq",
       "name": "CHOQ.ca",
-      "current": {
-        "title": "Intervenir ensemble",
-        "source": "api-live",
-        "start": "11:00",
-        "end": "12:00",
-        "slug": "intervenir-ensemble"
-      },
+      "current": null,
       "next": {
         "title": "Palmarès CHOQ.ca",
         "source": "api-live",
@@ -148,8 +142,8 @@
         "end": "16:00",
         "slug": "palmareschoq"
       },
-      "track": "Jamaz - YOUNG GEE GENIAL",
-      "showTitle": "Intervenir ensemble",
+      "track": "La Sécurité - Power Snoozer",
+      "showTitle": "",
       "host": "",
       "source": "api-live",
       "sources": [
@@ -159,7 +153,7 @@
         "type": "triton-np",
         "url": "https://np.tritondigital.com/public/nowplaying?mountName=SP_R4799664&numberToFetch=1&eventType=track"
       },
-      "checkedAt": "2026-07-23T15:32:20.975Z"
+      "checkedAt": "2026-07-23T17:24:47.133Z"
     }
   }
 }
