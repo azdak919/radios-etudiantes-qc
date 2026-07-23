@@ -1,9 +1,11 @@
 #!/usr/bin/env node
 /**
- * LE RADAR — Génération des flux RSS sortants (méta-agrégateur).
+ * LE-RADAR.ca — Génération des flux RSS sortants (méta-agrégateur).
  *
  * Lit news.json et publie feed.xml (fil unique, toutes langues).
- * Chaque item pointe vers l'article original ; description enrichie Le Radar.
+ * Chaque item pointe vers l'article original ; corps HTML compact
+ * (méta · image · brève · pied de page) pour un rendu propre dans
+ * les lecteurs RSS — sans fiche auteur ni pièce jointe parasite.
  *
  *   node scripts/generate-feed.js
  *   node scripts/generate-feed.js --update
@@ -16,7 +18,9 @@ const { pruneToFreshWindow } = require('./source-retention-lib');
 const ROOT = path.join(__dirname, '..');
 const NEWS_PATH = path.join(ROOT, 'news.json');
 const SOURCES_PATH = path.join(ROOT, 'news-sources.json');
-const SITE_BASE = (process.env.RADAR_SITE_URL || 'https://azdak919.github.io/le-radar').replace(/\/$/, '');
+/** Domaine canonique (Pages + custom domain). Surcharge : RADAR_SITE_URL. */
+const SITE_BASE = (process.env.RADAR_SITE_URL || 'https://le-radar.ca').replace(/\/$/, '');
+const BRAND = 'LE-RADAR.ca';
 const MAX_ITEMS = 50;
 const BRIEF_MAX = 900;
 
@@ -41,8 +45,9 @@ const FEEDS = [
     file: 'feed.xml',
     lang: 'fr-CA',
     filter: () => true,
-    title: 'Le Radar',
-    description: 'Fil agrégé des journaux étudiants des cégeps et universités du Québec (français et anglais). Titres, brèves, images et liens vers les articles originaux.',
+    title: BRAND,
+    description:
+      'LE-RADAR.ca — fil agrégé des journaux étudiants des cégeps et universités du Québec (français et anglais). Titres, brèves, images et liens vers les articles originaux.',
   },
 ];
 
@@ -198,35 +203,81 @@ function imageMimeType(url = '') {
   return 'image/jpeg';
 }
 
-/** Résumé court pour &lt;description&gt; — priorise auteur, média et date. */
-function buildDescriptionHtml(item = {}) {
-  return itemCompactMeta(item);
+/**
+ * Résumé texte pour &lt;description&gt; (apps qui n'utilisent pas content:encoded).
+ * Méta + brève, sans HTML — lisible sous le titre.
+ */
+function buildDescriptionText(item = {}) {
+  const meta = itemCompactMeta(item);
+  const brief = itemBrief(item);
+  return [meta, brief].filter(Boolean).join('\n\n');
 }
 
-/** Corps HTML complet (image, brève, crédits) pour content:encoded. */
-function buildItemBodyHtml(item = {}) {
+/**
+ * Corps HTML pour content:encoded — carte éditoriale compacte :
+ * méta · image · brève · lien source + marque.
+ * Pas de fiche auteur (avatar, bio) ni d'images de bas de page source.
+ */
+function buildItemBodyHtml(item = {}, sourceSites = {}) {
   const parts = [];
   const imageUrl = itemImageUrl(item);
   const title = String(item.title || 'Article').trim();
   const credit = photoCreditLine(item);
   const meta = itemCompactMeta(item);
+  const en = item.lang === 'en';
+  const link = String(item.link || '').trim();
+  const sourceName = String(item.source || '').trim();
+  const inst = institutionLabel(item);
 
   if (meta) {
-    parts.push(`<p style="margin:0 0 0.75em;font-size:0.9em;color:#555"><strong>${escapeXml(meta)}</strong></p>`);
+    parts.push(
+      `<p style="margin:0 0 0.85em;font-size:0.9em;line-height:1.4;color:#666">`
+      + `<strong style="color:#444">${escapeXml(meta)}</strong>`
+      + `</p>`,
+    );
   }
 
   if (imageUrl) {
     parts.push(
-      '<figure style="margin:0 0 1em">',
-      `<img src="${escapeXml(imageUrl)}" alt="${escapeXml(title)}" style="max-width:100%;height:auto;display:block;border-radius:4px" />`,
-      credit ? `<figcaption style="font-size:0.85em;color:#666;margin-top:0.35em">${escapeXml(credit)}</figcaption>` : '',
+      '<figure style="margin:0 0 1em;padding:0">',
+      `<img src="${escapeXml(imageUrl)}" alt="${escapeXml(title)}" `
+      + 'style="max-width:100%;height:auto;display:block;border-radius:8px" />',
+      credit
+        ? `<figcaption style="font-size:0.8em;color:#888;margin-top:0.4em;line-height:1.35">`
+          + `${escapeXml(credit)}</figcaption>`
+        : '',
       '</figure>',
     );
   }
 
   const brief = itemBrief(item);
-  if (brief) parts.push(`<p style="margin:0 0 0.75em;line-height:1.5">${escapeXml(brief)}</p>`);
-  if (credit && !imageUrl) parts.push(`<p><small>${escapeXml(credit)}</small></p>`);
+  if (brief) {
+    parts.push(
+      `<p style="margin:0 0 1em;line-height:1.55;font-size:1em;color:#222">${escapeXml(brief)}</p>`,
+    );
+  }
+  if (credit && !imageUrl) {
+    parts.push(`<p style="margin:0 0 0.75em;font-size:0.85em;color:#888">${escapeXml(credit)}</p>`);
+  }
+
+  // Pied de page compact — remplace les boîtes auteur scrapées en bas d'article.
+  const footerBits = [];
+  if (link) {
+    const label = sourceName
+      ? (en ? `Read on ${sourceName}` : `Lire sur ${sourceName}`)
+      : (en ? 'Read the article' : "Lire l'article");
+    footerBits.push(`<a href="${escapeXml(link)}" style="color:#6C2163;text-decoration:none;font-weight:600">${escapeXml(label)}</a>`);
+  }
+  if (inst) footerBits.push(`<span style="color:#888">${escapeXml(inst)}</span>`);
+  footerBits.push(`<span style="color:#888">${escapeXml(BRAND)}</span>`);
+
+  parts.push(
+    `<p style="margin:1.1em 0 0;padding-top:0.75em;border-top:1px solid #e5e5e5;`
+    + `font-size:0.85em;line-height:1.45;color:#666">`
+    + footerBits.join(' <span style="color:#ccc">·</span> ')
+    + `</p>`,
+  );
+
   return parts.join('\n');
 }
 
@@ -236,7 +287,7 @@ function buildItemXml(item = {}, sourceSites = {}) {
 
   const title = String(item.title || 'Article').trim();
   const pubDate = formatRfc822(item.date);
-  const description = buildDescriptionHtml(item);
+  const description = buildDescriptionText(item);
   const imageUrl = itemImageUrl(item);
   const credit = photoCreditLine(item);
   const author = itemAuthor(item);
@@ -255,17 +306,19 @@ function buildItemXml(item = {}, sourceSites = {}) {
     .map((c) => `      <category>${escapeXml(c)}</category>`)
     .join('\n');
 
+  // Image via Media RSS seulement (pas d'<enclosure>) :
+  // les enclosures apparaissent comme « Attachments » dans Discord / certains
+  // lecteurs, en double de l'image déjà dans content:encoded.
   const mime = imageUrl ? imageMimeType(imageUrl) : '';
   const mediaXml = imageUrl
-    ? `      <media:content url="${escapeXml(imageUrl)}" medium="image" type="${escapeXml(mime)}">\n`
-      + (credit ? `        <media:credit>${escapeXml(credit)}</media:credit>\n` : '')
+    ? `      <media:content url="${escapeXml(imageUrl)}" medium="image" type="${escapeXml(mime)}" isDefault="true">\n`
+      + (credit ? `        <media:credit role="photographer">${escapeXml(credit)}</media:credit>\n` : '')
       + (title ? `        <media:title>${escapeXml(title)}</media:title>\n` : '')
       + '      </media:content>\n'
-      + `      <media:thumbnail url="${escapeXml(imageUrl)}" />\n`
-      + `      <enclosure url="${escapeXml(imageUrl)}" type="${escapeXml(mime)}" length="1" />\n`
+      + `      <media:thumbnail url="${escapeXml(imageUrl)}" />`
     : '';
 
-  const bodyHtml = buildItemBodyHtml(item);
+  const bodyHtml = buildItemBodyHtml(item, sourceSites);
   const creatorXml = author ? `      <dc:creator>${escapeXml(author)}</dc:creator>` : '';
   const sourceXml = sourceName && sourceUrl
     ? `      <source url="${escapeXml(sourceUrl)}">${escapeXml(sourceName)}</source>`
@@ -282,7 +335,7 @@ function buildItemXml(item = {}, sourceSites = {}) {
     `      <description>${cdata(description)}</description>`,
     `      <content:encoded>${cdata(bodyHtml)}</content:encoded>`,
     categoryXml,
-    mediaXml.trimEnd(),
+    mediaXml,
     '    </item>',
   ].filter(Boolean).join('\n');
 }
@@ -307,15 +360,17 @@ function buildFeedXml(items = [], config = {}, sourceSites = {}) {
     <description>${escapeXml(config.description)}</description>
     <language>${escapeXml(config.lang)}</language>
     <lastBuildDate>${escapeXml(updated)}</lastBuildDate>
-    <generator>LE RADAR Student Media Aggregator</generator>
+    <generator>${escapeXml(BRAND)} Student Media Aggregator</generator>
     <docs>${escapeXml(SITE_BASE)}/feeds.html</docs>
-    <copyright>© publications étudiantes sources — fil agrégé par LE RADAR</copyright>
+    <copyright>© publications étudiantes sources — fil agrégé par ${escapeXml(BRAND)}</copyright>
     <ttl>180</ttl>
     <atom:link href="${escapeXml(feedUrl)}" rel="self" type="application/rss+xml" />
     <image>
       <url>${escapeXml(SITE_BASE)}/assets/icon-192.png</url>
       <title>${escapeXml(config.title)}</title>
       <link>${escapeXml(SITE_BASE)}/</link>
+      <width>192</width>
+      <height>192</height>
     </image>
 ${itemXml}
   </channel>
@@ -336,8 +391,8 @@ function main() {
     process.exit(1);
   }
 
-  console.log('LE RADAR RSS Generator');
-  console.log('===================\n');
+  console.log(`${BRAND} RSS Generator`);
+  console.log('=======================\n');
   console.log(`Site     : ${SITE_BASE}`);
   console.log(`Articles : ${items.length} (max ${MAX_ITEMS} par flux)\n`);
 
