@@ -1,33 +1,33 @@
 {
-  "updatedAt": "2026-07-23T20:14:43.726Z",
+  "updatedAt": "2026-07-23T21:35:59.366Z",
   "timezone": "America/Toronto",
   "stations": {
     "chyz": {
       "id": "chyz",
       "name": "CHYZ 94,3",
       "current": {
-        "title": "Chéri.e, j’arrive!",
+        "title": "Chéri-e, J't'au Festif",
         "source": "schedule",
         "start": "16:00",
-        "end": "17:30",
-        "url": "https://chyz.ca/emission/cheri-e-jarrive/"
+        "end": "18:00",
+        "url": "https://chyz.ca/emission/chyz-au-festif/"
       },
       "next": {
-        "title": "Les Arshitechs du Son",
+        "title": "Vendredi Nostalgie",
         "source": "schedule",
-        "start": "17:30",
-        "end": "19:00",
-        "url": "https://chyz.ca/emission/les-arshitechs-du-son/"
+        "start": "08:00",
+        "end": "10:00",
+        "url": "https://chyz.ca/emission/vendredi-nostalgie/"
       },
       "track": "",
-      "showTitle": "Chéri.e, j’arrive!",
+      "showTitle": "Chéri-e, J't'au Festif",
       "host": "",
       "source": "schedule",
       "sources": [
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-23T20:14:19.672Z"
+      "checkedAt": "2026-07-23T21:35:30.730Z"
     },
     "cism": {
       "id": "cism",
@@ -57,25 +57,25 @@
         "type": "cism-v1",
         "url": "https://admin.cism893.ca/api/v1/live"
       },
-      "checkedAt": "2026-07-23T20:14:21.702Z"
+      "checkedAt": "2026-07-23T21:35:33.471Z"
     },
     "ckut": {
       "id": "ckut",
       "name": "CKUT 90,3",
       "current": {
-        "title": "Positive Vibes",
-        "source": "api-live",
-        "start": "15:00",
-        "end": "17:00"
-      },
-      "next": {
         "title": "Off the Hour",
         "source": "api-live",
         "start": "17:00",
         "end": "18:00"
       },
+      "next": {
+        "title": "Upstage",
+        "source": "api-live",
+        "start": "18:00",
+        "end": "19:00"
+      },
       "track": "",
-      "showTitle": "Positive Vibes",
+      "showTitle": "Off the Hour",
       "host": "",
       "source": "api-live",
       "sources": [
@@ -83,7 +83,7 @@
         "stream"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-23T20:14:23.678Z"
+      "checkedAt": "2026-07-23T21:35:38.185Z"
     },
     "cjlo": {
       "id": "cjlo",
@@ -110,7 +110,7 @@
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-23T20:14:36.703Z"
+      "checkedAt": "2026-07-23T21:35:52.137Z"
     },
     "cfak": {
       "id": "cfak",
@@ -135,21 +135,27 @@
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-23T20:14:37.459Z"
+      "checkedAt": "2026-07-23T21:35:52.754Z"
     },
     "choq": {
       "id": "choq",
       "name": "CHOQ.ca",
-      "current": null,
-      "next": {
+      "current": {
         "title": "La 3ème demie",
         "source": "api-live",
         "start": "17:15",
         "end": "18:00",
         "slug": "le-12-mtlsup"
       },
-      "track": "Chvrches - Recover",
-      "showTitle": "",
+      "next": {
+        "title": "Les Apatrides Anonymes",
+        "source": "api-live",
+        "start": "18:30",
+        "end": "19:40",
+        "slug": "apatrides-anonymes"
+      },
+      "track": "LaF - Pluche",
+      "showTitle": "La 3ème demie",
       "host": "",
       "source": "api-live",
       "sources": [
@@ -159,7 +165,7 @@
         "type": "triton-np",
         "url": "https://np.tritondigital.com/public/nowplaying?mountName=SP_R4799664&numberToFetch=1&eventType=track"
       },
-      "checkedAt": "2026-07-23T20:14:43.375Z"
+      "checkedAt": "2026-07-23T21:35:59.015Z"
     }
   }
 }
