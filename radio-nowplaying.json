@@ -1,17 +1,11 @@
 {
-  "updatedAt": "2026-07-23T13:01:41.380Z",
+  "updatedAt": "2026-07-23T14:14:08.551Z",
   "timezone": "America/Toronto",
   "stations": {
     "chyz": {
       "id": "chyz",
       "name": "CHYZ 94,3",
-      "current": {
-        "title": "Jeudi Révolte",
-        "source": "schedule",
-        "start": "08:00",
-        "end": "10:00",
-        "url": "https://chyz.ca/emission/jeudi-revolte/"
-      },
+      "current": null,
       "next": {
         "title": "Chéri.e, j’arrive!",
         "source": "schedule",
@@ -20,14 +14,14 @@
         "url": "https://chyz.ca/emission/cheri-e-jarrive/"
       },
       "track": "",
-      "showTitle": "Jeudi Révolte",
+      "showTitle": "",
       "host": "",
       "source": "schedule",
       "sources": [
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-23T13:01:17.553Z"
+      "checkedAt": "2026-07-23T14:13:45.628Z"
     },
     "cism": {
       "id": "cism",
@@ -57,7 +51,7 @@
         "type": "cism-v1",
         "url": "https://admin.cism893.ca/api/v1/live"
       },
-      "checkedAt": "2026-07-23T13:01:19.959Z"
+      "checkedAt": "2026-07-23T14:13:47.644Z"
     },
     "ckut": {
       "id": "ckut",
@@ -83,34 +77,34 @@
         "stream"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-23T13:01:24.825Z"
+      "checkedAt": "2026-07-23T14:13:51.424Z"
     },
     "cjlo": {
       "id": "cjlo",
       "name": "CJLO 1690AM",
       "current": {
-        "title": "Everything Everywhere",
-        "source": "schedule",
-        "start": "09:00",
-        "end": "10:00",
-        "url": "http://www.cjlo.com/shows/everything-everywhere"
-      },
-      "next": {
         "title": "Democracy Now",
         "source": "schedule",
         "start": "10:00",
         "end": "11:00",
         "url": "http://www.cjlo.com/shows/democracy-now"
       },
+      "next": {
+        "title": "Weirdo Rippers",
+        "source": "schedule",
+        "start": "11:00",
+        "end": "12:00",
+        "url": "http://www.cjlo.com/shows/weirdo-rippers"
+      },
       "track": "",
-      "showTitle": "Everything Everywhere",
+      "showTitle": "Democracy Now",
       "host": "",
       "source": "schedule",
       "sources": [
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-23T13:01:38.660Z"
+      "checkedAt": "2026-07-23T14:14:04.759Z"
     },
     "cfak": {
       "id": "cfak",
@@ -135,27 +129,31 @@
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-23T13:01:39.060Z"
+      "checkedAt": "2026-07-23T14:14:05.749Z"
     },
     "choq": {
       "id": "choq",
       "name": "CHOQ.ca",
-      "current": {
-        "title": "pastel peaks",
+      "current": null,
+      "next": {
+        "title": "Intervenir ensemble",
         "source": "api-live",
-        "host": "devan"
+        "start": "11:00",
+        "end": "12:00",
+        "slug": "intervenir-ensemble"
       },
-      "next": null,
-      "track": "devan - pastel peaks",
-      "showTitle": "pastel peaks",
-      "host": "devan",
+      "track": "Status/Non-Status - Tom Climate",
+      "showTitle": "",
+      "host": "",
       "source": "api-live",
       "sources": [
-        "api-live",
-        "stream"
+        "api-live"
       ],
-      "clientPoll": null,
-      "checkedAt": "2026-07-23T13:01:41.029Z"
+      "clientPoll": {
+        "type": "triton-np",
+        "url": "https://np.tritondigital.com/public/nowplaying?mountName=SP_R4799664&numberToFetch=1&eventType=track"
+      },
+      "checkedAt": "2026-07-23T14:14:08.201Z"
     }
   }
 }

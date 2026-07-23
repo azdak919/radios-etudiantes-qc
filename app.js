@@ -734,9 +734,10 @@ function isAuthoritativeLiveShow(radio) {
 
 /**
  * Lignes d'antenne pour le syntoniseur.
- * Priorité : bot.current (API/grille/ICY fusionnés) → bot.next → grille locale → slogan.
+ * Priorité : émission en cours (bot/grille) → musique libre + à venir → idle.
+ * La piste (ICY / Triton / CHOQ /api/live) n'est JAMAIS l'émission : elle va en
+ * sous-titre « ♪ … » ou, hors créneau, en titre musique avec l'émission à venir.
  * @returns {{ title: string, sub: string, kind: 'live'|'upcoming'|'idle' }}
- *   kind = live (émission en cours) | upcoming (à venir / entre créneaux) | idle
  */
 function nowAirLines(radio) {
   const slogan = radioSlogan(radio);
@@ -747,15 +748,27 @@ function nowAirLines(radio) {
   const schedNext = scheduleNextSlot(radio);
   const track = String(entry?.track || '').trim();
 
-  // 1) Émission en cours (bot, déjà fusionné api > schedule > icy)
+  const formatUpcomingSub = (upcoming, { withTrack = false } = {}) => {
+    const timeRange = upcoming.start && upcoming.end
+      ? `${upcoming.start} – ${upcoming.end}`
+      : (upcoming.start || '');
+    const when = timeRange ? `À venir · ${timeRange}` : 'À venir';
+    if (withTrack && track && normLoose(track) !== normLoose(upcoming.title)) {
+      return `♪ ${track} · ${when}`;
+    }
+    return when;
+  };
+
+  // 1) Émission en cours (bot, déjà fusionné api > schedule)
   if (botCur?.title) {
     const host = String(botCur.host || entry?.host || '').trim();
     const start = botCur.start || schedCur?.start || '';
     const end = botCur.end || schedCur?.end || '';
     const timeRange = start && end ? `${start} – ${end}` : (start || '');
     let sub;
-    if (host) sub = `avec ${host}`;
-    else if (track && normLoose(track) !== normLoose(botCur.title)) sub = `♪ ${track}`;
+    // Piste d'abord (ex. CHOQ libre antenne vs animateur d'émission)
+    if (track && normLoose(track) !== normLoose(botCur.title)) sub = `♪ ${track}`;
+    else if (host && normLoose(host) !== normLoose(botCur.title)) sub = `avec ${host}`;
     else if (timeRange) sub = timeRange;
     else sub = slogan || `Vous écoutez ${radio.name}`;
     return { title: botCur.title, sub, kind: 'live' };
@@ -767,24 +780,38 @@ function nowAirLines(radio) {
       ? `${schedCur.start} – ${schedCur.end}`
       : '';
     let sub;
-    if (track) sub = `♪ ${track}`;
+    if (track && normLoose(track) !== normLoose(schedCur.title)) sub = `♪ ${track}`;
     else if (schedCur.host) sub = `avec ${schedCur.host}`;
     else if (timeRange) sub = timeRange;
     else sub = slogan || `Vous écoutez ${radio.name}`;
     return { title: schedCur.title, sub, kind: 'live' };
   }
 
-  // 3) À venir (bot puis grille) — entre deux créneaux / pas d'émission en cours
+  // 3) Hors créneau : musique libre + prochaine émission (ne pas afficher la piste
+  //    comme si c'était l'émission « à l'antenne »)
   const upcoming = botNext || (schedNext
     ? { title: schedNext.title, start: schedNext.start, end: schedNext.end }
     : null);
+
+  if (track) {
+    if (upcoming?.title) {
+      return {
+        title: `♪ ${track}`,
+        sub: `${upcoming.title} · ${formatUpcomingSub(upcoming)}`,
+        kind: 'upcoming',
+      };
+    }
+    return {
+      title: `♪ ${track}`,
+      sub: slogan || `Vous écoutez ${radio.name}`,
+      kind: 'live',
+    };
+  }
+
   if (upcoming?.title) {
-    const timeRange = upcoming.start && upcoming.end
-      ? `${upcoming.start} – ${upcoming.end}`
-      : (upcoming.start || '');
     return {
       title: upcoming.title,
-      sub: timeRange ? `À venir · ${timeRange}` : 'À venir',
+      sub: formatUpcomingSub(upcoming),
       kind: 'upcoming',
     };
   }
@@ -1383,7 +1410,8 @@ async function refreshNowPlayingCache() {
 
 /**
  * Parse une réponse live côté navigateur selon le type d'adaptateur du bot.
- * Types CORS connus : cism-v1 (et synonymes). Extensible pour de futurs postes.
+ * Types CORS : cism-v1 (émissions), triton-np (piste). Craft/CHOQ /api/live
+ * n'a pas de CORS — ne pas l'utiliser ici comme « émission ».
  */
 function parseClientLivePayload(type, payload) {
   if (!payload) return null;
@@ -1394,47 +1422,99 @@ function parseClientLivePayload(type, payload) {
     return {
       current: {
         title: String(cur.title).trim(),
-        host: String(cur.host || cur.artist || '').trim(),
+        host: String(cur.host || '').trim(),
         source: 'api-live',
         slug: String(cur.slug || '').trim(),
+        start: cur.start || cur.starts || '',
+        end: cur.end || cur.ends || '',
       },
       next: up?.title
         ? {
           title: String(up.title).trim(),
-          host: String(up.host || up.artist || '').trim(),
+          host: String(up.host || '').trim(),
           source: 'api-live',
           slug: String(up.slug || '').trim(),
+          start: up.start || up.starts || '',
+          end: up.end || up.ends || '',
         }
         : null,
     };
   }
+  // CHOQ / Craft /api/live : title+artist = PISTE uniquement
   if (type === 'craft-live' || type === 'craft' || type === 'choq') {
     const live = payload.live || payload;
-    const title = String(live?.title || live?.name || '').trim();
-    if (!title) return null;
-    return {
-      current: {
-        title,
-        host: String(live.artist || live.host || '').trim(),
-        source: 'api-live',
-      },
-      next: null,
-    };
+    const showTitle = String(live?.show || live?.program || live?.emission || '').trim();
+    const trackTitle = String(live?.title || live?.name || '').trim();
+    const trackArtist = String(live?.artist || '').trim();
+    let track = '';
+    if (trackTitle && trackArtist && trackTitle.toLowerCase() !== trackArtist.toLowerCase()) {
+      track = `${trackArtist} — ${trackTitle}`;
+    } else {
+      track = trackTitle || trackArtist;
+    }
+    if (showTitle) {
+      return {
+        current: {
+          title: showTitle,
+          host: String(live.host || live.dj || '').trim(),
+          source: 'api-live',
+        },
+        next: null,
+        track: track || '',
+      };
+    }
+    if (!track) return null;
+    return { current: null, next: null, track };
+  }
+  // Triton XML (souvent déjà parsé en texte si fetch renvoie xml — voir ci-dessous)
+  if (type === 'triton-np' || type === 'triton') {
+    return null; // géré dans fetchClientLivePoll (XML)
   }
   return null;
+}
+
+function parseTritonNowPlayingXml(xmlText = '') {
+  const text = String(xmlText || '');
+  if (!text.includes('nowplaying-info')) return null;
+  const prop = (name) => {
+    const re = new RegExp(
+      `name="${name}"\\s*>\\s*(?:<!\\[CDATA\\[)?([\\s\\S]*?)(?:\\]\\]>)?\\s*</property>`,
+      'i',
+    );
+    const m = re.exec(text);
+    return m ? String(m[1]).replace(/\s+/g, ' ').trim() : '';
+  };
+  const title = prop('cue_title') || prop('track_title') || prop('title');
+  const artist = prop('track_artist_name') || prop('artist_name') || prop('artist');
+  let track = '';
+  if (title && artist && title.toLowerCase() !== artist.toLowerCase()) {
+    track = `${artist} — ${title}`;
+  } else {
+    track = title || artist;
+  }
+  if (!track) return null;
+  return { current: null, next: null, track };
 }
 
 async function fetchClientLivePoll(id, poll) {
   if (!poll?.url) return null;
   try {
+    const isTriton = poll.type === 'triton-np' || poll.type === 'triton'
+      || /tritondigital\.com|nowplaying/i.test(poll.url);
     const res = await fetch(poll.url, {
       cache: 'no-store',
-      headers: { Accept: 'application/json' },
+      headers: { Accept: isTriton ? 'application/xml, text/xml, */*' : 'application/json' },
     });
     if (!res.ok) return null;
-    const payload = await res.json();
-    const parsed = parseClientLivePayload(poll.type, payload);
-    if (!parsed?.current?.title) return null;
+
+    let parsed = null;
+    if (isTriton) {
+      parsed = parseTritonNowPlayingXml(await res.text());
+    } else {
+      parsed = parseClientLivePayload(poll.type, await res.json());
+    }
+    if (!parsed) return null;
+    if (!parsed.current?.title && !parsed.track) return null;
     return { id, ...parsed, checkedAt: new Date().toISOString() };
   } catch {
     return null;
@@ -1449,17 +1529,24 @@ async function refreshStationLiveApis() {
   if (!jobs.length) return;
   const results = await Promise.all(jobs);
   for (const hit of results) {
-    if (!hit?.current?.title) continue;
+    if (!hit) continue;
     const prev = radioNowPlaying.stations[hit.id] || {};
+    const nextCurrent = hit.current?.title ? hit.current : (prev.current || null);
+    const nextNext = hit.next?.title ? hit.next : (prev.next || null);
+    const nextTrack = hit.track != null && hit.track !== ''
+      ? hit.track
+      : (prev.track || '');
+    // Ne pas écraser une émission valide avec un poll piste-only
     radioNowPlaying.stations[hit.id] = {
       ...prev,
       id: hit.id,
       name: prev.name || radios.find((r) => r.id === hit.id)?.name || hit.id,
-      current: hit.current,
-      next: hit.next || prev.next || null,
-      showTitle: hit.current.title,
-      host: hit.current.host || '',
-      source: 'api-live',
+      current: nextCurrent,
+      next: nextNext,
+      track: nextTrack,
+      showTitle: nextCurrent?.title || prev.showTitle || '',
+      host: nextCurrent?.host || prev.host || '',
+      source: nextCurrent?.source || prev.source || 'api-live',
       checkedAt: hit.checkedAt,
     };
   }
@@ -1471,8 +1558,9 @@ function syncNowPlayingPoll() {
     nowPlayingPollTimer = null;
   }
   if (currentStation && getPlayableStream(currentStation) && isPlaybackActive()) {
-    // 60 s : APIs live CORS + fichier bot, sans attendre le cron 30 min.
-    nowPlayingPollTimer = setInterval(refreshNowPlayingCache, 60000);
+    // 15 s : aligné sur CHOQ (REFRESHRATE 15s) pour la piste Triton CORS ;
+    // le fichier bot reste le filet (émissions / grilles).
+    nowPlayingPollTimer = setInterval(refreshNowPlayingCache, 15000);
     refreshNowPlayingCache();
   }
 }

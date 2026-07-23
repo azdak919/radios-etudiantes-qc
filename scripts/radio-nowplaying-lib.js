@@ -12,9 +12,11 @@
  *
  * Types d'adaptateurs (LIVE_ADAPTERS) :
  *   - cism-v1      admin.cism893.ca/api/v1/live  → current + upcoming
- *   - craft-live   /api/live (Craft CMS, CHOQ)   → current (+ host)
+ *   - craft-live   /api/live (Craft CMS, CHOQ)   → piste (title+artist), pas l'émission
+ *   - choq-episodes GraphQL épisodes du jour     → current + next (horaires QC)
+ *   - triton-np    Triton Now Playing (CORS *)   → piste, re-poll navigateur
  *   - airtime-live LibreTime/Airtime live-info   → currentShow + nextShow
- *   - icy          StreamTitle ICY               → piste / repli titre
+ *   - icy          StreamTitle ICY               → piste / repli titre (CHOQ = piste only)
  *   - schedule     résolu hors adaptateur (grille colligée)
  *
  * Nouveau poste : soit déclarer _nowPlayingSources, soit laisser
@@ -130,13 +132,12 @@ function parseStreamTitle(meta = '') {
   return normalizeShowTitle(m ? m[1] : meta);
 }
 
-/** HH:MM depuis timestamp Airtime ("2026-07-09 12:00:00") ou Unix. */
+/** HH:MM dans `timeZone` depuis Unix, ISO-8601 ou horloge naïve Airtime. */
 function timeFromStamp(value, timeZone = DEFAULT_TZ) {
   if (value == null || value === '') return '';
-  if (typeof value === 'number' || /^\d{9,}$/.test(String(value))) {
-    const n = Number(value);
-    if (!Number.isFinite(n) || n <= 0) return '';
-    const ms = n > 1e12 ? n : n * 1000;
+
+  const formatMs = (ms) => {
+    if (!Number.isFinite(ms) || ms <= 0) return '';
     const parts = new Intl.DateTimeFormat('en-US', {
       timeZone,
       hour: '2-digit',
@@ -149,8 +150,22 @@ function timeFromStamp(value, timeZone = DEFAULT_TZ) {
     if (hour === 24 || Number.isNaN(hour)) hour = 0;
     const minute = parseInt(map.minute, 10) || 0;
     return `${String(hour).padStart(2, '0')}:${String(minute).padStart(2, '0')}`;
+  };
+
+  if (typeof value === 'number' || /^\d{9,}$/.test(String(value))) {
+    const n = Number(value);
+    if (!Number.isFinite(n) || n <= 0) return '';
+    return formatMs(n > 1e12 ? n : n * 1000);
   }
-  return hhmm(value) || '';
+
+  const raw = String(value).trim();
+  // ISO avec fuseau (CHOQ GraphQL : 2026-07-23T15:00:00+00:00) → convertir
+  if (/^\d{4}-\d{2}-\d{2}T/.test(raw) || /Z$|[+-]\d{2}:\d{2}$/.test(raw)) {
+    const ms = Date.parse(raw);
+    if (Number.isFinite(ms)) return formatMs(ms);
+  }
+  // Horloge naïve Airtime "2026-07-09 12:00:00" : déjà en heure locale station
+  return hhmm(raw) || '';
 }
 
 // ─── HTTP ──────────────────────────────────────────────────────────────────────
@@ -335,7 +350,23 @@ async function adaptCismV1(src = {}, radio = {}, ctx = {}) {
   return { current, next, cors: true, endpoint: url };
 }
 
-/** Craft CMS /api/live (CHOQ) — piste + artiste souvent, pas de « next ». */
+/**
+ * Formate une piste « Artiste — Titre » (ou l'un des deux).
+ * CHOQ /api/live et Triton renvoient des morceaux, pas des émissions.
+ */
+function formatTrackLine(title = '', artist = '') {
+  const t = normalizeShowTitle(title);
+  const a = normalizeShowTitle(artist);
+  if (t && a && normKey(t) !== normKey(a)) return `${a} — ${t}`;
+  return t || a || '';
+}
+
+/**
+ * Craft CMS /api/live (CHOQ) — **piste en cours**, pas l'émission.
+ * Structure réelle : { live: { title, artist, picture } }.
+ * Ne jamais promouvoir title/artist en « current » show (sinon « pastel peaks
+ * avec devan » masque la grille / l'émission à venir).
+ */
 async function adaptCraftLive(src = {}, radio = {}) {
   let url = src.url || src.base || '';
   if (!url) return null;
@@ -349,16 +380,233 @@ async function adaptCraftLive(src = {}, radio = {}) {
   const payload = await fetchJson(url);
   if (!payload) return null;
   const live = payload.live || payload;
-  const title = live.title || live.name || live.show || '';
-  const host = live.artist || live.host || live.dj || '';
-  const current = makeShow({
-    title,
-    host,
-    source: 'api-live',
-    url: live.picture || live.image || '',
-  });
-  if (!current) return null;
-  return { current, next: null, cors: false, endpoint: url };
+  // Champs « show » explicites seulement si l'API en fournit un jour
+  const showTitle = live.show || live.program || live.emission || '';
+  const showHost = live.host || live.dj || '';
+  const trackTitle = live.title || live.name || live.cue_title || '';
+  const trackArtist = live.artist || live.track_artist_name || '';
+  const track = formatTrackLine(trackTitle, trackArtist);
+
+  const current = showTitle
+    ? makeShow({
+      title: showTitle,
+      host: showHost,
+      source: 'api-live',
+      url: live.picture || live.image || '',
+    })
+    : null;
+
+  if (!current && !track) return null;
+  // CORS fermé sur choq.ca — le navigateur ne re-pollera pas cette URL.
+  return {
+    current,
+    next: null,
+    track: track || '',
+    cors: false,
+    endpoint: url,
+  };
+}
+
+/**
+ * CHOQ — émissions du jour via GraphQL (queryEpisodesOfDay).
+ * Fournit current + next avec horaires (heure de Québec) pour l'antenne
+ * et la bascule client sans attendre le prochain run du bot.
+ */
+async function adaptChoqEpisodes(src = {}, radio = {}, ctx = {}) {
+  const endpoint = src.url || 'https://www.choq.ca/api/graphql';
+  const tz = ctx.timeZone || DEFAULT_TZ;
+  const now = ctx.now instanceof Date ? ctx.now : new Date();
+
+  const ymdParts = new Intl.DateTimeFormat('en-CA', {
+    timeZone: tz,
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+  }).formatToParts(now);
+  const map = {};
+  for (const p of ymdParts) map[p.type] = p.value;
+  const today = `${map.year}-${map.month}-${map.day}`;
+  // Lendemain civil (Toronto) pour les émissions après minuit UTC affichées le jour J
+  const tomorrowDate = new Date(now.getTime() + 36 * 3600 * 1000);
+  const tParts = new Intl.DateTimeFormat('en-CA', {
+    timeZone: tz,
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+  }).formatToParts(tomorrowDate);
+  const tmap = {};
+  for (const p of tParts) tmap[p.type] = p.value;
+  const tomorrow = `${tmap.year}-${tmap.month}-${tmap.day}`;
+
+  const query = `query queryEpisodesOfDay($date: [QueryArgument]) {
+    entries(
+      section: "episodes"
+      dateTime1: $date
+      orderBy: "dateTime1 ASC"
+      limit: 40
+      status: null
+    ) {
+      ... on episodes_default_Entry {
+        title
+        subtitle: text2
+        timestamp_start: dateTime1
+        timestamp_end: dateTime2
+        parent: emissionListeUnique {
+          ... on emissions_default_Entry {
+            title
+            slug
+          }
+        }
+      }
+    }
+  }`;
+
+  const fetchDay = async (dayYmd, nextYmd) => {
+    const body = JSON.stringify({
+      query,
+      variables: { date: ['and', `>= ${dayYmd}`, `< ${nextYmd}`] },
+    });
+    const text = await new Promise((resolve) => {
+      const lib = endpoint.startsWith('https') ? https : http;
+      const u = new URL(endpoint);
+      const req = lib.request(
+        {
+          hostname: u.hostname,
+          path: u.pathname + u.search,
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json',
+            'User-Agent': 'LE-RADAR-NowPlayingBot/1.0',
+            'Content-Length': Buffer.byteLength(body),
+          },
+          timeout: DEFAULT_TIMEOUT,
+        },
+        (res) => {
+          let data = '';
+          res.on('data', (c) => (data += c));
+          res.on('end', () => resolve(data));
+        },
+      );
+      req.on('error', () => resolve(''));
+      req.on('timeout', () => {
+        req.destroy();
+        resolve('');
+      });
+      req.write(body);
+      req.end();
+    });
+    if (!text) return [];
+    try {
+      const json = JSON.parse(text);
+      return Array.isArray(json?.data?.entries) ? json.data.entries : [];
+    } catch {
+      return [];
+    }
+  };
+
+  // Jour civil suivant pour la borne haute « < demain »
+  const dayAfter = (ymd) => {
+    const [y, m, d] = ymd.split('-').map(Number);
+    const dt = new Date(Date.UTC(y, m - 1, d + 1));
+    return dt.toISOString().slice(0, 10);
+  };
+
+  const entries = [
+    ...(await fetchDay(today, dayAfter(today))),
+    ...(await fetchDay(tomorrow, dayAfter(tomorrow))),
+  ];
+
+  const slots = [];
+  for (const e of entries) {
+    if (!e) continue;
+    const parent = Array.isArray(e.parent) ? e.parent[0] : e.parent;
+    const title = normalizeShowTitle(parent?.title || e.title || '');
+    if (!title) continue;
+    const startMs = e.timestamp_start ? Date.parse(e.timestamp_start) : NaN;
+    const endMs = e.timestamp_end ? Date.parse(e.timestamp_end) : NaN;
+    if (!Number.isFinite(startMs) || !Number.isFinite(endMs)) continue;
+    slots.push({
+      title,
+      startMs,
+      endMs,
+      start: timeFromStamp(e.timestamp_start, tz),
+      end: timeFromStamp(e.timestamp_end, tz),
+      slug: parent?.slug || '',
+      subtitle: normalizeShowTitle(e.subtitle || ''),
+    });
+  }
+  slots.sort((a, b) => a.startMs - b.startMs);
+
+  // Dédupliquer (today+tomorrow overlap)
+  const seen = new Set();
+  const unique = [];
+  for (const s of slots) {
+    const key = `${s.startMs}|${normKey(s.title)}`;
+    if (seen.has(key)) continue;
+    seen.add(key);
+    unique.push(s);
+  }
+
+  const nowMs = now.getTime();
+  let currentRaw = null;
+  let nextRaw = null;
+  for (const s of unique) {
+    if (nowMs >= s.startMs && nowMs < s.endMs) {
+      currentRaw = s;
+    } else if (s.startMs > nowMs && !nextRaw) {
+      nextRaw = s;
+    }
+  }
+
+  const toShow = (s) => (s
+    ? makeShow({
+      title: s.title,
+      start: s.start,
+      end: s.end,
+      source: 'api-live',
+      slug: s.slug || '',
+    })
+    : null);
+
+  const current = toShow(currentRaw);
+  const next = toShow(nextRaw);
+  if (!current && !next) return null;
+  return { current, next, cors: false, endpoint };
+}
+
+/**
+ * Triton / StreamTheWorld Now Playing (XML) — piste en cours, CORS *.
+ * Ex. CHOQ mount SP_R4799664. Permet un re-poll navigateur (clientPoll).
+ */
+async function adaptTritonNowPlaying(src = {}, radio = {}) {
+  const mount = String(src.mount || src.mountName || '').trim();
+  if (!mount) return null;
+  const url = src.url
+    || `https://np.tritondigital.com/public/nowplaying?mountName=${encodeURIComponent(mount)}&numberToFetch=1&eventType=track`;
+  const text = await fetchJsonText(url);
+  if (!text || !text.includes('nowplaying-info')) return null;
+
+  const prop = (name) => {
+    const re = new RegExp(
+      `name="${name}"\\s*>\\s*(?:<!\\[CDATA\\[)?([\\s\\S]*?)(?:\\]\\]>)?\\s*</property>`,
+      'i',
+    );
+    const m = re.exec(text);
+    return m ? normalizeShowTitle(m[1]) : '';
+  };
+
+  const title = prop('cue_title') || prop('track_title') || prop('title');
+  const artist = prop('track_artist_name') || prop('artist_name') || prop('artist');
+  const track = formatTrackLine(title, artist);
+  if (!track) return null;
+  return {
+    current: null,
+    next: null,
+    track,
+    cors: true,
+    endpoint: url,
+  };
 }
 
 /** LibreTime / Airtime — shows.current + shows.next (v2) ou currentShow (v1). */
@@ -416,23 +664,28 @@ async function adaptIcy(src = {}, radio = {}) {
   const icy = await fetchIcyNowPlaying(stream);
   if (!icy) return null;
 
-  const candidates = [icy.streamTitle, icy.icyName, icy.icyDesc];
-  let title = '';
-  for (const c of candidates) {
-    const parsed = extractShowFromIcyTitle(c, radio);
-    if (isUsableShowTitle(parsed, radio)) {
-      title = parsed;
-      break;
-    }
-  }
-
-  // track = StreamTitle brut (même non « show ») pour sous-titre ♪
+  // track = StreamTitle (piste). Toujours renseigné si présent.
   const trackRaw = extractShowFromIcyTitle(icy.streamTitle, radio);
   const track = trackRaw && trackRaw.length >= 2 ? trackRaw : '';
 
-  const current = title
-    ? makeShow({ title, source: 'stream' })
-    : null;
+  // CHOQ (et sources trackOnly) : le StreamTitle est la musique, jamais l'émission.
+  // Sinon on affiche « Status/Non-Status - Tom Climate » comme titre À L'ANTENNE.
+  const trackOnly = src.trackOnly === true
+    || radio.id === 'choq'
+    || (Array.isArray(radio._nowPlayingSources)
+      && radio._nowPlayingSources.some((s) => s && (s.type === 'choq-episodes' || s.type === 'triton-np')));
+
+  let current = null;
+  if (!trackOnly) {
+    const candidates = [icy.streamTitle, icy.icyName, icy.icyDesc];
+    for (const c of candidates) {
+      const parsed = extractShowFromIcyTitle(c, radio);
+      if (isUsableShowTitle(parsed, radio)) {
+        current = makeShow({ title: parsed, source: 'stream' });
+        break;
+      }
+    }
+  }
 
   return {
     current,
@@ -450,7 +703,13 @@ const LIVE_ADAPTERS = {
   cism: adaptCismV1,
   'craft-live': adaptCraftLive,
   craft: adaptCraftLive,
+  // « choq » historique pointait sur craft-live (piste) — garder pour rétrocompat,
+  // mais préférer choq-episodes (émissions) + triton-np (piste CORS) dans radios.json.
   choq: adaptCraftLive,
+  'choq-episodes': adaptChoqEpisodes,
+  'choq-schedule': adaptChoqEpisodes,
+  'triton-np': adaptTritonNowPlaying,
+  triton: adaptTritonNowPlaying,
   'airtime-live': adaptAirtimeLive,
   airtime: adaptAirtimeLive,
   icy: adaptIcy,
@@ -497,6 +756,15 @@ function inferNowPlayingSources(radio = {}) {
   if (Array.isArray(radio._nowPlayingSources)) {
     for (const s of radio._nowPlayingSources) {
       if (s && s.type) push({ ...s });
+    }
+  }
+
+  // CHOQ : toujours tenter émissions GraphQL + Triton (piste CORS) si absents
+  if (radio.id === 'choq' || /choq\.ca/i.test(String(radio.website || ''))) {
+    push({ type: 'choq-episodes', url: 'https://www.choq.ca/api/graphql' });
+    const mountMatch = String(radio.stream || '').match(/\/(SP_[A-Z0-9]+)/i);
+    if (mountMatch) {
+      push({ type: 'triton-np', mount: mountMatch[1].replace(/_SC$/i, '') });
     }
   }
 
@@ -673,8 +941,14 @@ async function probeStationOnAir(radio = {}, {
     const hit = await runLiveAdapter(src, radio, ctx);
     if (hit) {
       hits.push(hit);
-      if (hit.cors && hit.endpoint && !clientPoll) {
-        clientPoll = { type: src.type, url: hit.endpoint };
+      // Préférer un clientPoll qui rafraîchit la piste (triton CORS) ;
+      // ne pas écraser par une API sans CORS (craft-live).
+      if (hit.cors && hit.endpoint) {
+        const isTrackPoll = src.type === 'triton-np' || src.type === 'triton'
+          || Boolean(hit.track && !hit.current);
+        if (!clientPoll || isTrackPoll) {
+          clientPoll = { type: src.type, url: hit.endpoint };
+        }
       }
     }
   }
@@ -769,6 +1043,7 @@ module.exports = {
   normalizeShowTitle,
   isUsableShowTitle,
   extractShowFromIcyTitle,
+  formatTrackLine,
   makeShow,
   fetchIcyNowPlaying,
   fetchJsonText,

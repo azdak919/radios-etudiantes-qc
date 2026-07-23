@@ -1,5 +1,5 @@
 {
-  "_comment": "Source ÉDITABLE des horaires radio. CI aux 2 semaines : discover-schedule-sources.js --update puis fetch-radio-schedules.js --update (workflow update-radio-schedules.yml). Adaptateurs grille : chyz, cism, cjlo, cfak, airtime (CKUT). En cours + à venir : fetch-radio-nowplaying.js (aux 30 min) lit cette grille + les APIs déclarées dans radios.json (_nowPlayingSources : cism-v1, craft-live, airtime-live, icy). CHOQ : _nowPlayingOnly.",
+  "_comment": "Source ÉDITABLE des horaires radio. CI aux 2 semaines : discover-schedule-sources.js --update puis fetch-radio-schedules.js --update (workflow update-radio-schedules.yml). Adaptateurs grille : chyz, cism, cjlo, cfak, airtime (CKUT), choq (GraphQL). En cours + à venir : fetch-radio-nowplaying.js (aux 30 min) lit cette grille + les APIs (_nowPlayingSources : cism-v1, choq-episodes, craft-live, triton-np, airtime-live, icy).",
   "_format": {
     "day": "0 = dimanche, 1 = lundi, 2 = mardi, 3 = mercredi, 4 = jeudi, 5 = vendredi, 6 = samedi",
     "start_end": "Heures locales 24 h America/Toronto, format \"HH:MM\". Une plage dont la fin est <= au début traverse minuit (ex. 23:00 → 01:00).",
@@ -65,9 +65,14 @@
       "grid": []
     },
     "choq": {
-      "_note": "À l'antenne via https://www.choq.ca/api/live (titre + animateur). Grille /horaire non parsée — bot fetch-radio-nowplaying.js aux 30 min.",
-      "_nowPlayingOnly": true,
-      "sources": [],
+      "_note": "Émissions : GraphQL /api/graphql (épisodes du jour). Piste : /api/live + Triton SP_R4799664 (re-poll navigateur). Ne pas traiter title/artist de /api/live comme émission.",
+      "sources": [
+        {
+          "type": "choq",
+          "url": "https://www.choq.ca/api/graphql",
+          "days": 14
+        }
+      ],
       "grid": []
     }
   }

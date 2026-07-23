@@ -750,6 +750,138 @@ function parseCjloGrid(htmlText) {
   return grid;
 }
 
+/**
+ * CHOQ — grille via GraphQL (épisodes planifiés, 14 jours).
+ * Les plages sont des occurrences datées (pas une grille type « chaque jeudi ») :
+ * on les projette sur day 0–6 + HH:MM America/Toronto pour resolveCurrentSlot.
+ */
+async function fetchChoqGrid(src = {}, deps = {}) {
+  const endpoint = src.url || 'https://www.choq.ca/api/graphql';
+  const tz = src.timeZone || DEFAULT_TZ;
+  const daysAhead = Math.min(21, Math.max(7, Number(src.days) || 14));
+  const fetchImpl = deps.fetchImpl || globalThis.fetch;
+  if (typeof fetchImpl !== 'function') throw new Error('fetch indisponible');
+
+  const query = `query queryEpisodesOfDay($date: [QueryArgument]) {
+    entries(
+      section: "episodes"
+      dateTime1: $date
+      orderBy: "dateTime1 ASC"
+      limit: 50
+      status: null
+    ) {
+      ... on episodes_default_Entry {
+        title
+        timestamp_start: dateTime1
+        timestamp_end: dateTime2
+        parent: emissionListeUnique {
+          ... on emissions_default_Entry { title slug }
+        }
+      }
+    }
+  }`;
+
+  const ymdInTz = (date) => {
+    const parts = new Intl.DateTimeFormat('en-CA', {
+      timeZone: tz,
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit',
+    }).formatToParts(date);
+    const map = {};
+    for (const p of parts) map[p.type] = p.value;
+    return `${map.year}-${map.month}-${map.day}`;
+  };
+
+  const addDaysYmd = (ymd, n) => {
+    const [y, m, d] = ymd.split('-').map(Number);
+    const dt = new Date(Date.UTC(y, m - 1, d + n));
+    return dt.toISOString().slice(0, 10);
+  };
+
+  const hhmmInTz = (iso) => {
+    if (!iso) return null;
+    const d = new Date(iso);
+    if (Number.isNaN(d.getTime())) return null;
+    const parts = new Intl.DateTimeFormat('en-US', {
+      timeZone: tz,
+      hour: '2-digit',
+      minute: '2-digit',
+      hour12: false,
+    }).formatToParts(d);
+    const map = {};
+    for (const p of parts) map[p.type] = p.value;
+    let hour = parseInt(map.hour, 10);
+    if (hour === 24 || Number.isNaN(hour)) hour = 0;
+    const minute = parseInt(map.minute, 10) || 0;
+    return `${String(hour).padStart(2, '0')}:${String(minute).padStart(2, '0')}`;
+  };
+
+  const dayIndexInTz = (iso) => {
+    const d = new Date(iso);
+    if (Number.isNaN(d.getTime())) return null;
+    const wd = new Intl.DateTimeFormat('en-US', { timeZone: tz, weekday: 'short' })
+      .format(d);
+    return { Sun: 0, Mon: 1, Tue: 2, Wed: 3, Thu: 4, Fri: 5, Sat: 6 }[wd] ?? null;
+  };
+
+  const today = ymdInTz(new Date());
+  const grid = [];
+  const seen = new Set();
+
+  for (let i = 0; i < daysAhead; i++) {
+    const day = addDaysYmd(today, i);
+    const next = addDaysYmd(today, i + 1);
+    const ctrl = new AbortController();
+    const timer = setTimeout(() => ctrl.abort(), 15000);
+    let entries = [];
+    try {
+      const res = await fetchImpl(endpoint, {
+        method: 'POST',
+        signal: ctrl.signal,
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+          'User-Agent': BROWSER_UA,
+        },
+        body: JSON.stringify({
+          query,
+          variables: { date: ['and', `>= ${day}`, `< ${next}`] },
+        }),
+      });
+      if (res.ok) {
+        const json = await res.json();
+        entries = Array.isArray(json?.data?.entries) ? json.data.entries : [];
+      }
+    } catch {
+      entries = [];
+    } finally {
+      clearTimeout(timer);
+    }
+
+    for (const e of entries) {
+      if (!e?.timestamp_start || !e?.timestamp_end) continue;
+      const parent = Array.isArray(e.parent) ? e.parent[0] : e.parent;
+      const title = decodeHtmlEntities(String(parent?.title || e.title || ''))
+        .replace(/\s+/g, ' ')
+        .trim();
+      if (!title) continue;
+      const start = hhmmInTz(e.timestamp_start);
+      const end = hhmmInTz(e.timestamp_end);
+      const dow = dayIndexInTz(e.timestamp_start);
+      if (start == null || end == null || dow == null) continue;
+      const key = `${dow}|${start}|${end}|${title.toLowerCase()}`;
+      if (seen.has(key)) continue;
+      seen.add(key);
+      const slot = { day: dow, start, end, title };
+      if (parent?.slug) slot.url = `https://www.choq.ca/emissions/${parent.slug}`;
+      grid.push(slot);
+    }
+  }
+
+  return grid;
+}
+
 // ─── Registre d'adaptateurs ──────────────────────────────────────────────────────
 const ADAPTERS = {
   airtime: (src, deps) => fetchAirtimeGrid(src.base || src.url, deps),
@@ -759,6 +891,8 @@ const ADAPTERS = {
   cfak: async (src, deps) => parseCfakGrid(await fetchText(src.url, deps)),
   cism: (src, deps) => fetchCismGrid(src, deps),
   cjlo: async (src, deps) => parseCjloGrid(await fetchText(src.url || 'http://www.cjlo.com/schedule', deps)),
+  choq: (src, deps) => fetchChoqGrid(src, deps),
+  'choq-episodes': (src, deps) => fetchChoqGrid(src, deps),
 };
 
 /** Étiquette lisible d'une source pour le journal/diagnostic. */

@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-15T10:46:32.469Z",
+  "updatedAt": "2026-07-23T14:13:33.298Z",
   "timezone": "America/Toronto",
   "stations": {
     "chyz": {
@@ -8,7 +8,7 @@
       "sources": [
         "chyz:https://chyz.ca/horaire/"
       ],
-      "checkedAt": "2026-07-15T10:46:32.469Z",
+      "checkedAt": "2026-07-23T14:13:33.298Z",
       "grid": [
         {
           "day": 0,
@@ -53,13 +53,6 @@
           "url": "https://chyz.ca/emission/les-arshitechs-du-son/"
         },
         {
-          "day": 1,
-          "start": "20:30",
-          "end": "21:30",
-          "title": "La Voie des Droits",
-          "url": "https://chyz.ca/emission/la-voie-des-droits/"
-        },
-        {
           "day": 2,
           "start": "08:00",
           "end": "10:00",
@@ -102,13 +95,6 @@
           "url": "https://chyz.ca/emission/les-arshitechs-du-son/"
         },
         {
-          "day": 3,
-          "start": "21:30",
-          "end": "22:30",
-          "title": "Blasphème",
-          "url": "https://chyz.ca/emission/blaspheme/"
-        },
-        {
           "day": 4,
           "start": "08:00",
           "end": "10:00",
@@ -121,6 +107,13 @@
           "end": "17:30",
           "title": "Chéri.e, j’arrive!",
           "url": "https://chyz.ca/emission/cheri-e-jarrive/"
+        },
+        {
+          "day": 4,
+          "start": "16:00",
+          "end": "18:00",
+          "title": "Chéri-e, J't'au Festif",
+          "url": "https://chyz.ca/emission/chyz-au-festif/"
         },
         {
           "day": 4,
@@ -152,7 +145,14 @@
         },
         {
           "day": 5,
-          "start": "16:50",
+          "start": "17:30",
+          "end": "18:30",
+          "title": "Les Arshitechs du Son",
+          "url": "https://chyz.ca/emission/les-arshitechs-du-son/"
+        },
+        {
+          "day": 5,
+          "start": "18:50",
           "end": "23:00",
           "title": "Capitales de Québec",
           "url": "https://chyz.ca/emission/capitales-de-quebec/"
@@ -193,7 +193,7 @@
       "sources": [
         "cism:https://cism893.ca/grille-horaire/"
       ],
-      "checkedAt": "2026-07-15T10:46:32.469Z",
+      "checkedAt": "2026-07-23T14:13:33.298Z",
       "grid": [
         {
           "day": 0,
@@ -479,8 +479,8 @@
           "day": 2,
           "start": "12:00",
           "end": "14:00",
-          "title": "CISM au Festival international Nuits d'Afrique",
-          "url": "https://cism893.ca/emissions/cism-au-festival-international-nuits-dafrique"
+          "title": "Les sentinelles de l'art",
+          "url": "https://cism893.ca/emissions/les-sentinelles-de-lart"
         },
         {
           "day": 2,
@@ -682,8 +682,8 @@
           "day": 4,
           "start": "07:00",
           "end": "08:00",
-          "title": "Second poteau",
-          "url": "https://cism893.ca/emissions/second-poteau"
+          "title": "Ici, la criminologie",
+          "url": "https://cism893.ca/emissions/ici-la-criminologie"
         },
         {
           "day": 4,
@@ -973,7 +973,7 @@
       "sources": [
         "airtime:https://ckut.airtime.pro"
       ],
-      "checkedAt": "2026-07-15T10:46:32.469Z",
+      "checkedAt": "2026-07-23T14:13:33.298Z",
       "grid": [
         {
           "day": 0,
@@ -1135,7 +1135,7 @@
           "day": 1,
           "start": "19:00",
           "end": "20:00",
-          "title": "Dykes on Mykes"
+          "title": "Lesbo-sons"
         },
         {
           "day": 1,
@@ -1231,7 +1231,7 @@
           "day": 2,
           "start": "18:00",
           "end": "19:00",
-          "title": "Prison Radio"
+          "title": "Rez Rock Radio"
         },
         {
           "day": 2,
@@ -1411,7 +1411,7 @@
           "day": 4,
           "start": "17:00",
           "end": "18:00",
-          "title": "Off the Hour: Labour Radio"
+          "title": "Off the Hour: Radio Renoviction"
         },
         {
           "day": 4,
@@ -1441,7 +1441,7 @@
           "day": 4,
           "start": "23:00",
           "end": "01:00",
-          "title": "L'aire du Diable"
+          "title": "You Need A Heart To Live 2"
         },
         {
           "day": 5,
@@ -1483,7 +1483,7 @@
           "day": 5,
           "start": "14:00",
           "end": "15:00",
-          "title": "NNB/Jewish Heretics/QPIRG/Mi Chante"
+          "title": "NNB/Jewish Heretics/QPIRG/knots"
         },
         {
           "day": 5,
@@ -1506,8 +1506,14 @@
         {
           "day": 5,
           "start": "19:00",
+          "end": "20:00",
+          "title": "Listening to Latin America: Blanca-Victoria"
+        },
+        {
+          "day": 5,
+          "start": "20:00",
           "end": "22:00",
-          "title": "LLA/Macondo"
+          "title": "Macondo"
         },
         {
           "day": 5,
@@ -2460,7 +2466,7 @@
       "sources": [
         "cfak:https://www.cfak.ca/programmation/"
       ],
-      "checkedAt": "2026-07-15T10:46:32.469Z",
+      "checkedAt": "2026-07-23T14:13:33.298Z",
       "grid": [
         {
           "day": 0,
@@ -2671,6 +2677,156 @@
           "start": "00:00",
           "end": "07:00",
           "title": "Les nuits CFAK"
+        }
+      ]
+    },
+    "choq": {
+      "id": "choq",
+      "name": "CHOQ.ca",
+      "sources": [
+        "choq:https://www.choq.ca/api/graphql"
+      ],
+      "checkedAt": "2026-07-23T14:13:33.298Z",
+      "grid": [
+        {
+          "day": 0,
+          "start": "14:00",
+          "end": "16:00",
+          "title": "Pôle hip-hop",
+          "url": "https://www.choq.ca/emissions/pole-hip-hop"
+        },
+        {
+          "day": 0,
+          "start": "17:00",
+          "end": "18:00",
+          "title": "Mutations",
+          "url": "https://www.choq.ca/emissions/mutations"
+        },
+        {
+          "day": 1,
+          "start": "17:00",
+          "end": "18:00",
+          "title": "Bitume",
+          "url": "https://www.choq.ca/emissions/bitume"
+        },
+        {
+          "day": 1,
+          "start": "17:00",
+          "end": "18:00",
+          "title": "Faire avec",
+          "url": "https://www.choq.ca/emissions/faire-avec"
+        },
+        {
+          "day": 2,
+          "start": "05:00",
+          "end": "07:00",
+          "title": "Les rois de l'arène",
+          "url": "https://www.choq.ca/emissions/les-rois-de-larene"
+        },
+        {
+          "day": 2,
+          "start": "11:00",
+          "end": "12:00",
+          "title": "Intervenir ensemble",
+          "url": "https://www.choq.ca/emissions/intervenir-ensemble"
+        },
+        {
+          "day": 2,
+          "start": "15:00",
+          "end": "16:00",
+          "title": "Palmarès CHOQ.ca",
+          "url": "https://www.choq.ca/emissions/palmareschoq"
+        },
+        {
+          "day": 2,
+          "start": "18:00",
+          "end": "19:00",
+          "title": "Le Studio",
+          "url": "https://www.choq.ca/emissions/live"
+        },
+        {
+          "day": 2,
+          "start": "19:30",
+          "end": "20:30",
+          "title": "Les Amazones",
+          "url": "https://www.choq.ca/emissions/les-amazones"
+        },
+        {
+          "day": 3,
+          "start": "15:00",
+          "end": "16:00",
+          "title": "Palmarès CHOQ.ca",
+          "url": "https://www.choq.ca/emissions/palmareschoq"
+        },
+        {
+          "day": 3,
+          "start": "17:00",
+          "end": "18:00",
+          "title": "Podcast Nomade: L'art de se rencontrer",
+          "url": "https://www.choq.ca/emissions/podcast-nomade-lart-de-se-rencontrer"
+        },
+        {
+          "day": 4,
+          "start": "11:00",
+          "end": "12:00",
+          "title": "Intervenir ensemble",
+          "url": "https://www.choq.ca/emissions/intervenir-ensemble"
+        },
+        {
+          "day": 4,
+          "start": "15:00",
+          "end": "16:00",
+          "title": "Palmarès CHOQ.ca",
+          "url": "https://www.choq.ca/emissions/palmareschoq"
+        },
+        {
+          "day": 4,
+          "start": "17:15",
+          "end": "18:00",
+          "title": "La 3ème demie",
+          "url": "https://www.choq.ca/emissions/le-12-mtlsup"
+        },
+        {
+          "day": 4,
+          "start": "18:30",
+          "end": "19:40",
+          "title": "Les Apatrides Anonymes",
+          "url": "https://www.choq.ca/emissions/apatrides-anonymes"
+        },
+        {
+          "day": 4,
+          "start": "20:00",
+          "end": "21:00",
+          "title": "La nouvelle école des surdoués",
+          "url": "https://www.choq.ca/emissions/la-nouvelle-ecole-des-surdoues"
+        },
+        {
+          "day": 4,
+          "start": "21:00",
+          "end": "22:30",
+          "title": "Le grand maître des jeux",
+          "url": "https://www.choq.ca/emissions/le-maitre-des-jeux"
+        },
+        {
+          "day": 5,
+          "start": "11:30",
+          "end": "12:30",
+          "title": "Opération beurre de cinoche",
+          "url": "https://www.choq.ca/emissions/box-sophisme"
+        },
+        {
+          "day": 5,
+          "start": "16:00",
+          "end": "17:00",
+          "title": "Histoire de passer le temps",
+          "url": "https://www.choq.ca/emissions/histoire-de-passer-le-temps"
+        },
+        {
+          "day": 6,
+          "start": "22:00",
+          "end": "23:00",
+          "title": "D'amour et de sexe",
+          "url": "https://www.choq.ca/emissions/damour-et-de-sexe"
         }
       ]
     }

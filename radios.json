@@ -188,8 +188,16 @@
     "_streamIcyName": "CHOQ.CA",
     "_nowPlayingSources": [
       {
+        "type": "choq-episodes",
+        "url": "https://www.choq.ca/api/graphql"
+      },
+      {
         "type": "craft-live",
         "url": "https://www.choq.ca/api/live"
+      },
+      {
+        "type": "triton-np",
+        "mount": "SP_R4799664"
       },
       {
         "type": "icy"
