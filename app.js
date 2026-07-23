@@ -555,24 +555,119 @@ function initPlayerSync() {
 
   // Hydrate from last session (other tab or previous page)
   const boot = Sync.readState();
-  if (!boot) return;
+  if (boot) {
+    if (Number.isFinite(boot.volume)) {
+      currentGain = boot.volume;
+      if (TUNER_VOLUME) TUNER_VOLUME.value = String(currentGain);
+      applyGain();
+    }
 
-  if (Number.isFinite(boot.volume)) {
-    currentGain = boot.volume;
-    if (TUNER_VOLUME) TUNER_VOLUME.value = String(currentGain);
-    applyGain();
+    if (boot.stationId && radios.some((r) => r.id === boot.stationId)) {
+      selectStation(boot.stationId, {
+        autoplay: false,
+        openExternal: false,
+        fromSync: true,
+      });
+    }
+
+    if (boot.playing) {
+      // Phase 2a: best-effort resume if this tab already had a play gesture (session armed).
+      // Otherwise mirror "en lecture ailleurs" until the user hits ▶.
+      syncRemotePlaying = true;
+      updatePlayUI();
+      scheduleSessionResume(boot);
+    }
   }
 
-  if (boot.stationId && radios.some((r) => r.id === boot.stationId)) {
-    selectStation(boot.stationId, {
-      autoplay: false,
-      openExternal: false,
-      fromSync: true,
-    });
+  // bfcache / back-forward: try to continue after page restore
+  window.addEventListener('pageshow', (event) => {
+    if (!event.persisted) return;
+    const s = Sync.readState();
+    if (s?.playing) scheduleSessionResume(s, { fromBfcache: true });
+  });
+}
+
+const PLAYER_ARMED_KEY = 'req-player-armed';
+
+function isPlayerSessionArmed() {
+  try {
+    return sessionStorage.getItem(PLAYER_ARMED_KEY) === '1';
+  } catch {
+    return false;
+  }
+}
+
+function armPlayerSession() {
+  try {
+    sessionStorage.setItem(PLAYER_ARMED_KEY, '1');
+  } catch { /* private mode */ }
+  document.documentElement.dataset.radarPlaying = '1';
+}
+
+function disarmPlayerSessionPlayingFlag() {
+  document.documentElement.dataset.radarPlaying = '0';
+}
+
+/**
+ * Phase 2a — try to resume stream after same-tab navigation / bfcache.
+ * Only if sessionStorage is armed (user already pressed play in this tab).
+ * Never steals from a live peer: brief wait for yield/state, then claim+play.
+ */
+let sessionResumeTimer = null;
+function scheduleSessionResume(boot, { fromBfcache = false } = {}) {
+  if (sessionResumeTimer) {
+    clearTimeout(sessionResumeTimer);
+    sessionResumeTimer = null;
+  }
+  if (!boot?.playing || !boot.stationId) return;
+  if (!isPlayerSessionArmed() && !fromBfcache) {
+    // Cold tab (no prior gesture here): stay as follower UI only.
+    return;
   }
 
-  if (boot.playing) {
-    // Do not autoplay (browser policy). Mirror "en lecture ailleurs" until user hits ▶.
+  // Let BroadcastChannel peers announce themselves first.
+  sessionResumeTimer = window.setTimeout(() => {
+    sessionResumeTimer = null;
+    trySessionResume(boot);
+  }, fromBfcache ? 40 : 120);
+}
+
+async function trySessionResume(boot) {
+  const Sync = window.RadarPlayerSync;
+  if (!Sync || !boot?.stationId) return;
+  if (userPaused) return;
+  // Another live leader already pushed remote state — do not steal.
+  if (syncRemotePlaying && isPlaying()) return;
+  if (isPlaying()) return;
+
+  const radio = radios.find((r) => r.id === boot.stationId);
+  if (!radio || !getPlayableStream(radio)) {
+    syncRemotePlaying = true;
+    updatePlayUI();
+    return;
+  }
+
+  // If a peer just claimed leadership after our hello, onRemoteState set syncRemotePlaying.
+  // Only resume when we still look like the orphaned "playing" session (dead leader id).
+  const live = Sync.readState();
+  if (live && live.playing && live.leaderId && live.leaderId !== Sync.getTabId()) {
+    // Peer may still be alive — wait: if we never got yield, they might be dead.
+    // Attempt resume only when armed (same tab nav) — claimPlay will yield a live peer (OK: user moved here).
+    if (!isPlayerSessionArmed()) {
+      syncRemotePlaying = true;
+      updatePlayUI();
+      return;
+    }
+  }
+
+  syncRemotePlaying = false;
+  try {
+    await play(radio);
+    if (!isPlaying()) {
+      syncRemotePlaying = true;
+      updatePlayUI();
+    }
+  } catch {
     syncRemotePlaying = true;
     updatePlayUI();
   }
@@ -2618,6 +2713,7 @@ async function play(radio) {
     mobilePlayback?.onPlayStart();
     syncMediaSessionPlaybackState();
     applyGain();
+    armPlayerSession();
     updatePlayUI();
     try {
       window.RadarPlayerSync?.claimPlay?.(radio.id, currentGain);
@@ -2670,6 +2766,14 @@ function updatePlayUI() {
   TUNER_PLAY.classList.toggle('is-external', external && !active);
   TUNER.classList.toggle('is-playing', active);
   TUNER.classList.toggle('is-external', external && !active);
+  // Signal for nav-shell (Phase 2b): local stream actually playing on this page.
+  if (isPlaying()) {
+    document.documentElement.dataset.radarPlaying = '1';
+  } else if (!syncRemotePlaying) {
+    disarmPlayerSessionPlayingFlag();
+  } else {
+    document.documentElement.dataset.radarPlaying = '0';
+  }
   renderTunerNowAir();
   syncNowPlayingPoll();
   syncMediaSessionPlaybackState();
