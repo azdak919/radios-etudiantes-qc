@@ -1,16 +1,16 @@
 {
-  "updatedAt": "2026-07-23T21:35:59.366Z",
+  "updatedAt": "2026-07-23T22:58:39.242Z",
   "timezone": "America/Toronto",
   "stations": {
     "chyz": {
       "id": "chyz",
       "name": "CHYZ 94,3",
       "current": {
-        "title": "Chéri-e, J't'au Festif",
+        "title": "Les Arshitechs du Son",
         "source": "schedule",
-        "start": "16:00",
-        "end": "18:00",
-        "url": "https://chyz.ca/emission/chyz-au-festif/"
+        "start": "17:30",
+        "end": "19:00",
+        "url": "https://chyz.ca/emission/les-arshitechs-du-son/"
       },
       "next": {
         "title": "Vendredi Nostalgie",
@@ -20,34 +20,34 @@
         "url": "https://chyz.ca/emission/vendredi-nostalgie/"
       },
       "track": "",
-      "showTitle": "Chéri-e, J't'au Festif",
+      "showTitle": "Les Arshitechs du Son",
       "host": "",
       "source": "schedule",
       "sources": [
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-23T21:35:30.730Z"
+      "checkedAt": "2026-07-23T22:58:10.500Z"
     },
     "cism": {
       "id": "cism",
       "name": "CISM 89,3",
       "current": {
-        "title": "La grande ludothèque",
-        "source": "api-live",
-        "start": "12:00",
-        "url": "https://stream03.ustream.ca/cism128.mp3",
-        "slug": "la-grande-ludotheque"
-      },
-      "next": {
         "title": "Le palmarès",
         "source": "api-live",
         "start": "14:00",
-        "url": "https://podcast.cism893.ca/podcast/download_mp3/364917.mp3",
+        "url": "https://stream03.ustream.ca/cism128.mp3",
         "slug": "palmares-de-cism"
       },
+      "next": {
+        "title": "La boussole culturelle",
+        "source": "api-live",
+        "start": "15:00",
+        "url": "https://podcast.cism893.ca/podcast/download_mp3/364533.mp3",
+        "slug": "la-boussole-culturelle"
+      },
       "track": "",
-      "showTitle": "La grande ludothèque",
+      "showTitle": "Le palmarès",
       "host": "",
       "source": "api-live",
       "sources": [
@@ -57,60 +57,59 @@
         "type": "cism-v1",
         "url": "https://admin.cism893.ca/api/v1/live"
       },
-      "checkedAt": "2026-07-23T21:35:33.471Z"
+      "checkedAt": "2026-07-23T22:58:13.088Z"
     },
     "ckut": {
       "id": "ckut",
       "name": "CKUT 90,3",
       "current": {
-        "title": "Off the Hour",
-        "source": "api-live",
-        "start": "17:00",
-        "end": "18:00"
-      },
-      "next": {
         "title": "Upstage",
         "source": "api-live",
         "start": "18:00",
         "end": "19:00"
       },
+      "next": {
+        "title": "Grey Matters",
+        "source": "api-live",
+        "start": "19:00",
+        "end": "20:00"
+      },
       "track": "",
-      "showTitle": "Off the Hour",
+      "showTitle": "Upstage",
       "host": "",
       "source": "api-live",
       "sources": [
-        "api-live",
-        "stream"
+        "api-live"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-23T21:35:38.185Z"
+      "checkedAt": "2026-07-23T22:58:17.747Z"
     },
     "cjlo": {
       "id": "cjlo",
       "name": "CJLO 1690AM",
       "current": {
-        "title": "Hooked On Sonics",
-        "source": "schedule",
-        "start": "16:00",
-        "end": "18:00",
-        "url": "http://www.cjlo.com/shows/hooked-on-sonics"
-      },
-      "next": {
         "title": "Electric Messiah",
         "source": "schedule",
         "start": "18:00",
         "end": "19:00",
         "url": "http://www.cjlo.com/shows/electric-messiah"
       },
+      "next": {
+        "title": "Teen Radio",
+        "source": "schedule",
+        "start": "19:00",
+        "end": "20:00",
+        "url": "http://www.cjlo.com/shows/teen-radio"
+      },
       "track": "",
-      "showTitle": "Hooked On Sonics",
+      "showTitle": "Electric Messiah",
       "host": "",
       "source": "schedule",
       "sources": [
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-23T21:35:52.137Z"
+      "checkedAt": "2026-07-23T22:58:31.727Z"
     },
     "cfak": {
       "id": "cfak",
@@ -135,27 +134,27 @@
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-23T21:35:52.754Z"
+      "checkedAt": "2026-07-23T22:58:32.316Z"
     },
     "choq": {
       "id": "choq",
       "name": "CHOQ.ca",
       "current": {
-        "title": "La 3ème demie",
-        "source": "api-live",
-        "start": "17:15",
-        "end": "18:00",
-        "slug": "le-12-mtlsup"
-      },
-      "next": {
         "title": "Les Apatrides Anonymes",
         "source": "api-live",
         "start": "18:30",
         "end": "19:40",
         "slug": "apatrides-anonymes"
       },
-      "track": "LaF - Pluche",
-      "showTitle": "La 3ème demie",
+      "next": {
+        "title": "Le grand maître des jeux",
+        "source": "api-live",
+        "start": "21:00",
+        "end": "22:30",
+        "slug": "le-maitre-des-jeux"
+      },
+      "track": "Ecca Vandal - SORRY! CRASH!",
+      "showTitle": "Les Apatrides Anonymes",
       "host": "",
       "source": "api-live",
       "sources": [
@@ -165,7 +164,7 @@
         "type": "triton-np",
         "url": "https://np.tritondigital.com/public/nowplaying?mountName=SP_R4799664&numberToFetch=1&eventType=track"
       },
-      "checkedAt": "2026-07-23T21:35:59.015Z"
+      "checkedAt": "2026-07-23T22:58:38.891Z"
     }
   }
 }
