@@ -1514,8 +1514,8 @@ html.is-firefox .tuner-cast--bar[hidden] { display: flex !important; }
   justify-content: space-between;
   gap: 12px;
   flex-wrap: wrap;
-  /* Serré sous le tuner sticky — moins d’espace perdu */
-  margin-top: 12px;
+  /* Entre tuner et fil : même ordre de grandeur que les autres respirations (~20px) */
+  margin-top: 20px;
   padding-bottom: 8px;
   border-bottom: 2px solid var(--rule-strong);
 }
@@ -3784,7 +3784,7 @@ body.external-listen-open {
   }
 
   .wire-head {
-    margin-top: 14px;
+    margin-top: 22px;
   }
 
   .filters-panel {

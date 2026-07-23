@@ -904,6 +904,16 @@ function syncChoqAirRotate(radio) {
 }
 
 /**
+ * Piste affichable (CHOQ : ignore les slugs fichier / métadonnées pourries).
+ */
+function trackForAirDisplay(radio, track, relatedTitles = []) {
+  const t = String(track || '').replace(/^♪\s*/, '').trim();
+  if (!t) return '';
+  if (radio?.id === 'choq' && isGarbageChoqTrack(t, relatedTitles)) return '';
+  return t;
+}
+
+/**
  * Lignes d'antenne pour le syntoniseur.
  * Priorité : CHOQ hybride → émission en cours → à venir → piste → idle.
  * @returns {{ title: string, sub: string, kind: 'live'|'upcoming'|'idle' }}
@@ -915,7 +925,15 @@ function nowAirLines(radio) {
   const botNext = botNextShow(radio);
   const schedCur = scheduleCurrentSlot(radio);
   const schedNext = scheduleNextSlot(radio);
-  const track = String(entry?.track || '').trim();
+  const trackRaw = String(entry?.track || '').trim();
+  const relatedTitles = [
+    botCur?.title,
+    schedCur?.title,
+    botNext?.title,
+    schedNext?.title,
+  ].filter(Boolean);
+  // CHOQ : ne jamais afficher une piste « fichier » (titre ni sous-titre)
+  const track = trackForAirDisplay(radio, trackRaw, relatedTitles);
 
   // 0) CHOQ hybride (émission+piste OU piste+à venir) — avant le rendu simple
   const hybrid = choqHybridAirPhases(radio);
@@ -969,7 +987,7 @@ function nowAirLines(radio) {
     };
   }
 
-  // 4) Piste seule (musique libre sans grille)
+  // 4) Piste seule (musique libre sans grille) — déjà filtrée pour CHOQ
   if (track) {
     return {
       title: `♪ ${track}`,
