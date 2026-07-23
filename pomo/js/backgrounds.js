@@ -132,7 +132,7 @@ function _bgMood(bg) {
   if (/mountain|peak|summit|alps|himalaya|ridge/.test(t)) return 'mountain';
   if (/lake|river|waterfall|stream|pond/.test(t)) return 'water';
   if (/sunset|sunrise|dawn|dusk|golden|lavender|meadow|field/.test(t)) return 'golden';
-  if (/fog|mist|cloud/.test(t)) return 'mist';
+  if (/fog|mist|cloud|haze|overcast/.test(t)) return 'mist';
   if (bg.source && /wikimedia|public domain/i.test(bg.source)) return 'art';
   return 'nature';
 }
@@ -320,6 +320,8 @@ function _scoreCandidate(idx) {
   let score = 10 + _randInt(5); // small jitter
 
   const mood = _bgMood(bg);
+  // Soft fog/cloud stock is less engaging as a wallpaper — deprioritize.
+  if (mood === 'mist') score -= 5;
   // Penalize moods seen in the last few picks
   for (let k = 0; k < _recentMoods.length; k++) {
     if (_recentMoods[_recentMoods.length - 1 - k] === mood) {

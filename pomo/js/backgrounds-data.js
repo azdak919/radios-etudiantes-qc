@@ -4,8 +4,7 @@
 const BACKGROUNDS = [
   // ── Natural landscapes — Unsplash ──────────────────────────────
   { url: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&q=90&auto=format&fit=max", credit: "Samuel Ferrara", link: "https://unsplash.com/@samferrara", source: "Unsplash", title: "Alpine Summit" },
-  { url: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=1920&q=90&auto=format&fit=max", credit: "Lukasz Szmigiel", link: "https://unsplash.com/@szmigieldesign", source: "Unsplash", title: "Forest Mist" },
-  { url: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1920&q=90&auto=format&fit=max", credit: "Luca Bravo", link: "https://unsplash.com/@lucabravo", source: "Unsplash", title: "Forest Light" },
+    { url: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1920&q=90&auto=format&fit=max", credit: "Luca Bravo", link: "https://unsplash.com/@lucabravo", source: "Unsplash", title: "Forest Light" },
   { url: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1920&q=90&auto=format&fit=max", credit: "Sean Oulashin", link: "https://unsplash.com/@oulashin", source: "Unsplash", title: "Tropical Beach" },
   { url: "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1920&q=90&auto=format&fit=max", credit: "Benjamin Voros", link: "https://unsplash.com/@vorosbenisop", source: "Unsplash", title: "Starry Mountains" },
   { url: "https://images.unsplash.com/photo-1505144808419-1957a94ca61e?w=1920&q=90&auto=format&fit=max", credit: "Frank McKenna", link: "https://unsplash.com/@frankiefoto", source: "Unsplash", title: "Northern Lights" },
@@ -24,24 +23,19 @@ const BACKGROUNDS = [
   { url: "https://images.unsplash.com/photo-1542401886-65d6c61db217?w=1920&q=90&auto=format&fit=max", credit: "v2osk", link: "https://unsplash.com/@v2osk", source: "Unsplash", title: "Volcanic Landscape" },
   // ── Mountains, deserts, stars — Unsplash ───────────────────────
   { url: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1920&q=90&auto=format&fit=max", credit: "Kalen Emsley", link: "https://unsplash.com/@kalenemsley", source: "Unsplash", title: "Mountain Peak" },
-  { url: "https://images.unsplash.com/photo-1454496522488-7a8e488e8606?w=1920&q=90&auto=format&fit=max", credit: "Joshua Earle", link: "https://unsplash.com/@joshuaearle", source: "Unsplash", title: "Misty Summit" },
-  { url: "https://images.unsplash.com/photo-1536431311719-398b6704d4cc?w=1920&q=90&auto=format&fit=max", credit: "Vincentiu Solomon", link: "https://unsplash.com/@vincentiu", source: "Unsplash", title: "Milky Way" },
+    { url: "https://images.unsplash.com/photo-1536431311719-398b6704d4cc?w=1920&q=90&auto=format&fit=max", credit: "Vincentiu Solomon", link: "https://unsplash.com/@vincentiu", source: "Unsplash", title: "Milky Way" },
   { url: "https://images.unsplash.com/photo-1462275646964-a0e3c11f18a6?w=1920&q=90&auto=format&fit=max", credit: "Luca Baggio", link: "https://unsplash.com/@luca42", source: "Unsplash", title: "Pine Forest" },
   { url: "https://images.unsplash.com/photo-1491002052546-bf38f186af56?w=1920&q=90&auto=format&fit=max", credit: "Austin Neill", link: "https://unsplash.com/@arstyy", source: "Unsplash", title: "Autumn Forest" },
   { url: "https://images.unsplash.com/photo-1504700610630-ac6edd918f09?w=1920&q=90&auto=format&fit=max", credit: "Jeremy Bishop", link: "https://unsplash.com/@jeremybishop", source: "Unsplash", title: "Ocean Cliff" },
   { url: "https://images.unsplash.com/photo-1444080748397-f442aa95c3e5?w=1920&q=90&auto=format&fit=max", credit: "Josh Gordon", link: "https://unsplash.com/@joshgordon", source: "Unsplash", title: "Desert Stars" },
   { url: "https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=1920&q=90&auto=format&fit=max", credit: "Jonatan Pie", link: "https://unsplash.com/@r3dmax", source: "Unsplash", title: "Aurora Borealis" },
   // ── Oceans, coasts, dawn — Unsplash ────────────────────────────
-  { url: "https://images.unsplash.com/photo-1484291470158-b8f8d608850d?w=1920&q=90&auto=format&fit=max", credit: "Cristina Gottardi", link: "https://unsplash.com/@cristina_gottardi", source: "Unsplash", title: "Sea of Clouds" },
-  { url: "https://images.unsplash.com/photo-1520942702018-0862200e6873?w=1920&q=90&auto=format&fit=max", credit: "Silas Baisch", link: "https://unsplash.com/@silasbaisch", source: "Unsplash", title: "Ocean Shore" },
+    { url: "https://images.unsplash.com/photo-1520942702018-0862200e6873?w=1920&q=90&auto=format&fit=max", credit: "Silas Baisch", link: "https://unsplash.com/@silasbaisch", source: "Unsplash", title: "Ocean Shore" },
   { url: "https://images.unsplash.com/photo-1414609245224-afa02bfb3fda?w=1920&q=90&auto=format&fit=max", credit: "Jordan McQueen", link: "https://unsplash.com/@jordanmcqueen", source: "Unsplash", title: "Sunrise Coast" },
   { url: "https://images.unsplash.com/photo-1495616811223-4d98c6e9c869?w=1920&q=90&auto=format&fit=max", credit: "Levi Bare", link: "https://unsplash.com/@levibare", source: "Unsplash", title: "Golden Cliffs" },
   // ── Pexels — free open license ─────────────────────────────────
-  { url: "https://images.pexels.com/photos/1287145/pexels-photo-1287145.jpeg?auto=compress&cs=tinysrgb&w=1920", credit: "Eberhard Grossgasteiger", link: "https://www.pexels.com/photo/1287145/", source: "Pexels", title: "Alpine Meadow" },
-  { url: "https://images.pexels.com/photos/36717/amazing-animal-beautiful-beautifull.jpg?auto=compress&cs=tinysrgb&w=1920", credit: "Pixabay", link: "https://www.pexels.com/photo/36717/", source: "Pexels", title: "Misty Mountains" },
-  { url: "https://images.pexels.com/photos/1671325/pexels-photo-1671325.jpeg?auto=compress&cs=tinysrgb&w=1920", credit: "Rafael Cerqueira", link: "https://www.pexels.com/photo/1671325/", source: "Pexels", title: "Mountain Path" },
-  { url: "https://images.pexels.com/photos/2387418/pexels-photo-2387418.jpeg?auto=compress&cs=tinysrgb&w=1920", credit: "Felipe Palacio", link: "https://www.pexels.com/photo/2387418/", source: "Pexels", title: "Foggy Valley" },
-  { url: "https://images.pexels.com/photos/1496373/pexels-photo-1496373.jpeg?auto=compress&cs=tinysrgb&w=1920", credit: "Trace Hudson", link: "https://www.pexels.com/photo/1496373/", source: "Pexels", title: "Ocean Waves" },
+      { url: "https://images.pexels.com/photos/1671325/pexels-photo-1671325.jpeg?auto=compress&cs=tinysrgb&w=1920", credit: "Rafael Cerqueira", link: "https://www.pexels.com/photo/1671325/", source: "Pexels", title: "Mountain Path" },
+    { url: "https://images.pexels.com/photos/1496373/pexels-photo-1496373.jpeg?auto=compress&cs=tinysrgb&w=1920", credit: "Trace Hudson", link: "https://www.pexels.com/photo/1496373/", source: "Pexels", title: "Ocean Waves" },
   { url: "https://images.pexels.com/photos/2166553/pexels-photo-2166553.jpeg?auto=compress&cs=tinysrgb&w=1920", credit: "Felix Mittermeier", link: "https://www.pexels.com/photo/2166553/", source: "Pexels", title: "Winter Forest" },
   // ── Wikimedia Commons — Public Domain Art ──────────────────────
   {
@@ -235,28 +229,14 @@ const BACKGROUNDS = [
     source: "Unsplash",
     title: "Desert Dunes"
   },
-  {
-    url: "https://images.unsplash.com/photo-1474044159687-1ee9f3a51722?w=1920&q=90&auto=format&fit=max",
-    credit: "Josh Hild",
-    link: "https://unsplash.com/@joshhild",
-    source: "Unsplash",
-    title: "Foggy Mountains"
-  },
-  {
+    {
     url: "https://images.unsplash.com/photo-1462275646964-a0e3c11f18a6?w=1920&q=90&auto=format&fit=max",
     credit: "Alain Bonnardeaux",
     link: "https://unsplash.com/@alainbonnardeaux",
     source: "Unsplash",
     title: "Alpine Forest"
   },
-  {
-    url: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=1920&q=90&auto=format&fit=max",
-    credit: "v2osk",
-    link: "https://unsplash.com/@v2osk",
-    source: "Unsplash",
-    title: "Forest Mist"
-  },
-  {
+    {
     url: "https://images.unsplash.com/photo-1477601263568-180e2c6d046e?w=1920&q=90&auto=format&fit=max",
     credit: "Joshua Earle",
     link: "https://unsplash.com/@joshuaearle",
@@ -277,44 +257,16 @@ const BACKGROUNDS = [
     source: "Unsplash",
     title: "Starry Night Sky"
   },
-  {
-    url: "https://images.unsplash.com/photo-1418985991508-e47386d96a71?w=1920&q=90&auto=format&fit=max",
-    credit: "Eberhard Grossgasteiger",
-    link: "https://unsplash.com/@eberhardgross",
-    source: "Unsplash",
-    title: "Alpine Snow"
-  },
-
+  
   /* ── More Pexels ── */
-  {
-    url: "https://images.pexels.com/photos/36717/amazing-animal-beautiful-beautifull.jpg?auto=compress&cs=tinysrgb&w=1920",
-    credit: "Pixabay",
-    link: "https://www.pexels.com/@pixabay",
-    source: "Pexels",
-    title: "Misty Mountains"
-  },
-  {
+    {
     url: "https://images.pexels.com/photos/3225517/pexels-photo-3225517.jpeg?auto=compress&cs=tinysrgb&w=1920",
     credit: "Michael Block",
     link: "https://www.pexels.com/@michael-block-1691617",
     source: "Pexels",
     title: "Forest Road"
   },
-  {
-    url: "https://images.pexels.com/photos/1367192/pexels-photo-1367192.jpeg?auto=compress&cs=tinysrgb&w=1920",
-    credit: "Eberhard Grossgasteiger",
-    link: "https://www.pexels.com/@eberhardgross",
-    source: "Pexels",
-    title: "Mountain Valley"
-  },
-  {
-    url: "https://images.pexels.com/photos/1295138/pexels-photo-1295138.jpeg?auto=compress&cs=tinysrgb&w=1920",
-    credit: "Emiliano Arano",
-    link: "https://www.pexels.com/@emiliano-arano-167768",
-    source: "Pexels",
-    title: "Dramatic Clouds"
-  },
-  {
+      {
     url: "https://images.pexels.com/photos/462118/pexels-photo-462118.jpeg?auto=compress&cs=tinysrgb&w=1920",
     credit: "Pixabay",
     link: "https://www.pexels.com/@pixabay",
@@ -355,8 +307,7 @@ const BACKGROUNDS = [
 
   /* ── Rivers, Lakes & Waterfalls ── */
   { url: "https://images.unsplash.com/photo-1432405972618-c6b0cfba8673?w=1920&q=90&auto=format&fit=max", credit: "Luca Bravo", link: "https://unsplash.com/@lucabravo", source: "Unsplash", title: "Mountain River" },
-  { url: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=1920&q=90&auto=format&fit=max", credit: "Lukasz Szmigiel", link: "https://unsplash.com/@szmigieldesign", source: "Unsplash", title: "Foggy Valley" },
-  { url: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1920&q=90&auto=format&fit=max", credit: "Pietro De Grandi", link: "https://unsplash.com/@peter_mc_greats", source: "Unsplash", title: "Lake Reflections" },
+    { url: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1920&q=90&auto=format&fit=max", credit: "Pietro De Grandi", link: "https://unsplash.com/@peter_mc_greats", source: "Unsplash", title: "Lake Reflections" },
   { url: "https://images.unsplash.com/photo-1433086966358-54859d0ed716?w=1920&q=90&auto=format&fit=max", credit: "Kazuend", link: "https://unsplash.com/@kazuend", source: "Unsplash", title: "Tropical Waterfall" },
   { url: "https://images.unsplash.com/photo-1482685945432-29571f634909?w=1920&q=90&auto=format&fit=max", credit: "Jonatan Pie", link: "https://unsplash.com/@r3dmax", source: "Unsplash", title: "Glacial River" },
   { url: "https://images.unsplash.com/photo-1505765050516-f72dcac9c60e?w=1920&q=90&auto=format&fit=max", credit: "Dave Hoefler", link: "https://unsplash.com/@davehoefler", source: "Unsplash", title: "Autumn Lake" },
@@ -364,10 +315,7 @@ const BACKGROUNDS = [
   { url: "https://images.unsplash.com/photo-1500534623283-312aade485b7?w=1920&q=90&auto=format&fit=max", credit: "Robert Bye", link: "https://unsplash.com/@robertbye", source: "Unsplash", title: "Peaceful Lake" },
 
   /* ── Fog, Mist & Rain ── */
-  { url: "https://images.unsplash.com/photo-1485236715568-ddc5ee6ca227?w=1920&q=90&auto=format&fit=max", credit: "Luca Bravo", link: "https://unsplash.com/@lucabravo", source: "Unsplash", title: "Foggy Mountain" },
-  { url: "https://images.unsplash.com/photo-1428908728789-d2de25dbd4e2?w=1920&q=90&auto=format&fit=max", credit: "Ales Krivec", link: "https://unsplash.com/@aleskrivec", source: "Unsplash", title: "Misty Hills" },
-  { url: "https://images.unsplash.com/photo-1534088568595-a066f410bcda?w=1920&q=90&auto=format&fit=max", credit: "Johannes Plenio", link: "https://unsplash.com/@jplenio", source: "Unsplash", title: "Fog Over Lake" },
-  { url: "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1920&q=90&auto=format&fit=max", credit: "Benjamin Voros", link: "https://unsplash.com/@vorosbenisop", source: "Unsplash", title: "Starry Mountain" },
+        { url: "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1920&q=90&auto=format&fit=max", credit: "Benjamin Voros", link: "https://unsplash.com/@vorosbenisop", source: "Unsplash", title: "Starry Mountain" },
   { url: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1920&q=90&auto=format&fit=max", credit: "Kalen Emsley", link: "https://unsplash.com/@kalenemsley", source: "Unsplash", title: "Mountain Peaks" },
   { url: "https://images.unsplash.com/photo-1500964757637-c85e8a162699?w=1920&q=90&auto=format&fit=max", credit: "Simon Berger", link: "https://unsplash.com/@8moments", source: "Unsplash", title: "Golden Hills" },
   { url: "https://images.unsplash.com/photo-1516912481808-3406841bd33c?w=1920&q=90&auto=format&fit=max", credit: "Chandler Cruttenden", link: "https://unsplash.com/@chancruttenden", source: "Unsplash", title: "Snowy Road" },
@@ -387,20 +335,17 @@ const BACKGROUNDS = [
   { url: "https://images.unsplash.com/photo-1491002052546-bf38f186af56?w=1920&q=90&auto=format&fit=max", credit: "Ales Krivec", link: "https://unsplash.com/@aleskrivec", source: "Unsplash", title: "Frozen Lake" },
   { url: "https://images.unsplash.com/photo-1483664852095-d6cc6870702d?w=1920&q=90&auto=format&fit=max", credit: "Khamkeo Vilaysing", link: "https://unsplash.com/@mahkeo", source: "Unsplash", title: "Frosty Forest" },
   { url: "https://images.unsplash.com/photo-1517299321609-52687d1bc55a?w=1920&q=90&auto=format&fit=max", credit: "Nathan Anderson", link: "https://unsplash.com/@nathananderson", source: "Unsplash", title: "Snow Peaks" },
-  { url: "https://images.unsplash.com/photo-1478719059408-592965723cbc?w=1920&q=90&auto=format&fit=max", credit: "Simon Matzinger", link: "https://unsplash.com/@8moments", source: "Unsplash", title: "Winter Fog" },
-
+  
   /* ── Coastal & Ocean ── */
   { url: "https://images.unsplash.com/photo-1505228395891-9a51e7e86bf6?w=1920&q=90&auto=format&fit=max", credit: "Frank McKenna", link: "https://unsplash.com/@frankiefoto", source: "Unsplash", title: "Ocean Aerial" },
   { url: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1920&q=90&auto=format&fit=max", credit: "Sean O.", link: "https://unsplash.com/@seano", source: "Unsplash", title: "Tropical Beach" },
   { url: "https://images.unsplash.com/photo-1468581264429-2548ef9eb732?w=1920&q=90&auto=format&fit=max", credit: "Jeremy Bishop", link: "https://unsplash.com/@jeremybishop", source: "Unsplash", title: "Sea Rocks" },
-  { url: "https://images.unsplash.com/photo-1484291470158-b8f8d608850d?w=1920&q=90&auto=format&fit=max", credit: "Shifaaz Shamoon", link: "https://unsplash.com/@sotti", source: "Unsplash", title: "Maldives Beach" },
-  { url: "https://images.unsplash.com/photo-1414609245224-afa02bfb3fda?w=1920&q=90&auto=format&fit=max", credit: "Dan Gold", link: "https://unsplash.com/@danielcgold", source: "Unsplash", title: "Rocky Coast" },
+    { url: "https://images.unsplash.com/photo-1414609245224-afa02bfb3fda?w=1920&q=90&auto=format&fit=max", credit: "Dan Gold", link: "https://unsplash.com/@danielcgold", source: "Unsplash", title: "Rocky Coast" },
   { url: "https://images.unsplash.com/photo-1471922694854-ff1b63b20054?w=1920&q=90&auto=format&fit=max", credit: "Anastasia Taioglou", link: "https://unsplash.com/@tfrlee", source: "Unsplash", title: "Blue Coast" },
   { url: "https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=1920&q=90&auto=format&fit=max", credit: "Matt Hardy", link: "https://unsplash.com/@matthardy", source: "Unsplash", title: "Ocean Waves" },
 
   /* ── Mountains & Valleys ── */
-  { url: "https://images.unsplash.com/photo-1454496522488-7a8e488e8606?w=1920&q=90&auto=format&fit=max", credit: "Martin Adams", link: "https://unsplash.com/@martinadams", source: "Unsplash", title: "Himalayan Peak" },
-  { url: "https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?w=1920&q=90&auto=format&fit=max", credit: "Sven Scheuermeier", link: "https://unsplash.com/@sveninho", source: "Unsplash", title: "Alpine Summit" },
+    { url: "https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?w=1920&q=90&auto=format&fit=max", credit: "Sven Scheuermeier", link: "https://unsplash.com/@sveninho", source: "Unsplash", title: "Alpine Summit" },
   { url: "https://images.unsplash.com/photo-1464278533981-50106e6176b1?w=1920&q=90&auto=format&fit=max", credit: "Joshua Earle", link: "https://unsplash.com/@joshuaearle", source: "Unsplash", title: "Lone Wanderer" },
   { url: "https://images.unsplash.com/photo-1491466424936-e304919aada7?w=1920&q=90&auto=format&fit=max", credit: "Dino Reichmuth", link: "https://unsplash.com/@dinoreichmuth", source: "Unsplash", title: "Mountain Road" },
   { url: "https://images.unsplash.com/photo-1445363692815-ebcd599f7621?w=1920&q=90&auto=format&fit=max", credit: "Ales Krivec", link: "https://unsplash.com/@aleskrivec", source: "Unsplash", title: "Mountain Chapel" },
@@ -650,17 +595,14 @@ const BACKGROUNDS = [
   // ── Curated high-quality additions ──
   { url: "https://images.unsplash.com/photo-1501854140801-50d01698950b?w=1920&q=90&auto=format&fit=max", credit: "Qingbao Meng", link: "https://unsplash.com/@qbqn", source: "Unsplash", title: "Terraced Mountains" },
   { url: "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=1920&q=90&auto=format&fit=max", credit: "Luca Bravo", link: "https://unsplash.com/@lucabravo", source: "Unsplash", title: "Mountain Lake Cabin" },
-  { url: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1920&q=90&auto=format&fit=max", credit: "Pine Watt", link: "https://unsplash.com/@pinewatt", source: "Unsplash", title: "Misty Peaks" },
-  { url: "https://images.unsplash.com/photo-1511593358241-7eea1f3c84e5?w=1920&q=90&auto=format&fit=max", credit: "John Towner", link: "https://unsplash.com/@heytowner", source: "Unsplash", title: "Calm Ocean Horizon" },
-  { url: "https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?w=1920&q=90&auto=format&fit=max", credit: "Tim Mossholder", link: "https://unsplash.com/@timmossholder", source: "Unsplash", title: "Forest Canopy Path" },
+      { url: "https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?w=1920&q=90&auto=format&fit=max", credit: "Tim Mossholder", link: "https://unsplash.com/@timmossholder", source: "Unsplash", title: "Forest Canopy Path" },
   { url: "https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=1920&q=90&auto=format&fit=max", credit: "Greg Rakozy", link: "https://unsplash.com/@grakozy", source: "Unsplash", title: "Milky Way Arch" },
   { url: "https://images.unsplash.com/photo-1493246507139-91e8fad9978e?w=1920&q=90&auto=format&fit=max", credit: "Luca Bravo", link: "https://unsplash.com/@lucabravo", source: "Unsplash", title: "Dolomite Peaks" },
   { url: "https://images.unsplash.com/photo-1540202404-a2f29016b523?w=1920&q=90&auto=format&fit=max", credit: "Silas Baisch", link: "https://unsplash.com/@silasbaisch", source: "Unsplash", title: "Turquoise Coast" },
   { url: "https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?w=1920&q=90&auto=format&fit=max", credit: "Marivi Pazos", link: "https://unsplash.com/@marivipazos", source: "Unsplash", title: "Nordic Fjords" },
   { url: "https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?w=1920&q=90&auto=format&fit=max", credit: "Cristina Gottardi", link: "https://unsplash.com/@cristina_gottardi", source: "Unsplash", title: "Snow Ridge" },
   { url: "https://images.unsplash.com/photo-1465146633011-14f8e0781093?w=1920&q=90&auto=format&fit=max", credit: "Timothy Eberly", link: "https://unsplash.com/@timothyeberly", source: "Unsplash", title: "Wildflower Hills" },
-  { url: "https://images.unsplash.com/photo-1504198266287-1659872e6590?w=1920&q=90&auto=format&fit=max", credit: "eberhard grossgasteiger", link: "https://unsplash.com/@eberhardgross", source: "Unsplash", title: "Soft Alpine Clouds" },
-  { url: "https://images.unsplash.com/photo-1519689373023-dd07c7988603?w=1920&q=90&auto=format&fit=max", credit: "Jeremy Bishop", link: "https://unsplash.com/@jeremybishop", source: "Unsplash", title: "Palm Sunset" },
+    { url: "https://images.unsplash.com/photo-1519689373023-dd07c7988603?w=1920&q=90&auto=format&fit=max", credit: "Jeremy Bishop", link: "https://unsplash.com/@jeremybishop", source: "Unsplash", title: "Palm Sunset" },
   { url: "https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=1920&q=90&auto=format&fit=max", credit: "Quino Al", link: "https://unsplash.com/@quinoal", source: "Unsplash", title: "Golden Sunrise Field" },
 
 ];
