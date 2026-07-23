@@ -1,8 +1,8 @@
 {
-  "updated": "2026-07-23T17:07:25.534Z",
+  "updated": "2026-07-23T18:47:03.386Z",
   "total": 185,
   "withAuthor": 185,
-  "mismatches": 5,
+  "mismatches": 4,
   "ok": true,
   "samples": [
     {
@@ -30,14 +30,6 @@
       "reason": "no-author-source"
     },
     {
-      "title": "Des initiatives qui rassemblent",
-      "link": "https://www.delitfrancais.com/2026/03/18/des-initiatives-qui-rassemblent/",
-      "source": "Le Délit",
-      "fieldAuthor": "La rédaction",
-      "canonicalAuthor": "Héloïse Durning et Elie Nguyen",
-      "reason": "page-byline"
-    },
-    {
       "title": "Garda World au CVM (Éditorial)",
       "link": "https://exilecvm.wordpress.com/2026/03/13/manifestation-contre-gardaworld/",
       "source": "Exil",
@@ -46,5 +38,5 @@
       "reason": "no-author-source"
     }
   ],
-  "fixed": 5
+  "fixed": 4
 }

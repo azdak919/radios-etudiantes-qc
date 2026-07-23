@@ -1,6 +1,6 @@
 {
-  "updated": "2026-07-23T17:07:15.473Z",
-  "updatedSlot": "2026-07-23T16:00:00.000Z",
+  "updated": "2026-07-23T18:46:54.229Z",
+  "updatedSlot": null,
   "count": 185,
   "freshnessSessions": 3,
   "sources": {
@@ -10,7 +10,7 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-05-15T16:00:00.000Z",
-      "lastFetchOk": "2026-07-23T17:06:36.564Z"
+      "lastFetchOk": "2026-07-23T18:46:07.726Z"
     },
     "Montréal Campus": {
       "fetchOk": true,
@@ -18,7 +18,7 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-05-09T03:14:30.000Z",
-      "lastFetchOk": "2026-07-23T17:06:37.879Z"
+      "lastFetchOk": "2026-07-23T18:46:09.395Z"
     },
     "Le Délit": {
       "fetchOk": true,
@@ -26,7 +26,7 @@
       "articleCount": 20,
       "freshArticleCount": 20,
       "lastArticle": "2026-03-25T11:00:00.000Z",
-      "lastFetchOk": "2026-07-23T17:06:43.131Z"
+      "lastFetchOk": "2026-07-23T18:46:13.911Z"
     },
     "The McGill Daily": {
       "fetchOk": true,
@@ -34,7 +34,7 @@
       "articleCount": 15,
       "freshArticleCount": 15,
       "lastArticle": "2026-07-06T12:00:00.000Z",
-      "lastFetchOk": "2026-07-23T17:06:44.002Z"
+      "lastFetchOk": "2026-07-23T18:46:14.986Z"
     },
     "The Link": {
       "fetchOk": true,
@@ -42,7 +42,7 @@
       "articleCount": 20,
       "freshArticleCount": 20,
       "lastArticle": "2026-07-08T14:41:00.000Z",
-      "lastFetchOk": "2026-07-23T17:06:44.625Z"
+      "lastFetchOk": "2026-07-23T18:46:16.406Z"
     },
     "Zone Campus": {
       "fetchOk": true,
@@ -50,7 +50,7 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-05-08T14:20:26.000Z",
-      "lastFetchOk": "2026-07-23T17:06:46.253Z"
+      "lastFetchOk": "2026-07-23T18:46:18.096Z"
     },
     "L'Exemplaire": {
       "fetchOk": true,
@@ -58,7 +58,7 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-05-15T16:31:24.000Z",
-      "lastFetchOk": "2026-07-23T17:06:47.963Z"
+      "lastFetchOk": "2026-07-23T18:46:20.323Z"
     },
     "Le Collectif": {
       "fetchOk": true,
@@ -66,7 +66,7 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-07-23T15:03:36.000Z",
-      "lastFetchOk": "2026-07-23T17:06:48.847Z"
+      "lastFetchOk": "2026-07-23T18:46:21.411Z"
     },
     "Exil": {
       "fetchOk": true,
@@ -74,7 +74,7 @@
       "articleCount": 7,
       "freshArticleCount": 7,
       "lastArticle": "2026-04-18T22:22:07.000Z",
-      "lastFetchOk": "2026-07-23T17:06:49.098Z"
+      "lastFetchOk": "2026-07-23T18:46:21.671Z"
     },
     "La Pige": {
       "fetchOk": true,
@@ -82,7 +82,7 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-06-22T14:36:10.000Z",
-      "lastFetchOk": "2026-07-23T17:06:49.971Z"
+      "lastFetchOk": "2026-07-23T18:46:22.495Z"
     },
     "Le Polyscope": {
       "fetchOk": true,
@@ -90,7 +90,7 @@
       "articleCount": 13,
       "freshArticleCount": 13,
       "lastArticle": "2026-02-25T14:38:32.764Z",
-      "lastFetchOk": "2026-07-23T17:06:54.136Z"
+      "lastFetchOk": "2026-07-23T18:46:26.157Z"
     },
     "The Tribune": {
       "fetchOk": true,
@@ -98,7 +98,7 @@
       "articleCount": 20,
       "freshArticleCount": 20,
       "lastArticle": "2026-07-21T13:21:49.000Z",
-      "lastFetchOk": "2026-07-23T17:06:54.481Z"
+      "lastFetchOk": "2026-07-23T18:46:29.546Z"
     },
     "The Campus": {
       "fetchOk": true,
@@ -106,7 +106,7 @@
       "articleCount": 20,
       "freshArticleCount": 20,
       "lastArticle": "2026-04-06T16:03:16.000Z",
-      "lastFetchOk": "2026-07-23T17:06:54.720Z"
+      "lastFetchOk": "2026-07-23T18:46:29.832Z"
     },
     "The Plant": {
       "fetchOk": true,
@@ -114,7 +114,7 @@
       "articleCount": 10,
       "freshArticleCount": 10,
       "lastArticle": "2026-05-11T20:44:08.000Z",
-      "lastFetchOk": "2026-07-23T17:06:54.854Z"
+      "lastFetchOk": "2026-07-23T18:46:30.012Z"
     }
   },
   "items": [
@@ -3851,10 +3851,9 @@
       "excerpt": "À McGill, des projets pour célébrer et soutenir les femmes.",
       "image": "https://www.delitfrancais.com/wp-content/uploads/2026/03/annonces.png",
       "featured": true,
-      "_pageAuthor": "Héloïse Durning et Elie Nguyen",
       "authorCheckedAt": "2026-07-23T17:07:25.242Z",
+      "_pageAuthor": "Héloïse Durning et Elie Nguyen",
       "sourceImageCredit": "Crédit photo : Le Délit",
-      "sourceImageCreator": "",
       "sourceImageCreditUrl": "https://www.delitfrancais.com/2026/03/18/des-initiatives-qui-rassemblent/",
       "sourceImageCreditFrom": "media",
       "sourceImageCreditCited": false,
