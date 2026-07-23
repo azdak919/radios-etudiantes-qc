@@ -1343,15 +1343,19 @@ html.is-firefox .tuner-cast--bar[hidden] { display: flex !important; }
 
 @media (min-width: 1100px) {
   /*
-   * Grille finale dès le premier paint (voir aussi <style> critique dans index.html).
-   * Colonne « À l'antenne » toujours présente — le volume reste compact.
+   * Module antenne stable :
+   *  - colonne droite à largeur fixe (ne glisse plus selon le titre)
+   *  - libellé dans un rail fixe (À L'ANTENNE / À VENIR = même place)
+   *  - titres longs → ellipsis, sans déplacer le libellé
+   *  - centrage vertical sur l’axe volume / play
    */
   .tuner-inner {
     max-width: 1180px;
     padding-top: 8px;
     padding-bottom: 8px;
     display: grid;
-    grid-template-columns: minmax(0, 1.15fr) minmax(300px, 370px);
+    /* Colonne antenne fixe : ancrage horizontal constant */
+    grid-template-columns: minmax(0, 1fr) 268px;
     gap: 0;
     align-items: center;
   }
@@ -1374,30 +1378,48 @@ html.is-firefox .tuner-cast--bar[hidden] { display: flex !important; }
     flex-shrink: 0;
   }
 
-  /* Libellé à gauche · titre+horaire à droite (2 lignes max, pas 3 empilées) */
   .tuner-nowair {
     grid-column: 2;
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    /* Rail libellé fixe + zone titre (minmax 0 pour ellipsis) */
+    grid-template-columns: 5.75rem minmax(0, 1fr);
     align-items: center;
-    gap: 10px;
-    flex: unset;
-    width: auto;
+    column-gap: 8px;
+    width: 100%;
     max-width: none;
     min-width: 0;
-    margin-left: 0;
-    padding-left: 28px;
+    margin: 0;
+    padding: 0 4px 0 16px;
+    border-left: 1px solid rgba(255, 255, 255, 0.12);
+    box-sizing: border-box;
     align-self: center;
     opacity: 1;
   }
 
   .tuner-nowair-label {
-    margin-top: 0;
+    margin: 0;
+    width: 100%;
+    max-width: 100%;
+    line-height: 1.15;
+    letter-spacing: 0.1em;
+    /* Même emplacement pour « À l'antenne » et « À venir » */
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .tuner-nowair-body {
+    display: flex;
     flex-direction: column;
+    justify-content: center;
     gap: 1px;
+    min-width: 0;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .tuner-nowair-title,
+  .tuner-nowair-sub {
+    max-width: 100%;
   }
 
   /*
