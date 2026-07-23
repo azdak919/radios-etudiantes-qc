@@ -1,65 +1,23 @@
 {
-  "updated": "2026-07-23T15:53:08.849Z",
+  "updated": "2026-07-23T17:13:54.140Z",
   "total": 185,
   "withImage": 168,
   "withCredit": 168,
-  "cited": 128,
+  "cited": 127,
   "pending": 0,
   "missingHero": 0,
   "ok": true,
-  "checked": 7,
-  "updatedCount": 7,
-  "citedNew": 6,
+  "checked": 1,
+  "updatedCount": 1,
+  "citedNew": 0,
   "fallbackNew": 1,
   "samples": [
     {
-      "title": "Sommet de l’OTAN à Ankara",
-      "source": "Le Collectif",
-      "credit": "Photo : Win McNamee/Getty Images",
-      "cited": true,
-      "method": "json-ld"
-    },
-    {
-      "title": "Sherbrooke permet désormais des terrains plus naturels",
-      "source": "Le Collectif",
-      "credit": "Photo : Blogue Accent Local",
-      "cited": true,
-      "method": "body-tail"
-    },
-    {
-      "title": "Chirurgie esthétique au Québec : entre confiance en soi et quête de perfection",
-      "source": "Le Collectif",
-      "credit": "Photo : Beautifi",
-      "cited": true,
-      "method": "body-tail"
-    },
-    {
-      "title": "Forum RÉA : une alliance pour l’éducation en milieu défavorisé",
-      "source": "Quartier Libre",
-      "credit": "Crédit photo : Quartier Libre",
+      "title": "Des initiatives qui rassemblent",
+      "source": "Le Délit",
+      "credit": "Crédit photo : Le Délit",
       "cited": false,
       "method": null
-    },
-    {
-      "title": "L’épidémie de la nonchalance",
-      "source": "Le Délit",
-      "credit": "Photo : Elie Nguyen",
-      "cited": true,
-      "method": "media-credit-featured"
-    },
-    {
-      "title": "La performance de l’homosexualité : un privilège ?",
-      "source": "Le Délit",
-      "credit": "Photo : Félix Fournier",
-      "cited": true,
-      "method": "media-credit-featured"
-    },
-    {
-      "title": "Les femmes MAGA au service du patriarcat",
-      "source": "Le Délit",
-      "credit": "Photo : Stu Doré",
-      "cited": true,
-      "method": "media-credit-featured"
     }
   ]
 }

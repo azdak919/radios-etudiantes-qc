@@ -1,41 +1,14 @@
 {
-  "updated": "2026-07-23T15:46:51.098Z",
+  "updated": "2026-07-23T17:07:40.939Z",
   "total": 185,
   "pool": 58,
-  "incomplete": 5,
+  "incomplete": 3,
   "withLeadExcerpt": 75,
-  "candidates": 5,
-  "enriched": 3,
-  "failed": 0,
+  "candidates": 3,
+  "enriched": 0,
+  "failed": 1,
   "ok": true,
   "samples": [
-    {
-      "title": "Sommet de l’OTAN à Ankara",
-      "link": "https://lecollectif.ca/a-la-une/sommet-de-lotan-a-ankara/",
-      "ok": true,
-      "score": 100,
-      "chars": 351,
-      "sample": "Les personnes dirigeantes des États membres de l’OTAN se sont réunies les 7 et 8 juillet derniers po",
-      "changed": true
-    },
-    {
-      "title": "Sherbrooke permet désormais des terrains plus naturels",
-      "link": "https://lecollectif.ca/a-la-une/sherbrooke-permet-desormais-des-terrains-plus-naturels/",
-      "ok": true,
-      "score": 100,
-      "chars": 307,
-      "sample": "Les citoyens et citoyennes de Sherbrooke auront désormais plus de liberté dans l’aménagement de leur",
-      "changed": true
-    },
-    {
-      "title": "Chirurgie esthétique au Québec : entre confiance en soi et quête de perfection",
-      "link": "https://lecollectif.ca/a-la-une/chirurgie-esthetique-au-quebec-entre-confiance-en-soi-et-quete-de-perfection/",
-      "ok": true,
-      "score": 100,
-      "chars": 292,
-      "sample": "Présente au Canada depuis près de 100 ans, l’industrie de la chirurgie esthétique continue de se dév",
-      "changed": true
-    },
     {
       "title": "The Cruel Optimism of Summer",
       "link": "https://www.mcgilldaily.com/2026/07/the-cruel-optimism-of-summer/",
