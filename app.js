@@ -299,6 +299,7 @@ const NEWS_SEARCH_INPUT  = document.getElementById('news-search-input');
 const NEWS_SEARCH_CLEAR  = document.getElementById('news-search-clear');
 const NEWS_SEARCH_HINT   = document.getElementById('news-search-hint');
 const TODAY_DATE     = document.getElementById('today-date');
+const MASTHEAD_WEATHER = document.getElementById('masthead-weather');
 const TOAST_EL       = document.getElementById('toast');
 const THEME_TOGGLE   = document.getElementById('theme-toggle');
 const EXTERNAL_MODAL = document.getElementById('external-listen');
@@ -438,6 +439,9 @@ async function init() {
   initTheme();
   initMastheadActions();
   renderTodayDate();
+  // Les constantes météo sont déclarées plus bas dans ce script : microtask
+  // = après l'évaluation complète du fichier, sans retarder le reste du site.
+  queueMicrotask(() => { void initMastheadWeather(); });
   setupAudio();
   bindTuner();
   bindExternalListen();
@@ -795,6 +799,76 @@ function renderTodayDate() {
   TODAY_DATE.textContent = now.toLocaleDateString('fr-CA', {
     weekday: 'long', day: 'numeric', month: 'long', year: 'numeric',
   });
+}
+
+// ─── Météo des principaux campus (desktop / tablette) ────────────────────────
+const WEATHER_CACHE_KEY = 'le_radar_masthead_weather_v1';
+const WEATHER_CACHE_MS = 15 * 60 * 1000;
+const WEATHER_CITIES = [
+  { id: 'montreal', lat: 45.5017, lon: -73.5673 },
+  { id: 'quebec', lat: 46.8139, lon: -71.2080 },
+  { id: 'sherbrooke', lat: 45.4000, lon: -71.9000 },
+  { id: 'trois-rivieres', lat: 46.3432, lon: -72.5430 },
+  { id: 'saguenay', lat: 48.4284, lon: -71.0680 },
+  { id: 'rimouski', lat: 48.4488, lon: -68.5230 },
+];
+
+function weatherIcon(code, isDay = 1) {
+  if (code === 0) return isDay ? '☀︎' : '☾';
+  if ([1, 2].includes(code)) return isDay ? '⛅' : '☁︎';
+  if (code === 3 || code === 45 || code === 48) return '☁︎';
+  if ([51, 53, 55, 56, 57].includes(code)) return '⌇';
+  if ([61, 63, 65, 66, 67, 80, 81, 82].includes(code)) return '☂';
+  if ([71, 73, 75, 77, 85, 86].includes(code)) return '❄';
+  if ([95, 96, 99].includes(code)) return 'ϟ';
+  return '·';
+}
+
+function renderMastheadWeather(entries) {
+  if (!MASTHEAD_WEATHER || !Array.isArray(entries)) return;
+  WEATHER_CITIES.forEach((city, index) => {
+    const current = entries[index]?.current;
+    const el = MASTHEAD_WEATHER.querySelector(`[data-weather-city="${city.id}"]`);
+    if (!el || !current || !Number.isFinite(current.temperature_2m)) return;
+    el.querySelector('.masthead-weather__icon').textContent = weatherIcon(current.weather_code, current.is_day);
+    el.querySelector('.masthead-weather__temp').textContent = `${Math.round(current.temperature_2m)}°`;
+  });
+  MASTHEAD_WEATHER.classList.remove('hidden');
+}
+
+function readWeatherCache() {
+  try {
+    const cached = JSON.parse(localStorage.getItem(WEATHER_CACHE_KEY) || 'null');
+    if (cached?.at && Date.now() - cached.at < WEATHER_CACHE_MS && Array.isArray(cached.entries)) return cached.entries;
+  } catch { /* cache absent ou invalide */ }
+  return null;
+}
+
+async function initMastheadWeather() {
+  if (!MASTHEAD_WEATHER || window.innerWidth < 860) return;
+  const cached = readWeatherCache();
+  if (cached) renderMastheadWeather(cached);
+  try {
+    const params = new URLSearchParams({
+      latitude: WEATHER_CITIES.map((city) => city.lat).join(','),
+      longitude: WEATHER_CITIES.map((city) => city.lon).join(','),
+      current: 'temperature_2m,weather_code,is_day',
+      temperature_unit: 'celsius',
+      timezone: 'America/Toronto',
+    });
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), 4500);
+    const response = await fetch(`https://api.open-meteo.com/v1/forecast?${params}`, {
+      signal: controller.signal,
+      cache: 'no-store',
+    });
+    clearTimeout(timer);
+    const data = await response.json();
+    const entries = Array.isArray(data) ? data : [data];
+    if (entries.length !== WEATHER_CITIES.length) return;
+    try { localStorage.setItem(WEATHER_CACHE_KEY, JSON.stringify({ at: Date.now(), entries })); } catch { /* quota */ }
+    renderMastheadWeather(entries);
+  } catch { /* module discret : absent si la météo est indisponible */ }
 }
 
 // ═══════════════════════════════════════════════════════════════════════════

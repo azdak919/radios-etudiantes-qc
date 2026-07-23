@@ -169,6 +169,41 @@ a { color: inherit; }
 
 .masthead-date { font-weight: 600; }
 
+/* Météo campus — seulement quand le chrome a réellement l'espace.
+   La liste se réduit de droite à gauche, puis disparaît entièrement. */
+.masthead-weather {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  min-width: 0;
+  margin: 0 16px;
+  color: var(--ink-soft);
+  white-space: nowrap;
+}
+.masthead-weather__city {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 4px;
+  padding: 0 10px;
+  border-right: 1px solid var(--rule);
+  font-size: 11px;
+  letter-spacing: 0.02em;
+}
+.masthead-weather__city:last-child { border-right: 0; }
+.masthead-weather__icon { font-size: 13px; line-height: 1; }
+.masthead-weather__temp { font-weight: 700; color: var(--ink); font-variant-numeric: tabular-nums; }
+@media (min-width: 860px) {
+  .masthead-top { display: grid; grid-template-columns: minmax(145px, 1fr) auto minmax(145px, 1fr); }
+  .masthead-weather { display: inline-flex; }
+  .masthead-actions { justify-self: end; }
+}
+@media (max-width: 1179.98px) { .masthead-weather__city:nth-child(6) { display: none; } }
+@media (max-width: 1099.98px) { .masthead-weather__city:nth-child(5) { display: none; } }
+@media (max-width: 999.98px) { .masthead-weather__city:nth-child(4) { display: none; } }
+@media (max-width: 919.98px) { .masthead-weather__city:nth-child(3) { display: none; } }
+@media (max-width: 859.98px) { .masthead-weather { display: none !important; } }
+
 .masthead-actions {
   display: flex;
   align-items: center;
