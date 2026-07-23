@@ -391,16 +391,16 @@ html[data-embed="tuner"] .tuner-nowair.hidden {
   height: var(--embed-ctrl);
   min-height: var(--embed-ctrl);
   margin-left: 0;
-  /* Même silhouette que le carré du dial */
-  padding: 3px 12px;
-  border: 1px solid rgba(255, 255, 255, 0.16);
+  /* Même hauteur que le dial, sans barre / bordure à gauche (séparateur volume) */
+  padding: 3px 10px 3px 4px;
+  border: none;
   border-radius: 9px;
-  background: rgba(255, 255, 255, 0.05);
+  background: transparent;
   align-self: center;
   opacity: 1;
   pointer-events: auto;
   box-sizing: border-box;
-  transition: opacity 0.3s ease, border-color 140ms ease, background 140ms ease, box-shadow 140ms ease;
+  transition: opacity 0.3s ease;
   overflow: hidden;
 }
 
@@ -455,18 +455,7 @@ html[data-embed="tuner"] .tuner-nowair-sub {
   max-width: 100%;
 }
 
-/* Contour coral / ambre aligné sur le dial en lecture */
-html[data-embed="tuner"] .tuner.is-playing .tuner-nowair.is-live {
-  border-color: rgba(255, 125, 110, 0.55);
-  background: rgba(200, 16, 46, 0.08);
-}
-
-html[data-embed="tuner"] .tuner.is-playing .tuner-nowair.is-upcoming {
-  border-color: rgba(201, 168, 106, 0.5);
-  background: rgba(201, 168, 106, 0.08);
-}
-
-/* Teintes live / à venir (miroir bureau) */
+/* Teintes live / à venir (miroir bureau) — sans cadre séparateur */
 html[data-embed="tuner"] .tuner.is-playing .tuner-nowair.is-live .tuner-nowair-label,
 html[data-embed="tuner"] .tuner.is-playing .tuner-nowair.is-live .tuner-nowair-title {
   color: var(--tuner-onair-live);
