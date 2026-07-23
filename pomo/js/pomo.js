@@ -179,11 +179,8 @@ function PomoUI() {
 
   if (display) display.innerHTML = `${minStr}<span class="pomo-time-unit">m</span>`;
 
-  // Update browser tab title with stage and time (emojis for quick recognition)
-  const stageLabel = pomo.isBreak ? (pomo.isLongBreak ? 'Long Break' : 'Break') : 'Focus';
-  const stageEmoji = pomo.isBreak ? (pomo.isLongBreak ? '🌿' : '☕') : '🎯';
-  const pausedMark = !pomo.isRunning && (pomo.pausedRemaining != null || pomo.startedAt != null) ? '⏸ ' : '';
-  document.title = `${pausedMark}${stageEmoji} ${stageLabel} · ${minStr}m · Pomodoro`;
+  // Le titre est le libellé stable employé par les favoris et onglets.
+  document.title = 'Pomo';
 
   if (pomo.isBreak) {
     progress?.classList.add('on-break');

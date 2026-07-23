@@ -996,9 +996,8 @@ function applyPomoStageStrings(strings = getTranslatedPomoStrings()) {
     fpReady.textContent = pomo.isBreak ? strings.readyBreak : strings.readyFocus;
   }
 
-  const stageEmoji = pomo.isBreak ? (pomo.isLongBreak ? '🌿' : '☕') : '🎯';
-  const pausedMark = !pomo.isRunning && (pomo.pausedRemaining != null || pomo.startedAt != null) ? '⏸ ' : '';
-  document.title = `${pausedMark}${stageEmoji} ${stageLabel} · ${formatMinutes(getRemaining())}m · Pomodoro`;
+  // Ne pas faire varier le texte d’un favori avec la phase ou la traduction.
+  document.title = 'Pomo';
 }
 
 (function patchPomoUI() {
