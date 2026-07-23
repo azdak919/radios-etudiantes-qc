@@ -32,8 +32,9 @@ test('météo campus : elle s’adapte à la largeur du masthead', async ({ page
   await expect(ribbon.locator('.masthead-weather__city.is-active .masthead-weather__temp').first()).not.toHaveText('—');
   await expect(ribbon.locator('.masthead-weather__city')).toHaveCount(47);
   await expect(ribbon.locator('.masthead-weather__city.is-active')).toHaveCount(4);
-  await expect(ribbon.locator('.masthead-weather__city.is-active[data-weather-group="campus"]')).toHaveCount(2);
-  await expect(ribbon.locator('.masthead-weather__city.is-active[data-weather-group="nation"]')).toHaveCount(2);
+  await expect(ribbon.locator('.masthead-weather__city.is-active[data-weather-group="campus"]')).toHaveCount(3);
+  // Une seule ville des Premières Nations ou inuit parmi les trois cartes secondaires.
+  await expect(ribbon.locator('.masthead-weather__city.is-active[data-weather-group="nation"]')).toHaveCount(1);
   await expect(ribbon.locator('.masthead-weather__city.is-active').first()).toHaveAttribute('data-weather-city', 'montreal');
   const activeBoxes = (await ribbon.locator('.masthead-weather__city.is-active').evaluateAll((cities) => cities
     .map((city) => city.getBoundingClientRect())
@@ -82,6 +83,6 @@ test('météo campus : elle s’adapte à la largeur du masthead', async ({ page
   expect(countAt920).toBeGreaterThanOrEqual(1);
   await expect(ribbon.locator('.masthead-weather__board')).toHaveAttribute('data-weather-count', String(countAt920));
 
-  await page.setViewportSize({ width: 880, height: 900 });
+  await page.setViewportSize({ width: 610, height: 900 });
   await expect(ribbon).toBeHidden();
 });

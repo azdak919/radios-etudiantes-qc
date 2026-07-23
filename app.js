@@ -857,17 +857,17 @@ const WEATHER_CITIES = [
   { id: 'saint-ignace-de-loyola', name: 'Saint-Ignace-de-Loyola', region: 'Lanaudière', lat: 46.0800, lon: -73.0200 },
   // Une collectivité représentative par nation : il n'existe pas de capitale
   // unique pour les nations composées de plusieurs communautés.
-  { id: 'odanak', name: 'Odanak', nation: 'Abénakis', lat: 46.0723, lon: -72.8181 },
-  { id: 'kitigan-zibi', name: 'Kitigan Zibi', nation: 'Anicinabeg', lat: 46.3825, lon: -75.9879 },
-  { id: 'manawan', name: 'Manawan', nation: 'Atikamekw', lat: 47.2203, lon: -74.3822 },
-  { id: 'nemaska', name: 'Nemaska', nation: 'Eeyou', lat: 51.2022, lon: -76.1906 },
-  { id: 'wendake', name: 'Wendake', nation: 'Wendat', lat: 46.8550, lon: -71.3567 },
-  { id: 'uashat', name: 'Uashat mak Mani-Utenam', nation: 'Innu', lat: 50.2300, lon: -66.3800 },
-  { id: 'kuujjuaq', name: 'Kuujjuaq', nation: 'Inuit · Nunavik', lat: 58.1000, lon: -68.4200 },
-  { id: 'cacouna', name: 'Cacouna', nation: 'Wolastoqiyik', lat: 47.9204, lon: -69.5147 },
-  { id: 'gesgapegiag', name: 'Gesgapegiag', nation: 'Mi’gmaq', lat: 48.2125, lon: -65.9961 },
-  { id: 'kahnawake', name: 'Kahnawà:ke', nation: 'Kanien’kehà:ka', lat: 45.4000, lon: -73.7500 },
-  { id: 'kawawachikamach', name: 'Kawawachikamach', nation: 'Naskapi', lat: 55.3400, lon: -66.8500 },
+  { id: 'odanak', name: 'Odanak', nation: 'Abénakis', lat: 46.0723, lon: -72.8181, weatherUrl: 'https://www.meteomedia.com/fr/ville/ca/quebec/odanak-12/actuelle' },
+  { id: 'kitigan-zibi', name: 'Kitigan Zibi', nation: 'Anicinabeg', lat: 46.3825, lon: -75.9879, weatherUrl: 'https://www.meteomedia.com/fr/ville/ca/quebec/kitigan-zibi/actuelle' },
+  { id: 'manawan', name: 'Manawan', nation: 'Atikamekw', lat: 47.2203, lon: -74.3822, weatherUrl: 'https://www.meteomedia.com/fr/ville/ca/quebec/manawan/actuelle' },
+  { id: 'nemaska', name: 'Nemaska', nation: 'Eeyou', lat: 51.2022, lon: -76.1906, weatherUrl: 'https://www.meteomedia.com/fr/ville/ca/quebec/nemaska/actuelle' },
+  { id: 'wendake', name: 'Wendake', nation: 'Wendat', lat: 46.8550, lon: -71.3567, weatherUrl: 'https://www.meteomedia.com/fr/ville/ca/quebec/wendake/actuelle' },
+  { id: 'uashat', name: 'Uashat mak Mani-Utenam', nation: 'Innu', lat: 50.2300, lon: -66.3800, weatherUrl: 'https://www.meteomedia.com/fr/ville/ca/quebec/uashat/actuelle' },
+  { id: 'kuujjuaq', name: 'Kuujjuaq', nation: 'Inuit · Nunavik', lat: 58.1000, lon: -68.4200, weatherUrl: 'https://www.meteomedia.com/fr/ville/ca/quebec/kuujjuaq/actuelle' },
+  { id: 'cacouna', name: 'Cacouna', nation: 'Wolastoqiyik', lat: 47.9204, lon: -69.5147, weatherUrl: 'https://www.meteomedia.com/fr/ville/ca/quebec/cacouna/actuelle' },
+  { id: 'gesgapegiag', name: 'Gesgapegiag', nation: 'Mi’gmaq', lat: 48.2125, lon: -65.9961, weatherUrl: 'https://www.meteomedia.com/fr/ville/ca/quebec/gesgapegiag-2/actuelle' },
+  { id: 'kahnawake', name: 'Kahnawà:ke', nation: 'Kanien’kehà:ka', lat: 45.4000, lon: -73.7500, weatherUrl: 'https://www.meteomedia.com/fr/ville/ca/quebec/kahnawake-14/actuelle' },
+  { id: 'kawawachikamach', name: 'Kawawachikamach', nation: 'Naskapi', lat: 55.3400, lon: -66.8500, weatherUrl: 'https://www.meteomedia.com/fr/ville/ca/quebec/kawawachikamach/actuelle' },
 ];
 
 function weatherIcon(code, isDay = 1) {
@@ -895,11 +895,23 @@ let mastheadWeatherTimer = null;
 const mastheadWeatherDecks = { campus: [], nation: [] };
 let mastheadWeatherSlots = [];
 let mastheadWeatherNextSlot = 0;
-const MASTHEAD_WEATHER_ANCHORS = ['montreal', 'quebec'];
-let mastheadWeatherAnchorIndex = 0;
+// La première carte est le repère urbain : Montréal / Québec dominent la
+// rotation, mais les grands pôles universitaires y ont aussi leur tour.
+// La séquence est volontairement pondérée plutôt qu'aléatoire afin que les
+// deux métropoles reviennent régulièrement et sans répétitions accidentelles.
+const MASTHEAD_WEATHER_PRIMARY_SEQUENCE = [
+  'montreal', 'quebec', 'montreal', 'quebec', 'sherbrooke',
+  'montreal', 'quebec', 'trois-rivieres', 'montreal', 'quebec',
+  'saguenay', 'montreal', 'quebec', 'rimouski', 'montreal',
+  'quebec', 'gatineau', 'montreal', 'quebec', 'rouyn-noranda',
+];
+const MASTHEAD_WEATHER_PRIMARY_IDS = new Set(MASTHEAD_WEATHER_PRIMARY_SEQUENCE);
+let mastheadWeatherPrimaryIndex = 0;
+let mastheadWeatherCompactSecondaryIndex = 0;
 let mastheadWeatherResizeFrame = 0;
 
 function weatherForecastUrl(city) {
+  if (city.weatherUrl) return city.weatherUrl;
   // Le site d'origine est francophone : ECCC reste en français pour Original,
   // FR et toute langue traduite, sauf si l'interface est explicitement anglaise.
   const mode = window.RadarTranslate?.getMode?.();
@@ -908,6 +920,10 @@ function weatherForecastUrl(city) {
   const lat = Number.isFinite(city.weatherLat) ? city.weatherLat : city.lat;
   const lon = Number.isFinite(city.weatherLon) ? city.weatherLon : city.lon;
   return `https://${host}/location/index.html?coords=${lat.toFixed(3)}%2C${lon.toFixed(3)}`;
+}
+
+function weatherForecastProvider(city) {
+  return city.weatherUrl ? 'MétéoMédia' : 'Environnement Canada';
 }
 
 function refreshMastheadWeatherLinks() {
@@ -932,8 +948,9 @@ function buildMastheadWeatherBoard() {
     el.href = weatherForecastUrl(city);
     el.target = '_blank';
     el.rel = 'noopener noreferrer';
-    el.title = `Prévisions d’Environnement Canada — ${context}`;
-    el.setAttribute('aria-label', `Prévisions d’Environnement Canada pour ${context}`);
+    const provider = weatherForecastProvider(city);
+    el.title = `Prévisions de  — `;
+    el.setAttribute('aria-label', `Prévisions de  pour `);
     el.innerHTML = '<span class="masthead-weather__icon" aria-hidden="true">·</span><span class="masthead-weather__name"><span class="masthead-weather__name-text"></span></span><span class="masthead-weather__temp">—</span>';
     el.querySelector('.masthead-weather__name-text').textContent = city.name;
     fragment.append(el);
@@ -945,12 +962,17 @@ function weatherBoardCount() {
   const width = MASTHEAD_WEATHER?.querySelector('.masthead-weather__board')?.clientWidth || 0;
   if (width >= 600) return 4;
   if (width >= 430) return 3;
-  if (width >= 260) return 2;
+  if (width >= 190) return 2;
   return 1;
 }
 
 function nextWeatherCity(group, usedIds) {
-  const eligible = WEATHER_CITIES.filter((city) => (city.nation ? 'nation' : 'campus') === group && !usedIds.has(city.id));
+  const eligible = WEATHER_CITIES.filter((city) => {
+    if (usedIds.has(city.id)) return false;
+    if (group === 'nation') return !!city.nation;
+    // Les pôles universitaires de référence ont leur carte dédiée à gauche.
+    return !city.nation && !MASTHEAD_WEATHER_PRIMARY_IDS.has(city.id);
+  });
   if (!eligible.length) return null;
   let deck = mastheadWeatherDecks[group];
   deck = deck.filter((city) => eligible.some((candidate) => candidate.id === city.id));
@@ -962,6 +984,11 @@ function nextWeatherCity(group, usedIds) {
   return city;
 }
 
+function weatherSecondaryGroup(slot, count) {
+  if (slot !== 1 || count > 2) return slot === 1 ? 'nation' : 'campus';
+  return mastheadWeatherCompactSecondaryIndex % 3 === 2 ? 'nation' : 'campus';
+}
+
 function showMastheadWeatherBoard() {
   if (!MASTHEAD_WEATHER) return;
   const cities = [...MASTHEAD_WEATHER.querySelectorAll('.masthead-weather__city')];
@@ -969,14 +996,16 @@ function showMastheadWeatherBoard() {
   const count = Math.min(weatherBoardCount(), cities.length);
   MASTHEAD_WEATHER.querySelector('.masthead-weather__board')?.setAttribute('data-weather-count', String(count));
   mastheadWeatherSlots = mastheadWeatherSlots.slice(0, count);
-  const anchor = WEATHER_CITIES.find((city) => city.id === MASTHEAD_WEATHER_ANCHORS[mastheadWeatherAnchorIndex]);
+  const anchor = WEATHER_CITIES.find(
+    (city) => city.id === MASTHEAD_WEATHER_PRIMARY_SEQUENCE[mastheadWeatherPrimaryIndex],
+  );
   if (anchor && mastheadWeatherSlots[0]?.id !== anchor.id) mastheadWeatherSlots[0] = anchor;
   const usedIds = new Set(mastheadWeatherSlots.map((city) => city.id));
   while (mastheadWeatherSlots.length < count) {
     const slot = mastheadWeatherSlots.length;
     const city = slot === 0
       ? anchor
-      : nextWeatherCity(slot % 2 ? 'nation' : 'campus', usedIds);
+      : nextWeatherCity(weatherSecondaryGroup(slot, count), usedIds);
     if (!city) break;
     usedIds.add(city.id);
     mastheadWeatherSlots.push(city);
@@ -1011,10 +1040,16 @@ function rotateOneMastheadWeatherCard() {
   const usedIds = new Set(mastheadWeatherSlots.filter((_, index) => index !== slot).map((city) => city.id));
   let replacement;
   if (slot === 0) {
-    mastheadWeatherAnchorIndex = (mastheadWeatherAnchorIndex + 1) % MASTHEAD_WEATHER_ANCHORS.length;
-    replacement = WEATHER_CITIES.find((city) => city.id === MASTHEAD_WEATHER_ANCHORS[mastheadWeatherAnchorIndex]);
+    mastheadWeatherPrimaryIndex = (mastheadWeatherPrimaryIndex + 1)
+      % MASTHEAD_WEATHER_PRIMARY_SEQUENCE.length;
+    replacement = WEATHER_CITIES.find(
+      (city) => city.id === MASTHEAD_WEATHER_PRIMARY_SEQUENCE[mastheadWeatherPrimaryIndex],
+    );
   } else {
-    replacement = nextWeatherCity(previous.nation ? 'nation' : 'campus', usedIds);
+    if (slot === 1 && mastheadWeatherSlots.length <= 2) {
+      mastheadWeatherCompactSecondaryIndex = (mastheadWeatherCompactSecondaryIndex + 1) % 3;
+    }
+    replacement = nextWeatherCity(weatherSecondaryGroup(slot, mastheadWeatherSlots.length), usedIds);
   }
   if (!replacement) return;
   mastheadWeatherSlots[slot] = replacement;
@@ -1067,7 +1102,7 @@ function readWeatherCache() {
 }
 
 async function initMastheadWeather() {
-  if (!MASTHEAD_WEATHER || window.innerWidth < 900) return;
+  if (!MASTHEAD_WEATHER || window.innerWidth < 620) return;
   const cached = readWeatherCache();
   if (cached) renderMastheadWeather(cached);
   try {
