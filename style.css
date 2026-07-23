@@ -1385,7 +1385,8 @@ html.is-firefox .tuner-cast--bar[hidden] { display: flex !important; }
     display: grid;
     /* Rail libellé compact (≈ « À L'ANTENNE ») + titre collé */
     grid-template-columns: 4.75rem minmax(0, 1fr);
-    align-items: center;
+    /* Libellé aligné sur la 1ʳᵉ ligne du titre (pas centré sur titre+horaire) */
+    align-items: start;
     column-gap: 8px;
     margin: 0;
     padding: 0 4px 0 14px;
@@ -1399,9 +1400,16 @@ html.is-firefox .tuner-cast--bar[hidden] { display: flex !important; }
     margin: 0;
     width: 100%;
     max-width: 100%;
-    line-height: 1.15;
+    /* Même hauteur de ligne que .tuner-nowair-title → même baseline visuelle */
+    font-size: 9px;
+    font-weight: 800;
+    line-height: 1.25;
     letter-spacing: 0.08em;
     text-align: left;
+    /* Centre le petit caps dans la ligne du titre (13px × 1.25) */
+    height: calc(13px * 1.25);
+    display: flex;
+    align-items: center;
     overflow: hidden;
     text-overflow: ellipsis;
   }
@@ -1409,7 +1417,7 @@ html.is-firefox .tuner-cast--bar[hidden] { display: flex !important; }
   .tuner-nowair-body {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: flex-start;
     gap: 1px;
     min-width: 0;
@@ -1417,7 +1425,14 @@ html.is-firefox .tuner-cast--bar[hidden] { display: flex !important; }
     overflow: hidden;
   }
 
-  .tuner-nowair-title,
+  .tuner-nowair-title {
+    width: 100%;
+    max-width: 100%;
+    text-align: left;
+    font-size: 13px;
+    line-height: 1.25;
+  }
+
   .tuner-nowair-sub {
     width: 100%;
     max-width: 100%;

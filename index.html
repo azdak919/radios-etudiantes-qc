@@ -49,7 +49,7 @@
           min-width: 0 !important;
           display: grid !important;
           grid-template-columns: 4.75rem minmax(0, 1fr) !important;
-          align-items: center !important;
+          align-items: start !important;
           column-gap: 8px !important;
           padding: 0 4px 0 14px !important;
           border-left: 1px solid rgba(255, 255, 255, 0.12);
@@ -61,20 +61,30 @@
           margin: 0 !important;
           width: 100% !important;
           letter-spacing: 0.08em !important;
+          line-height: 1.25 !important;
+          height: calc(13px * 1.25) !important;
+          display: flex !important;
+          align-items: center !important;
           overflow: hidden;
           text-overflow: ellipsis;
         }
         .tuner-nowair-body {
           display: flex !important;
           flex-direction: column !important;
-          justify-content: center !important;
+          justify-content: flex-start !important;
           align-items: flex-start !important;
           gap: 1px !important;
           min-width: 0 !important;
           width: 100% !important;
           overflow: hidden !important;
         }
-        .tuner-nowair-title,
+        .tuner-nowair-title {
+          width: 100% !important;
+          max-width: 100% !important;
+          text-align: left !important;
+          font-size: 13px !important;
+          line-height: 1.25 !important;
+        }
         .tuner-nowair-sub {
           width: 100% !important;
           max-width: 100% !important;
