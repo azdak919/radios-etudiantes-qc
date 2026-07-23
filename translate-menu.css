@@ -190,6 +190,18 @@ html[data-translate-busy="1"] .translate-toggle { opacity: 0.75; pointer-events:
   .translate-menu--app { min-width: 0; }
 }
 
+/* Chrome compact des mini-apps : sur mobile, l’icône universelle suffit. */
+@media (max-width: 600px) {
+  .radar-translate-control--app .translate-toggle__label,
+  .radar-translate-control--app .translate-toggle__chev {
+    display: none;
+  }
+  .radar-translate-control--app .translate-toggle {
+    gap: 0;
+    padding: 0.42rem;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .translate-toggle__chev { transition: none; }
 }

@@ -37,6 +37,10 @@ for (const viewport of [
         const weight = await menu.locator('[data-mode="original"] .translate-menu__name')
           .evaluate((element) => Number.parseInt(getComputedStyle(element).fontWeight, 10));
         expect(weight).toBeLessThanOrEqual(500);
+        if (viewport.width <= 600) {
+          await expect(page.locator(`${app.button} .translate-toggle__label`)).toBeHidden();
+          await expect(page.locator(`${app.button} .translate-toggle__chev`)).toBeHidden();
+        }
       }
 
       await menu.locator('.translate-menu__search').fill('japonais');
