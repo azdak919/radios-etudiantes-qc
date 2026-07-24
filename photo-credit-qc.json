@@ -1,38 +1,17 @@
 {
-  "updated": "2026-07-24T14:21:54.991Z",
+  "updated": "2026-07-24T15:25:54.109Z",
   "total": 185,
   "withImage": 168,
   "withCredit": 168,
-  "cited": 128,
+  "cited": 127,
   "pending": 0,
   "missingHero": 0,
   "ok": true,
-  "checked": 8,
-  "updatedCount": 8,
-  "citedNew": 7,
-  "fallbackNew": 1,
+  "checked": 5,
+  "updatedCount": 5,
+  "citedNew": 3,
+  "fallbackNew": 2,
   "samples": [
-    {
-      "title": "Sois belle et tais-toi",
-      "source": "Le Délit",
-      "credit": "Photo : Catvy Tran",
-      "cited": true,
-      "method": "media-credit-featured"
-    },
-    {
-      "title": "Qui sont les agents qui patrouillent notre campus ?",
-      "source": "Le Délit",
-      "credit": "Photo : Stu Doré/Félix Fournier",
-      "cited": true,
-      "method": "media-credit-featured"
-    },
-    {
-      "title": "Se préparer et vivre sa retraite : un long fleuve, pas si tranquille",
-      "source": "La Pige",
-      "credit": "Photo : Léa Morin-Letort",
-      "cited": true,
-      "method": "figcaption-paren-kind"
-    },
     {
       "title": "Forum RÉA : une alliance pour l’éducation en milieu défavorisé",
       "source": "Quartier Libre",
@@ -55,18 +34,18 @@
       "method": "media-credit-featured"
     },
     {
-      "title": "Leave the Children Out of This",
-      "source": "The Plant",
-      "credit": "Photo: My Little Princess (2011)",
-      "cited": true,
-      "method": "via-attribution"
+      "title": "Des initiatives qui rassemblent",
+      "source": "Le Délit",
+      "credit": "Crédit photo : Le Délit",
+      "cited": false,
+      "method": null
     },
     {
-      "title": "Festival Jamais Lu : « Quand le monde devient dur à lire, on doit se raconter des histoires »",
-      "source": "Quartier Libre",
-      "credit": "Photo : Maryse Boyce",
+      "title": "Élections de l’exécutif de l’AÉUM",
+      "source": "Le Délit",
+      "credit": "Photo : Toscane Ralaimongo",
       "cited": true,
-      "method": "figcaption-copyright"
+      "method": "media-credit-featured"
     }
   ]
 }
