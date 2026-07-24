@@ -244,9 +244,9 @@
   .app-toolbar-weather {
     display: flex;
     align-items: center;
-    min-height: 2.2rem;
+    min-height: 2.4rem;
     margin-top: 0.2rem;
-    padding: 0.2rem 0.25rem 0.25rem;
+    padding: 0.2rem 0.25rem 0.4rem;
     box-sizing: border-box;
     border-top: 1px solid var(--chrome-rule);
     color: var(--chrome-text);
