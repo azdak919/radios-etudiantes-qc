@@ -562,9 +562,9 @@ html[data-embed="tuner"]:not([data-theme="dark"]) .tuner-vol-thumb {
     border-color: var(--embed-control-border-hover);
   }
 
-  /* Bouton « diffuser » (Cast) rétabli dans la bulle volume sur téléphone —
-     même palette que les autres commandes ; les états .is-casting (bleu) et
-     .is-unavailable (grisé) de style.css restent prioritaires. */
+  /* Bouton « diffuser » (Cast / AirPlay) rétabli dans la bulle volume sur
+     téléphone — même palette que les autres commandes ; l'état .is-casting
+     (bleu) de style.css reste prioritaire. */
   html[data-embed="tuner"] .tuner-vol-slot .tuner-cast--popover:not(.is-casting):not(.is-unavailable) {
     border: 1px solid var(--embed-control-border);
     background: var(--embed-control-bg);
@@ -574,6 +574,18 @@ html[data-embed="tuner"]:not([data-theme="dark"]) .tuner-vol-thumb {
     color: var(--embed-ink);
     background: var(--embed-control-bg-hover);
     border-color: var(--embed-control-border-hover);
+  }
+
+  /* État « Connexion au service Cast… » (.is-unavailable) : le gris blanc-
+     translucide de style.css disparaissait sur le chrome ivoire clair, laissant
+     le bouton caster/AirPlay invisible le temps du chargement du SDK (Chrome /
+     Pixel). On l'atténue avec la palette --embed-* pour qu'il reste perceptible
+     tout en signalant l'indisponibilité. En sombre, le style.css convient déjà. */
+  html[data-embed="tuner"]:not([data-theme="dark"]) .tuner-vol-slot .tuner-cast--popover.is-unavailable {
+    border: 1px solid var(--embed-control-border);
+    background: var(--embed-control-bg);
+    color: var(--embed-muted);
+    opacity: 0.65;
   }
 
   html[data-embed="tuner"]:not([data-theme="dark"]) .tuner-vol-slot .tuner-vol-labels {

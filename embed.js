@@ -5,11 +5,28 @@
 
   const EMBED_H = 62; // aligné sur padding bureau 10+42+10
 
+  // Hauteur souhaitée de l'iframe : hauteur de base, sauf quand le popover
+  // volume (téléphone < 560 px) est ouvert — il déborde alors sous la rangée
+  // et l'iframe doit s'agrandir pour ne pas le rogner.
+  function desiredHeight() {
+    const vol = document.getElementById('tuner-vol');
+    if (!vol || !vol.classList.contains('is-open')) return EMBED_H;
+    const slot = document.getElementById('tuner-vol-slot');
+    // offsetHeight ignore le transform d'apparition (translateY/scale) :
+    // la mesure est stable dès la première frame de l'animation.
+    const anchor = vol.getBoundingClientRect().bottom;
+    const slotH = slot?.offsetHeight || 0;
+    return Math.max(EMBED_H, Math.ceil(anchor + 10 + slotH) + 8);
+  }
+
   function postHeight(extra) {
     try {
+      // La hauteur est toujours recalculée ici : un resize déclenché par
+      // l'agrandissement de l'iframe (popover ouvert) doit renvoyer la hauteur
+      // du popover, pas EMBED_H — sinon l'iframe rétrécit et rogne la bulle.
       const payload = {
         type: 'radar-embed',
-        height: EMBED_H,
+        height: desiredHeight(),
         ready: true,
         ...(extra || {}),
       };
@@ -45,14 +62,8 @@
         postHeight({ event: 'vol-close' });
         return;
       }
-      requestAnimationFrame(() => {
-        const slot = document.getElementById('tuner-vol-slot');
-        // offsetHeight ignore le transform d'apparition (translateY/scale) :
-        // la mesure est stable dès la première frame de l'animation.
-        const anchor = vol.getBoundingClientRect().bottom;
-        const slotH = slot?.offsetHeight || 0;
-        postHeight({ event: 'vol-open', height: Math.max(EMBED_H, Math.ceil(anchor + 10 + slotH) + 8) });
-      });
+      // rAF : laisse le popover se poser avant de mesurer (desiredHeight).
+      requestAnimationFrame(() => postHeight({ event: 'vol-open' }));
     };
     new MutationObserver(syncHeight).observe(vol, { attributes: true, attributeFilter: ['class'] });
   }
