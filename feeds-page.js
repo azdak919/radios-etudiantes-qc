@@ -19,14 +19,14 @@ const FEEDS_INSTITUTION_ACRONYMS = {
   'Université du Québec à Trois-Rivières': 'UQTR',
   'Polytechnique Montréal': 'Poly',
   "Bishop's University": "Bishop's",
-  'Cégep du Vieux Montréal': 'CVM',
+  'Cégep du Vieux Montréal': 'Cégep Vieux-Montréal',
   'Cégep de Jonquière (ATM – journalisme)': 'Jonquière',
   'Cégep de Jonquière': 'Jonquière',
 };
 
 const FEEDS_INSTITUTION_ORDER = [
   'UdeM', 'UQAM', 'McGill', 'Concordia', 'ULaval', 'UdeS', 'UQTR', 'Poly', "Bishop's",
-  'CVM', 'Jonquière',
+  'Cégep Vieux-Montréal', 'Jonquière',
 ];
 
 function siteBase() {

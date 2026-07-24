@@ -4259,7 +4259,7 @@ function shortInstitution(name = '', type = '') {
   if (acronym) return acronym;
 
   const CEGEP_SHORT = {
-    'Cégep du Vieux Montréal': 'CVM',
+    'Cégep du Vieux Montréal': 'Cégep Vieux-Montréal',
     'Cégep de Jonquière (ATM – journalisme)': 'Jonquière',
     'Cégep de Jonquière': 'Jonquière',
     'Dawson College': 'Dawson',
