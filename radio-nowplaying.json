@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-23T23:09:42.110Z",
+  "updatedAt": "2026-07-24T00:07:02.379Z",
   "timezone": "America/Toronto",
   "stations": {
     "chyz": {
@@ -21,27 +21,27 @@
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-23T23:09:20.105Z"
+      "checkedAt": "2026-07-24T00:06:35.829Z"
     },
     "cism": {
       "id": "cism",
       "name": "CISM 89,3",
       "current": {
-        "title": "La boussole culturelle",
-        "source": "api-live",
-        "start": "15:00",
-        "url": "https://stream03.ustream.ca/cism128.mp3",
-        "slug": "la-boussole-culturelle"
-      },
-      "next": {
         "title": "Rythmologie",
         "source": "api-live",
         "start": "16:00",
-        "url": "https://podcast.cism893.ca/podcast/download_mp3/364535.mp3",
+        "url": "https://stream03.ustream.ca/cism128.mp3",
         "slug": "rythmologie"
       },
+      "next": {
+        "title": "Entropie",
+        "source": "api-live",
+        "start": "18:00",
+        "url": "https://podcast.cism893.ca/podcast/download_mp3/364543.mp3",
+        "slug": "entropie"
+      },
       "track": "",
-      "showTitle": "La boussole culturelle",
+      "showTitle": "Rythmologie",
       "host": "",
       "source": "api-live",
       "sources": [
@@ -51,25 +51,25 @@
         "type": "cism-v1",
         "url": "https://admin.cism893.ca/api/v1/live"
       },
-      "checkedAt": "2026-07-23T23:09:22.226Z"
+      "checkedAt": "2026-07-24T00:06:37.947Z"
     },
     "ckut": {
       "id": "ckut",
       "name": "CKUT 90,3",
       "current": {
-        "title": "Grey Matters",
-        "source": "api-live",
-        "start": "19:00",
-        "end": "20:00"
-      },
-      "next": {
         "title": "Other Worlds on Earth/Dromostexte",
         "source": "api-live",
         "start": "20:00",
         "end": "21:00"
       },
+      "next": {
+        "title": "Chaud Pour/Francis",
+        "source": "api-live",
+        "start": "21:00",
+        "end": "23:00"
+      },
       "track": "",
-      "showTitle": "Grey Matters",
+      "showTitle": "Other Worlds on Earth/Dromostexte",
       "host": "",
       "source": "api-live",
       "sources": [
@@ -77,69 +77,69 @@
         "stream"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-23T23:09:24.981Z"
+      "checkedAt": "2026-07-24T00:06:40.837Z"
     },
     "cjlo": {
       "id": "cjlo",
       "name": "CJLO 1690AM",
       "current": {
-        "title": "Teen Radio",
-        "source": "schedule",
-        "start": "19:00",
-        "end": "20:00",
-        "url": "http://www.cjlo.com/shows/teen-radio"
-      },
-      "next": {
         "title": "Maiden Voyage",
         "source": "schedule",
         "start": "20:00",
         "end": "21:00",
         "url": "http://www.cjlo.com/shows/maiden-voyage"
       },
+      "next": {
+        "title": "CJLO's Alternative Mega Mix",
+        "source": "schedule",
+        "start": "21:00",
+        "end": "23:00",
+        "url": "http://www.cjlo.com/shows/cjlos-alternative-mega-mix"
+      },
       "track": "",
-      "showTitle": "Teen Radio",
+      "showTitle": "Maiden Voyage",
       "host": "",
       "source": "schedule",
       "sources": [
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-23T23:09:38.619Z"
+      "checkedAt": "2026-07-24T00:06:54.802Z"
     },
     "cfak": {
       "id": "cfak",
       "name": "CFAK 88,3",
       "current": {
-        "title": "À nous le futur",
-        "source": "schedule",
-        "start": "11:00",
-        "end": "20:00"
-      },
-      "next": {
         "title": "After 5@8",
         "source": "schedule",
         "start": "20:00",
         "end": "00:00"
       },
+      "next": {
+        "title": "Les nuits CFAK",
+        "source": "schedule",
+        "start": "00:00",
+        "end": "07:00"
+      },
       "track": "",
-      "showTitle": "À nous le futur",
+      "showTitle": "After 5@8",
       "host": "",
       "source": "schedule",
       "sources": [
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-23T23:09:39.516Z"
+      "checkedAt": "2026-07-24T00:06:55.186Z"
     },
     "choq": {
       "id": "choq",
       "name": "CHOQ.ca",
       "current": {
-        "title": "Les Apatrides Anonymes",
-        "source": "api-live",
-        "start": "18:30",
-        "end": "19:40",
-        "slug": "apatrides-anonymes"
+        "title": "La nouvelle école des surdoués",
+        "source": "schedule",
+        "start": "20:00",
+        "end": "21:00",
+        "url": "https://www.choq.ca/emissions/la-nouvelle-ecole-des-surdoues"
       },
       "next": {
         "title": "Le grand maître des jeux",
@@ -148,18 +148,19 @@
         "end": "22:30",
         "slug": "le-maitre-des-jeux"
       },
-      "track": "03 - MARQUEUR DEEP DISH RESURECTION HEX 3",
-      "showTitle": "Les Apatrides Anonymes",
+      "track": "Lip Critic - Jackpot",
+      "showTitle": "La nouvelle école des surdoués",
       "host": "",
-      "source": "api-live",
+      "source": "schedule",
       "sources": [
-        "api-live"
+        "api-live",
+        "schedule"
       ],
       "clientPoll": {
         "type": "triton-np",
         "url": "https://np.tritondigital.com/public/nowplaying?mountName=SP_R4799664&numberToFetch=1&eventType=track"
       },
-      "checkedAt": "2026-07-23T23:09:41.759Z"
+      "checkedAt": "2026-07-24T00:07:02.028Z"
     }
   }
 }
