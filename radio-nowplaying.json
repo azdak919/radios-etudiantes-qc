@@ -1,53 +1,47 @@
 {
-  "updatedAt": "2026-07-24T12:59:06.026Z",
+  "updatedAt": "2026-07-24T15:02:47.660Z",
   "timezone": "America/Toronto",
   "stations": {
     "chyz": {
       "id": "chyz",
       "name": "CHYZ 94,3",
-      "current": {
-        "title": "Vendredi Nostalgie",
-        "source": "schedule",
-        "start": "08:00",
-        "end": "10:00",
-        "url": "https://chyz.ca/emission/vendredi-nostalgie/"
-      },
+      "current": null,
       "next": {
-        "title": "Palmarès CHYZ",
+        "title": "Détour",
         "source": "schedule",
-        "start": "10:00",
-        "end": "10:30",
-        "url": "https://chyz.ca/emission/palmares-chyz/"
+        "start": "13:00",
+        "end": "14:00",
+        "url": "https://chyz.ca/emission/detour/"
       },
       "track": "",
-      "showTitle": "Vendredi Nostalgie",
+      "showTitle": "",
       "host": "",
       "source": "schedule",
       "sources": [
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-24T12:58:43.514Z"
+      "checkedAt": "2026-07-24T15:02:23.591Z"
     },
     "cism": {
       "id": "cism",
       "name": "CISM 89,3",
       "current": {
-        "title": "La carte cadeau (reprise)",
+        "title": "Toute est dans toute",
         "source": "api-live",
-        "start": "03:00",
+        "start": "07:00",
         "url": "https://stream03.ustream.ca/cism128.mp3",
-        "slug": "la-carte-cadeau"
+        "slug": "tout-est-dans-toute"
       },
       "next": {
-        "title": "Le Séismix",
+        "title": "As-tu vu?",
         "source": "api-live",
-        "start": "05:00",
-        "url": "https://podcast.cism893.ca/podcast/download_mp3/364953.mp3",
-        "slug": "le-seismix"
+        "start": "08:00",
+        "url": "https://podcast.cism893.ca/podcast/download_mp3/364578.mp3",
+        "slug": "lart-en-ondes"
       },
       "track": "",
-      "showTitle": "La carte cadeau (reprise)",
+      "showTitle": "Toute est dans toute",
       "host": "",
       "source": "api-live",
       "sources": [
@@ -57,25 +51,25 @@
         "type": "cism-v1",
         "url": "https://admin.cism893.ca/api/v1/live"
       },
-      "checkedAt": "2026-07-24T12:58:45.473Z"
+      "checkedAt": "2026-07-24T15:02:25.546Z"
     },
     "ckut": {
       "id": "ckut",
       "name": "CKUT 90,3",
       "current": {
-        "title": "Morning Detour",
+        "title": "electronic intifada/LegalEase/Radio AlHara/Alright, Now What?",
         "source": "api-live",
-        "start": "07:00",
-        "end": "09:00"
+        "start": "11:00",
+        "end": "12:00"
       },
       "next": {
-        "title": "Jazz Amuck",
+        "title": "Butcher T&#039;s Noontime Cuts",
         "source": "api-live",
-        "start": "09:00",
-        "end": "11:00"
+        "start": "12:00",
+        "end": "14:00"
       },
       "track": "",
-      "showTitle": "Morning Detour",
+      "showTitle": "electronic intifada/LegalEase/Radio AlHara/Alright, Now What?",
       "host": "",
       "source": "api-live",
       "sources": [
@@ -83,59 +77,59 @@
         "stream"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-24T12:58:48.565Z"
+      "checkedAt": "2026-07-24T15:02:28.025Z"
     },
     "cjlo": {
       "id": "cjlo",
       "name": "CJLO 1690AM",
       "current": {
-        "title": "Wake up Folks!",
+        "title": "The Alley",
         "source": "schedule",
-        "start": "06:00",
-        "end": "09:00",
-        "url": "http://www.cjlo.com/shows/wake-up-folks"
+        "start": "11:00",
+        "end": "12:00",
+        "url": "http://www.cjlo.com/shows/the-alley"
       },
       "next": {
-        "title": "CJLO News Hour",
+        "title": "Charts & Crafts",
         "source": "schedule",
-        "start": "09:00",
-        "end": "10:00",
-        "url": "http://www.cjlo.com/shows/cjlo-news-hour"
+        "start": "12:00",
+        "end": "13:00",
+        "url": "http://www.cjlo.com/shows/charts-and-crafts"
       },
       "track": "",
-      "showTitle": "Wake up Folks!",
+      "showTitle": "The Alley",
       "host": "",
       "source": "schedule",
       "sources": [
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-24T12:59:02.410Z"
+      "checkedAt": "2026-07-24T15:02:41.265Z"
     },
     "cfak": {
       "id": "cfak",
       "name": "CFAK 88,3",
       "current": {
-        "title": "Palmarès CFAK",
+        "title": "Le Ré-Show : Deuxième service",
         "source": "schedule",
-        "start": "08:00",
-        "end": "09:00"
+        "start": "11:00",
+        "end": "12:00"
       },
       "next": {
-        "title": "La Souterraine",
+        "title": "Ciné-Histoire",
         "source": "schedule",
-        "start": "09:00",
-        "end": "11:00"
+        "start": "12:00",
+        "end": "15:00"
       },
       "track": "",
-      "showTitle": "Palmarès CFAK",
+      "showTitle": "Le Ré-Show : Deuxième service",
       "host": "",
       "source": "schedule",
       "sources": [
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-24T12:59:03.030Z"
+      "checkedAt": "2026-07-24T15:02:41.840Z"
     },
     "choq": {
       "id": "choq",
@@ -148,7 +142,7 @@
         "end": "12:30",
         "slug": "box-sophisme"
       },
-      "track": "FUUDGE - Le mentor",
+      "track": "Softcult - Naive",
       "showTitle": "",
       "host": "",
       "source": "api-live",
@@ -159,7 +153,7 @@
         "type": "triton-np",
         "url": "https://np.tritondigital.com/public/nowplaying?mountName=SP_R4799664&numberToFetch=1&eventType=track"
       },
-      "checkedAt": "2026-07-24T12:59:05.676Z"
+      "checkedAt": "2026-07-24T15:02:47.309Z"
     }
   }
 }
