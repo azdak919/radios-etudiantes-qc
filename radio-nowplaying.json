@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-24T00:07:02.379Z",
+  "updatedAt": "2026-07-24T03:54:19.210Z",
   "timezone": "America/Toronto",
   "stations": {
     "chyz": {
@@ -21,27 +21,27 @@
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-24T00:06:35.829Z"
+      "checkedAt": "2026-07-24T03:53:52.153Z"
     },
     "cism": {
       "id": "cism",
       "name": "CISM 89,3",
       "current": {
-        "title": "Rythmologie",
+        "title": "La rumba",
         "source": "api-live",
-        "start": "16:00",
+        "start": "19:00",
         "url": "https://stream03.ustream.ca/cism128.mp3",
-        "slug": "rythmologie"
+        "slug": "la-rumba"
       },
       "next": {
-        "title": "Entropie",
+        "title": "La courbe 2.0",
         "source": "api-live",
-        "start": "18:00",
-        "url": "https://podcast.cism893.ca/podcast/download_mp3/364543.mp3",
-        "slug": "entropie"
+        "start": "20:00",
+        "url": "https://podcast.cism893.ca/podcast/download_mp3/364546.mp3",
+        "slug": "la-courbe-2-0"
       },
       "track": "",
-      "showTitle": "Rythmologie",
+      "showTitle": "La rumba",
       "host": "",
       "source": "api-live",
       "sources": [
@@ -51,25 +51,25 @@
         "type": "cism-v1",
         "url": "https://admin.cism893.ca/api/v1/live"
       },
-      "checkedAt": "2026-07-24T00:06:37.947Z"
+      "checkedAt": "2026-07-24T03:53:54.213Z"
     },
     "ckut": {
       "id": "ckut",
       "name": "CKUT 90,3",
       "current": {
-        "title": "Other Worlds on Earth/Dromostexte",
+        "title": "You Need A Heart To Live 2",
         "source": "api-live",
-        "start": "20:00",
-        "end": "21:00"
+        "start": "23:00",
+        "end": "01:00"
       },
       "next": {
-        "title": "Chaud Pour/Francis",
+        "title": "Listen! You Smell Something?",
         "source": "api-live",
-        "start": "21:00",
-        "end": "23:00"
+        "start": "01:00",
+        "end": "04:00"
       },
       "track": "",
-      "showTitle": "Other Worlds on Earth/Dromostexte",
+      "showTitle": "You Need A Heart To Live 2",
       "host": "",
       "source": "api-live",
       "sources": [
@@ -77,34 +77,34 @@
         "stream"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-24T00:06:40.837Z"
+      "checkedAt": "2026-07-24T03:53:57.200Z"
     },
     "cjlo": {
       "id": "cjlo",
       "name": "CJLO 1690AM",
       "current": {
-        "title": "Maiden Voyage",
+        "title": "Raving Record Reviews",
         "source": "schedule",
-        "start": "20:00",
-        "end": "21:00",
-        "url": "http://www.cjlo.com/shows/maiden-voyage"
+        "start": "23:00",
+        "end": "00:00",
+        "url": "http://www.cjlo.com/shows/raving-record-reviews"
       },
       "next": {
-        "title": "CJLO's Alternative Mega Mix",
+        "title": "Finally Midnight",
         "source": "schedule",
-        "start": "21:00",
-        "end": "23:00",
-        "url": "http://www.cjlo.com/shows/cjlos-alternative-mega-mix"
+        "start": "00:00",
+        "end": "02:00",
+        "url": "http://www.cjlo.com/shows/finally-midnight"
       },
       "track": "",
-      "showTitle": "Maiden Voyage",
+      "showTitle": "Raving Record Reviews",
       "host": "",
       "source": "schedule",
       "sources": [
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-24T00:06:54.802Z"
+      "checkedAt": "2026-07-24T03:54:11.070Z"
     },
     "cfak": {
       "id": "cfak",
@@ -129,38 +129,31 @@
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-24T00:06:55.186Z"
+      "checkedAt": "2026-07-24T03:54:11.729Z"
     },
     "choq": {
       "id": "choq",
       "name": "CHOQ.ca",
-      "current": {
-        "title": "La nouvelle école des surdoués",
-        "source": "schedule",
-        "start": "20:00",
-        "end": "21:00",
-        "url": "https://www.choq.ca/emissions/la-nouvelle-ecole-des-surdoues"
-      },
+      "current": null,
       "next": {
-        "title": "Le grand maître des jeux",
+        "title": "D'amour et de sexe",
         "source": "api-live",
-        "start": "21:00",
-        "end": "22:30",
-        "slug": "le-maitre-des-jeux"
+        "start": "22:00",
+        "end": "23:00",
+        "slug": "damour-et-de-sexe"
       },
-      "track": "Lip Critic - Jackpot",
-      "showTitle": "La nouvelle école des surdoués",
+      "track": "Taupe - New Window",
+      "showTitle": "",
       "host": "",
-      "source": "schedule",
+      "source": "api-live",
       "sources": [
-        "api-live",
-        "schedule"
+        "api-live"
       ],
       "clientPoll": {
         "type": "triton-np",
         "url": "https://np.tritondigital.com/public/nowplaying?mountName=SP_R4799664&numberToFetch=1&eventType=track"
       },
-      "checkedAt": "2026-07-24T00:07:02.028Z"
+      "checkedAt": "2026-07-24T03:54:18.860Z"
     }
   }
 }
