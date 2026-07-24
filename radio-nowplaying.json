@@ -1,27 +1,33 @@
 {
-  "updatedAt": "2026-07-24T11:17:40.191Z",
+  "updatedAt": "2026-07-24T12:59:06.026Z",
   "timezone": "America/Toronto",
   "stations": {
     "chyz": {
       "id": "chyz",
       "name": "CHYZ 94,3",
-      "current": null,
-      "next": {
+      "current": {
         "title": "Vendredi Nostalgie",
         "source": "schedule",
         "start": "08:00",
         "end": "10:00",
         "url": "https://chyz.ca/emission/vendredi-nostalgie/"
       },
+      "next": {
+        "title": "Palmarès CHYZ",
+        "source": "schedule",
+        "start": "10:00",
+        "end": "10:30",
+        "url": "https://chyz.ca/emission/palmares-chyz/"
+      },
       "track": "",
-      "showTitle": "",
+      "showTitle": "Vendredi Nostalgie",
       "host": "",
       "source": "schedule",
       "sources": [
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-24T11:17:15.995Z"
+      "checkedAt": "2026-07-24T12:58:43.514Z"
     },
     "cism": {
       "id": "cism",
@@ -51,7 +57,7 @@
         "type": "cism-v1",
         "url": "https://admin.cism893.ca/api/v1/live"
       },
-      "checkedAt": "2026-07-24T11:17:18.041Z"
+      "checkedAt": "2026-07-24T12:58:45.473Z"
     },
     "ckut": {
       "id": "ckut",
@@ -77,7 +83,7 @@
         "stream"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-24T11:17:20.206Z"
+      "checkedAt": "2026-07-24T12:58:48.565Z"
     },
     "cjlo": {
       "id": "cjlo",
@@ -104,32 +110,32 @@
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-24T11:17:33.629Z"
+      "checkedAt": "2026-07-24T12:59:02.410Z"
     },
     "cfak": {
       "id": "cfak",
       "name": "CFAK 88,3",
       "current": {
-        "title": "Folkswagen",
-        "source": "schedule",
-        "start": "07:00",
-        "end": "08:00"
-      },
-      "next": {
         "title": "Palmarès CFAK",
         "source": "schedule",
         "start": "08:00",
         "end": "09:00"
       },
+      "next": {
+        "title": "La Souterraine",
+        "source": "schedule",
+        "start": "09:00",
+        "end": "11:00"
+      },
       "track": "",
-      "showTitle": "Folkswagen",
+      "showTitle": "Palmarès CFAK",
       "host": "",
       "source": "schedule",
       "sources": [
         "schedule"
       ],
       "clientPoll": null,
-      "checkedAt": "2026-07-24T11:17:34.074Z"
+      "checkedAt": "2026-07-24T12:59:03.030Z"
     },
     "choq": {
       "id": "choq",
@@ -142,7 +148,7 @@
         "end": "12:30",
         "slug": "box-sophisme"
       },
-      "track": "Tele Novella - Ring of Stones",
+      "track": "FUUDGE - Le mentor",
       "showTitle": "",
       "host": "",
       "source": "api-live",
@@ -153,7 +159,7 @@
         "type": "triton-np",
         "url": "https://np.tritondigital.com/public/nowplaying?mountName=SP_R4799664&numberToFetch=1&eventType=track"
       },
-      "checkedAt": "2026-07-24T11:17:39.841Z"
+      "checkedAt": "2026-07-24T12:59:05.676Z"
     }
   }
 }
