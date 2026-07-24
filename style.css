@@ -261,6 +261,7 @@ a { color: inherit; }
   display: flex;
   align-items: center;
   gap: 8px;
+  flex-shrink: 0;
 }
 
 .masthead-icon {
@@ -293,6 +294,37 @@ a { color: inherit; }
 .masthead-icon .app-emoji {
   width: 15px;
   height: 15px;
+}
+
+/* Téléphone : la date longue traditionnelle reste entière — la météo n'a pas
+   la place et la rangée (date + 6 icônes) débordait de ~33 px sur iPhone /
+   Pixel. Icônes et typo compactées ; l'ellipse est un filet de sécurité pour
+   les dates les plus longues sur les écrans les plus étroits. */
+@media (max-width: 599.98px) {
+  .masthead-top {
+    grid-template-areas: 'date actions';
+    grid-template-columns: minmax(0, 1fr) max-content;
+    column-gap: 6px;
+    /* Récupère quelques px du padding page pour la date. */
+    margin-inline: -6px;
+  }
+  .masthead-weather { display: none !important; }
+  .masthead-date {
+    font-size: 10.5px;
+    letter-spacing: 0.02em;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .masthead-actions { gap: 4px; }
+  .masthead-icon { width: 24px; height: 24px; }
+  .masthead-icon svg { width: 13px; height: 13px; }
+  .masthead-icon .app-emoji { width: 13px; height: 13px; }
+}
+@media (max-width: 374.98px) {
+  .masthead-date { font-size: 10px; letter-spacing: 0.01em; }
+  .masthead-icon { width: 22px; height: 22px; }
 }
 
 .theme-toggle {

@@ -261,9 +261,11 @@ const TUNER_VOL      = document.getElementById('tuner-vol');
 const TUNER_VOL_TOGGLE = document.getElementById('tuner-vol-toggle');
 const TUNER_VOL_MUTE   = document.getElementById('tuner-vol-mute');
 const VOL_COMPACT    = window.matchMedia('(max-width: 1099.98px)');
-/** Embed iframe : volume en ligne, icône = mute (pas de popover). */
+/** Embed étroit (iPhone) : la barre inline déborde du cadre → popover. */
+const EMBED_VOL_POPOVER_MQ = window.matchMedia?.('(max-width: 559.98px)');
+/** Embed iframe : volume en ligne, icône = mute (pas de popover) — sauf étroit. */
 function isVolCompactMode() {
-  if (IS_TUNER_EMBED) return false;
+  if (IS_TUNER_EMBED) return !!EMBED_VOL_POPOVER_MQ?.matches;
   return VOL_COMPACT.matches;
 }
 
@@ -348,6 +350,10 @@ let webAudioSupported = !!(window.AudioContext || window.webkitAudioContext);
 // Stratégie de persistance d'écoute (Media Session, reconnexion, keepalive iOS).
 const MOBILE_PLAYBACK = window.matchMedia('(hover: none) and (pointer: coarse)').matches
   || /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+// iOS (y compris iPadOS qui se présente comme macOS) : `audio.volume` est en
+// lecture seule — seul le gain Web Audio permet de régler le niveau.
+const IS_IOS = /iPad|iPhone|iPod/.test(navigator.userAgent)
+  || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
 let userPaused = false;
 let mobilePlayback = null;
 const playerListenersAttached = new WeakSet();
@@ -2730,7 +2736,7 @@ function bindVolumePopover() {
     if (!e.matches) close();
     updateVolumeUI();
   };
-  onMediaQueryChange(VOL_COMPACT, onVolLayoutChange);
+  onMediaQueryChange(IS_TUNER_EMBED ? EMBED_VOL_POPOVER_MQ : VOL_COMPACT, onVolLayoutChange);
 }
 
 function bindVolumePopoverMute() {
@@ -3303,6 +3309,9 @@ function updatePlayUI() {
  */
 function wantsAudioBoost() {
   if (!webAudioSupported) return false;
+  // iOS : audio.volume est en lecture seule — l'atténuation (< 100 %) doit
+  // aussi passer par le gain Web Audio, sinon le curseur n'a aucun effet.
+  if (IS_IOS) return Math.abs(currentGain - 1) > 0.001;
   if (MOBILE_PLAYBACK) return currentGain > 1.001;
   return true;
 }
@@ -3503,6 +3512,9 @@ function onAudioError() {
     boostUnavailable.add(currentStation.id);
     if (currentGain > 1.001) {
       showToast('Amplification indisponible pour ce poste — volume plafonné à 100 %.');
+    } else if (IS_IOS && currentGain < 0.999) {
+      // Sans Web Audio, iOS ignore audio.volume : le niveau reste à 100 %.
+      showToast('Volume non réglable pour ce poste sur iPhone/iPad — utilise les boutons physiques.');
     }
     rebuildAudio(false);
     play(currentStation);
@@ -3654,6 +3666,9 @@ function rebuildAudio(withBoost) {
   audio.preload = 'none';
   if (!withBoost) audio.removeAttribute('crossorigin');
   attachAudioListeners(audio);
+  // Élément recréé : re-brancher les écouteurs AirPlay (sinon le bouton cast
+  // perd la détection de disponibilité après un passage par le mode amplifié).
+  window.RadarCast?.attachPlayer?.(audio);
   mediaSource = null;
   gainNode = null;
   compressorNode = null;

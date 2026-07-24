@@ -62,9 +62,19 @@
     };
   }
 
+  /** L'API du sélecteur AirPlay système est présente sur ce lecteur. */
+  function airPlayCapable() {
+    const player = deps?.getPlayer?.();
+    return !!(player && typeof player.webkitShowPlaybackTargetPicker === 'function');
+  }
+
   /** Bouton affiché : framework prêt, AirPlay, ou Chromium en attente du SDK. */
   function isAvailable() {
     if (airPlayAvailable) return true;
+    // Safari / iOS : le picker AirPlay système est toujours invocable, même si
+    // l'événement de disponibilité n'a pas encore été reçu (il ne part souvent
+    // qu'une fois un src chargé — trop tard pour montrer le bouton).
+    if (isSafari && airPlayCapable()) return true;
     if (castFrameworkReady) return true;
     // Pendant le chargement du SDK, montrer le bouton (désactivé) sur Chromium.
     if (isChromium && sdkInjected) return true;
@@ -97,7 +107,8 @@
     const showOnFirefox = isFirefox;
     const show = available || showOnFirefox;
     const unavailable = isFirefox || (isChromium && !castFrameworkReady && !airPlayAvailable);
-    const canClick = hasStream && !unavailable && (airPlayAvailable || castFrameworkReady);
+    const canClick = hasStream && !unavailable
+      && (airPlayAvailable || castFrameworkReady || (isSafari && airPlayCapable()));
     const casting = isCasting();
 
     let title;
@@ -132,7 +143,8 @@
   }
 
   function setupAirPlay(player) {
-    if (!player) return;
+    if (!player || player.__radarAirPlayBound) return;
+    player.__radarAirPlayBound = true;
     try { player.setAttribute('x-webkit-airplay', 'allow'); } catch {}
 
     player.addEventListener('webkitplaybacktargetavailabilitychanged', (e) => {
@@ -473,7 +485,10 @@
     const player = deps.getPlayer?.();
 
     // AirPlay prioritaire seulement sur Safari (ou si Cast indisponible).
-    const canAirPlay = airPlayAvailable && player?.webkitShowPlaybackTargetPicker;
+    // Sur Safari, ne pas exiger l'événement de disponibilité : le picker
+    // système gère lui-même le cas « aucun appareil ».
+    const canAirPlay = !!player?.webkitShowPlaybackTargetPicker
+      && (airPlayAvailable || isSafari);
     const preferAirPlay = canAirPlay && (isSafari || !castFrameworkReady);
 
     if (preferAirPlay) {
@@ -558,6 +573,11 @@
 
   window.RadarCast = {
     init,
+    /** À rappeler quand l'élément <audio> est recréé (rebuildAudio). */
+    attachPlayer(el) {
+      setupAirPlay(el);
+      updateButton();
+    },
     onStationChange() {
       if (chromecastSessionActive) loadCastMedia();
       updateButton();

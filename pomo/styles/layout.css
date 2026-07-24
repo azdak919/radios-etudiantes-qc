@@ -263,13 +263,20 @@ html[data-layout="touch"] .bottom-badges {
   }
 }
 
+/* Téléphone étroit (iPhone) : garder les deux actions côte à côte, en plus
+   compact — empilées pleine largeur, elles dominaient la carte citation. */
 @media (max-width: 400px) {
   html[data-layout="touch"] .quote-action-row {
-    flex-direction: column;
+    gap: 0.4rem;
+    margin-top: 0.5rem;
   }
   html[data-layout="touch"] .quote-action-row .btn {
-    flex: 1 1 auto;
-    width: 100%;
+    flex: 1 1 calc(50% - 0.2rem);
+    min-height: 40px;
+    font-size: 0.6rem;
+    letter-spacing: 0.06em;
+    padding: 0.4rem 0.55rem;
+    white-space: nowrap;
   }
 }
 

@@ -373,7 +373,11 @@ html[data-embed="tuner"] .tuner-play svg {
   height: 20px;
 }
 
-/* Volume toujours en ligne (comme ≥1100 px du site) */
+/* Volume en ligne (comme ≥1100 px du site) — seulement quand la rangée a la
+   place. Sous 560 px (iPhone), on laisse le popover compact de style.css :
+   la barre inline débordait du cadre. app.js suit le même seuil
+   (EMBED_VOL_POPOVER_MQ) et embed.js agrandit l'iframe à l'ouverture. */
+@media (min-width: 560px) {
 html[data-embed="tuner"] .tuner-vol {
   display: flex;
   align-items: center;
@@ -499,6 +503,19 @@ html[data-embed="tuner"]:not([data-theme="dark"]) .tuner-vol-tick--100 {
 html[data-embed="tuner"]:not([data-theme="dark"]) .tuner-vol-thumb {
   border-color: rgba(58, 48, 40, 0.30);
   box-shadow: 0 1px 6px rgba(44, 40, 36, 0.28);
+}
+}
+
+/* Embed étroit : la bulle volume doit pouvoir dépasser la rangée de 62 px —
+   embed.js agrandit l'iframe le temps de l'ouverture. On ne lève le clip que
+   popover ouvert, pour ne pas créer de débordement (scroll) au repos. */
+@media (max-width: 559.98px) {
+  html[data-embed="tuner"]:has(.tuner-vol.is-open),
+  html[data-embed="tuner"]:has(.tuner-vol.is-open) body,
+  html[data-embed="tuner"]:has(.tuner-vol.is-open) .tuner,
+  html[data-embed="tuner"]:has(.tuner-vol.is-open) .tuner-inner {
+    overflow: visible;
+  }
 }
 
 /* Cast / EQ : hors barre embed */
@@ -642,26 +659,32 @@ html[data-embed="tuner"] .toast {
   max-width: calc(100% - 16px);
 }
 
-/* ── Largeurs : compresser volume / masquer antenne si trop serré ── */
-@container tuner-controls (max-width: 480px) {
-  .tuner-vol-track {
-    width: 72px;
-    max-width: 72px;
-    flex-basis: 72px;
-    min-width: 56px;
+/* ── Largeurs : compresser volume / masquer antenne si trop serré ──
+   Les compressions du rail ne valent qu'en mode inline (≥ 560 px) : en mode
+   popover elles rétréciraient le curseur de la bulle. */
+@media (min-width: 560px) {
+  @container tuner-controls (max-width: 480px) {
+    .tuner-vol-track {
+      width: 72px;
+      max-width: 72px;
+      flex-basis: 72px;
+      min-width: 56px;
+    }
+  }
+
+  @container tuner-controls (max-width: 380px) {
+    .tuner-vol-track {
+      width: 56px;
+      max-width: 56px;
+      flex-basis: 56px;
+      min-width: 48px;
+    }
   }
 }
 
 @container tuner-controls (max-width: 380px) {
   .tuner-label {
     display: none !important;
-  }
-
-  .tuner-vol-track {
-    width: 56px;
-    max-width: 56px;
-    flex-basis: 56px;
-    min-width: 48px;
   }
 }
 
