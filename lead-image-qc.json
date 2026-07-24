@@ -1,16 +1,16 @@
 {
-  "updated": "2026-07-24T03:52:53.740Z",
+  "updated": "2026-07-24T14:21:52.435Z",
   "total": 185,
   "withPhoto": 168,
   "withStock": 41,
-  "withCampusBank": 8,
+  "withCampusBank": 9,
   "fullyCovered": 185,
   "leadReadyPhotos": 156,
-  "pageScraped": 17,
-  "photosRecovered": 17,
+  "pageScraped": 16,
+  "photosRecovered": 16,
   "imagesCleared": 11,
-  "stockSearches": 35,
-  "stockFound": 24,
+  "stockSearches": 34,
+  "stockFound": 23,
   "campusBankFound": 6,
   "mainPageLeadReady": true,
   "gaps": [
@@ -18,7 +18,7 @@
       "title": "The Cruel Optimism of Summer",
       "link": "https://www.mcgilldaily.com/2026/07/the-cruel-optimism-of-summer/",
       "reason": "campus-bank",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/1/18/Wilson_Hall%2C_McGill_University.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/c/c0/McGill_University_downtown_campus_31.JPG"
     },
     {
       "title": "CSU terminates council’s chief election officer",
@@ -51,12 +51,6 @@
       "image": "https://quartierlibre.ca/wp-content/uploads/2026/05/20_florelaurentienne.jpg"
     },
     {
-      "title": "Letters from the Editors May 2026",
-      "link": "https://theplantnews.com/2026/05/11/letters-from-the-editors-may-2026/",
-      "reason": "campus-bank",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/1/16/Metro-level_entrance%2C_Dawson_College%2C_Apr_06_2022.jpg"
-    },
-    {
       "title": "Opinion – L’hypocrisie qui rampe à l’Assemblée nationale",
       "link": "https://exilecvm.wordpress.com/2026/04/18/opinion-lhypocrisie-qui-rampe-a-lassemblee-nationale/",
       "reason": "stock-too-small",
@@ -85,6 +79,12 @@
       "link": "https://thebucampus.ca/2026/03/23/gaiters-wrap-up-hard-fought-season-with-eyes-on-next-year/",
       "reason": "campus-bank",
       "image": "https://upload.wikimedia.org/wikipedia/commons/b/b3/Bishop%27s_University_campus_2011.jpg"
+    },
+    {
+      "title": "Second-Class Citizens",
+      "link": "https://www.mcgilldaily.com/2026/03/second-class-citizens/",
+      "reason": "campus-bank",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/1/1d/4_McGill_University%2C_Montreal%2CQuebec_2009.jpg"
     }
   ]
 }
