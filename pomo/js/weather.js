@@ -34,7 +34,7 @@
     return '☂';
   };
   const weatherSlugs = {
-    odanak: 'odanak-12', 'kitigan-zibi': 'kitigan-zibi', manawan: 'manawan', nemaska: 'nemaska',
+    odanak: 'odanak-12', 'kitigan-zibi': 'kitigan-zibi', manawan: 'manouane', nemaska: 'nemaska',
     wendake: 'wendake', uashat: 'uashat', kuujjuaq: 'kuujjuaq', cacouna: 'cacouna',
     gesgapegiag: 'gesgapegiag-2', kahnawake: 'kahnawake-14', kawawachikamach: 'kawawachikamach',
     'vaudreuil-soulanges': 'vaudreuil-dorion',

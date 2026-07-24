@@ -858,7 +858,7 @@ const WEATHER_CITIES = [
   // unique pour les nations composées de plusieurs communautés.
   { id: 'odanak', name: 'Odanak', nation: 'Abénakis', lat: 46.0723, lon: -72.8181, weatherUrl: 'https://www.meteomedia.com/fr/ville/ca/quebec/odanak-12/actuelle' },
   { id: 'kitigan-zibi', name: 'Kitigan Zibi', nation: 'Anicinabeg', lat: 46.3825, lon: -75.9879, weatherUrl: 'https://www.meteomedia.com/fr/ville/ca/quebec/kitigan-zibi/actuelle' },
-  { id: 'manawan', name: 'Manawan', nation: 'Atikamekw', lat: 47.2203, lon: -74.3822, weatherUrl: 'https://www.meteomedia.com/fr/ville/ca/quebec/manawan/actuelle' },
+  { id: 'manawan', name: 'Manawan', nation: 'Atikamekw', lat: 47.2203, lon: -74.3822, weatherUrl: 'https://www.meteomedia.com/fr/ville/ca/quebec/manouane/actuelle' },
   { id: 'nemaska', name: 'Nemaska', nation: 'Eeyou', lat: 51.2022, lon: -76.1906, weatherUrl: 'https://www.meteomedia.com/fr/ville/ca/quebec/nemaska/actuelle' },
   { id: 'wendake', name: 'Wendake', nation: 'Wendat', lat: 46.8550, lon: -71.3567, weatherUrl: 'https://www.meteomedia.com/fr/ville/ca/quebec/wendake/actuelle' },
   { id: 'uashat', name: 'Uashat mak Mani-Utenam', nation: 'Innu', lat: 50.2300, lon: -66.3800, weatherUrl: 'https://www.meteomedia.com/fr/ville/ca/quebec/uashat/actuelle' },
