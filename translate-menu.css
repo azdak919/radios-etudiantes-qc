@@ -199,6 +199,76 @@
 .lang-translating { pointer-events: none; }
 html[data-translate-busy="1"] .translate-toggle { opacity: 0.75; pointer-events: none; }
 
+/* ── Notification de traduction ──────────────────────────────────────────────
+   Remplace l'ancien bandeau blanc partagé (#toast) qui débordait sur le
+   contenu en mode sombre. Pilule discrète, fidèle au thème, surélevée pour
+   dégager le bouton de recherche flottant (coin bas-droit). */
+.rtl-note {
+  --rtl-accent: var(--accent, #6c2163);
+  position: fixed;
+  /* Centrage par marges auto plutôt que left:50% + translateX : sur une boîte
+     en largeur automatique, left:50% amputerait la largeur disponible et
+     forcerait un retour à la ligne inutile. */
+  left: 0;
+  right: 0;
+  margin-inline: auto;
+  width: fit-content;
+  bottom: calc(env(safe-area-inset-bottom, 0px) + 78px);
+  z-index: 190;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  box-sizing: border-box;
+  max-width: min(calc(100vw - 28px), 400px);
+  padding: 9px 14px 9px 11px;
+  border: 1px solid var(--rule, rgba(255, 255, 255, 0.16));
+  border-radius: 13px;
+  background: var(--bg-soft, #181a1e);
+  color: var(--ink, #f1f2f4);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+  font: 600 12.5px/1.35 var(--sans, var(--font-body, system-ui, sans-serif));
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.24s ease, transform 0.24s cubic-bezier(0.22, 1, 0.36, 1);
+  pointer-events: none;
+}
+@supports (backdrop-filter: blur(8px)) {
+  .rtl-note { background: color-mix(in srgb, var(--bg-soft, #181a1e) 86%, transparent); backdrop-filter: blur(10px) saturate(1.1); }
+}
+.rtl-note.is-visible { opacity: 1; transform: translateY(0); }
+
+.rtl-note__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  color: var(--rtl-accent);
+  background: color-mix(in srgb, var(--rtl-accent) 16%, transparent);
+}
+.rtl-note__text { min-width: 0; }
+
+/* États : seule la teinte de l'icône change ; le texte reste lisible en --ink. */
+.rtl-note--error { --rtl-accent: #d8563f; }
+.rtl-note--info { --rtl-accent: var(--accent, #6c2163); }
+
+/* En cours : anneau qui tourne à la place de l'icône. */
+.rtl-note--busy .rtl-note__icon {
+  background: transparent;
+  border: 2px solid color-mix(in srgb, var(--muted, #888d96) 45%, transparent);
+  border-top-color: var(--rtl-accent);
+  animation: rtl-note-spin 0.7s linear infinite;
+}
+@keyframes rtl-note-spin { to { transform: rotate(360deg); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .rtl-note { transition: opacity 0.2s ease; transform: none; }
+  .rtl-note.is-visible { transform: none; }
+  .rtl-note--busy .rtl-note__icon { animation: none; border-top-color: var(--rtl-accent); }
+}
+
 @media (max-width: 479px) {
   .translate-menu,
   .radar-translate-control--app .translate-menu,

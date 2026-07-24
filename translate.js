@@ -943,16 +943,53 @@
     return map[code] || code;
   }
 
-  function notify(msg) {
-    const el = document.getElementById('toast');
-    if (el) {
-      el.textContent = msg;
-      el.classList.remove('hidden');
-      clearTimeout(el._radarTranslateT);
-      el._radarTranslateT = setTimeout(() => el.classList.add('hidden'), 4200);
-      return;
+  // Icônes SVG de la notification, une par état. « busy » n'en a pas : le CSS
+  // affiche un anneau qui tourne à la place.
+  const NOTE_ICONS = {
+    done: '<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>',
+    error: '<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16.5h.01"/></svg>',
+    info: '<svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="M12.87 15.07l-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7 1.62-4.33L19.12 17h-3.24z"/></svg>',
+  };
+
+  let noteEl = null;
+  let noteHideT = 0;
+  let noteRemoveT = 0;
+
+  function ensureNoteEl() {
+    if (noteEl && noteEl.isConnected) return noteEl;
+    noteEl = document.createElement('div');
+    noteEl.id = 'radar-translate-note';
+    noteEl.className = 'rtl-note';
+    noteEl.setAttribute('role', 'status');
+    noteEl.setAttribute('aria-live', 'polite');
+    noteEl.hidden = true;
+    noteEl.innerHTML = '<span class="rtl-note__icon" aria-hidden="true"></span><span class="rtl-note__text"></span>';
+    document.body.appendChild(noteEl);
+    return noteEl;
+  }
+
+  // variant : 'busy' (traduction en cours, ne se ferme pas seul), 'done',
+  // 'error' ou 'info'. Une pilule discrète, fidèle au thème — remplace l'ancien
+  // bandeau blanc qui débordait sur le contenu en mode sombre.
+  function notify(msg, { variant = 'done' } = {}) {
+    if (!document.body) { console.info(msg); return; }
+    const el = ensureNoteEl();
+    el.className = `rtl-note rtl-note--${variant}`;
+    el.querySelector('.rtl-note__icon').innerHTML = variant === 'busy' ? '' : (NOTE_ICONS[variant] || NOTE_ICONS.info);
+    el.querySelector('.rtl-note__text').textContent = msg;
+    el.hidden = false;
+    clearTimeout(noteRemoveT);
+    // Reflow pour rejouer l'animation d'entrée à chaque message.
+    void el.offsetWidth;
+    el.classList.add('is-visible');
+    clearTimeout(noteHideT);
+    // L'état « en cours » persiste jusqu'au message suivant (succès/erreur).
+    if (variant !== 'busy') {
+      noteHideT = setTimeout(() => {
+        el.classList.remove('is-visible');
+        noteRemoveT = setTimeout(() => { el.hidden = true; }, 260);
+      }, 3600);
     }
-    console.info(msg);
   }
 
   function labelForMode(mode) {
@@ -2331,7 +2368,7 @@
     translateTargetLang = targetLang;
     document.documentElement.dataset.translateBusy = '1';
     if (!quiet) {
-      notify(`Traduction en cours… (${labelForMode(activeMode).short || targetLang})`);
+      notify(`Traduction en cours… (${labelForMode(activeMode).short || targetLang})`, { variant: 'busy' });
     }
 
     try {
@@ -2407,9 +2444,9 @@
       if (!quiet) {
         const m = labelForMode(activeMode);
         if (ok === 0 && entries.length > 0) {
-          notify('Traduction indisponible pour le moment. Réessayez dans quelques secondes.');
+          notify('Traduction indisponible pour le moment. Réessayez dans quelques secondes.', { variant: 'error' });
         } else {
-          notify(`Page affichée en ${m.label}`);
+          notify(`Page affichée en ${m.label}`, { variant: 'done' });
         }
       }
     } finally {
@@ -2622,6 +2659,7 @@
       notify(
         `${MODES[mode].label} : la traduction automatique n’est pas encore offerte `
         + 'pour cette langue autochtone. La page reste en original (sans traduction).',
+        { variant: 'info' },
       );
       return;
     }
@@ -2635,13 +2673,13 @@
     if (mode === DEFAULT_MODE) {
       restoreOriginals();
       notifyDisplayRefresh();
-      if (fromUserClick) notify('Original — articles dans leur langue, sans traduction');
+      if (fromUserClick) notify('Original — articles dans leur langue, sans traduction', { variant: 'done' });
       return;
     }
 
     const target = googCodeForMode(mode);
     if (!target) {
-      notify('Code de langue inconnu.');
+      notify('Code de langue inconnu.', { variant: 'error' });
       return;
     }
 
