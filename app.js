@@ -815,9 +815,19 @@ function applyTheme(theme) {
 function renderTodayDate() {
   if (!TODAY_DATE) return;
   const now = new Date();
-  TODAY_DATE.textContent = now.toLocaleDateString('fr-CA', {
+  const full = document.createElement('span');
+  full.className = 'masthead-date__full';
+  full.textContent = now.toLocaleDateString('fr-CA', {
     weekday: 'long', day: 'numeric', month: 'long', year: 'numeric',
   });
+  // Téléphone : forme courte (« jeu. 23 juillet ») pour laisser la place à la
+  // carte météo au centre de la rangée. Le CSS choisit la forme affichée.
+  const short = document.createElement('span');
+  short.className = 'masthead-date__short';
+  short.textContent = now.toLocaleDateString('fr-CA', {
+    weekday: 'short', day: 'numeric', month: 'long',
+  });
+  TODAY_DATE.replaceChildren(full, short);
 }
 
 // ─── Météo des principaux campus (desktop / tablette) ────────────────────────
@@ -826,15 +836,15 @@ const WEATHER_CACHE_MS = 15 * 60 * 1000;
 const WEATHER_CITIES = [
   { id: 'montreal', name: 'Montréal', compactName: 'MTL', lat: 45.5017, lon: -73.5673 },
   { id: 'quebec', name: 'Québec', compactName: 'QC', lat: 46.8139, lon: -71.2080 },
-  { id: 'sherbrooke', name: 'Sherbrooke', lat: 45.4000, lon: -71.9000 },
-  { id: 'trois-rivieres', name: 'Trois-Rivières', lat: 46.3432, lon: -72.5430 },
-  { id: 'saguenay', name: 'Saguenay', lat: 48.4284, lon: -71.0680 },
+  { id: 'sherbrooke', name: 'Sherbrooke', compactName: 'SHER', lat: 45.4000, lon: -71.9000 },
+  { id: 'trois-rivieres', name: 'Trois-Rivières', compactName: 'T-R', lat: 46.3432, lon: -72.5430 },
+  { id: 'saguenay', name: 'Saguenay', compactName: 'SAG', lat: 48.4284, lon: -71.0680 },
   // Saguenay–Lac-Saint-Jean : la météo de Chicoutimi ne résume pas le Lac.
   { id: 'alma', name: 'Alma', region: 'Saguenay–Lac-Saint-Jean', lat: 48.5500, lon: -71.6500 },
   { id: 'roberval', name: 'Roberval', region: 'Saguenay–Lac-Saint-Jean', lat: 48.5200, lon: -72.2300 },
   { id: 'dolbeau-mistassini', name: 'Dolbeau-Mistassini', region: 'Saguenay–Lac-Saint-Jean', lat: 48.8800, lon: -72.2300 },
   { id: 'saint-felicien', name: 'Saint-Félicien', region: 'Saguenay–Lac-Saint-Jean', lat: 48.6500, lon: -72.4500 },
-  { id: 'rimouski', name: 'Rimouski', lat: 48.4488, lon: -68.5230 },
+  { id: 'rimouski', name: 'Rimouski', compactName: 'RIM', lat: 48.4488, lon: -68.5230 },
   { id: 'riviere-du-loup', name: 'Rivière-du-Loup', region: 'Bas-Saint-Laurent', lat: 47.8300, lon: -69.5300 },
   { id: 'matane', name: 'Matane', region: 'Bas-Saint-Laurent', lat: 48.8500, lon: -67.5300 },
   { id: 'baie-comeau', name: 'Baie-Comeau', region: 'Côte-Nord', lat: 49.2200, lon: -68.1500 },
@@ -852,8 +862,8 @@ const WEATHER_CITIES = [
   { id: 'thetford-mines', name: 'Thetford Mines', region: 'Chaudière-Appalaches', lat: 46.0900, lon: -71.3000 },
   { id: 'maniwaki', name: 'Maniwaki', region: 'Outaouais', lat: 46.3800, lon: -75.9700 },
   { id: 'chibougamau', name: 'Chibougamau', region: 'Nord-du-Québec', lat: 49.9200, lon: -74.3700 },
-  { id: 'gatineau', name: 'Gatineau', lat: 45.4765, lon: -75.7013 },
-  { id: 'rouyn-noranda', name: 'Rouyn-Noranda', lat: 48.2366, lon: -79.0231 },
+  { id: 'gatineau', name: 'Gatineau', compactName: 'GAT', lat: 45.4765, lon: -75.7013 },
+  { id: 'rouyn-noranda', name: 'Rouyn-Noranda', compactName: 'R-N', lat: 48.2366, lon: -79.0231 },
   // Abitibi–Témiscamingue : plusieurs pôles distincts plutôt qu'une seule ville.
   { id: 'val-dor', name: 'Val-d’Or', region: 'Abitibi–Témiscamingue', lat: 48.1000, lon: -77.7800 },
   { id: 'amos', name: 'Amos', region: 'Abitibi–Témiscamingue', lat: 48.5700, lon: -78.1200 },
@@ -906,7 +916,7 @@ let mastheadWeatherTimer = null;
 const mastheadWeatherDecks = { campus: [], nation: [] };
 let mastheadWeatherSlots = [];
 let mastheadWeatherNextSlot = 0;
-// La carte principale reste exclusivement réservée à Montréal et Québec.
+// Desktop / tablette : la carte principale reste réservée à Montréal et Québec.
 const MASTHEAD_WEATHER_PRIMARY_SEQUENCE = ["montreal", "quebec"];
 const MASTHEAD_WEATHER_PRIMARY_IDS = new Set(MASTHEAD_WEATHER_PRIMARY_SEQUENCE);
 // Les cartes régionales suivent l’importance démographique universitaire.
@@ -917,6 +927,18 @@ const MASTHEAD_WEATHER_REGIONAL_PRIORITY = [
 const MASTHEAD_WEATHER_REGIONAL_RANK = new Map(
   MASTHEAD_WEATHER_REGIONAL_PRIORITY.map((id, index) => [id, index]),
 );
+// Téléphone : une seule carte visible — elle parcourt toutes les villes
+// universitaires du Québec (les deux ancres, puis l'ordre régional).
+const MASTHEAD_WEATHER_UNIVERSITY_SEQUENCE = [
+  ...MASTHEAD_WEATHER_PRIMARY_SEQUENCE,
+  ...MASTHEAD_WEATHER_REGIONAL_PRIORITY,
+];
+const MASTHEAD_WEATHER_PHONE = window.matchMedia('(max-width: 599.98px)');
+function mastheadWeatherPrimarySequence() {
+  return MASTHEAD_WEATHER_PHONE.matches
+    ? MASTHEAD_WEATHER_UNIVERSITY_SEQUENCE
+    : MASTHEAD_WEATHER_PRIMARY_SEQUENCE;
+}
 let mastheadWeatherPrimaryIndex = 0;
 let mastheadWeatherCompactSecondaryIndex = 0;
 let mastheadWeatherNationSlot = 1;
@@ -983,8 +1005,8 @@ function weatherBoardCount() {
   let count = 1;
   if (width >= 600) count = 4;
   else if (width >= 500) count = 3;
-  // Sur téléphone, la première carte reste exclusivement Montréal/Québec.
-  // La seconde disparaît avant que cette carte principale doive défiler.
+  // Sous 280 px de tableau, une seule carte : la carte ancre. Sur téléphone,
+  // elle parcourt les villes universitaires du Québec en alternance.
   else if (width >= 280) count = 2;
   return mastheadWeatherFitCount === null ? count : Math.min(count, mastheadWeatherFitCount);
 }
@@ -1050,8 +1072,11 @@ function showMastheadWeatherBoard() {
   }
   MASTHEAD_WEATHER.querySelector('.masthead-weather__board')?.setAttribute('data-weather-count', String(count));
   mastheadWeatherSlots = mastheadWeatherSlots.slice(0, count);
+  // Le modulo protège le passage téléphone ↔ desktop : les séquences n'ont
+  // pas la même longueur.
+  const sequence = mastheadWeatherPrimarySequence();
   const anchor = WEATHER_CITIES.find(
-    (city) => city.id === MASTHEAD_WEATHER_PRIMARY_SEQUENCE[mastheadWeatherPrimaryIndex],
+    (city) => city.id === sequence[mastheadWeatherPrimaryIndex % sequence.length],
   );
   if (anchor && mastheadWeatherSlots[0]?.id !== anchor.id) mastheadWeatherSlots[0] = anchor;
   const usedIds = new Set(mastheadWeatherSlots.map((city) => city.id));
@@ -1066,6 +1091,9 @@ function showMastheadWeatherBoard() {
   }
   cities.forEach((city) => {
     city.classList.remove('is-active');
+    // is-compact est réévalué plus bas pour la carte ancre : sans ce reset,
+    // une ville compactée sur téléphone resterait abrégée en carte secondaire.
+    city.classList.remove('is-compact');
     city.setAttribute('aria-hidden', 'true');
   });
   mastheadWeatherSlots.forEach((selectedCity, slot) => {
@@ -1075,14 +1103,17 @@ function showMastheadWeatherBoard() {
     city?.setAttribute('aria-hidden', 'false');
   });
   refreshWeatherNameScroll();
-  const primary = MASTHEAD_WEATHER.querySelector('.masthead-weather__city.is-active[data-weather-city="montreal"], .masthead-weather__city.is-active[data-weather-city="quebec"]');
+  const primary = mastheadWeatherSlots[0]
+    ? MASTHEAD_WEATHER.querySelector(`.masthead-weather__city.is-active[data-weather-city="${mastheadWeatherSlots[0].id}"]`)
+    : null;
   const primaryViewport = primary?.querySelector('.masthead-weather__name');
   if (!primary || !primaryViewport || primary.clientWidth < 1 || primaryViewport.clientWidth < 1) return;
   primary.classList.remove('is-compact');
   let primaryOverflows = primaryViewport.scrollWidth > primaryViewport.clientWidth + 2;
   if (primaryOverflows) {
     // Le seuil dépend de l'espace réel entre date et actions, pas du viewport.
-    // MTL/QC est la dernière forme compacte avant de retirer le bandeau.
+    // La forme compacte (MTL, QC, Sherb., …) est le dernier recours avant de
+    // retirer le bandeau.
     primary.classList.add('is-compact');
     primaryOverflows = primaryViewport.scrollWidth > primaryViewport.clientWidth + 2;
   }
@@ -1105,9 +1136,9 @@ function refreshWeatherNameScroll() {
     const viewport = el.querySelector('.masthead-weather__name');
     const name = el.querySelector('.masthead-weather__name-text');
     const overflow = Math.max(0, name.scrollWidth - viewport.clientWidth);
-    const isPrimary = MASTHEAD_WEATHER_PRIMARY_IDS.has(el.dataset.weatherCity);
-    // Montréal et Québec ne défilent jamais : la grille réduit plutôt le nombre
-    // de cartes quand l'espace devient insuffisant.
+    const isPrimary = el.dataset.weatherCity === mastheadWeatherSlots[0]?.id;
+    // La carte ancre ne défile jamais : elle se compacte, puis la grille réduit
+    // le nombre de cartes quand l'espace devient insuffisant.
     el.classList.toggle('is-overflowing', !isPrimary && overflow > 2);
     el.style.setProperty('--weather-scroll', `${overflow}px`);
   });
@@ -1120,10 +1151,10 @@ function rotateOneMastheadWeatherCard() {
   const usedIds = new Set(mastheadWeatherSlots.filter((_, index) => index !== slot).map((city) => city.id));
   let replacement;
   if (slot === 0) {
-    mastheadWeatherPrimaryIndex = (mastheadWeatherPrimaryIndex + 1)
-      % MASTHEAD_WEATHER_PRIMARY_SEQUENCE.length;
+    const sequence = mastheadWeatherPrimarySequence();
+    mastheadWeatherPrimaryIndex = (mastheadWeatherPrimaryIndex + 1) % sequence.length;
     replacement = WEATHER_CITIES.find(
-      (city) => city.id === MASTHEAD_WEATHER_PRIMARY_SEQUENCE[mastheadWeatherPrimaryIndex],
+      (city) => city.id === sequence[mastheadWeatherPrimaryIndex],
     );
   } else {
     if (slot === 1 && mastheadWeatherSlots.length <= 2) {
@@ -1185,9 +1216,9 @@ function readWeatherCache() {
 }
 
 async function initMastheadWeather() {
-  // Le CSS compacte le bandeau jusqu'à 360 px ; ne pas empêcher le chargement
-  // sur téléphone, où une seule ville prioritaire reste affichée.
-  if (!MASTHEAD_WEATHER || window.innerWidth < 360) return;
+  // Le CSS compacte le bandeau jusqu'à 375 px ; ne pas empêcher le chargement
+  // sur téléphone, où la carte unique alterne entre les villes universitaires.
+  if (!MASTHEAD_WEATHER || window.innerWidth < 375) return;
   const cached = readWeatherCache();
   if (cached) renderMastheadWeather(cached);
   try {

@@ -168,6 +168,9 @@ a { color: inherit; }
 }
 
 .masthead-date { font-weight: 600; }
+/* La date courte (« jeu. 23 juillet ») ne sert que sur téléphone, où la carte
+   météo occupe le centre de la rangée. */
+.masthead-date__short { display: none; }
 
 /* Météo — tableau de gare : plusieurs villes côte à côte. La rangée s'adapte
    à l'espace et les noms longs défilent dans leur propre case. */
@@ -244,7 +247,9 @@ a { color: inherit; }
   .masthead-weather { display: inline-flex; grid-area: weather; width: 100%; justify-self: stretch; }
   .masthead-actions { grid-area: actions; justify-self: end; }
 }
-@media (max-width: 359.98px) { .masthead-weather { display: none !important; } }
+/* Sous 375 px, même les codes ville compacts (SHER, T-R…) ne rentrent pas :
+   on retire le bandeau plutôt que de le laisser apparaître puis disparaître. */
+@media (max-width: 374.98px) { .masthead-weather { display: none !important; } }
 .masthead-weather__city.is-compact .masthead-weather__name-full { display: none; }
 .masthead-weather__city.is-compact .masthead-weather__name-compact { display: inline; }
 @keyframes weather-name-scroll {
@@ -296,31 +301,27 @@ a { color: inherit; }
   height: 15px;
 }
 
-/* Téléphone : la date longue traditionnelle reste entière — la météo n'a pas
-   la place et la rangée (date + 6 icônes) débordait de ~33 px sur iPhone /
-   Pixel. Icônes et typo compactées ; l'ellipse est un filet de sécurité pour
-   les dates les plus longues sur les écrans les plus étroits. */
+/* Téléphone : la date passe en forme courte (« jeu. 23 juillet ») pour laisser
+   la carte météo unique au centre de la rangée — elle alterne entre les villes
+   universitaires du Québec. Icônes et typo compactées ; le garde-fou
+   is-too-narrow retire la carte si elle ne rentre vraiment pas. */
 @media (max-width: 599.98px) {
   .masthead-top {
-    grid-template-areas: 'date actions';
-    grid-template-columns: minmax(0, 1fr) max-content;
-    column-gap: 6px;
-    /* Récupère quelques px du padding page pour la date. */
+    column-gap: 5px;
+    /* Récupère quelques px du padding page pour la rangée. */
     margin-inline: -6px;
   }
-  .masthead-weather { display: none !important; }
   .masthead-date {
     font-size: 10.5px;
     letter-spacing: 0.02em;
-    min-width: 0;
-    overflow: hidden;
-    text-overflow: ellipsis;
     white-space: nowrap;
   }
-  .masthead-actions { gap: 4px; }
-  .masthead-icon { width: 24px; height: 24px; }
-  .masthead-icon svg { width: 13px; height: 13px; }
-  .masthead-icon .app-emoji { width: 13px; height: 13px; }
+  .masthead-date__full { display: none; }
+  .masthead-date__short { display: inline; }
+  .masthead-actions { gap: 3px; }
+  .masthead-icon { width: 22px; height: 22px; }
+  .masthead-icon svg { width: 12px; height: 12px; }
+  .masthead-icon .app-emoji { width: 12px; height: 12px; }
 }
 @media (max-width: 374.98px) {
   .masthead-date { font-size: 10px; letter-spacing: 0.01em; }

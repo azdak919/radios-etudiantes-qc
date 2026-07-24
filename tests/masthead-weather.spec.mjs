@@ -18,12 +18,16 @@ const weather = [
   current: { temperature_2m, weather_code, is_day },
 }));
 
-test('météo campus : elle s’adapte à la largeur du masthead', async ({ page }) => {
-  await page.route('https://api.open-meteo.com/v1/forecast**', (route) => route.fulfill({
+function stubForecast(page) {
+  return page.route('https://api.open-meteo.com/v1/forecast**', (route) => route.fulfill({
     contentType: 'application/json',
     headers: { 'access-control-allow-origin': '*' },
     body: JSON.stringify(weather),
   }));
+}
+
+test('météo campus : elle s’adapte à la largeur du masthead', async ({ page }) => {
+  await stubForecast(page);
 
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto('/', { waitUntil: 'domcontentloaded' });
@@ -103,4 +107,48 @@ test('météo campus : elle s’adapte à la largeur du masthead', async ({ page
 
   await page.setViewportSize({ width: 320, height: 900 });
   await expect(ribbon).toBeHidden();
+});
+
+test('météo téléphone : la carte unique parcourt les villes universitaires', async ({ page }) => {
+  await stubForecast(page);
+
+  // iPhone (390 pt de large).
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto('/', { waitUntil: 'domcontentloaded' });
+  const ribbon = page.locator('#masthead-weather');
+  await expect(ribbon).toBeVisible();
+  const active = ribbon.locator('.masthead-weather__city.is-active');
+  await expect(active).toHaveCount(1);
+  await expect(active).toHaveAttribute('data-weather-city', 'montreal');
+  await expect(active.locator('.masthead-weather__temp')).not.toHaveText('—');
+
+  // La date courte remplace la date longue et la rangée ne déborde pas.
+  await expect(page.locator('.masthead-date__short')).toBeVisible();
+  await expect(page.locator('.masthead-date__full')).toBeHidden();
+  const actionsBox = await page.locator('.masthead-actions').boundingBox();
+  expect(actionsBox.x + actionsBox.width).toBeLessThanOrEqual(390);
+  const [dateBox, weatherBox] = await Promise.all([
+    page.locator('.masthead-date').boundingBox(), ribbon.boundingBox(),
+  ]);
+  expect(weatherBox.x).toBeGreaterThanOrEqual(dateBox.x + dateBox.width);
+  expect(actionsBox.x).toBeGreaterThanOrEqual(weatherBox.x + weatherBox.width);
+
+  // L'alternance dépasse Montréal/Québec : Sherbrooke puis Trois-Rivières
+  // suivent l'ordre universitaire, sans que le nom déborde de la carte.
+  await expect(active).toHaveAttribute('data-weather-city', 'quebec', { timeout: 7000 });
+  await expect(active).toHaveAttribute('data-weather-city', 'sherbrooke', { timeout: 7000 });
+  await expect(active).toHaveAttribute('data-weather-city', 'trois-rivieres', { timeout: 7000 });
+  await expect(ribbon).toBeVisible();
+  expect(await active.evaluate((city) => {
+    const name = city.querySelector('.masthead-weather__name');
+    return !city.classList.contains('is-overflowing') && name.scrollWidth <= name.clientWidth + 2;
+  })).toBe(true);
+
+  // Pixel 9 (412 pt de large) : même comportement.
+  await page.setViewportSize({ width: 412, height: 924 });
+  await page.waitForTimeout(150);
+  await expect(ribbon).toBeVisible();
+  await expect(ribbon.locator('.masthead-weather__city.is-active')).toHaveCount(1);
+  const actionsBox412 = await page.locator('.masthead-actions').boundingBox();
+  expect(actionsBox412.x + actionsBox412.width).toBeLessThanOrEqual(412);
 });
